@@ -9,12 +9,12 @@
     "server-list": "Lista serwerów",
     "all-stats": "Ogólne statystyki",
     "all-server-map": "Mapa wszystkich serwerów",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Twórcy",
+    "language": "Język:",
+    "unit": "Jednostka:"
   },
   "select": {
-    "placeholder": "Please select an item",
+    "placeholder": "Proszę wybrać element",
     "empty": "Nie wybrano"
   },
   "filter-option": {
@@ -28,14 +28,14 @@
     "hide-full": "Ukryj pełne serwery",
     "refresh-btn": "Przeładuj listę",
     "refreshing": "Przeładowywanie listy...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Opcje filtrowania",
     "yes-no-filter": {
       "none": "Wszystkie",
       "yes": "Tak",
       "no": "Nie",
       "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist",
-      "modded": "Modded",
+      "modded": "Zmodyfikowany",
       "order-type": {
         "name": "Sortuj po",
         "player-desc": "Dużej liczbie osób",
@@ -51,9 +51,9 @@
     "display-users": "Ogólna liczba osób: {{count}}",
     "display-servers": "Ogólna liczba serwerów: {{count}}",
     "offline-servers": "Offline (zapisanych) serwerów: {{count}}",
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
+    "users-title": "Użytkownicy",
+    "servers-title": "Serwery",
+    "total-online-users": "Łączna liczba użytkowników online",
     "filtered-users": "Filtered Users",
     "online-label": "Online",
     "offline-label": "Offline",
@@ -81,7 +81,7 @@
   },
   "server-info": {
     "title": "Informacje o serwerze",
-    "not-exist": "The server does not exist.",
+    "not-exist": "Serwer nie istnieje.",
     "status": {
       "name": "Status",
       "online": "Online",
@@ -99,30 +99,30 @@
       "visitor-suffix": "",
       "options": {
         "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "The start time must be earlier than the stop time.",
-        "invalid-stop-time": "The stop time must be later than the start time.",
-        "data-range": "Data Period",
-        "start-time": "Start Time",
-        "stop-time": "Stop Time",
-        "data-resolution": "Data Resolution",
-        "graph-update-btn": "Update Graph",
+        "invalid-start-time": "Czas rozpoczęcia musi być wcześniejszy niż czas zakończenia.",
+        "invalid-stop-time": "Czas zakończenia musi być późniejszy niż czas rozpoczęcia.",
+        "data-range": "Okres danych",
+        "start-time": "Czas rozpoczęcia",
+        "stop-time": "Czas zakończenia",
+        "data-resolution": "Dokładność danych",
+        "graph-update-btn": "Zaktualizuj wykres",
         "period": {
-          "custom": "Custom",
-          "1hour": "1 Hour",
-          "8hour": "8 Hours",
-          "1day": "1 Day",
-          "2day": "2 Days",
-          "1week": "1 Week",
-          "1month": "1 Month",
-          "3month": "3 Months",
-          "1year": "1 Year",
-          "4year": "4 Years"
+          "custom": "Własny okres",
+          "1hour": "1 Godzina",
+          "8hour": "8 Godzin",
+          "1day": "1 Dzień",
+          "2day": "2 Dni",
+          "1week": "1 Tydzień",
+          "1month": "1 Miesiąc",
+          "3month": "3 Miesiące",
+          "1year": "1 Rok",
+          "4year": "4 Lata"
         },
         "resolution": {
-          "1m": "1 Minute",
-          "5m": "5 Minutes",
-          "1h": "1 Hour",
-          "1d": "1 Day"
+          "1m": "1 Minuta",
+          "5m": "5 Minut",
+          "1h": "1 Godzina",
+          "1d": "1 Dzień"
         }
       }
     }
@@ -137,27 +137,27 @@
   },
   "all-stats": {
     "users": {
-      "title": "Całkowita liczba użytkowników serwerów",
+      "title": "Całkowita liczba graczy",
       "select-compare-country": {
         "name": "Wybierz kraj"
       },
       "show-all": {
-        "name": "Display all country data"
+        "name": "Wyświetl wszystkie kraje."
       },
       "graph": {
         "all-country": "Wszystkie kraje",
-        "empty-country": "There is no data to query."
+        "empty-country": "Brak danych do wyświetlenia."
       }
     },
     "mod-loader": {
-      "title": "Mod loader statistics",
+      "title": "Statystyki mod loader'a",
       "tooltip": "Mod Loader"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
+    "credit": "Twórcy",
+    "language": "Język:",
+    "unit": "Jednostka:",
     "title": "Mapa serwerów",
     "server-info-btn": "Kliknij, aby sprawdzić informacje o serwerze."
   }
