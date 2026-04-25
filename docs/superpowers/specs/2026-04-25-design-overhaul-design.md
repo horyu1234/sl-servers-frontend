@@ -214,7 +214,7 @@ TanStack Virtual renders ~14 rows from visibleServers
 | Source | Cadence | Mechanism |
 |---|---|---|
 | `/api/servers` | 60 s (existing) | Redux thunk on interval |
-| `/api/servers/trends` | 5 min | `useTrends` interval; HTTP `Cache-Control: max-age=60` from server |
+| `/api/servers/trends` | 5 min | `useTrends` interval; HTTP `Cache-Control: max-age=60` from server. **Live as of 2026-04-25** — see "API status" below for the actual response shape. |
 | `/api/servers/:id` | on mount | unchanged |
 | `/api/servers/:id/graph` | on window-toggle | unchanged |
 | `/api/stats/*` | on Stats mount | unchanged |
@@ -342,7 +342,7 @@ Rollback is `git revert <12-commit range>`. Partial rollback is not supported.
 | Risk | Mitigation |
 |---|---|
 | Silktide JS API for reading consent state is not fully documented in public docs | Commit 04 starts with a 1-hour spike to read Silktide's `localStorage` keys directly and confirm event hooks; adapter encapsulates whatever is found. |
-| `/api/servers/trends` endpoint not yet implemented on backend | Frontend ships with graceful "—" fallback; the page works without trends. API team works in parallel from the handoff prompt. |
+| `/api/servers/trends` endpoint not yet implemented on backend | **Resolved 2026-04-25** — backend commit `e8111ea` ships the endpoint matching the handoff. Response shape: `{window, resolution, bucketCount, endTime, serverIds: List<String>, trends: Map<String, List<Int?>>}`. The `serverIds=` request filter parameter was not implemented (frontend always receives all online servers); harmless — Plan B's `useTrends` filters client-side. The extra `serverIds` response field lists every server included in `trends` and is useful to detect drift between `/servers` and `/trends`. Frontend ships with graceful "—" fallback for missing or null buckets per spec. |
 | Bundle size could grow despite removing Bootstrap | Measure in commit 12 (`vite build --report`). Hard ceiling: gzipped main chunk ≤ existing size + 50 KB. If exceeded, audit recharts imports first (use sub-imports). |
 | 27 locale files reference `cookie-notice` keys; mismatched mapping could leave untranslated banner | Commit 04 includes a script that asserts every locale has all 4 mapped keys; CI fails if missing. |
 | Single-branch Big Bang means `main` carries half-migrated state during the days it takes | Each commit is independently buildable. CI runs on each commit. Commits 6-11 leave the user-facing app working (just visually mixed) until commit 12 lands. |

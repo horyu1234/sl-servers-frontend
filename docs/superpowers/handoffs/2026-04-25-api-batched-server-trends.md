@@ -2,6 +2,23 @@
 
 > 이 파일은 API 레포(`/Users/horyu/git/github/sl-servers-parent`)에서 작업하는 Claude Code 세션에 그대로 붙여넣을 프롬프트입니다.
 
+## Status: ✅ Implemented in `sl-servers-parent` commit `e8111ea` (2026-04-25)
+
+Live shape (verified by reading `ServerAPI.kt`, `ServerTrendsResponse.kt`, `ServerTrendsWindow.kt`, `ServerTrendsResolution.kt`):
+
+```kotlin
+data class ServerTrendsResponse(
+    val window: String,                       // "6h" | "24h" | "7d"
+    val resolution: String,                   // "15m" | "1h" | "6h"
+    val bucketCount: Int,
+    val endTime: Instant,
+    val serverIds: List<String>,              // EXTRA — not in the original request, but useful
+    val trends: Map<String, List<Int?>>,      // serverId -> oldest..newest player counts; nulls allowed
+)
+```
+
+`Cache-Control: public, max-age=60` is set exactly as requested. `400 BAD_REQUEST` on invalid `window` / `resolution`. The `serverIds=` query-string filter was NOT implemented — frontend will always receive all online servers (acceptable; size ~100KB). The Plan B `useTrends` hook should consume this shape directly.
+
 ---
 
 ## Prompt
