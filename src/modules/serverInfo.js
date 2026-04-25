@@ -11,7 +11,7 @@ export const getServerInfo = (serverId) => dispatch => {
         (response) => {
             dispatch({
                 type: SERVER_INFO_SUCCESS,
-                payload: response
+                payload: response.data
             })
         }
     ).catch(error => {
@@ -41,7 +41,7 @@ export default function serverInfo(state = initialState, action) {
             return {
                 ...state,
                 fetching: false,
-                data: action.payload.data
+                data: action.payload
             };
         case SERVER_INFO_FAILURE:
             return {

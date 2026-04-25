@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import Highcharts from 'highcharts'
 import 'highcharts/modules/drilldown'
-import HighchartsReact from 'highcharts-react-official'
+import {HighchartsReact} from 'highcharts-react-official'
 import Chart from "../../chartOption";
 import {getModLoaderChartAPI} from "../../apiClient";
 import {Alert} from "react-bootstrap";

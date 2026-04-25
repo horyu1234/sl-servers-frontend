@@ -12,7 +12,7 @@ export const getServerList = () => (dispatch, getState) => {
         (response) => {
             dispatch({
                 type: SERVER_LIST_SUCCESS,
-                payload: response
+                payload: response.data
             })
         }
     ).catch(error => {
@@ -52,7 +52,7 @@ export default function serverList(state = initialState, action) {
             return {
                 ...state,
                 fetching: false,
-                data: action.payload.data
+                data: action.payload
             };
         case SERVER_LIST_FAILURE:
             return {

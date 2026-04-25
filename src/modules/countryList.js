@@ -11,7 +11,7 @@ export const getCountryList = () => (dispatch) => {
         (response) => {
             dispatch({
                 type: COUNTRY_LIST_SUCCESS,
-                payload: response
+                payload: response.data
             })
         }
     ).catch(error => {
@@ -41,7 +41,7 @@ export default function countryList(state = initialState, action) {
             return {
                 ...state,
                 fetching: false,
-                data: action.payload.data
+                data: action.payload
             };
         case COUNTRY_LIST_FAILURE:
             return {

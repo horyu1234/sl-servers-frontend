@@ -11,7 +11,7 @@ export const getServerMap = () => (dispatch) => {
         (response) => {
             dispatch({
                 type: SERVER_MAP_SUCCESS,
-                payload: response
+                payload: response.data
             })
         }
     ).catch(error => {
@@ -41,7 +41,7 @@ export default function serverMap(state = initialState, action) {
             return {
                 ...state,
                 fetching: false,
-                data: action.payload.data
+                data: action.payload
             };
         case SERVER_MAP_FAILURE:
             return {
