@@ -30,6 +30,22 @@ describe('silktideClient.readConsent', () => {
   it('exposes the four standard categories', () => {
     expect(CATEGORIES).toEqual(['necessary', 'functional', 'analytics', 'advertising']);
   });
+
+  it('returns the same object reference on repeated calls with no storage change (cache contract for useSyncExternalStore)', () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+    const first = readConsent('analytics');
+    const second = readConsent('analytics');
+    expect(first).toBe(second);
+  });
+
+  it('returns a fresh object reference after a storage change', () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: false, functional: true, advertising: false, necessary: true }));
+    const first = readConsent('analytics');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+    const second = readConsent('analytics');
+    expect(first).not.toBe(second);
+    expect(second).toEqual({ granted: true, status: 'granted' });
+  });
 });
 
 describe('silktideClient.subscribe', () => {

@@ -9,6 +9,11 @@ import '@testing-library/jest-dom';
 // Vitest's populateGlobal does not override it with jsdom's implementation
 // because Node's localStorage already exists on globalThis.
 // Patch it here with a spec-compliant in-memory Storage implementation.
+// localStorage polyfill for Node 25.x environments where a partial native
+// localStorage global exists but lacks the Storage methods. This polyfill
+// only covers the documented Storage API (setItem/getItem/removeItem/clear/
+// length/key) — it does NOT support bracket-property access (localStorage.foo)
+// or `instanceof Storage`. All project tests must use the Storage API directly.
 if (typeof localStorage === 'undefined' || typeof localStorage.setItem !== 'function') {
     const store = {};
     const storage = {
