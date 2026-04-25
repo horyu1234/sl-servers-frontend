@@ -5,7 +5,7 @@ const closeSpy = vi.fn();
 
 vi.mock('@sentry/react', () => ({
   init: (...args) => initSpy(...args),
-  getClient: () => ({ close: closeSpy }),
+  close: (...args) => closeSpy(...args),
   browserTracingIntegration: () => ({ name: 'browserTracing' }),
   replayIntegration: () => ({ name: 'replay' }),
 }));
@@ -68,5 +68,23 @@ describe('sentryGate', () => {
     await import('./sentryGate');
     setConsent(false);
     expect(closeSpy).not.toHaveBeenCalled();
+  });
+
+  it('does not re-init when consent is re-granted in the same page session (locked once initialized)', async () => {
+    await import('./sentryGate');
+    setConsent(true);                  // grant
+    expect(initSpy).toHaveBeenCalledTimes(1);
+    setConsent(false);                 // revoke
+    expect(closeSpy).toHaveBeenCalledTimes(1);
+    setConsent(true);                  // re-grant in same session
+    expect(initSpy).toHaveBeenCalledTimes(1); // still 1 — locked
+  });
+
+  it('only calls close once even on repeated revoke after grant', async () => {
+    await import('./sentryGate');
+    setConsent(true);
+    setConsent(false);
+    setConsent(false);
+    expect(closeSpy).toHaveBeenCalledTimes(1);
   });
 });
