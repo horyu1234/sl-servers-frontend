@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Container from "./Container";
 import {ToastContainer} from "react-toastify";
 import {CookieConsent} from "react-cookie-consent";
@@ -31,15 +31,15 @@ const App = () => {
         <>
             <BrowserRouter>
                 <React.Suspense fallback={<Loading />}>
-                    <Switch>
-                        <Route exact path="/" render={() => <Container view={<List/>}/>}/>
-                        <Route path="/servers/:serverId" render={() => <Container view={<Info/>}/>}/>
-                        <Route path="/stats" render={() => <Container view={<Stats/>}/>}/>
-                        <Route path="/map" render={() => <Container view={<Map/>}/>}/>
-                        <Route path="/credit" render={() => <Container view={<Credit/>}/>}/>
-                        <Route path="/api" render={() => <Container view={<Api/>}/>}/>
-                        <Route path="/*" render={() => <Container view={<NotFound/>}/>}/>
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<Container view={<List/>}/>}/>
+                        <Route path="/servers/:serverId" element={<Container view={<Info/>}/>}/>
+                        <Route path="/stats" element={<Container view={<Stats/>}/>}/>
+                        <Route path="/map" element={<Container view={<Map/>}/>}/>
+                        <Route path="/credit" element={<Container view={<Credit/>}/>}/>
+                        <Route path="/api" element={<Container view={<Api/>}/>}/>
+                        <Route path="*" element={<Container view={<NotFound/>}/>}/>
+                    </Routes>
                 </React.Suspense>
             </BrowserRouter>
 

@@ -26,7 +26,7 @@ const TopMenu = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
                     <Nav>
-                        <NavLink className="nav-link px-3" exact to="/">
+                        <NavLink className="nav-link px-3" end to="/">
                             <FontAwesomeIcon icon={faList} className="me-3"/> {t('navbar.server-list')}
                         </NavLink>
                         <NavLink className="nav-link px-3" to="/stats">
