@@ -13,7 +13,6 @@
     "@radix-ui/react-slot": "1.2.4",
     "@reduxjs/toolkit": "2.11.2",
     "@sentry/react": "10.50.0",
-    "@tailwindcss/vite": "4.2.4",
     "@tanstack/react-virtual": "3.13.24",
     "axios": "1.15.2",
     "bootswatch": "5.3.8",
@@ -45,16 +44,17 @@
     "sonner": "2.0.7",
     "swagger-ui-react": "5.32.4",
     "tailwind-merge": "3.5.0",
-    "tailwindcss": "4.2.4",
-    "tailwindcss-animate": "1.0.7",
     "web-vitals": "5.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "4.2.4",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
     "@vitejs/plugin-react": "6.0.1",
     "jsdom": "29.0.2",
+    "tailwindcss": "4.2.4",
+    "tailwindcss-animate": "1.0.7",
     "vite": "8.0.10",
     "vitest": "4.1.5"
   },
