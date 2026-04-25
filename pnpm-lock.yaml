@@ -9,116 +9,116 @@ importers:
   .:
     dependencies:
       '@fortawesome/fontawesome-svg-core':
-        specifier: ^7.2.0
+        specifier: 7.2.0
         version: 7.2.0
       '@fortawesome/free-solid-svg-icons':
-        specifier: ^7.2.0
+        specifier: 7.2.0
         version: 7.2.0
       '@fortawesome/react-fontawesome':
-        specifier: ^3.3.1
+        specifier: 3.3.1
         version: 3.3.1(@fortawesome/fontawesome-svg-core@7.2.0)(react@19.2.5)
       '@influxdata/giraffe':
-        specifier: ^2.38.1
+        specifier: 2.38.1
         version: 2.38.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@reduxjs/toolkit':
-        specifier: ^2.11.2
+        specifier: 2.11.2
         version: 2.11.2(react-redux@9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1))(react@19.2.5)
       '@sentry/react':
-        specifier: ^10.50.0
+        specifier: 10.50.0
         version: 10.50.0(react@19.2.5)
       axios:
-        specifier: ^1.15.2
+        specifier: 1.15.2
         version: 1.15.2
       bootswatch:
-        specifier: ^5.3.8
+        specifier: 5.3.8
         version: 5.3.8
       country-list:
-        specifier: ^2.3.0
+        specifier: 2.4.1
         version: 2.4.1
       highcharts:
-        specifier: ^12.6.0
+        specifier: 12.6.0
         version: 12.6.0
       highcharts-react-official:
-        specifier: ^3.2.2
+        specifier: 3.2.3
         version: 3.2.3(highcharts@12.6.0)(react@19.2.5)
       i18next:
-        specifier: ^26.0.8
+        specifier: 26.0.8
         version: 26.0.8
       i18next-browser-languagedetector:
-        specifier: ^8.2.1
+        specifier: 8.2.1
         version: 8.2.1
       js-cookie:
-        specifier: ^3.0.5
+        specifier: 3.0.5
         version: 3.0.5
       leaflet:
-        specifier: ^1.9.4
+        specifier: 1.9.4
         version: 1.9.4
       lodash:
-        specifier: ^4.17.21
+        specifier: 4.18.1
         version: 4.18.1
       react:
-        specifier: ^19.2.5
+        specifier: 19.2.5
         version: 19.2.5
       react-bootstrap:
-        specifier: ^2.10.10
+        specifier: 2.10.10
         version: 2.10.10(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-cookie-consent:
-        specifier: ^10.0.1
+        specifier: 10.0.1
         version: 10.0.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-datepicker:
-        specifier: ^9.1.0
+        specifier: 9.1.0
         version: 9.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-dom:
-        specifier: ^19.2.5
+        specifier: 19.2.5
         version: 19.2.5(react@19.2.5)
       react-i18next:
-        specifier: ^17.0.4
+        specifier: 17.0.4
         version: 17.0.4(i18next@26.0.8)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-leaflet:
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-redux:
-        specifier: ^9.2.0
+        specifier: 9.2.0
         version: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
       react-router-dom:
-        specifier: ^7.14.2
+        specifier: 7.14.2
         version: 7.14.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-select:
-        specifier: ^5.10.2
+        specifier: 5.10.2
         version: 5.10.2(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-toastify:
-        specifier: ^11.1.0
+        specifier: 11.1.0
         version: 11.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-world-flags:
-        specifier: ^1.5.1
+        specifier: 1.6.0
         version: 1.6.0(react@19.2.5)
       swagger-ui-react:
-        specifier: ^5.1.0
+        specifier: 5.32.4
         version: 5.32.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       web-vitals:
-        specifier: ^5.2.0
+        specifier: 5.2.0
         version: 5.2.0
     devDependencies:
       '@testing-library/jest-dom':
-        specifier: ^6.9.1
+        specifier: 6.9.1
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.2
+        specifier: 16.3.2
         version: 16.3.2(@testing-library/dom@8.20.1)(@types/react-dom@18.3.7(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@testing-library/user-event':
-        specifier: ^14.6.1
+        specifier: 14.6.1
         version: 14.6.1(@testing-library/dom@8.20.1)
       '@vitejs/plugin-react':
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1(vite@8.0.10(@types/node@25.6.0)(jiti@1.21.7)(terser@5.46.2))
       jsdom:
-        specifier: ^29.0.2
+        specifier: 29.0.2
         version: 29.0.2
       vite:
-        specifier: ^8.0.10
+        specifier: 8.0.10
         version: 8.0.10(@types/node@25.6.0)(jiti@1.21.7)(terser@5.46.2)
       vitest:
-        specifier: ^4.1.5
+        specifier: 4.1.5
         version: 4.1.5(@types/node@25.6.0)(jsdom@29.0.2)(vite@8.0.10(@types/node@25.6.0)(jiti@1.21.7)(terser@5.46.2))
 
 packages:

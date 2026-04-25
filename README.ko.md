@@ -73,12 +73,37 @@ pnpm build
 
 ## 기술 스택
 
-- React
-- 상태 관리를 위한 Redux
+- React 19
+- Vite (빌드 도구, Create React App 대체)
+- Vitest (테스트 러너)
+- 상태 관리를 위한 Redux Toolkit
+- React Router 7
 - 국제화를 위한 i18next
 - 지도를 위한 Leaflet
 - 데이터 시각화를 위한 Highcharts
-- 스타일링을 위한 Bootstrap/Bootswatch
+- Bootstrap 5 (react-bootstrap, bootswatch 사용)
+
+## 공급망 보안
+
+공급망 공격 위험을 줄이기 위해 [`package.json`](./package.json)의 모든
+직접 의존성은 **정확한 버전으로 고정(pinning)** 되어 있습니다 (`^`, `~`
+등의 범위 접두사를 사용하지 않습니다). 이 정책으로 `pnpm install`은
+어디서 실행해도 동일한 의존성 그래프를 만들고, 업스트림 메인테이너가
+(혹은 탈취된 계정이) 새 설치 환경에 악성 버전을 조용히 주입하는 것을
+막습니다.
+
+이는 `pnpm-lock.yaml`로 보강됩니다. lockfile은 모든 전이 패키지의
+SHA-512 무결성 해시를 저장하므로, 변조된 tarball은 설치 자체가
+실패합니다.
+
+의존성을 업데이트할 때는:
+
+1. 의도한 패키지만 명시적으로 업데이트합니다 (예: `pnpm update <pkg>`).
+   범위가 없는 `pnpm update`는 사용하지 마세요.
+2. 새 릴리스 노트/changelog를 먼저 검토합니다.
+3. `package.json`과 갱신된 `pnpm-lock.yaml`을 함께 커밋합니다.
+4. 직접 의존성은 계속 고정 상태(`^`/`~` 없음)로 유지합니다. 전이
+   의존성은 lockfile이 관리합니다.
 
 ## 라이선스
 

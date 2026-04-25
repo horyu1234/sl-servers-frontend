@@ -73,12 +73,37 @@ If you have any questions about translations, please contact: Discord Username: 
 
 ## Tech Stack
 
-- React
-- Redux for state management
+- React 19
+- Vite (build tool, replacing Create React App)
+- Vitest (test runner)
+- Redux Toolkit for state management
+- React Router 7
 - i18next for internationalization
 - Leaflet for maps
 - Highcharts for data visualization
-- Bootstrap/Bootswatch for styling
+- Bootstrap 5 (via react-bootstrap and bootswatch)
+
+## Supply Chain Security
+
+To reduce the risk of supply chain attacks, every direct dependency in
+[`package.json`](./package.json) is **pinned to an exact version**
+(no `^`, `~`, or other range prefixes). This guarantees that
+`pnpm install` produces the same dependency graph everywhere and
+prevents an upstream maintainer (or a compromised account) from
+silently shipping a malicious version into a fresh install.
+
+This is reinforced by `pnpm-lock.yaml`, which also stores SHA-512
+integrity hashes for every transitive package — any tampered tarball
+fails install.
+
+When updating dependencies:
+
+1. Update versions deliberately (e.g. `pnpm update <pkg>` for a chosen
+   target, never an unconstrained `pnpm update`).
+2. Verify the new release notes / changelog before bumping.
+3. Commit both `package.json` and the updated `pnpm-lock.yaml`.
+4. Keep direct dependencies pinned (no `^`/`~`); transitive lockfile
+   entries are managed by pnpm.
 
 ## License
 
