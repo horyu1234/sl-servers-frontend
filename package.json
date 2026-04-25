@@ -10,7 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@influxdata/giraffe": "^2.38.1",
     "@reduxjs/toolkit": "^2.11.2",
-    "@sentry/react": "^7.57.0",
+    "@sentry/react": "^10.50.0",
     "axios": "^0.21.1",
     "bootswatch": "^5.3.8",
     "country-list": "^2.3.0",

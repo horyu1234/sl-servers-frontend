@@ -16,12 +16,11 @@ import './styles/global.css';
 Sentry.init({
     dsn: "https://273bce475a7d46cdb126ba29bd99f867@o508489.ingest.sentry.io/4505483920998400",
     integrations: [
-        new Sentry.BrowserTracing({
-            // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
-            tracePropagationTargets: [/^https:\/\/backend\.scplist\.kr\/api/],
-        }),
-        new Sentry.Replay(),
+        Sentry.browserTracingIntegration(),
+        Sentry.replayIntegration(),
     ],
+    // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
+    tracePropagationTargets: [/^https:\/\/backend\.scplist\.kr\/api/],
     // Performance Monitoring
     tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
     // Session Replay
