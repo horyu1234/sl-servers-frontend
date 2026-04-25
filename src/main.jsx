@@ -9,6 +9,7 @@ import {NoticeProvider} from "./components/notice/NoticeContext";
 import NoticeBanner from "./components/notice/NoticeBanner";
 import "./i18n/i18n";
 
+import '@fontsource-variable/inter';
 import 'bootswatch/dist/darkly/bootstrap.min.css';
 import './index.css';
 import './styles/global.css';

@@ -29,8 +29,8 @@ const TrendGraph = ({layers, fluxResponse}) => {
             },
         },
         yAxisLabel: t('server-info.graph.visitors'),
-        legendFont: "1em Pretendard",
-        tickFont: "0.85em Pretendard",
+        legendFont: "1em 'Inter Variable', Inter",
+        tickFont: "0.85em 'Inter Variable', Inter",
     };
 
     return (
