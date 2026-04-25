@@ -17,7 +17,7 @@ const Credit = () => {
 
     return (
         <>
-            <div className="jumbotron" style={{padding: '20px', marginTop: '20px'}}>
+            <div className="bg-body-tertiary rounded" style={{padding: '20px', marginTop: '20px'}}>
                 <h1 className="text-center">Site localization contributors</h1>
                 <ul>
                     {languages.map(language => (
@@ -32,7 +32,7 @@ const Credit = () => {
                     ))}
                 </ul>
             </div>
-            <div className="jumbotron" style={{padding: '20px', marginTop: '20px'}}>
+            <div className="bg-body-tertiary rounded" style={{padding: '20px', marginTop: '20px'}}>
                 <h1 className="text-center">Third Party Licenses</h1>
 
                 {Object.keys(groupedLicenses).map((licenseName, licenseIdx) => (
@@ -43,7 +43,7 @@ const Credit = () => {
 
                         {groupedLicenses[licenseName].map((thirdParty, thirdPartyIdx) => (
                             <span key={`${licenseIdx}-${thirdPartyIdx}`}
-                                  className="mr-3">
+                                  className="me-3">
                             {thirdParty.name} <a
                                 href={thirdParty.licenseUrl} target="_blank"
                                 rel="noreferrer">License</a>

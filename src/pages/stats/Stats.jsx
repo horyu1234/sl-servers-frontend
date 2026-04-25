@@ -49,23 +49,23 @@ const Stats = () => {
 
     return (
         <div className="container">
-            <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                 <h3 className="col-12 text-center">{t('all-stats.users.title')}</h3>
 
-                <div className="col-12 form-group">
+                <div className="col-12 mb-3">
                     <div className="input-group">
                         <label className="col-form-label" style={{width: '160px'}}>
                             {t('all-stats.users.show-all.name')}
                         </label>
-                        <div className="custom-control custom-switch mt-1">
-                            <input type="checkbox" className="custom-control-input" id="show-all"
+                        <div className="form-check form-switch mt-1">
+                            <input type="checkbox" className="form-check-input" id="show-all"
                                    checked={showAll} onChange={() => setShowAll(!showAll)}/>
-                            <label className="custom-control-label" htmlFor="show-all"/>
+                            <label className="form-check-label" htmlFor="show-all"/>
                         </div>
                     </div>
                 </div>
 
-                <div className="col-12 form-group">
+                <div className="col-12 mb-3">
                     <div className="input-group">
                         <label className="col-form-label" htmlFor="users-compare-country" style={{width: '160px'}}>
                             {t('all-stats.users.select-compare-country.name')}
@@ -102,7 +102,7 @@ const Stats = () => {
                 </div>
             </div>
 
-            <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                 <h3 className="col-12 text-center">{t('all-stats.mod-loader.title')}</h3>
                 <div className="col-12">
                     <div id="mod-loader-chart">

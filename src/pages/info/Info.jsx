@@ -63,7 +63,7 @@ const Info = (
     if (!isNumber(serverId) || server === null) {
         return (
             <div className="container">
-                <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+                <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                     <h3 className="col-12 text-center">{t('server-info.title')}</h3>
                     <Alert variant="danger" className="mt-3 mb-0">
                         {t('server-info.not-exist')}
@@ -76,7 +76,7 @@ const Info = (
     if (isServerInfoError) {
         return (
             <div className="container">
-                <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+                <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                     <h3 className="col-12 text-center">{t('server-info.title')}</h3>
                     <Alert variant="danger" className="mt-3 mb-0">
                         {t('general.server-error')}
@@ -88,7 +88,7 @@ const Info = (
 
     return (
         <div className="container">
-            <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                 <h3 className="col-12 text-center">{t('server-info.title')}</h3>
 
                 {/*{isServerInfoFetching && <Alert variant="info" className="mt-3 mb-0">*/}

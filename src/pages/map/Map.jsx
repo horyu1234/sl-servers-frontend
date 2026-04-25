@@ -21,7 +21,7 @@ const Map = () => {
     if (fetching) return null;
     return (
         <div className="container-fluid">
-            <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                 <h3 className="col-12 text-center">{t('all-server-map.title')}</h3>
                 <div className="col-12">
                     <MapContainer

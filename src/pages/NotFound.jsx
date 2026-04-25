@@ -6,7 +6,7 @@ const NotFound = () => {
 
     return (
         <div className="container">
-            <div className="jumbotron" style={{padding: "20px", marginTop: "20px"}}>
+            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
                 {t('general.not-found')}
             </div>
         </div>

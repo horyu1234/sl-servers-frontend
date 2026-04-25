@@ -82,7 +82,7 @@ const ServerFilter = (
             <div className="card-body py-3">
                 <div className="row">
                     <div id="search-option" className="col-sm-12 col-md-8">
-                        <div className="form-group mb-3">
+                        <div className="mb-3">
                             <div className="input-group">
                                 <label className="col-form-label search-option-name fw-bold" htmlFor="server-search">
                                     {t('filter-option.server-search.name')}
@@ -94,15 +94,13 @@ const ServerFilter = (
                                     onKeyDown={handleKeyPressSearchFilter}
                                 />
 
-                                <div className="input-group-append">
-                                    <button className="btn btn-primary" type="button" onClick={updateServerList}>
-                                        {t('filter-option.server-search.search-btn')}
-                                    </button>
-                                </div>
+                                <button className="btn btn-primary" type="button" onClick={updateServerList}>
+                                    {t('filter-option.server-search.search-btn')}
+                                </button>
                             </div>
                         </div>
 
-                        <div className="form-group mb-3">
+                        <div className="mb-3">
                             <div className="input-group text-start">
                                 <label className="col-form-label search-option-name fw-bold" htmlFor="country-filter">
                                     {t('filter-option.country-filter')}
