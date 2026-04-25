@@ -1,8 +1,8 @@
 {
   "general": {
-    "language-change": "Changement de la langue en {{language}}. Vous pourriez avoir besoin de recharger la page.",
+    "language-change": "Langue changée : {{language}}. Un rechargement peut être nécessaire.",
     "not-found": "La page que vous avez demandée est introuvable.",
-    "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreures sont généralement temporaires, veuillez reéssayer plus tard. Si le problème persiste, merci de contacter 'horyu' sur Discord."
+    "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci de contacter 'horyu' sur Discord."
   },
   "navbar": {
     "title": "Serveurs SCP:SL",
@@ -14,18 +14,18 @@
     "unit": "Unité:"
   },
   "select": {
-    "placeholder": "Selectionnez un élément",
+    "placeholder": "Sélectionnez un élément",
     "empty": "Aucune sélection"
   },
   "filter-option": {
     "server-search": {
-      "name": "Rechercher un serveurs",
+      "name": "Rechercher un serveur",
       "placeholder": "Entrez les termes de recherche",
       "search-btn": "Rechercher"
     },
     "country-filter": "Filtre de pays",
-    "hide-empty": "Cacher les serveurs vides",
-    "hide-full": "Cacher les serveurs pleins",
+    "hide-empty": "Masquer les serveurs vides",
+    "hide-full": "Masquer les serveurs complets",
     "refresh-btn": "Recharger la liste",
     "refreshing": "Rechargement de la liste...",
     "filter-options-title": "Options de filtrage",
@@ -38,8 +38,8 @@
       "modded": "Moddé",
       "order-type": {
         "name": "Trier par",
-        "player-desc": "Un grand nombre de personnes",
-        "player-asc": "Un petit nombre de personnes",
+        "player-desc": "Beaucoup de joueurs",
+        "player-asc": "Peu de joueurs",
         "distance-asc": "Courte distance",
         "distance-desc": "Longue distance"
       }
@@ -69,7 +69,7 @@
       "distance": "Distance"
     },
     "loading": "Chargement des données du serveur...",
-    "empty": "Aucune données à afficher",
+    "empty": "Aucune donnée à afficher.",
     "tech": {
       "yes": "Oui",
       "no": "Non",
@@ -131,7 +131,7 @@
     "notice": "SCP: Secret Laboratory est un jeu publié par Northwood Studios™, ce site n’est pas affilié à Northwood Studios™.<br/>Toutes les marques et marques déposées sont la propriété de leurs propriétaires respectifs."
   },
   "cookie-notice": {
-    "message": "Ce site utilise des cookies pour vous assurer d’obtenir la meilleure expérience sur notre site Web.",
+    "message": "Ce site utilise des cookies afin de vous offrir la meilleure expérience possible.",
     "dismiss": "Accepter",
     "link-text": "En savoir plus"
   },
@@ -142,7 +142,7 @@
         "name": "Sélectionner un pays"
       },
       "show-all": {
-        "name": "Montrer les données de tous les pays"
+        "name": "Afficher les données de tous les pays"
       },
       "graph": {
         "all-country": "Tous les pays",
@@ -150,7 +150,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistiques des Mod loader",
+      "title": "Statistiques des mod loaders",
       "tooltip": "Mod Loader"
     }
   },
