@@ -6,6 +6,12 @@
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-border: hsl(var(--border));
@@ -26,6 +32,12 @@
     --foreground: 220 14% 91%;         /* #e6e8eb */
     --card: 220 14% 7%;                /* #11141a */
     --card-foreground: 220 14% 91%;
+    --popover: 220 14% 7%;             /* same as --card */
+    --popover-foreground: 220 14% 91%;
+    --secondary: 220 14% 14%;          /* same as --border */
+    --secondary-foreground: 220 14% 91%;
+    --accent: 220 14% 14%;
+    --accent-foreground: 220 14% 91%;
     --muted: 220 14% 12%;
     --muted-foreground: 220 9% 46%;    /* #5a6371 */
     --border: 220 14% 14%;             /* #1c1f24 */
