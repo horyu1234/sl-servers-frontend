@@ -24,10 +24,10 @@ git clone git@github.com:horyu1234/sl-servers-frontend.git
 cd sl-servers-frontend
 
 # 의존성을 설치합니다
-yarn install
+pnpm install
 
 # 개발 서버를 시작합니다
-yarn start
+pnpm start
 ```
 
 ## 풀 리퀘스트 프로세스

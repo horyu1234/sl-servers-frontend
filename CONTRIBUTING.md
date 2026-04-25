@@ -24,10 +24,10 @@ git clone git@github.com:horyu1234/sl-servers-frontend.git
 cd sl-servers-frontend
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Start development server
-yarn start
+pnpm start
 ```
 
 ## Pull Request Process

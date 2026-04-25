@@ -3,10 +3,10 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Build/Run Commands
-- `yarn start` - Start development server on port 3185
-- `yarn build` - Build production version
-- `yarn test` - Run all tests
-- `yarn test src/path/to/test.js` - Run a specific test file
+- `pnpm start` - Start development server on port 3185
+- `pnpm build` - Build production version
+- `pnpm test` - Run all tests
+- `pnpm test src/path/to/test.js` - Run a specific test file
 
 ## Code Style Guidelines
 - WebStorm default code formatting settings are used

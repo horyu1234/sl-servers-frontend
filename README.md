@@ -19,7 +19,7 @@ Frontend application for displaying and managing SCP: Secret Laboratory servers 
 ### Prerequisites
 
 - Node.js (LTS version recommended)
-- Yarn (Will be migrating to pnpm in the future)
+- pnpm
 
 ### Installation
 
@@ -29,10 +29,10 @@ git clone https://github.com/yourusername/scp-sl-server-list.git
 cd scp-sl-server-list
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Start development server
-yarn start
+pnpm start
 ```
 
 The application will start on port 3185 by default.
@@ -40,7 +40,7 @@ The application will start on port 3185 by default.
 ### Building for Production
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## Contributing
@@ -67,7 +67,6 @@ If you have any questions about translations, please contact: Discord Username: 
 
 ## Future Plans
 
-- Migration from Yarn to pnpm package manager
 - UI/UX improvements
 - Performance optimizations
 - Adding more data visualization options
