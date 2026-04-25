@@ -24,3 +24,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 .idea
+
+# Brainstorming visual companion (local-only mockups)
+/.superpowers/
