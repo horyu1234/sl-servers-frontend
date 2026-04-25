@@ -115,3 +115,10 @@ body {
     padding-right: 1rem;
   }
 }
+
+/* sentinel: forces Tailwind v4 to emit semantic utilities so build verification
+ * can grep for them. Removed in Plan F together with the rest of this file.
+ * Do not delete before Plan F.
+ */
+@reference "./styles/globals.css";
+.__tw_sentinel { @apply bg-background text-foreground border-border bg-primary text-primary-foreground; }
