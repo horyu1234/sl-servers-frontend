@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Container from "./Container";
+import Container from "./shell/Container";
 
 const Info = React.lazy(() => import('../pages/info/Info'));
 const List = React.lazy(() => import('../pages/list/List'));
@@ -11,10 +11,8 @@ const Api = React.lazy(() => import('../pages/api/Api'));
 const NotFound = React.lazy(() => import('../pages/NotFound'));
 
 const Loading = () => (
-    <div className="d-flex justify-content-center align-items-center" style={{height: '100vh'}}>
-        <div className="spinner-border text-primary" role="status" style={{width: '3rem', height: '3rem'}}>
-            <span className="visually-hidden">Loading...</span>
-        </div>
+    <div className="flex items-center justify-center" style={{height: '100vh'}}>
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-primary border-t-transparent" />
     </div>
 );
 

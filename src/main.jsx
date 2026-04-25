@@ -6,7 +6,7 @@ import {Provider} from "react-redux";
 import store from "./store";
 import reportWebVitals from './reportWebVitals';
 import {NoticeProvider} from "./components/notice/NoticeContext";
-import NoticeBanner from "./components/notice/NoticeBanner";
+import NoticeBanner from "./components/shell/NoticeBanner";
 import {ConsentProvider} from "./components/consent/ConsentProvider";
 import {Toaster} from "./components/ui/sonner";
 import "./i18n/i18n";
