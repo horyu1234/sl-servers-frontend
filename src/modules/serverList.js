@@ -1,4 +1,3 @@
-import {handleActions} from "redux-actions";
 import {getServerListAPI} from "../apiClient";
 
 const SERVER_LIST_FETCHING = "SERVER_LIST_FETCHING";
@@ -37,34 +36,35 @@ const initialState = {
     }
 }
 
-export default handleActions({
-    [SERVER_LIST_FETCHING]: (state, action) => {
-        return {
-            ...state,
-            fetching: true,
-            error: false,
-            data: {
-                ...state.data,
-                servers: []
-            }
-        };
-    },
-    [SERVER_LIST_SUCCESS]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            data: action.payload.data
-        };
-    },
-    [SERVER_LIST_FAILURE]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            error: true,
-            data: {
-                ...state.data,
-                servers: []
-            }
-        }
+export default function serverList(state = initialState, action) {
+    switch (action.type) {
+        case SERVER_LIST_FETCHING:
+            return {
+                ...state,
+                fetching: true,
+                error: false,
+                data: {
+                    ...state.data,
+                    servers: []
+                }
+            };
+        case SERVER_LIST_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                data: action.payload.data
+            };
+        case SERVER_LIST_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                error: true,
+                data: {
+                    ...state.data,
+                    servers: []
+                }
+            };
+        default:
+            return state;
     }
-}, initialState);
+}

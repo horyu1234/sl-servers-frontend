@@ -33,7 +33,6 @@
     "react-toastify": "^9.0.8",
     "react-world-flags": "^1.5.1",
     "redux": "^4.0.5",
-    "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "swagger-ui-react": "^5.1.0",

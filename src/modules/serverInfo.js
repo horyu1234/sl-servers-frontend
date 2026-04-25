@@ -1,4 +1,3 @@
-import {handleActions} from "redux-actions";
 import {getServerInfoAPI} from "../apiClient";
 
 const SERVER_INFO_FETCHING = "SERVER_INFO_FETCHING";
@@ -29,28 +28,29 @@ const initialState = {
     data: {}
 }
 
-export default handleActions({
-    [SERVER_INFO_FETCHING]: (state, action) => {
-        return {
-            ...state,
-            fetching: true,
-            error: false,
-            data: {}
-        };
-    },
-    [SERVER_INFO_SUCCESS]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            data: action.payload.data
-        };
-    },
-    [SERVER_INFO_FAILURE]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            error: true,
-            data: {}
-        }
+export default function serverInfo(state = initialState, action) {
+    switch (action.type) {
+        case SERVER_INFO_FETCHING:
+            return {
+                ...state,
+                fetching: true,
+                error: false,
+                data: {}
+            };
+        case SERVER_INFO_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                data: action.payload.data
+            };
+        case SERVER_INFO_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                error: true,
+                data: {}
+            };
+        default:
+            return state;
     }
-}, initialState);
+}

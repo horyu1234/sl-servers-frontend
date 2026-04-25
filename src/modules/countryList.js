@@ -1,4 +1,3 @@
-import {handleActions} from "redux-actions";
 import {getCountryListAPI} from "../apiClient";
 
 const COUNTRY_LIST_FETCHING = "COUNTRY_LIST_FETCHING";
@@ -29,28 +28,29 @@ const initialState = {
     data: []
 }
 
-export default handleActions({
-    [COUNTRY_LIST_FETCHING]: (state, action) => {
-        return {
-            ...state,
-            fetching: true,
-            error: false,
-            data: []
-        };
-    },
-    [COUNTRY_LIST_SUCCESS]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            data: action.payload.data
-        };
-    },
-    [COUNTRY_LIST_FAILURE]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            error: true,
-            data: []
-        }
+export default function countryList(state = initialState, action) {
+    switch (action.type) {
+        case COUNTRY_LIST_FETCHING:
+            return {
+                ...state,
+                fetching: true,
+                error: false,
+                data: []
+            };
+        case COUNTRY_LIST_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                data: action.payload.data
+            };
+        case COUNTRY_LIST_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                error: true,
+                data: []
+            };
+        default:
+            return state;
     }
-}, initialState);
+}

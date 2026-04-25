@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie';
-import {handleActions} from "redux-actions";
 
 const SETTING_SI_CHANGE = "SETTING/SI_CHANGE";
 
@@ -16,11 +15,14 @@ const initialState = {
     si: Cookies.get(COOKIE_USER_SI) || 'km'
 }
 
-export default handleActions({
-    [SETTING_SI_CHANGE]: (state, action) => {
-        return {
-            ...state,
-            si: action.payload
-        };
+export default function setting(state = initialState, action) {
+    switch (action.type) {
+        case SETTING_SI_CHANGE:
+            return {
+                ...state,
+                si: action.payload
+            };
+        default:
+            return state;
     }
-}, initialState);
+}

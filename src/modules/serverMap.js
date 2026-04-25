@@ -1,4 +1,3 @@
-import {handleActions} from "redux-actions";
 import {getServerMapAPI} from "../apiClient";
 
 const SERVER_MAP_FETCHING = "SERVER_MAP_FETCHING";
@@ -29,28 +28,29 @@ const initialState = {
     data: []
 }
 
-export default handleActions({
-    [SERVER_MAP_FETCHING]: (state, action) => {
-        return {
-            ...state,
-            fetching: true,
-            error: false,
-            data: []
-        };
-    },
-    [SERVER_MAP_SUCCESS]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            data: action.payload.data
-        };
-    },
-    [SERVER_MAP_FAILURE]: (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            error: true,
-            data: []
-        }
+export default function serverMap(state = initialState, action) {
+    switch (action.type) {
+        case SERVER_MAP_FETCHING:
+            return {
+                ...state,
+                fetching: true,
+                error: false,
+                data: []
+            };
+        case SERVER_MAP_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                data: action.payload.data
+            };
+        case SERVER_MAP_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                error: true,
+                data: []
+            };
+        default:
+            return state;
     }
-}, initialState);
+}
