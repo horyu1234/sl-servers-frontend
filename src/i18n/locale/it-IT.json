@@ -2,20 +2,20 @@
   "general": {
     "language-change": "Lingua impostata su {{language}}. Potrebbe essere necessario ricaricare la pagina.",
     "not-found": "La pagina che hai richiesto non esiste.",
-    "server-error": "Si è verificato un errore durante il recupero dei dati dal server. Questi problemi sono in genere temporanei, quindi si prega di riprovare più tardi. Se il problema persiste, contatta 'horyu' su Discord."
+    "server-error": "Si è verificato un errore durante il recupero dei dati dal server. Questi problemi sono in genere temporanei, si prega di riprovare più tardi. Se il problema persiste, contatta 'horyu' su Discord."
   },
   "navbar": {
-    "title": "Server SCP: Secret Laboratory",
+    "title": "SCP: SL Server",
     "server-list": "Lista dei Server",
     "all-stats": "Statistiche complete",
     "all-server-map": "Mappa dei Server",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Crediti",
+    "language": "Lingua:",
+    "unit": "Unità:"
   },
   "select": {
-    "placeholder": "Per favore, seleziona qualcosa",
-    "empty": "Non hai selezionato niente"
+    "placeholder": "Per favore, seleziona qualcosa.",
+    "empty": "Non hai selezionato nulla."
   },
   "filter-option": {
     "server-search": {
@@ -28,7 +28,7 @@
     "hide-full": "Nascondi i server pieni",
     "refresh-btn": "Ricarica la lista",
     "refreshing": "Caricamento lista in corso...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Opzioni filtri",
     "yes-no-filter": {
       "none": "Includi tutto",
       "yes": "Si",
@@ -38,8 +38,8 @@
       "modded": "Moddato",
       "order-type": {
         "name": "Ordina per tipo",
-        "player-desc": "Un grande numero di giocatori",
-        "player-asc": "Un piccolo numero di giocatori",
+        "player-desc": "Maggior numero di giocatori",
+        "player-asc": "Minor numero di giocatori",
         "distance-asc": "Più vicino",
         "distance-desc": "Più lontano"
       }
@@ -51,13 +51,13 @@
     "display-users": "Utenti in lista: {{count}}",
     "display-servers": "Server in lista: {{count}}",
     "offline-servers": "Server offline (nella cache): {{count}}",
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
+    "users-title": "Utenti",
+    "servers-title": "Server",
+    "total-online-users": "Utenti online totali",
+    "filtered-users": "Utenti filtrati",
     "online-label": "Online",
     "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "filtered-servers": "Server filtrati"
   },
   "server-list": {
     "head": {
@@ -98,8 +98,8 @@
       "visitors": "Visitatori",
       "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "L'ora di inizio deve essere precedente all'ora di fine.",
+        "date-format": "dd-MM-yyyy aa hh:mm",
+        "invalid-start-time": "L'ora di inizio deve essere prima dell'ora di fine.",
         "invalid-stop-time": "L'ora di fine deve essere successiva all'ora di inizio.",
         "data-range": "Periodo",
         "start-time": "Da",
@@ -155,9 +155,9 @@
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
+    "credit": "Crediti",
+    "language": "Lingua:",
+    "unit": "Unità:",
     "title": "Mappa di tutti i server",
     "server-info-btn": "Clicca per vedere le informazioni del server"
   }
