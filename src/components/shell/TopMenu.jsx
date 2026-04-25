@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { List, BarChart3, Map as MapIcon, Settings2, Code2, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import LanguageSelect from '../topmenu/LanguageSelect';
 import SiSelect from '../topmenu/SiSelect';
@@ -78,6 +78,7 @@ export default function TopMenu() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] flex flex-col">
             <SheetTitle className="sr-only">Menu</SheetTitle>
+            <SheetDescription className="sr-only">Site navigation</SheetDescription>
             <nav className="flex flex-col gap-1 mt-6">
               {items.map((item) => (
                 <NavItem key={item.to} {...item} onClick={() => setMobileOpen(false)} />
