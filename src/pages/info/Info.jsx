@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from "@reduxjs/toolkit";
 import {useParams} from "react-router-dom";
 import * as serverInfoActions from "../../modules/serverInfo";
 import ServerDistance from "../../components/ServerDistance";

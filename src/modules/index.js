@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import {combineReducers} from "@reduxjs/toolkit";
 import setting from "./setting";
 import countryList from "./countryList";
 import serverFilter from "./serverFilter";

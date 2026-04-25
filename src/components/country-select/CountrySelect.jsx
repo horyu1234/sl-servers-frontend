@@ -4,7 +4,7 @@ import getStyles from "../SelectCustomStyles";
 import getCountryName from "../../i18n/i18n-countries";
 import {useTranslation} from "react-i18next";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from "@reduxjs/toolkit";
 import * as countryListActions from "../../modules/countryList";
 import Flag from 'react-world-flags'
 

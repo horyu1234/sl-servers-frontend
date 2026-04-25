@@ -4,7 +4,7 @@ import YesNoFilter from "../../components/YesNoFilter";
 import SortType from "../../components/SortType";
 import {useTranslation} from "react-i18next";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from "@reduxjs/toolkit";
 import * as serverFilterActions from "../../modules/serverFilter";
 import * as serverListActions from "../../modules/serverList";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import Select from "react-select";
 import getStyles from "../SelectCustomStyles";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from "@reduxjs/toolkit";
 import * as settingActions from "../../modules/setting";
 
 const SiSelect = (

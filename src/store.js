@@ -1,13 +1,11 @@
+import {configureStore} from '@reduxjs/toolkit';
 import Cookies from 'js-cookie';
-import {applyMiddleware, createStore} from "redux";
 import rootReducer from "./modules";
-import {composeWithDevTools} from "redux-devtools-extension";
-import thunk from "redux-thunk";
 import {COOKIE_USER_SI} from "./modules/setting";
 
-const store = createStore(rootReducer, composeWithDevTools(
-    applyMiddleware(thunk)
-));
+const store = configureStore({
+    reducer: rootReducer,
+});
 
 const setCookie = (key, value) => {
     if (Cookies.get(key) === value) return;

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from "@reduxjs/toolkit";
 import {Container, Row, Col, Card} from "react-bootstrap";
 import ServerFilter from "./ServerFilter";
 import ServerStats from "./ServerStats";
