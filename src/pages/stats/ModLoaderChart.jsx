@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import Highcharts from 'highcharts'
-import HighchartsDrillDown from 'highcharts/modules/drilldown'
+import 'highcharts/modules/drilldown'
 import HighchartsReact from 'highcharts-react-official'
 import Chart from "../../chartOption";
 import {getModLoaderChartAPI} from "../../apiClient";
 import {Alert} from "react-bootstrap";
 
 Highcharts.setOptions(Chart.globalOptions);
-HighchartsDrillDown(Highcharts);
 
 const ModLoaderChart = () => {
     const {t} = useTranslation();

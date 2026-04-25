@@ -5,7 +5,7 @@ import {ToastContainer} from "react-toastify";
 import {CookieConsent} from "react-cookie-consent";
 import {useTranslation} from "react-i18next";
 
-import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Info = React.lazy(() => import('../pages/info/Info'));
 const List = React.lazy(() => import('../pages/list/List'));
