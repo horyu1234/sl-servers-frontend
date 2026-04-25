@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../store';
+import '../../i18n/i18n';      // initialize i18next so t() returns real strings
+import i18n from '../../i18n/i18n';
 import Container from './Container';
 
 describe('Container (shell)', () => {
@@ -15,6 +17,11 @@ describe('Container (shell)', () => {
       </Provider>
     );
     expect(screen.getByTestId('page-body')).toBeInTheDocument();
-    expect(screen.getAllByRole('link').length).toBeGreaterThan(0);
+
+    // Verify a translated label is actually rendered — guards against a future
+    // regression where t() silently returns raw keys.
+    const expectedLabel = i18n.t('navbar.server-list');
+    expect(expectedLabel).not.toBe('navbar.server-list');
+    expect(screen.getByRole('link', { name: new RegExp(expectedLabel, 'i') })).toBeInTheDocument();
   });
 });

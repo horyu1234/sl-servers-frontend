@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { readConsent, subscribe, CATEGORIES } from './silktideClient';
+import { readConsent, subscribe, CATEGORIES, startSameTabPolling, stopSameTabPolling } from './silktideClient';
 
 const STORAGE_KEY = 'silktideCookieChoices';
 
@@ -74,5 +74,60 @@ describe('silktideClient.subscribe', () => {
     subscribe(cb);
     window.dispatchEvent(new StorageEvent('storage', { key: 'something-else' }));
     expect(cb).not.toHaveBeenCalled();
+  });
+});
+
+describe('silktideClient.startSameTabPolling', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    stopSameTabPolling();
+    vi.useRealTimers();
+  });
+
+  it('fires subscribers when localStorage changes WITHOUT a storage event (same-tab path)', () => {
+    vi.useFakeTimers();
+    const cb = vi.fn();
+    const unsubscribe = subscribe(cb);
+    startSameTabPolling();
+
+    // Same-tab write — no `storage` event is dispatched.
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+
+    // Polling interval is 500ms.
+    vi.advanceTimersByTime(550);
+
+    expect(cb).toHaveBeenCalledTimes(1);
+    unsubscribe();
+  });
+
+  it('stops firing after stopSameTabPolling()', () => {
+    vi.useFakeTimers();
+    const cb = vi.fn();
+    const unsubscribe = subscribe(cb);
+    startSameTabPolling();
+    stopSameTabPolling();
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+    vi.advanceTimersByTime(2000);
+
+    expect(cb).not.toHaveBeenCalled();
+    unsubscribe();
+  });
+
+  it('is idempotent — calling startSameTabPolling twice does not double-fire subscribers', () => {
+    vi.useFakeTimers();
+    const cb = vi.fn();
+    const unsubscribe = subscribe(cb);
+    startSameTabPolling();
+    startSameTabPolling();
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+    vi.advanceTimersByTime(550);
+
+    expect(cb).toHaveBeenCalledTimes(1);
+    unsubscribe();
   });
 });
