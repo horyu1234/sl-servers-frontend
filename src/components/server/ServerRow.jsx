@@ -4,8 +4,8 @@ import { ChevronRight } from 'lucide-react';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
 import SafeHtml from '../shell/SafeHtml';
+import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
-import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
 function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
@@ -32,7 +32,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
       <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
-        <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
+        <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
         <span>{server.isoCode}</span>
       </div>
       <div className="font-mono text-[11px] text-muted-foreground tabular-nums truncate" title={`${server.ip}:${server.port}`}>

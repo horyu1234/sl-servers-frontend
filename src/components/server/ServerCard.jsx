@@ -4,8 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
 import SafeHtml from '../shell/SafeHtml';
+import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
-import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
 export function ServerCard({ server, trend }) {
@@ -34,7 +34,7 @@ export function ServerCard({ server, trend }) {
             )}
           </div>
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0">
-            <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
+            <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
             <span>{server.isoCode}</span>
           </div>
         </div>
