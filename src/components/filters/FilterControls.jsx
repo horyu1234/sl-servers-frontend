@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -12,23 +12,42 @@ const TRISTATE = [
   { value: 'false', i18nLeaf: 'no'  },
 ];
 
-export function FilterControls({ value, onChange }) {
-  const { t } = useTranslation();
-  const set = (patch) => onChange({ ...value, ...patch });
+function CheckboxField({ id, checked, onCheckedChange, children }) {
+  return (
+    <div className="flex items-center gap-2">
+      <Checkbox id={id} checked={checked} onCheckedChange={onCheckedChange} />
+      <Label htmlFor={id} className="text-sm cursor-pointer leading-none">
+        {children}
+      </Label>
+    </div>
+  );
+}
 
-  const tri = (key, title) => (
-    <div className="space-y-1.5">
+function TriStateField({ name, title, value, onChange, t }) {
+  const baseId = useId();
+  return (
+    <div className="space-y-2">
       <Label className="text-xs uppercase tracking-wider text-muted-foreground">{title}</Label>
-      <RadioGroup value={value[key]} onValueChange={(v) => set({ [key]: v })} className="flex gap-3">
-        {TRISTATE.map((opt) => (
-          <Label key={opt.value} className="flex items-center gap-1.5 text-sm cursor-pointer">
-            <RadioGroupItem value={opt.value} />
-            <span className="capitalize">{t(`filter-option.yes-no-filter.${opt.i18nLeaf}`)}</span>
-          </Label>
-        ))}
+      <RadioGroup value={value} onValueChange={onChange} className="flex flex-wrap gap-x-4 gap-y-1.5">
+        {TRISTATE.map((opt) => {
+          const id = `${baseId}-${opt.value}`;
+          return (
+            <div key={opt.value} className="flex items-center gap-1.5">
+              <RadioGroupItem value={opt.value} id={id} />
+              <Label htmlFor={id} className="text-sm cursor-pointer leading-none whitespace-nowrap">
+                {t(`filter-option.yes-no-filter.${opt.i18nLeaf}`)}
+              </Label>
+            </div>
+          );
+        })}
       </RadioGroup>
     </div>
   );
+}
+
+export function FilterControls({ value, onChange }) {
+  const { t } = useTranslation();
+  const set = (patch) => onChange({ ...value, ...patch });
 
   return (
     <div className="space-y-5">
@@ -43,21 +62,49 @@ export function FilterControls({ value, onChange }) {
           placeholder={t('filter-option.server-search.placeholder')}
         />
       </div>
+
       <Separator />
-      <div className="space-y-2">
-        <Label className="flex items-center gap-2 text-sm cursor-pointer">
-          <Checkbox checked={value.hideEmptyServer} onCheckedChange={(c) => set({ hideEmptyServer: c === true })} />
-          <span>{t('filter-option.hide-empty')}</span>
-        </Label>
-        <Label className="flex items-center gap-2 text-sm cursor-pointer">
-          <Checkbox checked={value.hideFullServer} onCheckedChange={(c) => set({ hideFullServer: c === true })} />
-          <span>{t('filter-option.hide-full')}</span>
-        </Label>
+
+      <div className="space-y-2.5">
+        <CheckboxField
+          id="filter-hide-empty"
+          checked={value.hideEmptyServer}
+          onCheckedChange={(c) => set({ hideEmptyServer: c === true })}
+        >
+          {t('filter-option.hide-empty')}
+        </CheckboxField>
+        <CheckboxField
+          id="filter-hide-full"
+          checked={value.hideFullServer}
+          onCheckedChange={(c) => set({ hideFullServer: c === true })}
+        >
+          {t('filter-option.hide-full')}
+        </CheckboxField>
       </div>
+
       <Separator />
-      {tri('friendlyFire', t('filter-option.yes-no-filter.friendly-fire'))}
-      {tri('whitelist',    t('filter-option.yes-no-filter.whitelist'))}
-      {tri('modded',       t('filter-option.yes-no-filter.modded'))}
+
+      <TriStateField
+        name="friendlyFire"
+        title={t('filter-option.yes-no-filter.friendly-fire')}
+        value={value.friendlyFire}
+        onChange={(v) => set({ friendlyFire: v })}
+        t={t}
+      />
+      <TriStateField
+        name="whitelist"
+        title={t('filter-option.yes-no-filter.whitelist')}
+        value={value.whitelist}
+        onChange={(v) => set({ whitelist: v })}
+        t={t}
+      />
+      <TriStateField
+        name="modded"
+        title={t('filter-option.yes-no-filter.modded')}
+        value={value.modded}
+        onChange={(v) => set({ modded: v })}
+        t={t}
+      />
     </div>
   );
 }
