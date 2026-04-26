@@ -32,11 +32,11 @@ export default function Credit() {
                 <AccordionContent>
                   <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm">
                     {entries.map((entry) => (
-                      entry.licenseUrl
+                      entry.repository
                         ? (
                           <a
                             key={entry.name}
-                            href={entry.licenseUrl}
+                            href={entry.repository}
                             target="_blank"
                             rel="noreferrer"
                             className="text-muted-foreground hover:text-foreground hover:underline"

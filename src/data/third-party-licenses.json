@@ -1,552 +1,442 @@
 {
   "@asamuzakjp/css-color": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/asamuzaK/cssColor/raw/HEAD/LICENSE",
     "repository": "https://github.com/asamuzaK/cssColor"
   },
   "@asamuzakjp/dom-selector": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/asamuzaK/domSelector/raw/HEAD/LICENSE",
     "repository": "https://github.com/asamuzaK/domSelector"
   },
   "@asamuzakjp/generational-cache": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/asamuzaK/generationalCache/raw/HEAD/LICENSE",
     "repository": "https://github.com/asamuzaK/generationalCache"
   },
   "@asamuzakjp/nwsapi": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/dperini/nwsapi/raw/HEAD/LICENSE",
     "repository": "https://github.com/dperini/nwsapi"
   },
   "@babel/runtime": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/babel/babel/raw/HEAD/LICENSE",
     "repository": "https://github.com/babel/babel"
   },
   "@babel/runtime-corejs3": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/babel/babel/raw/HEAD/LICENSE",
     "repository": "https://github.com/babel/babel"
   },
   "@bramus/specificity": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/bramus/specificity/raw/HEAD/LICENSE",
     "repository": "https://github.com/bramus/specificity"
   },
   "@csstools/color-helpers": {
     "licenses": "MIT-0",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@csstools/css-calc": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@csstools/css-color-parser": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@csstools/css-parser-algorithms": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@csstools/css-syntax-patches-for-csstree": {
     "licenses": "MIT-0",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@csstools/css-tokenizer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/csstools/postcss-plugins/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstools/postcss-plugins"
   },
   "@date-fns/tz": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/date-fns/tz/raw/HEAD/LICENSE",
     "repository": "https://github.com/date-fns/tz"
   },
   "@exodus/bytes": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ExodusOSS/bytes/raw/HEAD/LICENSE",
     "repository": "https://github.com/ExodusOSS/bytes"
   },
   "@floating-ui/core": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/floating-ui/floating-ui/raw/HEAD/LICENSE",
     "repository": "https://github.com/floating-ui/floating-ui"
   },
   "@floating-ui/dom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/floating-ui/floating-ui/raw/HEAD/LICENSE",
     "repository": "https://github.com/floating-ui/floating-ui"
   },
   "@floating-ui/react-dom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/floating-ui/floating-ui/raw/HEAD/LICENSE",
     "repository": "https://github.com/floating-ui/floating-ui"
   },
   "@floating-ui/utils": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/floating-ui/floating-ui/raw/HEAD/LICENSE",
     "repository": "https://github.com/floating-ui/floating-ui"
   },
   "@fontsource-variable/inter": {
     "licenses": "OFL-1.1",
-    "licenseUrl": "https://github.com/fontsource/font-files/raw/HEAD/LICENSE",
     "repository": "https://github.com/fontsource/font-files"
   },
   "@radix-ui/number": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/primitive": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-accordion": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-arrow": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-checkbox": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-collapsible": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-collection": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-compose-refs": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-context": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-dialog": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-direction": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-dismissable-layer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-focus-guards": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-focus-scope": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-id": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-label": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-popover": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-popper": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-portal": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-presence": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-primitive": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-radio-group": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-roving-focus": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-scroll-area": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-select": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-separator": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-slider": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-slot": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-tabs": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-tooltip": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-callback-ref": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-controllable-state": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-effect-event": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-escape-keydown": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-layout-effect": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-previous": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-rect": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-use-size": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/react-visually-hidden": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@radix-ui/rect": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/radix-ui/primitives/raw/HEAD/LICENSE",
     "repository": "https://github.com/radix-ui/primitives"
   },
   "@react-leaflet/core": {
     "licenses": "Hippocratic-2.1",
-    "licenseUrl": "https://github.com/PaulLeCam/react-leaflet/raw/HEAD/LICENSE",
     "repository": "https://github.com/PaulLeCam/react-leaflet"
   },
   "@reduxjs/toolkit": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/reduxjs/redux-toolkit/raw/HEAD/LICENSE",
     "repository": "https://github.com/reduxjs/redux-toolkit"
   },
   "@scarf/scarf": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/scarf-sh/scarf-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/scarf-sh/scarf-js"
   },
   "@sentry-internal/browser-utils": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry-internal/feedback": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry-internal/replay": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry-internal/replay-canvas": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry/browser": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry/core": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@sentry/react": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/HEAD/LICENSE",
     "repository": "https://github.com/getsentry/sentry-javascript"
   },
   "@standard-schema/spec": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/standard-schema/standard-schema/raw/HEAD/LICENSE",
     "repository": "https://github.com/standard-schema/standard-schema"
   },
   "@standard-schema/utils": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/standard-schema/standard-schema/raw/HEAD/LICENSE",
     "repository": "https://github.com/standard-schema/standard-schema"
   },
   "@swagger-api/apidom-ast": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-core": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-error": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-json-pointer": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-api-design-systems": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-arazzo-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-asyncapi-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-asyncapi-3": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-json-schema-2019-09": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-json-schema-2020-12": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-json-schema-draft-4": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-json-schema-draft-6": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-json-schema-draft-7": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-openapi-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-openapi-3-0": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-openapi-3-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-ns-openapi-3-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-api-design-systems-json": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-api-design-systems-yaml": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-arazzo-json-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-arazzo-yaml-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-asyncapi-json-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-asyncapi-json-3": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-asyncapi-yaml-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-asyncapi-yaml-3": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-json": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-json-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-json-3-0": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-json-3-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-json-3-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-yaml-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-yaml-3-0": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-yaml-3-1": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-openapi-yaml-3-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-parser-adapter-yaml-1-2": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swagger-api/apidom-reference": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/apidom/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/apidom"
   },
   "@swaggerexpert/cookie": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swaggerexpert/cookie/raw/HEAD/LICENSE",
     "repository": "https://github.com/swaggerexpert/cookie"
   },
   "@swaggerexpert/json-pointer": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swaggerexpert/json-pointer/raw/HEAD/LICENSE",
     "repository": "https://github.com/swaggerexpert/json-pointer"
   },
   "@tabby_ai/hijri-converter": {
@@ -554,1217 +444,974 @@
   },
   "@tanstack/react-virtual": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/TanStack/virtual/raw/HEAD/LICENSE",
     "repository": "https://github.com/TanStack/virtual"
   },
   "@tanstack/virtual-core": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/TanStack/virtual/raw/HEAD/LICENSE",
     "repository": "https://github.com/TanStack/virtual"
   },
   "@tree-sitter-grammars/tree-sitter-yaml": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/tree-sitter-grammars/tree-sitter-yaml/raw/HEAD/LICENSE",
     "repository": "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
   },
   "@types/d3-array": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-color": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-ease": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-interpolate": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-path": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-scale": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-shape": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-time": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/d3-timer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/hast": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/prismjs": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/ramda": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/react": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/react-dom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/trusted-types": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/unist": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "@types/use-sync-external-store": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/raw/HEAD/LICENSE",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
   "apg-lite": {
     "licenses": "BSD-2-Clause",
-    "licenseUrl": "https://github.com/ldthomas/apg-lite/raw/HEAD/LICENSE",
     "repository": "https://github.com/ldthomas/apg-lite"
   },
   "argparse": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nodeca/argparse/raw/HEAD/LICENSE",
     "repository": "https://github.com/nodeca/argparse"
   },
   "aria-hidden": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/aria-hidden/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/aria-hidden"
   },
   "asynckit": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/alexindigo/asynckit/raw/HEAD/LICENSE",
     "repository": "https://github.com/alexindigo/asynckit"
   },
   "autolinker": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/gregjacobs/Autolinker.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/gregjacobs/Autolinker.js"
   },
   "available-typed-arrays": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/available-typed-arrays/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/available-typed-arrays"
   },
   "axios": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/axios/axios/raw/HEAD/LICENSE",
     "repository": "https://github.com/axios/axios"
   },
   "balanced-match": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/juliangruber/balanced-match/raw/HEAD/LICENSE",
     "repository": "https://github.com/juliangruber/balanced-match"
   },
   "base64-js": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/beatgammit/base64-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/beatgammit/base64-js"
   },
   "bidi-js": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lojjic/bidi-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/lojjic/bidi-js"
   },
   "brace-expansion": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/juliangruber/brace-expansion/raw/HEAD/LICENSE",
     "repository": "https://github.com/juliangruber/brace-expansion"
   },
   "buffer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/feross/buffer/raw/HEAD/LICENSE",
     "repository": "https://github.com/feross/buffer"
   },
   "call-bind": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/call-bind/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/call-bind"
   },
   "call-bind-apply-helpers": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/call-bind-apply-helpers/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/call-bind-apply-helpers"
   },
   "call-bound": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/call-bound/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/call-bound"
   },
   "character-entities": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/character-entities/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/character-entities"
   },
   "character-entities-legacy": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/character-entities-legacy/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/character-entities-legacy"
   },
   "character-reference-invalid": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/character-reference-invalid/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/character-reference-invalid"
   },
   "class-variance-authority": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/joe-bell/cva/raw/HEAD/LICENSE",
     "repository": "https://github.com/joe-bell/cva"
   },
   "classnames": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/JedWatson/classnames/raw/HEAD/LICENSE",
     "repository": "https://github.com/JedWatson/classnames"
   },
   "clsx": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lukeed/clsx/raw/HEAD/LICENSE",
     "repository": "https://github.com/lukeed/clsx"
   },
   "cmdk": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/pacocoursey/cmdk/raw/HEAD/LICENSE",
     "repository": "https://github.com/pacocoursey/cmdk"
   },
   "combined-stream": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/felixge/node-combined-stream/raw/HEAD/LICENSE",
     "repository": "https://github.com/felixge/node-combined-stream"
   },
   "comma-separated-tokens": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/comma-separated-tokens/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/comma-separated-tokens"
   },
   "cookie": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jshttp/cookie/raw/HEAD/LICENSE",
     "repository": "https://github.com/jshttp/cookie"
   },
   "copy-to-clipboard": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/sudodoki/copy-to-clipboard/raw/HEAD/LICENSE",
     "repository": "https://github.com/sudodoki/copy-to-clipboard"
   },
   "core-js-pure": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/zloirock/core-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/zloirock/core-js"
   },
   "country-list": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/fannarsh/country-list/raw/HEAD/LICENSE",
     "repository": "https://github.com/fannarsh/country-list"
   },
   "css-tree": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/csstree/csstree/raw/HEAD/LICENSE",
     "repository": "https://github.com/csstree/csstree"
   },
   "css.escape": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/mathiasbynens/CSS.escape/raw/HEAD/LICENSE",
     "repository": "https://github.com/mathiasbynens/CSS.escape"
   },
   "csstype": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/frenic/csstype/raw/HEAD/LICENSE",
     "repository": "https://github.com/frenic/csstype"
   },
   "d3-array": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-array/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-array"
   },
   "d3-color": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-color/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-color"
   },
   "d3-ease": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/d3/d3-ease/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-ease"
   },
   "d3-format": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-format/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-format"
   },
   "d3-interpolate": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-interpolate/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-interpolate"
   },
   "d3-path": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-path/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-path"
   },
   "d3-scale": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-scale/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-scale"
   },
   "d3-shape": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-shape/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-shape"
   },
   "d3-time": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-time/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-time"
   },
   "d3-time-format": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-time-format/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-time-format"
   },
   "d3-timer": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/d3/d3-timer/raw/HEAD/LICENSE",
     "repository": "https://github.com/d3/d3-timer"
   },
   "data-urls": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/data-urls/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/data-urls"
   },
   "date-fns": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/date-fns/date-fns/raw/HEAD/LICENSE",
     "repository": "https://github.com/date-fns/date-fns"
   },
   "date-fns-jalali": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/date-fns-jalali/date-fns-jalali/raw/HEAD/LICENSE",
     "repository": "https://github.com/date-fns-jalali/date-fns-jalali"
   },
   "decimal.js": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/MikeMcl/decimal.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/MikeMcl/decimal.js"
   },
   "decimal.js-light": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/MikeMcl/decimal.js-light/raw/HEAD/LICENSE",
     "repository": "https://github.com/MikeMcl/decimal.js-light"
   },
   "decode-named-character-reference": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/decode-named-character-reference/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/decode-named-character-reference"
   },
   "deep-extend": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/unclechu/node-deep-extend/raw/HEAD/LICENSE",
     "repository": "https://github.com/unclechu/node-deep-extend"
   },
   "deepmerge": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/TehShrike/deepmerge/raw/HEAD/LICENSE",
     "repository": "https://github.com/TehShrike/deepmerge"
   },
   "define-data-property": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/define-data-property/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/define-data-property"
   },
   "delayed-stream": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/felixge/node-delayed-stream/raw/HEAD/LICENSE",
     "repository": "https://github.com/felixge/node-delayed-stream"
   },
   "detect-node-es": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/thekashey/detect-node/raw/HEAD/LICENSE",
     "repository": "https://github.com/thekashey/detect-node"
   },
   "dompurify": {
     "licenses": "(MPL-2.0 OR Apache-2.0)",
-    "licenseUrl": "https://github.com/cure53/DOMPurify/raw/HEAD/LICENSE",
     "repository": "https://github.com/cure53/DOMPurify"
   },
   "drange": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/fent/node-drange/raw/HEAD/LICENSE",
     "repository": "https://github.com/fent/node-drange"
   },
   "dunder-proto": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/es-shims/dunder-proto/raw/HEAD/LICENSE",
     "repository": "https://github.com/es-shims/dunder-proto"
   },
   "entities": {
     "licenses": "BSD-2-Clause",
-    "licenseUrl": "https://github.com/fb55/entities/raw/HEAD/LICENSE",
     "repository": "https://github.com/fb55/entities"
   },
   "es-define-property": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/es-define-property/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/es-define-property"
   },
   "es-errors": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/es-errors/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/es-errors"
   },
   "es-object-atoms": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/es-object-atoms/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/es-object-atoms"
   },
   "es-set-tostringtag": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/es-shims/es-set-tostringtag/raw/HEAD/LICENSE",
     "repository": "https://github.com/es-shims/es-set-tostringtag"
   },
   "es-toolkit": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/toss/es-toolkit/raw/HEAD/LICENSE",
     "repository": "https://github.com/toss/es-toolkit"
   },
   "eventemitter3": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/primus/eventemitter3/raw/HEAD/LICENSE",
     "repository": "https://github.com/primus/eventemitter3"
   },
   "fast-json-patch": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/Starcounter-Jack/JSON-Patch/raw/HEAD/LICENSE",
     "repository": "https://github.com/Starcounter-Jack/JSON-Patch"
   },
   "fault": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/fault/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/fault"
   },
   "follow-redirects": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/follow-redirects/follow-redirects/raw/HEAD/LICENSE",
     "repository": "https://github.com/follow-redirects/follow-redirects"
   },
   "for-each": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/Raynos/for-each/raw/HEAD/LICENSE",
     "repository": "https://github.com/Raynos/for-each"
   },
   "form-data": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/form-data/form-data/raw/HEAD/LICENSE",
     "repository": "https://github.com/form-data/form-data"
   },
   "format": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/samsonjs/format/raw/HEAD/LICENSE",
     "repository": "https://github.com/samsonjs/format"
   },
   "function-bind": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/Raynos/function-bind/raw/HEAD/LICENSE",
     "repository": "https://github.com/Raynos/function-bind"
   },
   "get-intrinsic": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/get-intrinsic/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/get-intrinsic"
   },
   "get-nonce": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/get-nonce/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/get-nonce"
   },
   "get-proto": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/get-proto/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/get-proto"
   },
   "gopd": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/gopd/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/gopd"
   },
   "has-property-descriptors": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/has-property-descriptors/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/has-property-descriptors"
   },
   "has-symbols": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/has-symbols/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/has-symbols"
   },
   "has-tostringtag": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/has-tostringtag/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/has-tostringtag"
   },
   "hasown": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/hasOwn/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/hasOwn"
   },
   "hast-util-parse-selector": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/syntax-tree/hast-util-parse-selector/raw/HEAD/LICENSE",
     "repository": "https://github.com/syntax-tree/hast-util-parse-selector"
   },
   "hastscript": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/syntax-tree/hastscript/raw/HEAD/LICENSE",
     "repository": "https://github.com/syntax-tree/hastscript"
   },
   "highlight.js": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/highlightjs/highlight.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/highlightjs/highlight.js"
   },
   "highlightjs-vue": {
     "licenses": "CC0-1.0",
-    "licenseUrl": "https://github.com/highlightjs/highlightjs-vue/raw/HEAD/LICENSE",
     "repository": "https://github.com/highlightjs/highlightjs-vue"
   },
   "html-encoding-sniffer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/html-encoding-sniffer/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/html-encoding-sniffer"
   },
   "html-parse-stringify": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/henrikjoreteg/html-parse-stringify/raw/HEAD/LICENSE",
     "repository": "https://github.com/henrikjoreteg/html-parse-stringify"
   },
   "i18next": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/i18next/i18next/raw/HEAD/LICENSE",
     "repository": "https://github.com/i18next/i18next"
   },
   "i18next-browser-languagedetector": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/i18next/i18next-browser-languageDetector/raw/HEAD/LICENSE",
     "repository": "https://github.com/i18next/i18next-browser-languageDetector"
   },
   "ieee754": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/feross/ieee754/raw/HEAD/LICENSE",
     "repository": "https://github.com/feross/ieee754"
   },
   "immer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/immerjs/immer/raw/HEAD/LICENSE",
     "repository": "https://github.com/immerjs/immer"
   },
   "immutable": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/immutable-js/immutable-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/immutable-js/immutable-js"
   },
   "inherits": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/isaacs/inherits/raw/HEAD/LICENSE",
     "repository": "https://github.com/isaacs/inherits"
   },
   "internmap": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/mbostock/internmap/raw/HEAD/LICENSE",
     "repository": "https://github.com/mbostock/internmap"
   },
   "invariant": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/zertosh/invariant/raw/HEAD/LICENSE",
     "repository": "https://github.com/zertosh/invariant"
   },
   "is-alphabetical": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/is-alphabetical/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/is-alphabetical"
   },
   "is-alphanumerical": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/is-alphanumerical/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/is-alphanumerical"
   },
   "is-callable": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/is-callable/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/is-callable"
   },
   "is-decimal": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/is-decimal/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/is-decimal"
   },
   "is-hexadecimal": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/is-hexadecimal/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/is-hexadecimal"
   },
   "is-potential-custom-element-name": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/mathiasbynens/is-potential-custom-element-name/raw/HEAD/LICENSE",
     "repository": "https://github.com/mathiasbynens/is-potential-custom-element-name"
   },
   "is-typed-array": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/is-typed-array/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/is-typed-array"
   },
   "isarray": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/juliangruber/isarray/raw/HEAD/LICENSE",
     "repository": "https://github.com/juliangruber/isarray"
   },
   "isomorphic-dompurify": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/kkomelin/isomorphic-dompurify/raw/HEAD/LICENSE",
     "repository": "https://github.com/kkomelin/isomorphic-dompurify"
   },
   "js-cookie": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/js-cookie/js-cookie/raw/HEAD/LICENSE",
     "repository": "https://github.com/js-cookie/js-cookie"
   },
   "js-file-download": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/kennethjiang/js-file-download/raw/HEAD/LICENSE",
     "repository": "https://github.com/kennethjiang/js-file-download"
   },
   "js-tokens": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lydell/js-tokens/raw/HEAD/LICENSE",
     "repository": "https://github.com/lydell/js-tokens"
   },
   "js-yaml": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nodeca/js-yaml/raw/HEAD/LICENSE",
     "repository": "https://github.com/nodeca/js-yaml"
   },
   "jsdom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/jsdom/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/jsdom"
   },
   "leaflet": {
     "licenses": "BSD-2-Clause",
-    "licenseUrl": "https://github.com/Leaflet/Leaflet/raw/HEAD/LICENSE",
     "repository": "https://github.com/Leaflet/Leaflet"
   },
   "lodash": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lodash/lodash/raw/HEAD/LICENSE",
     "repository": "https://github.com/lodash/lodash"
   },
   "lodash.debounce": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lodash/lodash/raw/HEAD/LICENSE",
     "repository": "https://github.com/lodash/lodash"
   },
   "loose-envify": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/zertosh/loose-envify/raw/HEAD/LICENSE",
     "repository": "https://github.com/zertosh/loose-envify"
   },
   "lowlight": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/lowlight/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/lowlight"
   },
   "lru-cache": {
     "licenses": "BlueOak-1.0.0",
-    "licenseUrl": "https://github.com/isaacs/node-lru-cache/raw/HEAD/LICENSE",
     "repository": "https://github.com/isaacs/node-lru-cache"
   },
   "lucide-react": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/lucide-icons/lucide/raw/HEAD/LICENSE",
     "repository": "https://github.com/lucide-icons/lucide"
   },
   "math-intrinsics": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/es-shims/math-intrinsics/raw/HEAD/LICENSE",
     "repository": "https://github.com/es-shims/math-intrinsics"
   },
   "mdn-data": {
     "licenses": "CC0-1.0",
-    "licenseUrl": "https://github.com/mdn/data/raw/HEAD/LICENSE",
     "repository": "https://github.com/mdn/data"
   },
   "mime-db": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jshttp/mime-db/raw/HEAD/LICENSE",
     "repository": "https://github.com/jshttp/mime-db"
   },
   "mime-types": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jshttp/mime-types/raw/HEAD/LICENSE",
     "repository": "https://github.com/jshttp/mime-types"
   },
   "minim": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/refractproject/minim/raw/HEAD/LICENSE",
     "repository": "https://github.com/refractproject/minim"
   },
   "minimatch": {
     "licenses": "BlueOak-1.0.0",
-    "licenseUrl": "https://github.com/isaacs/minimatch/raw/HEAD/LICENSE",
     "repository": "https://github.com/isaacs/minimatch"
   },
   "neotraverse": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/PuruVJ/neotraverse/raw/HEAD/LICENSE",
     "repository": "https://github.com/PuruVJ/neotraverse"
   },
   "node-abort-controller": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/southpolesteve/node-abort-controller/raw/HEAD/LICENSE",
     "repository": "https://github.com/southpolesteve/node-abort-controller"
   },
   "node-addon-api": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nodejs/node-addon-api/raw/HEAD/LICENSE",
     "repository": "https://github.com/nodejs/node-addon-api"
   },
   "node-domexception": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jimmywarting/node-domexception/raw/HEAD/LICENSE",
     "repository": "https://github.com/jimmywarting/node-domexception"
   },
   "node-fetch-commonjs": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/proteriax/node-fetch-cjs/raw/HEAD/LICENSE",
     "repository": "https://github.com/proteriax/node-fetch-cjs"
   },
   "node-gyp-build": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/prebuild/node-gyp-build/raw/HEAD/LICENSE",
     "repository": "https://github.com/prebuild/node-gyp-build"
   },
   "object-assign": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/sindresorhus/object-assign/raw/HEAD/LICENSE",
     "repository": "https://github.com/sindresorhus/object-assign"
   },
   "openapi-path-templating": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swaggerexpert/openapi-path-templating/raw/HEAD/LICENSE",
     "repository": "https://github.com/swaggerexpert/openapi-path-templating"
   },
   "openapi-server-url-templating": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swaggerexpert/openapi-server-url-templating/raw/HEAD/LICENSE",
     "repository": "https://github.com/swaggerexpert/openapi-server-url-templating"
   },
   "parse-entities": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/parse-entities/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/parse-entities"
   },
   "parse5": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inikulin/parse5/raw/HEAD/LICENSE",
     "repository": "https://github.com/inikulin/parse5"
   },
   "possible-typed-array-names": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/possible-typed-array-names/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/possible-typed-array-names"
   },
   "prismjs": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/PrismJS/prism/raw/HEAD/LICENSE",
     "repository": "https://github.com/PrismJS/prism"
   },
   "prop-types": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/prop-types/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/prop-types"
   },
   "property-information": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/property-information/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/property-information"
   },
   "proxy-from-env": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/Rob--W/proxy-from-env/raw/HEAD/LICENSE",
     "repository": "https://github.com/Rob--W/proxy-from-env"
   },
   "punycode": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/mathiasbynens/punycode.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/mathiasbynens/punycode.js"
   },
   "querystringify": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/unshiftio/querystringify/raw/HEAD/LICENSE",
     "repository": "https://github.com/unshiftio/querystringify"
   },
   "ramda": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ramda/ramda/raw/HEAD/LICENSE",
     "repository": "https://github.com/ramda/ramda"
   },
   "ramda-adjunct": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/char0n/ramda-adjunct/raw/HEAD/LICENSE",
     "repository": "https://github.com/char0n/ramda-adjunct"
   },
   "randexp": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/fent/randexp.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/fent/randexp.js"
   },
   "randombytes": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/crypto-browserify/randombytes/raw/HEAD/LICENSE",
     "repository": "https://github.com/crypto-browserify/randombytes"
   },
   "react": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/react/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/react"
   },
   "react-copy-to-clipboard": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nkbt/react-copy-to-clipboard/raw/HEAD/LICENSE",
     "repository": "https://github.com/nkbt/react-copy-to-clipboard"
   },
   "react-day-picker": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/gpbl/react-day-picker/raw/HEAD/LICENSE",
     "repository": "https://github.com/gpbl/react-day-picker"
   },
   "react-debounce-input": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nkbt/react-debounce-input/raw/HEAD/LICENSE",
     "repository": "https://github.com/nkbt/react-debounce-input"
   },
   "react-dom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/react/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/react"
   },
   "react-i18next": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/i18next/react-i18next/raw/HEAD/LICENSE",
     "repository": "https://github.com/i18next/react-i18next"
   },
   "react-immutable-proptypes": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/HurricaneJames/react-immutable-proptypes/raw/HEAD/LICENSE",
     "repository": "https://github.com/HurricaneJames/react-immutable-proptypes"
   },
   "react-immutable-pure-component": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/Monar/react-immutable-pure-component/raw/HEAD/LICENSE",
     "repository": "https://github.com/Monar/react-immutable-pure-component"
   },
   "react-inspector": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/xyc/react-inspector/raw/HEAD/LICENSE",
     "repository": "https://github.com/xyc/react-inspector"
   },
   "react-is": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/react/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/react"
   },
   "react-leaflet": {
     "licenses": "Hippocratic-2.1",
-    "licenseUrl": "https://github.com/PaulLeCam/react-leaflet/raw/HEAD/LICENSE",
     "repository": "https://github.com/PaulLeCam/react-leaflet"
   },
   "react-redux": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/reduxjs/react-redux/raw/HEAD/LICENSE",
     "repository": "https://github.com/reduxjs/react-redux"
   },
   "react-remove-scroll": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/react-remove-scroll/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/react-remove-scroll"
   },
   "react-remove-scroll-bar": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/react-remove-scroll-bar/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/react-remove-scroll-bar"
   },
   "react-router": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/remix-run/react-router/raw/HEAD/LICENSE",
     "repository": "https://github.com/remix-run/react-router"
   },
   "react-router-dom": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/remix-run/react-router/raw/HEAD/LICENSE",
     "repository": "https://github.com/remix-run/react-router"
   },
   "react-style-singleton": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/react-style-singleton/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/react-style-singleton"
   },
   "react-syntax-highlighter": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/react-syntax-highlighter/react-syntax-highlighter/raw/HEAD/LICENSE",
     "repository": "https://github.com/react-syntax-highlighter/react-syntax-highlighter"
   },
   "recharts": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/recharts/recharts/raw/HEAD/LICENSE",
     "repository": "https://github.com/recharts/recharts"
   },
   "redux": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/reduxjs/redux/raw/HEAD/LICENSE",
     "repository": "https://github.com/reduxjs/redux"
   },
   "redux-immutable": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/gajus/redux-immutable/raw/HEAD/LICENSE",
     "repository": "https://github.com/gajus/redux-immutable"
   },
   "redux-thunk": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/reduxjs/redux-thunk/raw/HEAD/LICENSE",
     "repository": "https://github.com/reduxjs/redux-thunk"
   },
   "refractor": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/refractor/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/refractor"
   },
   "remarkable": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jonschlinkert/remarkable/raw/HEAD/LICENSE",
     "repository": "https://github.com/jonschlinkert/remarkable"
   },
   "repeat-string": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jonschlinkert/repeat-string/raw/HEAD/LICENSE",
     "repository": "https://github.com/jonschlinkert/repeat-string"
   },
   "require-from-string": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/floatdrop/require-from-string/raw/HEAD/LICENSE",
     "repository": "https://github.com/floatdrop/require-from-string"
   },
   "requires-port": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/unshiftio/requires-port/raw/HEAD/LICENSE",
     "repository": "https://github.com/unshiftio/requires-port"
   },
   "reselect": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/reduxjs/reselect/raw/HEAD/LICENSE",
     "repository": "https://github.com/reduxjs/reselect"
   },
   "ret": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/fent/ret.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/fent/ret.js"
   },
   "safe-buffer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/feross/safe-buffer/raw/HEAD/LICENSE",
     "repository": "https://github.com/feross/safe-buffer"
   },
   "saxes": {
     "licenses": "ISC",
-    "licenseUrl": "https://github.com/lddubeau/saxes/raw/HEAD/LICENSE",
     "repository": "https://github.com/lddubeau/saxes"
   },
   "scheduler": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/react/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/react"
   },
   "serialize-error": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/sindresorhus/serialize-error/raw/HEAD/LICENSE",
     "repository": "https://github.com/sindresorhus/serialize-error"
   },
   "set-cookie-parser": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nfriedly/set-cookie-parser/raw/HEAD/LICENSE",
     "repository": "https://github.com/nfriedly/set-cookie-parser"
   },
   "set-function-length": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ljharb/set-function-length/raw/HEAD/LICENSE",
     "repository": "https://github.com/ljharb/set-function-length"
   },
   "sha.js": {
     "licenses": "(MIT AND BSD-3-Clause)",
-    "licenseUrl": "https://github.com/crypto-browserify/sha.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/crypto-browserify/sha.js"
   },
   "short-unique-id": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/jeanlescure/short-unique-id/raw/HEAD/LICENSE",
     "repository": "https://github.com/jeanlescure/short-unique-id"
   },
   "sonner": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/emilkowalski/sonner/raw/HEAD/LICENSE",
     "repository": "https://github.com/emilkowalski/sonner"
   },
   "source-map-js": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/7rulnik/source-map-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/7rulnik/source-map-js"
   },
   "space-separated-tokens": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/wooorm/space-separated-tokens/raw/HEAD/LICENSE",
     "repository": "https://github.com/wooorm/space-separated-tokens"
   },
   "sprintf-js": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/alexei/sprintf.js/raw/HEAD/LICENSE",
     "repository": "https://github.com/alexei/sprintf.js"
   },
   "swagger-client": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/swagger-js/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/swagger-js"
   },
   "swagger-ui-react": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/swagger-api/swagger-ui/raw/HEAD/LICENSE",
     "repository": "https://github.com/swagger-api/swagger-ui"
   },
   "symbol-tree": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/js-symbol-tree/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/js-symbol-tree"
   },
   "tailwind-merge": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/dcastil/tailwind-merge/raw/HEAD/LICENSE",
     "repository": "https://github.com/dcastil/tailwind-merge"
   },
   "tiny-invariant": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/alexreardon/tiny-invariant/raw/HEAD/LICENSE",
     "repository": "https://github.com/alexreardon/tiny-invariant"
   },
   "tldts": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/remusao/tldts/raw/HEAD/LICENSE",
     "repository": "https://github.com/remusao/tldts"
   },
   "tldts-core": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/remusao/tldts/raw/HEAD/LICENSE",
     "repository": "https://github.com/remusao/tldts"
   },
   "to-buffer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/browserify/to-buffer/raw/HEAD/LICENSE",
     "repository": "https://github.com/browserify/to-buffer"
   },
   "toggle-selection": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/sudodoki/toggle-selection/raw/HEAD/LICENSE",
     "repository": "https://github.com/sudodoki/toggle-selection"
   },
   "tough-cookie": {
     "licenses": "BSD-3-Clause",
-    "licenseUrl": "https://github.com/salesforce/tough-cookie/raw/HEAD/LICENSE",
     "repository": "https://github.com/salesforce/tough-cookie"
   },
   "tr46": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/tr46/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/tr46"
   },
   "tree-sitter": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/tree-sitter/node-tree-sitter/raw/HEAD/LICENSE",
     "repository": "https://github.com/tree-sitter/node-tree-sitter"
   },
   "tree-sitter-json": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/tree-sitter/tree-sitter-json/raw/HEAD/LICENSE",
     "repository": "https://github.com/tree-sitter/tree-sitter-json"
   },
   "ts-mixer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/tannerntannern/ts-mixer/raw/HEAD/LICENSE",
     "repository": "https://github.com/tannerntannern/ts-mixer"
   },
   "ts-toolbelt": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/millsp/ts-toolbelt/raw/HEAD/LICENSE",
     "repository": "https://github.com/millsp/ts-toolbelt"
   },
   "tslib": {
     "licenses": "0BSD",
-    "licenseUrl": "https://github.com/Microsoft/tslib/raw/HEAD/LICENSE",
     "repository": "https://github.com/Microsoft/tslib"
   },
   "type-fest": {
     "licenses": "(MIT OR CC0-1.0)",
-    "licenseUrl": "https://github.com/sindresorhus/type-fest/raw/HEAD/LICENSE",
     "repository": "https://github.com/sindresorhus/type-fest"
   },
   "typed-array-buffer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/typed-array-buffer/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/typed-array-buffer"
   },
   "types-ramda": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/ramda/types/raw/HEAD/LICENSE",
     "repository": "https://github.com/ramda/types"
   },
   "undici": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/nodejs/undici/raw/HEAD/LICENSE",
     "repository": "https://github.com/nodejs/undici"
   },
   "unraw": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/iansan5653/unraw/raw/HEAD/LICENSE",
     "repository": "https://github.com/iansan5653/unraw"
   },
   "url-parse": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/unshiftio/url-parse/raw/HEAD/LICENSE",
     "repository": "https://github.com/unshiftio/url-parse"
   },
   "use-callback-ref": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/use-callback-ref/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/use-callback-ref"
   },
   "use-sidecar": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/theKashey/use-sidecar/raw/HEAD/LICENSE",
     "repository": "https://github.com/theKashey/use-sidecar"
   },
   "use-sync-external-store": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/facebook/react/raw/HEAD/LICENSE",
     "repository": "https://github.com/facebook/react"
   },
   "vaul": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/emilkowalski/vaul/raw/HEAD/LICENSE",
     "repository": "https://github.com/emilkowalski/vaul"
   },
   "victory-vendor": {
     "licenses": "MIT AND ISC",
-    "licenseUrl": "https://github.com/FormidableLabs/victory/raw/HEAD/LICENSE",
     "repository": "https://github.com/FormidableLabs/victory"
   },
   "void-elements": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/pugjs/void-elements/raw/HEAD/LICENSE",
     "repository": "https://github.com/pugjs/void-elements"
   },
   "w3c-xmlserializer": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/w3c-xmlserializer/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/w3c-xmlserializer"
   },
   "web-streams-polyfill": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/MattiasBuelens/web-streams-polyfill/raw/HEAD/LICENSE",
     "repository": "https://github.com/MattiasBuelens/web-streams-polyfill"
   },
   "web-tree-sitter": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/tree-sitter/tree-sitter/raw/HEAD/LICENSE",
     "repository": "https://github.com/tree-sitter/tree-sitter"
   },
   "web-vitals": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/GoogleChrome/web-vitals/raw/HEAD/LICENSE",
     "repository": "https://github.com/GoogleChrome/web-vitals"
   },
   "webidl-conversions": {
     "licenses": "BSD-2-Clause",
-    "licenseUrl": "https://github.com/jsdom/webidl-conversions/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/webidl-conversions"
   },
   "whatwg-mimetype": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/whatwg-mimetype/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/whatwg-mimetype"
   },
   "whatwg-url": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/jsdom/whatwg-url/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/whatwg-url"
   },
   "which-typed-array": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/inspect-js/which-typed-array/raw/HEAD/LICENSE",
     "repository": "https://github.com/inspect-js/which-typed-array"
   },
   "xml": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/dylang/node-xml/raw/HEAD/LICENSE",
     "repository": "https://github.com/dylang/node-xml"
   },
   "xml-but-prettier": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/shockey/xml-but-prettier/raw/HEAD/LICENSE",
     "repository": "https://github.com/shockey/xml-but-prettier"
   },
   "xml-name-validator": {
     "licenses": "Apache-2.0",
-    "licenseUrl": "https://github.com/jsdom/xml-name-validator/raw/HEAD/LICENSE",
     "repository": "https://github.com/jsdom/xml-name-validator"
   },
   "xmlchars": {
     "licenses": "MIT",
-    "licenseUrl": "https://github.com/lddubeau/xmlchars/raw/HEAD/LICENSE",
     "repository": "https://github.com/lddubeau/xmlchars"
   },
   "zenscroll": {
     "licenses": "Unlicense",
-    "licenseUrl": "https://github.com/zengabor/zenscroll/raw/HEAD/LICENSE",
     "repository": "https://github.com/zengabor/zenscroll"
   }
 }
