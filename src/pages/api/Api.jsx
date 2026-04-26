@@ -25,7 +25,7 @@ export default function Api() {
                             — try requests directly from the page.
                         </AlertDescription>
                     </Alert>
-                    <div className="api-swagger-host bg-white rounded-lg overflow-hidden">
+                    <div className="api-swagger-host bg-white rounded-lg overflow-x-auto">
                         <SwaggerUI url="https://api.scplist.kr/openapi.json"/>
                     </div>
                 </CardContent>
