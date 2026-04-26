@@ -27,7 +27,7 @@ function NavItem({ to, end, icon: Icon, label, onClick }) {
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          'flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors',
+          'flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors no-underline',
           'text-muted-foreground hover:text-foreground hover:bg-muted',
           isActive && 'text-foreground bg-muted'
         )
@@ -47,7 +47,7 @@ export default function TopMenu() {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-14 items-center px-4 gap-3">
-        <NavLink to="/" className="flex items-center gap-2 font-semibold text-foreground">
+        <NavLink to="/" className="flex items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
           <img src="/favicon-32x32.png" alt="" width="20" height="20" />
           <span className="hidden sm:inline">{t('navbar.title')}</span>
         </NavLink>
