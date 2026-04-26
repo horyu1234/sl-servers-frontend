@@ -1,8 +1,8 @@
 {
   "general": {
-    "language-change": "Changed language to {{language}}. Some may need a refresh.",
+    "language-change": "Language changed to {{language}}. Some elements may need a refresh.",
     "not-found": "The page you requested could not be found.",
-    "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
+    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please reach out to 'horyu' on Discord."
   },
   "navbar": {
     "title": "SCP: SL Servers",
@@ -37,19 +37,19 @@
       "whitelist": "Whitelist",
       "modded": "Modded",
       "order-type": {
-        "name": "Order Type",
-        "player-desc": "A large number of people",
-        "player-asc": "Small number of people",
-        "distance-asc": "Close distance",
-        "distance-desc": "Long distance"
+        "name": "Sort by",
+        "player-desc": "Most players",
+        "player-asc": "Fewest players",
+        "distance-asc": "Nearest first",
+        "distance-desc": "Farthest first"
       }
     }
   },
   "server-stats": {
-    "online-users": "All users: {{count}}",
+    "online-users": "Total users: {{count}}",
     "online-servers": "Online servers: {{count}}",
-    "display-users": "Users listed: {{count}}",
-    "display-servers": "Servers listed: {{count}}",
+    "display-users": "Users shown: {{count}}",
+    "display-servers": "Servers shown: {{count}}",
     "offline-servers": "Offline (cached) servers: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
@@ -68,8 +68,8 @@
       "players": "Players",
       "distance": "Distance"
     },
-    "loading": "Loading data from server...",
-    "empty": "There is no data to display.",
+    "loading": "Loading data from the server...",
+    "empty": "No data to display.",
     "tech": {
       "yes": "Yes",
       "no": "No",
@@ -81,7 +81,7 @@
   },
   "server-info": {
     "title": "Server Information",
-    "not-exist": "The server does not exist.",
+    "not-exist": "Server not found.",
     "status": {
       "name": "Status",
       "online": "Online",
@@ -92,18 +92,18 @@
     "pastebin": "Pastebin",
     "distance": "Distance",
     "statistics": "Server Statistics",
-    "daylight-saving-time": "The time on the graph is not affected by daylight saving time.",
+    "daylight-saving-time": "Times shown on the graph do not observe daylight saving time.",
     "graph": {
-      "loading": "Loading data from server...",
+      "loading": "Loading data from the server...",
       "visitors": "Visitors",
       "visitor-suffix": "",
       "options": {
         "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "The start time must be earlier than the stop time.",
-        "invalid-stop-time": "The stop time must be later than the start time.",
-        "data-range": "Data Period",
+        "invalid-start-time": "Start time must be earlier than end time.",
+        "invalid-stop-time": "End time must be later than start time.",
+        "data-range": "Date Range",
         "start-time": "Start Time",
-        "stop-time": "Stop Time",
+        "stop-time": "End Time",
         "data-resolution": "Data Resolution",
         "graph-update-btn": "Update Graph",
         "period": {
@@ -128,7 +128,7 @@
     }
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™, this site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners."
+    "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™. This site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners."
   },
   "cookie-notice": {
     "message": "This website uses cookies to ensure you get the best experience on our website.",
@@ -137,16 +137,16 @@
   },
   "all-stats": {
     "users": {
-      "title": "Total number of server users",
+      "title": "Total users across all servers",
       "select-compare-country": {
-        "name": "Select Country"
+        "name": "Select a country to compare"
       },
       "show-all": {
-        "name": "Display all country data"
+        "name": "Show all countries"
       },
       "graph": {
         "all-country": "All countries",
-        "empty-country": "There is no data to query."
+        "empty-country": "No data available."
       }
     },
     "mod-loader": {
@@ -160,12 +160,12 @@
   },
   "all-server-map": {
     "title": "Map of all servers",
-    "server-info-btn": "Click to check server info"
+    "server-info-btn": "Click to view server info"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "Tracking will stop after the next page reload",
+      "description": "Analytics scripts already loaded in this tab will keep running until you reload. Reload now to apply your choice immediately.",
       "reload": "Reload"
     }
   }
