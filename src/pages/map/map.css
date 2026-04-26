@@ -5,6 +5,9 @@
 .leaflet-container {
   background-color: hsl(var(--card));
   font-family: inherit;
+  /* Confine Leaflet's internal pane z-indexes (200–1000) so they don't
+     leak past sibling overlays like the mobile nav drawer (z-50). */
+  isolation: isolate;
 }
 
 .leaflet-control-attribution {
