@@ -57,19 +57,24 @@ export default function Stats() {
           <CardHeader>
             <CardTitle>{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex flex-wrap gap-4 items-end">
-              <div className="flex items-center gap-2">
-                <Checkbox id="stats-show-all" checked={showAll} onCheckedChange={(c) => setShowAll(c === true)} />
-                <Label htmlFor="stats-show-all" className="text-sm cursor-pointer">
-                  {t('all-stats.users.show-all.name')}
-                </Label>
-              </div>
-              <div className="flex-1 min-w-[260px]">
-                <Label className="text-xs uppercase tracking-wider text-muted-foreground mb-1 block">
+          <CardContent className="space-y-5">
+            <div className="space-y-2.5">
+              <div className="space-y-1.5">
+                <Label className="text-xs uppercase tracking-wider text-muted-foreground">
                   {t('all-stats.users.select-compare-country.name')}
                 </Label>
                 <CountryMultiSelect value={isoCodes} onChange={setIsoCodes} />
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id="stats-show-all"
+                  checked={showAll}
+                  onCheckedChange={(c) => setShowAll(c === true)}
+                  className="border-muted-foreground/40 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500 data-[state=checked]:text-emerald-950"
+                />
+                <Label htmlFor="stats-show-all" className="text-sm cursor-pointer text-muted-foreground">
+                  {t('all-stats.users.show-all.name')}
+                </Label>
               </div>
             </div>
 
