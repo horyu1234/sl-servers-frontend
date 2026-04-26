@@ -67,12 +67,6 @@ export default function List() {
   const servers = stats.servers ?? [];
   const fetching = useSelector((s) => s.serverList.fetching);
   const error = useSelector((s) => s.serverList.error);
-  // Memoize the serverIds-by-content key so identical fetches (auto-refresh
-  // returning the same servers) don't churn useTrends. The dependency array
-  // is the joined ID string, not the array reference.
-  const idsKey = servers.map((s) => s.serverId).join(',');
-  const serverIds = useMemo(() => servers.map((s) => s.serverId), [idsKey]); // eslint-disable-line react-hooks/exhaustive-deps
-  const { trends } = useTrends(serverIds);
 
   const updateFilter = (next) => {
     if (shallowEqualFilter(filter, next)) return;
@@ -91,6 +85,20 @@ export default function List() {
     overscan: 6,
     scrollMargin: listParentRef.current?.offsetTop ?? 0,
   });
+
+  // Visible serverIds derived from the virtualizer's current viewport
+  // (includes overscan). Grid view falls back to "all currently rendered
+  // cards" since there's no virtualization there. The joined id string
+  // gives useTrends a stable dep across renders that produce the same set.
+  const virtualItems = view === 'list' ? virtualizer.getVirtualItems() : [];
+  const visibleIdsKey = view === 'list'
+    ? virtualItems.map((vi) => servers[vi.index]?.serverId).filter(Boolean).join(',')
+    : servers.map((s) => s.serverId).join(',');
+  const visibleServerIds = useMemo(
+    () => visibleIdsKey ? visibleIdsKey.split(',').map(Number) : [],
+    [visibleIdsKey]
+  );
+  const { trends } = useTrends(visibleServerIds);
 
   return (
     <div className="flex">

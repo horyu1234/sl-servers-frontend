@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 import { useTrends, _resetCacheForTests } from './useTrends';
 
 vi.mock('../api/trends', () => ({
@@ -7,84 +7,90 @@ vi.mock('../api/trends', () => ({
 }));
 import { getServersTrendsBatchAPI } from '../api/trends';
 
-const sampleResponse = {
-  data: {
-    window: '24h',
-    resolution: '1h',
-    bucketCount: 24,
-    endTime: '2026-04-25T12:00:00Z',
-    serverIds: ['1', '2'],
-    trends: { '1': [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,22], '2': new Array(24).fill(5) },
-  },
-};
+const trendsFor = (ids) => Object.fromEntries(ids.map((id) => [String(id), new Array(24).fill(id)]));
 
-describe('useTrends', () => {
+const makeResponse = (ids) => ({
+  data: { window: '24h', resolution: '1h', bucketCount: 24, endTime: 'x', serverIds: ids.map(String), trends: trendsFor(ids) },
+});
+
+describe('useTrends (visibility-driven, debounced, per-id cache)', () => {
   beforeEach(() => {
     getServersTrendsBatchAPI.mockReset();
     _resetCacheForTests();
+    vi.useFakeTimers();
   });
 
-  it('returns { trends: null, loading: false } for an empty serverIds array (no fetch)', () => {
+  it('returns { trends: null, loading: false } for an empty visibleIds (no fetch)', () => {
     const { result } = renderHook(() => useTrends([]));
-    expect(result.current).toEqual({ trends: null, error: null, loading: false });
+    expect(result.current.loading).toBe(false);
+    expect(result.current.trends).toBeNull();
     expect(getServersTrendsBatchAPI).not.toHaveBeenCalled();
   });
 
-  it('initially returns { trends: null, loading: true } while fetching', () => {
-    getServersTrendsBatchAPI.mockReturnValue(new Promise(() => {})); // never resolves
-    const { result } = renderHook(() => useTrends([1, 2]));
-    expect(result.current).toEqual({ trends: null, error: null, loading: true });
-  });
-
-  it('resolves to the trends map on success', async () => {
-    getServersTrendsBatchAPI.mockResolvedValue(sampleResponse);
-    const { result } = renderHook(() => useTrends([1, 2]));
-    await waitFor(() => expect(result.current.loading).toBe(false));
-    expect(result.current.trends).toEqual(sampleResponse.data.trends);
-    expect(result.current.error).toBeNull();
+  it('does not fetch immediately — debounces by 200ms', async () => {
+    getServersTrendsBatchAPI.mockResolvedValue(makeResponse([1, 2]));
+    renderHook(() => useTrends([1, 2]));
+    expect(getServersTrendsBatchAPI).not.toHaveBeenCalled();
+    await act(async () => { vi.advanceTimersByTime(199); });
+    expect(getServersTrendsBatchAPI).not.toHaveBeenCalled();
+    await act(async () => { vi.advanceTimersByTime(2); });
+    expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(1);
     expect(getServersTrendsBatchAPI).toHaveBeenCalledWith({ serverIds: [1, 2] });
   });
 
-  it('reports error on rejection', async () => {
-    getServersTrendsBatchAPI.mockRejectedValue(new Error('network'));
-    const { result } = renderHook(() => useTrends([1, 2]));
-    await waitFor(() => expect(result.current.loading).toBe(false));
-    expect(result.current.trends).toBeNull();
-    expect(result.current.error).toBeInstanceOf(Error);
-  });
-
-  it('serves cache on subsequent mounts with the same serverIds within TTL', async () => {
-    getServersTrendsBatchAPI.mockResolvedValue(sampleResponse);
-    const first = renderHook(() => useTrends([1, 2]));
-    await waitFor(() => expect(first.result.current.loading).toBe(false));
+  it('coalesces rapid scroll changes — fires once for the final viewport', async () => {
+    getServersTrendsBatchAPI.mockResolvedValue(makeResponse([5, 6]));
+    const { rerender } = renderHook(({ ids }) => useTrends(ids), { initialProps: { ids: [1, 2] } });
+    rerender({ ids: [3, 4] });
+    rerender({ ids: [5, 6] });
+    await act(async () => { vi.advanceTimersByTime(250); });
     expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(1);
-
-    first.unmount();
-
-    const second = renderHook(() => useTrends([1, 2]));
-    expect(second.result.current.trends).toEqual(sampleResponse.data.trends);
-    expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(1); // cache hit
+    expect(getServersTrendsBatchAPI).toHaveBeenLastCalledWith({ serverIds: [5, 6] });
   });
 
-  it('cache key is order-independent — [2, 1] hits the same entry as [1, 2]', async () => {
-    getServersTrendsBatchAPI.mockResolvedValue(sampleResponse);
+  it('after first fetch, scrolling to overlapping ids only requests the missing ones', async () => {
+    // First viewport [1, 2] -> fetched.
+    getServersTrendsBatchAPI.mockResolvedValueOnce(makeResponse([1, 2]));
+    const { rerender } = renderHook(({ ids }) => useTrends(ids), { initialProps: { ids: [1, 2] } });
+    await act(async () => { vi.advanceTimersByTime(250); });
+    await act(async () => {}); // flush the resolved-promise microtask + bump
+
+    // Scroll: viewport [2, 3] -> only id 3 is missing (id 2 cached).
+    getServersTrendsBatchAPI.mockResolvedValueOnce(makeResponse([3]));
+    rerender({ ids: [2, 3] });
+    await act(async () => { vi.advanceTimersByTime(250); });
+    await act(async () => {});
+    expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(2);
+    expect(getServersTrendsBatchAPI).toHaveBeenLastCalledWith({ serverIds: [3] });
+  });
+
+  it('scrolling back to already-cached ids does NOT refetch', async () => {
+    getServersTrendsBatchAPI.mockResolvedValueOnce(makeResponse([1, 2]));
+    const { rerender } = renderHook(({ ids }) => useTrends(ids), { initialProps: { ids: [1, 2] } });
+    await act(async () => { vi.advanceTimersByTime(250); });
+
+    rerender({ ids: [3, 4] });
+    getServersTrendsBatchAPI.mockResolvedValueOnce(makeResponse([3, 4]));
+    await act(async () => { vi.advanceTimersByTime(250); });
+
+    rerender({ ids: [1, 2] });
+    await act(async () => { vi.advanceTimersByTime(250); });
+
+    // 2 calls total — first for [1,2], second for [3,4]. Going back to
+    // [1,2] is a cache hit.
+    expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(2);
+  });
+
+  it('cache key is order-independent — [2,1] hits the same as [1,2]', async () => {
+    getServersTrendsBatchAPI.mockResolvedValueOnce(makeResponse([1, 2]));
     const first = renderHook(() => useTrends([1, 2]));
-    await waitFor(() => expect(first.result.current.loading).toBe(false));
+    await act(async () => { vi.advanceTimersByTime(250); });
     first.unmount();
 
     const second = renderHook(() => useTrends([2, 1]));
-    expect(second.result.current.trends).toEqual(sampleResponse.data.trends);
+    await act(async () => { vi.advanceTimersByTime(250); });
     expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(1);
-  });
-
-  it('refetches when serverIds change to a different set', async () => {
-    getServersTrendsBatchAPI.mockResolvedValue(sampleResponse);
-    const { result, rerender } = renderHook(({ ids }) => useTrends(ids), { initialProps: { ids: [1, 2] } });
-    await waitFor(() => expect(result.current.loading).toBe(false));
-    expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(1);
-
-    rerender({ ids: [3, 4] });
-    await waitFor(() => expect(getServersTrendsBatchAPI).toHaveBeenCalledTimes(2));
-    expect(getServersTrendsBatchAPI).toHaveBeenLastCalledWith({ serverIds: [3, 4] });
+    expect(second.result.current.trends?.['1']).toBeTruthy();
+    expect(second.result.current.trends?.['2']).toBeTruthy();
   });
 });
