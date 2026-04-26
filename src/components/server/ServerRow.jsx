@@ -47,8 +47,22 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
   );
 }
 
-export const ServerRow = memo(ServerRowImpl, (prev, next) =>
-  prev.server === next.server && prev.trend === next.trend && prev.density === next.density
-);
+export const ServerRow = memo(ServerRowImpl, (prev, next) => {
+  const a = prev.server;
+  const b = next.server;
+  return (
+    prev.density === next.density &&
+    prev.trend === next.trend &&
+    a.serverId === b.serverId &&
+    a.players === b.players &&
+    a.version === b.version &&
+    a.friendlyFire === b.friendlyFire &&
+    a.whitelist === b.whitelist &&
+    a.modded === b.modded &&
+    a.isoCode === b.isoCode &&
+    a.distance === b.distance &&
+    a.info === b.info
+  );
+});
 
 export default ServerRow;

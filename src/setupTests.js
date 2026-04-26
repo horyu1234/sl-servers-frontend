@@ -14,9 +14,20 @@ import '@testing-library/jest-dom';
 // only covers the documented Storage API (setItem/getItem/removeItem/clear/
 // length/key) — it does NOT support bracket-property access (localStorage.foo)
 // or `instanceof Storage`. All project tests must use the Storage API directly.
-// Provide non-zero element sizing in jsdom so TanStack Virtual can render
-// virtual items. Without this, getBoundingClientRect returns all-zero and
-// the virtualizer produces no DOM output, breaking integration tests.
+// ⚠️ GLOBAL JSDOM LAYOUT SHIM — affects every test in the suite.
+//
+// jsdom returns 0 for all element dimensions, which breaks
+// @tanstack/react-virtual (it computes 0 visible items and renders
+// nothing, so List.test.jsx never sees server rows). The shim below
+// returns synthetic non-zero values so the virtualizer behaves like a
+// real browser.
+//
+// Side effect: any test that asserts on real layout (size/position) will
+// see these synthetic values, not the actual computed layout. If a future
+// test needs real layout, scope this shim to a beforeEach inside
+// List.test.jsx instead of the global setup. When @tanstack/react-virtual
+// is no longer used (or the project moves to a non-jsdom test env), this
+// block can be deleted entirely.
 Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
 Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 800 });
 Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {

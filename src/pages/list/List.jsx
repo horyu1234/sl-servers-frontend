@@ -29,7 +29,7 @@ function shallowEqualFilter(a, b) {
   );
 }
 
-const ROW_HEIGHT = 60;
+const ROW_HEIGHT = 80;
 
 export default function List() {
   const { t } = useTranslation();
