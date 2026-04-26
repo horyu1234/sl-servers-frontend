@@ -116,11 +116,7 @@ export function PeriodPicker({ onUpdate }) {
         </Select>
       </div>
 
-      <Button
-        onClick={submit}
-        size="default"
-        className="ml-1 gap-2 h-9 px-4 bg-emerald-500 hover:bg-emerald-600 text-emerald-950 font-medium shadow-sm border-0"
-      >
+      <Button onClick={submit} size="default" className="ml-1 gap-2 h-9 px-4 shadow-sm">
         <RefreshCw className="h-4 w-4" />
         {t('server-info.graph.options.graph-update-btn')}
       </Button>

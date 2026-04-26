@@ -73,15 +73,16 @@ If you have any questions about translations, please contact: Discord Username: 
 
 ## Tech Stack
 
-- React 19
-- Vite (build tool, replacing Create React App)
-- Vitest (test runner)
-- Redux Toolkit for state management
+- React 19 + Vite
+- Tailwind v4 + shadcn/ui (Radix primitives) + lucide-react
+- Redux Toolkit
 - React Router 7
+- recharts (charts)
+- @tanstack/react-virtual (virtualized list)
+- Leaflet for the server-location map
+- Silktide CMP + DOMPurify (consent-gated Sentry)
 - i18next for internationalization
-- Leaflet for maps
-- Highcharts for data visualization
-- Bootstrap 5 (via react-bootstrap and bootswatch)
+- Vitest + Testing Library
 
 ## Supply Chain Security
 

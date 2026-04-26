@@ -12,8 +12,6 @@ import {Toaster} from "./components/ui/sonner";
 import "./i18n/i18n";
 
 import '@fontsource-variable/inter';
-import './index.css';
-import './styles/global.css';
 import './styles/globals.css';
 
 const root = createRoot(document.getElementById('root'));
