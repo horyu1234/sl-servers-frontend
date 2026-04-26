@@ -12,6 +12,7 @@ import { FilterDrawer } from '../../components/filters/FilterDrawer';
 import { FilterChips } from '../../components/filters/FilterChips';
 import { parseFromSearchParams, toSearchParams } from '../../components/filters/filterSchema';
 import { useTrends } from '../../lib/hooks/useTrends';
+import { useMediaQuery } from '../../lib/hooks/useMediaQuery';
 import * as serverFilterActions from '../../modules/serverFilter';
 import * as serverListActions from '../../modules/serverList';
 
@@ -50,6 +51,12 @@ export default function List() {
     setSearchParams(next, { replace: true });
   };
 
+  // Phones (< sm) cannot fit the desktop ServerRow grid; force card view there.
+  // The toggle button is already hidden below `lg`, so users only see this
+  // override; the URL contract (?view=grid) still controls tablet/desktop.
+  const isPhone = useMediaQuery('(max-width: 639px)');
+  const effectiveView = isPhone ? 'grid' : view;
+
   // Sync URL filter -> Redux serverFilter, then refetch.
   useEffect(() => {
     dispatch(serverFilterActions.changeSearch(filter.search));
@@ -81,7 +88,7 @@ export default function List() {
   // legacy CSS still loads alongside Tailwind).
   const listParentRef = useRef(null);
   const virtualizer = useWindowVirtualizer({
-    count: view === 'list' ? servers.length : 0,
+    count: effectiveView === 'list' ? servers.length : 0,
     estimateSize: () => ROW_HEIGHT,
     overscan: 6,
     scrollMargin: listParentRef.current?.offsetTop ?? 0,
@@ -97,7 +104,7 @@ export default function List() {
           <FilterDrawer value={filter} onChange={updateFilter} />
           <FilterChips value={filter} onChange={updateFilter} />
           <ViewToggle value={view} onChange={setView} />
-          <div className="ml-auto text-xs text-muted-foreground tabular-nums">
+          <div className="ml-auto hidden sm:block text-xs text-muted-foreground tabular-nums">
             {fetching ? t('filter-option.refreshing') : `${stats.displayServerCount.toLocaleString()} / ${stats.onlineServerCount.toLocaleString()} servers`}
           </div>
         </div>
@@ -119,7 +126,7 @@ export default function List() {
           </div>
         )}
 
-        {view === 'list' ? (
+        {effectiveView === 'list' ? (
           <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
             {virtualizer.getVirtualItems().map((vi) => {
               const server = servers[vi.index];
@@ -145,7 +152,12 @@ export default function List() {
           <div className="p-4">
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {servers.map((server) => (
-                <ServerCard key={server.serverId} server={server} trend={trends?.[String(server.serverId)] ?? null} />
+                <ServerCard
+                  key={server.serverId}
+                  server={server}
+                  trend={trends?.[String(server.serverId)] ?? null}
+                  compact={isPhone}
+                />
               ))}
             </div>
           </div>
