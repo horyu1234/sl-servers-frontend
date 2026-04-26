@@ -14,6 +14,18 @@ import '@testing-library/jest-dom';
 // only covers the documented Storage API (setItem/getItem/removeItem/clear/
 // length/key) — it does NOT support bracket-property access (localStorage.foo)
 // or `instanceof Storage`. All project tests must use the Storage API directly.
+// Provide non-zero element sizing in jsdom so TanStack Virtual can render
+// virtual items. Without this, getBoundingClientRect returns all-zero and
+// the virtualizer produces no DOM output, breaking integration tests.
+Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
+Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 800 });
+Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
+  configurable: true,
+  value: function () {
+    return { width: 800, height: 800, top: 0, left: 0, right: 800, bottom: 800, x: 0, y: 0, toJSON: () => {} };
+  },
+});
+
 if (typeof localStorage === 'undefined' || typeof localStorage.setItem !== 'function') {
     const store = {};
     const storage = {
