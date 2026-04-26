@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
+import SafeHtml from '../shell/SafeHtml';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
-import { plainTextFromHtml } from '../../lib/dom/plainText';
 import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
@@ -12,7 +12,6 @@ export function ServerCard({ server, trend }) {
   const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
-  const name = plainTextFromHtml(server.info) || `${server.ip}:${server.port}`;
   const barColor = pct >= 95 ? 'bg-[#ef4444]' : pct >= 80 ? 'bg-[#f59e0b]' : 'bg-primary';
 
   return (
@@ -22,7 +21,11 @@ export function ServerCard({ server, trend }) {
     >
       <CardContent className="p-3 space-y-2">
         <div className="flex items-start justify-between gap-2 min-w-0">
-          <div className="font-medium truncate">{name}</div>
+          <div className="font-medium truncate">
+            {server.info
+              ? <SafeHtml html={server.info} />
+              : `${server.ip}:${server.port}`}
+          </div>
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0">
             <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
             <span>{server.isoCode}</span>

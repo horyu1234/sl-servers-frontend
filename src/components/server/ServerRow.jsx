@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
+import SafeHtml from '../shell/SafeHtml';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
-import { plainTextFromHtml } from '../../lib/dom/plainText';
 import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
@@ -13,7 +13,6 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
   const handleClick = onClick ?? (() => navigate(`/servers/${server.serverId}`));
-  const name = plainTextFromHtml(server.info) || `${server.ip}:${server.port}`;
 
   const barColor = pct >= 95 ? 'bg-[#ef4444]' : pct >= 80 ? 'bg-[#f59e0b]' : 'bg-primary';
 
@@ -25,7 +24,11 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
       style={{ gridTemplateColumns: '1.6fr 80px 180px 150px 70px 18px' }}
     >
       <div className="min-w-0">
-        <div className="truncate font-medium text-foreground">{name}</div>
+        <div className="truncate font-medium text-foreground">
+          {server.info
+            ? <SafeHtml html={server.info} />
+            : `${server.ip}:${server.port}`}
+        </div>
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
       <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
