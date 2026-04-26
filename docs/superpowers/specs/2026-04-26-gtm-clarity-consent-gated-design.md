@@ -114,9 +114,14 @@ export function isInitialized() {
 function initClarity() {
   // Equivalent to the official Clarity bootstrap snippet.
   // We inline rather than eval the snippet so the bundler can lint it.
+  // `q` is also seeded eagerly so it exists immediately after this
+  // function runs (the queue function would otherwise only create it
+  // on first invocation).
   window.clarity = window.clarity || function () {
     (window.clarity.q = window.clarity.q || []).push(arguments);
   };
+  window.clarity.q = window.clarity.q || [];
+
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.clarity.ms/tag/${PROJECT_ID}`;
