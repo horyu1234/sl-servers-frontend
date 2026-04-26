@@ -5,10 +5,12 @@
     "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请于Discord上联系“horyu”。"
   },
   "navbar": {
-    "title": "SCP：SL服务器",
     "server-list": "服务器名录",
     "all-stats": "服务器名录",
-    "all-server-map": "诸服务器之图"
+    "all-server-map": "诸服务器之图",
+    "credit": "诸贤之名",
+    "language": "语言：",
+    "unit": "度量："
   },
   "select": {
     "placeholder": "请择一域",
@@ -22,6 +24,7 @@
     "hide-empty": "隐匿空服",
     "hide-full": "隐匿满服",
     "refreshing": "正在重载名录...",
+    "filter-options-title": "筛选之法",
     "yes-no-filter": {
       "none": "包含一切",
       "yes": "允",
@@ -37,6 +40,11 @@
         "distance-desc": "跋山涉水"
       }
     }
+  },
+  "server-stats": {
+    "users-title": "诸用者",
+    "servers-title": "诸服务器",
+    "offline-label": "不可视"
   },
   "server-list": {
     "loading": "载入服之信息...",
@@ -108,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "框架之计"
+      "title": "框架之计",
+      "back": "返之",
+      "versions-title": "{{name}} — 版本之分",
+      "drill-hint": "击其一片以观版本之分",
+      "drill-back-hint": "击“返之”以归框架之分"
     }
   },
   "all-server-map": {
@@ -117,9 +129,9 @@
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "刷新之后，追踪乃止",
+      "description": "此页所已载之数据脚本，犹运行不息，须待重载方休。今即重载，则君之意立见于行。",
+      "reload": "重载"
     }
   }
 }

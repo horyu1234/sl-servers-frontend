@@ -5,7 +5,6 @@
     "server-error": "Виникла помилка під час отримання даних з сервера. Ці проблеми зазвичай є тимчасовими, тому спробуйте повторити спробу через деякий час. Якщо проблема не зникне, зверніться до 'horyu' у Discord."
   },
   "navbar": {
-    "title": "Сервера SCP: SL",
     "server-list": "Список серверів",
     "all-stats": "Повна статистика",
     "all-server-map": "Карта всіх серверів",
@@ -100,7 +99,7 @@
     }
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory - гра, випущена Northwood Studios ™, цей сайт не має відношення до Northwood Studios.™<br/>Усі товарні знаки та зареєстровані торгові знаки належать відповідним власникам."
+    "notice": "SCP: Secret Laboratory - гра, випущена Northwood Studios™. Цей сайт не має відношення до Northwood Studios™.<br/>Усі товарні знаки та зареєстровані торгові знаки належать відповідним власникам."
   },
   "all-stats": {
     "users": {
@@ -113,25 +112,26 @@
       },
       "graph": {
         "all-country": "Всі країни",
-        "empty-country": "There is no data to query."
+        "empty-country": "Дані відсутні."
       }
     },
     "mod-loader": {
-      "title": "Статистика завантажувача модів"
+      "title": "Статистика завантажувача модів",
+      "back": "Назад",
+      "versions-title": "{{name}} — версії",
+      "drill-hint": "Натисніть на сегмент, щоб побачити розподіл за версіями",
+      "drill-back-hint": "Натисніть «Назад», щоб повернутися до розподілу за завантажувачами"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Карта всіх серверів",
     "server-info-btn": "Клацніть, щоб дізнатися інформацію про цей сервер"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Відстеження припиниться після наступного перезавантаження сторінки",
+      "description": "Скрипти аналітики, які вже завантажені на цій вкладці, продовжуватимуть працювати, доки ви не перезавантажите сторінку. Перезавантажте зараз, щоб негайно застосувати ваш вибір.",
+      "reload": "Перезавантажити"
     }
   }
 }

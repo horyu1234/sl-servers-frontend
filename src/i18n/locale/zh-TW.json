@@ -5,7 +5,6 @@
     "server-error": "從伺服器獲取數據時出錯。 這些問題通常是暫時的，請稍後再試。 如果問題仍然存在，請聯系Discord上的“horyu”。"
   },
   "navbar": {
-    "title": "SCP: SL 伺服器",
     "server-list": "伺服器列表",
     "all-stats": "整體信息狀態",
     "all-server-map": "伺服器大地圖",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "插件加載器統計"
+      "title": "插件加載器統計",
+      "back": "返回",
+      "versions-title": "{{name}} — 版本分布",
+      "drill-hint": "點擊扇形區塊以查看版本分布",
+      "drill-back-hint": "點擊「返回」以回到加載器分布"
     }
   },
   "all-server-map": {

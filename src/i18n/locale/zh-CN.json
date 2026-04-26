@@ -5,7 +5,6 @@
     "server-error": "从服务器获取数据的时候出了一点小小的问题 AWA. 通常来说一段时间后就好啦~ 所以请主人耐心等待一下哦~ 如果问题依旧存在, 请主人从 Discord 上联系'horyu' 吧!."
   },
   "navbar": {
-    "title": "SCP:SL 服务器",
     "server-list": "服务器列表",
     "all-stats": "总体信息概况",
     "all-server-map": "服务器大地图",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "插件加载器统计信息"
+      "title": "插件加载器统计信息",
+      "back": "返回",
+      "versions-title": "{{name}} — 版本分布",
+      "drill-hint": "点击扇区可查看版本分布详情",
+      "drill-back-hint": "点击“返回”可回到加载器分布视图"
     }
   },
   "all-server-map": {
@@ -126,9 +129,9 @@
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "下次刷新页面后将停止跟踪",
+      "description": "本标签页中已加载的分析脚本会持续运行,直至刷新页面。立即刷新可即时应用您的选择。",
+      "reload": "刷新"
     }
   }
 }

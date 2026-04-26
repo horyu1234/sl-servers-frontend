@@ -5,7 +5,6 @@
     "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessar vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast hafðu samband við 'horyu' á Discord."
   },
   "navbar": {
-    "title": "SCP: SL Netþjónir",
     "server-list": "Netþjónalisti",
     "all-stats": "Fullar tölfræði",
     "all-server-map": "Kort yfir allar netþjónir",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Tölfræði um breytingahlaðari"
+      "title": "Tölfræði um breytingahlaðari",
+      "back": "Til baka",
+      "versions-title": "{{name}} — útgáfur",
+      "drill-hint": "Smelltu á sneið til að sjá sundurliðun útgáfna",
+      "drill-back-hint": "Smelltu á Til baka til að snúa aftur í sundurliðun hlaðara"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kort yfir allar netþjónir",
     "server-info-btn": "Smelltu til að athuga upplýsingar um netþjón"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Mæling stöðvast eftir næstu endurhleðslu síðunnar",
+      "description": "Greiningarskriftur sem þegar hafa hlaðist í þessum flipa halda áfram að keyra þangað til þú endurhleður. Endurhladdu núna til að virkja valið þitt strax.",
+      "reload": "Endurhlaða"
     }
   }
 }

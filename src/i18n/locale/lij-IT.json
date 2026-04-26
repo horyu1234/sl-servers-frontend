@@ -5,7 +5,6 @@
     "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
   },
   "navbar": {
-    "title": "Sèrver SCP:SL",
     "server-list": "Lìsta di Sèrver",
     "all-stats": "Statistiche conplête",
     "all-server-map": "Màppa de tutti i Sèrver",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Statìstiche di Mod Loader"
+      "title": "Statìstiche di Mod Loader",
+      "back": "Inderê",
+      "versions-title": "{{name}} — verscioìn",
+      "drill-hint": "Sciacâ 'na fétta pe védde-a repartiçión di verscioìn",
+      "drill-back-hint": "Sciacâ Inderê pe tornâ a-a repartiçión di loader"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Màppa di sèrver",
     "server-info-btn": "Sciacâ per védde-e informaçióni de sèrver"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "O tracciaménto se fermiâ dòppo o pròscimo caregaménto da pàgina",
+      "description": "I scrìpt de analytics za caregæ in 'sta scheda continoiàn a giâ scînn-a quànde no ti recâreghi. Recârega òua pe aplicâ sùbito a tö scelta.",
+      "reload": "Recârega"
     }
   }
 }

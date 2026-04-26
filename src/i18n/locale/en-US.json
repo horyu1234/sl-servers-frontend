@@ -5,7 +5,6 @@
     "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please reach out to 'horyu' on Discord."
   },
   "navbar": {
-    "title": "SCP: SL Servers",
     "server-list": "Server List",
     "all-stats": "Full statistics",
     "all-server-map": "Map of all servers",

@@ -5,13 +5,12 @@
     "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, võtke ühendust kasutajaga 'horyu' Discordis."
   },
   "navbar": {
-    "title": "SCP: SL Serverid",
     "server-list": "Serverite nimekiri",
     "all-stats": "Täielik statistika",
     "all-server-map": "Kõikide serverite kaart",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Tunnustused",
+    "language": "Keel:",
+    "unit": "Ühik:"
   },
   "select": {
     "placeholder": "Valige üksus",
@@ -25,7 +24,7 @@
     "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
     "refreshing": "Laadin nimekirja uuesti...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filtri valikud",
     "yes-no-filter": {
       "none": "Kuva kõik",
       "yes": "Jah",
@@ -34,18 +33,18 @@
       "whitelist": "Valgedkirjad",
       "modded": "Moditud",
       "order-type": {
-        "name": "Sorteerimise tüüp",
-        "player-desc": "Suur hulk inimesi",
-        "player-asc": "Väike hulk inimesi",
-        "distance-asc": "Lähedalolev kaugus",
-        "distance-desc": "Kaugelolev kaugus"
+        "name": "Sorteeri",
+        "player-desc": "Kõige rohkem mängijaid",
+        "player-asc": "Kõige vähem mängijaid",
+        "distance-asc": "Lähimad eespool",
+        "distance-desc": "Kaugemad eespool"
       }
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Kasutajad",
+    "servers-title": "Serverid",
+    "offline-label": "Vallas"
   },
   "server-list": {
     "loading": "Andmete laadimine serverist...",
@@ -59,11 +58,11 @@
   },
   "server-info": {
     "title": "Serveri teave",
-    "not-exist": "Serverit ei eksisteeri.",
-    "loading": "Loading server information...",
+    "not-exist": "Serverit ei leitud.",
+    "loading": "Serveri teabe laadimine...",
     "status": {
-      "online": "Online",
-      "offline": "Offline"
+      "online": "Võrgus",
+      "offline": "Vallas"
     },
     "players": "Mängijad",
     "pastebin": "Pastebin",
@@ -106,32 +105,33 @@
     "users": {
       "title": "Serverite kasutajate koguarv",
       "select-compare-country": {
-        "name": "Vali riik"
+        "name": "Vali võrdluseks riik"
       },
       "show-all": {
-        "name": "Kuva kõik riigiandmed"
+        "name": "Kuva kõik riigid"
       },
       "graph": {
         "all-country": "Kõik riigid",
-        "empty-country": "Päringu jaoks pole andmeid."
+        "empty-country": "Andmed puuduvad."
       }
     },
     "mod-loader": {
-      "title": "Modi laadur statistika"
+      "title": "Modi laadur statistika",
+      "back": "Tagasi",
+      "versions-title": "{{name}} — versioonid",
+      "drill-hint": "Klõpsa sektorit, et näha versioonide jaotust",
+      "drill-back-hint": "Klõpsa Tagasi, et naasta laaduri jaotuse juurde"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kõikide serverite kaart",
     "server-info-btn": "Klõpsake serveri teabe kontrollimiseks"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Jälgimine peatub pärast järgmist lehe taaslaadimist",
+      "description": "Sellele vahekaardile juba laaditud analüütikaskriptid jätkavad töötamist kuni taaslaadimiseni. Laadi leht kohe uuesti, et oma valikut kohe rakendada.",
+      "reload": "Laadi uuesti"
     }
   }
 }

@@ -49,7 +49,7 @@ export default function TopMenu() {
       <div className="mx-auto flex h-14 items-center px-4 gap-3">
         <NavLink to="/" className="flex items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
           <img src="/favicon-32x32.png" alt="" width="20" height="20" />
-          <span className="hidden sm:inline">{t('navbar.title')}</span>
+          <span className="hidden sm:inline">SCP: SL Servers</span>
         </NavLink>
 
         <nav className="hidden lg:flex items-center gap-1 ml-4">

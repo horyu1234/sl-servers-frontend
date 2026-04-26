@@ -5,7 +5,6 @@
     "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, ota yhteyttä 'horyu' Discordissa."
   },
   "navbar": {
-    "title": "SCP: SL - Palvelimet",
     "server-list": "Palvelinluettelo",
     "all-stats": "Tilastot",
     "all-server-map": "Kaikkien palvelinten kartta",
@@ -117,13 +116,14 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader -tilastot"
+      "title": "Mod loader -tilastot",
+      "back": "Takaisin",
+      "versions-title": "{{name}} – versiot",
+      "drill-hint": "Napsauta sektoria nähdäksesi versioiden erittelyn",
+      "drill-back-hint": "Napsauta Takaisin palataksesi mod loader -erittelyyn"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kaikkien palvelinten kartta",
     "server-info-btn": "Napsauta tarkistaaksesi palvelimen tiedot"
   },

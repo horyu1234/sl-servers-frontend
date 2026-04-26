@@ -5,7 +5,6 @@
     "server-error": "Ett fel inträffade vid hämtning av data från servern. Dessa problem är vanligtvis tillfälliga, så försök igen om en stund. Om problemet kvarstår, kontakta 'horyu' på Discord."
   },
   "navbar": {
-    "title": "SCP:SL-servrar",
     "server-list": "Serverlista",
     "all-stats": "Fullständig statistik",
     "all-server-map": "Karta över alla servrar",
@@ -100,16 +99,16 @@
     }
   },
   "footer": {
-    "notice": "SCP:Secret Laboratory är ett spel släppt av Northwood Studios™, denna webbplats är inte associerad med Northwood Studios™.<br/>Alla varumärken tillhör sina respektive ägare."
+    "notice": "SCP: Secret Laboratory är ett spel släppt av Northwood Studios™. Denna webbplats är inte associerad med Northwood Studios™.<br/>Alla varumärken och registrerade varumärken tillhör sina respektive ägare."
   },
   "all-stats": {
     "users": {
       "title": "Totalt antal serveranvändare",
       "select-compare-country": {
-        "name": "Välj land"
+        "name": "Välj ett land att jämföra"
       },
       "show-all": {
-        "name": "Visa all landdata"
+        "name": "Visa alla länder"
       },
       "graph": {
         "all-country": "Alla länder",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Statistik för modloader"
+      "title": "Statistik för modloader",
+      "back": "Tillbaka",
+      "versions-title": "{{name}} — versioner",
+      "drill-hint": "Klicka på en sektor för att se versionsfördelningen",
+      "drill-back-hint": "Klicka på Tillbaka för att återgå till loader-fördelningen"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Karta över alla servrar",
     "server-info-btn": "Klicka för att se serverinfo"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Spårning upphör efter nästa sidladdning",
+      "description": "Analysskript som redan har laddats i den här fliken fortsätter att köras tills du laddar om. Ladda om nu för att tillämpa ditt val direkt.",
+      "reload": "Ladda om"
     }
   }
 }

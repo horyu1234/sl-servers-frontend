@@ -19,12 +19,12 @@ export default function Footer() {
     <footer className="border-t border-border bg-card mt-12">
       <div className="mx-auto px-4 py-10 grid gap-10 md:grid-cols-3 max-w-screen-xl">
         <div>
-          <h5 className="text-sm font-semibold text-foreground mb-2">{t('navbar.title')}</h5>
+          <h5 className="text-sm font-semibold text-foreground mb-2">SCP: SL Servers</h5>
           <p className="text-sm text-muted-foreground">
             SCP: SL server list with filtering options, trends and statistics.
           </p>
           <p className="text-xs text-muted-foreground mt-4">
-            Copyright © 2020-{year}. Horyu (류현오) All rights reserved.
+            Copyright © 2020-{year}. Hyunoh Ryu (Horyu) All rights reserved.
           </p>
         </div>
         <div>

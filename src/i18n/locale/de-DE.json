@@ -5,7 +5,6 @@
     "server-error": "Beim Abrufen der Daten vom Server ist ein Fehler aufgetreten. Diese Probleme sind in der Regel vorübergehend, also versuche es bitte in Kürze erneut. Wenn das Problem weiterhin besteht, kontaktiere bitte 'horyu' auf Discord."
   },
   "navbar": {
-    "title": "SCP: SL Server",
     "server-list": "Server Liste",
     "all-stats": "Alle Statistiken",
     "all-server-map": "Karte von allen Servern",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "Modloader Statistiken"
+      "title": "Modloader Statistiken",
+      "back": "Zurück",
+      "versions-title": "{{name}} – Versionen",
+      "drill-hint": "Klicke auf ein Segment, um die Versionsaufteilung zu sehen",
+      "drill-back-hint": "Klicke auf Zurück, um zur Loader-Übersicht zurückzukehren"
     }
   },
   "all-server-map": {

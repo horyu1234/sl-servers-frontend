@@ -5,7 +5,6 @@
     "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, kontaktujte 'horyu' na Discordu."
   },
   "navbar": {
-    "title": "SCP: SL Servery",
     "server-list": "Seznam serverů",
     "all-stats": "Kompletní statistiky",
     "all-server-map": "Mapa všech serverů",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "Statistiky mod loaderu"
+      "title": "Statistiky mod loaderu",
+      "back": "Zpět",
+      "versions-title": "{{name}} — verze",
+      "drill-hint": "Kliknutím na výseč zobrazíte rozdělení podle verzí",
+      "drill-back-hint": "Kliknutím na Zpět se vrátíte na přehled loaderů"
     }
   },
   "all-server-map": {

@@ -5,7 +5,6 @@
     "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
   },
   "navbar": {
-    "title": "Servidors SCP: SL",
     "server-list": "Llista de servidors",
     "all-stats": "Estadístiques completes",
     "all-server-map": "Map of all servers",
@@ -117,13 +116,14 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader statistics"
+      "title": "Mod loader statistics",
+      "back": "Enrere",
+      "versions-title": "{{name}} — versions",
+      "drill-hint": "Fes clic en una porció per veure el desglossament per versió",
+      "drill-back-hint": "Fes clic a Enrere per tornar al desglossament per loader"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Map of all servers",
     "server-info-btn": "Click to check server info"
   },

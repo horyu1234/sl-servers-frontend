@@ -5,7 +5,6 @@
     "server-error": "Der opstod en fejl under hentning af data fra serveren. Disse problemer er typisk midlertidige, så prøv igen om lidt. Hvis problemet fortsætter, bedes du kontakte 'horyu' på Discord."
   },
   "navbar": {
-    "title": "SCP: SL Servere",
     "server-list": "Serverliste",
     "all-stats": "Fuldstændig statistik",
     "all-server-map": "Kort over alle servere",
@@ -117,13 +116,14 @@
       }
     },
     "mod-loader": {
-      "title": "Statistik over mod loader"
+      "title": "Statistik over mod loader",
+      "back": "Tilbage",
+      "versions-title": "{{name}} — versioner",
+      "drill-hint": "Klik på et felt for at se versionsfordelingen",
+      "drill-back-hint": "Klik på Tilbage for at vende tilbage til loader-oversigten"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kort over alle servere",
     "server-info-btn": "Klik for at se serverinfo"
   },

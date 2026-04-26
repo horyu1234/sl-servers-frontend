@@ -5,7 +5,6 @@
     "server-error": "เกิดข้อผิดพลาดขณะดึงข้อมูลจากเซิร์ฟเวอร์ ปัญหานี้จะเกิดขึ้นชั่วคราว, ดังนั้นโปรดลองอีกครั้งในอีกสักครู่ หากยังมีปัญหาอยู่, โปรดติดต่อ 'horyu' บน Discord"
   },
   "navbar": {
-    "title": "เซิร์ฟเวอร์ SCP: SL",
     "server-list": "รายชื่อเซิร์ฟเวอร์",
     "all-stats": "สถิติทั้งหมด",
     "all-server-map": "แผนที่ของเซิร์ฟเวอร์ทั้งหมด",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "สถิติของตัวโหลด Mod"
+      "title": "สถิติของตัวโหลด Mod",
+      "back": "ย้อนกลับ",
+      "versions-title": "{{name}} — เวอร์ชัน",
+      "drill-hint": "คลิกที่ชิ้นส่วนเพื่อดูรายละเอียดของแต่ละเวอร์ชัน",
+      "drill-back-hint": "คลิกย้อนกลับเพื่อกลับไปยังภาพรวมของตัวโหลด"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "แผนที่ของเซิร์ฟเวอร์ทั้งหมด",
     "server-info-btn": "คลิกเพื่อตรวจสอบข้อมูลเซิร์ฟเวอร์"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "การติดตามจะหยุดหลังจากโหลดหน้าใหม่ครั้งถัดไป",
+      "description": "สคริปต์การวิเคราะห์ที่โหลดแล้วในแท็บนี้จะยังคงทำงานต่อไปจนกว่าคุณจะโหลดหน้าใหม่ โหลดหน้าใหม่ตอนนี้เพื่อให้ตัวเลือกของคุณมีผลทันที",
+      "reload": "โหลดใหม่"
     }
   }
 }

@@ -5,7 +5,6 @@
     "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse Discord üzerinden 'horyu' ile iletişime geçin."
   },
   "navbar": {
-    "title": "SCP: SL Sunucular",
     "server-list": "Sunucu Listesi",
     "all-stats": "Tüm İstatistikler",
     "all-server-map": "Sunucuların Dünya Haritası",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader istatistikleri"
+      "title": "Mod loader istatistikleri",
+      "back": "Geri",
+      "versions-title": "{{name}} — sürümler",
+      "drill-hint": "Sürüm dağılımını görmek için bir dilime tıklayın",
+      "drill-back-hint": "Yükleyici dağılımına dönmek için Geri'ye tıklayın"
     }
   },
   "all-server-map": {
-    "credit": "Emeği Geçenler",
-    "language": "Dil:",
-    "unit": "Unit:",
     "title": "Sunucuların Dünya Haritası",
     "server-info-btn": "Sunucu bilgilerini kontrol etmek için tıklayın"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Takip, sonraki sayfa yüklemesinde duracak",
+      "description": "Bu sekmede zaten yüklenmiş olan analiz scriptleri, sayfayı yenileyene kadar çalışmaya devam edecek. Tercihinizi hemen uygulamak için şimdi yenileyin.",
+      "reload": "Yenile"
     }
   }
 }

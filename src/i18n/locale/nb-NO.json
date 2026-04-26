@@ -2,10 +2,9 @@
   "general": {
     "language-change": "Endret språket til {{language}}. Noen sider kan trenge å bli oppdatert.",
     "not-found": "Siden du ba om kunne ikke bli funnet.",
-    "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
+    "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, kontakt 'horyu' på Discord."
   },
   "navbar": {
-    "title": "SCP:SL Servere",
     "server-list": "Serverliste",
     "all-stats": "Full statistikk",
     "all-server-map": "Kart over alle servere",
@@ -100,7 +99,7 @@
     }
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory er et spill utgitt av Northwood Studios. Denne nettsiden er ikke tilknyttet Northwood Studios.<br/>Alle varemerker og registrerte varemerker tilhører sine respektive eiere."
+    "notice": "SCP: Secret Laboratory er et spill utgitt av Northwood Studios™. Denne nettsiden er ikke tilknyttet Northwood Studios™.<br/>Alle varemerker og registrerte varemerker tilhører sine respektive eiere."
   },
   "all-stats": {
     "users": {
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Statistikk for mod-laster"
+      "title": "Statistikk for mod-laster",
+      "back": "Tilbake",
+      "versions-title": "{{name}} — versjoner",
+      "drill-hint": "Klikk på en sektor for å se versjonsfordelingen",
+      "drill-back-hint": "Klikk Tilbake for å gå tilbake til lasterfordelingen"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kart over alle servere",
     "server-info-btn": "Klikk for å sjekke serverinformasjon"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Sporing stopper etter neste sideoppdatering",
+      "description": "Analyseskript som allerede er lastet i denne fanen, fortsetter å kjøre til du oppdaterer siden. Oppdater nå for å bruke valget ditt umiddelbart.",
+      "reload": "Oppdater"
     }
   }
 }

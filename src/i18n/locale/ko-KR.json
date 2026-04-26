@@ -5,7 +5,6 @@
     "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 디스코드 'horyu'로 문의해주십시오."
   },
   "navbar": {
-    "title": "SCP: SL 서버 목록",
     "server-list": "서버 목록",
     "all-stats": "전체 통계",
     "all-server-map": "전체 서버 지도",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "모드 로더 통계"
+      "title": "모드 로더 통계",
+      "back": "뒤로",
+      "versions-title": "{{name}} — 버전",
+      "drill-hint": "조각을 클릭하면 버전별 분포를 확인할 수 있습니다",
+      "drill-back-hint": "로더별 분포로 돌아가려면 뒤로를 누르세요"
     }
   },
   "all-server-map": {

@@ -5,7 +5,6 @@
     "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, võtke ühendust kasutajaga 'horyu' Discordis."
   },
   "navbar": {
-    "title": "SCP: SL Serverid",
     "server-list": "Serverite nimekiri",
     "all-stats": "Täielik statistika",
     "all-server-map": "Kõikide serverite kaart",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Modi laadur statistika"
+      "title": "Modi laadur statistika",
+      "back": "Reen",
+      "versions-title": "{{name}} — versioj",
+      "drill-hint": "Klaku sektoron por vidi la versian distribuon",
+      "drill-back-hint": "Klaku Reen por reveni al la ŝargilodistribuo"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Kõikide serverite kaart",
     "server-info-btn": "Klõpsake serveri teabe kontrollimiseks"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Spurado ĉesos post la sekva paĝa reŝargo",
+      "description": "Analizaj skriptoj jam ŝargitaj en ĉi tiu langeto plu funkcios ĝis vi reŝargas. Reŝargu nun por tuj apliki vian elekton.",
+      "reload": "Reŝargi"
     }
   }
 }

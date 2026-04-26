@@ -5,7 +5,6 @@
     "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, sazinieties ar 'horyu' Discord."
   },
   "navbar": {
-    "title": "SCP: SL Serveri",
     "server-list": "Serveru saraksts",
     "all-stats": "Pilns statistika",
     "all-server-map": "Visu serveru karte",
@@ -117,21 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Moduļu ielādētāja statistika"
+      "title": "Moduļu ielādētāja statistika",
+      "back": "Atpakaļ",
+      "versions-title": "{{name}} — versijas",
+      "drill-hint": "Noklikšķiniet uz sektora, lai redzētu versiju sadalījumu",
+      "drill-back-hint": "Noklikšķiniet uz Atpakaļ, lai atgrieztos pie ielādētāju sadalījuma"
     }
   },
   "all-server-map": {
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:",
     "title": "Visu serveru karte",
     "server-info-btn": "Noklikšķiniet, lai pārbaudītu servera informāciju"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "Izsekošana tiks pārtraukta pēc nākamās lapas pārlādēšanas",
+      "description": "Šajā cilnē jau ielādētie analītikas skripti turpinās darboties, līdz lapa tiks pārlādēta. Pārlādējiet tagad, lai jūsu izvēle stātos spēkā nekavējoties.",
+      "reload": "Pārlādēt"
     }
   }
 }

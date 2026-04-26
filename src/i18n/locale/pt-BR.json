@@ -5,7 +5,6 @@
     "server-error": "Um erro ocorreu durante a obtenção de dados do servidor. Alguns problemas geralmente são temporários, então tente novamente após um curto período de tempo. Se o problema persistir, por favor, contate 'horyu' no Discord."
   },
   "navbar": {
-    "title": "Servidores do SCP:SL",
     "server-list": "Lista de Servidor",
     "all-stats": "Estatísticas completas",
     "all-server-map": "Mapas de todos os servidores",
@@ -117,7 +116,11 @@
       }
     },
     "mod-loader": {
-      "title": "Estatísticas de Carregador de Modificações"
+      "title": "Estatísticas de Carregador de Modificações",
+      "back": "Voltar",
+      "versions-title": "{{name}} — versões",
+      "drill-hint": "Clique em uma fatia para ver a divisão por versão",
+      "drill-back-hint": "Clique em Voltar para retornar à divisão por carregador"
     }
   },
   "all-server-map": {
@@ -126,9 +129,9 @@
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "title": "O rastreamento será interrompido após o próximo recarregamento da página",
+      "description": "Os scripts de análise já carregados nesta aba continuarão em execução até você recarregar. Recarregue agora para aplicar sua escolha imediatamente.",
+      "reload": "Recarregar"
     }
   }
 }
