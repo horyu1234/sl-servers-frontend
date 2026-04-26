@@ -67,7 +67,12 @@ export default function List() {
   const servers = stats.servers ?? [];
   const fetching = useSelector((s) => s.serverList.fetching);
   const error = useSelector((s) => s.serverList.error);
-  const { trends } = useTrends();
+  // Memoize the serverIds-by-content key so identical fetches (auto-refresh
+  // returning the same servers) don't churn useTrends. The dependency array
+  // is the joined ID string, not the array reference.
+  const idsKey = servers.map((s) => s.serverId).join(',');
+  const serverIds = useMemo(() => servers.map((s) => s.serverId), [idsKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  const { trends } = useTrends(serverIds);
 
   const updateFilter = (next) => {
     if (shallowEqualFilter(filter, next)) return;
