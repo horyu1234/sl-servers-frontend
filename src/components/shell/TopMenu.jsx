@@ -76,7 +76,7 @@ export default function TopMenu() {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] flex flex-col">
+          <SheetContent side="right" className="w-[85vw] max-w-[300px] flex flex-col">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <SheetDescription className="sr-only">Site navigation</SheetDescription>
             <nav className="flex flex-col gap-1 mt-6">
