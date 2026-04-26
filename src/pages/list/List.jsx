@@ -87,19 +87,7 @@ export default function List() {
     scrollMargin: listParentRef.current?.offsetTop ?? 0,
   });
 
-  // Visible serverIds derived from the virtualizer's current viewport
-  // (includes overscan). Grid view falls back to "all currently rendered
-  // cards" since there's no virtualization there. The joined id string
-  // gives useTrends a stable dep across renders that produce the same set.
-  const virtualItems = view === 'list' ? virtualizer.getVirtualItems() : [];
-  const visibleIdsKey = view === 'list'
-    ? virtualItems.map((vi) => servers[vi.index]?.serverId).filter(Boolean).join(',')
-    : servers.map((s) => s.serverId).join(',');
-  const visibleServerIds = useMemo(
-    () => visibleIdsKey ? visibleIdsKey.split(',').map(Number) : [],
-    [visibleIdsKey]
-  );
-  const { trends } = useTrends(visibleServerIds);
+  const { trends } = useTrends();
 
   return (
     <div className="flex">
