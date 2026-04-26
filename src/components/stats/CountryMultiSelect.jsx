@@ -79,7 +79,7 @@ export function CountryMultiSelect({ value, onChange }) {
       {value.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-2">
           {value.map((code) => (
-            <Badge key={code} variant="secondary" className="gap-2 pl-2 pr-1.5 py-1 font-normal">
+            <Badge key={code} variant="secondary" className="rounded-md gap-2 pl-2 pr-1.5 py-1 font-normal">
               <CountryFlag isoCode={code} className="rounded-[1px]" />
               <span className="px-0.5">{getCountryName(code) || code}</span>
               <button

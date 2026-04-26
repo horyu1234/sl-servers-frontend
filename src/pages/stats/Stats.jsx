@@ -58,7 +58,7 @@ export default function Stats() {
             <CardTitle>{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-6">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">
                   {t('all-stats.users.select-compare-country.name')}
