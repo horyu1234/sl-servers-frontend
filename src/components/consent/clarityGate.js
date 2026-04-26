@@ -10,7 +10,9 @@ export function isInitialized() {
 function initClarity() {
   // Equivalent to the official Clarity bootstrap snippet, inlined so the
   // bundler/linter can see it. The queue function buffers calls made before
-  // the remote tag.js finishes loading.
+  // the remote tag.js finishes loading. `q` is also seeded eagerly so it
+  // exists as soon as the gate runs (the queue function would otherwise only
+  // create it on the first invocation).
   window.clarity = window.clarity || function () {
     (window.clarity.q = window.clarity.q || []).push(arguments);
   };
