@@ -7,7 +7,6 @@ import store from "./store";
 import reportWebVitals from './reportWebVitals';
 import {NoticeProvider} from "./components/notice/NoticeContext";
 import NoticeBanner from "./components/shell/NoticeBanner";
-import {ConsentProvider} from "./components/consent/ConsentProvider";
 import {Toaster} from "./components/ui/sonner";
 import "./i18n/i18n";
 
@@ -18,15 +17,13 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <ConsentProvider>
-            <NoticeProvider>
-                <NoticeBanner/>
-                <Provider store={store}>
-                    <App/>
-                </Provider>
-            </NoticeProvider>
-            <Toaster richColors closeButton position="top-right" theme="dark"/>
-        </ConsentProvider>
+        <NoticeProvider>
+            <NoticeBanner/>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </NoticeProvider>
+        <Toaster richColors closeButton position="top-right" theme="dark"/>
     </React.StrictMode>
 );
 

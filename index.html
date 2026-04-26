@@ -52,10 +52,61 @@
      ================================================== -->
     <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet"/>
 
-    <!-- Silktide Consent Manager
+    <!-- Silktide Consent Manager (self-hosted v1 — official CDN no longer exists)
      ================================================== -->
-    <link rel="stylesheet" href="https://cdn.silktide.com/consent-manager/v1/silktide-consent-manager.css"/>
-    <script defer src="https://cdn.silktide.com/consent-manager/v1/cookie-banner.js"></script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/silktide/silktide-consent-manager.css"/>
+    <script src="/silktide/silktide-consent-manager.js"></script>
+    <script>
+      // Per-type onAccept/onReject fire a custom event so the React side can
+      // re-evaluate consent state without polling localStorage. The script
+      // itself never dispatches a DOM event on consent change.
+      function __stcmNotify() { window.dispatchEvent(new Event('silktide:consentchange')); }
+      silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomRight" },
+        position: { banner: "center" },
+        cookieTypes: [
+          {
+            id: "necessary",
+            name: "Necessary",
+            description: "<p>These cookies are required for the website to function. They store your language preference, your cookie consent choices, and basic session state. The site cannot work properly without them, so they cannot be turned off.</p>",
+            required: true,
+            onAccept: __stcmNotify
+          },
+          {
+            id: "functional",
+            name: "Functional",
+            description: "<p>These cookies remember your interface preferences — server filters, list or grid view, sort order, and dismissed notices — so the site looks the way you left it on your next visit. Disabling them does not break the site, but your preferences will be forgotten between sessions.</p>",
+            required: false,
+            onAccept: __stcmNotify,
+            onReject: __stcmNotify
+          },
+          {
+            id: "analytics",
+            name: "Analytics",
+            description: "<p>These cookies allow us to detect crashes and performance problems through Sentry, including session replays of broken pages. We use this only to fix bugs and improve the experience; we do not sell or share this data with advertisers.</p>",
+            required: false,
+            onAccept: __stcmNotify,
+            onReject: __stcmNotify
+          }
+        ],
+        text: {
+          banner: {
+            description: "<p>We use cookies to keep your filters and language preference, and — only with your consent — to detect crashes through Sentry. We do not run ads or sell your data.</p>",
+            acceptAllButtonText: "Accept all",
+            acceptAllButtonAccessibleLabel: "Accept all cookies",
+            rejectNonEssentialButtonText: "Reject non-essential",
+            rejectNonEssentialButtonAccessibleLabel: "Reject non-essential cookies",
+            preferencesButtonText: "Preferences",
+            preferencesButtonAccessibleLabel: "Open cookie preferences"
+          },
+          preferences: {
+            title: "Customize your cookie preferences",
+            description: "<p>Choose which cookies to allow. You can change this any time from the cookie icon in the corner.</p>"
+          }
+        }
+      });
+    </script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -2,7 +2,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useConsent } from './useConsent';
 
-const STORAGE_KEY = 'silktideCookieChoices';
+const KEY = 'silktideCookieChoice_analytics';
+const CHANGE_EVENT = 'silktide:consentchange';
 
 describe('useConsent', () => {
   beforeEach(() => {
@@ -15,16 +16,16 @@ describe('useConsent', () => {
   });
 
   it('reflects the current localStorage state on mount', () => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
+    localStorage.setItem(KEY, 'true');
     const { result } = renderHook(() => useConsent('analytics'));
     expect(result.current).toEqual({ granted: true, status: 'granted' });
   });
 
-  it('updates when the storage event fires', () => {
+  it('updates when the silktide:consentchange event fires', () => {
     const { result } = renderHook(() => useConsent('analytics'));
     act(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: true, functional: true, advertising: false, necessary: true }));
-      window.dispatchEvent(new StorageEvent('storage', { key: STORAGE_KEY }));
+      localStorage.setItem(KEY, 'true');
+      window.dispatchEvent(new Event(CHANGE_EVENT));
     });
     expect(result.current).toEqual({ granted: true, status: 'granted' });
   });

@@ -10,30 +10,30 @@ vi.mock('@sentry/react', () => ({
   replayIntegration: () => ({ name: 'replay' }),
 }));
 
-const STORAGE_KEY = 'silktideCookieChoices';
+const KEY = 'silktideCookieChoice_analytics';
+const CHANGE_EVENT = 'silktide:consentchange';
 
 function setConsent(value) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: value, functional: true, advertising: false, necessary: true }));
-  window.dispatchEvent(new StorageEvent('storage', { key: STORAGE_KEY }));
+  localStorage.setItem(KEY, value ? 'true' : 'false');
+  window.dispatchEvent(new Event(CHANGE_EVENT));
 }
 
-// Track storage handlers added to window so we can remove stale ones between
-// tests. vi.resetModules() re-imports the module but cannot remove window
-// listeners that were registered by a previous import, leading to duplicate
-// evaluate() calls. We intercept addEventListener to collect them and purge
-// before each test.
-const trackedStorageHandlers = new Set();
+// Track listeners added to window so we can remove stale ones between tests.
+// vi.resetModules() re-imports the module but cannot remove window listeners
+// registered by a previous import, leading to duplicate evaluate() calls.
+const trackedHandlers = { storage: new Set(), [CHANGE_EVENT]: new Set() };
 const origAdd = window.addEventListener.bind(window);
 window.addEventListener = function (type, handler, ...rest) {
-  if (type === 'storage') trackedStorageHandlers.add(handler);
+  if (trackedHandlers[type]) trackedHandlers[type].add(handler);
   return origAdd(type, handler, ...rest);
 };
 
 describe('sentryGate', () => {
   beforeEach(() => {
-    // Remove stale storage listeners from previous module imports.
-    for (const h of trackedStorageHandlers) window.removeEventListener('storage', h);
-    trackedStorageHandlers.clear();
+    for (const [type, set] of Object.entries(trackedHandlers)) {
+      for (const h of set) window.removeEventListener(type, h);
+      set.clear();
+    }
     initSpy.mockClear();
     closeSpy.mockClear();
     localStorage.clear();

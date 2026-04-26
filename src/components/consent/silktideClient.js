@@ -1,29 +1,29 @@
-const STORAGE_KEY = 'silktideCookieChoices';
+// Per-type localStorage keys written by silktide-consent-manager.js
+// (`silktideCookieChoice_<typeId>` = "true" | "false"). The script never
+// dispatches a DOM event on its own — index.html wires per-type
+// onAccept/onReject callbacks to fire `silktide:consentchange`, which
+// useSyncExternalStore subscribes to here.
+const KEY_PREFIX = 'silktideCookieChoice_';
+const CHANGE_EVENT = 'silktide:consentchange';
 
-export const CATEGORIES = ['necessary', 'functional', 'analytics', 'advertising'];
-
-function parseChoices() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return null;
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
+export const CATEGORIES = ['necessary', 'functional', 'analytics'];
 
 // Cache per category so useSyncExternalStore gets a stable object reference
 // when the underlying data has not changed (avoids infinite-loop re-renders).
 const consentCache = new Map();
 
 export function readConsent(category) {
-  const choices = parseChoices();
-  let next;
-  if (!choices || typeof choices[category] !== 'boolean') {
-    next = { granted: false, status: 'unknown' };
-  } else {
-    next = { granted: choices[category], status: choices[category] ? 'granted' : 'denied' };
+  let raw = null;
+  try {
+    raw = localStorage.getItem(KEY_PREFIX + category);
+  } catch {
+    // Safari private mode etc — treat as unknown.
   }
+  let next;
+  if (raw === 'true') next = { granted: true, status: 'granted' };
+  else if (raw === 'false') next = { granted: false, status: 'denied' };
+  else next = { granted: false, status: 'unknown' };
+
   const cached = consentCache.get(category);
   if (cached && cached.granted === next.granted && cached.status === next.status) {
     return cached;
@@ -33,48 +33,26 @@ export function readConsent(category) {
 }
 
 const listeners = new Set();
-let storageHandlerInstalled = false;
+let installed = false;
 
-function handleStorageEvent(event) {
-  if (event.key !== STORAGE_KEY) return;
+function handleChange() {
   for (const cb of listeners) cb();
 }
 
 export function subscribe(callback) {
-  if (!storageHandlerInstalled) {
-    window.addEventListener('storage', handleStorageEvent);
-    storageHandlerInstalled = true;
+  if (!installed) {
+    window.addEventListener(CHANGE_EVENT, handleChange);
+    // Cross-tab updates still arrive via the storage event.
+    window.addEventListener('storage', handleChange);
+    installed = true;
   }
   listeners.add(callback);
   return () => {
     listeners.delete(callback);
     if (listeners.size === 0) {
-      window.removeEventListener('storage', handleStorageEvent);
-      storageHandlerInstalled = false;
+      window.removeEventListener(CHANGE_EVENT, handleChange);
+      window.removeEventListener('storage', handleChange);
+      installed = false;
     }
   };
-}
-
-// The DOM `storage` event only fires across tabs. Silktide writes from the
-// same tab, so we additionally poll every 500ms (one cheap localStorage read).
-let lastSnapshot = '';
-let pollHandle = null;
-
-export function startSameTabPolling() {
-  if (pollHandle != null) return;
-  lastSnapshot = localStorage.getItem(STORAGE_KEY) ?? '';
-  pollHandle = setInterval(() => {
-    const current = localStorage.getItem(STORAGE_KEY) ?? '';
-    if (current !== lastSnapshot) {
-      lastSnapshot = current;
-      for (const cb of listeners) cb();
-    }
-  }, 500);
-}
-
-export function stopSameTabPolling() {
-  if (pollHandle != null) {
-    clearInterval(pollHandle);
-    pollHandle = null;
-  }
 }
