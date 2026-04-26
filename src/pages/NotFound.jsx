@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 export default function NotFound() {
   const { t } = useTranslation();
   return (
-    <div className="px-4 py-12 flex justify-center">
+    <div className="flex-1 flex items-center justify-center px-4 py-8">
       <Card className="max-w-md w-full">
         <CardContent className="p-8 flex flex-col items-center text-center gap-4">
           <ServerCrash className="h-12 w-12 text-muted-foreground" />

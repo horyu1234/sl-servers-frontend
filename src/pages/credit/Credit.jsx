@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import languages from '../../data/language.json';
 import thirdPartyLicenses from '../../data/third-party-licenses.json';
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -32,15 +32,23 @@ export default function Credit() {
                 <AccordionContent>
                   <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm">
                     {entries.map((entry) => (
-                      <a
-                        key={entry.name}
-                        href={entry.licenseUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-muted-foreground hover:text-foreground hover:underline"
-                      >
-                        {entry.name}
-                      </a>
+                      entry.licenseUrl
+                        ? (
+                          <a
+                            key={entry.name}
+                            href={entry.licenseUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-muted-foreground hover:text-foreground hover:underline"
+                          >
+                            {entry.name}
+                          </a>
+                        )
+                        : (
+                          <span key={entry.name} className="text-muted-foreground/70">
+                            {entry.name}
+                          </span>
+                        )
                     ))}
                   </div>
                 </AccordionContent>
