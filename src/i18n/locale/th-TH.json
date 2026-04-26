@@ -161,4 +161,12 @@
     "title": "แผนที่ของเซิร์ฟเวอร์ทั้งหมด",
     "server-info-btn": "คลิกเพื่อตรวจสอบข้อมูลเซิร์ฟเวอร์"
   }
+,
+  "consent": {
+    "revoke": {
+      "title": "Tracking will stop on next page load",
+      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "reload": "Reload"
+    }
+  }
 }

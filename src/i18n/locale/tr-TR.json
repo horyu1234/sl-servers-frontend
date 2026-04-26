@@ -161,4 +161,12 @@
     "title": "Sunucuların Dünya Haritası",
     "server-info-btn": "Sunucu bilgilerini kontrol etmek için tıklayın"
   }
+,
+  "consent": {
+    "revoke": {
+      "title": "Tracking will stop on next page load",
+      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "reload": "Reload"
+    }
+  }
 }

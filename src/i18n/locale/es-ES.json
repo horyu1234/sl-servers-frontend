@@ -158,4 +158,12 @@
     "title": "Mapa de todos los servidores",
     "server-info-btn": "Haz click aquí para ver la información del servidor"
   }
+,
+  "consent": {
+    "revoke": {
+      "title": "Tracking will stop on next page load",
+      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "reload": "Reload"
+    }
+  }
 }

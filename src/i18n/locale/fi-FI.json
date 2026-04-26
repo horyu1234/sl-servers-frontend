@@ -161,4 +161,12 @@
     "title": "Kaikkien palvelinten kartta",
     "server-info-btn": "Napsauta tarkistaaksesi palvelimen tiedot"
   }
+,
+  "consent": {
+    "revoke": {
+      "title": "Tracking will stop on next page load",
+      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "reload": "Reload"
+    }
+  }
 }
