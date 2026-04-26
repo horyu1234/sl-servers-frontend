@@ -6,7 +6,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { CountryMultiSelect } from '../../components/stats/CountryMultiSelect';
-import { PeriodPicker } from '../../components/stats/PeriodPicker';
+import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
 import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
 import { getCountryTrendAPI } from '../../lib/api/stats';

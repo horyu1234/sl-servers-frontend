@@ -9,7 +9,7 @@ import { Info as InfoIcon, X } from 'lucide-react';
 import { ServerDetailHeader } from '../../components/server/ServerDetailHeader';
 import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
-import { PeriodPicker } from '../../components/stats/PeriodPicker';
+import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { getServerGraphAPI } from '../../lib/api/servers';
 import * as serverInfoActions from '../../modules/serverInfo';
 
