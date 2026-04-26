@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Променихте езика към {{language}}. Някой промени изискват рестартиране на страницата.",
     "not-found": "Страницата в която влизате не може да е намерена.",
-    "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
+    "server-error": "Възникна грешка при извличане на данни от сървъра. Този проблем обикновено е временен, така че опитайте отново след малко. Ако проблемът продължава, моля, пишете на support@scplist.kr."
   },
   "navbar": {
     "server-list": "Списък от сървъри",

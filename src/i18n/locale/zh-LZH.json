@@ -2,7 +2,7 @@
   "general": {
     "language-change": "语言已更至{{language}}矣。或需刷新以观之。",
     "not-found": "君所求之页面，未之能觅。",
-    "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请于Discord上联系“horyu”。"
+    "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请发邮件至support@scplist.kr。"
   },
   "navbar": {
     "server-list": "服务器名录",

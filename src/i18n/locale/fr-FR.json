@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Langue changée : {{language}}. Un rechargement peut être nécessaire.",
     "not-found": "La page que vous avez demandée est introuvable.",
-    "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci de contacter 'horyu' sur Discord."
+    "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci d'écrire à support@scplist.kr."
   },
   "navbar": {
     "server-list": "Liste des serveurs",

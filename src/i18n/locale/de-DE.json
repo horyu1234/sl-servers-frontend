@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Sprache auf {{language}} geändert. Vielleicht musst du die Seite neu laden.",
     "not-found": "Die angeforderte Seite konnte nicht gefunden werden.",
-    "server-error": "Beim Abrufen der Daten vom Server ist ein Fehler aufgetreten. Diese Probleme sind in der Regel vorübergehend, also versuche es bitte in Kürze erneut. Wenn das Problem weiterhin besteht, kontaktiere bitte 'horyu' auf Discord."
+    "server-error": "Beim Abrufen der Daten vom Server ist ein Fehler aufgetreten. Diese Probleme sind in der Regel vorübergehend, also versuche es bitte in Kürze erneut. Wenn das Problem weiterhin besteht, sende bitte eine E-Mail an support@scplist.kr."
   },
   "navbar": {
     "server-list": "Server Liste",

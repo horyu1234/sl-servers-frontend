@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Změněn jazyk na {{language}}. Některé prvky mohou vyžadovat obnovení stránky.",
     "not-found": "Požadovanou stránku se nepodařilo najít.",
-    "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, kontaktujte 'horyu' na Discordu."
+    "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, napište prosím na support@scplist.kr."
   },
   "navbar": {
     "server-list": "Seznam serverů",

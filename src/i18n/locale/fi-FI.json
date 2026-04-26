@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Vaihdettiin kieli {{language}}:ksi. Osa saattaa vaatia päivityksen.",
     "not-found": "Pyytämääsi sivua ei löydetty.",
-    "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, ota yhteyttä 'horyu' Discordissa."
+    "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, lähetä sähköpostia osoitteeseen support@scplist.kr."
   },
   "navbar": {
     "server-list": "Palvelinluettelo",

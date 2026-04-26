@@ -2,7 +2,7 @@
   "general": {
     "language-change": "已將語言更改為 {{language}}. 有些可能需要重繪.",
     "not-found": "找不到您請求的頁面。",
-    "server-error": "從伺服器獲取數據時出錯。 這些問題通常是暫時的，請稍後再試。 如果問題仍然存在，請聯系Discord上的“horyu”。"
+    "server-error": "從伺服器獲取資料時出錯。這些問題通常是暫時的，請稍後再試。如果問題仍然存在，請寄電子郵件至 support@scplist.kr。"
   },
   "navbar": {
     "server-list": "伺服器列表",

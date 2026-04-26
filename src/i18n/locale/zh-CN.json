@@ -2,7 +2,7 @@
   "general": {
     "language-change": "已将语言更改为 {{language}}. 某些地方可能需要刷新才能生效喵~",
     "not-found": "找不到主人请求的页面QAQ",
-    "server-error": "从服务器获取数据的时候出了一点小小的问题 AWA. 通常来说一段时间后就好啦~ 所以请主人耐心等待一下哦~ 如果问题依旧存在, 请主人从 Discord 上联系'horyu' 吧!."
+    "server-error": "从服务器获取数据的时候出了一点小小的问题 AWA. 通常来说一段时间后就好啦~ 所以请主人耐心等待一下哦~ 如果问题依旧存在, 请主人发送邮件至 support@scplist.kr 哦!"
   },
   "navbar": {
     "server-list": "服务器列表",

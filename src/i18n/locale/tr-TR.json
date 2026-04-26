@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Dil {{language}} olarak değiştirildi. Sayfayı yenilemeniz gerekebilir.",
     "not-found": "Aradığınız sayfa bulunamadı.",
-    "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse Discord üzerinden 'horyu' ile iletişime geçin."
+    "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse support@scplist.kr adresine e-posta gönderin."
   },
   "navbar": {
     "server-list": "Sunucu Listesi",

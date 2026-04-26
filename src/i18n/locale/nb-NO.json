@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Endret språket til {{language}}. Noen sider kan trenge å bli oppdatert.",
     "not-found": "Siden du ba om kunne ikke bli funnet.",
-    "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, kontakt 'horyu' på Discord."
+    "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, send en e-post til support@scplist.kr."
   },
   "navbar": {
     "server-list": "Serverliste",

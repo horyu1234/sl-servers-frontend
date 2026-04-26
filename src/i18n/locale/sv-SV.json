@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Bytte språk till {{language}}. Vissa sidor kan behöva uppdateras.",
     "not-found": "Den begärda sidan kunde inte hittas.",
-    "server-error": "Ett fel inträffade vid hämtning av data från servern. Dessa problem är vanligtvis tillfälliga, så försök igen om en stund. Om problemet kvarstår, kontakta 'horyu' på Discord."
+    "server-error": "Ett fel inträffade vid hämtning av data från servern. Dessa problem är vanligtvis tillfälliga, så försök igen om en stund. Om problemet kvarstår, mejla support@scplist.kr."
   },
   "navbar": {
     "server-list": "Serverlista",

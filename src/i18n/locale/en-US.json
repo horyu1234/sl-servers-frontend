@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Language changed to {{language}}. Some elements may need a refresh.",
     "not-found": "The page you requested could not be found.",
-    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please reach out to 'horyu' on Discord."
+    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr."
   },
   "navbar": {
     "server-list": "Server List",

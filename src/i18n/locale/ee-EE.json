@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Keel on muudetud {{language}}-ks. Mõned võivad vajada värskendamist.",
     "not-found": "Lehte, mida te taotlesite, ei leitud.",
-    "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, võtke ühendust kasutajaga 'horyu' Discordis."
+    "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, palun kirjutage aadressile support@scplist.kr."
   },
   "navbar": {
     "server-list": "Serverite nimekiri",

@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Valoda ir mainīta uz {{language}}. Dažiem var būt nepieciešams atsvaidzināt.",
     "not-found": "Pieprasītā lapa netika atrasta.",
-    "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, sazinieties ar 'horyu' Discord."
+    "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, rakstiet uz e-pastu support@scplist.kr."
   },
   "navbar": {
     "server-list": "Serveru saraksts",

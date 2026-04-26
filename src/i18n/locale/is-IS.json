@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Breytti tungumál í {{language}}. Sumir gætu þurft að endurhlaða síðunni.",
     "not-found": "Síðan sem þú baðst um fannst ekki.",
-    "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessar vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast hafðu samband við 'horyu' á Discord."
+    "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessi vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast sendu tölvupóst á support@scplist.kr."
   },
   "navbar": {
     "server-list": "Netþjónalisti",

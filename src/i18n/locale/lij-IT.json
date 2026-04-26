@@ -2,7 +2,7 @@
   "general": {
     "language-change": "Lìngua impostata su {{language}}. Potrebbe êse necesâio caregâ tórna a pàgina.",
     "not-found": "A pàgina che ti avéi domandòu no exìste.",
-    "server-error": "An error occurred while fetching data from the server. These issues are typically temporary, so please try again in a little while. If the problem persists, please contact 'horyu' on Discord."
+    "server-error": "Gh'é stæto un erô into pigiâ i dæti da-o server. Sti problemi de sòlito en temporanei, donca preuva torna tra un pittin. Se o problema o continua, mandighe 'na mail a support@scplist.kr."
   },
   "navbar": {
     "server-list": "Lìsta di Sèrver",
