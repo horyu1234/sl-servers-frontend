@@ -77,16 +77,16 @@ export function CountryMultiSelect({ value, onChange }) {
       </Popover>
 
       {value.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-2">
           {value.map((code) => (
-            <Badge key={code} variant="secondary" className="gap-1 pl-1 pr-1.5 py-0.5 font-normal">
+            <Badge key={code} variant="secondary" className="gap-2 pl-2 pr-1.5 py-1 font-normal">
               <CountryFlag isoCode={code} className="rounded-[1px]" />
-              <span>{getCountryName(code) || code}</span>
+              <span className="px-0.5">{getCountryName(code) || code}</span>
               <button
                 type="button"
                 onClick={() => remove(code)}
                 aria-label={`Remove ${code}`}
-                className="ml-0.5 rounded-full hover:bg-muted p-0.5"
+                className="rounded-full hover:bg-muted-foreground/20 p-0.5"
               >
                 <X className="h-3 w-3" />
               </button>
