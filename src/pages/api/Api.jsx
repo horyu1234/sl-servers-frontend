@@ -1,20 +1,35 @@
-import React, {useEffect} from 'react';
-import SwaggerUI from "swagger-ui-react"
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Info as InfoIcon } from 'lucide-react';
+import SwaggerUI from 'swagger-ui-react';
 
-import "swagger-ui-react/swagger-ui.css"
+import 'swagger-ui-react/swagger-ui.css';
+import './api.css';
 
-const Api = () => {
-    useEffect(() => {
-        document.body.style.backgroundColor = '#fff';
-
-        return () => {
-            document.body.style.backgroundColor = '';
-        }
-    }, [])
-
-    return (
-        <SwaggerUI url="https://backend.scplist.kr/api/docs"/>
-    )
+export default function Api() {
+  return (
+    <div className="px-4 py-4">
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base">API</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Alert>
+            <InfoIcon className="h-4 w-4" />
+            <AlertDescription>
+              Live OpenAPI documentation served from
+              <code className="mx-1 px-1 py-0.5 rounded bg-muted text-foreground/90 text-xs">
+                backend.scplist.kr/api/docs
+              </code>
+              — try requests directly from the page.
+            </AlertDescription>
+          </Alert>
+          <div className="api-swagger-host bg-white rounded-lg overflow-hidden">
+            <SwaggerUI url="https://backend.scplist.kr/api/docs" />
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
-
-export default Api;

@@ -1,11 +1,38 @@
-.markercluster-map {
-    height: 700px;
+/* Tailwind-aware overrides for Leaflet's defaults so the map blends
+   into the dark shadcn theme. The Leaflet stylesheet itself is loaded
+   in index.html and is untouched. */
+
+.leaflet-container {
+  background-color: hsl(var(--card));
+  font-family: inherit;
 }
 
-.leaflet-popup-content-wrapper {
-    background-color: #222;
+.leaflet-control-attribution {
+  background: hsl(var(--card) / 0.85) !important;
+  color: hsl(var(--muted-foreground)) !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: hsl(var(--primary)) !important;
 }
 
-.leaflet-container a {
-    color: #00bc8c;
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: hsl(var(--popover)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-radius: 6px;
+}
+.leaflet-popup-content {
+  margin: 10px 12px;
+  font-size: 12px;
+}
+.leaflet-popup-close-button {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
 }

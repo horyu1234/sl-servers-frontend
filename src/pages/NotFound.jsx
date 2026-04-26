@@ -1,16 +1,24 @@
 import React from 'react';
-import {useTranslation} from "react-i18next";
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { ServerCrash, ArrowLeft } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
-const NotFound = () => {
-    const {t} = useTranslation();
-
-    return (
-        <div className="container">
-            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
-                {t('general.not-found')}
-            </div>
-        </div>
-    )
+export default function NotFound() {
+  const { t } = useTranslation();
+  return (
+    <div className="px-4 py-12 flex justify-center">
+      <Card className="max-w-md w-full">
+        <CardContent className="p-8 flex flex-col items-center text-center gap-4">
+          <ServerCrash className="h-12 w-12 text-muted-foreground" />
+          <div className="text-2xl font-semibold">404</div>
+          <div className="text-sm text-muted-foreground">{t('general.not-found')}</div>
+          <Button asChild variant="outline" className="gap-2 mt-2">
+            <Link to="/"><ArrowLeft className="h-4 w-4" /> Home</Link>
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
-
-export default NotFound;

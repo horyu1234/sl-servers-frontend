@@ -1,0 +1,10 @@
+/* SwaggerUI ships a light-mode stylesheet that assumes a white page.
+   Constrain it to its own container so the rest of the app stays dark. */
+.api-swagger-host {
+  color: #303030;
+}
+.api-swagger-host .swagger-ui,
+.api-swagger-host .swagger-ui .opblock-tag,
+.api-swagger-host .swagger-ui .opblock-summary {
+  color: #303030;
+}
