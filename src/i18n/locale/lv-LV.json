@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Servera meklēšana",
-      "placeholder": "Ievadiet meklēšanas terminus",
-      "search-btn": "Meklēt"
+      "placeholder": "Ievadiet meklēšanas terminus"
     },
-    "country-filter": "Valsts filtrs",
     "hide-empty": "Paslēpt tukšos serverus",
     "hide-full": "Paslēpt pilnos serverus",
-    "refresh-btn": "Atsvaidzināt sarakstu",
     "refreshing": "Saraksta atsvaidzināšana...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Visi lietotāji: {{count}}",
-    "online-servers": "Tiešsaistes serveri: {{count}}",
-    "display-users": "Lietotāji uzskaitīti: {{count}}",
-    "display-servers": "Serveri uzskaitīti: {{count}}",
-    "offline-servers": "Bezsaistes (kešota) serveri: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Numurs",
-      "address": "Adrese",
-      "name": "Nosaukums",
-      "pastebin": "Pastebin",
-      "players": "Spēlētāji",
-      "distance": "Attālums"
-    },
     "loading": "Datu ielāde no servera...",
-    "empty": "Nav datu, ko parādīt.",
     "tech": {
       "yes": "Jā",
       "no": "Nē",
-      "country": "Valsts",
       "game-version": "Spēles versija",
       "friendly-fire": "Draudzīgs uguns",
       "whitelist": "Baltais saraksts"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Servera informācija",
     "not-exist": "Serveris neeksistē.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Statuss",
       "online": "Tiešsaistē",
       "offline": "Bezsaistē"
     },
-    "address": "Adrese",
     "players": "Spēlētāji",
     "pastebin": "Pastebin",
     "distance": "Attālums",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Grafikā norādītais laiks nav ietekmēts no vasaras laika izmaiņām.",
     "graph": {
       "loading": "Datu ielāde no servera...",
-      "visitors": "Apmeklētāji",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Sākuma laikam jābūt agrākam nekā beigu laiks.",
-        "invalid-stop-time": "Beigu laikam jābūt vēlākam nekā sākuma laiks.",
         "data-range": "Datu periods",
         "start-time": "Sākuma laiks",
         "stop-time": "Beigu laiks",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory ir spēle, ko izstrādājusi Northwood Studios™, šī vietne nav saistīta ar Northwood Studios™.<br/>Visas preču zīmes un reģistrētās preču zīmes pieder to attiecīgajiem īpašniekiem."
   },
-  "cookie-notice": {
-    "message": "Šī vietne izmanto sīkdatnes, lai nodrošinātu labāko pieredzi mūsu vietnē.",
-    "dismiss": "Sapratu!",
-    "link-text": "Uzzināt vairāk"
-  },
   "all-stats": {
     "users": {
       "title": "Kopējais servera lietotāju skaits",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Moduļu ielādētāja statistika",
-      "tooltip": "Moduļu ielādētājs"
+      "title": "Moduļu ielādētāja statistika"
     }
   },
   "all-server-map": {

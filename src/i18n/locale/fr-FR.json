@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Rechercher un serveur",
-      "placeholder": "Entrez les termes de recherche",
-      "search-btn": "Rechercher"
+      "placeholder": "Entrez les termes de recherche"
     },
-    "country-filter": "Filtre de pays",
     "hide-empty": "Masquer les serveurs vides",
     "hide-full": "Masquer les serveurs complets",
-    "refresh-btn": "Recharger la liste",
     "refreshing": "Rechargement de la liste...",
     "filter-options-title": "Options de filtrage",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Tous les utilisateurs: {{count}}",
-    "online-servers": "Serveurs en ligne: {{count}}",
-    "display-users": "Utilisateurs listés: {{count}}",
-    "display-servers": "Serveurs listés: {{count}}",
-    "offline-servers": "Serveurs hors ligne (en cache): {{count}}",
     "users-title": "Utilisateurs",
     "servers-title": "Serveurs",
-    "total-online-users": "Total des utilisateurs en ligne",
-    "filtered-users": "Utilisateurs filtrés",
-    "online-label": "En ligne",
-    "offline-label": "Hors ligne",
-    "filtered-servers": "Serveurs filtrés"
+    "offline-label": "Hors ligne"
   },
   "server-list": {
-    "head": {
-      "number": "Numéro",
-      "address": "Adresse",
-      "name": "Nom",
-      "pastebin": "Pastebin",
-      "players": "Joueurs",
-      "distance": "Distance"
-    },
     "loading": "Chargement des données du serveur...",
-    "empty": "Aucune donnée à afficher.",
     "tech": {
       "yes": "Oui",
       "no": "Non",
-      "country": "Pays",
       "game-version": "Version du jeu",
       "friendly-fire": "Tir allié",
       "whitelist": "Liste blanche"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Informations du serveur",
     "not-exist": "Le serveur n'existe pas.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "État",
       "online": "En ligne",
       "offline": "Hors ligne"
     },
-    "address": "Adresse",
     "players": "Joueurs",
     "pastebin": "Pastebin",
     "distance": "Distance",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "L’heure sur le graphique n’est pas affectée par l’heure d’été.",
     "graph": {
       "loading": "Chargement des données du serveur...",
-      "visitors": "Visiteurs",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "dd/MM/yyyy HH:mm",
-        "invalid-start-time": "La date de début doit être antérieure à la date de fin.",
-        "invalid-stop-time": "La date de fin doit être postérieure à la date de début.",
         "data-range": "Période",
         "start-time": "Date de début",
         "stop-time": "Date de fin",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory est un jeu publié par Northwood Studios™, ce site n’est pas affilié à Northwood Studios™.<br/>Toutes les marques et marques déposées sont la propriété de leurs propriétaires respectifs."
   },
-  "cookie-notice": {
-    "message": "Ce site utilise des cookies afin de vous offrir la meilleure expérience possible.",
-    "dismiss": "Accepter",
-    "link-text": "En savoir plus"
-  },
   "all-stats": {
     "users": {
       "title": "Nombre total d’utilisateurs de tous les serveurs",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistiques des mod loaders",
-      "tooltip": "Mod Loader"
+      "title": "Statistiques des mod loaders"
     }
   },
   "all-server-map": {

@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Търсене на сървъри",
-      "placeholder": "Въведете фрази",
-      "search-btn": "Търсете"
+      "placeholder": "Въведете фрази"
     },
-    "country-filter": "Филтър държави",
     "hide-empty": "Скрийте празни сървъри",
     "hide-full": "Скрийте пълни сървъри",
-    "refresh-btn": "Презареди списъка",
     "refreshing": "Презареждане на списъка...",
     "filter-options-title": "Опции за филтриране",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Всички играчи: {{count}}",
-    "online-servers": "Онлайн сървъри: {{count}}",
-    "display-users": "Потребители изброени: {{count}}",
-    "display-servers": "Сървъри изброени: {{count}}",
-    "offline-servers": "Офлайн (запазени) сървъри: {{count}}",
     "users-title": "Потребители",
     "servers-title": "Сървъри",
-    "total-online-users": "Общо онлайн потребители",
-    "filtered-users": "Филтрирани потребители",
-    "online-label": "Онлайн",
-    "offline-label": "Офлайн",
-    "filtered-servers": "Филтрирани сървъри"
+    "offline-label": "Офлайн"
   },
   "server-list": {
-    "head": {
-      "number": "Номер",
-      "address": "Адрес",
-      "name": "Име",
-      "pastebin": "Pastebin",
-      "players": "Играчи",
-      "distance": "Разстояние"
-    },
     "loading": "Зареждане на данни от сървър...",
-    "empty": "Няма данни за показване.",
     "tech": {
       "yes": "Да",
       "no": "Не",
-      "country": "Държава",
       "game-version": "Версия на играта",
       "friendly-fire": "Приятелски Огън",
       "whitelist": "Частен"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Информация на сървъра",
     "not-exist": "Сървъра не съществува.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Статус",
       "online": "Онлайн",
       "offline": "Офлайн"
     },
-    "address": "Адрес",
     "players": "Играчи",
     "pastebin": "Pastebin",
     "distance": "Разстояние",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Часът на графиката не се влияе от лятното часово време.",
     "graph": {
       "loading": "Зареждане на данни от сървър...",
-      "visitors": "Посетителя",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Началното време трябва да е по-рано отколкото крайното време.",
-        "invalid-stop-time": "Крайното време трябва да е по-късно отколкото началното време",
         "data-range": "Период на данни",
         "start-time": "Начално време",
         "stop-time": "Крайно време",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory е игра публикувана от Northwood Studios™, този сайт не е по никакъв начин свързан с Northwood Studios™.<br/>Всички марки са регистрирани марки и собственост на техните собственици.."
   },
-  "cookie-notice": {
-    "message": "Тозй сайт ползва бисквити за да осигури най-доброто преживяване в сайта ни.",
-    "dismiss": "Добре!",
-    "link-text": "Научи повече"
-  },
   "all-stats": {
     "users": {
       "title": "Число на всички сървър потребители",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader статистика",
-      "tooltip": "Mod Loader"
+      "title": "Mod loader статистика"
     }
   },
   "all-server-map": {

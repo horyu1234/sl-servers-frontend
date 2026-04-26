@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "查找服务器",
-      "placeholder": "请键入关键字",
-      "search-btn": "查找"
+      "placeholder": "请键入关键字"
     },
-    "country-filter": "按国家/地区查找",
     "hide-empty": "隐藏无人服务器",
     "hide-full": "隐藏满人服务器",
-    "refresh-btn": "刷新列表",
     "refreshing": "正在加载喵~",
     "filter-options-title": "筛选选项",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "全球总在线玩家数: {{count}}",
-    "online-servers": "全球总在线服务器数: {{count}}",
-    "display-users": "当前显示的服务器中的玩家数: {{count}}",
-    "display-servers": "当前显示的服务器数: {{count}}",
-    "offline-servers": "离线 (缓存) 服务器: {{count}}",
     "users-title": "用户",
     "servers-title": "服务器",
-    "total-online-users": "总在线用户",
-    "filtered-users": "已筛选用户",
-    "online-label": "在线",
-    "offline-label": "离线",
-    "filtered-servers": "已筛选服务器"
+    "offline-label": "离线"
   },
   "server-list": {
-    "head": {
-      "number": "序号",
-      "address": "IP地址",
-      "name": "服务器名称",
-      "pastebin": "PastebinID",
-      "players": "玩家数",
-      "distance": "距离"
-    },
     "loading": "正在努力获取服务器信息喵~",
-    "empty": "阿巴阿巴,或许你应该换个关键词试试?",
     "tech": {
       "yes": "开启",
       "no": "关闭",
-      "country": "国家/地区",
       "game-version": "游戏版本",
       "friendly-fire": "友军伤害",
       "whitelist": "白名单"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "服务器信息",
     "not-exist": "诶?可是我找不到这个服务器啊QAQ",
+    "loading": "Loading server information...",
     "status": {
-      "name": "状态",
       "online": "在线",
       "offline": "离线"
     },
-    "address": "IP地址",
     "players": "玩家数",
     "pastebin": "PastebinID",
     "distance": "距离",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "图表上的时间不受夏令时的影响(其实中国自1992年就已经不受影响了的说)",
     "graph": {
       "loading": "正在努力获取服务器信息喵~",
-      "visitors": "玩家数",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "别闹,主人!起始时间必须早于结束时间哦~",
-        "invalid-stop-time": "别闹,主人!停止时间必须晚于结束时间哦~",
         "data-range": "数据时长",
         "start-time": "起始时间",
         "stop-time": "结束时间",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: 秘密实验室 是Northwood Studios™发行的游戏, 但是本网站并不属于 Northwood Studios™ 喵~<br/>所有商标和注册商标均为其各自所有者的财产"
   },
-  "cookie-notice": {
-    "message": "为了让您获得最佳的体验,本网站需要使用 Cookie 喵~",
-    "dismiss": "俺明白辽",
-    "link-text": "点我来了解详情喵~"
-  },
   "all-stats": {
     "users": {
       "title": "在线服务器玩家总数",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "插件加载器统计信息",
-      "tooltip": "插件加载器"
+      "title": "插件加载器统计信息"
     }
   },
   "all-server-map": {

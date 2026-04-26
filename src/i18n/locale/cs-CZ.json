@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Hledání serveru",
-      "placeholder": "Zadejte hledané výrazy",
-      "search-btn": "Hledat"
+      "placeholder": "Zadejte hledané výrazy"
     },
-    "country-filter": "Filtr podle země",
     "hide-empty": "Skrýt prázdné servery",
     "hide-full": "Skrýt plné servery",
-    "refresh-btn": "Obnovit seznam",
     "refreshing": "Obnovuji seznam...",
     "filter-options-title": "Možnosti filtru",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Všichni uživatelé: {{count}}",
-    "online-servers": "Online servery: {{count}}",
-    "display-users": "Zobrazení uživatelé: {{count}}",
-    "display-servers": "Zobrazené servery: {{count}}",
-    "offline-servers": "Offline (uložené) servery: {{count}}",
     "users-title": "Uživatelé",
     "servers-title": "Servery",
-    "total-online-users": "Celkový počet online uživatelů",
-    "filtered-users": "Filtrovaní uživatelé",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtrované servery"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Číslo",
-      "address": "Adresa",
-      "name": "Název",
-      "pastebin": "Pastebin",
-      "players": "Hráči",
-      "distance": "Vzdálenost"
-    },
     "loading": "Načítání dat ze serveru...",
-    "empty": "Nejsou k dispozici žádná data.",
     "tech": {
       "yes": "Ano",
       "no": "Ne",
-      "country": "Země",
       "game-version": "Verze hry",
       "friendly-fire": "Přátelská palba",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Informace o serveru",
     "not-exist": "Server neexistuje.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Stav",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Adresa",
     "players": "Hráči",
     "pastebin": "Pastebin",
     "distance": "Vzdálenost",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Čas na grafu není ovlivněn letním časem.",
     "graph": {
       "loading": "Načítání dat ze serveru...",
-      "visitors": "Návštěvníci",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Čas začátku musí být dříve než čas ukončení.",
-        "invalid-stop-time": "Čas ukončení musí být později než čas začátku.",
         "data-range": "Období dat",
         "start-time": "Čas začátku",
         "stop-time": "Čas ukončení",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory je hra vydaná společností Northwood Studios™, tento web není s Northwood Studios™ nijak spojen.<br/>Všechna ochranná známka jsou majetkem jejich příslušných vlastníků."
   },
-  "cookie-notice": {
-    "message": "Tato stránka používá cookies, aby vám zajistila co nejlepší zážitek.",
-    "dismiss": "Rozumím!",
-    "link-text": "Více informací"
-  },
   "all-stats": {
     "users": {
       "title": "Celkový počet uživatelů serveru",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistiky mod loaderu",
-      "tooltip": "Mod Loader"
+      "title": "Statistiky mod loaderu"
     }
   },
   "all-server-map": {

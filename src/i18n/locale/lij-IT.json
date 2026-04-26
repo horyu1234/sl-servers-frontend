@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Çèrchia 'n Sèrver",
-      "placeholder": "Inserî i termini de o riçèrca",
-      "search-btn": "Çèrchia"
+      "placeholder": "Inserî i termini de o riçèrca"
     },
-    "country-filter": "Filtrâ pe o naçión",
     "hide-empty": "Intafoâ i sèrver vuoti",
     "hide-full": "Intafoâ i sèrver pieni",
-    "refresh-btn": "Recàrega a lìsta",
     "refreshing": "Caregaménto lìsta inte còrso...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Utènti totâli: {{count}}",
-    "online-servers": "Sèrver conéssi: {{count}}",
-    "display-users": "Utènti inta lìsta: {{count}}",
-    "display-servers": "Sèrver inta lìsta: {{count}}",
-    "offline-servers": "Sèrver no conéssi (cached): {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Nùmero",
-      "address": "Indirìsso IP",
-      "name": "Nómme",
-      "pastebin": "Pastebin",
-      "players": "Zugòui",
-      "distance": "Distànsa"
-    },
     "loading": "Caregaménto informaçióni da-o sèrver inte còrso...",
-    "empty": "No ghe sono informaçióni pe quésto sèrver.",
     "tech": {
       "yes": "Si",
       "no": "Nôe",
-      "country": "Naçión",
       "game-version": "Versción de o zêugo",
       "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "informaçióni do Sèrver",
     "not-exist": "O sèerver no exìste",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Stâto",
       "online": "Conésso",
       "offline": "Desconésso"
     },
-    "address": "Indirìsso IP",
     "players": "Zugòui",
     "pastebin": "Pastebin",
     "distance": "Distànsa",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "L'ôa in sciô gràfico no êse influenzata da-a ôa legâle.",
     "graph": {
       "loading": "Caregaménto informaçióni da-o sèrver inte còrso...",
-      "visitors": "Vixitatôi",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "A dæta de inìçio dovéi êse alò a dæta de fìn.",
-        "invalid-stop-time": "A dæta de fìn dovéi êse depoî a dæta de inìçio.",
         "data-range": "Perîodo",
         "start-time": "Da",
         "stop-time": "A",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory êse 'n zêugo prodûto da Northwood Studios™, 'sto scîto d’Internétte no êse afiliòu con Northwood Studios™.<br/>Tùtti i dirìtti sono riservòui a-o creatô do zêugo."
   },
-  "cookie-notice": {
-    "message": "Quésto scîto d’Internétte dêuviâ i cookie per unn-a espertîxe mêgio(e) de navegaçión.",
-    "dismiss": "Acapîo!",
-    "link-text": "Lêze âtro"
-  },
   "all-stats": {
     "users": {
       "title": "Nùmero totâle di zugòui",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statìstiche di Mod Loader",
-      "tooltip": "Mod Loader"
+      "title": "Statìstiche di Mod Loader"
     }
   },
   "all-server-map": {

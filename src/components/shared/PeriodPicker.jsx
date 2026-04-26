@@ -77,7 +77,9 @@ export function PeriodPicker({ onUpdate }) {
           </SelectTrigger>
           <SelectContent>
             {PERIODS.map((p) => (
-              <SelectItem key={p.id} value={p.id}>{p.id}</SelectItem>
+              <SelectItem key={p.id} value={p.id}>
+                {t(`server-info.graph.options.period.${p.id}`, { defaultValue: p.id })}
+              </SelectItem>
             ))}
           </SelectContent>
         </Select>
@@ -110,7 +112,9 @@ export function PeriodPicker({ onUpdate }) {
           </SelectTrigger>
           <SelectContent>
             {resolutions.map((r) => (
-              <SelectItem key={r} value={r}>{r}</SelectItem>
+              <SelectItem key={r} value={r}>
+                {t(`server-info.graph.options.resolution.${r}`, { defaultValue: r })}
+              </SelectItem>
             ))}
           </SelectContent>
         </Select>

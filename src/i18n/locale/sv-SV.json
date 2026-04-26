@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Serversökning",
-      "placeholder": "Ange söktermer",
-      "search-btn": "Sök"
+      "placeholder": "Ange söktermer"
     },
-    "country-filter": "Landfilter",
     "hide-empty": "Dölj tomma servrar",
     "hide-full": "Dölj fulla servrar",
-    "refresh-btn": "Ladda om lista",
     "refreshing": "Laddar om lista...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Alla användare: {{count}}",
-    "online-servers": "Online-servrar: {{count}}",
-    "display-users": "Visade användare: {{count}}",
-    "display-servers": "Visade servrar: {{count}}",
-    "offline-servers": "Offline (cacheade) servrar: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Nummer",
-      "address": "Adress",
-      "name": "Namn",
-      "pastebin": "Pastebin",
-      "players": "Spelare",
-      "distance": "Avstånd"
-    },
     "loading": "Laddar data från servern...",
-    "empty": "Det finns ingen data att visa.",
     "tech": {
       "yes": "Ja",
       "no": "Nej",
-      "country": "Land",
       "game-version": "Spelversion",
       "friendly-fire": "Vänligt eld",
       "whitelist": "Vitlista"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Serversinformation",
     "not-exist": "Servern finns inte.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Status",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Adress",
     "players": "Spelare",
     "pastebin": "Pastebin",
     "distance": "Avstånd",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Tiden på grafen påverkas inte av sommartid.",
     "graph": {
       "loading": "Laddar data från servern...",
-      "visitors": "Besökare",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Starttiden måste vara tidigare än stopptiden.",
-        "invalid-stop-time": "Stopptiden måste vara senare än starttiden.",
         "data-range": "Dataperiod",
         "start-time": "Starttid",
         "stop-time": "Stopptid",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP:Secret Laboratory är ett spel släppt av Northwood Studios™, denna webbplats är inte associerad med Northwood Studios™.<br/>Alla varumärken tillhör sina respektive ägare."
   },
-  "cookie-notice": {
-    "message": "Denna webbplats använder cookies för att säkerställa att du får den bästa upplevelsen på vår webbplats.",
-    "dismiss": "Förstått!",
-    "link-text": "Läs mer"
-  },
   "all-stats": {
     "users": {
       "title": "Totalt antal serveranvändare",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistik för modloader",
-      "tooltip": "Mod Loader"
+      "title": "Statistik för modloader"
     }
   },
   "all-server-map": {

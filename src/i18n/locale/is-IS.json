@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Leita að netþjón",
-      "placeholder": "Sláðu inn leitarorð",
-      "search-btn": "Leita"
+      "placeholder": "Sláðu inn leitarorð"
     },
-    "country-filter": "Landafilter",
     "hide-empty": "Fela tóma netþjóna",
     "hide-full": "Fela fulla netþjóna",
-    "refresh-btn": "Endurhlaða listann",
     "refreshing": "Endurhlaðning lista...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Allir notendur: {{count}}",
-    "online-servers": "Netþjónir í gangi: {{count}}",
-    "display-users": "Notendur sýndir: {{count}}",
-    "display-servers": "Netþjónir sýndir: {{count}}",
-    "offline-servers": "Ótengdir (í skyndihlaði) netþjónir: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Tala",
-      "address": "Heimilisfang",
-      "name": "Nafn",
-      "pastebin": "Pastebin",
-      "players": "Leikmenn",
-      "distance": "Fjarlægð"
-    },
     "loading": "Hleð gögnum frá netþjóni...",
-    "empty": "Engin gögn til að sýna.",
     "tech": {
       "yes": "Já",
       "no": "Nei",
-      "country": "Land",
       "game-version": "Leikritunarútgáfa",
       "friendly-fire": "Vinaleg eldur",
       "whitelist": "Hvítlisti"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Upplýsingar um netþjón",
     "not-exist": "Netþjónninn er ekki til.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Staða",
       "online": "Í gangi",
       "offline": "Ótengdur"
     },
-    "address": "Heimilisfang",
     "players": "Leikmenn",
     "pastebin": "Pastebin",
     "distance": "Fjarlægð",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Tíminn á grafinu er ekki hraðstæður af sumartíma.",
     "graph": {
       "loading": "Hleð gögnum frá netþjóni...",
-      "visitors": "Heimsóttir",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Byrjunartíminn verður að vera á undan lokatímanum.",
-        "invalid-stop-time": "Lokatíminn verður að vera á eftir byrjunartímanum.",
         "data-range": "Gögnumars",
         "start-time": "Byrjunartími",
         "stop-time": "Lokatími",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory er leikur gefinn út af Northwood Studios™, þessi síða er ekki tengd Northwood Studios™.<br/>Allar vörumerki og skráð vörumerki eru eignir sínar eigenda."
   },
-  "cookie-notice": {
-    "message": "Þessi vefsíða notar kökur til að tryggja þér bestu reynslu á vefsíðunni okkar.",
-    "dismiss": "Áskilja!",
-    "link-text": "Nánar um"
-  },
   "all-stats": {
     "users": {
       "title": "Heildarfjöldi notenda á netþjóni",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Tölfræði um breytingahlaðari",
-      "tooltip": "Breytingahlaðari"
+      "title": "Tölfræði um breytingahlaðari"
     }
   },
   "all-server-map": {

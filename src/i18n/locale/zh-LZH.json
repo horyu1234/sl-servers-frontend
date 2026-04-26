@@ -17,13 +17,10 @@
   "filter-option": {
     "server-search": {
       "name": "搜索服务器",
-      "placeholder": "输入欲索之词",
-      "search-btn": "搜索"
+      "placeholder": "输入欲索之词"
     },
-    "country-filter": "择服以国",
     "hide-empty": "隐匿空服",
     "hide-full": "隐匿满服",
-    "refresh-btn": "隐匿空服务器",
     "refreshing": "正在重载名录...",
     "yes-no-filter": {
       "none": "包含一切",
@@ -41,28 +38,11 @@
       }
     }
   },
-  "server-stats": {
-    "online-users": "在线游人: {{count}}",
-    "online-servers": "在线之服: {{count}}",
-    "display-users": "所见游人: {{count}}",
-    "display-servers": "所见之服: {{count}}",
-    "offline-servers": "不可视 (记录) 服务器: {{count}}"
-  },
   "server-list": {
-    "head": {
-      "number": "排序之法",
-      "address": "IP",
-      "name": "名",
-      "pastebin": "Pastebin",
-      "players": "游者",
-      "distance": "间隔"
-    },
     "loading": "载入服之信息...",
-    "empty": "无可奉告.",
     "tech": {
       "yes": "允",
       "no": "拒",
-      "country": "国",
       "game-version": "戏之版本",
       "friendly-fire": "自相残杀",
       "whitelist": "非请莫入"
@@ -71,12 +51,11 @@
   "server-info": {
     "title": "服之信息",
     "not-exist": "未寻所求之物.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "所态",
       "online": "可视",
       "offline": "不可视"
     },
-    "address": "IP",
     "players": "游者",
     "pastebin": "Pastebin",
     "distance": "间隔",
@@ -84,12 +63,7 @@
     "daylight-saving-time": "图表之时不受夏令时影响.",
     "graph": {
       "loading": "载入服之数据...",
-      "visitors": "游人数",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "起始之时需早于终止之时.",
-        "invalid-stop-time": "终止之时需晚于起始之时.",
         "data-range": "数之隔",
         "start-time": "起始之时",
         "stop-time": "终止之时",
@@ -119,11 +93,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory 乃 Northwood Studios™ 所发行之游戏, 本站非 Northwood Studios™ 之附属. <br/>一切商标及注册商标均为各拥有者之财产。"
   },
-  "cookie-notice": {
-    "message": "此站用Cookie以确保君于吾网得最佳体验。",
-    "dismiss": "知晓矣",
-    "link-text": "详加学习"
-  },
   "all-stats": {
     "users": {
       "title": "服务器用户之和",
@@ -139,8 +108,7 @@
       }
     },
     "mod-loader": {
-      "title": "框架之计",
-      "tooltip": "改之框架"
+      "title": "框架之计"
     }
   },
   "all-server-map": {

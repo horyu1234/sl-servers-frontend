@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Cercar servidor",
-      "placeholder": "Introdueix els termes de cerca",
-      "search-btn": "Cercar"
+      "placeholder": "Introdueix els termes de cerca"
     },
-    "country-filter": "Filtre de país",
     "hide-empty": "Amagar servidors buits",
     "hide-full": "Amagar servidors plens",
-    "refresh-btn": "Recarregar llista",
     "refreshing": "Recarregant llista...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Tots els usuaris: {{count}}",
-    "online-servers": "Servidors en línia: {{count}}",
-    "display-users": "Usuaris seleccionats: {{count}}",
-    "display-servers": "Servidors seleccionats: {{count}}",
-    "offline-servers": "Servidors offline (en caixet): {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Número",
-      "address": "Direcció",
-      "name": "Nom",
-      "pastebin": "Pastebin",
-      "players": "Jugadors",
-      "distance": "Distància"
-    },
     "loading": "Carregant dades del servidor...",
-    "empty": "No hi ha dades que mostrar.",
     "tech": {
       "yes": "Si",
       "no": "No",
-      "country": "País",
       "game-version": "Versió de Joc",
       "friendly-fire": "Foc Amic",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Informació del servidor",
     "not-exist": "The server does not exist.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Estat",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Direcció",
     "players": "Jugadors",
     "pastebin": "Pastebin",
     "distance": "Distància",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "El temps en el gràfic no és alterat per l'horari d'estiu.",
     "graph": {
       "loading": "Carregant dades del servidor...",
-      "visitors": "Visitants",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "The start time must be earlier than the stop time.",
-        "invalid-stop-time": "The stop time must be later than the start time.",
         "data-range": "Data Period",
         "start-time": "Start Time",
         "stop-time": "Stop Time",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory és un joc publicat per Northwood Studios™, aquest lloc no està afiliat amb Northwood Studios™.<br/>Totes les marques comercials i marques comercials registrades són propietat dels seus respectius amos."
   },
-  "cookie-notice": {
-    "message": "Aquesta pàgina utilitza cookies per a donar-te una millor experiència.",
-    "dismiss": "Entés!",
-    "link-text": "Saber més"
-  },
   "all-stats": {
     "users": {
       "title": "Nombre total d'usuaris en el servidor",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader statistics",
-      "tooltip": "Mod Loader"
+      "title": "Mod loader statistics"
     }
   },
   "all-server-map": {

@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Sunucu Ara",
-      "placeholder": "Arama terimi girin",
-      "search-btn": "Ara"
+      "placeholder": "Arama terimi girin"
     },
-    "country-filter": "Ülke Filtresi",
     "hide-empty": "Boş sunucuları gizle",
     "hide-full": "Dolu sunucuları gizle",
-    "refresh-btn": "Listeyi yenile",
     "refreshing": "Liste yenileniyor...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Tüm oyuncular: {{count}}",
-    "online-servers": "Çevrimiçi Sunucular: {{count}}",
-    "display-users": "Oyuncu Sayısı: {{count}}",
-    "display-servers": "Sunucu Sayısı: {{count}}",
-    "offline-servers": "Çevrımdışı (önbellek) Sunucu Sayısı: {{count}}",
     "users-title": "Kullanıcılar",
     "servers-title": "Sunucular",
-    "total-online-users": "Toplam Çevrimiçi Kullanıcı Sayısı",
-    "filtered-users": "Filtrelenmiş Kullanıcılar",
-    "online-label": "Çevrimiçi",
-    "offline-label": "Çevrimdışı",
-    "filtered-servers": "Filtrelenmiş Sunucular"
+    "offline-label": "Çevrimdışı"
   },
   "server-list": {
-    "head": {
-      "number": "Numara",
-      "address": "IP Adresi",
-      "name": "Sunucu Adı",
-      "pastebin": "Pastebin",
-      "players": "Oyuncular",
-      "distance": "Uzaklık"
-    },
     "loading": "Sunucu verileri alınıyor...",
-    "empty": "Gösterilecek veri bulunamadı.",
     "tech": {
       "yes": "Evet",
       "no": "Hayır",
-      "country": "Ülke",
       "game-version": "Oyun Sürümü",
       "friendly-fire": "Dost Ateşi",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Sunucu Bilgisi",
     "not-exist": "Sunucu mevcut değil.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Durum",
       "online": "Çevrimiçi",
       "offline": "Çevrımdışı"
     },
-    "address": "Adres",
     "players": "Oyuncular",
     "pastebin": "Pastebin",
     "distance": "Uzaklık",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Yaz saati uygulaması programdaki saati etkilemez.",
     "graph": {
       "loading": "Sunucudan veri alınıyor...",
-      "visitors": "Ziyaretçiler",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "dd/MM/yyyy hh:mm",
-        "invalid-start-time": "Başlangıç zamanı, bitiş zamanından daha erken olmalıdır.",
-        "invalid-stop-time": "Bitiş zamanı, başlangıç zamanından sonra olmalıdır.",
         "data-range": "Veri Dönemi",
         "start-time": "Başlangıç Tarihi",
         "stop-time": "Bitiş Tarihi",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory, Northwood Studios ™ tarafından yayınlanan bir oyundur, bu site Northwood Studios ™ ile bağlantılı değildir. <br/> Tüm ticari markalar ve tescilli markalar, ilgili sahiplerinin mülkiyetindedir."
   },
-  "cookie-notice": {
-    "message": "Bu websitesi, en iyi deneyimi yaşayabilmeniz için cookie verilerinizi kullanır.",
-    "dismiss": "Anladım!",
-    "link-text": "Daha fazla bilgi edin"
-  },
   "all-stats": {
     "users": {
       "title": "Toplam Oyuncu Sayısı (Global)",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader istatistikleri",
-      "tooltip": "Mod Loader"
+      "title": "Mod loader istatistikleri"
     }
   },
   "all-server-map": {

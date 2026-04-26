@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Поиск сервера",
-      "placeholder": "Введите запрос",
-      "search-btn": "Поиск"
+      "placeholder": "Введите запрос"
     },
-    "country-filter": "Фильтр стран",
     "hide-empty": "Скрыть пустые серверы",
     "hide-full": "Скрыть заполненные серверы",
-    "refresh-btn": "Перезагрузить",
     "refreshing": "Обновление...",
     "filter-options-title": "Параметры фильтрации",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Игроков: {{count}}",
-    "online-servers": "Серверов: {{count}}",
-    "display-users": "Игроков в списке: {{count}}",
-    "display-servers": "Серверов в списке: {{count}}",
-    "offline-servers": "Серверов оффлайн (кэшированных): {{count}}",
     "users-title": "Игроки",
     "servers-title": "Серверы",
-    "total-online-users": "Всего онлайн игроков",
-    "filtered-users": "Отфильтрованные игроки",
-    "online-label": "Онлайн",
-    "offline-label": "Оффлайн",
-    "filtered-servers": "Отфильтрованные серверы"
+    "offline-label": "Оффлайн"
   },
   "server-list": {
-    "head": {
-      "number": "Номер",
-      "address": "Адрес",
-      "name": "Название",
-      "pastebin": "Информация",
-      "players": "Игроков",
-      "distance": "Дистанция"
-    },
     "loading": "Загрузка данных...",
-    "empty": "Нет данных.",
     "tech": {
       "yes": "Вкл",
       "no": "Выкл",
-      "country": "Страна",
       "game-version": "Версия игры",
       "friendly-fire": "Огонь по своим",
       "whitelist": "Белый список"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Информация о сервере",
     "not-exist": "Указанный сервер не существует.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Статус",
       "online": "Онлайн",
       "offline": "Оффлайн"
     },
-    "address": "Адрес",
     "players": "Игроков",
     "pastebin": "Pastebin",
     "distance": "Дистанция",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Переход на летнее время не влияет на график.",
     "graph": {
       "loading": "Загрузка данных...",
-      "visitors": "Игроков",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Начало должно быть раньше конца.",
-        "invalid-stop-time": "Конец должен быть позже начала.",
         "data-range": "Период",
         "start-time": "С",
         "stop-time": "По",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory - игра, выпущенная Northwood Studios™. Сайт не имеет никакого отношения к Northwood Studios™.<br/>Все товарные знаки и зарегистрированные товарные знаки являются собственностью соответствующих владельцев."
   },
-  "cookie-notice": {
-    "message": "Этот сайт использует файлы cookie для максимальной производительности и удобства.",
-    "dismiss": "Хорошо",
-    "link-text": "Узнать больше"
-  },
   "all-stats": {
     "users": {
       "title": "Общее число игроков",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Статистика загрузчиков плагинов",
-      "tooltip": "Загрузчик плагинов"
+      "title": "Статистика загрузчиков плагинов"
     }
   },
   "all-server-map": {

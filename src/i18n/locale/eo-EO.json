@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Serveri otsing",
-      "placeholder": "Sisestage otsinguterminid",
-      "search-btn": "Otsi"
+      "placeholder": "Sisestage otsinguterminid"
     },
-    "country-filter": "Riigi filter",
     "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
-    "refresh-btn": "Laadi nimekiri uuesti",
     "refreshing": "Laadin nimekirja uuesti...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Kõik kasutajad: {{count}}",
-    "online-servers": "Online-serverid: {{count}}",
-    "display-users": "Kuvatud kasutajad: {{count}}",
-    "display-servers": "Kuvatud serverid: {{count}}",
-    "offline-servers": "Offline (vahemällu salvestatud) serverid: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Number",
-      "address": "Aadress",
-      "name": "Nimi",
-      "pastebin": "Pastebin",
-      "players": "Mängijad",
-      "distance": "Kaugus"
-    },
     "loading": "Andmete laadimine serverist...",
-    "empty": "Andmeid pole kuvamiseks.",
     "tech": {
       "yes": "Jah",
       "no": "Ei",
-      "country": "Riik",
       "game-version": "Mängu versioon",
       "friendly-fire": "Sõbralik tuli",
       "whitelist": "Valgedkirjad"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Serveri teave",
     "not-exist": "Serverit ei eksisteeri.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Staatus",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Aadress",
     "players": "Mängijad",
     "pastebin": "Pastebin",
     "distance": "Kaugus",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Graafikul olev aeg ei ole mõjutatud suveajast.",
     "graph": {
       "loading": "Andmete laadimine serverist...",
-      "visitors": "Külastajad",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Algusaeg peab olema lõppajast varem.",
-        "invalid-stop-time": "Lõppaeg peab olema algusajast hilisem.",
         "data-range": "Andmeperiood",
         "start-time": "Algusaeg",
         "stop-time": "Lõppaeg",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory on mäng, mille on välja andnud Northwood Studios™. See veebisait ei ole seotud Northwood Studios™-ga.<br/>Kõik kaubamärgid ja registreeritud kaubamärgid on nende vastavate omanike vara."
   },
-  "cookie-notice": {
-    "message": "See veebisait kasutab küpsiseid, et tagada teile parim kogemus meie veebisaidil.",
-    "dismiss": "Sain aru!",
-    "link-text": "Lisateave"
-  },
   "all-stats": {
     "users": {
       "title": "Serverite kasutajate koguarv",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Modi laadur statistika",
-      "tooltip": "Modi Laadur"
+      "title": "Modi laadur statistika"
     }
   },
   "all-server-map": {

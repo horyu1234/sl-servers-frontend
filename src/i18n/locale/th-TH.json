@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "ค้นหาเซิร์ฟเวอร์",
-      "placeholder": "ป้อนคำค้นหา",
-      "search-btn": "ค้นหา"
+      "placeholder": "ป้อนคำค้นหา"
     },
-    "country-filter": "ตัวกรองประเทศ",
     "hide-empty": "ซ่อนเซิร์ฟเวอร์ไม่มีคน",
     "hide-full": "ซ่อนเซิร์ฟเวอร์คนเต็ม",
-    "refresh-btn": "โหลดอีกครั้ง",
     "refreshing": "กำลังโหลด...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "ผู้ใช้ทั้งหมด: {{count}}",
-    "online-servers": "เซิร์ฟเวอร์ร์ออนไลน์: {{count}}",
-    "display-users": "รายชื่อผู้ใช้: {{count}}",
-    "display-servers": "รายชื่อเซิร์ฟเวอร์: {{count}}",
-    "offline-servers": "เซิร์ฟเวอร์ออฟไลน์ (แคช): {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "หมายเลข",
-      "address": "IP",
-      "name": "ชื่อ",
-      "pastebin": "Pastebin",
-      "players": "ผู้เล่น",
-      "distance": "ระยะห่าง"
-    },
     "loading": "กำลังโหลดข้อมูลจากเซิร์ฟเวอร์...",
-    "empty": "ไม่มีข้อมูลให้แสดง.",
     "tech": {
       "yes": "ใช่",
       "no": "ไม่ใช่",
-      "country": "ประเทศ",
       "game-version": "เวอร์ชั่นเกม",
       "friendly-fire": "ยิงกันเอง",
       "whitelist": "ไวท์ลิสต์"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "ข้อมูลเซิร์ฟเวอร์",
     "not-exist": "ไม่มีเซิร์ฟเวอร์.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "สถานะ",
       "online": "ออนไลน์",
       "offline": "ออฟไลน์"
     },
-    "address": "ที่อยู่ IP",
     "players": "ผู้เล่น",
     "pastebin": "Pastebin",
     "distance": "ระยะห่าง",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "เวลาบนกราฟจะไม่ได้รับผลกระทบจากระบบ",
     "graph": {
       "loading": "กำลังโหลดข้อมูลจากเซิร์ฟเวอร์...",
-      "visitors": "ผู้เล่น",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "เวลาเริ่มต้นต้องมาก่อนเวลาหยุด",
-        "invalid-stop-time": "เวลาหยุดต้องช้ากว่าเวลาเริ่มต้น",
         "data-range": "ระยะเวลาข้อมูล",
         "start-time": "เวลาเริ่มต้น",
         "stop-time": "หยุดเวลา",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory เป็นเกมที่ออกโดย Northwood Studios™ เว็บไซต์นี้ไม่มีส่วนเกี่ยวข้องกับ Northwood Studios™<br/>เครื่องหมายการค้าและเครื่องหมายการค้าจดทะเบียนทั้งหมดเป็นทรัพย์สินของเจ้าของที่เกี่ยวข้อง"
   },
-  "cookie-notice": {
-    "message": "เว็บไซต์นี้ใช้คุกกี้เพื่อให้แน่ใจว่าคุณได้รับประสบการณ์ที่ดีที่สุดบนเว็บไซต์ของเรา",
-    "dismiss": "เข้าใจแล้ว!",
-    "link-text": "เรียนรู้เพิ่มเติม"
-  },
   "all-stats": {
     "users": {
       "title": "จำนวนผู้ใช้เซิร์ฟเวอร์ทั้งหมด",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "สถิติของตัวโหลด Mod",
-      "tooltip": "ตัวโหลด Mod"
+      "title": "สถิติของตัวโหลด Mod"
     }
   },
   "all-server-map": {

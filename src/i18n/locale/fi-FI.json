@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Palvelimen haku",
-      "placeholder": "Syötä hakuehdot",
-      "search-btn": "Hae"
+      "placeholder": "Syötä hakuehdot"
     },
-    "country-filter": "Maasuodatin",
     "hide-empty": "Piilota tyhjät palvelimet",
     "hide-full": "Piilota täydet palvelimet",
-    "refresh-btn": "Päivitä luettelo",
     "refreshing": "Päivitetään luetteloa...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Kaikki käyttäjät: {{count}}",
-    "online-servers": "Verkossa olevat palvelimet: {{count}}",
-    "display-users": "Listatut käyttäjät: {{count}}",
-    "display-servers": "Listatut palvelimet: {{count}}",
-    "offline-servers": "Offline (välimuistissa olevat) palvelimet: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Numero",
-      "address": "Osoite",
-      "name": "Nimi",
-      "pastebin": "Pastebin",
-      "players": "Pelaajat",
-      "distance": "Etäisyys"
-    },
     "loading": "Ladataan tietoja palvelimelta...",
-    "empty": "Ei näytettäviä tietoja.",
     "tech": {
       "yes": "Kyllä",
       "no": "Ei",
-      "country": "Maa",
       "game-version": "Pelin versio",
       "friendly-fire": "Ystävällinen tuli",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Palvelimen tiedot",
     "not-exist": "Palvelinta ei ole olemassa.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Tila",
       "online": "Verkossa",
       "offline": "Offline"
     },
-    "address": "Osoite",
     "players": "Pelaajat",
     "pastebin": "Pastebin",
     "distance": "Etäisyys",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Graafin aika ei muutu kesäaikaan.",
     "graph": {
       "loading": "Ladataan tietoja palvelimelta...",
-      "visitors": "Kävijät",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Aloitusaika on oltava lopetusaikaa aikaisempi.",
-        "invalid-stop-time": "Lopetusaika on oltava aloitusaikaa myöhäisempi.",
         "data-range": "Ajanjakso",
         "start-time": "Aloitusaika",
         "stop-time": "Lopetusaika",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory on Northwood Studios™:in julkaisema peli, tämä sivusto ei ole yhteydessä Northwood Studios™:iin.<br/>Kaikki tavaramerkit ja rekisteröidyt tavaramerkit ovat omistajiensa omaisuutta."
   },
-  "cookie-notice": {
-    "message": "Tämä verkkosivusto käyttää evästeitä varmistaakseen parhaan käyttökokemuksen.",
-    "dismiss": "Selvä!",
-    "link-text": "Lisätietoja"
-  },
   "all-stats": {
     "users": {
       "title": "Palvelimen käyttäjien kokonaismäärä",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader -tilastot",
-      "tooltip": "Mod Loader"
+      "title": "Mod loader -tilastot"
     }
   },
   "all-server-map": {

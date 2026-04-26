@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Server Søk",
-      "placeholder": "Skriv inn søkeord",
-      "search-btn": "Søk"
+      "placeholder": "Skriv inn søkeord"
     },
-    "country-filter": "Landfilter",
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulle servere",
-    "refresh-btn": "Last inn liste på nytt",
     "refreshing": "Laster inn liste...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Alle brukere: {{count}}",
-    "online-servers": "Online servere: {{count}}",
-    "display-users": "Listede brukere: {{count}}",
-    "display-servers": "Listede servere: {{count}}",
-    "offline-servers": "Offline (bufrede) servere: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Nummer",
-      "address": "Adresse",
-      "name": "Navn",
-      "pastebin": "Pastebin",
-      "players": "Spillere",
-      "distance": "Avstand"
-    },
     "loading": "Laster data fra server...",
-    "empty": "Det er ingen data å vise.",
     "tech": {
       "yes": "Ja",
       "no": "Nei",
-      "country": "Land",
       "game-version": "Spillversjon",
       "friendly-fire": "Vennligsinnede skudd",
       "whitelist": "Hviteliste"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Serverinformasjon",
     "not-exist": "Serveren eksisterer ikke.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Status",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Adresse",
     "players": "Spillere",
     "pastebin": "Pastebin",
     "distance": "Avstand",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Tiden på grafen påvirkes ikke av sommertid.",
     "graph": {
       "loading": "Laster data fra server...",
-      "visitors": "Besøkende",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Starttiden må være tidligere enn stopptiden.",
-        "invalid-stop-time": "Stopptiden må være senere enn starttiden.",
         "data-range": "Dataperiode",
         "start-time": "Starttid",
         "stop-time": "Stoptid",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory er et spill utgitt av Northwood Studios. Denne nettsiden er ikke tilknyttet Northwood Studios.<br/>Alle varemerker og registrerte varemerker tilhører sine respektive eiere."
   },
-  "cookie-notice": {
-    "message": "Denne nettsiden bruker informasjonskapsler for å sikre at du får den beste opplevelsen på vår nettside.",
-    "dismiss": "Forstått!",
-    "link-text": "Lær mer"
-  },
   "all-stats": {
     "users": {
       "title": "Totalt antall brukere på serveren",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistikk for mod-laster",
-      "tooltip": "Mod-laster"
+      "title": "Statistikk for mod-laster"
     }
   },
   "all-server-map": {

@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Пошук серверів",
-      "placeholder": "Введіть умови пошуку",
-      "search-btn": "Пошук"
+      "placeholder": "Введіть умови пошуку"
     },
-    "country-filter": "Фільтр по країнам",
     "hide-empty": "Приховати порожні сервера",
     "hide-full": "Приховати повні сервера",
-    "refresh-btn": "Перезавантажити список",
     "refreshing": "Перезавантажити список...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Всі користувачі: {{count}}",
-    "online-servers": "Доступно серверів: {{count}}",
-    "display-users": "Користувачів у списку: {{count}}",
-    "display-servers": "Серверів в списку: {{count}}",
-    "offline-servers": "Серверів в не мережі: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Номер",
-      "address": "Адреса",
-      "name": "Імя",
-      "pastebin": "Pastebin",
-      "players": "Гравці",
-      "distance": "Відстань"
-    },
     "loading": "Завантаження даних з сервера...",
-    "empty": "Немає даних для відображення.",
     "tech": {
       "yes": "Так",
       "no": "Ні",
-      "country": "Країнам",
       "game-version": "Версія гри",
       "friendly-fire": "Вогонь по своїх",
       "whitelist": "Білий список"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Інформація про сервер",
     "not-exist": "Сервер не існує.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Статус",
       "online": "Онлайн",
       "offline": "Не в мережі"
     },
-    "address": "Адреса",
     "players": "Гравці",
     "pastebin": "Pastebin",
     "distance": "Відстань",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Перехід на літній час не впливає на час на графіку.",
     "graph": {
       "loading": "Завантаження даних з сервера...",
-      "visitors": "Відвідувачі",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Час початку повинен бути раніше, ніж час зупинки.",
-        "invalid-stop-time": "Час зупинки повинен бути пізніше часу старту.",
         "data-range": "Період даних",
         "start-time": "Час початку",
         "stop-time": "Час зупинки",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory - гра, випущена Northwood Studios ™, цей сайт не має відношення до Northwood Studios.™<br/>Усі товарні знаки та зареєстровані торгові знаки належать відповідним власникам."
   },
-  "cookie-notice": {
-    "message": "Цей веб-сайт використовує файли cookie для забезпечення найкращого досвіду роботи на нашому веб-сайті.",
-    "dismiss": "Зрозумів!",
-    "link-text": "Дізнатися більше"
-  },
   "all-stats": {
     "users": {
       "title": "Загальна кількість користувачів серверів",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Статистика завантажувача модів",
-      "tooltip": "Завантажувач модів"
+      "title": "Статистика завантажувача модів"
     }
   },
   "all-server-map": {

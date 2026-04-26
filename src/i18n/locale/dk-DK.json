@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "Søg efter server",
-      "placeholder": "Indtast søgetermer",
-      "search-btn": "Søg"
+      "placeholder": "Indtast søgetermer"
     },
-    "country-filter": "Landfilter",
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulde servere",
-    "refresh-btn": "Genindlæs liste",
     "refreshing": "Genindlæser liste...",
     "filter-options-title": "Filter Options",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "Alle brugere: {{count}}",
-    "online-servers": "Online servere: {{count}}",
-    "display-users": "Visning af brugere: {{count}}",
-    "display-servers": "Visning af servere: {{count}}",
-    "offline-servers": "Offline (gemte) servere: {{count}}",
     "users-title": "Users",
     "servers-title": "Servers",
-    "total-online-users": "Total Online Users",
-    "filtered-users": "Filtered Users",
-    "online-label": "Online",
-    "offline-label": "Offline",
-    "filtered-servers": "Filtered Servers"
+    "offline-label": "Offline"
   },
   "server-list": {
-    "head": {
-      "number": "Nummer",
-      "address": "Adresse",
-      "name": "Navn",
-      "pastebin": "Pastebin",
-      "players": "Spillere",
-      "distance": "Afstand"
-    },
     "loading": "Indlæser data fra server...",
-    "empty": "Der er ingen data at vise.",
     "tech": {
       "yes": "Ja",
       "no": "Nej",
-      "country": "Land",
       "game-version": "Spilversion",
       "friendly-fire": "Venlig ild",
       "whitelist": "Whitelist"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "Serverinformation",
     "not-exist": "Serveren findes ikke.",
+    "loading": "Loading server information...",
     "status": {
-      "name": "Status",
       "online": "Online",
       "offline": "Offline"
     },
-    "address": "Adresse",
     "players": "Spillere",
     "pastebin": "Pastebin",
     "distance": "Afstand",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "Tiden på grafen påvirkes ikke af sommertid.",
     "graph": {
       "loading": "Indlæser data fra server...",
-      "visitors": "Besøgende",
-      "visitor-suffix": "",
       "options": {
-        "date-format": "yyyy-MM-dd aa hh:mm",
-        "invalid-start-time": "Starttidspunktet skal være tidligere end stopptidspunktet.",
-        "invalid-stop-time": "Stopptidspunktet skal være senere end starttidspunktet.",
         "data-range": "Dataperiode",
         "start-time": "Starttidspunkt",
         "stop-time": "Stopptidspunkt",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory er et spil udgivet af Northwood Studios™. Denne side er ikke tilknyttet Northwood Studios™.<br/>Alle varemærker og registrerede varemærker tilhører deres respektive ejere."
   },
-  "cookie-notice": {
-    "message": "Denne hjemmeside bruger cookies for at sikre, at du får den bedste oplevelse på vores hjemmeside.",
-    "dismiss": "Forstået!",
-    "link-text": "Læs mere"
-  },
   "all-stats": {
     "users": {
       "title": "Samlet antal serverbrugere",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "Statistik over mod loader",
-      "tooltip": "Mod Loader"
+      "title": "Statistik over mod loader"
     }
   },
   "all-server-map": {

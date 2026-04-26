@@ -20,13 +20,10 @@
   "filter-option": {
     "server-search": {
       "name": "서버 검색",
-      "placeholder": "검색어 입력",
-      "search-btn": "검색"
+      "placeholder": "검색어 입력"
     },
-    "country-filter": "국가 필터",
     "hide-empty": "빈 서버 숨기기",
     "hide-full": "가득 찬 서버 숨기기",
-    "refresh-btn": "목록 다시 불러오기",
     "refreshing": "목록을 다시 불러오는 중...",
     "filter-options-title": "필터 옵션",
     "yes-no-filter": {
@@ -46,34 +43,15 @@
     }
   },
   "server-stats": {
-    "online-users": "전체 유저: {{count}}명",
-    "online-servers": "온라인 서버: {{count}}개",
-    "display-users": "목록에 표시된 유저: {{count}}명",
-    "display-servers": "목록에 표시된 서버: {{count}}개",
-    "offline-servers": "오프라인(캐시된) 서버: {{count}}개",
     "users-title": "유저",
     "servers-title": "서버",
-    "total-online-users": "전체 온라인 유저",
-    "filtered-users": "필터링된 유저",
-    "online-label": "온라인",
-    "offline-label": "오프라인",
-    "filtered-servers": "필터링된 서버"
+    "offline-label": "오프라인"
   },
   "server-list": {
-    "head": {
-      "number": "번호",
-      "address": "주소",
-      "name": "이름",
-      "pastebin": "Pastebin",
-      "players": "인원",
-      "distance": "거리"
-    },
     "loading": "서버로 부터 데이터를 불러오는 중입니다...",
-    "empty": "표시할 데이터가 없습니다.",
     "tech": {
       "yes": "네",
       "no": "아니요",
-      "country": "국가",
       "game-version": "게임 버전",
       "friendly-fire": "아군 공격",
       "whitelist": "화이트리스트"
@@ -82,12 +60,11 @@
   "server-info": {
     "title": "서버 정보",
     "not-exist": "존재하지 않는 서버입니다.",
+    "loading": "서버 정보를 불러오는 중입니다...",
     "status": {
-      "name": "상태",
       "online": "온라인",
       "offline": "오프라인"
     },
-    "address": "주소",
     "players": "인원",
     "pastebin": "Pastebin",
     "distance": "거리",
@@ -95,12 +72,7 @@
     "daylight-saving-time": "그래프의 시간은 일광 절약 시간에 영향을 받지 않습니다. (한국은 관련 없음)",
     "graph": {
       "loading": "서버로 부터 데이터를 불러오는 중입니다...",
-      "visitors": "접속자",
-      "visitor-suffix": "명",
       "options": {
-        "date-format": "yyyy년 MM월 dd일 aa hh시 mm분",
-        "invalid-start-time": "시작 일자는 종료 일자보다 이전이어야 합니다.",
-        "invalid-stop-time": "종료 일자는 시작 일자보다 이후여야 합니다.",
         "data-range": "데이터 기간",
         "start-time": "시작 일자",
         "stop-time": "종료 일자",
@@ -130,11 +102,6 @@
   "footer": {
     "notice": "SCP: Secret Laboratory 는 Northwood Studios™ 에서 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다."
   },
-  "cookie-notice": {
-    "message": "이 웹사이트는 사용자의 더욱 좋은 경험을 위해 쿠키를 사용하고 있습니다.",
-    "dismiss": "알겠습니다!",
-    "link-text": "더 알아보기"
-  },
   "all-stats": {
     "users": {
       "title": "전체 서버 유저 수",
@@ -150,8 +117,7 @@
       }
     },
     "mod-loader": {
-      "title": "모드 로더 통계",
-      "tooltip": "모드 로더"
+      "title": "모드 로더 통계"
     }
   },
   "all-server-map": {
