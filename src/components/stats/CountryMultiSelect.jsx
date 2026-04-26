@@ -18,11 +18,14 @@ export function CountryMultiSelect({ value, onChange }) {
   const fetching = useSelector((s) => s.countryList.fetching);
   const [open, setOpen] = useState(false);
 
+  // Depend on a primitive (boolean) instead of the array reference. The
+  // legacy countryList reducer returns a NEW empty array `data: []` on
+  // FETCHING; using `isoCodes` itself as a dep would re-fire the effect
+  // (new array reference) and re-dispatch -> infinite loop.
+  const hasCountries = Array.isArray(isoCodes) && isoCodes.length > 0;
   useEffect(() => {
-    if (!isoCodes || isoCodes.length === 0) {
-      dispatch(countryListActions.getCountryList());
-    }
-  }, [dispatch, isoCodes]);
+    if (!hasCountries) dispatch(countryListActions.getCountryList());
+  }, [dispatch, hasCountries]);
 
   const options = useMemo(
     () => (isoCodes ?? []).map((code) => ({ code, name: getCountryName(code) || code })),

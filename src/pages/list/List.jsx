@@ -35,7 +35,13 @@ export default function List() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const filter = useMemo(() => parseFromSearchParams(searchParams), [searchParams]);
+  // Memo on the URLSearchParams' STRING form, not the object reference.
+  // React Router can return a new URLSearchParams instance on every render
+  // even when the URL hasn't changed; using `searchParams` directly as a
+  // dep makes useMemo always recompute, producing a new `filter` object
+  // each render, which then re-fires the dispatch effect below in a loop.
+  const filterKey = searchParams.toString();
+  const filter = useMemo(() => parseFromSearchParams(searchParams), [filterKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const view = searchParams.get('view') === 'grid' ? 'grid' : 'list';
   const setView = (v) => {
