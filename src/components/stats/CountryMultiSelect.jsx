@@ -38,7 +38,7 @@ export function CountryMultiSelect({ value, onChange }) {
   const remove = (code) => onChange(value.filter((c) => c !== code));
 
   return (
-    <div className="space-y-3">
+    <div>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button variant="outline" role="combobox" aria-expanded={open} className="w-full justify-between">
@@ -77,7 +77,7 @@ export function CountryMultiSelect({ value, onChange }) {
       </Popover>
 
       {value.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
           {value.map((code) => (
             <Badge key={code} variant="secondary" className="gap-2 pl-2 pr-1.5 py-1 font-normal">
               <CountryFlag isoCode={code} className="rounded-[1px]" />
