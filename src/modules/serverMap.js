@@ -1,4 +1,4 @@
-import {getServerMapAPI} from "../apiClient";
+import {getServerMapAPI} from "../lib/api/map";
 
 const SERVER_MAP_FETCHING = "SERVER_MAP_FETCHING";
 const SERVER_MAP_SUCCESS = "SERVER_MAP_SUCCESS";

@@ -1,4 +1,4 @@
-import {getServerInfoAPI} from "../apiClient";
+import {getServerInfoAPI} from "../lib/api/servers";
 
 const SERVER_INFO_FETCHING = "SERVER_INFO_FETCHING";
 const SERVER_INFO_SUCCESS = "SERVER_INFO_SUCCESS";

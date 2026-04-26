@@ -1,4 +1,4 @@
-import {getCountryListAPI} from "../apiClient";
+import {getCountryListAPI} from "../lib/api/countries";
 
 const COUNTRY_LIST_FETCHING = "COUNTRY_LIST_FETCHING";
 const COUNTRY_LIST_SUCCESS = "COUNTRY_LIST_SUCCESS";

@@ -1,4 +1,4 @@
-import {getServerListAPI} from "../apiClient";
+import {getServerListAPI} from "../lib/api/servers";
 
 const SERVER_LIST_FETCHING = "SERVER_LIST_FETCHING";
 const SERVER_LIST_SUCCESS = "SERVER_LIST_SUCCESS";

@@ -20,3 +20,8 @@ export function getServerInfoAPI(serverId) {
 export function getServerGraphAPI(serverId, params) {
   return instance.get(`/servers/${serverId}/graph`, { params });
 }
+
+/** POST /api/servers — body matches the legacy ServerSortOption shape */
+export function getServerListAPI(data) {
+  return instance.post('/servers', data);
+}

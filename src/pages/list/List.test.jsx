@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from '../../store';
 import '../../i18n/i18n';
 
-vi.mock('../../apiClient', () => ({
+vi.mock('../../lib/api/servers', () => ({
   getServerListAPI: vi.fn().mockResolvedValue({
     data: {
       onlineServerCount: 1, onlineUserCount: 22,
@@ -17,6 +17,9 @@ vi.mock('../../apiClient', () => ({
       }],
     },
   }),
+}));
+
+vi.mock('../../lib/api/countries', () => ({
   getCountryListAPI: vi.fn().mockResolvedValue({ data: ['KR'] }),
 }));
 
