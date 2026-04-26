@@ -38,7 +38,7 @@ export function CountryMultiSelect({ value, onChange }) {
   const remove = (code) => onChange(value.filter((c) => c !== code));
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button variant="outline" role="combobox" aria-expanded={open} className="w-full justify-between">

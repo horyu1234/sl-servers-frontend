@@ -57,15 +57,15 @@ export default function Stats() {
           <CardHeader>
             <CardTitle>{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="space-y-2.5">
-              <div className="space-y-1.5">
+          <CardContent className="space-y-6">
+            <div className="space-y-4">
+              <div className="space-y-2">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">
                   {t('all-stats.users.select-compare-country.name')}
                 </Label>
                 <CountryMultiSelect value={isoCodes} onChange={setIsoCodes} />
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pt-1">
                 <Checkbox
                   id="stats-show-all"
                   checked={showAll}
