@@ -1,119 +1,85 @@
-import React, {useEffect, useState} from 'react';
-import {useTranslation} from "react-i18next";
-import CountrySelect from "../../components/country-select/CountrySelect";
-import ModLoaderChart from "./ModLoaderChart";
-import GraphOption from "../../components/GraphOption";
-import {Alert} from "react-bootstrap";
-import TrendGraph from "../../components/TrendGraph";
-import {toast} from "react-toastify";
-import {getCountryTrendAPI} from "../../apiClient";
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { CountryMultiSelect } from '../../components/stats/CountryMultiSelect';
+import { PeriodPicker } from '../../components/stats/PeriodPicker';
+import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
+import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
+import { getCountryTrendAPI } from '../../lib/api/stats';
 
-const Stats = () => {
-    const [fluxResponse, setFluxResponse] = useState(null);
-    const [isServerError, setServerError] = useState(false);
-    const [showAll, setShowAll] = useState(true);
-    const [isoCodes, setIsoCodes] = useState([]);
-    const {t} = useTranslation();
+export default function Stats() {
+  const { t } = useTranslation();
+  const [showAll, setShowAll] = useState(true);
+  const [isoCodes, setIsoCodes] = useState([]);
+  const [flux, setFlux] = useState(null);
+  const [error, setError] = useState(false);
 
-    useEffect(() => {
-        updateGraph(['ALL'], {
-            aggregateEvery: '5m',
-            startTime: '-1w',
-        });
-    }, [])
+  useEffect(() => {
+    fetchTrend(['ALL'], { aggregateEvery: '5m', startTime: '-1w' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    const updateGraph = (isoCodes, options) => {
-        setFluxResponse(null);
-        setServerError(false);
+  const fetchTrend = (codes, params) => {
+    setFlux(null);
+    setError(false);
+    getCountryTrendAPI(codes, params).then((r) => setFlux(r.data)).catch(() => setError(true));
+  };
 
-        getCountryTrendAPI(isoCodes, options).then(res => {
-            setFluxResponse(res.data);
-        }).catch(error => {
-            setServerError(true);
-        })
+  const handleUpdate = (params) => {
+    const codes = [];
+    if (showAll) codes.push('ALL');
+    codes.push(...isoCodes);
+    if (codes.length === 0) {
+      toast.warning(t('all-stats.users.graph.empty-country'));
+      return;
     }
+    fetchTrend(codes, params);
+  };
 
-    const handleUpdateGraphOption = (options) => {
-        const resultIsoCodes = [];
-        if (showAll) resultIsoCodes.push('ALL');
-
-        resultIsoCodes.push(...isoCodes);
-        if (resultIsoCodes.length === 0) {
-            setFluxResponse(null);
-            toast.warn(t('all-stats.users.graph.empty-country'));
-            return;
-        }
-
-        updateGraph(resultIsoCodes, options);
-    }
-
-    return (
-        <div className="container">
-            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
-                <h3 className="col-12 text-center">{t('all-stats.users.title')}</h3>
-
-                <div className="col-12 mb-3">
-                    <div className="input-group">
-                        <label className="col-form-label" style={{width: '160px'}}>
-                            {t('all-stats.users.show-all.name')}
-                        </label>
-                        <div className="form-check form-switch mt-1">
-                            <input type="checkbox" className="form-check-input" id="show-all"
-                                   checked={showAll} onChange={() => setShowAll(!showAll)}/>
-                            <label className="form-check-label" htmlFor="show-all"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col-12 mb-3">
-                    <div className="input-group">
-                        <label className="col-form-label" htmlFor="users-compare-country" style={{width: '160px'}}>
-                            {t('all-stats.users.select-compare-country.name')}
-                        </label>
-                        <CountrySelect
-                            value={isoCodes}
-                            onChange={setIsoCodes}
-                        />
-                    </div>
-                </div>
-
-                <div className="col-12">
-                    <GraphOption onUpdate={handleUpdateGraphOption}/>
-
-                    {!fluxResponse && !isServerError && <Alert variant="info" style={{width: "100%"}}>
-                        {t('server-info.graph.loading')}
-                    </Alert>}
-                    {isServerError && <Alert variant="danger" style={{width: "100%"}}>
-                        {t('general.server-error')}
-                    </Alert>}
-
-                    {!isServerError && fluxResponse && <TrendGraph
-                        layers={[
-                            {
-                                type: "line",
-                                x: "_time",
-                                y: "_value",
-                                fill: ['iso_code'],
-                                lineWidth: 2,
-                            }
-                        ]}
-                        fluxResponse={fluxResponse}
-                    />}
-                </div>
+  return (
+    <div className="px-4 py-4 space-y-4">
+      <div className="grid gap-4 lg:grid-cols-3">
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>{t('all-stats.users.title')}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex flex-wrap gap-4 items-end">
+              <div className="flex items-center gap-2">
+                <Checkbox id="stats-show-all" checked={showAll} onCheckedChange={(c) => setShowAll(c === true)} />
+                <Label htmlFor="stats-show-all" className="text-sm cursor-pointer">
+                  {t('all-stats.users.show-all.name')}
+                </Label>
+              </div>
+              <div className="flex-1 min-w-[260px]">
+                <Label className="text-xs uppercase tracking-wider text-muted-foreground mb-1 block">
+                  {t('all-stats.users.select-compare-country.name')}
+                </Label>
+                <CountryMultiSelect value={isoCodes} onChange={setIsoCodes} />
+              </div>
             </div>
 
-            <div className="bg-body-tertiary rounded" style={{padding: "20px", marginTop: "20px"}}>
-                <h3 className="col-12 text-center">{t('all-stats.mod-loader.title')}</h3>
-                <div className="col-12">
-                    <div id="mod-loader-chart">
-                        <div style={{margin: '10px'}}>
-                            <ModLoaderChart/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+            <PeriodPicker onUpdate={handleUpdate} />
+
+            {error && <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>}
+            {!error && !flux && <div className="text-sm text-muted-foreground">{t('server-info.graph.loading')}</div>}
+            {!error && flux && <CountryTrendChart fluxResponse={flux} />}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{t('all-stats.mod-loader.title')}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ModLoaderChart />
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
 }
-
-export default Stats;
