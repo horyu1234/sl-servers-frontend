@@ -40,7 +40,7 @@
     --accent-foreground: 220 14% 91%;
     --muted: 220 14% 12%;
     --muted-foreground: 220 9% 46%;    /* #5a6371 */
-    --border: 220 14% 14%;             /* #1c1f24 */
+    --border: 220 14% 10%;             /* softened — was 14% (#1c1f24); too bright against bg */
     --input: 220 14% 12%;
     --ring: 142 71% 45%;
     --primary: 142 71% 45%;            /* #22c55e — single SaaS accent */
