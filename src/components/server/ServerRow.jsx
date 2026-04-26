@@ -6,6 +6,7 @@ import { ServerMetaStrip } from './ServerMetaStrip';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
+import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
 
 function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
@@ -21,7 +22,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
       type="button"
       onClick={handleClick}
       className="grid w-full items-center gap-3 px-4 py-2.5 border-b border-border text-left hover:bg-muted/40 group"
-      style={{ gridTemplateColumns: '1.3fr 80px 150px 170px 130px 60px 18px' }}
+      style={{ gridTemplateColumns: '1.3fr 150px 150px 170px 130px 60px 18px' }}
     >
       <div className="min-w-0">
         <div className="truncate font-medium text-foreground">
@@ -31,9 +32,12 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
         </div>
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
-      <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
-        <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
-        <span>{server.isoCode}</span>
+      <div
+        className="flex items-center gap-1.5 text-[11px] text-muted-foreground min-w-0"
+        title={getCountryName(server.isoCode) || server.isoCode}
+      >
+        <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm shrink-0" />
+        <span className="truncate">{getCountryName(server.isoCode) || server.isoCode}</span>
       </div>
       <div className="font-mono text-[11px] text-muted-foreground tabular-nums truncate" title={`${server.ip}:${server.port}`}>
         {server.ip}:{server.port}

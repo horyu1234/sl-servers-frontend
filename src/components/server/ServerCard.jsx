@@ -6,6 +6,7 @@ import { ServerMetaStrip } from './ServerMetaStrip';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
+import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
 
 export function ServerCard({ server, trend }) {
@@ -33,9 +34,12 @@ export function ServerCard({ server, trend }) {
               </div>
             )}
           </div>
-          <div className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0">
-            <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
-            <span>{server.isoCode}</span>
+          <div
+            className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0 max-w-[160px]"
+            title={getCountryName(server.isoCode) || server.isoCode}
+          >
+            <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm shrink-0" />
+            <span className="truncate">{getCountryName(server.isoCode) || server.isoCode}</span>
           </div>
         </div>
         <ServerMetaStrip server={server} />
