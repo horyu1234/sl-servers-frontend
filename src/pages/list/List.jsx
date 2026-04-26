@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { ServerRow } from '../../components/server/ServerRow';
 import { ServerStatsHeader } from '../../components/server/ServerStatsHeader';
+import { ViewToggle } from '../../components/server/ViewToggle';
+import { ServerCard } from '../../components/server/ServerCard';
 import { FilterSidebar } from '../../components/filters/FilterSidebar';
 import { FilterDrawer } from '../../components/filters/FilterDrawer';
 import { FilterChips } from '../../components/filters/FilterChips';
@@ -34,6 +36,13 @@ export default function List() {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const filter = useMemo(() => parseFromSearchParams(searchParams), [searchParams]);
+
+  const view = searchParams.get('view') === 'grid' ? 'grid' : 'list';
+  const setView = (v) => {
+    const next = new URLSearchParams(searchParams);
+    if (v === 'list') next.delete('view'); else next.set('view', v);
+    setSearchParams(next, { replace: true });
+  };
 
   // Sync URL filter -> Redux serverFilter, then refetch.
   useEffect(() => {
@@ -74,6 +83,7 @@ export default function List() {
         <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-border">
           <FilterDrawer value={filter} onChange={updateFilter} />
           <FilterChips value={filter} onChange={updateFilter} />
+          <ViewToggle value={view} onChange={setView} />
           <div className="ml-auto text-xs text-muted-foreground tabular-nums">
             {fetching ? t('filter-option.refreshing') : `${stats.displayServerCount.toLocaleString()} / ${stats.onlineServerCount.toLocaleString()} servers`}
           </div>
@@ -96,29 +106,33 @@ export default function List() {
           </div>
         )}
 
-        <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto">
-          <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
-            {virtualizer.getVirtualItems().map((vi) => {
-              const server = servers[vi.index];
-              return (
-                <div
-                  key={server.serverId}
-                  ref={virtualizer.measureElement}
-                  data-index={vi.index}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    transform: `translateY(${vi.start}px)`,
-                  }}
-                >
-                  <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} />
-                </div>
-              );
-            })}
+        {view === 'list' ? (
+          <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto">
+            <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
+              {virtualizer.getVirtualItems().map((vi) => {
+                const server = servers[vi.index];
+                return (
+                  <div
+                    key={server.serverId}
+                    ref={virtualizer.measureElement}
+                    data-index={vi.index}
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', transform: `translateY(${vi.start}px)` }}
+                  >
+                    <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex-1 min-h-0 overflow-y-auto p-4">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+              {servers.map((server) => (
+                <ServerCard key={server.serverId} server={server} trend={trends?.[String(server.serverId)] ?? null} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="px-4 py-2 text-[10px] text-muted-foreground border-t border-border">
           This product includes GeoLite2 data created by MaxMind, available from{' '}
