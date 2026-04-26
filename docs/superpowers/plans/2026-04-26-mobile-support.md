@@ -785,6 +785,8 @@ Do **not** preemptively touch any of these files. The whole point of Task 6 is t
 
 - **Task 4 widening landed in commit `e10f3af`.** The plan's Task 4 forces cards on phones only (`isPhone`). Task 5's manual viewport check at 768 px showed `ServerRow` also breaks on tablets (`sm`–`lg`), and `ViewToggle` is `hidden lg:inline-flex` so users there have no escape hatch. Fix: introduced a second `useMediaQuery('(max-width: 1023px)')` (`isBelowLg`) and switched `effectiveView` to use it. `isPhone` still drives the `compact` prop.
 
+- **Phone-card virtualization deliberately deferred.** The card grid path at `< lg` renders all ~1,165 cards (≈ 145k px of DOM) without virtualization — the desktop `ServerRow` virtualizer only fires when `effectiveView === 'list'`. The decision to ship without virtualization on the card path is YAGNI: React 19 + memo handles this volume, the reported phone defect (broken row layout) is already resolved, and phone users typically reach the relevant subset via filter/search rather than scrolling the full list. If a real-device perf complaint lands, open `Task 7-Phone-virtualization` to wire `useWindowVirtualizer` for the single-column (`< sm`) path; the multi-column tablet path is harder and likely not worth it.
+
 ## Self-Review Notes
 
 - **Spec coverage:** every spec section is mapped to a task — `useMediaQuery` (T1), `ServerSparkline` (T2), `ServerCard` (T3), `List.jsx` wire-up (T4), manual List verification (T5), other-page audit (T6), follow-ups (T7-*).
