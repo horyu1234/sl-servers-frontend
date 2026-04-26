@@ -160,8 +160,7 @@
     "unit": "Unit:",
     "title": "Kart over alle servere",
     "server-info-btn": "Klikk for å sjekke serverinformasjon"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

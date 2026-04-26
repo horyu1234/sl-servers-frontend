@@ -160,8 +160,7 @@
     "unit": "Unit:",
     "title": "Карта всіх серверів",
     "server-info-btn": "Клацніть, щоб дізнатися інформацію про цей сервер"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

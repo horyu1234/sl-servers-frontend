@@ -157,8 +157,7 @@
   "all-server-map": {
     "title": "전체 서버 지도",
     "server-info-btn": "클릭하여 서버 정보 확인"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "다음 페이지 로드 후 추적이 중지됩니다",

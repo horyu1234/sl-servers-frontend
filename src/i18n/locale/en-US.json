@@ -161,8 +161,7 @@
   "all-server-map": {
     "title": "Map of all servers",
     "server-info-btn": "Click to check server info"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

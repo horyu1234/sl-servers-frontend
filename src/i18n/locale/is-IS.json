@@ -160,8 +160,7 @@
     "unit": "Unit:",
     "title": "Kort yfir allar netþjónir",
     "server-info-btn": "Smelltu til að athuga upplýsingar um netþjón"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

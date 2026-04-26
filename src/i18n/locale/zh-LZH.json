@@ -146,8 +146,7 @@
   "all-server-map": {
     "title": "诸服务器之图",
     "server-info-btn": "击此以示服之信息"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

@@ -157,8 +157,7 @@
   "all-server-map": {
     "title": "服务器大地图",
     "server-info-btn": "点击查看服务器信息"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

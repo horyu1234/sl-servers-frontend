@@ -160,8 +160,7 @@
     "unit": "Unit:",
     "title": "Kort over alle servere",
     "server-info-btn": "Klik for at se serverinfo"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

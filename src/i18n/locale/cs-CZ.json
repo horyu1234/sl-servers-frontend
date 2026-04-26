@@ -157,8 +157,7 @@
   "all-server-map": {
     "title": "Mapa všech serverů",
     "server-info-btn": "Klikněte pro zobrazení informací o serveru"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",

@@ -157,8 +157,7 @@
   "all-server-map": {
     "title": "Carte de tous les serveurs",
     "server-info-btn": "Cliquez pour voir les informations du serveur"
-  }
-,
+  },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",
