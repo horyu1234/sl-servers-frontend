@@ -1,39 +1,28 @@
-import React, {useMemo} from 'react';
-import Select from "react-select";
-import languages from "../../data/language.json";
-import getStyles from "../SelectCustomStyles";
-import i18n from "i18next";
-import {toast} from "react-toastify";
-import {useTranslation} from "react-i18next";
+import React from 'react';
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
+import languages from '../../data/language.json';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-const LanguageSelect = () => {
-    const {t} = useTranslation();
-    const customStyles = useMemo(() => getStyles(140), []);
-    const languageOptions = languages.map(language => {
-        return {
-            value: language.code,
-            label: language.name
-        }
-    })
-
-    const handleChangeLanguage = (option) => {
-        i18n.changeLanguage(option.value).then(() => {
-            toast.success(t('general.language-change', {language: option.label}));
-        })
-    }
-
-    return (
-        <Select
-            classNamePrefix="select"
-            isSearchable
-            name="lang-select"
-            options={languageOptions}
-            styles={customStyles}
-
-            value={languageOptions.find(option => option.value === i18n.language)}
-            onChange={handleChangeLanguage}
-        />
-    );
+export default function LanguageSelect() {
+  const { t } = useTranslation();
+  const handleChange = (value) => {
+    const target = languages.find((l) => l.code === value);
+    i18n.changeLanguage(value).then(() => {
+      toast.success(t('general.language-change', { language: target?.name ?? value }));
+    });
+  };
+  return (
+    <Select value={i18n.language} onValueChange={handleChange}>
+      <SelectTrigger className="h-8 w-[180px] text-xs">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        {languages.map((language) => (
+          <SelectItem key={language.code} value={language.code}>{language.name}</SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
 }
-
-export default LanguageSelect;

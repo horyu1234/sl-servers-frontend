@@ -1,49 +1,26 @@
-import React, {useMemo} from 'react';
-import Select from "react-select";
-import getStyles from "../SelectCustomStyles";
-import {connect} from "react-redux";
-import {bindActionCreators} from "@reduxjs/toolkit";
-import * as settingActions from "../../modules/setting";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as settingActions from '../../modules/setting';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-const SiSelect = (
-    {
-        si,
+const OPTIONS = [
+  { value: 'km', label: 'Kilometers (km)' },
+  { value: 'mi', label: 'Miles (mi)' },
+];
 
-        SettingActions
-    }
-) => {
-    const customStyles = useMemo(() => getStyles(140), []);
-    const siOptions = [{
-        "value": "km",
-        "label": "Kilometers (km)"
-    }, {
-        "value": "mi",
-        "label": "Miles (mi)"
-    }];
-
-    const handleChangeSi = (option) => {
-        SettingActions.changeSi(option.value);
-    }
-
-    return (
-        <Select
-            classNamePrefix="select"
-            isSearchable
-            name="lang-select"
-            options={siOptions}
-            styles={customStyles}
-
-            value={siOptions.find(option => option.value === si)}
-            onChange={handleChangeSi}
-        />
-    );
+export default function SiSelect() {
+  const dispatch = useDispatch();
+  const si = useSelector((s) => s.setting.si);
+  return (
+    <Select value={si} onValueChange={(v) => dispatch(settingActions.changeSi(v))}>
+      <SelectTrigger className="h-8 w-[160px] text-xs">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        {OPTIONS.map((opt) => (
+          <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
 }
-
-export default connect(
-    (state) => ({
-        si: state.setting.si
-    }),
-    (dispatch) => ({
-        SettingActions: bindActionCreators(settingActions, dispatch)
-    })
-)(SiSelect);
