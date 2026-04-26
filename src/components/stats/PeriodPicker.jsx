@@ -66,8 +66,8 @@ export function PeriodPicker({ onUpdate }) {
   };
 
   return (
-    <div className="flex flex-wrap items-end gap-2">
-      <div className="space-y-1">
+    <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+      <div className="space-y-1.5">
         <Label className="text-xs uppercase tracking-wider text-muted-foreground">
           {t('server-info.graph.options.data-range')}
         </Label>
@@ -85,13 +85,13 @@ export function PeriodPicker({ onUpdate }) {
 
       {period === 'custom' && (
         <>
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">
               {t('server-info.graph.options.start-time')}
             </Label>
             <DateTrigger value={start} onChange={setStart} />
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">
               {t('server-info.graph.options.stop-time')}
             </Label>
@@ -100,7 +100,7 @@ export function PeriodPicker({ onUpdate }) {
         </>
       )}
 
-      <div className="space-y-1">
+      <div className="space-y-1.5">
         <Label className="text-xs uppercase tracking-wider text-muted-foreground">
           {t('server-info.graph.options.data-resolution')}
         </Label>
@@ -116,7 +116,7 @@ export function PeriodPicker({ onUpdate }) {
         </Select>
       </div>
 
-      <Button onClick={submit} className="gap-1.5">
+      <Button onClick={submit} variant="default" size="default" className="ml-1 gap-2 h-9 px-4">
         <RefreshCw className="h-4 w-4" />
         {t('server-info.graph.options.graph-update-btn')}
       </Button>
