@@ -99,12 +99,12 @@ export default function Info() {
           </CardHeader>
           <CardContent className="space-y-4">
             {showDaylightAlert && (
-              <Alert className="relative pr-10">
+              <Alert className="relative pr-14">
                 <InfoIcon className="h-4 w-4" />
                 <AlertDescription>{t('server-info.daylight-saving-time')}</AlertDescription>
                 <Button
                   variant="ghost" size="icon"
-                  className="absolute top-1.5 right-1.5 h-7 w-7"
+                  className="absolute top-1/2 right-2.5 -translate-y-1/2 h-7 w-7 !pl-0"
                   onClick={() => setShowDaylightAlert(false)}
                   aria-label="Dismiss"
                 ><X className="h-4 w-4" /></Button>
