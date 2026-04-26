@@ -21,7 +21,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
       type="button"
       onClick={handleClick}
       className="grid w-full items-center gap-3 px-4 py-2.5 border-b border-border text-left hover:bg-muted/40 group"
-      style={{ gridTemplateColumns: '1.6fr 80px 180px 150px 70px 18px' }}
+      style={{ gridTemplateColumns: '1.3fr 80px 150px 170px 130px 60px 18px' }}
     >
       <div className="min-w-0">
         <div className="truncate font-medium text-foreground">
@@ -29,20 +29,18 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
             ? <SafeHtml html={server.info} />
             : <span className="font-mono">{server.ip}:{server.port}</span>}
         </div>
-        {server.info && (
-          <div className="font-mono text-[10px] text-muted-foreground/70 truncate">
-            {server.ip}:{server.port}
-          </div>
-        )}
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
       <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
         <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
         <span>{server.isoCode}</span>
       </div>
+      <div className="font-mono text-[11px] text-muted-foreground tabular-nums truncate" title={`${server.ip}:${server.port}`}>
+        {server.ip}:{server.port}
+      </div>
       <ServerSparkline data={trend} capacity={players.capacity} current={players.current}/>
       <div className="flex items-center gap-2 text-[11px] text-muted-foreground tabular-nums">
-        <span className="inline-block w-[120px] h-1.5 bg-muted rounded-full overflow-hidden">
+        <span className="inline-block w-[100px] h-1.5 bg-muted rounded-full overflow-hidden">
           <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />
         </span>
         <span className="text-foreground/80 whitespace-nowrap">{players.current} / {players.capacity}</span>
