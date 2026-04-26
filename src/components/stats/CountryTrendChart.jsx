@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { format } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 import { parseFluxToSeries } from '../../lib/parsers/flux';
+import getCountryName from '../../i18n/i18n-countries';
 
 const PALETTE = [
   '#22c55e', '#3b82f6', '#f59e0b', '#ef4444', '#a855f7', '#06b6d4',
@@ -14,12 +16,18 @@ function colorFor(key, idx) {
 }
 
 export function CountryTrendChart({ fluxResponse }) {
+  const { t } = useTranslation();
   const data = useMemo(() => parseFluxToSeries(fluxResponse, { groupBy: 'iso_code' }), [fluxResponse]);
   const seriesKeys = useMemo(() => {
     const keys = new Set();
     for (const row of data) for (const k of Object.keys(row)) if (k !== 'time') keys.add(k);
     return Array.from(keys).sort((a, b) => (a === 'ALL' ? -1 : b === 'ALL' ? 1 : a.localeCompare(b)));
   }, [data]);
+
+  const labelFor = (key) => {
+    if (key === 'ALL') return t('all-stats.users.graph.all-country') || 'All countries';
+    return getCountryName(key) || key;
+  };
 
   if (data.length === 0) return null;
 
@@ -46,6 +54,7 @@ export function CountryTrendChart({ fluxResponse }) {
               key={key}
               type="monotone"
               dataKey={key}
+              name={labelFor(key)}
               stroke={colorFor(key, i)}
               strokeWidth={key === 'ALL' ? 2 : 1.5}
               dot={false}
