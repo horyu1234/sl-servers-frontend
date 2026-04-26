@@ -153,7 +153,9 @@
       "title": "Mod loader statistics",
       "tooltip": "Mod Loader",
       "back": "Back",
-      "versions-title": "{{name}} — versions"
+      "versions-title": "{{name}} — versions",
+      "drill-hint": "Click a slice to see the version breakdown",
+      "drill-back-hint": "Click Back to return to the loader breakdown"
     }
   },
   "all-server-map": {

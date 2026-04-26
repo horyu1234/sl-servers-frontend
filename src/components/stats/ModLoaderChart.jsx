@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, MousePointerClick } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { getModLoaderChartAPI } from '../../lib/api/stats';
@@ -60,6 +60,12 @@ export function ModLoaderChart() {
         )}
         <span className="text-sm text-muted-foreground">{title}</span>
       </div>
+
+      <div className="flex items-center gap-1.5 text-xs text-muted-foreground/80 rounded-md border border-dashed border-border bg-muted/20 px-2.5 py-1.5">
+        <MousePointerClick className="h-3.5 w-3.5 shrink-0" />
+        <span>{drill ? t('all-stats.mod-loader.drill-back-hint') : t('all-stats.mod-loader.drill-hint')}</span>
+      </div>
+
       <div className="h-[320px] w-full">
         <ResponsiveContainer>
           <PieChart>
@@ -70,6 +76,7 @@ export function ModLoaderChart() {
               outerRadius={120}
               onClick={(slice) => { if (!drill && slice?.name) setDrill(slice.name); }}
               isAnimationActive={false}
+              style={!drill ? { cursor: 'pointer' } : undefined}
             >
               {rows.map((row, i) => (
                 <Cell key={row.name} fill={COLORS[i % COLORS.length]} stroke="hsl(var(--background))" />
