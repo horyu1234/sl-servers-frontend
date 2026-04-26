@@ -87,4 +87,13 @@ describe('sentryGate', () => {
     setConsent(false);
     expect(closeSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('exposes isInitialized() that flips to true after first init', async () => {
+    const mod = await import('./sentryGate');
+    expect(mod.isInitialized()).toBe(false);
+    setConsent(true);
+    expect(mod.isInitialized()).toBe(true);
+    setConsent(false); // revoke must not flip back
+    expect(mod.isInitialized()).toBe(true);
+  });
 });

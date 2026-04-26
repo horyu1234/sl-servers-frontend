@@ -14,6 +14,10 @@ import { readConsent, subscribe } from './silktideClient';
 let initialized = false;
 let running = false;
 
+export function isInitialized() {
+  return initialized;
+}
+
 function initSentry() {
   Sentry.init({
     dsn: 'https://273bce475a7d46cdb126ba29bd99f867@o508489.ingest.sentry.io/4505483920998400',
