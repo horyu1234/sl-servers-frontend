@@ -43,7 +43,7 @@ export function ServerCard({ server, trend }) {
           </div>
         </div>
         <ServerMetaStrip server={server} />
-        <ServerSparkline data={trend} capacity={players.capacity} current={players.current} />
+        <ServerSparkline data={trend} />
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground tabular-nums pt-1">
           <span className="inline-block flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
             <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />

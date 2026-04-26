@@ -43,7 +43,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }
       <div className="font-mono text-[11px] text-muted-foreground tabular-nums truncate" title={`${server.ip}:${server.port}`}>
         {server.ip}:{server.port}
       </div>
-      <ServerSparkline data={trend} capacity={players.capacity} current={players.current}/>
+      <ServerSparkline data={trend}/>
       <div className="flex items-center gap-2 text-[11px] text-muted-foreground tabular-nums">
         <span className="inline-block w-[100px] h-1.5 bg-muted rounded-full overflow-hidden">
           <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />
