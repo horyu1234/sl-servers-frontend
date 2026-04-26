@@ -8,11 +8,11 @@
 // the user-supplied groupBy column (e.g. iso_code).
 export function parseFluxToSeries(body, { groupBy }) {
   if (!body || typeof body !== 'string') return [];
-  const tables = body.split(/\n\s*\n/).map((t) => t.trim()).filter(Boolean);
+  const tables = body.split(/\r?\n[ \t]*\r?\n/).map((t) => t.trim()).filter(Boolean);
   const merged = new Map();
 
   for (const table of tables) {
-    const lines = table.split('\n').filter((l) => l && !l.startsWith('#'));
+    const lines = table.split(/\r?\n/).filter((l) => l && !l.startsWith('#'));
     if (lines.length === 0) continue;
     const headerLine = lines.shift();
     const header = headerLine.split(',');

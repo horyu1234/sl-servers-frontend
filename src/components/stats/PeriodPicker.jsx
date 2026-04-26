@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -54,6 +55,10 @@ export function PeriodPicker({ onUpdate }) {
 
   const submit = () => {
     if (period === 'custom') {
+      if (start.getTime() >= stop.getTime()) {
+        toast.warning('Start time must be before stop time.');
+        return;
+      }
       onUpdate({ aggregateEvery: resolution, startTime: start.toISOString(), stopTime: stop.toISOString() });
     } else {
       onUpdate({ aggregateEvery: resolution, startTime: `-${seconds}s` });
@@ -121,6 +126,15 @@ export function PeriodPicker({ onUpdate }) {
 
 function DateTrigger({ value, onChange }) {
   const [open, setOpen] = useState(false);
+  const handleSelect = (d) => {
+    if (!d) return;
+    // Preserve the time-of-day from the previous value so picking a date
+    // doesn't silently zero the clock.
+    const next = new Date(d);
+    next.setHours(value.getHours(), value.getMinutes(), 0, 0);
+    onChange(next);
+    setOpen(false);
+  };
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -129,8 +143,23 @@ function DateTrigger({ value, onChange }) {
           <span className="text-sm">{format(value, 'yyyy-MM-dd HH:mm')}</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0" align="start">
-        <Calendar mode="single" selected={value} onSelect={(d) => { if (d) { onChange(d); setOpen(false); } }} />
+      <PopoverContent className="w-auto p-0 space-y-2 p-3" align="start">
+        <Calendar mode="single" selected={value} onSelect={handleSelect} />
+        <div className="flex items-center gap-2 px-1 pb-1">
+          <Label className="text-xs text-muted-foreground">Time</Label>
+          <input
+            type="time"
+            value={format(value, 'HH:mm')}
+            onChange={(e) => {
+              const [h, m] = e.target.value.split(':').map((n) => Number.parseInt(n, 10));
+              if (Number.isNaN(h) || Number.isNaN(m)) return;
+              const next = new Date(value);
+              next.setHours(h, m, 0, 0);
+              onChange(next);
+            }}
+            className="h-8 rounded-md border border-input bg-background px-2 text-sm"
+          />
+        </div>
       </PopoverContent>
     </Popover>
   );

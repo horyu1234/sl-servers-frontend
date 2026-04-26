@@ -40,4 +40,13 @@ describe('parseFluxToSeries', () => {
     const broken = ',result,table,_start,_stop,_time,_value,_field,_measurement,iso_code\n,,0,a,a,not-a-time,bad-value,player_count,server_stats,KR\n';
     expect(parseFluxToSeries(broken, { groupBy: 'iso_code' })).toEqual([]);
   });
+
+  it('handles CRLF line endings (real InfluxDB serialization)', () => {
+    const SAMPLE_CRLF = SAMPLE.replace(/\n/g, '\r\n');
+    const result = parseFluxToSeries(SAMPLE_CRLF, { groupBy: 'iso_code' });
+    expect(result).toEqual([
+      { time: '2026-04-25T00:00:00Z', KR: 100, JP: 55 },
+      { time: '2026-04-25T00:30:00Z', KR: 120, JP: 60 },
+    ]);
+  });
 });

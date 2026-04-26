@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,17 +17,27 @@ export default function Stats() {
   const [isoCodes, setIsoCodes] = useState([]);
   const [flux, setFlux] = useState(null);
   const [error, setError] = useState(false);
+  const inflightRef = useRef(0);
+
+  function fetchTrend(codes, params) {
+    setFlux(null);
+    setError(false);
+    const reqId = ++inflightRef.current;
+    getCountryTrendAPI(codes, params)
+      .then((r) => {
+        if (reqId !== inflightRef.current) return; // stale
+        setFlux(r.data);
+      })
+      .catch(() => {
+        if (reqId !== inflightRef.current) return;
+        setError(true);
+      });
+  }
 
   useEffect(() => {
     fetchTrend(['ALL'], { aggregateEvery: '5m', startTime: '-1w' });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => { inflightRef.current++; };  // bump so any in-flight reply is treated as stale
   }, []);
-
-  const fetchTrend = (codes, params) => {
-    setFlux(null);
-    setError(false);
-    getCountryTrendAPI(codes, params).then((r) => setFlux(r.data)).catch(() => setError(true));
-  };
 
   const handleUpdate = (params) => {
     const codes = [];

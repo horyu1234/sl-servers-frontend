@@ -48,14 +48,14 @@ export function ModLoaderChart() {
   }
 
   const rows = drill ? drillRows : top;
-  const title = drill ? `${drill} — versions` : t('all-stats.mod-loader.title');
+  const title = drill ? t('all-stats.mod-loader.versions-title', { name: drill }) : t('all-stats.mod-loader.title');
 
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2">
         {drill && (
           <Button variant="ghost" size="sm" onClick={() => setDrill(null)} className="gap-1">
-            <ChevronLeft className="h-4 w-4" /> Back
+            <ChevronLeft className="h-4 w-4" /> {t('all-stats.mod-loader.back')}
           </Button>
         )}
         <span className="text-sm text-muted-foreground">{title}</span>
