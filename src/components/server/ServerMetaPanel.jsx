@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { formatDistance } from '../../lib/format/distance';
 
 function Row({ label, value }) {
   return (
@@ -14,9 +16,10 @@ function Row({ label, value }) {
 
 export function ServerMetaPanel({ server }) {
   const { t } = useTranslation();
+  const unit = useSelector((s) => s.setting.si);
   const yes = t('server-list.tech.yes');
   const no  = t('server-list.tech.no');
-  const distanceKm = server.distance != null ? `${Math.round(server.distance)} km` : '—';
+  const distanceLabel = formatDistance(server.distance, unit);
   const tech = server.techList ?? [];
 
   return (
@@ -29,7 +32,7 @@ export function ServerMetaPanel({ server }) {
         <Row label={t('server-list.tech.friendly-fire')} value={server.friendlyFire ? yes : no} />
         <Row label={t('server-list.tech.whitelist')} value={server.whitelist ? yes : no} />
         <Row label={t('filter-option.yes-no-filter.modded')} value={server.modded ? yes : no} />
-        <Row label={t('server-info.distance')} value={distanceKm} />
+        <Row label={t('server-info.distance')} value={distanceLabel} />
         <Row label={t('server-info.pastebin')} value={
           server.pastebin
             ? <a href={`https://pastebin.com/${encodeURIComponent(server.pastebin)}`} target="_blank" rel="noreferrer" className="text-primary hover:underline">{server.pastebin}</a>

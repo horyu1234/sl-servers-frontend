@@ -67,6 +67,7 @@ export default function List() {
   const servers = stats.servers ?? [];
   const fetching = useSelector((s) => s.serverList.fetching);
   const error = useSelector((s) => s.serverList.error);
+  const unit = useSelector((s) => s.setting.si);
 
   const updateFilter = (next) => {
     if (shallowEqualFilter(filter, next)) return;
@@ -147,7 +148,7 @@ export default function List() {
                     transform: `translateY(${vi.start - (listParentRef.current?.offsetTop ?? 0)}px)`,
                   }}
                 >
-                  <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} />
+                  <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} unit={unit} />
                 </div>
               );
             })}

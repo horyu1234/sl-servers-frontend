@@ -6,10 +6,11 @@ import { ServerMetaStrip } from './ServerMetaStrip';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
+import { formatDistance } from '../../lib/format/distance';
 import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
 
-function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
+function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }) {
   const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
@@ -50,7 +51,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
         <span className="text-foreground/80 whitespace-nowrap">{players.current} / {players.capacity}</span>
       </div>
       <div className="text-[11px] text-muted-foreground tabular-nums whitespace-nowrap">
-        {server.distance != null ? `${Math.round(server.distance)} km` : '—'}
+        {formatDistance(server.distance, unit)}
       </div>
       <ChevronRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-muted-foreground"/>
     </button>
@@ -63,6 +64,7 @@ export const ServerRow = memo(ServerRowImpl, (prev, next) => {
   return (
     prev.density === next.density &&
     prev.trend === next.trend &&
+    prev.unit === next.unit &&
     a.serverId === b.serverId &&
     a.ip === b.ip &&
     a.port === b.port &&
