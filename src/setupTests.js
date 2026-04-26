@@ -37,6 +37,26 @@ Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
   },
 });
 
+// jsdom does not implement window.matchMedia at all. Provide a no-op stub so
+// that vi.spyOn(window, 'matchMedia') works in tests that mock it (e.g.
+// useMediaQuery.test.jsx). Individual tests override this via mockImplementation.
+if (typeof window !== 'undefined' && typeof window.matchMedia !== 'function') {
+  Object.defineProperty(window, 'matchMedia', {
+    configurable: true,
+    writable: true,
+    value: (query) => ({
+      media: query,
+      matches: false,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      addListener: () => {},
+      removeListener: () => {},
+      dispatchEvent: () => false,
+      onchange: null,
+    }),
+  });
+}
+
 if (typeof localStorage === 'undefined' || typeof localStorage.setItem !== 'function') {
     const store = {};
     const storage = {
