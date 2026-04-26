@@ -4,7 +4,7 @@
 
 **Goal:** Make the site usable on phones — fix the broken List page first, then audit and patch other pages on real viewports.
 
-**Architecture:** Phone (`< sm`, ≤ 639px) renders existing `ServerCard` in compact mode at 1 column; tablet (`sm`–`lg`) renders cards at 2 columns; desktop (`≥ lg`) keeps the existing `ServerRow` table view unchanged. Phone branching is driven by a new `useMediaQuery` hook. Toolbar count text is hidden on phones since `ServerStatsHeader` exposes the same numbers. After List is done, run a viewport audit (chrome-devtools MCP at 360 / 412 / 768 px) on every route and patch only confirmed regressions.
+**Architecture:** Phone (`< sm`, ≤ 639px) renders existing `ServerCard` in compact mode at 1 column; tablet (`sm`–`lg`) renders cards at 2 columns; desktop (`≥ lg`) keeps the existing `ServerRow` table view unchanged. Card layout is forced for the entire `< lg` range because the `ViewToggle` button is `hidden lg:inline-flex` — users below `lg` have no way to escape a broken list view. Compact density only kicks in below `sm`. Phone branching is driven by a new `useMediaQuery` hook. Toolbar count text is hidden on phones since `ServerStatsHeader` exposes the same numbers. After List is done, run a viewport audit (chrome-devtools MCP at 360 / 412 / 768 px) on every route and patch only confirmed regressions.
 
 **Tech Stack:** React 19, Tailwind v4, @tanstack/react-virtual, Vite, Vitest, react-leaflet, recharts.
 
@@ -780,6 +780,10 @@ Each follow-up should:
 Do **not** preemptively touch any of these files. The whole point of Task 6 is to avoid speculative edits.
 
 ---
+
+## Post-Implementation Notes
+
+- **Task 4 widening landed in commit `e10f3af`.** The plan's Task 4 forces cards on phones only (`isPhone`). Task 5's manual viewport check at 768 px showed `ServerRow` also breaks on tablets (`sm`–`lg`), and `ViewToggle` is `hidden lg:inline-flex` so users there have no escape hatch. Fix: introduced a second `useMediaQuery('(max-width: 1023px)')` (`isBelowLg`) and switched `effectiveView` to use it. `isPhone` still drives the `compact` prop.
 
 ## Self-Review Notes
 

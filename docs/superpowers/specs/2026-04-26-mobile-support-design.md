@@ -25,8 +25,8 @@ Other pages have not been confirmed broken yet — the audit will run after the 
 | Decision | Choice |
 |---|---|
 | Scope | Full-site mobile audit, List first, others verified on real viewports |
-| Mobile list rendering | Force card view on phones (toggle becomes a no-op below `sm`) |
-| Breakpoints | `< sm` = phone, `sm`–`lg` = tablet (cards in 2 columns), `≥ lg` = desktop |
+| Mobile list rendering | Force card view below `lg` (toggle button is hidden there, so users can't escape a broken list) |
+| Breakpoints | `< sm` = phone (compact cards, 1 col), `sm`–`lg` = tablet (cards, 2 cols), `≥ lg` = desktop (sidebar + URL-driven view toggle) |
 | Toolbar count text | Hidden on phones; the existing `ServerStatsHeader` already exposes the same `displayed / online` numbers |
 | Card density on phones | Compact mode (single-line meta strip + single-line sparkline label) |
 
@@ -108,14 +108,15 @@ Default (non-compact) rendering is unchanged. The desktop grid view is unaffecte
 ### `List.jsx` phone behaviour
 
 ```js
-const isPhone = useMediaQuery('(max-width: 639px)'); // < sm
-const effectiveView = isPhone ? 'grid' : view;
+const isPhone = useMediaQuery('(max-width: 639px)');     // < sm — compact density
+const isBelowLg = useMediaQuery('(max-width: 1023px)');  // < lg — force card view
+const effectiveView = isBelowLg ? 'grid' : view;
 // Toolbar count: add `hidden sm:block` to the existing `ml-auto` div.
 // Card grid path stays intact; pass `compact={isPhone}` to <ServerCard>.
 // Virtualization stays for `effectiveView === 'list'`.
 ```
 
-Phones render the existing `grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3` card layout (1 column at `< sm`). The toggle URL contract is preserved — only `effectiveView` is overridden.
+Tablets and phones (`< lg`) both render the existing `grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3` card layout — 1 column on phones, 2 columns on tablets. Original draft scoped the override to phones only, but the Task 5 manual audit at 768 px showed `ServerRow` also breaks on tablets and the `ViewToggle` button is `hidden lg:inline-flex`, so users below `lg` have no way to escape the broken layout. The toggle URL contract is preserved at `≥ lg` — only `effectiveView` is overridden below.
 
 ### Virtualization for phone-cards
 
