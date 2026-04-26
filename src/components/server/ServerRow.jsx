@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import Flag from 'react-world-flags';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
 import { plainTextFromHtml } from '../../lib/dom/plainText';
+import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
 function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
@@ -29,7 +29,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
       <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
-        <Flag code={server.isoCode} fallback={<span>{server.isoCode}</span>} className="h-3 w-auto" />
+        <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
         <span>{server.isoCode}</span>
       </div>
       <ServerSparkline data={trend} capacity={players.capacity} current={players.current}/>

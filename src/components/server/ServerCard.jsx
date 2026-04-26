@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Flag from 'react-world-flags';
 import { Card, CardContent } from '@/components/ui/card';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
 import { plainTextFromHtml } from '../../lib/dom/plainText';
+import { isoToFlagEmoji } from '../../lib/format/country';
 import { cn } from '@/lib/cn';
 
 export function ServerCard({ server, trend }) {
@@ -24,7 +24,7 @@ export function ServerCard({ server, trend }) {
         <div className="flex items-start justify-between gap-2 min-w-0">
           <div className="font-medium truncate">{name}</div>
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0">
-            <Flag code={server.isoCode} fallback={<span>{server.isoCode}</span>} className="h-3 w-auto" />
+            <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>
             <span>{server.isoCode}</span>
           </div>
         </div>
