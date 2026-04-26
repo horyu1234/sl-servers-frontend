@@ -8,9 +8,9 @@
     "server-list": "Список серверів",
     "all-stats": "Повна статистика",
     "all-server-map": "Карта всіх серверів",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Подяки",
+    "language": "Мова:",
+    "unit": "Одиниця:"
   },
   "select": {
     "placeholder": "Будь ласка оберіть предмет",
@@ -24,7 +24,7 @@
     "hide-empty": "Приховати порожні сервера",
     "hide-full": "Приховати повні сервера",
     "refreshing": "Перезавантажити список...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Параметри фільтра",
     "yes-no-filter": {
       "none": "Включити всі",
       "yes": "Так",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Гравці",
+    "servers-title": "Сервери",
+    "offline-label": "Офлайн"
   },
   "server-list": {
     "loading": "Завантаження даних з сервера...",
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Інформація про сервер",
     "not-exist": "Сервер не існує.",
-    "loading": "Loading server information...",
+    "loading": "Завантаження інформації про сервер...",
     "status": {
       "online": "Онлайн",
       "offline": "Не в мережі"

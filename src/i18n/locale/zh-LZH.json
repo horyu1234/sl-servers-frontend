@@ -59,7 +59,7 @@
   "server-info": {
     "title": "服之信息",
     "not-exist": "未寻所求之物.",
-    "loading": "Loading server information...",
+    "loading": "方载服务器信息...",
     "status": {
       "online": "可视",
       "offline": "不可视"

@@ -1,19 +1,19 @@
 {
   "general": {
     "language-change": "Changed language to {{language}}. Some may need a refresh.",
-    "not-found": "The page you requested could not be found.",
+    "not-found": "Nie można znaleźć żądanej strony.",
     "server-error": "Wystąpił błąd podczas pobierania danych z serwera. Takie problemy są zwykle tymczasowe, więc spróbuj ponownie za chwilę. Jeśli problem nadal występuje, napisz na adres support@scplist.kr."
   },
   "navbar": {
     "server-list": "Lista serwerów",
     "all-stats": "Ogólne statystyki",
     "all-server-map": "Mapa wszystkich serwerów",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Twórcy",
+    "language": "Język:",
+    "unit": "Jednostka:"
   },
   "select": {
-    "placeholder": "Please select an item",
+    "placeholder": "Wybierz element",
     "empty": "Nie wybrano"
   },
   "filter-option": {
@@ -24,7 +24,7 @@
     "hide-empty": "Ukryj puste serwery",
     "hide-full": "Ukryj pełne serwery",
     "refreshing": "Przeładowywanie listy...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Opcje filtrowania",
     "yes-no-filter": {
       "none": "Wszystkie",
       "yes": "Tak",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Gracze",
+    "servers-title": "Serwery",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Informacje o serwerze",
     "not-exist": "The server does not exist.",
-    "loading": "Loading server information...",
+    "loading": "Ładowanie informacji o serwerze...",
     "status": {
       "online": "Online",
       "offline": "Offline"
@@ -73,27 +73,27 @@
       "loading": "Ładowanie danych od serwera...",
       "options": {
         "data-range": "Data Period",
-        "start-time": "Start Time",
+        "start-time": "Czas rozpoczęcia",
         "stop-time": "Stop Time",
-        "data-resolution": "Data Resolution",
-        "graph-update-btn": "Update Graph",
+        "data-resolution": "Rozdzielczość danych",
+        "graph-update-btn": "Aktualizuj wykres",
         "period": {
-          "custom": "Custom",
-          "1hour": "1 Hour",
-          "8hour": "8 Hours",
-          "1day": "1 Day",
-          "2day": "2 Days",
-          "1week": "1 Week",
-          "1month": "1 Month",
-          "3month": "3 Months",
-          "1year": "1 Year",
-          "4year": "4 Years"
+          "custom": "Niestandardowy",
+          "1hour": "1 godzina",
+          "8hour": "8 godzin",
+          "1day": "1 dzień",
+          "2day": "2 dni",
+          "1week": "1 tydzień",
+          "1month": "1 miesiąc",
+          "3month": "3 miesiące",
+          "1year": "1 rok",
+          "4year": "4 lata"
         },
         "resolution": {
-          "1m": "1 Minute",
-          "5m": "5 Minutes",
-          "1h": "1 Hour",
-          "1d": "1 Day"
+          "1m": "1 minuta",
+          "5m": "5 minut",
+          "1h": "1 godzina",
+          "1d": "1 dzień"
         }
       }
     }
@@ -116,7 +116,7 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader statistics",
+      "title": "Statystyki mod loaderów",
       "back": "Wstecz",
       "versions-title": "{{name}} — wersje",
       "drill-hint": "Kliknij wycinek, aby zobaczyć podział na wersje",
@@ -131,7 +131,7 @@
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "Odśwież"
     }
   }
 }

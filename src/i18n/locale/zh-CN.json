@@ -59,7 +59,7 @@
   "server-info": {
     "title": "服务器信息",
     "not-exist": "诶?可是我找不到这个服务器啊QAQ",
-    "loading": "Loading server information...",
+    "loading": "正在加载服务器信息...",
     "status": {
       "online": "在线",
       "offline": "离线"

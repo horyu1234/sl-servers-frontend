@@ -8,9 +8,9 @@
     "server-list": "Lìsta di Sèrver",
     "all-stats": "Statistiche conplête",
     "all-server-map": "Màppa de tutti i Sèrver",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Riconoscimenti",
+    "language": "Lengoa:",
+    "unit": "Unitæ:"
   },
   "select": {
     "placeholder": "Pe cortexîa, indicâ quarcösa",
@@ -24,7 +24,7 @@
     "hide-empty": "Intafoâ i sèrver vuoti",
     "hide-full": "Intafoâ i sèrver pieni",
     "refreshing": "Caregaménto lìsta inte còrso...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Òpçioin de filtro",
     "yes-no-filter": {
       "none": "Inclùdde tùtto",
       "yes": "Si",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Utenti",
+    "servers-title": "Server",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "informaçióni do Sèrver",
     "not-exist": "O sèerver no exìste",
-    "loading": "Loading server information...",
+    "loading": "Caregamento informaçioin do server...",
     "status": {
       "online": "Conésso",
       "offline": "Desconésso"

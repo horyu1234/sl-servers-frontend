@@ -8,9 +8,9 @@
     "server-list": "Serverite nimekiri",
     "all-stats": "Täielik statistika",
     "all-server-map": "Kõikide serverite kaart",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Dankoj",
+    "language": "Lingvo:",
+    "unit": "Unuo:"
   },
   "select": {
     "placeholder": "Valige üksus",
@@ -24,7 +24,7 @@
     "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
     "refreshing": "Laadin nimekirja uuesti...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filtraj agordoj",
     "yes-no-filter": {
       "none": "Kuva kõik",
       "yes": "Jah",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Uzantoj",
+    "servers-title": "Serviloj",
+    "offline-label": "Senkonekta"
   },
   "server-list": {
     "loading": "Andmete laadimine serverist...",
@@ -59,10 +59,10 @@
   "server-info": {
     "title": "Serveri teave",
     "not-exist": "Serverit ei eksisteeri.",
-    "loading": "Loading server information...",
+    "loading": "Ŝargante servilan informon...",
     "status": {
-      "online": "Online",
-      "offline": "Offline"
+      "online": "Konektita",
+      "offline": "Senkonekta"
     },
     "players": "Mängijad",
     "pastebin": "Pastebin",

@@ -8,9 +8,9 @@
     "server-list": "Serverliste",
     "all-stats": "Fuldstændig statistik",
     "all-server-map": "Kort over alle servere",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Anerkendelser",
+    "language": "Sprog:",
+    "unit": "Enhed:"
   },
   "select": {
     "placeholder": "Vælg venligst et element",
@@ -24,7 +24,7 @@
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulde servere",
     "refreshing": "Genindlæser liste...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filterindstillinger",
     "yes-no-filter": {
       "none": "Inkluder alle",
       "yes": "Ja",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Brugere",
+    "servers-title": "Servere",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Serverinformation",
     "not-exist": "Serveren findes ikke.",
-    "loading": "Loading server information...",
+    "loading": "Henter serveroplysninger...",
     "status": {
       "online": "Online",
       "offline": "Offline"
@@ -131,7 +131,7 @@
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "Genindlæs"
     }
   }
 }

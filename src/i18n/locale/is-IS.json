@@ -8,9 +8,9 @@
     "server-list": "Netþjónalisti",
     "all-stats": "Fullar tölfræði",
     "all-server-map": "Kort yfir allar netþjónir",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Þakkir",
+    "language": "Tungumál:",
+    "unit": "Eining:"
   },
   "select": {
     "placeholder": "Vinsamlegast veldu hlut",
@@ -24,7 +24,7 @@
     "hide-empty": "Fela tóma netþjóna",
     "hide-full": "Fela fulla netþjóna",
     "refreshing": "Endurhlaðning lista...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Síustillingar",
     "yes-no-filter": {
       "none": "Innifalið Allt",
       "yes": "Já",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Notendur",
+    "servers-title": "Netþjónar",
+    "offline-label": "Ótengt"
   },
   "server-list": {
     "loading": "Hleð gögnum frá netþjóni...",
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Upplýsingar um netþjón",
     "not-exist": "Netþjónninn er ekki til.",
-    "loading": "Loading server information...",
+    "loading": "Hleður upplýsingar um netþjón...",
     "status": {
       "online": "Í gangi",
       "offline": "Ótengdur"

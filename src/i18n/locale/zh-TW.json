@@ -59,7 +59,7 @@
   "server-info": {
     "title": "伺服器信息",
     "not-exist": "伺服器不存在。",
-    "loading": "Loading server information...",
+    "loading": "正在載入伺服器資訊...",
     "status": {
       "online": "線上",
       "offline": "離線"
@@ -131,7 +131,7 @@
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "重新載入"
     }
   }
 }

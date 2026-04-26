@@ -1,19 +1,19 @@
 {
   "general": {
     "language-change": "Changed language to {{language}}. Some may need a refresh.",
-    "not-found": "The page you requested could not be found.",
+    "not-found": "No s'ha pogut trobar la pàgina sol·licitada.",
     "server-error": "S'ha produït un error en obtenir dades del servidor. Sol ser un problema temporal, així que torneu-ho a provar d'aquí a un moment. Si el problema persisteix, envieu un correu a support@scplist.kr."
   },
   "navbar": {
     "server-list": "Llista de servidors",
     "all-stats": "Estadístiques completes",
-    "all-server-map": "Map of all servers",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "all-server-map": "Mapa de tots els servidors",
+    "credit": "Crèdits",
+    "language": "Idioma:",
+    "unit": "Unitat:"
   },
   "select": {
-    "placeholder": "Please select an item",
+    "placeholder": "Selecciona un element",
     "empty": "Res seleccionat"
   },
   "filter-option": {
@@ -24,7 +24,7 @@
     "hide-empty": "Amagar servidors buits",
     "hide-full": "Amagar servidors plens",
     "refreshing": "Recarregant llista...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Opcions de filtre",
     "yes-no-filter": {
       "none": "Incloure Tot",
       "yes": "Si",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Usuaris",
+    "servers-title": "Servidors",
+    "offline-label": "Desconnectat"
   },
   "server-list": {
     "loading": "Carregant dades del servidor...",
@@ -59,10 +59,10 @@
   "server-info": {
     "title": "Informació del servidor",
     "not-exist": "The server does not exist.",
-    "loading": "Loading server information...",
+    "loading": "Carregant informació del servidor...",
     "status": {
-      "online": "Online",
-      "offline": "Offline"
+      "online": "En línia",
+      "offline": "Desconnectat"
     },
     "players": "Jugadors",
     "pastebin": "Pastebin",
@@ -73,27 +73,27 @@
       "loading": "Carregant dades del servidor...",
       "options": {
         "data-range": "Data Period",
-        "start-time": "Start Time",
+        "start-time": "Hora d'inici",
         "stop-time": "Stop Time",
-        "data-resolution": "Data Resolution",
-        "graph-update-btn": "Update Graph",
+        "data-resolution": "Resolució de dades",
+        "graph-update-btn": "Actualitzar gràfic",
         "period": {
-          "custom": "Custom",
-          "1hour": "1 Hour",
-          "8hour": "8 Hours",
-          "1day": "1 Day",
-          "2day": "2 Days",
-          "1week": "1 Week",
-          "1month": "1 Month",
-          "3month": "3 Months",
-          "1year": "1 Year",
-          "4year": "4 Years"
+          "custom": "Personalitzat",
+          "1hour": "1 hora",
+          "8hour": "8 hores",
+          "1day": "1 dia",
+          "2day": "2 dies",
+          "1week": "1 setmana",
+          "1month": "1 mes",
+          "3month": "3 mesos",
+          "1year": "1 any",
+          "4year": "4 anys"
         },
         "resolution": {
-          "1m": "1 Minute",
-          "5m": "5 Minutes",
-          "1h": "1 Hour",
-          "1d": "1 Day"
+          "1m": "1 minut",
+          "5m": "5 minuts",
+          "1h": "1 hora",
+          "1d": "1 dia"
         }
       }
     }
@@ -116,22 +116,22 @@
       }
     },
     "mod-loader": {
-      "title": "Mod loader statistics",
+      "title": "Estadístiques de mod loaders",
       "back": "Enrere",
-      "versions-title": "{{name}} — versions",
+      "versions-title": "Versions de {{name}}",
       "drill-hint": "Fes clic en una porció per veure el desglossament per versió",
       "drill-back-hint": "Fes clic a Enrere per tornar al desglossament per loader"
     }
   },
   "all-server-map": {
-    "title": "Map of all servers",
+    "title": "Mapa de tots els servidors",
     "server-info-btn": "Click to check server info"
   },
   "consent": {
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "Recarrega"
     }
   }
 }

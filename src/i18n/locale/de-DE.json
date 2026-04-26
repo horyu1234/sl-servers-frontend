@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Server Informationen",
     "not-exist": "Der Server existiert nicht.",
-    "loading": "Loading server information...",
+    "loading": "Serverinformationen werden geladen...",
     "status": {
       "online": "Online",
       "offline": "Offline"
@@ -131,7 +131,7 @@
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "Neu laden"
     }
   }
 }

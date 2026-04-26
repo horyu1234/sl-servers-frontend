@@ -10,7 +10,7 @@
     "all-server-map": "Sunucuların Dünya Haritası",
     "credit": "Emeği Geçenler",
     "language": "Dil:",
-    "unit": "Unit:"
+    "unit": "Birim:"
   },
   "select": {
     "placeholder": "Lütfen bir öğe seçin",
@@ -24,7 +24,7 @@
     "hide-empty": "Boş sunucuları gizle",
     "hide-full": "Dolu sunucuları gizle",
     "refreshing": "Liste yenileniyor...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filtre Seçenekleri",
     "yes-no-filter": {
       "none": "Tümünü Dahil Et",
       "yes": "Evet",
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Sunucu Bilgisi",
     "not-exist": "Sunucu mevcut değil.",
-    "loading": "Loading server information...",
+    "loading": "Sunucu bilgileri yükleniyor...",
     "status": {
       "online": "Çevrimiçi",
       "offline": "Çevrımdışı"

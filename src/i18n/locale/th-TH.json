@@ -8,9 +8,9 @@
     "server-list": "รายชื่อเซิร์ฟเวอร์",
     "all-stats": "สถิติทั้งหมด",
     "all-server-map": "แผนที่ของเซิร์ฟเวอร์ทั้งหมด",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "ผู้จัดทำ",
+    "language": "ภาษา:",
+    "unit": "หน่วย:"
   },
   "select": {
     "placeholder": "กรุณาเลือกรายการ",
@@ -24,7 +24,7 @@
     "hide-empty": "ซ่อนเซิร์ฟเวอร์ไม่มีคน",
     "hide-full": "ซ่อนเซิร์ฟเวอร์คนเต็ม",
     "refreshing": "กำลังโหลด...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "ตัวเลือกตัวกรอง",
     "yes-no-filter": {
       "none": "ทั้งหมด",
       "yes": "ใช่",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "ผู้เล่น",
+    "servers-title": "เซิร์ฟเวอร์",
+    "offline-label": "ออฟไลน์"
   },
   "server-list": {
     "loading": "กำลังโหลดข้อมูลจากเซิร์ฟเวอร์...",
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "ข้อมูลเซิร์ฟเวอร์",
     "not-exist": "ไม่มีเซิร์ฟเวอร์.",
-    "loading": "Loading server information...",
+    "loading": "กำลังโหลดข้อมูลเซิร์ฟเวอร์...",
     "status": {
       "online": "ออนไลน์",
       "offline": "ออฟไลน์"

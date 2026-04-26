@@ -8,9 +8,9 @@
     "server-list": "Palvelinluettelo",
     "all-stats": "Tilastot",
     "all-server-map": "Kaikkien palvelinten kartta",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Tekijät",
+    "language": "Kieli:",
+    "unit": "Yksikkö:"
   },
   "select": {
     "placeholder": "Valitse kohta",
@@ -24,7 +24,7 @@
     "hide-empty": "Piilota tyhjät palvelimet",
     "hide-full": "Piilota täydet palvelimet",
     "refreshing": "Päivitetään luetteloa...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Suodatusasetukset",
     "yes-no-filter": {
       "none": "Sisällytä kaikki",
       "yes": "Kyllä",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Käyttäjät",
+    "servers-title": "Palvelimet",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Palvelimen tiedot",
     "not-exist": "Palvelinta ei ole olemassa.",
-    "loading": "Loading server information...",
+    "loading": "Ladataan palvelimen tietoja...",
     "status": {
       "online": "Verkossa",
       "offline": "Offline"
@@ -131,7 +131,7 @@
     "revoke": {
       "title": "Tracking will stop on next page load",
       "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
-      "reload": "Reload"
+      "reload": "Päivitä"
     }
   }
 }

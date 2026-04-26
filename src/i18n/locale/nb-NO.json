@@ -8,9 +8,9 @@
     "server-list": "Serverliste",
     "all-stats": "Full statistikk",
     "all-server-map": "Kart over alle servere",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Kreditering",
+    "language": "Språk:",
+    "unit": "Enhet:"
   },
   "select": {
     "placeholder": "Vennligst velg et element",
@@ -24,7 +24,7 @@
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulle servere",
     "refreshing": "Laster inn liste...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filteralternativer",
     "yes-no-filter": {
       "none": "Inkluder alle",
       "yes": "Ja",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Brukere",
+    "servers-title": "Servere",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Serverinformasjon",
     "not-exist": "Serveren eksisterer ikke.",
-    "loading": "Loading server information...",
+    "loading": "Laster serverinformasjon...",
     "status": {
       "online": "Online",
       "offline": "Offline"

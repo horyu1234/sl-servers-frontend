@@ -8,9 +8,9 @@
     "server-list": "Serveru saraksts",
     "all-stats": "Pilns statistika",
     "all-server-map": "Visu serveru karte",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Veidotāji",
+    "language": "Valoda:",
+    "unit": "Mērvienība:"
   },
   "select": {
     "placeholder": "Lūdzu, izvēlieties vienumu",
@@ -24,7 +24,7 @@
     "hide-empty": "Paslēpt tukšos serverus",
     "hide-full": "Paslēpt pilnos serverus",
     "refreshing": "Saraksta atsvaidzināšana...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filtra opcijas",
     "yes-no-filter": {
       "none": "Iekļaut visus",
       "yes": "Jā",
@@ -42,9 +42,9 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
-    "offline-label": "Offline"
+    "users-title": "Lietotāji",
+    "servers-title": "Serveri",
+    "offline-label": "Atvienots"
   },
   "server-list": {
     "loading": "Datu ielāde no servera...",
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Servera informācija",
     "not-exist": "Serveris neeksistē.",
-    "loading": "Loading server information...",
+    "loading": "Ielādē servera informāciju...",
     "status": {
       "online": "Tiešsaistē",
       "offline": "Bezsaistē"

@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Informations du serveur",
     "not-exist": "Le serveur n'existe pas.",
-    "loading": "Loading server information...",
+    "loading": "Chargement des informations du serveur...",
     "status": {
       "online": "En ligne",
       "offline": "Hors ligne"
@@ -90,8 +90,8 @@
           "4year": "4 Ans"
         },
         "resolution": {
-          "1m": "1 Minute",
-          "5m": "5 Minutes",
+          "1m": "1 minute",
+          "5m": "5 minutes",
           "1h": "1 Heure",
           "1d": "1 Jour"
         }
@@ -118,7 +118,7 @@
     "mod-loader": {
       "title": "Statistiques des mod loaders",
       "back": "Retour",
-      "versions-title": "{{name}} — versions",
+      "versions-title": "Versions de {{name}}",
       "drill-hint": "Cliquez sur une part pour voir la répartition par version",
       "drill-back-hint": "Cliquez sur Retour pour revenir à la répartition par loader"
     }

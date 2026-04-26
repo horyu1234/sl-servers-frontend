@@ -59,10 +59,10 @@
   "server-info": {
     "title": "Información del servidor",
     "not-exist": "El servidor no existe.",
-    "loading": "Loading server information...",
+    "loading": "Cargando información del servidor...",
     "status": {
-      "online": "Online",
-      "offline": "Offline"
+      "online": "En línea",
+      "offline": "Desconectado"
     },
     "players": "Jugadores",
     "pastebin": "Pastebin",

@@ -8,9 +8,9 @@
     "server-list": "Serverlista",
     "all-stats": "Fullständig statistik",
     "all-server-map": "Karta över alla servrar",
-    "credit": "Credits",
-    "language": "Language:",
-    "unit": "Unit:"
+    "credit": "Medverkande",
+    "language": "Språk:",
+    "unit": "Enhet:"
   },
   "select": {
     "placeholder": "Välj ett objekt",
@@ -24,7 +24,7 @@
     "hide-empty": "Dölj tomma servrar",
     "hide-full": "Dölj fulla servrar",
     "refreshing": "Laddar om lista...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filteralternativ",
     "yes-no-filter": {
       "none": "Inkludera alla",
       "yes": "Ja",
@@ -42,8 +42,8 @@
     }
   },
   "server-stats": {
-    "users-title": "Users",
-    "servers-title": "Servers",
+    "users-title": "Användare",
+    "servers-title": "Servrar",
     "offline-label": "Offline"
   },
   "server-list": {
@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Serversinformation",
     "not-exist": "Servern finns inte.",
-    "loading": "Loading server information...",
+    "loading": "Hämtar serverinformation...",
     "status": {
       "online": "Online",
       "offline": "Offline"

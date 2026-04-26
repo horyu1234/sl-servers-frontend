@@ -59,7 +59,7 @@
   "server-info": {
     "title": "Informazioni sul Server",
     "not-exist": "Il Server non esiste.",
-    "loading": "Loading server information...",
+    "loading": "Caricamento informazioni del server...",
     "status": {
       "online": "Online",
       "offline": "Offline"
