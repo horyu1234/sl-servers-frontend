@@ -9,7 +9,7 @@ import { parsePlayers, playersPercent } from '../../lib/format/players';
 import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
 
-export function ServerCard({ server, trend }) {
+export function ServerCard({ server, trend, compact = false }) {
   const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
@@ -20,7 +20,7 @@ export function ServerCard({ server, trend }) {
       className="cursor-pointer hover:border-primary/40 transition-colors"
       onClick={() => navigate(`/servers/${server.serverId}`)}
     >
-      <CardContent className="p-3 space-y-2">
+      <CardContent className={cn('space-y-2', compact ? 'p-2.5 space-y-1.5' : 'p-3')}>
         <div className="flex items-start justify-between gap-2 min-w-0">
           <div className="min-w-0">
             <div className="font-medium truncate">
@@ -28,7 +28,7 @@ export function ServerCard({ server, trend }) {
                 ? <SafeHtml html={server.info} />
                 : <span className="font-mono">{server.ip}:{server.port}</span>}
             </div>
-            {server.info && (
+            {!compact && server.info && (
               <div className="font-mono text-[10px] text-muted-foreground/70 truncate">
                 {server.ip}:{server.port}
               </div>
@@ -42,8 +42,8 @@ export function ServerCard({ server, trend }) {
             <span className="truncate">{getCountryName(server.isoCode) || server.isoCode}</span>
           </div>
         </div>
-        <ServerMetaStrip server={server} />
-        <ServerSparkline data={trend} />
+        <ServerMetaStrip server={server} compact={compact} />
+        <ServerSparkline data={trend} compact={compact} />
         <div className="flex items-center gap-2 text-[11px] text-muted-foreground tabular-nums pt-1">
           <span className="inline-block flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
             <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />
@@ -54,3 +54,5 @@ export function ServerCard({ server, trend }) {
     </Card>
   );
 }
+
+export default ServerCard;
