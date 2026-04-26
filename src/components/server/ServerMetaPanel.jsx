@@ -32,7 +32,7 @@ export function ServerMetaPanel({ server }) {
         <Row label={t('server-info.distance')} value={distanceKm} />
         <Row label={t('server-info.pastebin')} value={
           server.pastebin
-            ? <a href={`https://pastebin.com/${server.pastebin}`} target="_blank" rel="noreferrer" className="text-primary hover:underline">{server.pastebin}</a>
+            ? <a href={`https://pastebin.com/${encodeURIComponent(server.pastebin)}`} target="_blank" rel="noreferrer" className="text-primary hover:underline">{server.pastebin}</a>
             : '—'
         } />
         {tech.length > 0 && (

@@ -28,10 +28,15 @@ export default function Info() {
   const [flux, setFlux] = useState(null);
   const [graphError, setGraphError] = useState(false);
   const [showDaylightAlert, setShowDaylightAlert] = useState(true);
+  // Tracks whether we've kicked off a fetch for the current serverId, so
+  // the "server not found" guard doesn't flash on the very first render
+  // (Redux serverInfo starts with {fetching:false, data:{}}).
+  const [requested, setRequested] = useState(false);
   const inflightRef = useRef(0);
 
   useEffect(() => {
     if (!isNumericId(serverId)) return;
+    setRequested(true);
     dispatch(serverInfoActions.getServerInfo(serverId));
   }, [dispatch, serverId]);
 
@@ -51,7 +56,7 @@ export default function Info() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serverId]);
 
-  if (!isNumericId(serverId) || (!fetching && !error && (!server || Object.keys(server).length === 0))) {
+  if (!isNumericId(serverId) || (requested && !fetching && !error && (!server || Object.keys(server).length === 0))) {
     return (
       <div className="px-4 py-4">
         <Card>
