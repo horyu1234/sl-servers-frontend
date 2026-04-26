@@ -4,8 +4,6 @@ Frontend application for displaying and managing SCP: Secret Laboratory servers 
 
 > **Note:** This project was recently transitioned from closed source to open source. We welcome your contributions to help improve and expand the project!
 
-[한국어 문서](./README.ko.md)
-
 ## Features
 
 - Server listing with detailed stats and information
@@ -49,7 +47,7 @@ Contributions are welcome! Please check out our [Contributing Guide](./CONTRIBUT
 
 ### Translations
 
-This project supports multiple languages. Previously, translations were managed in a separate repository.
+This project supports multiple languages and welcomes new locales as well as corrections to existing ones.
 
 - Translation files are located in `src/i18n/locale/*.json`
 - The name of each language file follows IETF Language Tag. For a list of codes, please check [this link](http://www.lingoes.net/en/translator/langcode.htm).

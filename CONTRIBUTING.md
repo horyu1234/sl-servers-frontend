@@ -2,8 +2,6 @@
 
 Thank you for considering contributing to this project! Here are some guidelines to help you get started.
 
-[한국어 문서](./CONTRIBUTING.ko.md)
-
 ## Code of Conduct
 
 Please be respectful to all contributors and users. We aim to foster an inclusive and welcoming community.
