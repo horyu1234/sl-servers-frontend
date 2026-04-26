@@ -31,6 +31,7 @@ function shallowEqualFilter(a, b) {
 }
 
 const ROW_HEIGHT = 80;
+const PHONE_CARD_HEIGHT = 157; // compact ServerCard (~145) + 12px inter-row gap
 
 export default function List() {
   const { t } = useTranslation();
@@ -88,10 +89,20 @@ export default function List() {
   // against ancestor flex/min-height misconfigs (an element-scroll
   // virtualizer needs a measurable parent height — fragile here because
   // legacy CSS still loads alongside Tailwind).
+  //
+  // Two virtualized paths share this instance:
+  //   1. Desktop list view (ServerRow, 80px rows)
+  //   2. Phone card view (compact ServerCard, ~157px slots)
+  // The CSS-grid card path (tablet 2-col, desktop ?view=grid) is NOT
+  // virtualized — those viewports are wide enough that mounting all
+  // ~1k cards is acceptable, and grid layout doesn't interleave
+  // cleanly with absolute positioning.
   const listParentRef = useRef(null);
+  const virtualized = effectiveView === 'list' || isPhone;
+  const itemHeight = effectiveView === 'list' ? ROW_HEIGHT : PHONE_CARD_HEIGHT;
   const virtualizer = useWindowVirtualizer({
-    count: effectiveView === 'list' ? servers.length : 0,
-    estimateSize: () => ROW_HEIGHT,
+    count: virtualized ? servers.length : 0,
+    estimateSize: () => itemHeight,
     overscan: 6,
     scrollMargin: listParentRef.current?.offsetTop ?? 0,
   });
@@ -128,27 +139,33 @@ export default function List() {
           </div>
         )}
 
-        {effectiveView === 'list' ? (
-          <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
-            {virtualizer.getVirtualItems().map((vi) => {
-              const server = servers[vi.index];
-              return (
-                <div
-                  key={server.serverId}
-                  ref={virtualizer.measureElement}
-                  data-index={vi.index}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    transform: `translateY(${vi.start - (listParentRef.current?.offsetTop ?? 0)}px)`,
-                  }}
-                >
-                  <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} unit={unit} />
-                </div>
-              );
-            })}
+        {virtualized ? (
+          <div className={isPhone ? 'pt-3 px-4 pb-4' : ''}>
+            <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
+              {virtualizer.getVirtualItems().map((vi) => {
+                const server = servers[vi.index];
+                const trend = trends?.[String(server.serverId)] ?? null;
+                return (
+                  <div
+                    key={server.serverId}
+                    ref={virtualizer.measureElement}
+                    data-index={vi.index}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      transform: `translateY(${vi.start - (listParentRef.current?.offsetTop ?? 0)}px)`,
+                      paddingBottom: isPhone ? 12 : 0,
+                    }}
+                  >
+                    {effectiveView === 'list'
+                      ? <ServerRow server={server} trend={trend} unit={unit} />
+                      : <ServerCard server={server} trend={trend} compact />}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         ) : (
           <div className="p-4">
@@ -158,7 +175,6 @@ export default function List() {
                   key={server.serverId}
                   server={server}
                   trend={trends?.[String(server.serverId)] ?? null}
-                  compact={isPhone}
                 />
               ))}
             </div>
