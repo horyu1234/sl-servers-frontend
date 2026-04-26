@@ -65,4 +65,4 @@ When contributing translations:
 ## Questions?
 
 If you have any questions, please feel free to reach out:
-- Discord: horyu
+- Email: support@scplist.kr

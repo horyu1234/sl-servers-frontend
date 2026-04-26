@@ -1,73 +1,62 @@
-# SCP: SL Server List
+# SCP: Secret Laboratory Server List
 
-Frontend application for displaying and managing SCP: Secret Laboratory servers information.
+Frontend for [scplist.kr](https://scplist.kr) — a community-run directory of public *SCP: Secret Laboratory* servers with live stats, location map, and historical trends.
 
 > **Note:** This project was recently transitioned from closed source to open source. We welcome your contributions to help improve and expand the project!
 
 ## Features
 
-- Server listing with detailed stats and information
-- Interactive map view of server locations
-- Statistical analysis and graphs
-- Multi-language support with extensive internationalization
-- Responsive design for desktop and mobile devices
+- Live server listing with player counts, region, version, and modded/vanilla flags
+- Interactive map view of server locations powered by Leaflet
+- Player-count and uptime trends with recharts
+- Full internationalization via i18next, with community-maintained locales
+- Responsive layout tuned for both desktop and mobile
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (LTS version recommended)
-- pnpm
+- [Node.js](https://nodejs.org/) **20 LTS** or newer (Vite 8 / Vitest 4 require Node 20+)
+- [pnpm](https://pnpm.io/) **10** (the repo pins `packageManager` to `pnpm@10.x`; Corepack will pick this up automatically)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/scp-sl-server-list.git
-cd scp-sl-server-list
+git clone https://github.com/horyu1234/sl-servers-frontend.git
+cd sl-servers-frontend
 
 # Install dependencies
 pnpm install
 
-# Start development server
+# Start the dev server (http://localhost:3185)
 pnpm start
 ```
 
-The application will start on port 3185 by default.
+### Common Scripts
 
-### Building for Production
+| Command         | What it does                                            |
+| --------------- | ------------------------------------------------------- |
+| `pnpm start`    | Run the Vite dev server on port 3185                    |
+| `pnpm build`    | Build the production bundle into `build/`               |
+| `pnpm preview`  | Serve the production build locally for smoke-testing    |
+| `pnpm test`     | Run the Vitest + Testing Library suite                  |
+
+To run a single test file:
 
 ```bash
-pnpm build
+pnpm test src/path/to/file.test.jsx
 ```
 
 ## Contributing
 
-Contributions are welcome! Please check out our [Contributing Guide](./CONTRIBUTING.md) for details.
+Contributions are welcome! Start with the [Contributing Guide](./CONTRIBUTING.md), and please review the [Code of Conduct](./CODE_OF_CONDUCT.md) before opening your first PR.
 
 ### Translations
 
-This project supports multiple languages and welcomes new locales as well as corrections to existing ones.
+This project supports multiple languages and welcomes new locales as well as corrections to existing ones. Translation workflow, locale conventions, and file-encoding rules live in the [Contributing Guide](./CONTRIBUTING.md#translation-contributions).
 
-- Translation files are located in `src/i18n/locale/*.json`
-- The name of each language file follows IETF Language Tag. For a list of codes, please check [this link](http://www.lingoes.net/en/translator/langcode.htm).
-- `src/data/language.json` file must be encoded in UTF-8 (Without BOM).
-- `src/i18n/locale/*.json` files must be encoded in UTF-8 (With BOM).
-
-To contribute translations:
-1. Fork this repository
-2. Create a new branch for your translation work
-3. Update or add translation files in `src/i18n/locale/`
-4. Remember to also update `src/data/language.json` when contributing to translations
-5. Submit a pull request
-
-If you have any questions about translations, please contact: Discord Username: horyu
-
-## Future Plans
-
-- UI/UX improvements
-- Performance optimizations
-- Adding more data visualization options
+For questions about translations, contact **support@scplist.kr**.
 
 ## Tech Stack
 

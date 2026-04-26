@@ -45,7 +45,7 @@ an individual is officially representing the community in public spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the project maintainers responsible for enforcement via Discord: horyu.
+reported to the project maintainers responsible for enforcement at support@scplist.kr.
 All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution
