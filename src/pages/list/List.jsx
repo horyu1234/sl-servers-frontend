@@ -51,11 +51,13 @@ export default function List() {
     setSearchParams(next, { replace: true });
   };
 
-  // Phones (< sm) cannot fit the desktop ServerRow grid; force card view there.
-  // The toggle button is already hidden below `lg`, so users only see this
-  // override; the URL contract (?view=grid) still controls tablet/desktop.
+  // The desktop ServerRow grid only fits at >= lg (sidebar layout). Below lg
+  // there is no view-toggle button (it's lg:inline-flex), so users have no way
+  // to escape a broken list view — force cards. Compact density only kicks in
+  // at < sm. The URL contract (?view=grid) is still honored at >= lg.
   const isPhone = useMediaQuery('(max-width: 639px)');
-  const effectiveView = isPhone ? 'grid' : view;
+  const isBelowLg = useMediaQuery('(max-width: 1023px)');
+  const effectiveView = isBelowLg ? 'grid' : view;
 
   // Sync URL filter -> Redux serverFilter, then refetch.
   useEffect(() => {
