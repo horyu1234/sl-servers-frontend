@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useVirtualizer } from '@tanstack/react-virtual';
+import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import { ServerRow } from '../../components/server/ServerRow';
 import { ServerStatsHeader } from '../../components/server/ServerStatsHeader';
 import { ViewToggle } from '../../components/server/ViewToggle';
@@ -68,19 +68,24 @@ export default function List() {
     setSearchParams(toSearchParams(next), { replace: false });
   };
 
-  const scrollRef = useRef(null);
-  const virtualizer = useVirtualizer({
-    count: servers.length,
-    getScrollElement: () => scrollRef.current,
+  // Window-scroll virtualizer: the entire page scrolls (body), and the
+  // virtualizer measures items relative to the document. This is robust
+  // against ancestor flex/min-height misconfigs (an element-scroll
+  // virtualizer needs a measurable parent height — fragile here because
+  // legacy CSS still loads alongside Tailwind).
+  const listParentRef = useRef(null);
+  const virtualizer = useWindowVirtualizer({
+    count: view === 'list' ? servers.length : 0,
     estimateSize: () => ROW_HEIGHT,
     overscan: 6,
+    scrollMargin: listParentRef.current?.offsetTop ?? 0,
   });
 
   return (
-    <div className="flex-1 min-h-0 flex">
+    <div className="flex">
       <FilterSidebar value={filter} onChange={updateFilter} />
-      <div className="flex-1 min-h-0 flex flex-col">
-        <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-border">
+      <div className="flex-1 min-w-0 flex flex-col">
+        <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-border sticky top-14 z-20 bg-background/90 backdrop-blur">
           <FilterDrawer value={filter} onChange={updateFilter} />
           <FilterChips value={filter} onChange={updateFilter} />
           <ViewToggle value={view} onChange={setView} />
@@ -107,25 +112,29 @@ export default function List() {
         )}
 
         {view === 'list' ? (
-          <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto">
-            <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
-              {virtualizer.getVirtualItems().map((vi) => {
-                const server = servers[vi.index];
-                return (
-                  <div
-                    key={server.serverId}
-                    ref={virtualizer.measureElement}
-                    data-index={vi.index}
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', transform: `translateY(${vi.start}px)` }}
-                  >
-                    <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} />
-                  </div>
-                );
-              })}
-            </div>
+          <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
+            {virtualizer.getVirtualItems().map((vi) => {
+              const server = servers[vi.index];
+              return (
+                <div
+                  key={server.serverId}
+                  ref={virtualizer.measureElement}
+                  data-index={vi.index}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    transform: `translateY(${vi.start - (listParentRef.current?.offsetTop ?? 0)}px)`,
+                  }}
+                >
+                  <ServerRow server={server} trend={trends?.[String(server.serverId)] ?? null} />
+                </div>
+              );
+            })}
           </div>
         ) : (
-          <div className="flex-1 min-h-0 overflow-y-auto p-4">
+          <div className="p-4">
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {servers.map((server) => (
                 <ServerCard key={server.serverId} server={server} trend={trends?.[String(server.serverId)] ?? null} />

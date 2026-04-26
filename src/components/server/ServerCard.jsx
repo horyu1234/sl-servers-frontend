@@ -21,10 +21,17 @@ export function ServerCard({ server, trend }) {
     >
       <CardContent className="p-3 space-y-2">
         <div className="flex items-start justify-between gap-2 min-w-0">
-          <div className="font-medium truncate">
-            {server.info
-              ? <SafeHtml html={server.info} />
-              : `${server.ip}:${server.port}`}
+          <div className="min-w-0">
+            <div className="font-medium truncate">
+              {server.info
+                ? <SafeHtml html={server.info} />
+                : <span className="font-mono">{server.ip}:{server.port}</span>}
+            </div>
+            {server.info && (
+              <div className="font-mono text-[10px] text-muted-foreground/70 truncate">
+                {server.ip}:{server.port}
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0">
             <span aria-hidden="true">{isoToFlagEmoji(server.isoCode)}</span>

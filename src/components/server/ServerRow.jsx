@@ -27,8 +27,13 @@ function ServerRowImpl({ server, trend, density = 'cozy', onClick }) {
         <div className="truncate font-medium text-foreground">
           {server.info
             ? <SafeHtml html={server.info} />
-            : `${server.ip}:${server.port}`}
+            : <span className="font-mono">{server.ip}:{server.port}</span>}
         </div>
+        {server.info && (
+          <div className="font-mono text-[10px] text-muted-foreground/70 truncate">
+            {server.ip}:{server.port}
+          </div>
+        )}
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
       <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground tabular-nums">
@@ -57,6 +62,8 @@ export const ServerRow = memo(ServerRowImpl, (prev, next) => {
     prev.density === next.density &&
     prev.trend === next.trend &&
     a.serverId === b.serverId &&
+    a.ip === b.ip &&
+    a.port === b.port &&
     a.players === b.players &&
     a.version === b.version &&
     a.friendlyFire === b.friendlyFire &&
