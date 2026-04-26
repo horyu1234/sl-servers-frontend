@@ -1,18 +1,18 @@
 import React, { useMemo } from 'react';
 
-const WIDTH = 160;
-const HEIGHT = 28;
+const VIEW_W = 160;
+const VIEW_H = 28;
 
 const ACCENT = { stroke: '#22c55e', fill: '#22c55e' };
 
 function pointsFor(data) {
   if (!data || data.length === 0) return [];
   const yMax = Math.max(...data.map((v) => v ?? 0)) || 1;
-  const stepX = WIDTH / (data.length - 1 || 1);
+  const stepX = VIEW_W / (data.length - 1 || 1);
   return data.map((v, i) => {
     const value = v ?? 0;
     const x = Math.round(i * stepX);
-    const y = Math.round(HEIGHT - 2 - (value / yMax) * (HEIGHT - 4));
+    const y = Math.round(VIEW_H - 2 - (value / yMax) * (VIEW_H - 4));
     return [x, y];
   });
 }
@@ -27,7 +27,7 @@ function summarise(data) {
   return { peak, avg, delta };
 }
 
-export function ServerSparkline({ data, className = '' }) {
+export function ServerSparkline({ data, className = '', compact = false }) {
   const computed = useMemo(() => {
     if (data === null) return { state: 'new' };
     if (Array.isArray(data) && data.length === 0) return { state: 'empty' };
@@ -35,7 +35,7 @@ export function ServerSparkline({ data, className = '' }) {
     const summary = summarise(data);
     const points = pointsFor(data);
     const linePath = points.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x},${y}`).join(' ');
-    const fillPath = `${linePath} L${WIDTH},${HEIGHT} L0,${HEIGHT} Z`;
+    const fillPath = `${linePath} L${VIEW_W},${VIEW_H} L0,${VIEW_H} Z`;
     return { state: 'ok', summary, linePath, fillPath };
   }, [data]);
 
@@ -50,16 +50,26 @@ export function ServerSparkline({ data, className = '' }) {
   const deltaClass =
     summary.delta > 5 ? 'text-[#22c55e]' : summary.delta < -5 ? 'text-[#ef4444]' : 'text-muted-foreground';
   const arrow = summary.delta > 5 ? '▲' : summary.delta < -5 ? '▼' : '—';
+  const sign = summary.delta >= 0 ? '+' : '';
 
   return (
     <div className={`flex flex-col gap-0.5 ${className}`}>
-      <svg width={WIDTH} height={HEIGHT} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="none" aria-hidden="true">
+      <svg
+        viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        style={{ width: '100%', height: VIEW_H }}
+      >
         <path d={fillPath} fill={ACCENT.fill} fillOpacity="0.18" />
         <path d={linePath} fill="none" stroke={ACCENT.stroke} strokeWidth="1.3" />
       </svg>
-      <div className="flex justify-between text-[9px] text-muted-foreground tabular-nums">
-        <span>peak {summary.peak} · avg {summary.avg}</span>
-        <span className={deltaClass}>{arrow} {summary.delta >= 0 ? '+' : ''}{summary.delta}%</span>
+      <div
+        data-testid="sparkline-summary"
+        data-compact={compact ? 'true' : 'false'}
+        className="flex justify-between text-[9px] text-muted-foreground tabular-nums"
+      >
+        <span className="truncate">peak {summary.peak} · avg {summary.avg}</span>
+        <span className={`${deltaClass} whitespace-nowrap`}>{arrow} {sign}{summary.delta}%</span>
       </div>
     </div>
   );

@@ -20,4 +20,10 @@ describe('ServerSparkline', () => {
     const { container } = render(<ServerSparkline data={[null,1,null,3]} capacity={10} />);
     expect(container.querySelector('svg')).not.toBeNull();
   });
+  it('renders peak/avg/delta on a single row when compact', () => {
+    const { container } = render(<ServerSparkline data={[1,2,3,4]} compact />);
+    const summary = container.querySelector('[data-testid="sparkline-summary"]');
+    expect(summary).not.toBeNull();
+    expect(summary.getAttribute('data-compact')).toBe('true');
+  });
 });
