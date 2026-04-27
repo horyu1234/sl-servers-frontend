@@ -21,6 +21,7 @@
       "name": "Server Search",
       "placeholder": "Enter search terms"
     },
+    "country": "Country",
     "hide-empty": "Hide empty servers",
     "hide-full": "Hide full servers",
     "refreshing": "Reloading list...",
