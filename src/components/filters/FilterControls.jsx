@@ -71,7 +71,7 @@ export function FilterControls({ value, onChange }) {
         <CountryMultiSelect
           value={value.countryFilter}
           onChange={(next) => set({ countryFilter: next })}
-          minPopoverWidth={240}
+          minPopoverWidth={0}
         />
       </div>
 
