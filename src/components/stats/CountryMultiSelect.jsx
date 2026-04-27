@@ -51,7 +51,7 @@ export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
         <PopoverContent
           className="p-0"
           align="start"
-          sideOffset={2}
+          sideOffset={0}
           style={{ width: 'var(--radix-popover-trigger-width)', minWidth: minPopoverWidth }}
         >
           <Command>
