@@ -49,7 +49,7 @@ export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="p-0"
+          className="p-0 border-border/30"
           align="start"
           sideOffset={0}
           style={{ width: 'var(--radix-popover-trigger-width)', minWidth: minPopoverWidth }}
