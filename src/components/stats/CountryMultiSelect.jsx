@@ -11,7 +11,7 @@ import getCountryName from '../../i18n/i18n-countries';
 import * as countryListActions from '../../modules/countryList';
 import { cn } from '@/lib/cn';
 
-export function CountryMultiSelect({ value, onChange }) {
+export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const isoCodes = useSelector((s) => s.countryList.data);
@@ -52,7 +52,7 @@ export function CountryMultiSelect({ value, onChange }) {
           className="p-0"
           align="start"
           sideOffset={4}
-          style={{ width: 'var(--radix-popover-trigger-width)', minWidth: 320 }}
+          style={{ width: 'var(--radix-popover-trigger-width)', minWidth: minPopoverWidth }}
         >
           <Command>
             <CommandInput placeholder={t('select.placeholder')} />
