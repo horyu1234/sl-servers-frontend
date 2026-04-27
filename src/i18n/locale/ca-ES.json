@@ -5,7 +5,7 @@
     "server-error": "S'ha produït un error en obtenir dades del servidor. Sol ser un problema temporal, així que torneu-ho a provar d'aquí a un moment. Si el problema persisteix, envieu un correu a support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Només els endpoints documentats a continuació estan oficialment admesos. Si us plau, no n'utilitzeu cap altre."
+    "undocumented-warning": "Estem preparant una API oficial més completa. Fins aleshores, utilitzeu només els endpoints documentats a continuació."
   },
   "navbar": {
     "server-list": "Llista de servidors",

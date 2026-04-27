@@ -5,7 +5,7 @@
     "server-error": "Gh'é stæto un erô into pigiâ i dæti da-o server. Sti problemi de sòlito en temporanei, donca preuva torna tra un pittin. Se o problema o continua, mandighe 'na mail a support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Solo i endpoint documentae chi sotta son uffiçialmente sostegnui. Pe piaxei, no n'adoeua di âtri."
+    "undocumented-warning": "Un'API uffiçiale ciù completa a l'è in preparaçion. Fin a alloa, adoeua solo i endpoint documentae chi sotta."
   },
   "navbar": {
     "server-list": "Lìsta di Sèrver",

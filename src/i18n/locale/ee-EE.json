@@ -5,7 +5,7 @@
     "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, palun kirjutage aadressile support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Ametlikult toetatud on ainult allpool dokumenteeritud lõpp-punktid. Palun ärge kasutage teisi."
+    "undocumented-warning": "Valmistame ette põhjalikumat ametlikku API-d. Selle ilmumiseni kasutage palun ainult allpool dokumenteeritud lõpp-punkte."
   },
   "navbar": {
     "server-list": "Serverite nimekiri",

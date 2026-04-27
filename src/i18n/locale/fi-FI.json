@@ -5,7 +5,7 @@
     "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, lähetä sähköpostia osoitteeseen support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Vain alla dokumentoidut päätepisteet ovat virallisesti tuettuja. Muita ei tule käyttää."
+    "undocumented-warning": "Valmistelemme kattavampaa virallista API:a. Siihen asti käytäthän vain alla dokumentoituja päätepisteitä."
   },
   "navbar": {
     "server-list": "Palvelinluettelo",

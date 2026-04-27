@@ -5,7 +5,7 @@
     "server-error": "從伺服器獲取資料時出錯。這些問題通常是暫時的，請稍後再試。如果問題仍然存在，請寄電子郵件至 support@scplist.kr。"
   },
   "api": {
-    "undocumented-warning": "僅下方文件中列出的端點為官方支援的介面。請勿使用其他未列出的 API。"
+    "undocumented-warning": "我們正在準備更完善的官方 API。在正式發布之前，請僅使用下方文件中列出的端點。"
   },
   "navbar": {
     "server-list": "伺服器列表",

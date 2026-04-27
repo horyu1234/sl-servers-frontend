@@ -5,7 +5,7 @@
     "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, send en e-post til support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Kun endepunktene som er dokumentert nedenfor, støttes offisielt. Vennligst ikke bruk andre."
+    "undocumented-warning": "Vi jobber med et mer komplett offisielt API. Inntil det er klart, vennligst bruk kun endepunktene som er dokumentert nedenfor."
   },
   "navbar": {
     "server-list": "Serverliste",

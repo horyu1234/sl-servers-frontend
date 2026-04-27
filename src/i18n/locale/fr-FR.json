@@ -5,7 +5,7 @@
     "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci d'écrire à support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Seuls les points de terminaison documentés ci-dessous sont officiellement pris en charge. Merci de ne pas utiliser les autres."
+    "undocumented-warning": "Une API officielle plus complète est en préparation. En attendant, veuillez n'utiliser que les points de terminaison documentés ci-dessous."
   },
   "navbar": {
     "server-list": "Liste des serveurs",

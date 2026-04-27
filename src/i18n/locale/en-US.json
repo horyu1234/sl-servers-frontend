@@ -5,7 +5,7 @@
     "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Only the endpoints documented below are officially supported. Please do not use any others."
+    "undocumented-warning": "A more complete official API is on the way. Until it lands, please use only the endpoints documented below."
   },
   "navbar": {
     "server-list": "Server List",

@@ -5,7 +5,7 @@
     "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse support@scplist.kr adresine e-posta gönderin."
   },
   "api": {
-    "undocumented-warning": "Yalnızca aşağıda belgelenen uç noktalar resmi olarak desteklenir. Lütfen diğerlerini kullanmayın."
+    "undocumented-warning": "Daha kapsamlı bir resmi API üzerinde çalışıyoruz. Yayınlanana kadar lütfen yalnızca aşağıda belgelenen uç noktaları kullanın."
   },
   "navbar": {
     "server-list": "Sunucu Listesi",

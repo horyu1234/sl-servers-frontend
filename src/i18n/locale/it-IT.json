@@ -5,7 +5,7 @@
     "server-error": "Si è verificato un errore durante il recupero dei dati dal server. Questi problemi sono in genere temporanei, si prega di riprovare più tardi. Se il problema persiste, scrivi a support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Solo gli endpoint documentati di seguito sono ufficialmente supportati. Si prega di non utilizzarne altri."
+    "undocumented-warning": "È in preparazione un'API ufficiale più completa. Fino ad allora, utilizza solo gli endpoint documentati di seguito."
   },
   "navbar": {
     "server-list": "Lista dei Server",

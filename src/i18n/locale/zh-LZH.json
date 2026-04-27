@@ -5,7 +5,7 @@
     "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请发邮件至support@scplist.kr。"
   },
   "api": {
-    "undocumented-warning": "唯下所載者，乃官設之徑。其外之API，勿用。"
+    "undocumented-warning": "更完之官徑將至。未發之前，唯用下所載者，餘勿用。"
   },
   "navbar": {
     "server-list": "服务器名录",

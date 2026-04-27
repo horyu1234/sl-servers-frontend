@@ -5,7 +5,7 @@
     "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 support@scplist.kr 로 메일을 보내주십시오."
   },
   "api": {
-    "undocumented-warning": "아래에 문서화된 엔드포인트만 공식적으로 제공됩니다. 그 외 API는 사용하지 마십시오."
+    "undocumented-warning": "더 풍부한 공식 API를 준비 중입니다. 정식 공개 전까지는 아래에 문서화된 엔드포인트만 사용해 주세요."
   },
   "navbar": {
     "server-list": "서버 목록",

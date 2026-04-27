@@ -5,7 +5,7 @@
     "server-error": "Wystąpił błąd podczas pobierania danych z serwera. Takie problemy są zwykle tymczasowe, więc spróbuj ponownie za chwilę. Jeśli problem nadal występuje, napisz na adres support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Oficjalnie wspierane są tylko punkty końcowe wymienione poniżej. Prosimy nie korzystać z innych."
+    "undocumented-warning": "Pracujemy nad pełniejszym oficjalnym API. Do czasu jego wydania prosimy korzystać wyłącznie z punktów końcowych wymienionych poniżej."
   },
   "navbar": {
     "server-list": "Lista serwerów",

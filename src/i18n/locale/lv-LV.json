@@ -5,7 +5,7 @@
     "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, rakstiet uz e-pastu support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Oficiāli tiek atbalstīti tikai zemāk dokumentētie galapunkti. Lūdzu, neizmantojiet citus."
+    "undocumented-warning": "Mēs gatavojam pilnīgāku oficiālu API. Līdz tā izlaišanai lūdzu izmantojiet tikai zemāk dokumentētos galapunktus."
   },
   "navbar": {
     "server-list": "Serveru saraksts",

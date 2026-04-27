@@ -5,7 +5,7 @@
     "server-error": "Se ha producido un error al obtener datos del servidor. Estos problemas suelen ser temporales, así que vuelve a intentarlo dentro de un rato. Si el problema persiste, escribe a support@scplist.kr."
   },
   "api": {
-    "undocumented-warning": "Solo los endpoints documentados a continuación están oficialmente soportados. Por favor, no utilice ningún otro."
+    "undocumented-warning": "Estamos preparando una API oficial más completa. Hasta entonces, utilice únicamente los endpoints documentados a continuación."
   },
   "navbar": {
     "server-list": "Lista de servidores",
