@@ -13,13 +13,13 @@ vi.mock('../../lib/api/countries', () => ({
 import { FilterControls } from './FilterControls';
 
 describe('FilterControls country selector', () => {
-  it('renders the country label', () => {
+  it('renders the country label', async () => {
     render(
       <Provider store={store}>
         <FilterControls value={DEFAULT_FILTER} onChange={() => {}} />
       </Provider>
     );
-    expect(screen.getByText('Country')).toBeInTheDocument();
+    expect(await screen.findByText('Country')).toBeInTheDocument();
   });
 
   it('emits a countryFilter patch when a country is selected', async () => {
