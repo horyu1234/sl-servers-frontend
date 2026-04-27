@@ -5,6 +5,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
+import { CountryMultiSelect } from '../stats/CountryMultiSelect';
 
 const TRISTATE = [
   { value: 'null',  i18nLeaf: 'none' },
@@ -60,6 +61,17 @@ export function FilterControls({ value, onChange }) {
           value={value.search}
           onChange={(e) => set({ search: e.target.value })}
           placeholder={t('filter-option.server-search.placeholder')}
+        />
+      </div>
+
+      <div className="space-y-1.5">
+        <Label className="text-xs uppercase tracking-wider text-muted-foreground">
+          {t('filter-option.country')}
+        </Label>
+        <CountryMultiSelect
+          value={value.countryFilter}
+          onChange={(next) => set({ countryFilter: next })}
+          minPopoverWidth={240}
         />
       </div>
 

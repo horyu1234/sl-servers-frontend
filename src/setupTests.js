@@ -57,6 +57,23 @@ if (typeof window !== 'undefined' && typeof window.matchMedia !== 'function') {
   });
 }
 
+// jsdom does not implement ResizeObserver, which is used by cmdk (the
+// Command component). Provide a no-op stub so tests that open a Popover
+// containing a Command list do not throw "ResizeObserver is not defined".
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}
+
+// jsdom does not implement Element.prototype.scrollIntoView, which cmdk
+// calls when navigating the command list. Provide a no-op stub.
+if (typeof Element.prototype.scrollIntoView !== 'function') {
+  Element.prototype.scrollIntoView = function () {};
+}
+
 if (typeof localStorage === 'undefined' || typeof localStorage.setItem !== 'function') {
     const store = {};
     const storage = {
