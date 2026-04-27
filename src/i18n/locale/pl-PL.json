@@ -4,6 +4,9 @@
     "not-found": "Nie można znaleźć żądanej strony.",
     "server-error": "Wystąpił błąd podczas pobierania danych z serwera. Takie problemy są zwykle tymczasowe, więc spróbuj ponownie za chwilę. Jeśli problem nadal występuje, napisz na adres support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Oficjalnie wspierane są tylko punkty końcowe wymienione poniżej. Prosimy nie korzystać z innych."
+  },
   "navbar": {
     "server-list": "Lista serwerów",
     "all-stats": "Ogólne statystyki",

@@ -4,6 +4,9 @@
     "not-found": "Siden, du anmodede om, kunne ikke findes.",
     "server-error": "Der opstod en fejl under hentning af data fra serveren. Disse problemer er typisk midlertidige, så prøv igen om lidt. Hvis problemet fortsætter, bedes du sende en e-mail til support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Kun de endepunkter, der er dokumenteret nedenfor, er officielt understøttet. Brug venligst ikke andre."
+  },
   "navbar": {
     "server-list": "Serverliste",
     "all-stats": "Fuldstændig statistik",

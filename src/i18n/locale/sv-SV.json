@@ -4,6 +4,9 @@
     "not-found": "Den begärda sidan kunde inte hittas.",
     "server-error": "Ett fel inträffade vid hämtning av data från servern. Dessa problem är vanligtvis tillfälliga, så försök igen om en stund. Om problemet kvarstår, mejla support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Endast de slutpunkter som dokumenteras nedan stöds officiellt. Använd inga andra."
+  },
   "navbar": {
     "server-list": "Serverlista",
     "all-stats": "Fullständig statistik",

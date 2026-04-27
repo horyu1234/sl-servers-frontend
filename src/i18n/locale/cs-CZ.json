@@ -4,6 +4,9 @@
     "not-found": "Požadovanou stránku se nepodařilo najít.",
     "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, napište prosím na support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Oficiálně jsou podporovány pouze koncové body uvedené níže. Prosím, nepoužívejte jiné."
+  },
   "navbar": {
     "server-list": "Seznam serverů",
     "all-stats": "Kompletní statistiky",

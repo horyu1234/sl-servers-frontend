@@ -4,6 +4,9 @@
     "not-found": "The page you requested could not be found.",
     "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Only the endpoints documented below are officially supported. Please do not use any others."
+  },
   "navbar": {
     "server-list": "Server List",
     "all-stats": "Full statistics",

@@ -4,6 +4,9 @@
     "not-found": "Lehte, mida te taotlesite, ei leitud.",
     "server-error": "Eraro okazis dum prenado de datumoj de la servilo. Tiaj problemoj kutime estas portempaj, do bonvolu reprovi post momento. Se la problemo daŭras, bonvolu retpoŝti al support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Nur la finpunktoj dokumentitaj malsupre estas oficiale subtenataj. Bonvolu ne uzi aliajn."
+  },
   "navbar": {
     "server-list": "Serverite nimekiri",
     "all-stats": "Täielik statistika",

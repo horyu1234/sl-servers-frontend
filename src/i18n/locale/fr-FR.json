@@ -4,6 +4,9 @@
     "not-found": "La page que vous avez demandée est introuvable.",
     "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci d'écrire à support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Seuls les points de terminaison documentés ci-dessous sont officiellement pris en charge. Merci de ne pas utiliser les autres."
+  },
   "navbar": {
     "server-list": "Liste des serveurs",
     "all-stats": "Statistiques complètes",

@@ -4,6 +4,9 @@
     "not-found": "找不到主人请求的页面QAQ",
     "server-error": "从服务器获取数据的时候出了一点小小的问题 AWA. 通常来说一段时间后就好啦~ 所以请主人耐心等待一下哦~ 如果问题依旧存在, 请主人发送邮件至 support@scplist.kr 哦!"
   },
+  "api": {
+    "undocumented-warning": "仅下方文档中列出的端点为官方支持的接口。请勿使用其他未列出的 API。"
+  },
   "navbar": {
     "server-list": "服务器列表",
     "all-stats": "总体信息概况",

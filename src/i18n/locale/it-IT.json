@@ -4,6 +4,9 @@
     "not-found": "La pagina che hai richiesto non esiste.",
     "server-error": "Si è verificato un errore durante il recupero dei dati dal server. Questi problemi sono in genere temporanei, si prega di riprovare più tardi. Se il problema persiste, scrivi a support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Solo gli endpoint documentati di seguito sono ufficialmente supportati. Si prega di non utilizzarne altri."
+  },
   "navbar": {
     "server-list": "Lista dei Server",
     "all-stats": "Statistiche complete",

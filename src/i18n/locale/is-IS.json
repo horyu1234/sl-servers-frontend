@@ -4,6 +4,9 @@
     "not-found": "Síðan sem þú baðst um fannst ekki.",
     "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessi vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast sendu tölvupóst á support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Aðeins endapunktarnir sem skjalfestir eru hér að neðan eru opinberlega studdir. Vinsamlegast notaðu enga aðra."
+  },
   "navbar": {
     "server-list": "Netþjónalisti",
     "all-stats": "Fullar tölfræði",

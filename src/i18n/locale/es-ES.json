@@ -4,6 +4,9 @@
     "not-found": "No se encontró la página que solicitaste.",
     "server-error": "Se ha producido un error al obtener datos del servidor. Estos problemas suelen ser temporales, así que vuelve a intentarlo dentro de un rato. Si el problema persiste, escribe a support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Solo los endpoints documentados a continuación están oficialmente soportados. Por favor, no utilice ningún otro."
+  },
   "navbar": {
     "server-list": "Lista de servidores",
     "all-stats": "Estadísticas completas",

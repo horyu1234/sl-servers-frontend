@@ -4,6 +4,9 @@
     "not-found": "Pieprasītā lapa netika atrasta.",
     "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, rakstiet uz e-pastu support@scplist.kr."
   },
+  "api": {
+    "undocumented-warning": "Oficiāli tiek atbalstīti tikai zemāk dokumentētie galapunkti. Lūdzu, neizmantojiet citus."
+  },
   "navbar": {
     "server-list": "Serveru saraksts",
     "all-stats": "Pilns statistika",
