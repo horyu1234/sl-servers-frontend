@@ -21,6 +21,7 @@
       "name": "Cerca un Server",
       "placeholder": "Inserisci i termini di ricerca"
     },
+    "country": "Paese",
     "hide-empty": "Nascondi i server vuoti",
     "hide-full": "Nascondi i server pieni",
     "refreshing": "Caricamento lista in corso...",

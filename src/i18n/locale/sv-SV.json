@@ -21,6 +21,7 @@
       "name": "Serversökning",
       "placeholder": "Ange söktermer"
     },
+    "country": "Land",
     "hide-empty": "Dölj tomma servrar",
     "hide-full": "Dölj fulla servrar",
     "refreshing": "Laddar om lista...",

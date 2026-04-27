@@ -21,6 +21,7 @@
       "name": "Server Søk",
       "placeholder": "Skriv inn søkeord"
     },
+    "country": "Land",
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulle servere",
     "refreshing": "Laster inn liste...",

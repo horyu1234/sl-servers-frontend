@@ -21,6 +21,7 @@
       "name": "尋找伺服器",
       "placeholder": "請輸入關鍵字"
     },
+    "country": "國家",
     "hide-empty": "隱藏無人伺服器",
     "hide-full": "隱藏滿人伺服器",
     "refreshing": "我正在載入...",

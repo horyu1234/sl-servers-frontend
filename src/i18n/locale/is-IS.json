@@ -21,6 +21,7 @@
       "name": "Leita að netþjón",
       "placeholder": "Sláðu inn leitarorð"
     },
+    "country": "Land",
     "hide-empty": "Fela tóma netþjóna",
     "hide-full": "Fela fulla netþjóna",
     "refreshing": "Endurhlaðning lista...",

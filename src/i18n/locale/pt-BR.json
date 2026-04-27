@@ -21,6 +21,7 @@
       "name": "Buscar Servidor",
       "placeholder": "Digite os parâmetros de busca"
     },
+    "country": "País",
     "hide-empty": "Ocultar servidores vazios",
     "hide-full": "Ocultar servidores cheios",
     "refreshing": "Recarregando lista...",

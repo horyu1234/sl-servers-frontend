@@ -21,6 +21,7 @@
       "name": "Sunucu Ara",
       "placeholder": "Arama terimi girin"
     },
+    "country": "Ülke",
     "hide-empty": "Boş sunucuları gizle",
     "hide-full": "Dolu sunucuları gizle",
     "refreshing": "Liste yenileniyor...",

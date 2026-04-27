@@ -21,6 +21,7 @@
       "name": "Serveri otsing",
       "placeholder": "Sisestage otsinguterminid"
     },
+    "country": "Riik",
     "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
     "refreshing": "Laadin nimekirja uuesti...",

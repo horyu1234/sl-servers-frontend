@@ -21,6 +21,7 @@
       "name": "Palvelimen haku",
       "placeholder": "Syötä hakuehdot"
     },
+    "country": "Maa",
     "hide-empty": "Piilota tyhjät palvelimet",
     "hide-full": "Piilota täydet palvelimet",
     "refreshing": "Päivitetään luetteloa...",

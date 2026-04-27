@@ -21,6 +21,7 @@
       "name": "Servera meklēšana",
       "placeholder": "Ievadiet meklēšanas terminus"
     },
+    "country": "Valsts",
     "hide-empty": "Paslēpt tukšos serverus",
     "hide-full": "Paslēpt pilnos serverus",
     "refreshing": "Saraksta atsvaidzināšana...",

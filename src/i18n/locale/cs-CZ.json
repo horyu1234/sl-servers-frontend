@@ -21,6 +21,7 @@
       "name": "Hledání serveru",
       "placeholder": "Zadejte hledané výrazy"
     },
+    "country": "Země",
     "hide-empty": "Skrýt prázdné servery",
     "hide-full": "Skrýt plné servery",
     "refreshing": "Obnovuji seznam...",

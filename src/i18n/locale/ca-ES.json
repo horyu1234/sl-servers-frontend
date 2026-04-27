@@ -21,6 +21,7 @@
       "name": "Cercar servidor",
       "placeholder": "Introdueix els termes de cerca"
     },
+    "country": "País",
     "hide-empty": "Amagar servidors buits",
     "hide-full": "Amagar servidors plens",
     "refreshing": "Recarregant llista...",

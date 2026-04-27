@@ -21,6 +21,7 @@
       "name": "서버 검색",
       "placeholder": "검색어 입력"
     },
+    "country": "국가",
     "hide-empty": "빈 서버 숨기기",
     "hide-full": "가득 찬 서버 숨기기",
     "refreshing": "목록을 다시 불러오는 중...",

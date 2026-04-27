@@ -21,6 +21,7 @@
       "name": "查找服务器",
       "placeholder": "请键入关键字"
     },
+    "country": "国家",
     "hide-empty": "隐藏无人服务器",
     "hide-full": "隐藏满人服务器",
     "refreshing": "正在加载喵~",

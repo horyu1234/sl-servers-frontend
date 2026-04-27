@@ -21,6 +21,7 @@
       "name": "搜索服务器",
       "placeholder": "输入欲索之词"
     },
+    "country": "國",
     "hide-empty": "隐匿空服",
     "hide-full": "隐匿满服",
     "refreshing": "正在重载名录...",

@@ -21,6 +21,7 @@
       "name": "Søg efter server",
       "placeholder": "Indtast søgetermer"
     },
+    "country": "Land",
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulde servere",
     "refreshing": "Genindlæser liste...",

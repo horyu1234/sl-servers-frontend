@@ -21,6 +21,7 @@
       "name": "Znajdź serwer",
       "placeholder": "Wprowadź nazwę serwera"
     },
+    "country": "Kraj",
     "hide-empty": "Ukryj puste serwery",
     "hide-full": "Ukryj pełne serwery",
     "refreshing": "Przeładowywanie listy...",

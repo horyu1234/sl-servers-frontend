@@ -21,6 +21,7 @@
       "name": "Server suche",
       "placeholder": "Gebe suchbegriffe ein"
     },
+    "country": "Land",
     "hide-empty": "Verstecke leere Server",
     "hide-full": "Verstecke volle Server",
     "refreshing": "List wird neugeladen...",
