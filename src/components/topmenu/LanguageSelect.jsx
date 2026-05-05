@@ -15,7 +15,7 @@ export default function LanguageSelect() {
   };
   return (
     <Select value={i18n.language} onValueChange={handleChange}>
-      <SelectTrigger className="h-8 w-[180px] text-xs">
+      <SelectTrigger className="h-8 w-[132px] text-xs xl:w-[150px] 2xl:w-[180px]">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

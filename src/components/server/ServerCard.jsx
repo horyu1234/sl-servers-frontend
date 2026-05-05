@@ -17,7 +17,7 @@ export function ServerCard({ server, trend, compact = false }) {
 
   return (
     <Card
-      className="min-w-0 cursor-pointer hover:border-primary/40 transition-colors"
+      className="min-w-0 cursor-pointer hover:border-primary/40 transition-colors [contain:layout_paint]"
       onClick={() => navigate(`/servers/${server.serverId}`)}
     >
       <CardContent className={cn('space-y-2', compact ? 'p-2.5 space-y-1.5' : 'p-3')}>

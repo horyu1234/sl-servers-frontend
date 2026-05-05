@@ -13,7 +13,7 @@ export default function SiSelect() {
   const si = useSelector((s) => s.setting.si);
   return (
     <Select value={si} onValueChange={(v) => dispatch(settingActions.changeSi(v))}>
-      <SelectTrigger className="h-8 w-[160px] text-xs">
+      <SelectTrigger className="h-8 w-[132px] text-xs xl:w-[150px] 2xl:w-[160px]">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
