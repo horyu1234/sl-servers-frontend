@@ -51,9 +51,9 @@ export default function Stats() {
   };
 
   return (
-    <div className="px-4 py-4 space-y-4">
-      <div className="grid gap-4 lg:grid-cols-3">
-        <Card className="lg:col-span-2">
+    <div className="space-y-4 px-3 py-3 sm:px-4 sm:py-4">
+      <div className="grid min-w-0 gap-4 lg:grid-cols-3">
+        <Card className="min-w-0 lg:col-span-2">
           <CardHeader>
             <CardTitle>{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
@@ -86,7 +86,7 @@ export default function Stats() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="min-w-0">
           <CardHeader>
             <CardTitle>{t('all-stats.mod-loader.title')}</CardTitle>
           </CardHeader>

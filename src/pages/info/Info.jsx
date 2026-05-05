@@ -58,7 +58,7 @@ export default function Info() {
 
   if (!isNumericId(serverId) || (requested && !fetching && !error && (!server || Object.keys(server).length === 0))) {
     return (
-      <div className="px-4 py-4">
+      <div className="px-3 py-3 sm:px-4 sm:py-4">
         <Card>
           <CardHeader><CardTitle>{t('server-info.title')}</CardTitle></CardHeader>
           <CardContent>
@@ -71,7 +71,7 @@ export default function Info() {
 
   if (error) {
     return (
-      <div className="px-4 py-4">
+      <div className="px-3 py-3 sm:px-4 sm:py-4">
         <Card>
           <CardHeader><CardTitle>{t('server-info.title')}</CardTitle></CardHeader>
           <CardContent>
@@ -89,11 +89,11 @@ export default function Info() {
   }
 
   return (
-    <div className="px-4 py-4 grid gap-4 lg:grid-cols-3">
-      <div className="lg:col-span-2 space-y-4">
+    <div className="grid min-w-0 gap-4 px-3 py-3 sm:px-4 sm:py-4 lg:grid-cols-3">
+      <div className="min-w-0 space-y-4 lg:col-span-2">
         <ServerDetailHeader server={server} />
 
-        <Card>
+        <Card className="min-w-0">
           <CardHeader className="pb-3">
             <CardTitle className="text-base">{t('server-info.statistics')}</CardTitle>
           </CardHeader>

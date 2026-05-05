@@ -17,13 +17,13 @@ export function ServerCard({ server, trend, compact = false }) {
 
   return (
     <Card
-      className="cursor-pointer hover:border-primary/40 transition-colors"
+      className="min-w-0 cursor-pointer hover:border-primary/40 transition-colors"
       onClick={() => navigate(`/servers/${server.serverId}`)}
     >
       <CardContent className={cn('space-y-2', compact ? 'p-2.5 space-y-1.5' : 'p-3')}>
         <div className="flex items-start justify-between gap-2 min-w-0">
           <div className="min-w-0">
-            <div className="font-medium truncate">
+            <div className="truncate font-medium">
               {server.info
                 ? <SafeHtml html={server.info} />
                 : <span className="font-mono">{server.ip}:{server.port}</span>}
@@ -35,7 +35,7 @@ export function ServerCard({ server, trend, compact = false }) {
             )}
           </div>
           <div
-            className="flex items-center gap-1 text-[11px] text-muted-foreground shrink-0 max-w-[160px]"
+            className="flex min-w-0 max-w-[42%] shrink-0 items-center gap-1 text-[11px] text-muted-foreground sm:max-w-[160px]"
             title={getCountryName(server.isoCode) || server.isoCode}
           >
             <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm shrink-0" />

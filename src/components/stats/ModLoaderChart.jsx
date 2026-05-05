@@ -66,7 +66,7 @@ export function ModLoaderChart() {
         <span>{drill ? t('all-stats.mod-loader.drill-back-hint') : t('all-stats.mod-loader.drill-hint')}</span>
       </div>
 
-      <div className="h-[320px] w-full">
+      <div className="h-[300px] min-w-0 w-full sm:h-[320px]">
         <ResponsiveContainer>
           <PieChart>
             <Pie

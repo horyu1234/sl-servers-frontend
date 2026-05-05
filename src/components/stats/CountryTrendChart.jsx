@@ -32,7 +32,7 @@ export function CountryTrendChart({ fluxResponse }) {
   if (data.length === 0) return null;
 
   return (
-    <div className="h-[360px] w-full">
+    <div className="h-[320px] min-w-0 w-full sm:h-[360px]">
       <ResponsiveContainer>
         <LineChart data={data} margin={{ top: 10, right: 16, bottom: 0, left: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />

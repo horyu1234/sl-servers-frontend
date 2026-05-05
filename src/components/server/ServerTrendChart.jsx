@@ -27,7 +27,7 @@ export function ServerTrendChart({ fluxResponse }) {
   const Series = singleVersion ? Area : Line;
 
   return (
-    <div className="h-[340px] w-full">
+    <div className="h-[300px] min-w-0 w-full sm:h-[340px]">
       <ResponsiveContainer>
         <Chart data={data} margin={{ top: 10, right: 16, bottom: 0, left: 0 }}>
           {singleVersion && (

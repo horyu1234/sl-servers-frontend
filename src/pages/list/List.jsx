@@ -110,10 +110,10 @@ export default function List() {
   const { trends } = useTrends();
 
   return (
-    <div className="flex">
+    <div className="flex min-w-0">
       <FilterSidebar value={filter} onChange={updateFilter} />
       <div className="flex-1 min-w-0 flex flex-col">
-        <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-border sticky top-14 z-20 bg-background/90 backdrop-blur">
+        <div className="sticky top-14 z-20 flex min-w-0 flex-wrap items-center gap-2 border-b border-border bg-background/90 px-3 py-3 backdrop-blur sm:gap-3 sm:px-4">
           <FilterDrawer value={filter} onChange={updateFilter} />
           <FilterChips value={filter} onChange={updateFilter} />
           <ViewToggle value={view} onChange={setView} />
@@ -122,7 +122,7 @@ export default function List() {
           </div>
         </div>
 
-        <div className="px-4 py-3">
+        <div className="px-3 py-3 sm:px-4">
           <ServerStatsHeader
             loading={fetching && servers.length === 0}
             online={stats.onlineServerCount}
@@ -140,7 +140,7 @@ export default function List() {
         )}
 
         {virtualized ? (
-          <div className={isPhone ? 'pt-3 px-4 pb-4' : ''}>
+          <div className={isPhone ? 'pt-3 px-3 pb-4 sm:px-4' : ''}>
             <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
               {virtualizer.getVirtualItems().map((vi) => {
                 const server = servers[vi.index];
@@ -168,7 +168,7 @@ export default function List() {
             </div>
           </div>
         ) : (
-          <div className="p-4">
+          <div className="p-3 sm:p-4">
             <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {servers.map((server) => (
                 <ServerCard

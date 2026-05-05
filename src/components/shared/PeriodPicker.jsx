@@ -66,13 +66,13 @@ export function PeriodPicker({ onUpdate }) {
   };
 
   return (
-    <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
-      <div className="space-y-1.5">
+    <div className="grid grid-cols-2 items-end gap-3 sm:flex sm:flex-wrap sm:gap-x-4 sm:gap-y-3">
+      <div className="space-y-1.5 min-w-0">
         <Label className="text-xs uppercase tracking-wider text-muted-foreground">
           {t('server-info.graph.options.data-range')}
         </Label>
         <Select value={period} onValueChange={setPeriod}>
-          <SelectTrigger className="w-[140px]">
+          <SelectTrigger className="w-full sm:w-[140px]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -87,13 +87,13 @@ export function PeriodPicker({ onUpdate }) {
 
       {period === 'custom' && (
         <>
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 col-span-2 min-w-0 sm:col-span-1">
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">
               {t('server-info.graph.options.start-time')}
             </Label>
             <DateTrigger value={start} onChange={setStart} />
           </div>
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 col-span-2 min-w-0 sm:col-span-1">
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">
               {t('server-info.graph.options.stop-time')}
             </Label>
@@ -102,12 +102,12 @@ export function PeriodPicker({ onUpdate }) {
         </>
       )}
 
-      <div className="space-y-1.5">
+      <div className="space-y-1.5 min-w-0">
         <Label className="text-xs uppercase tracking-wider text-muted-foreground">
           {t('server-info.graph.options.data-resolution')}
         </Label>
         <Select value={resolution} onValueChange={setResolution}>
-          <SelectTrigger className="w-[100px]">
+          <SelectTrigger className="w-full sm:w-[100px]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -120,7 +120,7 @@ export function PeriodPicker({ onUpdate }) {
         </Select>
       </div>
 
-      <Button onClick={submit} size="default" className="ml-1 gap-2 h-9 px-4 shadow-sm">
+      <Button onClick={submit} size="default" className="col-span-2 gap-2 h-9 px-4 shadow-sm sm:col-span-1 sm:ml-1">
         <RefreshCw className="h-4 w-4" />
         {t('server-info.graph.options.graph-update-btn')}
       </Button>
@@ -142,9 +142,9 @@ function DateTrigger({ value, onChange }) {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="w-[180px] justify-start gap-2">
+        <Button variant="outline" className="w-full justify-start gap-2 sm:w-[180px]">
           <CalendarIcon className="h-4 w-4" />
-          <span className="text-sm">{format(value, 'yyyy-MM-dd HH:mm')}</span>
+          <span className="min-w-0 truncate text-sm">{format(value, 'yyyy-MM-dd HH:mm')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0 space-y-2 p-3" align="start">

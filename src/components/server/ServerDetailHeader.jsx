@@ -19,11 +19,11 @@ export function ServerDetailHeader({ server }) {
     <Card>
       <CardContent className="p-4 space-y-3">
         <div className="flex items-start justify-between gap-3 flex-wrap">
-          <div className="min-w-0 flex-1">
-            <div className="text-xl font-semibold leading-tight">
+          <div className="min-w-0 flex-1 basis-64">
+            <div className="break-words text-lg font-semibold leading-tight sm:text-xl">
               {server.info ? <SafeHtml html={server.info} /> : `${server.ip}:${server.port}`}
             </div>
-            <div className="font-mono text-xs text-muted-foreground mt-1">{server.ip}:{server.port}</div>
+            <div className="mt-1 break-all font-mono text-xs text-muted-foreground">{server.ip}:{server.port}</div>
           </div>
           <Badge
             variant="secondary"
@@ -43,7 +43,7 @@ export function ServerDetailHeader({ server }) {
             <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
             <span className="text-muted-foreground">{country}</span>
           </div>
-          <div className="flex items-center gap-2 min-w-[200px] flex-1">
+          <div className="flex min-w-full items-center gap-2 sm:min-w-[200px] sm:flex-1">
             <span className="inline-block flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
               <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />
             </span>

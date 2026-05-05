@@ -7,9 +7,9 @@ import { formatDistance } from '../../lib/format/distance';
 
 function Row({ label, value }) {
   return (
-    <div className="flex items-baseline justify-between gap-3 text-sm">
+    <div className="flex flex-col gap-1 text-sm sm:flex-row sm:items-baseline sm:justify-between sm:gap-3 lg:flex-col lg:items-stretch xl:flex-row xl:items-baseline">
       <span className="text-muted-foreground text-xs uppercase tracking-wider">{label}</span>
-      <span className="text-foreground text-right break-all">{value ?? '—'}</span>
+      <span className="break-all text-foreground sm:text-right lg:text-left xl:text-right">{value ?? '—'}</span>
     </div>
   );
 }

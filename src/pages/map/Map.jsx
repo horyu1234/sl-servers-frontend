@@ -19,13 +19,13 @@ export default function Map() {
   }, [dispatch]);
 
   return (
-    <div className="px-4 py-4">
-      <Card>
+    <div className="px-3 py-3 sm:px-4 sm:py-4">
+      <Card className="min-w-0">
         <CardHeader className="pb-3">
           <CardTitle className="text-base">{t('all-server-map.title')}</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <div className="h-[calc(100vh-12rem)] w-full overflow-hidden rounded-b-lg">
+          <div className="h-[calc(100dvh-10rem)] min-h-[420px] w-full overflow-hidden rounded-b-lg sm:h-[calc(100dvh-12rem)]">
             <MapContainer
               className="h-full w-full"
               center={[30.0, 31.0]}

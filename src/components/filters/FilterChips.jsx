@@ -7,8 +7,8 @@ import getCountryName from '../../i18n/i18n-countries';
 
 function Chip({ children, onClear }) {
   return (
-    <Badge variant="outline" className="gap-1 pl-2 pr-1 py-0.5 text-xs font-normal">
-      {children}
+    <Badge variant="outline" className="max-w-full gap-1 pl-2 pr-1 py-0.5 text-xs font-normal">
+      <span className="min-w-0 truncate">{children}</span>
       <button
         type="button"
         onClick={onClear}
@@ -45,7 +45,7 @@ export function FilterChips({ value, onChange }) {
   if (chips.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap items-center gap-1.5">
+    <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
       {chips}
       <button
         type="button"
