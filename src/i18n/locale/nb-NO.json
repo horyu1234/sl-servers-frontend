@@ -5,6 +5,10 @@
     "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, send en e-post til support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API-vertsadvarsel",
+    "host-warning-before": "Alle forespørsler må sendes til verten",
+    "host-warning-middle": ".",
+    "host-warning-after": "er reservert for den offisielle frontenden. Direkte forespørsler til denne verten kan føre til IP- eller ASN-blokkering.",
     "undocumented-warning": "Vi jobber med et mer komplett offisielt API. Inntil det er klart, vennligst bruk kun endepunktene som er dokumentert nedenfor."
   },
   "navbar": {

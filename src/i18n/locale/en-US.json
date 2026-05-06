@@ -5,6 +5,10 @@
     "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API host warning",
+    "host-warning-before": "All requests must be sent to the",
+    "host-warning-middle": "host.",
+    "host-warning-after": "is reserved for the official frontend. Direct requests to that host may result in IP or ASN blocking.",
     "undocumented-warning": "A more complete official API is on the way. Until it lands, please use only the endpoints documented below."
   },
   "navbar": {

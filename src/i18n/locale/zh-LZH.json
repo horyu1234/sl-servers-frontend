@@ -5,6 +5,10 @@
     "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请发邮件至support@scplist.kr。"
   },
   "api": {
+    "host-warning-title": "官徑主機之警",
+    "host-warning-before": "凡請求必發於",
+    "host-warning-middle": "主機。",
+    "host-warning-after": "乃官網前端專用之主機。若直請此主機，或致 IP 或 ASN 被禁。",
     "undocumented-warning": "更完之官徑將至。未發之前，唯用下所載者，餘勿用。"
   },
   "navbar": {

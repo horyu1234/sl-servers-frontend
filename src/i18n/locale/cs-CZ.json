@@ -5,6 +5,10 @@
     "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, napište prosím na support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Upozornění na API host",
+    "host-warning-before": "Všechny požadavky musí být odesílány na host",
+    "host-warning-middle": ".",
+    "host-warning-after": "je vyhrazen pro oficiální frontend. Přímé požadavky na tento host mohou vést k blokování IP nebo ASN.",
     "undocumented-warning": "Připravujeme kompletnější oficiální API. Do jeho vydání prosím používejte pouze koncové body uvedené níže."
   },
   "navbar": {

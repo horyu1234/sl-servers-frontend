@@ -5,6 +5,10 @@
     "server-error": "Eraro okazis dum prenado de datumoj de la servilo. Tiaj problemoj kutime estas portempaj, do bonvolu reprovi post momento. Se la problemo daŭras, bonvolu retpoŝti al support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Averto pri API-gastiganto",
+    "host-warning-before": "Ĉiuj petoj devas esti senditaj al la gastiganto",
+    "host-warning-middle": ".",
+    "host-warning-after": "estas rezervita por la oficiala fasado. Rektaj petoj al tiu gastiganto povas konduki al IP- aŭ ASN-blokado.",
     "undocumented-warning": "Ni preparas pli kompletan oficialan API. Ĝis ĝia eldono, bonvolu uzi nur la finpunktojn dokumentitajn malsupre."
   },
   "navbar": {

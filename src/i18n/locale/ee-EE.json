@@ -5,6 +5,10 @@
     "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, palun kirjutage aadressile support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API hosti hoiatus",
+    "host-warning-before": "Kõik päringud tuleb saata hostile",
+    "host-warning-middle": ".",
+    "host-warning-after": "on reserveeritud ametlikule kasutajaliidesele. Otsesed päringud sellele hostile võivad kaasa tuua IP või ASN-i blokeerimise.",
     "undocumented-warning": "Valmistame ette põhjalikumat ametlikku API-d. Selle ilmumiseni kasutage palun ainult allpool dokumenteeritud lõpp-punkte."
   },
   "navbar": {

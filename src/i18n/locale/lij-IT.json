@@ -5,6 +5,10 @@
     "server-error": "Gh'é stæto un erô into pigiâ i dæti da-o server. Sti problemi de sòlito en temporanei, donca preuva torna tra un pittin. Se o problema o continua, mandighe 'na mail a support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Avixo pe l'host API",
+    "host-warning-before": "Tutte e richieste devan ese mandæ a l'host",
+    "host-warning-middle": ".",
+    "host-warning-after": "o l'è riservou a-o frontend uffiçiale. Richieste dirette a questo host peuan portâ a-o blocco de l'IP o de l'ASN.",
     "undocumented-warning": "Un'API uffiçiale ciù completa a l'è in preparaçion. Fin a alloa, adoeua solo i endpoint documentae chi sotta."
   },
   "navbar": {

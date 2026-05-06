@@ -5,6 +5,10 @@
     "server-error": "從伺服器獲取資料時出錯。這些問題通常是暫時的，請稍後再試。如果問題仍然存在，請寄電子郵件至 support@scplist.kr。"
   },
   "api": {
+    "host-warning-title": "API 主機警告",
+    "host-warning-before": "所有請求都必須送往",
+    "host-warning-middle": "主機。",
+    "host-warning-after": "是官方前端專用主機。直接請求該主機可能導致 IP 或 ASN 被封鎖。",
     "undocumented-warning": "我們正在準備更完善的官方 API。在正式發布之前，請僅使用下方文件中列出的端點。"
   },
   "navbar": {

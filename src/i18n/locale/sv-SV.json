@@ -5,6 +5,10 @@
     "server-error": "Ett fel inträffade vid hämtning av data från servern. Dessa problem är vanligtvis tillfälliga, så försök igen om en stund. Om problemet kvarstår, mejla support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API-värdvarning",
+    "host-warning-before": "Alla förfrågningar måste skickas till värden",
+    "host-warning-middle": ".",
+    "host-warning-after": "är reserverad för den officiella frontenden. Direkta förfrågningar till den värden kan leda till IP- eller ASN-blockering.",
     "undocumented-warning": "Vi förbereder ett mer komplett officiellt API. Tills det är klart, använd endast de slutpunkter som dokumenteras nedan."
   },
   "navbar": {

@@ -5,6 +5,10 @@
     "server-error": "Der opstod en fejl under hentning af data fra serveren. Disse problemer er typisk midlertidige, så prøv igen om lidt. Hvis problemet fortsætter, bedes du sende en e-mail til support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API-værtsadvarsel",
+    "host-warning-before": "Alle forespørgsler skal sendes til værten",
+    "host-warning-middle": ".",
+    "host-warning-after": "er reserveret til den officielle frontend. Direkte forespørgsler til denne vært kan føre til IP- eller ASN-blokering.",
     "undocumented-warning": "Vi arbejder på et mere komplet officielt API. Indtil det er klar, brug venligst kun de endepunkter, der er dokumenteret nedenfor."
   },
   "navbar": {

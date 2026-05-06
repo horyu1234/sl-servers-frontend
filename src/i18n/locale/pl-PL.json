@@ -5,6 +5,10 @@
     "server-error": "Wystąpił błąd podczas pobierania danych z serwera. Takie problemy są zwykle tymczasowe, więc spróbuj ponownie za chwilę. Jeśli problem nadal występuje, napisz na adres support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Ostrzeżenie dotyczące hosta API",
+    "host-warning-before": "Wszystkie żądania muszą być wysyłane do hosta",
+    "host-warning-middle": ".",
+    "host-warning-after": "jest zarezerwowany dla oficjalnego frontendu. Bezpośrednie żądania do tego hosta mogą skutkować blokadą IP lub ASN.",
     "undocumented-warning": "Pracujemy nad pełniejszym oficjalnym API. Do czasu jego wydania prosimy korzystać wyłącznie z punktów końcowych wymienionych poniżej."
   },
   "navbar": {

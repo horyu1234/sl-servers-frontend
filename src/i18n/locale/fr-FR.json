@@ -5,6 +5,10 @@
     "server-error": "Une erreur s'est produite lors de la récupération des données du serveur. Ces erreurs sont généralement temporaires, veuillez réessayer dans quelques instants. Si le problème persiste, merci d'écrire à support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Avertissement sur l'hôte API",
+    "host-warning-before": "Toutes les requêtes doivent être envoyées à l'hôte",
+    "host-warning-middle": ".",
+    "host-warning-after": "est réservé au frontend officiel. Les requêtes directes vers cet hôte peuvent entraîner le blocage de l'IP ou de l'ASN.",
     "undocumented-warning": "Une API officielle plus complète est en préparation. En attendant, veuillez n'utiliser que les points de terminaison documentés ci-dessous."
   },
   "navbar": {

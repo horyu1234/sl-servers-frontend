@@ -5,6 +5,10 @@
     "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, rakstiet uz e-pastu support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API resursdatora brīdinājums",
+    "host-warning-before": "Visi pieprasījumi ir jāsūta uz resursdatoru",
+    "host-warning-middle": ".",
+    "host-warning-after": "ir rezervēts oficiālajam frontendam. Tieši pieprasījumi uz šo resursdatoru var izraisīt IP vai ASN bloķēšanu.",
     "undocumented-warning": "Mēs gatavojam pilnīgāku oficiālu API. Līdz tā izlaišanai lūdzu izmantojiet tikai zemāk dokumentētos galapunktus."
   },
   "navbar": {

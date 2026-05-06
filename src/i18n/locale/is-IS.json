@@ -5,6 +5,10 @@
     "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessi vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast sendu tölvupóst á support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "Viðvörun um API-hýsil",
+    "host-warning-before": "Allar beiðnir verða að fara á hýsilinn",
+    "host-warning-middle": ".",
+    "host-warning-after": "er frátekinn fyrir opinbera framendann. Beinar beiðnir á þann hýsil geta leitt til IP- eða ASN-lokunar.",
     "undocumented-warning": "Við erum að undirbúa heildstæðara opinbert API. Þangað til vinsamlegast notaðu aðeins þá endapunkta sem skjalfestir eru hér að neðan."
   },
   "navbar": {

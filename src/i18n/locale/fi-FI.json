@@ -5,6 +5,10 @@
     "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, lähetä sähköpostia osoitteeseen support@scplist.kr."
   },
   "api": {
+    "host-warning-title": "API-isännän varoitus",
+    "host-warning-before": "Kaikki pyynnöt on lähetettävä isäntään",
+    "host-warning-middle": ".",
+    "host-warning-after": "on varattu viralliselle frontendille. Suorat pyynnöt tähän isäntään voivat johtaa IP- tai ASN-estoon.",
     "undocumented-warning": "Valmistelemme kattavampaa virallista API:a. Siihen asti käytäthän vain alla dokumentoituja päätepisteitä."
   },
   "navbar": {

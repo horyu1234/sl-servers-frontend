@@ -5,6 +5,10 @@
     "server-error": "从服务器获取数据的时候出了一点小小的问题 AWA. 通常来说一段时间后就好啦~ 所以请主人耐心等待一下哦~ 如果问题依旧存在, 请主人发送邮件至 support@scplist.kr 哦!"
   },
   "api": {
+    "host-warning-title": "API 主机警告",
+    "host-warning-before": "所有请求必须发送到",
+    "host-warning-middle": "主机。",
+    "host-warning-after": "是官方前端专用主机。直接请求该主机可能导致 IP 或 ASN 被封禁。",
     "undocumented-warning": "我们正在准备更完善的官方 API。在正式发布之前，请仅使用下方文档中列出的端点。"
   },
   "navbar": {

@@ -5,6 +5,10 @@
     "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 support@scplist.kr 로 메일을 보내주십시오."
   },
   "api": {
+    "host-warning-title": "API 호스트 경고",
+    "host-warning-before": "모든 요청은 반드시",
+    "host-warning-middle": "호스트로 요청해야 합니다.",
+    "host-warning-after": "호스트는 공식 프론트 전용 호스트이며, 이 호스트로 직접 요청하는 행위는 IP 또는 ASN 차단으로 이어질 수 있습니다.",
     "undocumented-warning": "더 풍부한 공식 API를 준비 중입니다. 정식 공개 전까지는 아래에 문서화된 엔드포인트만 사용해 주세요."
   },
   "navbar": {
