@@ -18,6 +18,7 @@ export default defineConfig({
     outDir: 'build',
     rolldownOptions: {
       output: {
+        strictExecutionOrder: true,
         codeSplitting: {
           minSize: 20_000,
           maxSize: 450_000,
@@ -35,6 +36,11 @@ export default defineConfig({
             {
               name: 'ui-vendor',
               test: /node_modules[\\/](?:@radix-ui|lucide-react|vaul|cmdk|class-variance-authority|clsx|tailwind-merge)[\\/]/,
+              priority: 30,
+            },
+            {
+              name: 'sentry-vendor',
+              test: /node_modules[\\/](?:@sentry|@sentry-internal)[\\/]/,
               priority: 30,
             },
             {
