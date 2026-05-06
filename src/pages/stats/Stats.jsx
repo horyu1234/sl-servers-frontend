@@ -51,34 +51,33 @@ export default function Stats() {
   };
 
   return (
-    <div className="space-y-4 px-3 py-3 sm:px-4 sm:py-4">
-      <div className="grid min-w-0 gap-4 lg:grid-cols-3">
-        <Card className="min-w-0 lg:col-span-2">
-          <CardHeader>
-            <CardTitle>{t('all-stats.users.title')}</CardTitle>
+    <div className="px-3 py-3 sm:px-4 sm:py-4">
+      <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.85fr)]">
+        <Card className="min-w-0">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-xl sm:text-2xl">{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col gap-6">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
+          <CardContent className="flex flex-col gap-5">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+              <div className="flex min-w-0 flex-col gap-3">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">
                   {t('all-stats.users.select-compare-country.name')}
                 </Label>
                 <CountryMultiSelect value={isoCodes} onChange={setIsoCodes} />
+                <div className="flex items-center gap-2">
+                  <Checkbox
+                    id="stats-show-all"
+                    checked={showAll}
+                    onCheckedChange={(c) => setShowAll(c === true)}
+                    className="border-muted-foreground/40 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500 data-[state=checked]:text-emerald-950"
+                  />
+                  <Label htmlFor="stats-show-all" className="cursor-pointer text-sm text-muted-foreground">
+                    {t('all-stats.users.show-all.name')}
+                  </Label>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Checkbox
-                  id="stats-show-all"
-                  checked={showAll}
-                  onCheckedChange={(c) => setShowAll(c === true)}
-                  className="border-muted-foreground/40 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500 data-[state=checked]:text-emerald-950"
-                />
-                <Label htmlFor="stats-show-all" className="text-sm cursor-pointer text-muted-foreground">
-                  {t('all-stats.users.show-all.name')}
-                </Label>
-              </div>
+              <PeriodPicker onUpdate={handleUpdate} />
             </div>
-
-            <PeriodPicker onUpdate={handleUpdate} />
 
             {error && <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>}
             {!error && !flux && <div className="text-sm text-muted-foreground">{t('server-info.graph.loading')}</div>}
@@ -87,8 +86,8 @@ export default function Stats() {
         </Card>
 
         <Card className="min-w-0">
-          <CardHeader>
-            <CardTitle>{t('all-stats.mod-loader.title')}</CardTitle>
+          <CardHeader className="pb-4">
+            <CardTitle className="text-xl sm:text-2xl">{t('all-stats.mod-loader.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <ModLoaderChart />

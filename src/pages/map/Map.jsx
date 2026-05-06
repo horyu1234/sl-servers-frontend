@@ -21,11 +21,14 @@ export default function Map() {
   return (
     <div className="px-3 py-3 sm:px-4 sm:py-4">
       <Card className="min-w-0">
-        <CardHeader className="pb-3">
+        <CardHeader className="flex-row items-center justify-between gap-3 pb-3">
           <CardTitle className="text-base">{t('all-server-map.title')}</CardTitle>
+          <div className="shrink-0 text-xs tabular-nums text-muted-foreground">
+            {fetching ? t('filter-option.refreshing') : `${data.length.toLocaleString()} locations`}
+          </div>
         </CardHeader>
         <CardContent className="p-0">
-          <div className="h-[calc(100dvh-10rem)] min-h-[420px] w-full overflow-hidden rounded-b-lg sm:h-[calc(100dvh-12rem)]">
+          <div className="h-[calc(100dvh-10rem)] min-h-[460px] w-full overflow-hidden rounded-b-lg sm:h-[calc(100dvh-11rem)]">
             <MapContainer
               className="h-full w-full"
               center={[30.0, 31.0]}
@@ -34,8 +37,8 @@ export default function Map() {
               maxZoom={18}
             >
               <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
               />
               {!fetching && data.map((serverLoc) => (
                 <Marker key={serverLoc.serverId} position={[serverLoc.location.lat, serverLoc.location.long]}>

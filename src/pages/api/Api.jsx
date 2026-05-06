@@ -2,7 +2,8 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert';
-import {Info as InfoIcon, AlertTriangle} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {Info as InfoIcon, AlertTriangle, ExternalLink} from 'lucide-react';
 import SwaggerUI from 'swagger-ui-react';
 
 import 'swagger-ui-react/swagger-ui.css';
@@ -10,9 +11,12 @@ import './api.css';
 
 export default function Api() {
     const {t} = useTranslation();
+    const hostname = window.location.hostname;
+    const isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+
     return (
-        <div className="px-4 py-4">
-            <Card>
+        <div className="px-3 py-3 sm:px-4 sm:py-4">
+            <Card className="min-w-0">
                 <CardHeader className="pb-3">
                     <CardTitle className="text-base">API</CardTitle>
                 </CardHeader>
@@ -48,9 +52,27 @@ export default function Api() {
                             — try requests directly from the page.
                         </AlertDescription>
                     </Alert>
-                    <div className="api-swagger-host bg-white rounded-lg overflow-x-auto">
-                        <SwaggerUI url="https://api.scplist.kr/openapi.json"/>
-                    </div>
+                    {isLocalHost ? (
+                        <div className="rounded-lg border border-border bg-background/45 p-6 text-center sm:p-8">
+                            <div className="mx-auto max-w-xl space-y-4">
+                                <div className="text-lg font-semibold text-foreground">OpenAPI preview is disabled on localhost</div>
+                                <p className="text-sm leading-6 text-muted-foreground">
+                                    The remote OpenAPI host blocks this local origin, so the embedded Swagger frame would only show a CORS error here.
+                                    Use the production API page for the live interactive documentation.
+                                </p>
+                                <Button asChild className="gap-2">
+                                    <a href="https://scplist.kr/api" target="_blank" rel="noreferrer">
+                                        Open production docs
+                                        <ExternalLink className="h-4 w-4"/>
+                                    </a>
+                                </Button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="api-swagger-host overflow-x-auto rounded-lg bg-white">
+                            <SwaggerUI url="https://api.scplist.kr/openapi.json"/>
+                        </div>
+                    )}
                 </CardContent>
             </Card>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import SafeHtml from './SafeHtml';
@@ -30,11 +31,11 @@ export default function Footer() {
         <div>
           <h5 className="text-sm font-semibold text-foreground mb-2">Links</h5>
           <ul className="space-y-1 text-sm">
-            <li><a href="/"        className="text-muted-foreground hover:text-foreground">Home</a></li>
-            <li><a href="/stats"   className="text-muted-foreground hover:text-foreground">Statistics</a></li>
-            <li><a href="/map"     className="text-muted-foreground hover:text-foreground">Server Map</a></li>
-            <li><a href="/api"     className="text-muted-foreground hover:text-foreground">API</a></li>
-            <li><a href="/credit"  className="text-muted-foreground hover:text-foreground" target="_blank" rel="noreferrer">Credit / Third Party Licenses</a></li>
+            <li><Link to="/"       className="text-muted-foreground hover:text-foreground">Home</Link></li>
+            <li><Link to="/stats"  className="text-muted-foreground hover:text-foreground">Statistics</Link></li>
+            <li><Link to="/map"    className="text-muted-foreground hover:text-foreground">Server Map</Link></li>
+            <li><Link to="/api"    className="text-muted-foreground hover:text-foreground">API</Link></li>
+            <li><Link to="/credit" className="text-muted-foreground hover:text-foreground">Credit / Third Party Licenses</Link></li>
           </ul>
         </div>
         <div>
