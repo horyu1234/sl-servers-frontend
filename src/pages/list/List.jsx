@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
@@ -31,23 +31,7 @@ function shallowEqualFilter(a, b) {
 }
 
 const ROW_HEIGHT = 80;
-const PHONE_CARD_HEIGHT = 157; // compact ServerCard (~145) + 12px inter-row gap
-const GRID_CARD_ROW_HEIGHT = 190; // regular ServerCard + 12px inter-row gap
-const RESIZE_MODE_SETTLE_MS = 180;
-
-function useSettledValue(value, delayMs) {
-  const [settledValue, setSettledValue] = useState(value);
-
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      setSettledValue(value);
-    }, delayMs);
-
-    return () => window.clearTimeout(timeoutId);
-  }, [delayMs, value]);
-
-  return settledValue;
-}
+const PHONE_CARD_HEIGHT = 169; // compact ServerCard (~157) + 12px inter-row gap
 
 export default function List() {
   const { t } = useTranslation();
@@ -74,11 +58,7 @@ export default function List() {
   // at < sm. The URL contract (?view=grid) is still honored at >= lg.
   const isPhone = useMediaQuery('(max-width: 639px)');
   const isBelowLg = useMediaQuery('(max-width: 1023px)');
-  const isXl = useMediaQuery('(min-width: 1280px)');
-  const settledIsBelowLg = useSettledValue(isBelowLg, RESIZE_MODE_SETTLE_MS);
-  const settledIsXl = useSettledValue(isXl, RESIZE_MODE_SETTLE_MS);
-  const effectiveView = (isPhone || settledIsBelowLg) ? 'grid' : view;
-  const gridColumns = isPhone ? 1 : settledIsXl ? 3 : 2;
+  const effectiveView = isBelowLg ? 'grid' : view;
 
   // Sync URL filter -> Redux serverFilter, then refetch.
   useEffect(() => {
@@ -110,22 +90,21 @@ export default function List() {
   // virtualizer needs a measurable parent height — fragile here because
   // legacy CSS still loads alongside Tailwind).
   //
-  // Two virtualized shapes share this instance:
-  //   1. List view (one ServerRow per virtual item)
-  //   2. Grid view (one grid row per virtual item)
-  // Virtualizing grid rows is important during live window resizing:
-  // otherwise every mounted card and sparkline participates in each
-  // width-driven layout pass.
+  // Two virtualized paths share this instance:
+  //   1. Desktop list view (ServerRow, 80px rows)
+  //   2. Phone card view (compact ServerCard, ~157px slots)
+  // The CSS-grid card path (tablet 2-col, desktop ?view=grid) is NOT
+  // virtualized — those viewports are wide enough that mounting all
+  // ~1k cards is acceptable, and grid layout doesn't interleave
+  // cleanly with absolute positioning.
   const listParentRef = useRef(null);
-  const isListView = effectiveView === 'list';
-  const virtualCount = isListView ? servers.length : Math.ceil(servers.length / gridColumns);
-  const itemHeight = isListView ? ROW_HEIGHT : isPhone ? PHONE_CARD_HEIGHT : GRID_CARD_ROW_HEIGHT;
-  const scrollMargin = listParentRef.current?.offsetTop ?? 0;
+  const virtualized = effectiveView === 'list' || isPhone;
+  const itemHeight = effectiveView === 'list' ? ROW_HEIGHT : PHONE_CARD_HEIGHT;
   const virtualizer = useWindowVirtualizer({
-    count: virtualCount,
+    count: virtualized ? servers.length : 0,
     estimateSize: () => itemHeight,
     overscan: 6,
-    scrollMargin,
+    scrollMargin: listParentRef.current?.offsetTop ?? 0,
   });
 
   const { trends } = useTrends();
@@ -160,48 +139,45 @@ export default function List() {
           </div>
         )}
 
-        {servers.length > 0 ? (
-          <div className={isListView ? '' : 'p-3 sm:p-4'}>
+        {virtualized ? (
+          <div className={isPhone ? 'pt-3 px-3 pb-4 sm:px-4' : ''}>
             <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
               {virtualizer.getVirtualItems().map((vi) => {
-                const rowServers = isListView
-                  ? [servers[vi.index]]
-                  : servers.slice(vi.index * gridColumns, vi.index * gridColumns + gridColumns);
+                const server = servers[vi.index];
+                const trend = trends?.[String(server.serverId)] ?? null;
                 return (
                   <div
-                    key={isListView ? rowServers[0]?.serverId : `grid-row-${vi.index}`}
+                    key={server.serverId}
                     ref={virtualizer.measureElement}
                     data-index={vi.index}
-                    className={isListView ? '' : 'grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'}
                     style={{
                       position: 'absolute',
                       top: 0,
                       left: 0,
                       right: 0,
-                      transform: `translateY(${vi.start - scrollMargin}px)`,
-                      paddingBottom: isListView ? 0 : 12,
+                      transform: `translateY(${vi.start - (listParentRef.current?.offsetTop ?? 0)}px)`,
+                      paddingBottom: isPhone ? 12 : 0,
                     }}
                   >
-                    {isListView ? (
-                      <ServerRow server={rowServers[0]} trend={trends?.[String(rowServers[0].serverId)] ?? null} unit={unit} />
-                    ) : (
-                      rowServers.map((server) => (
-                        <ServerCard
-                          key={server.serverId}
-                          server={server}
-                          trend={trends?.[String(server.serverId)] ?? null}
-                          compact={isPhone}
-                        />
-                      ))
-                    )}
+                    {effectiveView === 'list'
+                      ? <ServerRow server={server} trend={trend} unit={unit} />
+                      : <ServerCard server={server} trend={trend} compact />}
                   </div>
                 );
               })}
             </div>
           </div>
         ) : (
-          <div className="px-4 py-6 text-sm text-muted-foreground">
-            {fetching ? t('filter-option.refreshing') : t('general.no-results', { defaultValue: 'No servers found.' })}
+          <div className="p-3 sm:p-4">
+            <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+              {servers.map((server) => (
+                <ServerCard
+                  key={server.serverId}
+                  server={server}
+                  trend={trends?.[String(server.serverId)] ?? null}
+                />
+              ))}
+            </div>
           </div>
         )}
 

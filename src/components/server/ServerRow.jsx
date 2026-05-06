@@ -22,7 +22,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }
     <button
       type="button"
       onClick={handleClick}
-      className="grid w-full items-center gap-3 px-4 py-2.5 border-b border-border text-left hover:bg-muted/40 group [contain:layout_paint]"
+      className="grid w-full items-center gap-3 px-4 py-2.5 border-b border-border text-left hover:bg-muted/40 group"
       style={{ gridTemplateColumns: '1.3fr 150px 150px 170px 130px 60px 18px' }}
     >
       <div className="min-w-0">

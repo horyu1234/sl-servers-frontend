@@ -4,9 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 import languages from '../../data/language.json';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { cn } from '@/lib/cn';
 
-export default function LanguageSelect() {
+export default function LanguageSelect({ className }) {
   const { t } = useTranslation();
+  const activeLanguage = languages.some((language) => language.code === i18n.language)
+    ? i18n.language
+    : languages.some((language) => language.code === i18n.resolvedLanguage)
+      ? i18n.resolvedLanguage
+      : 'en-US';
   const handleChange = (value) => {
     const target = languages.find((l) => l.code === value);
     i18n.changeLanguage(value).then(() => {
@@ -14,8 +20,8 @@ export default function LanguageSelect() {
     });
   };
   return (
-    <Select value={i18n.language} onValueChange={handleChange}>
-      <SelectTrigger className="h-8 w-[132px] text-xs xl:w-[150px] 2xl:w-[180px]">
+    <Select value={activeLanguage} onValueChange={handleChange}>
+      <SelectTrigger className={cn('h-8 w-[180px] text-xs', className)}>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

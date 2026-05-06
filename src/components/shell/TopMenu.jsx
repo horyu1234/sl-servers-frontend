@@ -25,18 +25,16 @@ function NavItem({ to, end, icon: Icon, label, onClick }) {
       to={to}
       end={end}
       onClick={onClick}
-      aria-label={label}
-      title={label}
       className={({ isActive }) =>
         cn(
-          'flex h-10 shrink-0 items-center gap-2 rounded-md px-3 text-sm transition-colors no-underline',
+          'flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors no-underline',
           'text-muted-foreground hover:text-foreground hover:bg-muted',
           isActive && 'text-foreground bg-muted'
         )
       }
     >
-      <Icon className="h-4 w-4 shrink-0" />
-      <span className="hidden whitespace-nowrap 2xl:inline">{label}</span>
+      <Icon className="h-4 w-4" />
+      <span>{label}</span>
     </NavLink>
   );
 }
@@ -48,27 +46,30 @@ export default function TopMenu() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 min-w-0 items-center gap-2 overflow-hidden px-4 xl:gap-3">
-        <NavLink to="/" className="flex shrink-0 items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
-          <img src="/favicon-32x32.png" alt="" width="20" height="20" className="shrink-0" />
-          <span className="hidden whitespace-nowrap xl:inline">SCP: SL Servers</span>
+      <div className="mx-auto flex h-14 items-center px-4 gap-3">
+        <NavLink to="/" className="flex min-w-0 items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
+          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted">
+            <img src="/favicon-32x32.png" alt="" width="20" height="20" />
+          </span>
+          <span className="truncate text-sm sm:hidden">SL Servers</span>
+          <span className="hidden truncate sm:inline">SCP: SL Servers</span>
         </NavLink>
 
-        <nav className="ml-2 hidden min-w-0 shrink-0 items-center gap-1 lg:flex xl:ml-4">
+        <nav className="hidden lg:flex items-center gap-1 ml-4">
           {items.map((item) => <NavItem key={item.to} {...item} />)}
         </nav>
 
-        <div className="min-w-2 flex-1" />
+        <div className="flex-1" />
 
-        <div className="hidden min-w-0 shrink-0 items-center gap-2 lg:flex xl:gap-3">
-          <div className="flex min-w-0 items-center gap-2 text-xs">
-            <span className="hidden whitespace-nowrap text-muted-foreground 2xl:inline">{t('navbar.language')}</span>
+        <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-2 text-xs">
+            <span className="text-muted-foreground">{t('navbar.language')}</span>
             <LanguageSelect />
           </div>
           <Separator orientation="vertical" className="h-6" />
-          <div className="flex min-w-0 items-center gap-2 text-xs">
-            <span className="hidden whitespace-nowrap text-muted-foreground 2xl:inline">{t('navbar.unit')}</span>
-            <SiSelect />
+          <div className="flex items-center gap-2 text-xs">
+            <span className="text-muted-foreground">{t('navbar.unit')}</span>
+            <div style={{ minWidth: 140 }}><SiSelect /></div>
           </div>
         </div>
 
@@ -78,7 +79,7 @@ export default function TopMenu() {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[85vw] max-w-[300px] flex flex-col">
+          <SheetContent side="right" className="!w-[calc(100vw-24px)] max-w-[300px] flex flex-col">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <SheetDescription className="sr-only">Site navigation</SheetDescription>
             <nav className="flex flex-col gap-1 mt-6">
@@ -88,13 +89,13 @@ export default function TopMenu() {
             </nav>
             <Separator className="my-4" />
             <div className="space-y-3 text-sm">
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex flex-col items-stretch gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
                 <span className="text-muted-foreground">{t('navbar.language')}</span>
-                <LanguageSelect />
+                <LanguageSelect className="w-full sm:w-[180px]" />
               </div>
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex flex-col items-stretch gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
                 <span className="text-muted-foreground">{t('navbar.unit')}</span>
-                <div style={{ minWidth: 140 }}><SiSelect /></div>
+                <SiSelect className="w-full sm:w-[160px]" />
               </div>
             </div>
           </SheetContent>
