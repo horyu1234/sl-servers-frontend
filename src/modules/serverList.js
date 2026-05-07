@@ -16,16 +16,29 @@ export const getServerList = () => (dispatch, getState) => {
             })
         }
     ).catch(error => {
+        const detail = {
+            message: error?.message ?? 'Unknown error',
+            code: error?.code ?? null,
+            status: error?.response?.status ?? null,
+            statusText: error?.response?.statusText ?? null,
+            method: error?.config?.method ? error.config.method.toUpperCase() : null,
+            url: error?.config?.url ?? null,
+            baseURL: error?.config?.baseURL ?? null,
+            data: typeof error?.response?.data === 'string'
+                ? error.response.data.slice(0, 500)
+                : error?.response?.data ?? null,
+            online: typeof navigator !== 'undefined' ? navigator.onLine : null,
+        };
         dispatch({
             type: SERVER_LIST_FAILURE,
-            payload: error
+            payload: detail
         });
     })
 }
 
 const initialState = {
     fetching: false,
-    error: false,
+    error: null,
     data: {
         displayServerCount: 0,
         displayUserCount: 0,
@@ -42,7 +55,7 @@ export default function serverList(state = initialState, action) {
             return {
                 ...state,
                 fetching: true,
-                error: false,
+                error: null,
                 data: {
                     ...state.data,
                     servers: []
@@ -58,7 +71,7 @@ export default function serverList(state = initialState, action) {
             return {
                 ...state,
                 fetching: false,
-                error: true,
+                error: action.payload,
                 data: {
                     ...state.data,
                     servers: []

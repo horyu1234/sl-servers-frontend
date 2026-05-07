@@ -135,7 +135,22 @@ export default function List() {
 
         {error && (
           <div className="px-4 py-3 text-sm text-destructive">
-            {t('general.server-error') || 'Failed to load servers.'}
+            <div>{t('general.server-error') || 'Failed to load servers.'}</div>
+            <div className="mt-1 text-xs font-mono break-all whitespace-pre-wrap text-muted-foreground select-all">
+              {[
+                error.status != null
+                  ? `HTTP ${error.status}${error.statusText ? ` ${error.statusText}` : ''}`
+                  : (error.code || (error.online === false ? 'OFFLINE' : 'NETWORK')),
+                error.message,
+                error.method && error.url
+                  ? `${error.method} ${(error.baseURL || '').replace(/\/$/, '')}${error.url}`
+                  : null,
+                error.online === false ? 'navigator.onLine=false' : null,
+                error.data
+                  ? `body: ${typeof error.data === 'string' ? error.data : JSON.stringify(error.data).slice(0, 500)}`
+                  : null,
+              ].filter(Boolean).join(' · ')}
+            </div>
           </div>
         )}
 
