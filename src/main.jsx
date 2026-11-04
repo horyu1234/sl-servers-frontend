@@ -3,6 +3,7 @@ import {createRoot} from "react-dom/client";
 import './components/consent/sentryGate';
 import './components/consent/gtmGate';
 import './components/consent/clarityGate';
+import './components/consent/mineTalkGate';
 import App from './components/App';
 import {Provider} from "react-redux";
 import store from "./store";

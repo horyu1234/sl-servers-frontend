@@ -63,7 +63,7 @@
       function __stcmNotify() { window.dispatchEvent(new Event('silktide:consentchange')); }
       silktideCookieBannerManager.updateCookieBannerConfig({
         background: { showBackground: true },
-        cookieIcon: { position: "bottomRight" },
+        cookieIcon: { position: "bottomLeft" },
         position: { banner: "center" },
         cookieTypes: [
           {
@@ -76,7 +76,7 @@
           {
             id: "functional",
             name: "Functional",
-            description: "<p>These cookies remember your interface preferences — server filters, list or grid view, sort order, and dismissed notices — so the site looks the way you left it on your next visit. Disabling them does not break the site, but your preferences will be forgotten between sessions.</p>",
+            description: "<p>These cookies remember your interface preferences — server filters, list or grid view, sort order, and dismissed notices — so the site looks the way you left it on your next visit. They also enable the MineTalk support chat, which shares the pages you visit and basic device details with MineTalk so we can help you. Disabling them does not break the site, but your preferences will be forgotten between sessions and the support chat will not be available.</p>",
             required: false,
             onAccept: __stcmNotify,
             onReject: __stcmNotify
@@ -92,7 +92,7 @@
         ],
         text: {
           banner: {
-            description: "<p>We use cookies to keep your filters and language preference, and — only with your consent — to measure how the site is used and detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not run ads or sell your data.</p>",
+            description: "<p>We use cookies to keep your filters and language preference, and — only with your consent — to provide the support chat (MineTalk), measure how the site is used, and detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not run ads or sell your data.</p>",
             acceptAllButtonText: "Accept all",
             acceptAllButtonAccessibleLabel: "Accept all cookies",
             rejectNonEssentialButtonText: "Reject non-essential",
