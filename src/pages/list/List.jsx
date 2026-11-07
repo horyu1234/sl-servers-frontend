@@ -81,7 +81,9 @@ export default function List() {
 
   const updateFilter = (next) => {
     if (shallowEqualFilter(filter, next)) return;
-    setSearchParams(toSearchParams(next), { replace: false });
+    const params = toSearchParams(next);
+    if (view !== 'list') params.set('view', view);
+    setSearchParams(params, { replace: false });
   };
 
   // Window-scroll virtualizer: the entire page scrolls (body), and the

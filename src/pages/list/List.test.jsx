@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../store';
 import '../../i18n/i18n';
@@ -30,8 +31,35 @@ vi.mock('../../lib/api/trends', () => ({
 }));
 
 import List from './List';
+import { getServerListAPI } from '../../lib/api/servers';
+
+function LocationProbe() {
+  const { search } = useLocation();
+  return <output data-testid="location">{search}</output>;
+}
 
 describe('List page', () => {
+  it('requests the chosen sort and stays in the current view', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/?view=grid']}>
+          <List />
+          <LocationProbe />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await user.click(await screen.findByRole('radio', { name: 'Most players' }));
+
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
+      expect.objectContaining({ sort: 'PLAYERS_DESC' })
+    ));
+    const params = new URLSearchParams(screen.getByTestId('location').textContent);
+    expect(params.get('sort')).toBe('PLAYERS_DESC');
+    expect(params.get('view')).toBe('grid');
+  });
+
   it('fetches and renders the server row', async () => {
     render(
       <Provider store={store}>

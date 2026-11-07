@@ -4,11 +4,13 @@ import { SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { FilterControls } from './FilterControls';
+import { DEFAULT_FILTER } from './filterSchema';
 
 export function FilterDrawer({ value, onChange }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const activeCount = value.countryFilter.length
+    + (value.sort !== DEFAULT_FILTER.sort ? 1 : 0)
     + (value.search ? 1 : 0)
     + (value.hideEmptyServer ? 1 : 0)
     + (value.hideFullServer ? 1 : 0)
