@@ -33,7 +33,7 @@ export function FilterDrawer({ value, onChange }) {
       </SheetTrigger>
       <SheetContent side="left" className="!w-[calc(100vw-24px)] max-w-[320px]">
         <SheetTitle>{t('filter-option.filter-options-title')}</SheetTitle>
-        <SheetDescription className="sr-only">Filter the server list</SheetDescription>
+        <SheetDescription className="sr-only">{t('filter-option.drawer-description')}</SheetDescription>
         <div className="mt-4">
           <FilterControls value={value} onChange={onChange} />
         </div>

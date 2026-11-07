@@ -1,72 +1,102 @@
 {
   "general": {
-    "language-change": "Změněn jazyk na {{language}}. Některé prvky mohou vyžadovat obnovení stránky.",
-    "not-found": "Požadovanou stránku se nepodařilo najít.",
-    "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, napište prosím na support@scplist.kr."
+    "language-change": "Jazyk změněn: {{language}}. Pokud se část textu nezměnila, obnovte stránku.",
+    "not-found": "Stránka nenalezena.",
+    "server-error": "Při načítání dat ze serveru došlo k chybě. Tyto problémy jsou obvykle dočasné, zkuste to prosím za chvíli znovu. Pokud problém přetrvává, napište prosím na support@scplist.kr.",
+    "retry": "Zkusit znovu"
   },
   "api": {
     "host-warning-title": "Upozornění na API host",
     "host-warning-before": "Všechny požadavky musí být odesílány na host",
     "host-warning-middle": ".",
     "host-warning-after": "je vyhrazen pro oficiální frontend. Přímé požadavky na tento host mohou vést k blokování IP nebo ASN.",
-    "undocumented-warning": "Připravujeme kompletnější oficiální API. Do jeho vydání prosím používejte pouze koncové body uvedené níže."
+    "undocumented-warning": "Připravujeme kompletnější oficiální API. Do jeho vydání prosím používejte pouze koncové body uvedené níže.",
+    "live-docs-before": "Dokumentace níže se načítá živě z",
+    "live-docs-after": "a požadavky si můžete vyzkoušet přímo na této stránce."
   },
   "navbar": {
     "server-list": "Seznam serverů",
-    "all-stats": "Kompletní statistiky",
-    "all-server-map": "Mapa všech serverů",
+    "all-stats": "Statistiky",
+    "all-server-map": "Mapa serverů",
     "credit": "Poděkování",
     "language": "Jazyk:",
-    "unit": "Jednotka:"
+    "unit": "Jednotka:",
+    "settings": "Nastavení",
+    "open-menu": "Otevřít menu",
+    "menu": "Menu",
+    "site-navigation": "Navigace webu",
+    "unit-km": "Kilometry (km)",
+    "unit-mi": "Míle (mi)"
   },
   "select": {
-    "placeholder": "Vyberte položku",
-    "empty": "Nic není vybráno"
+    "placeholder": "Vyberte země",
+    "empty": "Žádné výsledky",
+    "selected-count": "Vybráno: {{total}}",
+    "remove": "Odebrat: {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Hledání serveru",
-      "placeholder": "Zadejte hledané výrazy"
+      "name": "Hledat servery",
+      "placeholder": "Název serveru nebo IP"
     },
     "country": "Země",
     "hide-empty": "Skrýt prázdné servery",
     "hide-full": "Skrýt plné servery",
     "refreshing": "Obnovuji seznam...",
-    "filter-options-title": "Možnosti filtru",
+    "filter-options-title": "Filtry",
+    "drawer-description": "Filtrovat seznam serverů",
     "yes-no-filter": {
-      "none": "Zahrnout vše",
+      "none": "Vše",
       "yes": "Ano",
       "no": "Ne",
       "friendly-fire": "Přátelská palba",
       "whitelist": "Whitelist",
       "modded": "Modifikovaný",
       "order-type": {
-        "name": "Typ řazení",
-        "player-desc": "Mnoho hráčů",
-        "player-asc": "Méně hráčů",
-        "distance-asc": "Blízká vzdálenost",
-        "distance-desc": "Vzdálená vzdálenost"
+        "name": "Řadit podle",
+        "player-desc": "Nejvíce hráčů",
+        "player-asc": "Nejméně hráčů",
+        "distance-asc": "Nejbližší",
+        "distance-desc": "Nejvzdálenější",
+        "ingame": "Pořadí ve hře"
       }
-    }
+    },
+    "clear-all": "Vymazat vše",
+    "clear-filter": "Vymazat filtr",
+    "no-results-title": "Filtrům neodpovídá žádný server",
+    "no-results-description": "Zkuste některý filtr odebrat nebo hledat něco jiného.",
+    "no-servers-title": "Žádný server teď není online"
   },
   "server-stats": {
-    "users-title": "Uživatelé",
+    "users-title": "Hráči",
     "servers-title": "Servery",
     "offline-label": "Offline"
   },
   "server-list": {
-    "loading": "Načítání dat ze serveru...",
+    "loading": "Načítání serverů...",
     "tech": {
       "yes": "Ano",
       "no": "Ne",
       "game-version": "Verze hry",
       "friendly-fire": "Přátelská palba",
       "whitelist": "Whitelist"
+    },
+    "columns": {
+      "server": "Server",
+      "address": "Adresa",
+      "trend": "Trend 7 dní"
+    },
+    "view-list": "Zobrazení seznamu",
+    "view-grid": "Zobrazení mřížky",
+    "sparkline": {
+      "peak": "max",
+      "avg": "Ø",
+      "new": "nový"
     }
   },
   "server-info": {
     "title": "Informace o serveru",
-    "not-exist": "Server neexistuje.",
+    "not-exist": "Server nebyl nalezen.",
     "loading": "Načítání informací o serveru...",
     "status": {
       "online": "Online",
@@ -74,17 +104,25 @@
     },
     "players": "Hráči",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Obsah z Pastebinu pro tento server",
+      "loading": "Načítání obsahu z Pastebinu...",
+      "open": "Otevřít na Pastebinu",
+      "notice": "Zobrazeno přes oficiální embed Pastebinu, protože jeho podmínky tomuto webu nedovolují zobrazovat obsah přímo. Formátovací značky se mohou zobrazit jako prostý text a prošlé nebo soukromé pasty se nezobrazí."
+    },
     "distance": "Vzdálenost",
     "statistics": "Statistiky serveru",
-    "daylight-saving-time": "Čas na grafu není ovlivněn letním časem.",
+    "daylight-saving-time": "Časy v grafu nezohledňují letní čas.",
     "graph": {
-      "loading": "Načítání dat ze serveru...",
+      "loading": "Načítání dat...",
       "options": {
-        "data-range": "Období dat",
+        "data-range": "Časové období",
         "start-time": "Čas začátku",
         "stop-time": "Čas ukončení",
-        "data-resolution": "Rozlišení dat",
+        "data-resolution": "Interval dat",
         "graph-update-btn": "Aktualizovat graf",
+        "time": "Čas",
+        "invalid-range": "Čas začátku musí být dříve než čas ukončení.",
         "period": {
           "custom": "Vlastní",
           "1hour": "1 hodina",
@@ -104,19 +142,27 @@
           "1d": "1 den"
         }
       }
-    }
+    },
+    "copy-address": "Kopírovat adresu",
+    "address-copied": "Zkopírováno",
+    "tech": "Mody a pluginy"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory je hra vydaná společností Northwood Studios™, tento web není s Northwood Studios™ nijak spojen.<br/>Všechna ochranná známka jsou majetkem jejich příslušných vlastníků."
+    "notice": "SCP: Secret Laboratory je hra vydaná společností Northwood Studios™. Tento web není se společností Northwood Studios™ nijak spojen.<br/>Všechny ochranné známky a registrované ochranné známky jsou majetkem příslušných vlastníků.",
+    "description": "Najděte servery SCP: SL pomocí filtrů, trendů hráčů a statistik.",
+    "links": "Odkazy",
+    "translation-title": "Překlady",
+    "translation-body": "Pomozte přeložit tento web do svého jazyka.",
+    "contribute": "Přispět na GitHubu"
   },
   "all-stats": {
     "users": {
-      "title": "Celkový počet uživatelů serveru",
+      "title": "Hráči na všech serverech",
       "select-compare-country": {
-        "name": "Vyberte zemi"
+        "name": "Vyberte zemi k porovnání"
       },
       "show-all": {
-        "name": "Zobrazit data všech zemí"
+        "name": "Zobrazit všechny země"
       },
       "graph": {
         "all-country": "Všechny země",
@@ -124,22 +170,85 @@
       }
     },
     "mod-loader": {
-      "title": "Statistiky mod loaderu",
+      "title": "Statistiky mod loaderů",
       "back": "Zpět",
-      "versions-title": "{{name}} — verze",
-      "drill-hint": "Kliknutím na výseč zobrazíte rozdělení podle verzí",
-      "drill-back-hint": "Kliknutím na Zpět se vrátíte na přehled loaderů"
+      "versions-title": "Verze {{name}}",
+      "drill-hint": "Kliknutím na výseč zobrazíte její verze",
+      "drill-back-hint": "Kliknutím na Zpět zobrazíte všechny loadery"
     }
   },
   "all-server-map": {
-    "title": "Mapa všech serverů",
-    "server-info-btn": "Klikněte pro zobrazení informací o serveru"
+    "title": "Mapa serverů",
+    "server-info-btn": "Zobrazit informace o serveru",
+    "location-count": "Lokalit: {{total}}"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "Sledování se zastaví po příštím načtení stránky",
+      "description": "Analytické skripty, které se už v této záložce načetly, poběží až do obnovení stránky. Obnovte ji teď, aby se vaše volba použila hned.",
       "reload": "Načíst znovu"
+    }
+  },
+  "credit": {
+    "licenses-title": "Licence třetích stran",
+    "search-placeholder": "Hledat licence nebo balíčky",
+    "no-match": "Hledání neodpovídá žádný balíček.",
+    "contributors-title": "Překladatelé"
+  },
+  "insights": {
+    "loading": "Načítání dlouhodobých statistik...",
+    "players": "{{players}} online",
+    "history": {
+      "age": "V provozu",
+      "age-years": "{{years}} r. {{months}} měs.",
+      "age-months": "{{months}} měs.",
+      "age-days": "{{days}} d.",
+      "age-first-seen": "Poprvé zaznamenán {{date}}",
+      "age-since-start": "Běžel už před začátkem našich záznamů ({{date}})",
+      "peak": "Rekord hráčů",
+      "versions": "Aktualizace hry",
+      "versions-value": "Verzí: {{versions}}",
+      "seniority": "Pořadí podle stáří",
+      "seniority-value": "Nejstarších {{percent}} %",
+      "seniority-note": "Mezi servery teď online"
+    },
+    "heatmap": {
+      "title": "Kdy je rušno?",
+      "description": "Typická špička po hodinách za posledních {{weeks}} týd., ve vašem časovém pásmu ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: obvykle {{players}} online",
+      "readout-now": "Teď ({{time}}): obvykle {{players}} online",
+      "readout-empty": "{{time}}: málo dat",
+      "readout-full": "plný {{percent}} % času",
+      "legend-low": "Klid",
+      "legend-high": "Rušno ({{players}})",
+      "legend-full": "Často plno (kapacita {{capacity}})",
+      "quiet": "Tento server byl za posledních {{weeks}} týd. většinou prázdný."
+    },
+    "global": {
+      "title": "Časová osa SCP:SL",
+      "description": "Nejvyšší počet hráčů současně na všech serverech v seznamu od {{date}}",
+      "latest": "Poslední denní špička",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Pořadí v historii",
+      "rank-value": "#{{rank}}",
+      "rank-note": "Víc hráčů než v {{percent}} % z {{days}} dnů",
+      "year-ago": "Stejný den v týdnu loni",
+      "year-ago-note": "{{date}}: {{players}} online",
+      "today": "Dnes zatím",
+      "today-note": "Stále se počítá",
+      "chart-note": "Každý bod je nejrušnější den daného týdne. Svislé čáry značí velké aktualizace. Dnů bez sběru dat celkem: {{days}}.",
+      "no-data": "Žádná data",
+      "release-tooltip": "Aktualizace {{version}}",
+      "records": "Rekordní dny",
+      "record-near-release": "kolem {{version}}",
+      "releases": "Kolem velkých aktualizací",
+      "release-version": "Verze",
+      "release-date": "Poprvé viděna",
+      "release-before": "14 dní před",
+      "release-after": "14 dní po",
+      "release-change": "Změna",
+      "release-caveat": "Medián denní špičky za 14 dní před každou aktualizací a po ní. Svou roli hrají i roční období a svátky, takže nejde jen o vliv samotné aktualizace."
     }
   }
 }

@@ -1,72 +1,102 @@
 {
   "general": {
-    "language-change": "Changed language to {{language}}. Some may need a refresh.",
-    "not-found": "No s'ha pogut trobar la pàgina sol·licitada.",
-    "server-error": "S'ha produït un error en obtenir dades del servidor. Sol ser un problema temporal, així que torneu-ho a provar d'aquí a un moment. Si el problema persisteix, envieu un correu a support@scplist.kr."
+    "language-change": "Idioma canviat a {{language}}. Recarrega la pàgina si algun text no canvia.",
+    "not-found": "No s'ha trobat la pàgina.",
+    "server-error": "No s'han pogut carregar les dades del servidor. Sol ser temporal, així que torna-ho a provar d'aquí a un moment. Si continua passant, envia un correu a support@scplist.kr.",
+    "retry": "Torna-ho a provar"
   },
   "api": {
     "host-warning-title": "Avís d'amfitrió de l'API",
     "host-warning-before": "Totes les sol·licituds s'han d'enviar a l'amfitrió",
     "host-warning-middle": ".",
     "host-warning-after": "està reservat per al frontend oficial. Les sol·licituds directes a aquest amfitrió poden comportar el bloqueig de la IP o de l'ASN.",
-    "undocumented-warning": "Estem preparant una API oficial més completa. Fins aleshores, utilitzeu només els endpoints documentats a continuació."
+    "undocumented-warning": "Estem preparant una API oficial més completa. Fins aleshores, utilitza només els endpoints documentats a continuació.",
+    "live-docs-before": "La documentació de sota es carrega en directe des de",
+    "live-docs-after": "i pots provar sol·licituds des d'aquesta pàgina."
   },
   "navbar": {
     "server-list": "Llista de servidors",
-    "all-stats": "Estadístiques completes",
-    "all-server-map": "Mapa de tots els servidors",
+    "all-stats": "Estadístiques",
+    "all-server-map": "Mapa de servidors",
     "credit": "Crèdits",
     "language": "Idioma:",
-    "unit": "Unitat:"
+    "unit": "Unitat:",
+    "settings": "Configuració",
+    "open-menu": "Obre el menú",
+    "menu": "Menú",
+    "site-navigation": "Navegació del lloc",
+    "unit-km": "Quilòmetres (km)",
+    "unit-mi": "Milles (mi)"
   },
   "select": {
-    "placeholder": "Selecciona un element",
-    "empty": "Res seleccionat"
+    "placeholder": "Selecciona països",
+    "empty": "Cap resultat",
+    "selected-count": "Seleccionats: {{total}}",
+    "remove": "Treu {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Cercar servidor",
-      "placeholder": "Introdueix els termes de cerca"
+      "name": "Cerca servidors",
+      "placeholder": "Nom del servidor o IP"
     },
     "country": "País",
-    "hide-empty": "Amagar servidors buits",
-    "hide-full": "Amagar servidors plens",
-    "refreshing": "Recarregant llista...",
-    "filter-options-title": "Opcions de filtre",
+    "hide-empty": "Amaga els servidors buits",
+    "hide-full": "Amaga els servidors plens",
+    "refreshing": "Recarregant la llista...",
+    "filter-options-title": "Filtres",
+    "drawer-description": "Filtra la llista de servidors",
     "yes-no-filter": {
-      "none": "Incloure Tot",
-      "yes": "Si",
+      "none": "Tots",
+      "yes": "Sí",
       "no": "No",
-      "friendly-fire": "Foc Amic",
+      "friendly-fire": "Foc amic",
       "whitelist": "Whitelist",
-      "modded": "Modded",
+      "modded": "Amb mods",
       "order-type": {
-        "name": "Ordenar per",
-        "player-desc": "Un nombre gran de persones",
-        "player-asc": "Un nombre petit de persones",
-        "distance-asc": "Distància curta",
-        "distance-desc": "Distància llarga"
+        "name": "Ordena per",
+        "player-desc": "Més jugadors",
+        "player-asc": "Menys jugadors",
+        "distance-asc": "Més propers",
+        "distance-desc": "Més llunyans",
+        "ingame": "Ordre del joc"
       }
-    }
+    },
+    "clear-all": "Esborra-ho tot",
+    "clear-filter": "Esborra el filtre",
+    "no-results-title": "Cap servidor coincideix amb els teus filtres",
+    "no-results-description": "Treu algun filtre o cerca una altra cosa.",
+    "no-servers-title": "Ara mateix no hi ha cap servidor en línia"
   },
   "server-stats": {
-    "users-title": "Usuaris",
+    "users-title": "Jugadors",
     "servers-title": "Servidors",
-    "offline-label": "Desconnectat"
+    "offline-label": "Inactius"
   },
   "server-list": {
-    "loading": "Carregant dades del servidor...",
+    "loading": "Carregant servidors...",
     "tech": {
-      "yes": "Si",
+      "yes": "Sí",
       "no": "No",
-      "game-version": "Versió de Joc",
-      "friendly-fire": "Foc Amic",
+      "game-version": "Versió del joc",
+      "friendly-fire": "Foc amic",
       "whitelist": "Whitelist"
+    },
+    "columns": {
+      "server": "Servidor",
+      "address": "Adreça",
+      "trend": "Tendència 7 dies"
+    },
+    "view-list": "Vista de llista",
+    "view-grid": "Vista de quadrícula",
+    "sparkline": {
+      "peak": "pic",
+      "avg": "mitj.",
+      "new": "nou"
     }
   },
   "server-info": {
     "title": "Informació del servidor",
-    "not-exist": "The server does not exist.",
+    "not-exist": "No s'ha trobat el servidor.",
     "loading": "Carregant informació del servidor...",
     "status": {
       "online": "En línia",
@@ -74,17 +104,25 @@
     },
     "players": "Jugadors",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Contingut de Pastebin d'aquest servidor",
+      "loading": "Carregant contingut de Pastebin...",
+      "open": "Obre a Pastebin",
+      "notice": "Es mostra amb la inserció oficial de Pastebin perquè les seves condicions no permeten que aquest lloc mostri el contingut directament. Les etiquetes de format poden aparèixer com a text pla, i els pastes caducats o privats no es mostren."
+    },
     "distance": "Distància",
     "statistics": "Estadístiques del servidor",
-    "daylight-saving-time": "El temps en el gràfic no és alterat per l'horari d'estiu.",
+    "daylight-saving-time": "Les hores del gràfic no s'ajusten a l'horari d'estiu.",
     "graph": {
-      "loading": "Carregant dades del servidor...",
+      "loading": "Carregant dades...",
       "options": {
-        "data-range": "Data Period",
+        "data-range": "Període",
         "start-time": "Hora d'inici",
-        "stop-time": "Stop Time",
-        "data-resolution": "Resolució de dades",
-        "graph-update-btn": "Actualitzar gràfic",
+        "stop-time": "Hora de fi",
+        "data-resolution": "Interval de dades",
+        "graph-update-btn": "Actualitza el gràfic",
+        "time": "Hora",
+        "invalid-range": "L'hora d'inici ha de ser anterior a la de fi.",
         "period": {
           "custom": "Personalitzat",
           "1hour": "1 hora",
@@ -104,42 +142,113 @@
           "1d": "1 dia"
         }
       }
-    }
+    },
+    "copy-address": "Copia l'adreça",
+    "address-copied": "Copiada",
+    "tech": "Mods i plugins"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory és un joc publicat per Northwood Studios™, aquest lloc no està afiliat amb Northwood Studios™.<br/>Totes les marques comercials i marques comercials registrades són propietat dels seus respectius amos."
+    "notice": "SCP: Secret Laboratory és un joc publicat per Northwood Studios™. Aquest lloc no està afiliat a Northwood Studios™.<br/>Totes les marques comercials i marques registrades són propietat dels seus respectius propietaris.",
+    "description": "Troba servidors de SCP: SL amb filtres, tendències de jugadors i estadístiques.",
+    "links": "Enllaços",
+    "translation-title": "Traduccions",
+    "translation-body": "Ajuda'ns a traduir aquest lloc a la teva llengua.",
+    "contribute": "Col·labora a GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Nombre total d'usuaris en el servidor",
+      "title": "Jugadors a tots els servidors",
       "select-compare-country": {
-        "name": "Seleccionar País"
+        "name": "Selecciona un país per comparar"
       },
       "show-all": {
-        "name": "Display all country data"
+        "name": "Mostra tots els països"
       },
       "graph": {
         "all-country": "Tots els països",
-        "empty-country": "There is no data to query."
+        "empty-country": "No hi ha dades disponibles."
       }
     },
     "mod-loader": {
       "title": "Estadístiques de mod loaders",
       "back": "Enrere",
       "versions-title": "Versions de {{name}}",
-      "drill-hint": "Fes clic en una porció per veure el desglossament per versió",
-      "drill-back-hint": "Fes clic a Enrere per tornar al desglossament per loader"
+      "drill-hint": "Fes clic en una porció per veure'n les versions",
+      "drill-back-hint": "Fes clic a Enrere per veure tots els loaders"
     }
   },
   "all-server-map": {
-    "title": "Mapa de tots els servidors",
-    "server-info-btn": "Click to check server info"
+    "title": "Mapa de servidors",
+    "server-info-btn": "Mostra la informació del servidor",
+    "location-count": "Ubicacions: {{total}}"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "El seguiment s'aturarà després de la propera recàrrega de la pàgina",
+      "description": "Els scripts d'analítica ja carregats en aquesta pestanya continuaran funcionant fins que recarreguis. Recarrega ara per aplicar la teva elecció immediatament.",
       "reload": "Recarrega"
+    }
+  },
+  "credit": {
+    "licenses-title": "Llicències de tercers",
+    "search-placeholder": "Cerca llicències o paquets",
+    "no-match": "Cap paquet coincideix amb aquesta cerca.",
+    "contributors-title": "Traductors"
+  },
+  "insights": {
+    "loading": "Carregant estadístiques a llarg termini...",
+    "players": "{{players}} jugadors",
+    "history": {
+      "age": "Temps actiu",
+      "age-years": "{{years}}a {{months}}m",
+      "age-months": "{{months}} mesos",
+      "age-days": "{{days}} d",
+      "age-first-seen": "Vist per primera vegada: {{date}}",
+      "age-since-start": "Des d'abans dels nostres registres ({{date}})",
+      "peak": "Rècord històric",
+      "versions": "Actualitzacions del joc",
+      "versions-value": "Versions: {{versions}}",
+      "seniority": "Posició per antiguitat",
+      "seniority-value": "El {{percent}}% més antic",
+      "seniority-note": "Entre els servidors en línia ara"
+    },
+    "heatmap": {
+      "title": "Quan hi ha més gent?",
+      "description": "Pic habitual per hora de les últimes {{weeks}} setmanes, a la teva zona horària ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: normalment {{players}} en línia",
+      "readout-now": "Ara ({{time}}): normalment {{players}} en línia",
+      "readout-empty": "{{time}}: dades insuficients",
+      "readout-full": "ple el {{percent}}% del temps",
+      "legend-low": "Tranquil",
+      "legend-high": "Molta gent ({{players}})",
+      "legend-full": "Sovint ple ({{capacity}} places)",
+      "quiet": "Aquest servidor ha estat gairebé buit les últimes {{weeks}} setmanes."
+    },
+    "global": {
+      "title": "Cronologia de SCP:SL",
+      "description": "Màxim de jugadors simultanis a tots els servidors llistats des del {{date}}",
+      "latest": "Últim pic diari",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Posició històrica",
+      "rank-value": "#{{rank}}",
+      "rank-note": "De {{days}} dies, per sobre del {{percent}}%",
+      "year-ago": "Any anterior",
+      "year-ago-note": "{{date}}: {{players}} jugadors",
+      "today": "Avui fins ara",
+      "today-note": "Recompte en curs",
+      "chart-note": "Cada punt és el dia amb més jugadors de la seva setmana. Les línies verticals marquen les grans actualitzacions. Dies sense recollida en total: {{days}}.",
+      "no-data": "Sense dades",
+      "release-tooltip": "Actualització {{version}}",
+      "records": "Dies amb més jugadors",
+      "record-near-release": "amb la {{version}}",
+      "releases": "Al voltant de grans actualitzacions",
+      "release-version": "Versió",
+      "release-date": "Primera vegada",
+      "release-before": "14 d abans",
+      "release-after": "14 d després",
+      "release-change": "Canvi",
+      "release-caveat": "Mediana del pic diari en els 14 dies abans i després de cada actualització. Les estacions i les vacances també hi influeixen, així que no és només l'efecte de l'actualització."
     }
   }
 }

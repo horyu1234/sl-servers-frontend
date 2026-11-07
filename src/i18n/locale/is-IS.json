@@ -1,94 +1,131 @@
 {
   "general": {
-    "language-change": "Breytti tungumál í {{language}}. Sumir gætu þurft að endurhlaða síðunni.",
-    "not-found": "Síðan sem þú baðst um fannst ekki.",
-    "server-error": "Villa kom upp við að sækja gögn frá netþjóninum. Þessi vandamál eru venjulega tímabundin, svo vinsamlegast reyndu aftur eftir smá stund. Ef vandamálið heldur áfram, vinsamlegast sendu tölvupóst á support@scplist.kr."
+    "language-change": "Tungumáli breytt í {{language}}. Endurhladdu síðuna ef einhver texti uppfærist ekki.",
+    "not-found": "Síðan fannst ekki.",
+    "server-error": "Ekki tókst að sækja gögn frá netþjóninum. Þetta er yfirleitt tímabundið, svo reyndu aftur eftir smástund. Ef vandinn heldur áfram skaltu senda tölvupóst á support@scplist.kr.",
+    "retry": "Reyna aftur"
   },
   "api": {
     "host-warning-title": "Viðvörun um API-hýsil",
-    "host-warning-before": "Allar beiðnir verða að fara á hýsilinn",
-    "host-warning-middle": ".",
+    "host-warning-before": "Nota verður hýsilinn",
+    "host-warning-middle": "fyrir allar beiðnir.",
     "host-warning-after": "er frátekinn fyrir opinbera framendann. Beinar beiðnir á þann hýsil geta leitt til IP- eða ASN-lokunar.",
-    "undocumented-warning": "Við erum að undirbúa heildstæðara opinbert API. Þangað til vinsamlegast notaðu aðeins þá endapunkta sem skjalfestir eru hér að neðan."
+    "undocumented-warning": "Við erum að undirbúa heildstæðara opinbert API. Þangað til skaltu aðeins nota endapunktana sem lýst er hér að neðan.",
+    "live-docs-before": "Skjölin hér að neðan eru sótt beint frá",
+    "live-docs-after": "og þú getur prófað beiðnir á þessari síðu."
   },
   "navbar": {
     "server-list": "Netþjónalisti",
-    "all-stats": "Fullar tölfræði",
-    "all-server-map": "Kort yfir allar netþjónir",
+    "all-stats": "Tölfræði",
+    "all-server-map": "Netþjónakort",
     "credit": "Þakkir",
     "language": "Tungumál:",
-    "unit": "Eining:"
+    "unit": "Eining:",
+    "settings": "Stillingar",
+    "open-menu": "Opna valmynd",
+    "menu": "Valmynd",
+    "site-navigation": "Leiðsögn um vefinn",
+    "unit-km": "Kílómetrar (km)",
+    "unit-mi": "Mílur (mi)"
   },
   "select": {
-    "placeholder": "Vinsamlegast veldu hlut",
-    "empty": "Ekkert valið"
+    "placeholder": "Veldu lönd",
+    "empty": "Engar niðurstöður",
+    "selected-count": "Valin lönd: {{total}}",
+    "remove": "Fjarlægja {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Leita að netþjón",
-      "placeholder": "Sláðu inn leitarorð"
+      "name": "Leita að netþjónum",
+      "placeholder": "Heiti netþjóns eða IP"
     },
     "country": "Land",
     "hide-empty": "Fela tóma netþjóna",
     "hide-full": "Fela fulla netþjóna",
-    "refreshing": "Endurhlaðning lista...",
-    "filter-options-title": "Síustillingar",
+    "refreshing": "Endurhleð lista...",
+    "filter-options-title": "Síur",
+    "drawer-description": "Sía netþjónalistann",
     "yes-no-filter": {
-      "none": "Innifalið Allt",
+      "none": "Allir",
       "yes": "Já",
       "no": "Nei",
-      "friendly-fire": "Vinaleg eldur",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Hvítlisti",
-      "modded": "Breytt",
+      "modded": "Moddað",
       "order-type": {
-        "name": "Röðunartegund",
-        "player-desc": "Fjöldi fólks",
-        "player-asc": "Lítill fjöldi fólks",
-        "distance-asc": "Nálægt fjarlægð",
-        "distance-desc": "Langt í burtu"
+        "name": "Raða eftir",
+        "player-desc": "Flestir leikmenn",
+        "player-asc": "Fæstir leikmenn",
+        "distance-asc": "Stysta fjarlægð fyrst",
+        "distance-desc": "Lengsta fjarlægð fyrst",
+        "ingame": "Röð í leiknum"
       }
-    }
+    },
+    "clear-all": "Hreinsa allt",
+    "clear-filter": "Hreinsa síu",
+    "no-results-title": "Engir netþjónar passa við síurnar",
+    "no-results-description": "Prófaðu að fjarlægja síu eða leita að einhverju öðru.",
+    "no-servers-title": "Engir netþjónar eru á netinu núna"
   },
   "server-stats": {
-    "users-title": "Notendur",
+    "users-title": "Leikmenn",
     "servers-title": "Netþjónar",
-    "offline-label": "Ótengt"
+    "offline-label": "Ótengdir"
   },
   "server-list": {
-    "loading": "Hleð gögnum frá netþjóni...",
+    "loading": "Hleð netþjónum...",
     "tech": {
       "yes": "Já",
       "no": "Nei",
-      "game-version": "Leikritunarútgáfa",
-      "friendly-fire": "Vinaleg eldur",
+      "game-version": "Leikjaútgáfa",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Hvítlisti"
+    },
+    "columns": {
+      "server": "Netþjónn",
+      "address": "Vistfang",
+      "trend": "7 daga þróun"
+    },
+    "view-list": "Listayfirlit",
+    "view-grid": "Reitayfirlit",
+    "sparkline": {
+      "peak": "hám",
+      "avg": "mt",
+      "new": "nýr"
     }
   },
   "server-info": {
     "title": "Upplýsingar um netþjón",
-    "not-exist": "Netþjónninn er ekki til.",
-    "loading": "Hleður upplýsingar um netþjón...",
+    "not-exist": "Netþjónninn fannst ekki.",
+    "loading": "Hleð upplýsingum um netþjón...",
     "status": {
       "online": "Í gangi",
       "offline": "Ótengdur"
     },
     "players": "Leikmenn",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Pastebin-efni þessa netþjóns",
+      "loading": "Hleð Pastebin-efni...",
+      "open": "Opna á Pastebin"
+    },
     "distance": "Fjarlægð",
     "statistics": "Tölfræði um netþjón",
-    "daylight-saving-time": "Tíminn á grafinu er ekki hraðstæður af sumartíma.",
+    "daylight-saving-time": "Tímar á grafinu taka ekki mið af sumartíma.",
     "graph": {
-      "loading": "Hleð gögnum frá netþjóni...",
+      "loading": "Hleð gögnum...",
       "options": {
-        "data-range": "Gögnumars",
+        "data-range": "Tímabil",
         "start-time": "Byrjunartími",
         "stop-time": "Lokatími",
-        "data-resolution": "Upplausn gagna",
+        "data-resolution": "Gagnabil",
         "graph-update-btn": "Uppfæra graf",
+        "time": "Tími",
+        "invalid-range": "Byrjunartími verður að vera á undan lokatíma.",
         "period": {
           "custom": "Sérsniðið",
-          "1hour": "1 klukkustund",
-          "8hour": "8 klukkustundir",
+          "1hour": "1 klst.",
+          "8hour": "8 klst.",
           "1day": "1 dagur",
           "2day": "2 dagar",
           "1week": "1 vika",
@@ -100,46 +137,61 @@
         "resolution": {
           "1m": "1 mínúta",
           "5m": "5 mínútur",
-          "1h": "1 klukkustund",
+          "1h": "1 klst.",
           "1d": "1 dagur"
         }
       }
-    }
+    },
+    "copy-address": "Afrita vistfang",
+    "address-copied": "Afritað",
+    "tech": "Mod og viðbætur"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory er leikur gefinn út af Northwood Studios™, þessi síða er ekki tengd Northwood Studios™.<br/>Allar vörumerki og skráð vörumerki eru eignir sínar eigenda."
+    "notice": "SCP: Secret Laboratory er leikur gefinn út af Northwood Studios™. Þessi síða er ekki tengd Northwood Studios™.<br/>Öll vörumerki og skráð vörumerki eru eign viðkomandi eigenda.",
+    "description": "Finndu SCP: SL-netþjóna með síum, leikmannaþróun og tölfræði.",
+    "links": "Tenglar",
+    "translation-title": "Þýðingar",
+    "translation-body": "Hjálpaðu til við að þýða síðuna á þitt tungumál.",
+    "contribute": "Leggðu þitt af mörkum á GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Heildarfjöldi notenda á netþjóni",
+      "title": "Leikmenn á öllum netþjónum",
       "select-compare-country": {
-        "name": "Veldu land"
+        "name": "Veldu land til að bera saman"
       },
       "show-all": {
-        "name": "Sýna öll gögn um lönd"
+        "name": "Sýna öll lönd"
       },
       "graph": {
         "all-country": "Öll lönd",
-        "empty-country": "Engin gögn til að fyrirspurn."
+        "empty-country": "Engin gögn tiltæk."
       }
     },
     "mod-loader": {
-      "title": "Tölfræði um breytingahlaðari",
+      "title": "Tölfræði um mod loader",
       "back": "Til baka",
-      "versions-title": "{{name}} — útgáfur",
-      "drill-hint": "Smelltu á sneið til að sjá sundurliðun útgáfna",
-      "drill-back-hint": "Smelltu á Til baka til að snúa aftur í sundurliðun hlaðara"
+      "versions-title": "{{name}}-útgáfur",
+      "drill-hint": "Smelltu á sneið til að sjá útgáfur hennar",
+      "drill-back-hint": "Smelltu á Til baka til að sjá alla mod loadera"
     }
   },
   "all-server-map": {
-    "title": "Kort yfir allar netþjónir",
-    "server-info-btn": "Smelltu til að athuga upplýsingar um netþjón"
+    "title": "Netþjónakort",
+    "server-info-btn": "Skoða upplýsingar um netþjón",
+    "location-count": "Staðsetningar: {{total}}"
   },
   "consent": {
     "revoke": {
       "title": "Mæling stöðvast eftir næstu endurhleðslu síðunnar",
-      "description": "Greiningarskriftur sem þegar hafa hlaðist í þessum flipa halda áfram að keyra þangað til þú endurhleður. Endurhladdu núna til að virkja valið þitt strax.",
+      "description": "Greiningarforskriftir sem þegar eru hlaðnar í þessum flipa halda áfram að keyra þar til þú endurhleður. Endurhladdu núna til að virkja valið þitt strax.",
       "reload": "Endurhlaða"
     }
+  },
+  "credit": {
+    "licenses-title": "Leyfi þriðja aðila",
+    "search-placeholder": "Leita að leyfum eða pökkum",
+    "no-match": "Engir pakkar fundust.",
+    "contributors-title": "Þýðendur"
   }
 }

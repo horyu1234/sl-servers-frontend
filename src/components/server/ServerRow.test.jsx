@@ -1,9 +1,9 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../store';
-import '../../i18n/i18n';
+import i18n from '../../i18n/i18n';
 import { ServerRow } from './ServerRow';
 
 const sampleServer = {
@@ -32,6 +32,17 @@ function renderRow(props = {}) {
 }
 
 describe('ServerRow', () => {
+  afterEach(() => act(() => i18n.changeLanguage('en-US')));
+
+  it('renames the country when the language changes', async () => {
+    renderRow();
+    expect(screen.getByText('South Korea')).toBeInTheDocument();
+
+    await act(() => i18n.changeLanguage('ko-KR'));
+
+    expect(screen.getByText('대한민국')).toBeInTheDocument();
+  });
+
   it('renders the server name', () => {
     renderRow();
     expect(screen.getByText(/Site-19 Mirror/)).toBeInTheDocument();

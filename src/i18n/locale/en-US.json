@@ -1,8 +1,8 @@
 {
   "general": {
-    "language-change": "Language changed to {{language}}. Some elements may need a refresh.",
-    "not-found": "The page you requested could not be found.",
-    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr.",
+    "language-change": "Language changed to {{language}}. Refresh if some text doesn't update.",
+    "not-found": "Page not found.",
+    "server-error": "Couldn't load data from the server. This is usually temporary, so try again in a moment. If it keeps happening, email support@scplist.kr.",
     "retry": "Try again"
   },
   "api": {
@@ -10,35 +10,43 @@
     "host-warning-before": "All requests must be sent to the",
     "host-warning-middle": "host.",
     "host-warning-after": "is reserved for the official frontend. Direct requests to that host may result in IP or ASN blocking.",
-    "undocumented-warning": "A more complete official API is on the way. Until it lands, please use only the endpoints documented below.",
-    "live-docs-before": "Live OpenAPI documentation served from",
-    "live-docs-after": "— try requests directly from the page."
+    "undocumented-warning": "A more complete official API is coming. Until then, use only the endpoints documented below.",
+    "live-docs-before": "The docs below load live from",
+    "live-docs-after": "and you can try requests from this page."
   },
   "navbar": {
-    "server-list": "Server List",
-    "all-stats": "Full statistics",
-    "all-server-map": "Map of all servers",
+    "server-list": "Server list",
+    "all-stats": "Statistics",
+    "all-server-map": "Server map",
     "credit": "Credits",
     "language": "Language:",
     "unit": "Unit:",
-    "settings": "Settings"
+    "settings": "Settings",
+    "open-menu": "Open menu",
+    "menu": "Menu",
+    "site-navigation": "Site navigation",
+    "unit-km": "Kilometers (km)",
+    "unit-mi": "Miles (mi)"
   },
   "select": {
-    "placeholder": "Please select an item",
-    "empty": "Nothing selected"
+    "placeholder": "Select countries",
+    "empty": "No matches",
+    "selected-count": "{{total}} selected",
+    "remove": "Remove {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Server Search",
-      "placeholder": "Enter search terms"
+      "name": "Search servers",
+      "placeholder": "Server name or IP"
     },
     "country": "Country",
     "hide-empty": "Hide empty servers",
     "hide-full": "Hide full servers",
     "refreshing": "Reloading list...",
-    "filter-options-title": "Filter Options",
+    "filter-options-title": "Filters",
+    "drawer-description": "Filter the server list",
     "yes-no-filter": {
-      "none": "Include All",
+      "none": "All",
       "yes": "Yes",
       "no": "No",
       "friendly-fire": "Friendly Fire",
@@ -60,16 +68,16 @@
     "no-servers-title": "No servers are online right now"
   },
   "server-stats": {
-    "users-title": "Users",
+    "users-title": "Players",
     "servers-title": "Servers",
     "offline-label": "Offline"
   },
   "server-list": {
-    "loading": "Loading data from the server...",
+    "loading": "Loading servers...",
     "tech": {
       "yes": "Yes",
       "no": "No",
-      "game-version": "Game Version",
+      "game-version": "Game version",
       "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist"
     },
@@ -78,6 +86,8 @@
       "address": "Address",
       "trend": "7d trend"
     },
+    "view-list": "List view",
+    "view-grid": "Grid view",
     "sparkline": {
       "peak": "peak",
       "avg": "avg",
@@ -85,9 +95,9 @@
     }
   },
   "server-info": {
-    "title": "Server Information",
+    "title": "Server info",
     "not-exist": "Server not found.",
-    "loading": "Loading server information...",
+    "loading": "Loading server info...",
     "status": {
       "online": "Online",
       "offline": "Offline"
@@ -98,36 +108,38 @@
       "frame-title": "Pastebin content for this server",
       "loading": "Loading Pastebin content...",
       "open": "Open on Pastebin",
-      "notice": "Shown through Pastebin's official embed, because Pastebin's Terms of Service don't allow this site to render the content itself. Formatting code may appear as-is, and nothing will appear if the paste has expired or is private."
+      "notice": "Shown with Pastebin's official embed because its terms don't allow this site to display the content directly. Formatting tags may appear as plain text, and expired or private pastes won't show up."
     },
     "distance": "Distance",
-    "statistics": "Server Statistics",
-    "daylight-saving-time": "Times shown on the graph do not observe daylight saving time.",
+    "statistics": "Server statistics",
+    "daylight-saving-time": "Graph times don't adjust for daylight saving time.",
     "graph": {
-      "loading": "Loading data from the server...",
+      "loading": "Loading data...",
       "options": {
-        "data-range": "Date Range",
-        "start-time": "Start Time",
-        "stop-time": "End Time",
-        "data-resolution": "Data Resolution",
-        "graph-update-btn": "Update Graph",
+        "data-range": "Date range",
+        "start-time": "Start time",
+        "stop-time": "End time",
+        "data-resolution": "Data interval",
+        "graph-update-btn": "Update graph",
+        "time": "Time",
+        "invalid-range": "Start time must be before end time.",
         "period": {
           "custom": "Custom",
-          "1hour": "1 Hour",
-          "8hour": "8 Hours",
-          "1day": "1 Day",
-          "2day": "2 Days",
-          "1week": "1 Week",
-          "1month": "1 Month",
-          "3month": "3 Months",
-          "1year": "1 Year",
-          "4year": "4 Years"
+          "1hour": "1 hour",
+          "8hour": "8 hours",
+          "1day": "1 day",
+          "2day": "2 days",
+          "1week": "1 week",
+          "1month": "1 month",
+          "3month": "3 months",
+          "1year": "1 year",
+          "4year": "4 years"
         },
         "resolution": {
-          "1m": "1 Minute",
-          "5m": "5 Minutes",
-          "1h": "1 Hour",
-          "1d": "1 Day"
+          "1m": "1 minute",
+          "5m": "5 minutes",
+          "1h": "1 hour",
+          "1d": "1 day"
         }
       }
     },
@@ -137,15 +149,15 @@
   },
   "footer": {
     "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™. This site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners.",
-    "description": "SCP: SL server list with filtering options, trends and statistics.",
+    "description": "Find SCP: SL servers with filters, player trends and statistics.",
     "links": "Links",
-    "translation-title": "Translation",
-    "translation-body": "I'm looking for applicants for site translation.",
+    "translation-title": "Translations",
+    "translation-body": "Help translate this site into your language.",
     "contribute": "Contribute on GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Total users across all servers",
+      "title": "Players across all servers",
       "select-compare-country": {
         "name": "Select a country to compare"
       },
@@ -160,14 +172,14 @@
     "mod-loader": {
       "title": "Mod loader statistics",
       "back": "Back",
-      "versions-title": "{{name}} — versions",
-      "drill-hint": "Click a slice to see the version breakdown",
-      "drill-back-hint": "Click Back to return to the loader breakdown"
+      "versions-title": "{{name}} versions",
+      "drill-hint": "Click a slice to see its versions",
+      "drill-back-hint": "Click Back to see all loaders"
     }
   },
   "all-server-map": {
-    "title": "Map of all servers",
-    "server-info-btn": "Click to view server info",
+    "title": "Server map",
+    "server-info-btn": "View server info",
     "location-count": "{{total}} locations"
   },
   "consent": {
@@ -181,7 +193,7 @@
     "licenses-title": "Third-party licenses",
     "search-placeholder": "Search licenses or packages",
     "no-match": "No packages match this search.",
-    "contributors-title": "Site localization contributors"
+    "contributors-title": "Translators"
   },
   "insights": {
     "loading": "Loading long-term stats...",
@@ -189,16 +201,16 @@
     "history": {
       "age": "Running for",
       "age-years": "{{years}}y {{months}}mo",
-      "age-months": "{{months}} mo",
+      "age-months": "{{months}} months",
       "age-days": "{{days}} days",
       "age-first-seen": "First seen {{date}}",
       "age-since-start": "Since before our records began ({{date}})",
       "peak": "All-time peak",
       "versions": "Game updates seen",
       "versions-value": "{{versions}} versions",
-      "seniority": "Age among online servers",
+      "seniority": "Age rank",
       "seniority-value": "Oldest {{percent}}%",
-      "seniority-note": "Compared with servers online now"
+      "seniority-note": "Among servers online now"
     },
     "heatmap": {
       "title": "When is it busy?",
@@ -216,12 +228,12 @@
     "global": {
       "title": "SCP:SL timeline",
       "description": "Highest concurrent players across all listed servers since {{date}}",
-      "latest": "Latest full day peak",
+      "latest": "Latest daily peak",
       "utc-date": "{{date}} (UTC)",
       "rank": "All-time rank",
       "rank-value": "#{{rank}}",
       "rank-note": "Of {{days}} days, busier than {{percent}}%",
-      "year-ago": "Vs same weekday last year",
+      "year-ago": "Vs last year",
       "year-ago-note": "{{date}}: {{players}} players",
       "today": "Today so far",
       "today-note": "Still counting",
@@ -236,7 +248,7 @@
       "release-before": "14 days before",
       "release-after": "14 days after",
       "release-change": "Change",
-      "release-caveat": "Median daily peak in the 14 days before and after each update. Season and holidays are mixed in, so this is not the effect of the update alone."
+      "release-caveat": "Median daily peak in the 14 days before and after each update. Seasons and holidays also play a part, so this is not the effect of the update alone."
     }
   }
 }

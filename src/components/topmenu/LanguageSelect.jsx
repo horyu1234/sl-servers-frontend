@@ -1,5 +1,4 @@
 import React from 'react';
-import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 import languages from '../../data/language.json';
@@ -7,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { cn } from '@/lib/cn';
 
 export default function LanguageSelect({ className }) {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
   const activeLanguage = languages.some((language) => language.code === i18n.language)
     ? i18n.language
     : languages.some((language) => language.code === i18n.resolvedLanguage)
@@ -16,7 +15,8 @@ export default function LanguageSelect({ className }) {
   const handleChange = (value) => {
     const target = languages.find((l) => l.code === value);
     i18n.changeLanguage(value).then(() => {
-      toast.success(t('general.language-change', { language: target?.name ?? value }));
+      // t from this render still speaks the previous language.
+      toast.success(i18n.t('general.language-change', { language: target?.name ?? value }));
     });
   };
   return (

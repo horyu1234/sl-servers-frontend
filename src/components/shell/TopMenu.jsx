@@ -68,13 +68,13 @@ export default function TopMenu() {
 
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+            <Button variant="ghost" size="icon" className="lg:hidden" aria-label={t('navbar.open-menu')}>
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="!w-[calc(100vw-24px)] max-w-[300px] flex flex-col">
-            <SheetTitle className="sr-only">Menu</SheetTitle>
-            <SheetDescription className="sr-only">Site navigation</SheetDescription>
+            <SheetTitle className="sr-only">{t('navbar.menu')}</SheetTitle>
+            <SheetDescription className="sr-only">{t('navbar.site-navigation')}</SheetDescription>
             <nav className="flex flex-col gap-1 mt-6">
               {items.map((item) => (
                 <NavItem key={item.to} {...item} onClick={() => setMobileOpen(false)} />

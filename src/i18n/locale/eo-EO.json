@@ -1,145 +1,254 @@
 {
   "general": {
-    "language-change": "Keel on muudetud {{language}}-ks. Mõned võivad vajada värskendamist.",
-    "not-found": "Lehte, mida te taotlesite, ei leitud.",
-    "server-error": "Eraro okazis dum prenado de datumoj de la servilo. Tiaj problemoj kutime estas portempaj, do bonvolu reprovi post momento. Se la problemo daŭras, bonvolu retpoŝti al support@scplist.kr."
+    "language-change": "Lingvo ŝanĝita al {{language}}. Se iu teksto ne ĝisdatiĝas, reŝargu la paĝon.",
+    "not-found": "Paĝo ne trovita.",
+    "server-error": "Eraro okazis dum prenado de datumoj de la servilo. Tiaj problemoj kutime estas portempaj, do bonvolu reprovi post momento. Se la problemo daŭras, bonvolu retpoŝti al support@scplist.kr.",
+    "retry": "Reprovi"
   },
   "api": {
     "host-warning-title": "Averto pri API-gastiganto",
     "host-warning-before": "Ĉiuj petoj devas esti senditaj al la gastiganto",
     "host-warning-middle": ".",
     "host-warning-after": "estas rezervita por la oficiala fasado. Rektaj petoj al tiu gastiganto povas konduki al IP- aŭ ASN-blokado.",
-    "undocumented-warning": "Ni preparas pli kompletan oficialan API. Ĝis ĝia eldono, bonvolu uzi nur la finpunktojn dokumentitajn malsupre."
+    "undocumented-warning": "Ni preparas pli kompletan oficialan API. Ĝis ĝia eldono, bonvolu uzi nur la finpunktojn dokumentitajn malsupre.",
+    "live-docs-before": "La dokumentoj sube ŝargiĝas rekte de",
+    "live-docs-after": "kaj vi povas provi petojn en ĉi tiu paĝo."
   },
   "navbar": {
-    "server-list": "Serverite nimekiri",
-    "all-stats": "Täielik statistika",
-    "all-server-map": "Kõikide serverite kaart",
+    "server-list": "Listo de serviloj",
+    "all-stats": "Statistikoj",
+    "all-server-map": "Mapo de serviloj",
     "credit": "Dankoj",
     "language": "Lingvo:",
-    "unit": "Unuo:"
+    "unit": "Unuo:",
+    "settings": "Agordoj",
+    "open-menu": "Malfermi menuon",
+    "menu": "Menuo",
+    "site-navigation": "Reteja navigado",
+    "unit-km": "Kilometroj (km)",
+    "unit-mi": "Mejloj (mi)"
   },
   "select": {
-    "placeholder": "Valige üksus",
-    "empty": "Miski pole valitud"
+    "placeholder": "Elektu landojn",
+    "empty": "Neniu rezulto",
+    "selected-count": "{{total}} elektitaj",
+    "remove": "Forigi {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Serveri otsing",
-      "placeholder": "Sisestage otsinguterminid"
+      "name": "Serĉi servilojn",
+      "placeholder": "Nomo aŭ IP de servilo"
     },
     "country": "Lando",
-    "hide-empty": "Peida tühjad serverid",
-    "hide-full": "Peida täis serverid",
-    "refreshing": "Laadin nimekirja uuesti...",
-    "filter-options-title": "Filtraj agordoj",
+    "hide-empty": "Kaŝi malplenajn servilojn",
+    "hide-full": "Kaŝi plenajn servilojn",
+    "refreshing": "Reŝargante la liston...",
+    "filter-options-title": "Filtriloj",
+    "drawer-description": "Filtri la liston de serviloj",
     "yes-no-filter": {
-      "none": "Kuva kõik",
-      "yes": "Jah",
-      "no": "Ei",
-      "friendly-fire": "Sõbralik tuli",
-      "whitelist": "Valgedkirjad",
-      "modded": "Moditud",
+      "none": "Ĉiuj",
+      "yes": "Jes",
+      "no": "Ne",
+      "friendly-fire": "Amika pafado",
+      "whitelist": "Blanka listo",
+      "modded": "Modifita",
       "order-type": {
-        "name": "Sorteerimise tüüp",
-        "player-desc": "Suur hulk inimesi",
-        "player-asc": "Väike hulk inimesi",
-        "distance-asc": "Lähedalolev kaugus",
-        "distance-desc": "Kaugelolev kaugus"
+        "name": "Ordigi laŭ",
+        "player-desc": "Plej multe da ludantoj",
+        "player-asc": "Plej malmulte da ludantoj",
+        "distance-asc": "Plej proksimaj unue",
+        "distance-desc": "Plej foraj unue",
+        "ingame": "Kiel en la ludo"
       }
-    }
+    },
+    "clear-all": "Forigi ĉion",
+    "clear-filter": "Forigi filtrilon",
+    "no-results-title": "Neniu servilo kongruas kun viaj filtriloj",
+    "no-results-description": "Provu forigi filtrilon aŭ serĉi ion alian.",
+    "no-servers-title": "Neniu servilo estas nun konektita"
   },
   "server-stats": {
-    "users-title": "Uzantoj",
+    "users-title": "Ludantoj",
     "servers-title": "Serviloj",
     "offline-label": "Senkonekta"
   },
   "server-list": {
-    "loading": "Andmete laadimine serverist...",
+    "loading": "Ŝargante servilojn...",
     "tech": {
-      "yes": "Jah",
-      "no": "Ei",
-      "game-version": "Mängu versioon",
-      "friendly-fire": "Sõbralik tuli",
-      "whitelist": "Valgedkirjad"
+      "yes": "Jes",
+      "no": "Ne",
+      "game-version": "Ludversio",
+      "friendly-fire": "Amika pafado",
+      "whitelist": "Blanka listo"
+    },
+    "columns": {
+      "server": "Servilo",
+      "address": "Adreso",
+      "trend": "7-taga tendenco"
+    },
+    "view-list": "Lista vido",
+    "view-grid": "Krada vido",
+    "sparkline": {
+      "peak": "max",
+      "avg": "mez",
+      "new": "nova"
     }
   },
   "server-info": {
-    "title": "Serveri teave",
-    "not-exist": "Serverit ei eksisteeri.",
+    "title": "Informoj pri servilo",
+    "not-exist": "Servilo ne trovita.",
     "loading": "Ŝargante servilan informon...",
     "status": {
       "online": "Konektita",
       "offline": "Senkonekta"
     },
-    "players": "Mängijad",
+    "players": "Ludantoj",
     "pastebin": "Pastebin",
-    "distance": "Kaugus",
-    "statistics": "Serveri statistika",
-    "daylight-saving-time": "Graafikul olev aeg ei ole mõjutatud suveajast.",
+    "pastebin-embed": {
+      "frame-title": "Pastebin-enhavo de ĉi tiu servilo",
+      "loading": "Ŝargante Pastebin-enhavon...",
+      "open": "Malfermi en Pastebin",
+      "notice": "Montrita per la oficiala enkorpigo de Pastebin, ĉar ĝiaj kondiĉoj ne permesas al ĉi tiu retejo rekte montri la enhavon. Formataj etikedoj povas aperi kiel simpla teksto, kaj eksvalidiĝintaj aŭ privataj algluaĵoj ne aperos."
+    },
+    "distance": "Distanco",
+    "statistics": "Statistikoj de la servilo",
+    "daylight-saving-time": "La tempoj en la grafikaĵo ne adaptiĝas al somera tempo.",
     "graph": {
-      "loading": "Andmete laadimine serverist...",
+      "loading": "Ŝargante datumojn...",
       "options": {
-        "data-range": "Andmeperiood",
-        "start-time": "Algusaeg",
-        "stop-time": "Lõppaeg",
-        "data-resolution": "Andmete lahutusvõimekus",
-        "graph-update-btn": "Uuenda graafikut",
+        "data-range": "Tempoperiodo",
+        "start-time": "Komenca tempo",
+        "stop-time": "Fina tempo",
+        "data-resolution": "Datuma intervalo",
+        "graph-update-btn": "Ĝisdatigi grafikaĵon",
+        "time": "Tempo",
+        "invalid-range": "La komenca tempo devas esti antaŭ la fina tempo.",
         "period": {
-          "custom": "Kohandatud",
-          "1hour": "1 tund",
-          "8hour": "8 tundi",
-          "1day": "1 päev",
-          "2day": "2 päeva",
-          "1week": "1 nädal",
-          "1month": "1 kuu",
-          "3month": "3 kuud",
-          "1year": "1 aasta",
-          "4year": "4 aastat"
+          "custom": "Propra",
+          "1hour": "1 horo",
+          "8hour": "8 horoj",
+          "1day": "1 tago",
+          "2day": "2 tagoj",
+          "1week": "1 semajno",
+          "1month": "1 monato",
+          "3month": "3 monatoj",
+          "1year": "1 jaro",
+          "4year": "4 jaroj"
         },
         "resolution": {
-          "1m": "1 minut",
-          "5m": "5 minutit",
-          "1h": "1 tund",
-          "1d": "1 päev"
+          "1m": "1 minuto",
+          "5m": "5 minutoj",
+          "1h": "1 horo",
+          "1d": "1 tago"
         }
       }
-    }
+    },
+    "copy-address": "Kopii adreson",
+    "address-copied": "Kopiita",
+    "tech": "Modifoj kaj kromprogramoj"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory on mäng, mille on välja andnud Northwood Studios™. See veebisait ei ole seotud Northwood Studios™-ga.<br/>Kõik kaubamärgid ja registreeritud kaubamärgid on nende vastavate omanike vara."
+    "notice": "SCP: Secret Laboratory estas ludo eldonita de Northwood Studios™. Ĉi tiu retejo ne estas ligita al Northwood Studios™.<br/>Ĉiuj varmarkoj kaj registritaj varmarkoj apartenas al siaj respektivaj posedantoj.",
+    "description": "Trovu servilojn de SCP: SL per filtriloj, tendencoj de ludantoj kaj statistikoj.",
+    "links": "Ligiloj",
+    "translation-title": "Tradukoj",
+    "translation-body": "Helpu traduki ĉi tiun retejon en vian lingvon.",
+    "contribute": "Kontribui en GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Serverite kasutajate koguarv",
+      "title": "Ludantoj en ĉiuj serviloj",
       "select-compare-country": {
-        "name": "Vali riik"
+        "name": "Elektu landon por kompari"
       },
       "show-all": {
-        "name": "Kuva kõik riigiandmed"
+        "name": "Montri ĉiujn landojn"
       },
       "graph": {
-        "all-country": "Kõik riigid",
-        "empty-country": "Päringu jaoks pole andmeid."
+        "all-country": "Ĉiuj landoj",
+        "empty-country": "Neniuj datumoj disponeblas."
       }
     },
     "mod-loader": {
-      "title": "Modi laadur statistika",
+      "title": "Statistikoj de modŝargiloj",
       "back": "Reen",
-      "versions-title": "{{name}} — versioj",
+      "versions-title": "Versioj de {{name}}",
       "drill-hint": "Klaku sektoron por vidi la versian distribuon",
-      "drill-back-hint": "Klaku Reen por reveni al la ŝargilodistribuo"
+      "drill-back-hint": "Klaku Reen por vidi ĉiujn ŝargilojn"
     }
   },
   "all-server-map": {
-    "title": "Kõikide serverite kaart",
-    "server-info-btn": "Klõpsake serveri teabe kontrollimiseks"
+    "title": "Mapo de serviloj",
+    "server-info-btn": "Vidi informojn pri servilo",
+    "location-count": "{{total}} lokoj"
   },
   "consent": {
     "revoke": {
       "title": "Spurado ĉesos post la sekva paĝa reŝargo",
       "description": "Analizaj skriptoj jam ŝargitaj en ĉi tiu langeto plu funkcios ĝis vi reŝargas. Reŝargu nun por tuj apliki vian elekton.",
       "reload": "Reŝargi"
+    }
+  },
+  "credit": {
+    "licenses-title": "Triapartiaj licencoj",
+    "search-placeholder": "Serĉi licencojn aŭ pakaĵojn",
+    "no-match": "Neniu pakaĵo kongruas kun ĉi tiu serĉo.",
+    "contributors-title": "Tradukistoj"
+  },
+  "insights": {
+    "loading": "Ŝargante longtempajn statistikojn...",
+    "players": "{{players}} ludantoj",
+    "history": {
+      "age": "Funkcias dum",
+      "age-years": "{{years}} j. {{months}} mon.",
+      "age-months": "{{months}} monatoj",
+      "age-days": "{{days}} tagoj",
+      "age-first-seen": "Unue vidita je {{date}}",
+      "age-since-start": "Jam ekzistis kiam ni komencis registri ({{date}})",
+      "peak": "Ĉiama rekordo",
+      "versions": "Ĝisdatigoj de la ludo",
+      "versions-value": "{{versions}} versioj",
+      "seniority": "Aĝa rango",
+      "seniority-value": "Plej malnovaj {{percent}}%",
+      "seniority-note": "Inter nun konektitaj serviloj"
+    },
+    "heatmap": {
+      "title": "Kiam estas plej multe da ludantoj?",
+      "description": "Tipa pinto po horo dum la lastaj {{weeks}} semajnoj, en via horzono ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: kutime {{players}} ludantoj",
+      "readout-now": "Nun ({{time}}): kutime {{players}} ludantoj",
+      "readout-empty": "{{time}}: ne sufiĉas datumoj",
+      "readout-full": "plena {{percent}}% de la tempo",
+      "legend-low": "Kvieta",
+      "legend-high": "Vigla ({{players}})",
+      "legend-full": "Ofte plena ({{capacity}} lokoj)",
+      "quiet": "Ĉi tiu servilo estis plejparte malplena dum la lastaj {{weeks}} semajnoj."
+    },
+    "global": {
+      "title": "Historio de SCP:SL",
+      "description": "Plej multaj samtempaj ludantoj en ĉiuj listigitaj serviloj ekde {{date}}",
+      "latest": "Lasta taga pinto",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Ĉiama rango",
+      "rank-value": "#{{rank}}",
+      "rank-note": "El {{days}} tagoj, pli vigla ol {{percent}}%",
+      "year-ago": "Sama tago pasintjare",
+      "year-ago-note": "{{date}}: {{players}} ludantoj",
+      "today": "Hodiaŭ ĝis nun",
+      "today-note": "Ankoraŭ kalkulante",
+      "chart-note": "Ĉiu punkto estas la plej vigla tago de sia semajno. Vertikalaj linioj markas gravajn ĝisdatigojn. Entute la kolektado paŭzis dum {{days}} tagoj.",
+      "no-data": "Neniuj datumoj",
+      "release-tooltip": "Ĝisdatigo {{version}}",
+      "records": "Plej viglaj tagoj",
+      "record-near-release": "ĉirkaŭ {{version}}",
+      "releases": "Ĉirkaŭ gravaj ĝisdatigoj",
+      "release-version": "Versio",
+      "release-date": "Unue vidita",
+      "release-before": "Antaŭ 14 tagoj",
+      "release-after": "Post 14 tagoj",
+      "release-change": "Ŝanĝo",
+      "release-caveat": "Mediano de la tagaj pintoj en la 14 tagoj antaŭ kaj post ĉiu ĝisdatigo. Ankaŭ sezonoj kaj festoj influas ĝin, do tio ne estas nur la efiko de la ĝisdatigo."
     }
   }
 }
