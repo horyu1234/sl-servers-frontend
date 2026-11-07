@@ -1,21 +1,34 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Users, Server } from 'lucide-react';
+import { Server, Users, ServerOff } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
 
-function StatCard({ icon: Icon, label, children }) {
+function StatTile({ icon: Icon, label, value, total }) {
   return (
-    <Card className="min-w-0 border border-transparent">
-      <CardContent className="flex min-w-0 items-start justify-between gap-3 px-3 py-3 sm:items-center sm:px-4">
-        <div className="flex min-w-0 items-center gap-2 text-sm">
-          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-            <Icon className="h-4 w-4 text-primary" />
-          </span>
-          <span className="truncate text-muted-foreground">{label}</span>
+    <Card className="min-w-0">
+      <CardContent className="p-3 sm:px-4">
+        <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
+          <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+          <span className="truncate">{label}</span>
         </div>
-        <div className="min-w-0 text-right text-sm tabular-nums">
-          {children}
+        <div className="mt-1 flex min-w-0 flex-wrap items-baseline gap-x-1 tabular-nums">
+          <span className="text-lg font-semibold leading-tight text-foreground sm:text-xl">{value.toLocaleString()}</span>
+          {total !== undefined && (
+            <span className="text-xs text-muted-foreground">/ {total.toLocaleString()}</span>
+          )}
         </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function StatTileSkeleton() {
+  return (
+    <Card className="min-w-0">
+      <CardContent className="space-y-2 p-3 sm:px-4">
+        <Skeleton className="h-3 w-16" />
+        <Skeleton className="h-6 w-20" />
       </CardContent>
     </Card>
   );
@@ -23,24 +36,25 @@ function StatCard({ icon: Icon, label, children }) {
 
 export function ServerStatsHeader({ loading, online, displayed, offline, users, displayedUsers }) {
   const { t } = useTranslation();
+
   if (loading) {
     return (
-      <Card><CardContent className="py-3 text-center text-sm text-muted-foreground">{t('server-list.loading')}</CardContent></Card>
+      <div className="grid grid-cols-3 gap-2 sm:gap-3" role="status" aria-label={t('server-list.loading')}>
+        <StatTileSkeleton />
+        <StatTileSkeleton />
+        <StatTileSkeleton />
+      </div>
     );
   }
+
+  // Totals only add information while a filter hides part of the list.
+  const filtered = displayed !== online;
+
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
-      <StatCard icon={Users} label={t('server-stats.users-title')}>
-        <span className="font-semibold text-foreground">{displayedUsers.toLocaleString()}</span>
-        <span className="text-muted-foreground"> / {users.toLocaleString()}</span>
-      </StatCard>
-      <StatCard icon={Server} label={t('server-stats.servers-title')}>
-        <span className="font-semibold text-foreground">{displayed.toLocaleString()}</span>
-        <span className="text-muted-foreground"> / {online.toLocaleString()}</span>
-        <div className="mt-0.5 text-[11px] leading-none text-muted-foreground/70">
-          {offline.toLocaleString()} {t('server-stats.offline-label').toLowerCase()}
-        </div>
-      </StatCard>
+    <div className="grid grid-cols-3 gap-2 sm:gap-3">
+      <StatTile icon={Users} label={t('server-stats.users-title')} value={displayedUsers} total={filtered ? users : undefined} />
+      <StatTile icon={Server} label={t('server-stats.servers-title')} value={displayed} total={filtered ? online : undefined} />
+      <StatTile icon={ServerOff} label={t('server-stats.offline-label')} value={offline} />
     </div>
   );
 }

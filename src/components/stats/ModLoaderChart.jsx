@@ -109,7 +109,8 @@ export function ModLoaderChart() {
   }
 
   const rows = drill ? drillRows : top;
-  const title = drill ? t('all-stats.mod-loader.versions-title', { name: drill }) : t('all-stats.mod-loader.title');
+  // The card title already names the top level, so only the drill-down needs one here.
+  const title = drill ? t('all-stats.mod-loader.versions-title', { name: drill }) : t('server-stats.servers-title');
   const total = rows.reduce((sum, row) => sum + row.value, 0);
 
   return (
@@ -126,7 +127,7 @@ export function ModLoaderChart() {
         </span>
       </div>
 
-      <div className="flex items-center gap-1.5 text-xs text-muted-foreground/80 rounded-md border border-dashed border-border bg-muted/20 px-2.5 py-1.5">
+      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
         <MousePointerClick className="h-3.5 w-3.5 shrink-0" />
         <span>{drill ? t('all-stats.mod-loader.drill-back-hint') : t('all-stats.mod-loader.drill-hint')}</span>
       </div>

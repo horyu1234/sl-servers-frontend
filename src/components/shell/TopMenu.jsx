@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from 
 import { Separator } from '@/components/ui/separator';
 import LanguageSelect from '../topmenu/LanguageSelect';
 import SiSelect from '../topmenu/SiSelect';
+import SettingsMenu from '../topmenu/SettingsMenu';
 import { cn } from '@/lib/cn';
 
 function buildNavItems(t) {
@@ -19,7 +20,7 @@ function buildNavItems(t) {
   ];
 }
 
-function NavItem({ to, end, icon: Icon, label, onClick }) {
+function NavItem({ to, end, icon: Icon, label, onClick, compact = false }) {
   return (
     <NavLink
       to={to}
@@ -27,13 +28,13 @@ function NavItem({ to, end, icon: Icon, label, onClick }) {
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          'flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors no-underline',
+          'flex items-center gap-2 whitespace-nowrap px-3 py-2 rounded-md text-sm transition-colors no-underline',
           'text-muted-foreground hover:text-foreground hover:bg-muted',
           isActive && 'text-foreground bg-muted'
         )
       }
     >
-      <Icon className="h-4 w-4" />
+      <Icon className={cn('h-4 w-4', compact && 'hidden xl:block')} />
       <span>{label}</span>
     </NavLink>
   );
@@ -55,22 +56,14 @@ export default function TopMenu() {
           <span className="hidden truncate sm:inline">SCP: SL Servers</span>
         </NavLink>
 
-        <nav className="hidden lg:flex items-center gap-1 ml-4">
-          {items.map((item) => <NavItem key={item.to} {...item} />)}
+        <nav className="hidden lg:flex items-center gap-1 ml-2 xl:ml-4">
+          {items.map((item) => <NavItem key={item.to} {...item} compact />)}
         </nav>
 
         <div className="flex-1" />
 
-        <div className="hidden lg:flex items-center gap-3">
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-muted-foreground">{t('navbar.language')}</span>
-            <LanguageSelect />
-          </div>
-          <Separator orientation="vertical" className="h-6" />
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-muted-foreground">{t('navbar.unit')}</span>
-            <div style={{ minWidth: 140 }}><SiSelect /></div>
-          </div>
+        <div className="hidden lg:block">
+          <SettingsMenu />
         </div>
 
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>

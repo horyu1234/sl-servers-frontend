@@ -13,7 +13,7 @@ export function MapPopup({ server }) {
           target="_blank"
           rel="noreferrer"
           href={`/servers/${server.serverId}`}
-          className="text-xs text-primary hover:underline"
+          className="block text-xs text-primary hover:underline"
         >
           {t('all-server-map.server-info-btn')}
         </a>

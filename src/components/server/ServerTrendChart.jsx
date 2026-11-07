@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { format } from 'date-fns';
 import { parseFluxToSeries } from '../../lib/parsers/flux';
+import { CHART_AXIS_PROPS, CHART_GRID_PROPS, CHART_LEGEND_PROPS, CHART_MARGIN, CHART_TOOLTIP_PROPS } from '../shared/chartTheme';
 
 const PALETTE = ['#22c55e', '#3b82f6', '#f59e0b', '#ef4444', '#a855f7', '#06b6d4'];
 
@@ -29,7 +30,7 @@ export function ServerTrendChart({ fluxResponse }) {
   return (
     <div className="h-[300px] min-w-0 w-full sm:h-[340px]">
       <ResponsiveContainer>
-        <Chart data={data} margin={{ top: 10, right: 16, bottom: 0, left: 0 }}>
+        <Chart data={data} margin={CHART_MARGIN}>
           {singleVersion && (
             <defs>
               {versions.map((v, i) => (
@@ -40,24 +41,22 @@ export function ServerTrendChart({ fluxResponse }) {
               ))}
             </defs>
           )}
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+          <CartesianGrid {...CHART_GRID_PROPS} />
           <XAxis
             dataKey="time"
             tickFormatter={(v) => format(new Date(v), 'MM-dd HH:mm')}
-            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
-            stroke="hsl(var(--border))"
-            minTickGap={32}
+            {...CHART_AXIS_PROPS}
+            minTickGap={48}
           />
-          <YAxis tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }} stroke="hsl(var(--border))" />
+          <YAxis {...CHART_AXIS_PROPS} width={40} />
           <Tooltip
-            contentStyle={{ background: 'hsl(var(--popover))', border: '1px solid hsl(var(--border))', borderRadius: 6, fontSize: 12 }}
+            {...CHART_TOOLTIP_PROPS}
             labelFormatter={(v) => format(new Date(v), 'yyyy-MM-dd HH:mm')}
           />
-          <Legend wrapperStyle={{ fontSize: 11 }} />
+          {!singleVersion && <Legend {...CHART_LEGEND_PROPS} />}
           {versions.map((v, i) => {
             const color = PALETTE[i % PALETTE.length];
             const props = {
-              key: v,
               type: 'monotone',
               dataKey: v,
               name: `v${v}`,
@@ -68,8 +67,8 @@ export function ServerTrendChart({ fluxResponse }) {
               dot: false,
             };
             return singleVersion
-              ? <Series {...props} fill={`url(#fill-${v})`} />
-              : <Series {...props} />;
+              ? <Series key={v} {...props} fill={`url(#fill-${v})`} />
+              : <Series key={v} {...props} />;
           })}
         </Chart>
       </ResponsiveContainer>

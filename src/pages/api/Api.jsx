@@ -1,42 +1,41 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert';
 import {Button} from '@/components/ui/button';
 import {Info as InfoIcon, AlertTriangle, ExternalLink} from 'lucide-react';
 import SwaggerUI from 'swagger-ui-react';
+import {PageHeader} from '../../components/shared/PageHeader';
+import {useDocumentTitle} from '../../lib/hooks/useDocumentTitle';
 
 import 'swagger-ui-react/swagger-ui.css';
 import './api.css';
 
 export default function Api() {
     const {t} = useTranslation();
+    useDocumentTitle('API');
     const hostname = window.location.hostname;
     const isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
 
     return (
-        <div className="px-3 py-3 sm:px-4 sm:py-4">
-            <Card className="min-w-0">
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">API</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <Alert className="border-red-500/50 bg-red-50/80 text-red-900 dark:border-red-400/40 dark:bg-red-950/30 dark:text-red-100 [&>svg]:text-red-600 dark:[&>svg]:text-red-300">
+        <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
+            <PageHeader className="mb-4" title="API"/>
+            <div className="min-w-0 space-y-3">
+                    <Alert className="border-destructive/40 bg-destructive/10 [&>svg]:text-destructive">
                         <AlertTriangle className="h-4 w-4"/>
                         <AlertTitle>{t('api.host-warning-title')}</AlertTitle>
                         <AlertDescription className="leading-relaxed">
                             {t('api.host-warning-before')}
-                            <code className="mx-1 px-1 py-0.5 rounded bg-red-100 text-red-950 text-xs dark:bg-red-900/60 dark:text-red-50">
+                            <code className="mx-1 rounded bg-muted px-1 py-0.5 text-xs text-foreground">
                                 api.scplist.kr
                             </code>
                             {t('api.host-warning-middle')}
-                            <code className="mx-1 px-1 py-0.5 rounded bg-red-100 text-red-950 text-xs dark:bg-red-900/60 dark:text-red-50">
+                            <code className="mx-1 rounded bg-muted px-1 py-0.5 text-xs text-foreground">
                                 backend.scplist.kr
                             </code>
                             {t('api.host-warning-after')}
                         </AlertDescription>
                     </Alert>
-                    <Alert className="border-amber-500/50 bg-amber-50/50 text-amber-800 dark:border-amber-400/40 dark:bg-amber-950/20 dark:text-amber-200 [&>svg]:text-amber-600 dark:[&>svg]:text-amber-300">
+                    <Alert className="border-warning/40 bg-warning/10 [&>svg]:text-warning">
                         <AlertTriangle className="h-4 w-4"/>
                         <AlertDescription>
                             {t('api.undocumented-warning')}
@@ -45,11 +44,11 @@ export default function Api() {
                     <Alert>
                         <InfoIcon className="h-4 w-4"/>
                         <AlertDescription>
-                            Live OpenAPI documentation served from
+                            {t('api.live-docs-before')}
                             <code className="mx-1 px-1 py-0.5 rounded bg-muted text-foreground/90 text-xs">
                                 api.scplist.kr/openapi.json
                             </code>
-                            — try requests directly from the page.
+                            {t('api.live-docs-after')}
                         </AlertDescription>
                     </Alert>
                     {isLocalHost ? (
@@ -69,12 +68,11 @@ export default function Api() {
                             </div>
                         </div>
                     ) : (
-                        <div className="api-swagger-host overflow-x-auto rounded-lg bg-white">
+                        <div className="api-swagger-host overflow-x-auto rounded-lg">
                             <SwaggerUI url="https://api.scplist.kr/openapi.json"/>
                         </div>
                     )}
-                </CardContent>
-            </Card>
+            </div>
         </div>
     );
 }

@@ -30,7 +30,7 @@ function TriStateField({ name, title, value, onChange, t }) {
   return (
     <div className="space-y-2">
       <Label className="text-xs uppercase tracking-wider text-muted-foreground">{title}</Label>
-      <RadioGroup value={value} onValueChange={onChange} className="flex flex-wrap gap-x-4 gap-y-1.5">
+      <RadioGroup value={value} onValueChange={onChange} className="flex flex-wrap gap-x-3 gap-y-1.5">
         {TRISTATE.map((opt) => {
           const id = `${baseId}-${opt.value}`;
           return (

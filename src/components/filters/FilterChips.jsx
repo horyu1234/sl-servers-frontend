@@ -6,13 +6,14 @@ import { DEFAULT_FILTER, SORT_OPTIONS } from './filterSchema';
 import getCountryName from '../../i18n/i18n-countries';
 
 function Chip({ children, onClear }) {
+  const { t } = useTranslation();
   return (
     <Badge variant="outline" className="max-w-full gap-1 pl-2 pr-1 py-0.5 text-xs font-normal">
       <span className="min-w-0 truncate">{children}</span>
       <button
         type="button"
         onClick={onClear}
-        aria-label="Clear filter"
+        aria-label={t('filter-option.clear-filter')}
         className="rounded-full hover:bg-muted p-0.5"
       >
         <X className="h-3 w-3" />
@@ -25,6 +26,9 @@ export function FilterChips({ value, onChange }) {
   const { t } = useTranslation();
   const chips = [];
   const set = (patch) => onChange({ ...value, ...patch });
+  const triStateLabel = (leaf, state) => (
+    `${t(`filter-option.yes-no-filter.${leaf}`)}: ${t(`filter-option.yes-no-filter.${state === 'true' ? 'yes' : 'no'}`)}`
+  );
 
   if (value.sort !== DEFAULT_FILTER.sort) {
     const sortOption = SORT_OPTIONS.find((opt) => opt.value === value.sort);
@@ -46,9 +50,9 @@ export function FilterChips({ value, onChange }) {
   }
   if (value.hideEmptyServer) chips.push(<Chip key="he" onClear={() => set({ hideEmptyServer: false })}>{t('filter-option.hide-empty')}</Chip>);
   if (value.hideFullServer)  chips.push(<Chip key="hf" onClear={() => set({ hideFullServer: false })}>{t('filter-option.hide-full')}</Chip>);
-  if (value.friendlyFire !== 'null') chips.push(<Chip key="ff" onClear={() => set({ friendlyFire: 'null' })}>FF: {value.friendlyFire === 'true' ? 'yes' : 'no'}</Chip>);
-  if (value.whitelist    !== 'null') chips.push(<Chip key="wl" onClear={() => set({ whitelist:    'null' })}>WL: {value.whitelist    === 'true' ? 'yes' : 'no'}</Chip>);
-  if (value.modded       !== 'null') chips.push(<Chip key="md" onClear={() => set({ modded:       'null' })}>Modded: {value.modded === 'true' ? 'yes' : 'no'}</Chip>);
+  if (value.friendlyFire !== 'null') chips.push(<Chip key="ff" onClear={() => set({ friendlyFire: 'null' })}>{triStateLabel('friendly-fire', value.friendlyFire)}</Chip>);
+  if (value.whitelist !== 'null') chips.push(<Chip key="wl" onClear={() => set({ whitelist: 'null' })}>{triStateLabel('whitelist', value.whitelist)}</Chip>);
+  if (value.modded !== 'null') chips.push(<Chip key="md" onClear={() => set({ modded: 'null' })}>{triStateLabel('modded', value.modded)}</Chip>);
 
   if (chips.length === 0) return null;
 
@@ -60,7 +64,7 @@ export function FilterChips({ value, onChange }) {
         onClick={() => onChange(DEFAULT_FILTER)}
         className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-2"
       >
-        clear all
+        {t('filter-option.clear-all')}
       </button>
     </div>
   );

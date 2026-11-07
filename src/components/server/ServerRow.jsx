@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
+import { PlayerBar } from './PlayerBar';
+import { SERVER_ROW_GRID } from './serverRowGrid';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
@@ -15,45 +17,44 @@ function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
   const handleClick = onClick ?? (() => navigate(`/servers/${server.serverId}`));
-
-  const barColor = pct >= 95 ? 'bg-[#ef4444]' : pct >= 80 ? 'bg-[#f59e0b]' : 'bg-primary';
+  const countryName = getCountryName(server.isoCode) || server.isoCode;
 
   return (
     <button
       type="button"
       onClick={handleClick}
-      className="grid w-full items-center gap-3 px-4 py-2.5 border-b border-border text-left hover:bg-muted/40 group"
-      style={{ gridTemplateColumns: '1.3fr 150px 150px 170px 130px 60px 18px' }}
+      className={cn(
+        'group grid min-h-[76px] w-full items-center gap-3 border-b border-border/70 px-4 py-2.5 text-left transition-colors',
+        'hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring',
+        SERVER_ROW_GRID
+      )}
     >
       <div className="min-w-0">
-        <div className="truncate font-medium text-foreground">
+        {/* Names can hold many <br/> lines, so clamp them to keep rows even. */}
+        <div className="line-clamp-2 text-sm font-medium leading-5 text-foreground">
           {server.info
             ? <SafeHtml html={server.info} />
             : <span className="font-mono">{server.ip}:{server.port}</span>}
         </div>
         <ServerMetaStrip server={server} compact={density === 'compact'} />
       </div>
-      <div
-        className="flex items-center gap-1.5 text-[11px] text-muted-foreground min-w-0"
-        title={getCountryName(server.isoCode) || server.isoCode}
-      >
+      <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground" title={countryName}>
         <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm shrink-0" />
-        <span className="truncate">{getCountryName(server.isoCode) || server.isoCode}</span>
+        <span className="truncate min-[1440px]:hidden">{server.isoCode}</span>
+        <span className="hidden truncate min-[1440px]:inline">{countryName}</span>
       </div>
-      <div className="font-mono text-[11px] text-muted-foreground tabular-nums truncate" title={`${server.ip}:${server.port}`}>
+      <div className="hidden truncate font-mono text-xs tabular-nums text-muted-foreground min-[1440px]:block" title={`${server.ip}:${server.port}`}>
         {server.ip}:{server.port}
       </div>
-      <ServerSparkline data={trend}/>
-      <div className="flex items-center gap-2 text-[11px] text-muted-foreground tabular-nums">
-        <span className="inline-block w-[100px] h-1.5 bg-muted rounded-full overflow-hidden">
-          <span className={cn('block h-full', barColor)} style={{ width: `${pct}%` }} />
-        </span>
-        <span className="text-foreground/80 whitespace-nowrap">{players.current} / {players.capacity}</span>
+      <ServerSparkline data={trend} />
+      <div className="flex min-w-0 items-center gap-2 text-xs tabular-nums">
+        <PlayerBar percent={pct} className="min-w-0 flex-1" />
+        <span className="whitespace-nowrap text-foreground">{players.current} / {players.capacity}</span>
       </div>
-      <div className="text-[11px] text-muted-foreground tabular-nums whitespace-nowrap">
+      <div className="whitespace-nowrap text-xs tabular-nums text-muted-foreground">
         {formatDistance(server.distance, unit)}
       </div>
-      <ChevronRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-muted-foreground"/>
+      <ChevronRight className="h-4 w-4 text-muted-foreground/60 transition-colors group-hover:text-foreground" aria-hidden="true" />
     </button>
   );
 }

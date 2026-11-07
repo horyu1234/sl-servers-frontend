@@ -1,16 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Info as InfoIcon, X } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
+import { ServerCrash } from 'lucide-react';
 import { ServerDetailHeader } from '../../components/server/ServerDetailHeader';
 import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
+import { EmptyState } from '../../components/shared/EmptyState';
 import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { getServerGraphAPI } from '../../lib/api/servers';
+import { plainServerName } from '../../lib/format/serverName';
+import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
 import * as serverInfoActions from '../../modules/serverInfo';
 
 function isNumericId(id) {
@@ -27,12 +31,12 @@ export default function Info() {
 
   const [flux, setFlux] = useState(null);
   const [graphError, setGraphError] = useState(false);
-  const [showDaylightAlert, setShowDaylightAlert] = useState(true);
   // Tracks whether we've kicked off a fetch for the current serverId, so
   // the "server not found" guard doesn't flash on the very first render
   // (Redux serverInfo starts with {fetching:false, data:{}}).
   const [requested, setRequested] = useState(false);
   const inflightRef = useRef(0);
+  useDocumentTitle(plainServerName(server?.info));
 
   useEffect(() => {
     if (!isNumericId(serverId)) return;
@@ -58,64 +62,56 @@ export default function Info() {
 
   if (!isNumericId(serverId) || (requested && !fetching && !error && (!server || Object.keys(server).length === 0))) {
     return (
-      <div className="px-3 py-3 sm:px-4 sm:py-4">
-        <Card>
-          <CardHeader><CardTitle>{t('server-info.title')}</CardTitle></CardHeader>
-          <CardContent>
-            <Alert variant="destructive"><AlertDescription>{t('server-info.not-exist')}</AlertDescription></Alert>
-          </CardContent>
-        </Card>
+      <div className="flex flex-1 items-center justify-center">
+        <EmptyState
+          icon={ServerCrash}
+          title={t('server-info.not-exist')}
+          action={(
+            <Button asChild variant="outline">
+              <Link to="/">{t('navbar.server-list')}</Link>
+            </Button>
+          )}
+        />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="px-3 py-3 sm:px-4 sm:py-4">
-        <Card>
-          <CardHeader><CardTitle>{t('server-info.title')}</CardTitle></CardHeader>
-          <CardContent>
-            <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>
-          </CardContent>
-        </Card>
+      <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
+        <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>
       </div>
     );
   }
 
   if (!server || Object.keys(server).length === 0) {
     return (
-      <div className="px-4 py-4 text-sm text-muted-foreground">{t('server-info.loading') || 'Loading…'}</div>
+      <div className="mx-auto grid w-full max-w-screen-2xl gap-4 px-3 py-4 sm:px-4 sm:py-6 lg:grid-cols-3" role="status" aria-label={t('server-info.loading')}>
+        <div className="space-y-4 lg:col-span-2">
+          <Skeleton className="h-40 w-full rounded-lg" />
+          <Skeleton className="h-96 w-full rounded-lg" />
+        </div>
+        <Skeleton className="h-72 w-full rounded-lg" />
+      </div>
     );
   }
 
   return (
-    <div className="grid min-w-0 gap-4 px-3 py-3 sm:px-4 sm:py-4 lg:grid-cols-3">
+    <div className="mx-auto grid w-full min-w-0 max-w-screen-2xl items-start gap-4 px-3 py-4 sm:px-4 sm:py-6 lg:grid-cols-3">
       <div className="min-w-0 space-y-4 lg:col-span-2">
         <ServerDetailHeader server={server} />
 
         <Card className="min-w-0">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base">{t('server-info.statistics')}</CardTitle>
+          <CardHeader className="p-4 sm:p-5">
+            <CardTitle>{t('server-info.statistics')}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            {showDaylightAlert && (
-              <Alert className="relative pr-14">
-                <InfoIcon className="h-4 w-4" />
-                <AlertDescription>{t('server-info.daylight-saving-time')}</AlertDescription>
-                <Button
-                  variant="ghost" size="icon"
-                  className="absolute top-1/2 right-2.5 -translate-y-1/2 h-7 w-7 !pl-0"
-                  onClick={() => setShowDaylightAlert(false)}
-                  aria-label="Dismiss"
-                ><X className="h-4 w-4" /></Button>
-              </Alert>
-            )}
-
+          <CardContent className="space-y-4 p-4 pt-0 sm:p-5 sm:pt-0">
             <PeriodPicker onUpdate={fetchGraph} />
 
             {graphError && <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>}
             {!graphError && !flux && <div className="text-sm text-muted-foreground">{t('server-info.graph.loading')}</div>}
             {!graphError && flux && <ServerTrendChart fluxResponse={flux} />}
+            <p className="text-xs text-muted-foreground">{t('server-info.daylight-saving-time')}</p>
           </CardContent>
         </Card>
       </div>

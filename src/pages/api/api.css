@@ -1,7 +1,9 @@
-/* SwaggerUI ships a light-mode stylesheet that assumes a white page.
-   Constrain it to its own container so the rest of the app stays dark. */
+/* SwaggerUI only ships a light theme. Inverting the host darkens it to match
+   the app, and rotating the hue back keeps the method colors recognizable. */
 .api-swagger-host {
+  background: #fff;
   color: #303030;
+  filter: invert(0.9) hue-rotate(180deg);
 }
 .api-swagger-host .swagger-ui,
 .api-swagger-host .swagger-ui .opblock-tag,

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parsePlayers, playersPercent } from './players';
+import { parsePlayers, playersBarClass, playersPercent } from './players';
 
 describe('parsePlayers', () => {
   it('parses "22/30" into { current: 22, capacity: 30 }', () => {
@@ -24,5 +24,14 @@ describe('playersPercent', () => {
   });
   it('returns 0 when capacity is 0 (no divide-by-zero)', () => {
     expect(playersPercent({ current: 0, capacity: 0 })).toBe(0);
+  });
+  it('caps at 100 when a server reports more players than slots', () => {
+    expect(playersPercent({ current: 40, capacity: 30 })).toBe(100);
+  });
+});
+
+describe('playersBarClass', () => {
+  it.each([[79, 'bg-primary'], [80, 'bg-warning'], [95, 'bg-destructive']])('maps %i%% to %s', (percent, expected) => {
+    expect(playersBarClass(percent)).toBe(expected);
   });
 });
