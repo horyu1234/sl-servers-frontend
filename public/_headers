@@ -1,0 +1,9 @@
+# frame-src also applies when a frame navigates itself, which the sandbox on the
+# Pastebin embed cannot stop. Every source a frame loads from must be listed:
+#   'self'                   Cloudflare needs /cdn-cgi/challenge-platform/ allowed
+#   pastebin.com             server detail embed; the path keeps it on the embed
+#   app.mine.talk            support widget; moves between its own paths
+#   www.googletagmanager.com Google tag service worker frame, enabled remotely
+# Cloudflare Turnstile would need https://challenges.cloudflare.com added here.
+/*
+  Content-Security-Policy: frame-src 'self' https://pastebin.com/embed_iframe/ https://app.mine.talk https://www.googletagmanager.com/static/service_worker/
