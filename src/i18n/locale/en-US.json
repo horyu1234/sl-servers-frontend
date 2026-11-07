@@ -94,6 +94,12 @@
     },
     "players": "Players",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Pastebin content for this server",
+      "loading": "Loading Pastebin content...",
+      "open": "Open on Pastebin",
+      "notice": "Shown through Pastebin's official embed, because Pastebin's Terms of Service don't allow this site to render the content itself. Formatting code may appear as-is, and nothing will appear if the paste has expired or is private."
+    },
     "distance": "Distance",
     "statistics": "Server Statistics",
     "daylight-saving-time": "Times shown on the graph do not observe daylight saving time.",

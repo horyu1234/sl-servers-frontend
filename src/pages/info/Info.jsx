@@ -10,6 +10,7 @@ import { ServerCrash } from 'lucide-react';
 import { ServerDetailHeader } from '../../components/server/ServerDetailHeader';
 import { ServerInsights } from '../../components/server/ServerInsights';
 import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
+import { ServerPastebin } from '../../components/server/ServerPastebin';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
 import { EmptyState } from '../../components/shared/EmptyState';
 import { PeriodPicker } from '../../components/shared/PeriodPicker';
@@ -116,6 +117,8 @@ export default function Info() {
             <p className="text-xs text-muted-foreground">{t('server-info.daylight-saving-time')}</p>
           </CardContent>
         </Card>
+
+        <ServerPastebin pasteKey={server.pastebin} />
       </div>
 
       <ServerMetaPanel server={server} />
