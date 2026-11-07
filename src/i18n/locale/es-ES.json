@@ -1,145 +1,253 @@
 {
   "general": {
-    "language-change": "Idioma cambiado a {{language}}. Algunas veces tienes que refrescar la página.",
-    "not-found": "No se encontró la página que solicitaste.",
-    "server-error": "Se ha producido un error al obtener datos del servidor. Estos problemas suelen ser temporales, así que vuelve a intentarlo dentro de un rato. Si el problema persiste, escribe a support@scplist.kr."
+    "language-change": "Idioma cambiado a {{language}}. Recarga la página si algún texto no cambia.",
+    "not-found": "Página no encontrada.",
+    "server-error": "No se pudieron cargar los datos del servidor. Suele ser temporal, así que vuelve a intentarlo en un momento. Si sigue pasando, escribe a support@scplist.kr.",
+    "retry": "Reintentar"
   },
   "api": {
-    "host-warning-title": "Advertencia de host de API",
+    "host-warning-title": "Aviso sobre el host de la API",
     "host-warning-before": "Todas las solicitudes deben enviarse al host",
     "host-warning-middle": ".",
     "host-warning-after": "está reservado para el frontend oficial. Las solicitudes directas a este host pueden provocar el bloqueo de la IP o del ASN.",
-    "undocumented-warning": "Estamos preparando una API oficial más completa. Hasta entonces, utilice únicamente los endpoints documentados a continuación."
+    "undocumented-warning": "Estamos preparando una API oficial más completa. Hasta entonces, usa solo los endpoints documentados a continuación.",
+    "live-docs-before": "La documentación de abajo se carga en directo desde",
+    "live-docs-after": "y puedes probar solicitudes desde esta página."
   },
   "navbar": {
     "server-list": "Lista de servidores",
-    "all-stats": "Estadísticas completas",
-    "all-server-map": "Mapa de todos los servidores",
+    "all-stats": "Estadísticas",
+    "all-server-map": "Mapa de servidores",
     "credit": "Créditos",
     "language": "Idioma:",
-    "unit": "Unidad:"
+    "unit": "Unidad:",
+    "settings": "Ajustes",
+    "open-menu": "Abrir menú",
+    "menu": "Menú",
+    "site-navigation": "Navegación del sitio",
+    "unit-km": "Kilómetros (km)",
+    "unit-mi": "Millas (mi)"
   },
   "select": {
-    "placeholder": "Por favor selecciona un término.",
-    "empty": "Nada seleccionado"
+    "placeholder": "Seleccionar países",
+    "empty": "Sin resultados",
+    "selected-count": "Seleccionados: {{total}}",
+    "remove": "Quitar {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Buscar Servidor",
-      "placeholder": "Introduce los términos de búsqueda"
+      "name": "Buscar servidores",
+      "placeholder": "Nombre del servidor o IP"
     },
     "country": "País",
-    "hide-empty": "Esconder servidores vacios",
-    "hide-full": "Esconder servidores llenos",
+    "hide-empty": "Ocultar servidores vacíos",
+    "hide-full": "Ocultar servidores llenos",
     "refreshing": "Recargando lista...",
-    "filter-options-title": "Opciones de filtro",
+    "filter-options-title": "Filtros",
+    "drawer-description": "Filtrar la lista de servidores",
     "yes-no-filter": {
-      "none": "Incluir Todo",
+      "none": "Todos",
       "yes": "Sí",
       "no": "No",
-      "friendly-fire": "Fuego Amigo",
+      "friendly-fire": "Fuego amigo",
       "whitelist": "Lista blanca",
-      "modded": "Modificado",
+      "modded": "Con mods",
       "order-type": {
         "name": "Ordenar por",
-        "player-desc": "Un número grande de personas",
-        "player-asc": "Un número pequeño de personas",
-        "distance-asc": "Distancia corta",
-        "distance-desc": "Distancia larga"
+        "player-desc": "Más jugadores",
+        "player-asc": "Menos jugadores",
+        "distance-asc": "Más cercanos",
+        "distance-desc": "Más lejanos",
+        "ingame": "Orden del juego"
       }
-    }
+    },
+    "clear-all": "Borrar todo",
+    "clear-filter": "Borrar filtro",
+    "no-results-title": "Ningún servidor coincide con tus filtros",
+    "no-results-description": "Quita algún filtro o busca otra cosa.",
+    "no-servers-title": "No hay servidores en línea ahora mismo"
   },
   "server-stats": {
-    "users-title": "Usuarios",
+    "users-title": "Jugadores",
     "servers-title": "Servidores",
-    "offline-label": "Fuera de línea"
+    "offline-label": "Inactivos"
   },
   "server-list": {
-    "loading": "Cargando datos del servidor...",
+    "loading": "Cargando servidores...",
     "tech": {
       "yes": "Sí",
       "no": "No",
       "game-version": "Versión del juego",
-      "friendly-fire": "Fuego Amigo",
+      "friendly-fire": "Fuego amigo",
       "whitelist": "Lista blanca"
+    },
+    "columns": {
+      "server": "Servidor",
+      "address": "Dirección"
+    },
+    "view-list": "Vista de lista",
+    "view-grid": "Vista de cuadrícula",
+    "sparkline": {
+      "peak": "máx",
+      "avg": "med",
+      "new": "nuevo"
     }
   },
   "server-info": {
     "title": "Información del servidor",
-    "not-exist": "El servidor no existe.",
+    "not-exist": "Servidor no encontrado.",
     "loading": "Cargando información del servidor...",
     "status": {
       "online": "En línea",
-      "offline": "Desconectado"
+      "offline": "Fuera de línea"
     },
     "players": "Jugadores",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Contenido de Pastebin de este servidor",
+      "loading": "Cargando contenido de Pastebin...",
+      "open": "Abrir en Pastebin",
+      "notice": "Se muestra con el visor oficial de Pastebin porque sus condiciones no permiten que este sitio muestre el contenido directamente. Las etiquetas de formato pueden verse como texto plano, y los pastes caducados o privados no aparecen."
+    },
     "distance": "Distancia",
     "statistics": "Estadísticas del servidor",
-    "daylight-saving-time": "El tiempo en el gráfico no es alterado por el horario de verano.",
+    "daylight-saving-time": "Las horas del gráfico no se ajustan al horario de verano.",
     "graph": {
-      "loading": "Cargando datos del servidor...",
+      "loading": "Cargando datos...",
       "options": {
-        "data-range": "Periodo de datos",
-        "start-time": "Tiempo de inicio",
-        "stop-time": "Tiempo de parada",
-        "data-resolution": "Resolución de datos.",
+        "data-range": "Periodo",
+        "start-time": "Hora de inicio",
+        "stop-time": "Hora de fin",
+        "data-resolution": "Intervalo de datos",
         "graph-update-btn": "Actualizar gráfico",
+        "time": "Hora",
+        "invalid-range": "La hora de inicio debe ser anterior a la de fin.",
         "period": {
           "custom": "Personalizado",
-          "1hour": "1 Hora",
-          "8hour": "8 Horas",
-          "1day": "1 Día",
-          "2day": "2 Días",
-          "1week": "1 Semana",
-          "1month": "1 Mes",
-          "3month": "3 Meses",
-          "1year": "1 Año",
-          "4year": "4 Años"
+          "1hour": "1 hora",
+          "8hour": "8 horas",
+          "1day": "1 día",
+          "2day": "2 días",
+          "1week": "1 semana",
+          "1month": "1 mes",
+          "3month": "3 meses",
+          "1year": "1 año",
+          "4year": "4 años"
         },
         "resolution": {
-          "1m": "1 Minuto",
-          "5m": "5 Minutos",
-          "1h": "1 Hora",
-          "1d": "1 Día"
+          "1m": "1 minuto",
+          "5m": "5 minutos",
+          "1h": "1 hora",
+          "1d": "1 día"
         }
       }
-    }
+    },
+    "copy-address": "Copiar dirección",
+    "address-copied": "Copiada",
+    "tech": "Mods y plugins"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory es un juego publicado por Northwood Studios™, este sitio no esta afiliado con Northwood Studios™.<br/>Todas las marcas comerciales y marcas comerciales registradas son propiedad de sus respectivos dueños."
+    "notice": "SCP: Secret Laboratory es un juego publicado por Northwood Studios™. Este sitio no está afiliado a Northwood Studios™.<br/>Todas las marcas comerciales y marcas registradas son propiedad de sus respectivos dueños.",
+    "description": "Encuentra servidores de SCP: SL con filtros, tendencias de jugadores y estadísticas.",
+    "links": "Enlaces",
+    "translation-title": "Traducciones",
+    "translation-body": "Ayúdanos a traducir este sitio a tu idioma.",
+    "contribute": "Colabora en GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Número total de usuarios en el servidor",
+      "title": "Jugadores en todos los servidores",
       "select-compare-country": {
-        "name": "Seleccionar País"
+        "name": "Selecciona un país para comparar"
       },
       "show-all": {
-        "name": "Mostrar datos de todos los países"
+        "name": "Mostrar todos los países"
       },
       "graph": {
-        "all-country": "Todos los Países",
-        "empty-country": "No hay datos para consultar."
+        "all-country": "Todos los países",
+        "empty-country": "No hay datos disponibles."
       }
     },
     "mod-loader": {
-      "title": "Estadísticas del cargador de mods",
+      "title": "Estadísticas de cargadores de mods",
       "back": "Atrás",
-      "versions-title": "{{name}} — versiones",
-      "drill-hint": "Haz clic en un sector para ver el desglose por versión",
-      "drill-back-hint": "Haz clic en Atrás para volver al desglose de cargadores"
+      "versions-title": "Versiones de {{name}}",
+      "drill-hint": "Haz clic en un sector para ver sus versiones",
+      "drill-back-hint": "Haz clic en Atrás para ver todos los cargadores"
     }
   },
   "all-server-map": {
-    "title": "Mapa de todos los servidores",
-    "server-info-btn": "Haz click aquí para ver la información del servidor"
+    "title": "Mapa de servidores",
+    "server-info-btn": "Ver información del servidor",
+    "location-count": "Ubicaciones: {{total}}"
   },
   "consent": {
     "revoke": {
       "title": "El seguimiento se detendrá tras la próxima recarga de la página",
       "description": "Los scripts de analítica ya cargados en esta pestaña seguirán ejecutándose hasta que recargues. Recarga ahora para aplicar tu elección de inmediato.",
       "reload": "Recargar"
+    }
+  },
+  "credit": {
+    "licenses-title": "Licencias de terceros",
+    "search-placeholder": "Buscar licencias o paquetes",
+    "no-match": "Ningún paquete coincide con la búsqueda.",
+    "contributors-title": "Traductores"
+  },
+  "insights": {
+    "loading": "Cargando estadísticas a largo plazo...",
+    "players": "{{players}} jugadores",
+    "history": {
+      "age": "Tiempo activo",
+      "age-years": "{{years}}a {{months}}m",
+      "age-months": "{{months}} meses",
+      "age-days": "{{days}} d",
+      "age-first-seen": "Visto por primera vez: {{date}}",
+      "age-since-start": "Desde antes de nuestros registros ({{date}})",
+      "peak": "Récord histórico",
+      "versions": "Actualizaciones del juego",
+      "versions-value": "Versiones: {{versions}}",
+      "seniority": "Puesto por antigüedad",
+      "seniority-value": "El {{percent}}% más antiguo",
+      "seniority-note": "Entre los servidores en línea ahora"
+    },
+    "heatmap": {
+      "title": "¿Cuándo hay más gente?",
+      "description": "Pico habitual por hora en las últimas {{weeks}} semanas, en tu zona horaria ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: normalmente {{players}} en línea",
+      "readout-now": "Ahora ({{time}}): normalmente {{players}} en línea",
+      "readout-empty": "{{time}}: datos insuficientes",
+      "readout-full": "lleno el {{percent}}% del tiempo",
+      "legend-low": "Tranquilo",
+      "legend-high": "Mucha gente ({{players}})",
+      "legend-full": "A menudo lleno ({{capacity}} plazas)",
+      "quiet": "Este servidor ha estado casi vacío las últimas {{weeks}} semanas."
+    },
+    "global": {
+      "title": "Cronología de SCP:SL",
+      "description": "Máximo de jugadores simultáneos en todos los servidores listados desde el {{date}}",
+      "latest": "Último pico diario",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Puesto histórico",
+      "rank-value": "#{{rank}}",
+      "rank-note": "De {{days}} días, por encima del {{percent}}%",
+      "year-ago": "Vs. año pasado",
+      "year-ago-note": "{{date}}: {{players}} jugadores",
+      "today": "Hoy hasta ahora",
+      "today-note": "Recuento en curso",
+      "chart-note": "Cada punto es el día con más jugadores de su semana. Las líneas verticales marcan las grandes actualizaciones. Días sin recopilación en total: {{days}}.",
+      "no-data": "Sin datos",
+      "release-tooltip": "Actualización {{version}}",
+      "records": "Días con más jugadores",
+      "record-near-release": "con la {{version}}",
+      "releases": "En torno a grandes actualizaciones",
+      "release-version": "Versión",
+      "release-date": "Primera vez",
+      "release-before": "14 d antes",
+      "release-after": "14 d después",
+      "release-change": "Cambio",
+      "release-caveat": "Mediana del pico diario en los 14 días antes y después de cada actualización. Las estaciones y las vacaciones también influyen, así que no es solo efecto de la actualización."
     }
   }
 }

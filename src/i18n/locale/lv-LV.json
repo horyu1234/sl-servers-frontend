@@ -1,72 +1,101 @@
 {
   "general": {
-    "language-change": "Valoda ir mainīta uz {{language}}. Dažiem var būt nepieciešams atsvaidzināt.",
-    "not-found": "Pieprasītā lapa netika atrasta.",
-    "server-error": "Radās kļūda, izgūstot datus no servera. Šādas problēmas parasti ir pagaidu, tāpēc lūdzu, mēģiniet vēlreiz pēc brīža. Ja problēma turpinās, lūdzu, rakstiet uz e-pastu support@scplist.kr."
+    "language-change": "Valoda nomainīta: {{language}}. Ja daļa teksta nemainās, atsvaidziniet lapu.",
+    "not-found": "Lapa nav atrasta.",
+    "server-error": "Neizdevās ielādēt datus no servera. Parasti tā ir īslaicīga kļūda, tāpēc pēc brīža mēģiniet vēlreiz. Ja tā atkārtojas, rakstiet uz support@scplist.kr.",
+    "retry": "Mēģināt vēlreiz"
   },
   "api": {
     "host-warning-title": "API resursdatora brīdinājums",
     "host-warning-before": "Visi pieprasījumi ir jāsūta uz resursdatoru",
     "host-warning-middle": ".",
-    "host-warning-after": "ir rezervēts oficiālajam frontendam. Tieši pieprasījumi uz šo resursdatoru var izraisīt IP vai ASN bloķēšanu.",
-    "undocumented-warning": "Mēs gatavojam pilnīgāku oficiālu API. Līdz tā izlaišanai lūdzu izmantojiet tikai zemāk dokumentētos galapunktus."
+    "host-warning-after": "ir rezervēts oficiālajam frontendam. Tiešie pieprasījumi uz šo resursdatoru var izraisīt IP vai ASN bloķēšanu.",
+    "undocumented-warning": "Mēs gatavojam pilnīgāku oficiālu API. Līdz tā izlaišanai, lūdzu, izmantojiet tikai tālāk dokumentētos galapunktus.",
+    "live-docs-before": "Tālāk redzamā dokumentācija tiek ielādēta tieši no",
+    "live-docs-after": "un šajā lapā var izmēģināt pieprasījumus."
   },
   "navbar": {
     "server-list": "Serveru saraksts",
-    "all-stats": "Pilns statistika",
-    "all-server-map": "Visu serveru karte",
+    "all-stats": "Statistika",
+    "all-server-map": "Serveru karte",
     "credit": "Veidotāji",
     "language": "Valoda:",
-    "unit": "Mērvienība:"
+    "unit": "Mērvienība:",
+    "settings": "Iestatījumi",
+    "open-menu": "Atvērt izvēlni",
+    "menu": "Izvēlne",
+    "site-navigation": "Vietnes navigācija",
+    "unit-km": "Kilometri (km)",
+    "unit-mi": "Jūdzes (mi)"
   },
   "select": {
-    "placeholder": "Lūdzu, izvēlieties vienumu",
-    "empty": "Nav nekas izvēlēts"
+    "placeholder": "Izvēlieties valstis",
+    "empty": "Nekas nav atrasts",
+    "selected-count": "Izvēlēts: {{total}}",
+    "remove": "Noņemt {{name}}"
   },
   "filter-option": {
     "server-search": {
       "name": "Servera meklēšana",
-      "placeholder": "Ievadiet meklēšanas terminus"
+      "placeholder": "Servera nosaukums vai IP"
     },
     "country": "Valsts",
     "hide-empty": "Paslēpt tukšos serverus",
     "hide-full": "Paslēpt pilnos serverus",
     "refreshing": "Saraksta atsvaidzināšana...",
-    "filter-options-title": "Filtra opcijas",
+    "filter-options-title": "Filtri",
+    "drawer-description": "Filtrēt serveru sarakstu",
     "yes-no-filter": {
-      "none": "Iekļaut visus",
+      "none": "Visi",
       "yes": "Jā",
       "no": "Nē",
-      "friendly-fire": "Draudzīgs uguns",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Baltais saraksts",
-      "modded": "Modded",
+      "modded": "Modificēts",
       "order-type": {
-        "name": "Kārta",
-        "player-desc": "Lielā daudzuma cilvēku",
-        "player-asc": "Mazs cilvēku skaits",
-        "distance-asc": "Tuva attāluma",
-        "distance-desc": "Tāla attāluma"
+        "name": "Kārtot pēc",
+        "player-desc": "Visvairāk spēlētāju",
+        "player-asc": "Vismazāk spēlētāju",
+        "distance-asc": "Tuvākie vispirms",
+        "distance-desc": "Tālākie vispirms",
+        "ingame": "Kā spēlē"
       }
-    }
+    },
+    "clear-all": "Notīrīt visu",
+    "clear-filter": "Notīrīt filtru",
+    "no-results-title": "Neviens serveris neatbilst filtriem",
+    "no-results-description": "Mēģiniet noņemt filtru vai meklēt kaut ko citu.",
+    "no-servers-title": "Pašlaik neviens serveris nav tiešsaistē"
   },
   "server-stats": {
-    "users-title": "Lietotāji",
+    "users-title": "Spēlētāji",
     "servers-title": "Serveri",
-    "offline-label": "Atvienots"
+    "offline-label": "Bezsaistē"
   },
   "server-list": {
-    "loading": "Datu ielāde no servera...",
+    "loading": "Ielādē serverus...",
     "tech": {
       "yes": "Jā",
       "no": "Nē",
       "game-version": "Spēles versija",
-      "friendly-fire": "Draudzīgs uguns",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Baltais saraksts"
+    },
+    "columns": {
+      "server": "Serveris",
+      "address": "Adrese"
+    },
+    "view-list": "Saraksta skats",
+    "view-grid": "Režģa skats",
+    "sparkline": {
+      "peak": "maks",
+      "avg": "vid",
+      "new": "jauns"
     }
   },
   "server-info": {
     "title": "Servera informācija",
-    "not-exist": "Serveris neeksistē.",
+    "not-exist": "Serveris nav atrasts.",
     "loading": "Ielādē servera informāciju...",
     "status": {
       "online": "Tiešsaistē",
@@ -74,17 +103,24 @@
     },
     "players": "Spēlētāji",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Šī servera Pastebin saturs",
+      "loading": "Ielādē Pastebin saturu...",
+      "open": "Atvērt vietnē Pastebin"
+    },
     "distance": "Attālums",
     "statistics": "Servera statistika",
-    "daylight-saving-time": "Grafikā norādītais laiks nav ietekmēts no vasaras laika izmaiņām.",
+    "daylight-saving-time": "Grafika laiks netiek pielāgots vasaras laikam.",
     "graph": {
-      "loading": "Datu ielāde no servera...",
+      "loading": "Ielādē datus...",
       "options": {
         "data-range": "Datu periods",
         "start-time": "Sākuma laiks",
         "stop-time": "Beigu laiks",
-        "data-resolution": "Datu izšķirtspēja",
-        "graph-update-btn": "Atjaunot grafiku",
+        "data-resolution": "Datu intervāls",
+        "graph-update-btn": "Atjaunināt grafiku",
+        "time": "Laiks",
+        "invalid-range": "Sākuma laikam jābūt pirms beigu laika.",
         "period": {
           "custom": "Pielāgots",
           "1hour": "1 stunda",
@@ -104,36 +140,45 @@
           "1d": "1 diena"
         }
       }
-    }
+    },
+    "copy-address": "Kopēt adresi",
+    "address-copied": "Nokopēts",
+    "tech": "Modifikācijas un spraudņi"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory ir spēle, ko izstrādājusi Northwood Studios™, šī vietne nav saistīta ar Northwood Studios™.<br/>Visas preču zīmes un reģistrētās preču zīmes pieder to attiecīgajiem īpašniekiem."
+    "notice": "SCP: Secret Laboratory ir spēle, ko izdevusi Northwood Studios™. Šī vietne nav saistīta ar Northwood Studios™.<br/>Visas preču zīmes un reģistrētās preču zīmes pieder to attiecīgajiem īpašniekiem.",
+    "description": "Atrodiet SCP: SL serverus ar filtriem, spēlētāju tendencēm un statistiku.",
+    "links": "Saites",
+    "translation-title": "Tulkojumi",
+    "translation-body": "Palīdziet pārtulkot šo vietni savā valodā.",
+    "contribute": "Iesaistīties GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Kopējais servera lietotāju skaits",
+      "title": "Spēlētāji visos serveros",
       "select-compare-country": {
-        "name": "Izvēlieties valsti"
+        "name": "Izvēlieties valsti salīdzināšanai"
       },
       "show-all": {
-        "name": "Parādīt visu valstu datus"
+        "name": "Rādīt visas valstis"
       },
       "graph": {
         "all-country": "Visas valstis",
-        "empty-country": "Nav datu, ko vaicāt."
+        "empty-country": "Nav datu."
       }
     },
     "mod-loader": {
-      "title": "Moduļu ielādētāja statistika",
+      "title": "Modu ielādētāju statistika",
       "back": "Atpakaļ",
-      "versions-title": "{{name}} — versijas",
-      "drill-hint": "Noklikšķiniet uz sektora, lai redzētu versiju sadalījumu",
-      "drill-back-hint": "Noklikšķiniet uz Atpakaļ, lai atgrieztos pie ielādētāju sadalījuma"
+      "versions-title": "{{name}} versijas",
+      "drill-hint": "Noklikšķiniet uz sektora, lai redzētu tā versijas",
+      "drill-back-hint": "Noklikšķiniet uz Atpakaļ, lai redzētu visus ielādētājus"
     }
   },
   "all-server-map": {
-    "title": "Visu serveru karte",
-    "server-info-btn": "Noklikšķiniet, lai pārbaudītu servera informāciju"
+    "title": "Serveru karte",
+    "server-info-btn": "Skatīt servera informāciju",
+    "location-count": "Vietas: {{total}}"
   },
   "consent": {
     "revoke": {
@@ -141,5 +186,11 @@
       "description": "Šajā cilnē jau ielādētie analītikas skripti turpinās darboties, līdz lapa tiks pārlādēta. Pārlādējiet tagad, lai jūsu izvēle stātos spēkā nekavējoties.",
       "reload": "Pārlādēt"
     }
+  },
+  "credit": {
+    "licenses-title": "Trešo pušu licences",
+    "search-placeholder": "Meklēt licences vai pakotnes",
+    "no-match": "Neviena pakotne neatbilst meklējumam.",
+    "contributors-title": "Tulkotāji"
   }
 }

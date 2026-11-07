@@ -1,40 +1,52 @@
 {
   "general": {
-    "language-change": "语言已更至{{language}}矣。或需刷新以观之。",
+    "language-change": "语言已更至 {{language}} 矣。若有文字未更，请刷新之。",
     "not-found": "君所求之页面，未之能觅。",
-    "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请发邮件至support@scplist.kr。"
+    "server-error": "自服务器取数据时，忽生错误。此等问题，多属暂态，故请少待再试。若问题仍旧，烦请发邮件至support@scplist.kr。",
+    "retry": "再试"
   },
   "api": {
-    "host-warning-title": "官徑主機之警",
-    "host-warning-before": "凡請求必發於",
-    "host-warning-middle": "主機。",
-    "host-warning-after": "乃官網前端專用之主機。若直請此主機，或致 IP 或 ASN 被禁。",
-    "undocumented-warning": "更完之官徑將至。未發之前，唯用下所載者，餘勿用。"
+    "host-warning-title": "API 主机之警",
+    "host-warning-before": "凡请求必发于",
+    "host-warning-middle": "主机。",
+    "host-warning-after": "乃官网前端专用之主机。若直请此主机，或致 IP 或 ASN 被禁。",
+    "undocumented-warning": "更完备之官方 API 将至。未发之前，唯用下文所载之端点，余勿用。",
+    "live-docs-before": "下文实时载自",
+    "live-docs-after": "且可于此页试发请求。"
   },
   "navbar": {
     "server-list": "服务器名录",
-    "all-stats": "服务器名录",
+    "all-stats": "诸数之计",
     "all-server-map": "诸服务器之图",
     "credit": "诸贤之名",
     "language": "语言：",
-    "unit": "度量："
+    "unit": "度量：",
+    "settings": "设定",
+    "open-menu": "展目录",
+    "menu": "目录",
+    "site-navigation": "本站指南",
+    "unit-km": "公里 (km)",
+    "unit-mi": "英里 (mi)"
   },
   "select": {
-    "placeholder": "请择一域",
-    "empty": "未有所选"
+    "placeholder": "请择诸国",
+    "empty": "未有所得",
+    "selected-count": "已择{{total}}国",
+    "remove": "除去{{name}}"
   },
   "filter-option": {
     "server-search": {
       "name": "搜索服务器",
-      "placeholder": "输入欲索之词"
+      "placeholder": "服之名或 IP"
     },
-    "country": "國",
+    "country": "国",
     "hide-empty": "隐匿空服",
     "hide-full": "隐匿满服",
     "refreshing": "正在重载名录...",
     "filter-options-title": "筛选之法",
+    "drawer-description": "筛选服务器名录",
     "yes-no-filter": {
-      "none": "包含一切",
+      "none": "皆可",
       "yes": "允",
       "no": "拒",
       "friendly-fire": "自相残杀",
@@ -45,46 +57,70 @@
         "player-desc": "人山人海",
         "player-asc": "人迹罕至",
         "distance-asc": "近在咫尺",
-        "distance-desc": "跋山涉水"
+        "distance-desc": "跋山涉水",
+        "ingame": "戏中之序"
       }
-    }
+    },
+    "clear-all": "尽除",
+    "clear-filter": "除筛选",
+    "no-results-title": "未有合君所筛之服",
+    "no-results-description": "或减筛选，或易他词以索之。",
+    "no-servers-title": "今无在线之服"
   },
   "server-stats": {
-    "users-title": "诸用者",
+    "users-title": "诸游者",
     "servers-title": "诸服务器",
-    "offline-label": "不可视"
+    "offline-label": "离线"
   },
   "server-list": {
-    "loading": "载入服之信息...",
+    "loading": "方载诸服...",
     "tech": {
       "yes": "允",
       "no": "拒",
       "game-version": "戏之版本",
       "friendly-fire": "自相残杀",
       "whitelist": "非请莫入"
+    },
+    "columns": {
+      "server": "服",
+      "address": "址"
+    },
+    "view-list": "以列观之",
+    "view-grid": "以格观之",
+    "sparkline": {
+      "peak": "至高",
+      "avg": "平均",
+      "new": "新"
     }
   },
   "server-info": {
     "title": "服之信息",
-    "not-exist": "未寻所求之物.",
+    "not-exist": "未寻得此服。",
     "loading": "方载服务器信息...",
     "status": {
-      "online": "可视",
-      "offline": "不可视"
+      "online": "在线",
+      "offline": "离线"
     },
     "players": "游者",
     "pastebin": "Pastebin",
-    "distance": "间隔",
+    "pastebin-embed": {
+      "frame-title": "此服之 Pastebin 内容",
+      "loading": "方载 Pastebin 内容...",
+      "open": "于 Pastebin 启之"
+    },
+    "distance": "相距",
     "statistics": "服务器之数据",
-    "daylight-saving-time": "图表之时不受夏令时影响.",
+    "daylight-saving-time": "图表之时，不随夏令时而易。",
     "graph": {
-      "loading": "载入服之数据...",
+      "loading": "方载数据...",
       "options": {
-        "data-range": "数之隔",
+        "data-range": "所观时段",
         "start-time": "起始之时",
         "stop-time": "终止之时",
-        "data-resolution": "数之频率",
+        "data-resolution": "数之隔",
         "graph-update-btn": "刷新以观之",
+        "time": "时",
+        "invalid-range": "起始之时须先于终止之时。",
         "period": {
           "custom": "自行定之",
           "1hour": "一时",
@@ -104,36 +140,45 @@
           "1d": "一日"
         }
       }
-    }
+    },
+    "copy-address": "录其址",
+    "address-copied": "已录",
+    "tech": "所用模组及插件"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory 乃 Northwood Studios™ 所发行之游戏, 本站非 Northwood Studios™ 之附属. <br/>一切商标及注册商标均为各拥有者之财产。"
+    "notice": "SCP: Secret Laboratory 乃 Northwood Studios™ 所发行之游戏，本站非 Northwood Studios™ 之附属。<br/>一切商标及注册商标均为各拥有者之财产。",
+    "description": "以筛选、人数之势及统计，寻 SCP: SL 之服。",
+    "links": "诸链接",
+    "translation-title": "译事",
+    "translation-body": "愿君助译此站为乡音。",
+    "contribute": "于 GitHub 共襄盛举"
   },
   "all-stats": {
     "users": {
-      "title": "服务器用户之和",
+      "title": "诸服游者之和",
       "select-compare-country": {
-        "name": "以国筛之"
+        "name": "择国以较之"
       },
       "show-all": {
         "name": "示各国之数据"
       },
       "graph": {
-        "all-country": "尽数",
-        "empty-country": "无处可寻."
+        "all-country": "诸国",
+        "empty-country": "无据可查。"
       }
     },
     "mod-loader": {
       "title": "框架之计",
       "back": "返之",
-      "versions-title": "{{name}} — 版本之分",
+      "versions-title": "{{name}} 版本之分",
       "drill-hint": "击其一片以观版本之分",
       "drill-back-hint": "击“返之”以归框架之分"
     }
   },
   "all-server-map": {
     "title": "诸服务器之图",
-    "server-info-btn": "击此以示服之信息"
+    "server-info-btn": "观服之信息",
+    "location-count": "{{total}}处"
   },
   "consent": {
     "revoke": {
@@ -141,5 +186,11 @@
       "description": "此页所已载之数据脚本，犹运行不息，须待重载方休。今即重载，则君之意立见于行。",
       "reload": "重载"
     }
+  },
+  "credit": {
+    "licenses-title": "第三方许可",
+    "search-placeholder": "索许可或软件包",
+    "no-match": "未有合此索之包。",
+    "contributors-title": "诸译者"
   }
 }

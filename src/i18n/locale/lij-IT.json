@@ -20,8 +20,7 @@
     "unit": "Unitæ:"
   },
   "select": {
-    "placeholder": "Pe cortexîa, indicâ quarcösa",
-    "empty": "No avéi indicâ zóbbo!"
+    "placeholder": "Pe cortexîa, indicâ quarcösa"
   },
   "filter-option": {
     "server-search": {
@@ -65,8 +64,8 @@
     }
   },
   "server-info": {
-    "title": "informaçióni do Sèrver",
-    "not-exist": "O sèerver no exìste",
+    "title": "Informaçióni do Sèrver",
+    "not-exist": "O sèrver no exìste",
     "loading": "Caregamento informaçioin do server...",
     "status": {
       "online": "Conésso",
@@ -105,9 +104,6 @@
         }
       }
     }
-  },
-  "footer": {
-    "notice": "SCP: Secret Laboratory êse 'n zêugo prodûto da Northwood Studios™, 'sto scîto d’Internétte no êse afiliòu con Northwood Studios™.<br/>Tùtti i dirìtti sono riservòui a-o creatô do zêugo."
   },
   "all-stats": {
     "users": {

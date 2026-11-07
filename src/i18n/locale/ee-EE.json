@@ -1,67 +1,96 @@
 {
   "general": {
-    "language-change": "Keel on muudetud {{language}}-ks. Mõned võivad vajada värskendamist.",
-    "not-found": "Lehte, mida te taotlesite, ei leitud.",
-    "server-error": "Andmete hankimisel serverist ilmnes viga. Need probleemid on tavaliselt ajutised, seega proovige natukese aja pärast uuesti. Kui probleem püsib, palun kirjutage aadressile support@scplist.kr."
+    "language-change": "Keel on nüüd {{language}}. Kui osa tekstist ei uuene, värskenda lehte.",
+    "not-found": "Lehte ei leitud.",
+    "server-error": "Andmete laadimine serverist ebaõnnestus. See on tavaliselt ajutine, nii et proovi varsti uuesti. Kui viga kordub, kirjuta aadressile support@scplist.kr.",
+    "retry": "Proovi uuesti"
   },
   "api": {
     "host-warning-title": "API hosti hoiatus",
     "host-warning-before": "Kõik päringud tuleb saata hostile",
     "host-warning-middle": ".",
     "host-warning-after": "on reserveeritud ametlikule kasutajaliidesele. Otsesed päringud sellele hostile võivad kaasa tuua IP või ASN-i blokeerimise.",
-    "undocumented-warning": "Valmistame ette põhjalikumat ametlikku API-d. Selle ilmumiseni kasutage palun ainult allpool dokumenteeritud lõpp-punkte."
+    "undocumented-warning": "Valmistame ette põhjalikumat ametlikku API-d. Seni kasuta ainult allpool dokumenteeritud lõpp-punkte.",
+    "live-docs-before": "Allolev dokumentatsioon laaditakse otse aadressilt",
+    "live-docs-after": "ja päringuid saad proovida otse sellel lehel."
   },
   "navbar": {
     "server-list": "Serverite nimekiri",
-    "all-stats": "Täielik statistika",
-    "all-server-map": "Kõikide serverite kaart",
+    "all-stats": "Statistika",
+    "all-server-map": "Serverite kaart",
     "credit": "Tunnustused",
     "language": "Keel:",
-    "unit": "Ühik:"
+    "unit": "Ühik:",
+    "settings": "Seaded",
+    "open-menu": "Ava menüü",
+    "menu": "Menüü",
+    "site-navigation": "Saidi navigeerimine",
+    "unit-km": "Kilomeetrid (km)",
+    "unit-mi": "Miilid (mi)"
   },
   "select": {
-    "placeholder": "Valige üksus",
-    "empty": "Miski pole valitud"
+    "placeholder": "Vali riigid",
+    "empty": "Vasteid pole",
+    "selected-count": "Valitud: {{total}}",
+    "remove": "Eemalda {{name}}"
   },
   "filter-option": {
     "server-search": {
       "name": "Serveri otsing",
-      "placeholder": "Sisestage otsinguterminid"
+      "placeholder": "Serveri nimi või IP"
     },
     "country": "Riik",
     "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
-    "refreshing": "Laadin nimekirja uuesti...",
-    "filter-options-title": "Filtri valikud",
+    "refreshing": "Nimekirja värskendamine...",
+    "filter-options-title": "Filtrid",
+    "drawer-description": "Filtreeri serverite nimekirja",
     "yes-no-filter": {
-      "none": "Kuva kõik",
+      "none": "Kõik",
       "yes": "Jah",
       "no": "Ei",
-      "friendly-fire": "Sõbralik tuli",
-      "whitelist": "Valgedkirjad",
+      "friendly-fire": "Friendly Fire",
+      "whitelist": "Valge nimekiri",
       "modded": "Moditud",
       "order-type": {
         "name": "Sorteeri",
         "player-desc": "Kõige rohkem mängijaid",
         "player-asc": "Kõige vähem mängijaid",
         "distance-asc": "Lähimad eespool",
-        "distance-desc": "Kaugemad eespool"
+        "distance-desc": "Kaugeimad eespool",
+        "ingame": "Nagu mängus"
       }
-    }
+    },
+    "clear-all": "Eemalda kõik",
+    "clear-filter": "Eemalda filter",
+    "no-results-title": "Sinu filtritele ei vasta ükski server",
+    "no-results-description": "Eemalda mõni filter või otsi midagi muud.",
+    "no-servers-title": "Praegu pole ükski server võrgus"
   },
   "server-stats": {
-    "users-title": "Kasutajad",
+    "users-title": "Mängijad",
     "servers-title": "Serverid",
     "offline-label": "Vallas"
   },
   "server-list": {
-    "loading": "Andmete laadimine serverist...",
+    "loading": "Serverite laadimine...",
     "tech": {
       "yes": "Jah",
       "no": "Ei",
       "game-version": "Mängu versioon",
-      "friendly-fire": "Sõbralik tuli",
-      "whitelist": "Valgedkirjad"
+      "friendly-fire": "Friendly Fire",
+      "whitelist": "Valge nimekiri"
+    },
+    "columns": {
+      "server": "Server",
+      "address": "Aadress"
+    },
+    "view-list": "Loendivaade",
+    "view-grid": "Ruudustikuvaade",
+    "sparkline": {
+      "peak": "max",
+      "avg": "kesk",
+      "new": "uus"
     }
   },
   "server-info": {
@@ -74,17 +103,24 @@
     },
     "players": "Mängijad",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Selle serveri Pastebini sisu",
+      "loading": "Pastebini sisu laadimine...",
+      "open": "Ava Pastebinis"
+    },
     "distance": "Kaugus",
     "statistics": "Serveri statistika",
-    "daylight-saving-time": "Graafikul olev aeg ei ole mõjutatud suveajast.",
+    "daylight-saving-time": "Graafiku kellaajad ei arvesta suveajaga.",
     "graph": {
-      "loading": "Andmete laadimine serverist...",
+      "loading": "Andmete laadimine...",
       "options": {
-        "data-range": "Andmeperiood",
+        "data-range": "Ajavahemik",
         "start-time": "Algusaeg",
         "stop-time": "Lõppaeg",
-        "data-resolution": "Andmete lahutusvõimekus",
+        "data-resolution": "Andmeintervall",
         "graph-update-btn": "Uuenda graafikut",
+        "time": "Kellaaeg",
+        "invalid-range": "Algusaeg peab olema enne lõppaega.",
         "period": {
           "custom": "Kohandatud",
           "1hour": "1 tund",
@@ -104,14 +140,22 @@
           "1d": "1 päev"
         }
       }
-    }
+    },
+    "copy-address": "Kopeeri aadress",
+    "address-copied": "Kopeeritud",
+    "tech": "Modid ja pluginad"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory on mäng, mille on välja andnud Northwood Studios™. See veebisait ei ole seotud Northwood Studios™-ga.<br/>Kõik kaubamärgid ja registreeritud kaubamärgid on nende vastavate omanike vara."
+    "notice": "SCP: Secret Laboratory on mäng, mille on välja andnud Northwood Studios™. See veebisait ei ole seotud Northwood Studios™-ga.<br/>Kõik kaubamärgid ja registreeritud kaubamärgid on nende vastavate omanike vara.",
+    "description": "Leia SCP: SL servereid filtrite, mängijate trendide ja statistika abil.",
+    "links": "Lingid",
+    "translation-title": "Tõlked",
+    "translation-body": "Aita seda saiti oma keelde tõlkida.",
+    "contribute": "Panusta GitHubis"
   },
   "all-stats": {
     "users": {
-      "title": "Serverite kasutajate koguarv",
+      "title": "Mängijad kõigis serverites",
       "select-compare-country": {
         "name": "Vali võrdluseks riik"
       },
@@ -124,22 +168,29 @@
       }
     },
     "mod-loader": {
-      "title": "Modi laadur statistika",
+      "title": "Modilaadurite statistika",
       "back": "Tagasi",
-      "versions-title": "{{name}} — versioonid",
-      "drill-hint": "Klõpsa sektorit, et näha versioonide jaotust",
-      "drill-back-hint": "Klõpsa Tagasi, et naasta laaduri jaotuse juurde"
+      "versions-title": "{{name}} versioonid",
+      "drill-hint": "Klõpsa sektorit, et näha selle versioone",
+      "drill-back-hint": "Klõpsa Tagasi, et näha kõiki laadureid"
     }
   },
   "all-server-map": {
-    "title": "Kõikide serverite kaart",
-    "server-info-btn": "Klõpsake serveri teabe kontrollimiseks"
+    "title": "Serverite kaart",
+    "server-info-btn": "Vaata serveri teavet",
+    "location-count": "Asukohti: {{total}}"
   },
   "consent": {
     "revoke": {
       "title": "Jälgimine peatub pärast järgmist lehe taaslaadimist",
-      "description": "Sellele vahekaardile juba laaditud analüütikaskriptid jätkavad töötamist kuni taaslaadimiseni. Laadi leht kohe uuesti, et oma valikut kohe rakendada.",
+      "description": "Sellele vahekaardile juba laaditud analüütikaskriptid jätkavad töötamist kuni taaslaadimiseni. Laadi leht nüüd uuesti, et valik kohe rakenduks.",
       "reload": "Laadi uuesti"
     }
+  },
+  "credit": {
+    "licenses-title": "Kolmandate osapoolte litsentsid",
+    "search-placeholder": "Otsi litsentse või pakette",
+    "no-match": "Ükski pakett ei vasta otsingule.",
+    "contributors-title": "Tõlkijad"
   }
 }

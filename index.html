@@ -11,7 +11,7 @@
     <link rel="icon" href="/favicon.ico"/>
     <meta content="SCP: Secret Laboratory Server List" property="og:title">
     <meta content="https://scplist.kr/" property="og:url">
-    <meta content="SCP: SL server list. easily sorting/filtering options, user trend graphs etc"
+    <meta content="Find SCP: Secret Laboratory servers with filters, player trends and statistics."
           property="og:description">
     <meta content="website" property="og:type">
     <meta content="https://scplist.kr/icon-1024x1024.png" property="og:image">
@@ -20,7 +20,7 @@
     <meta content="horyu1234" name="author">
     <meta content="scp, scpsl, game, scp재단, scpsl, serverlist, server, list, browser, secret, laboratory, sl servers, scpsl server list"
           name="keywords">
-    <meta content="SCP: SL server list. easily sorting/filtering options, user trend graphs etc"
+    <meta content="Find SCP: Secret Laboratory servers with filters, player trends and statistics."
           name="description">
 
     <!-- Favicons
@@ -65,14 +65,14 @@
           {
             id: "necessary",
             name: "Necessary",
-            description: "<p>These cookies are required for the website to function. They store your language preference, your cookie consent choices, and basic session state. The site cannot work properly without them, so they cannot be turned off.</p>",
+            description: "<p>These cookies are required for the site to work. They store your language, your cookie choices and basic session state, so they cannot be turned off.</p>",
             required: true,
             onAccept: __stcmNotify
           },
           {
             id: "functional",
             name: "Functional",
-            description: "<p>These cookies remember your interface preferences — server filters, list or grid view, sort order, and dismissed notices — so the site looks the way you left it on your next visit. They also enable the MineTalk support chat, which shares the pages you visit and basic device details with MineTalk so we can help you. Disabling them does not break the site, but your preferences will be forgotten between sessions and the support chat will not be available.</p>",
+            description: "<p>These cookies remember your server filters, list or grid view, sort order and dismissed notices for your next visit. They also enable the MineTalk support chat, which shares the pages you visit and basic device details with MineTalk so we can help you. The site still works without them, but your preferences will not be saved and the support chat will not be available.</p>",
             required: false,
             onAccept: __stcmNotify,
             onReject: __stcmNotify
@@ -80,7 +80,7 @@
           {
             id: "analytics",
             name: "Analytics",
-            description: "<p>These cookies allow us to measure how the site is used and to detect crashes and performance problems. We use Sentry (errors, session replays of broken pages), Google Analytics (aggregate usage via Google Tag Manager), and Microsoft Clarity (session replays for UX research). We use this only to fix bugs and improve the experience; we do not sell or share this data with advertisers.</p>",
+            description: "<p>These cookies let us measure how the site is used and detect crashes and performance problems. We use Sentry (errors, session replays of broken pages), Google Analytics (aggregate usage via Google Tag Manager) and Microsoft Clarity (session replays for UX research). We use this data only to fix bugs and improve the site. We do not sell it or share it with advertisers.</p>",
             required: false,
             onAccept: __stcmNotify,
             onReject: __stcmNotify
@@ -88,7 +88,7 @@
         ],
         text: {
           banner: {
-            description: "<p>We use cookies to keep your filters and language preference, and — only with your consent — to provide the support chat (MineTalk), measure how the site is used, and detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not run ads or sell your data.</p>",
+            description: "<p>We use cookies to keep your filters and language. With your consent, we also use them for the support chat (MineTalk), to measure how the site is used and to detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not run ads or sell your data.</p>",
             acceptAllButtonText: "Accept all",
             acceptAllButtonAccessibleLabel: "Accept all cookies",
             rejectNonEssentialButtonText: "Reject non-essential",
@@ -97,15 +97,15 @@
             preferencesButtonAccessibleLabel: "Open cookie preferences"
           },
           preferences: {
-            title: "Customize your cookie preferences",
-            description: "<p>Choose which cookies to allow. You can change this any time from the cookie icon in the corner.</p>"
+            title: "Cookie preferences",
+            description: "<p>Choose which cookies to allow. You can change this at any time from the cookie icon in the corner.</p>"
           }
         }
       });
     </script>
 </head>
 <body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
+<noscript>Enable JavaScript to use this site.</noscript>
 <div id="root"></div>
 <script type="module" src="/src/main.jsx"></script>
 </body>

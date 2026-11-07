@@ -56,7 +56,7 @@ export function PeriodPicker({ onUpdate }) {
   const submit = () => {
     if (period === 'custom') {
       if (start.getTime() >= stop.getTime()) {
-        toast.warning('Start time must be before stop time.');
+        toast.warning(t('server-info.graph.options.invalid-range'));
         return;
       }
       onUpdate({ aggregateEvery: resolution, startTime: start.toISOString(), stopTime: stop.toISOString() });
@@ -129,6 +129,7 @@ export function PeriodPicker({ onUpdate }) {
 }
 
 function DateTrigger({ value, onChange }) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const handleSelect = (d) => {
     if (!d) return;
@@ -150,7 +151,7 @@ function DateTrigger({ value, onChange }) {
       <PopoverContent className="w-auto p-0 space-y-2 p-3" align="start">
         <Calendar mode="single" selected={value} defaultMonth={value} onSelect={handleSelect} />
         <div className="flex items-center gap-2 px-1 pb-1">
-          <Label className="text-xs text-muted-foreground">Time</Label>
+          <Label className="text-xs text-muted-foreground">{t('server-info.graph.options.time')}</Label>
           <input
             type="time"
             value={format(value, 'HH:mm')}

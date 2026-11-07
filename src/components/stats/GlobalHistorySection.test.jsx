@@ -76,7 +76,7 @@ describe('GlobalHistorySection', () => {
     render(<GlobalHistorySection />);
 
     await screen.findByText('SCP:SL timeline');
-    expect(screen.queryByText('Vs same weekday last year')).not.toBeInTheDocument();
+    expect(screen.queryByText('Vs last year')).not.toBeInTheDocument();
   });
 
   it('lists records and only ties them to a release when one was close', async () => {

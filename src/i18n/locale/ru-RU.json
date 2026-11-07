@@ -1,15 +1,18 @@
 {
   "general": {
-    "language-change": "Язык изменен на {{language}}. Некоторые языки могут нуждаться в обновлении.",
-    "not-found": "Запрашиваемая страница не найдена.",
-    "server-error": "Произошла ошибка при получении данных с сервера. Такие проблемы обычно носят временный характер, поэтому, пожалуйста, повторите попытку немного позже. Если проблема не устраняется, напишите на support@scplist.kr."
+    "language-change": "Язык изменён на {{language}}. Если часть текста осталась прежней, обновите страницу.",
+    "not-found": "Страница не найдена.",
+    "server-error": "Не удалось загрузить данные с сервера. Обычно это временно, поэтому попробуйте ещё раз чуть позже. Если ошибка повторяется, напишите на support@scplist.kr.",
+    "retry": "Повторить"
   },
   "api": {
     "host-warning-title": "Предупреждение о хосте API",
     "host-warning-before": "Все запросы должны отправляться на хост",
     "host-warning-middle": ".",
     "host-warning-after": "зарезервирован для официального фронтенда. Прямые запросы к этому хосту могут привести к блокировке IP или ASN.",
-    "undocumented-warning": "Мы готовим более полное официальное API. До его выпуска используйте, пожалуйста, только эндпоинты, перечисленные ниже."
+    "undocumented-warning": "Мы готовим более полное официальное API. До его выпуска используйте, пожалуйста, только эндпоинты, перечисленные ниже.",
+    "live-docs-before": "Документация ниже загружается напрямую с",
+    "live-docs-after": "и позволяет пробовать запросы прямо на этой странице."
   },
   "navbar": {
     "server-list": "Список серверов",
@@ -17,63 +20,95 @@
     "all-server-map": "Карта серверов",
     "credit": "Авторы",
     "language": "Язык:",
-    "unit": "Единицы:"
+    "unit": "Единицы:",
+    "settings": "Настройки",
+    "open-menu": "Открыть меню",
+    "menu": "Меню",
+    "site-navigation": "Навигация по сайту",
+    "unit-km": "Километры (km)",
+    "unit-mi": "Мили (mi)"
   },
   "select": {
-    "placeholder": "Выберите элемент",
-    "empty": "Ничего не выбрано"
+    "placeholder": "Выберите страны",
+    "empty": "Ничего не найдено",
+    "selected-count": "Выбрано: {{total}}",
+    "remove": "Убрать {{name}}"
   },
   "filter-option": {
     "server-search": {
       "name": "Поиск сервера",
-      "placeholder": "Введите запрос"
+      "placeholder": "Название сервера или IP"
     },
     "country": "Страна",
     "hide-empty": "Скрыть пустые серверы",
     "hide-full": "Скрыть заполненные серверы",
     "refreshing": "Обновление...",
-    "filter-options-title": "Параметры фильтрации",
+    "filter-options-title": "Фильтры",
+    "drawer-description": "Фильтрация списка серверов",
     "yes-no-filter": {
-      "none": "Не важно",
+      "none": "Все",
       "yes": "Вкл",
       "no": "Выкл",
       "friendly-fire": "Огонь по своим",
       "whitelist": "Белый список",
       "modded": "Модификации",
       "order-type": {
-        "name": "Сортировать по",
-        "player-desc": "Увеличению количества игроков",
-        "player-asc": "Уменьшению количества игроков",
-        "distance-asc": "Увеличении дистанции",
-        "distance-desc": "Уменьшении дистанции"
+        "name": "Сортировка",
+        "player-desc": "Больше всего игроков",
+        "player-asc": "Меньше всего игроков",
+        "distance-asc": "Сначала ближние",
+        "distance-desc": "Сначала дальние",
+        "ingame": "Как в игре"
       }
-    }
+    },
+    "clear-all": "Сбросить всё",
+    "clear-filter": "Сбросить фильтр",
+    "no-results-title": "По вашим фильтрам серверов нет",
+    "no-results-description": "Попробуйте убрать фильтр или изменить запрос.",
+    "no-servers-title": "Сейчас нет серверов онлайн"
   },
   "server-stats": {
     "users-title": "Игроки",
     "servers-title": "Серверы",
-    "offline-label": "Оффлайн"
+    "offline-label": "Офлайн"
   },
   "server-list": {
-    "loading": "Загрузка данных...",
+    "loading": "Загрузка серверов...",
     "tech": {
       "yes": "Вкл",
       "no": "Выкл",
       "game-version": "Версия игры",
       "friendly-fire": "Огонь по своим",
       "whitelist": "Белый список"
+    },
+    "columns": {
+      "server": "Сервер",
+      "address": "Адрес"
+    },
+    "view-list": "Показать списком",
+    "view-grid": "Показать сеткой",
+    "sparkline": {
+      "peak": "пик",
+      "avg": "ср.",
+      "new": "новый"
     }
   },
   "server-info": {
     "title": "Информация о сервере",
-    "not-exist": "Указанный сервер не существует.",
+    "not-exist": "Сервер не найден.",
     "loading": "Загрузка информации о сервере...",
     "status": {
       "online": "Онлайн",
-      "offline": "Оффлайн"
+      "offline": "Офлайн"
     },
     "players": "Игроков",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Содержимое Pastebin для этого сервера",
+      "loading": "Загрузка содержимого Pastebin...",
+      "open": "Открыть на Pastebin",
+      "notice": "Показано через официальный виджет Pastebin: его правила не разрешают этому сайту выводить содержимое напрямую. Теги форматирования могут отображаться как обычный текст, а истёкшие и приватные пасты не показываются."
+    },
     "distance": "Дистанция",
     "statistics": "Статистика",
     "daylight-saving-time": "Переход на летнее время не влияет на график.",
@@ -81,12 +116,14 @@
       "loading": "Загрузка данных...",
       "options": {
         "data-range": "Период",
-        "start-time": "С",
-        "stop-time": "По",
-        "data-resolution": "Масштаб",
+        "start-time": "Начало",
+        "stop-time": "Конец",
+        "data-resolution": "Интервал данных",
         "graph-update-btn": "Обновить график",
+        "time": "Время",
+        "invalid-range": "Начало периода должно быть раньше конца.",
         "period": {
-          "custom": "Пользовательский",
+          "custom": "Свой",
           "1hour": "Час",
           "8hour": "8 часов",
           "1day": "День",
@@ -104,19 +141,27 @@
           "1d": "День"
         }
       }
-    }
+    },
+    "copy-address": "Скопировать адрес",
+    "address-copied": "Скопировано",
+    "tech": "Моды и плагины"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory - игра, выпущенная Northwood Studios™. Сайт не имеет никакого отношения к Northwood Studios™.<br/>Все товарные знаки и зарегистрированные товарные знаки являются собственностью соответствующих владельцев."
+    "notice": "SCP: Secret Laboratory — игра, выпущенная Northwood Studios™. Сайт не имеет никакого отношения к Northwood Studios™.<br/>Все товарные знаки и зарегистрированные товарные знаки являются собственностью соответствующих владельцев.",
+    "description": "Поиск серверов SCP: SL с фильтрами, динамикой онлайна и статистикой.",
+    "links": "Ссылки",
+    "translation-title": "Перевод",
+    "translation-body": "Помогите перевести сайт на свой язык.",
+    "contribute": "Помочь на GitHub"
   },
   "all-stats": {
     "users": {
       "title": "Общее число игроков",
       "select-compare-country": {
-        "name": "Выбрать страну"
+        "name": "Выберите страну для сравнения"
       },
       "show-all": {
-        "name": "Показывать все данные по стране"
+        "name": "Показать все страны"
       },
       "graph": {
         "all-country": "Все страны",
@@ -126,20 +171,83 @@
     "mod-loader": {
       "title": "Статистика загрузчиков плагинов",
       "back": "Назад",
-      "versions-title": "{{name}} — версии",
+      "versions-title": "Версии {{name}}",
       "drill-hint": "Нажмите на сектор, чтобы увидеть распределение по версиям",
-      "drill-back-hint": "Нажмите «Назад», чтобы вернуться к разбивке по загрузчикам"
+      "drill-back-hint": "Нажмите «Назад», чтобы увидеть все загрузчики"
     }
   },
   "all-server-map": {
     "title": "Карта серверов",
-    "server-info-btn": "Подробнее о сервере"
+    "server-info-btn": "Подробнее о сервере",
+    "location-count": "Локаций: {{total}}"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "Отслеживание прекратится после следующего обновления страницы",
+      "description": "Скрипты аналитики, уже загруженные в этой вкладке, будут работать, пока вы не обновите страницу. Обновите её сейчас, чтобы выбор применился сразу.",
       "reload": "Обновить"
+    }
+  },
+  "credit": {
+    "licenses-title": "Сторонние лицензии",
+    "search-placeholder": "Поиск лицензий и пакетов",
+    "no-match": "Подходящих пакетов нет.",
+    "contributors-title": "Переводчики"
+  },
+  "insights": {
+    "loading": "Загрузка долгосрочной статистики...",
+    "players": "{{players}} онлайн",
+    "history": {
+      "age": "Срок работы",
+      "age-years": "{{years}} г. {{months}} мес.",
+      "age-months": "{{months}} мес.",
+      "age-days": "{{days}} дн.",
+      "age-first-seen": "Впервые замечен {{date}}",
+      "age-since-start": "Работал ещё до начала сбора данных ({{date}})",
+      "peak": "Рекорд онлайна",
+      "versions": "Обновления игры",
+      "versions-value": "Версий: {{versions}}",
+      "seniority": "Место по возрасту",
+      "seniority-value": "Топ-{{percent}}% старейших",
+      "seniority-note": "Среди серверов онлайн"
+    },
+    "heatmap": {
+      "title": "Когда больше всего игроков?",
+      "description": "Типичный пик по часам за последние {{weeks}} нед., в вашем часовом поясе ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: обычно онлайн {{players}}",
+      "readout-now": "Сейчас ({{time}}): обычно онлайн {{players}}",
+      "readout-empty": "{{time}}: мало данных",
+      "readout-full": "заполнен {{percent}}% времени",
+      "legend-low": "Тихо",
+      "legend-high": "Людно ({{players}})",
+      "legend-full": "Часто заполнен (мест: {{capacity}})",
+      "quiet": "Последние {{weeks}} нед. сервер почти всегда пустовал."
+    },
+    "global": {
+      "title": "История SCP:SL",
+      "description": "Пиковый онлайн на всех серверах из списка с {{date}}",
+      "latest": "Последний пик",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Место за всё время",
+      "rank-value": "№{{rank}}",
+      "rank-note": "Выше, чем в {{percent}}% из {{days}} дн.",
+      "year-ago": "К прошлому году",
+      "year-ago-note": "{{date}}: онлайн {{players}}",
+      "today": "На сегодня",
+      "today-note": "Идёт подсчёт",
+      "chart-note": "Каждая точка — самый людный день своей недели. Вертикальные линии отмечают крупные обновления. Всего сбор данных простаивал {{days}} дн.",
+      "no-data": "Нет данных",
+      "release-tooltip": "Обновление {{version}}",
+      "records": "Рекордные дни",
+      "record-near-release": "около {{version}}",
+      "releases": "До и после крупных обновлений",
+      "release-version": "Версия",
+      "release-date": "Появилась",
+      "release-before": "14 дней до",
+      "release-after": "14 дней после",
+      "release-change": "Изменение",
+      "release-caveat": "Медиана дневных пиков за 14 дней до и после каждого обновления. На цифры влияют также сезон и праздники, так что это не только эффект обновления."
     }
   }
 }

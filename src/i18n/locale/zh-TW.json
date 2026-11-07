@@ -1,72 +1,101 @@
 {
   "general": {
-    "language-change": "已將語言更改為 {{language}}. 有些可能需要重繪.",
-    "not-found": "找不到您請求的頁面。",
-    "server-error": "從伺服器獲取資料時出錯。這些問題通常是暫時的，請稍後再試。如果問題仍然存在，請寄電子郵件至 support@scplist.kr。"
+    "language-change": "語言已切換為 {{language}}。若有文字未更新，請重新整理頁面。",
+    "not-found": "找不到此頁面。",
+    "server-error": "無法從伺服器載入資料。這通常只是暫時的，請稍後再試。如果問題持續發生，請寄信至 support@scplist.kr。",
+    "retry": "重試"
   },
   "api": {
     "host-warning-title": "API 主機警告",
     "host-warning-before": "所有請求都必須送往",
     "host-warning-middle": "主機。",
     "host-warning-after": "是官方前端專用主機。直接請求該主機可能導致 IP 或 ASN 被封鎖。",
-    "undocumented-warning": "我們正在準備更完善的官方 API。在正式發布之前，請僅使用下方文件中列出的端點。"
+    "undocumented-warning": "我們正在準備更完善的官方 API。在正式發布之前，請僅使用下方文件中列出的端點。",
+    "live-docs-before": "下方文件即時載入自",
+    "live-docs-after": "並可在本頁直接送出請求測試。"
   },
   "navbar": {
     "server-list": "伺服器列表",
-    "all-stats": "整體信息狀態",
-    "all-server-map": "伺服器大地圖",
+    "all-stats": "統計資料",
+    "all-server-map": "伺服器地圖",
     "credit": "貢獻名單",
-    "language": "語言:",
-    "unit": "單位:"
+    "language": "語言：",
+    "unit": "單位：",
+    "settings": "設定",
+    "open-menu": "開啟選單",
+    "menu": "選單",
+    "site-navigation": "網站導覽",
+    "unit-km": "公里 (km)",
+    "unit-mi": "英里 (mi)"
   },
   "select": {
-    "placeholder": "請選擇一個項目",
-    "empty": "未選擇"
+    "placeholder": "選擇國家/地區",
+    "empty": "無符合結果",
+    "selected-count": "已選{{total}}個",
+    "remove": "移除 {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "尋找伺服器",
-      "placeholder": "請輸入關鍵字"
+      "name": "搜尋伺服器",
+      "placeholder": "伺服器名稱或 IP"
     },
-    "country": "國家",
+    "country": "國家/地區",
     "hide-empty": "隱藏無人伺服器",
     "hide-full": "隱藏滿人伺服器",
-    "refreshing": "我正在載入...",
-    "filter-options-title": "篩選選項",
+    "refreshing": "正在重新載入列表...",
+    "filter-options-title": "篩選",
+    "drawer-description": "篩選伺服器列表",
     "yes-no-filter": {
       "none": "全部",
       "yes": "是",
       "no": "否",
-      "friendly-fire": "是否開啟友軍傷害",
-      "whitelist": "是否開啟白名單",
-      "modded": "是否使用插件",
+      "friendly-fire": "友軍傷害",
+      "whitelist": "白名單",
+      "modded": "插件",
       "order-type": {
         "name": "排序方式",
         "player-desc": "線上玩家由多到少",
         "player-asc": "線上玩家由少到多",
         "distance-asc": "距離由近到遠",
-        "distance-desc": "距離由遠到近"
+        "distance-desc": "距離由遠到近",
+        "ingame": "遊戲內順序"
       }
-    }
+    },
+    "clear-all": "全部清除",
+    "clear-filter": "清除篩選",
+    "no-results-title": "沒有符合篩選條件的伺服器",
+    "no-results-description": "試著移除部分篩選條件，或換個關鍵字搜尋。",
+    "no-servers-title": "目前沒有線上的伺服器"
   },
   "server-stats": {
-    "users-title": "用戶",
+    "users-title": "玩家",
     "servers-title": "伺服器",
     "offline-label": "離線"
   },
   "server-list": {
-    "loading": "我在正在載入伺服器列表了...",
+    "loading": "正在載入伺服器列表...",
     "tech": {
-      "yes": "開啟",
-      "no": "關閉",
+      "yes": "是",
+      "no": "否",
       "game-version": "遊戲版本",
       "friendly-fire": "友軍傷害",
       "whitelist": "白名單"
+    },
+    "columns": {
+      "server": "伺服器",
+      "address": "位址"
+    },
+    "view-list": "列表檢視",
+    "view-grid": "網格檢視",
+    "sparkline": {
+      "peak": "尖峰",
+      "avg": "平均",
+      "new": "新服"
     }
   },
   "server-info": {
-    "title": "伺服器信息",
-    "not-exist": "伺服器不存在。",
+    "title": "伺服器資訊",
+    "not-exist": "找不到此伺服器。",
     "loading": "正在載入伺服器資訊...",
     "status": {
       "online": "線上",
@@ -74,24 +103,32 @@
     },
     "players": "玩家數量",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "此伺服器的 Pastebin 內容",
+      "loading": "正在載入 Pastebin 內容...",
+      "open": "在 Pastebin 開啟",
+      "notice": "由於 Pastebin 的條款不允許本站直接顯示內容，這裡改用官方嵌入方式呈現。格式標籤可能會顯示為純文字，已過期或設為私人的內容不會顯示。"
+    },
     "distance": "距離",
     "statistics": "伺服器統計",
-    "daylight-saving-time": "圖表上的時間不受夏令時間影響",
+    "daylight-saving-time": "圖表時間不會隨夏令時間調整。",
     "graph": {
-      "loading": "我已經在獲取伺服器信息了啦...",
+      "loading": "正在載入資料...",
       "options": {
-        "data-range": "數據週期",
+        "data-range": "時間範圍",
         "start-time": "開始時間",
-        "stop-time": "停止時間",
-        "data-resolution": "數據間隔",
+        "stop-time": "結束時間",
+        "data-resolution": "資料間隔",
         "graph-update-btn": "更新圖表",
+        "time": "時間",
+        "invalid-range": "開始時間必須早於結束時間。",
         "period": {
-          "custom": "自定義",
+          "custom": "自訂",
           "1hour": "1小時",
           "8hour": "8小時",
           "1day": "1天",
           "2day": "2天",
-          "1week": "1周",
+          "1week": "1週",
           "1month": "1個月",
           "3month": "3個月",
           "1year": "1年",
@@ -104,42 +141,113 @@
           "1d": "1天"
         }
       }
-    }
+    },
+    "copy-address": "複製位址",
+    "address-copied": "已複製",
+    "tech": "模組和插件"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory 是由 Northwood Studios™ 發行的遊戲, 但本網站不屬於 Northwood Studios™ 的<br/>所有商標及註冊商標均為其各自所有者財產"
+    "notice": "SCP: Secret Laboratory 是由 Northwood Studios™ 發行的遊戲，本站與 Northwood Studios™ 沒有關聯。<br/>所有商標及註冊商標均為其各自所有者的財產。",
+    "description": "透過篩選、玩家趨勢和統計資料尋找 SCP: SL 伺服器。",
+    "links": "連結",
+    "translation-title": "翻譯",
+    "translation-body": "歡迎幫忙把本站翻譯成你的語言。",
+    "contribute": "在 GitHub 上參與貢獻"
   },
   "all-stats": {
     "users": {
-      "title": "線上伺服器總數",
+      "title": "所有伺服器玩家總數",
       "select-compare-country": {
-        "name": "查看指定國家/地區"
+        "name": "選擇要比較的國家/地區"
       },
       "show-all": {
-        "name": "顯示所有國家資料"
+        "name": "顯示所有國家/地區"
       },
       "graph": {
         "all-country": "所有國家/地區",
-        "empty-country": "沒有可査詢的數據。"
+        "empty-country": "沒有資料。"
       }
     },
     "mod-loader": {
-      "title": "插件加載器統計",
+      "title": "插件載入器統計",
       "back": "返回",
-      "versions-title": "{{name}} — 版本分布",
+      "versions-title": "{{name}} 版本分布",
       "drill-hint": "點擊扇形區塊以查看版本分布",
-      "drill-back-hint": "點擊「返回」以回到加載器分布"
+      "drill-back-hint": "點擊「返回」以回到載入器分布"
     }
   },
   "all-server-map": {
-    "title": "伺服器大地圖",
-    "server-info-btn": "點擊查看伺服器資訊"
+    "title": "伺服器地圖",
+    "server-info-btn": "查看伺服器資訊",
+    "location-count": "{{total}}個位置"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "下次重新載入頁面後將停止追蹤",
+      "description": "這個分頁中已載入的分析指令碼會繼續執行，直到重新載入為止。立即重新載入可讓你的選擇馬上生效。",
       "reload": "重新載入"
+    }
+  },
+  "credit": {
+    "licenses-title": "第三方授權條款",
+    "search-placeholder": "搜尋授權條款或套件",
+    "no-match": "找不到符合的套件。",
+    "contributors-title": "翻譯貢獻者"
+  },
+  "insights": {
+    "loading": "正在載入長期統計...",
+    "players": "{{players}}人",
+    "history": {
+      "age": "運作時間",
+      "age-years": "{{years}}年{{months}}個月",
+      "age-months": "{{months}}個月",
+      "age-days": "{{days}}天",
+      "age-first-seen": "首次記錄於 {{date}}",
+      "age-since-start": "{{date}} 開始記錄前已在運作",
+      "peak": "歷史最高人數",
+      "versions": "經歷的遊戲更新",
+      "versions-value": "{{versions}}個版本",
+      "seniority": "運作時間排名",
+      "seniority-value": "前{{percent}}%",
+      "seniority-note": "在目前線上的伺服器中"
+    },
+    "heatmap": {
+      "title": "什麼時候人多？",
+      "description": "最近{{weeks}}週各時段的典型尖峰人數，依你的時區（{{zone}}）顯示",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}：通常{{players}}人",
+      "readout-now": "現在（{{time}}）：通常{{players}}人",
+      "readout-empty": "{{time}}：資料不足",
+      "readout-full": "{{percent}}%的時間滿人",
+      "legend-low": "冷清",
+      "legend-high": "熱鬧（{{players}}人）",
+      "legend-full": "常滿人（{{capacity}}人）",
+      "quiet": "最近{{weeks}}週，這個伺服器大多時候都沒人。"
+    },
+    "global": {
+      "title": "SCP:SL 時間軸",
+      "description": "自 {{date}} 起所有收錄伺服器的最高同時在線人數",
+      "latest": "最新單日尖峰",
+      "utc-date": "{{date}}（UTC）",
+      "rank": "歷史排名",
+      "rank-value": "第{{rank}}名",
+      "rank-note": "在{{days}}天中高於{{percent}}%的日子",
+      "year-ago": "與去年同期相比",
+      "year-ago-note": "{{date}}：{{players}}人",
+      "today": "今日截至目前",
+      "today-note": "仍在統計中",
+      "chart-note": "每個點代表當週最熱鬧的一天。垂直線標示重大更新。資料收集累計中斷{{days}}天。",
+      "no-data": "沒有資料",
+      "release-tooltip": "{{version}} 更新",
+      "records": "單日最高紀錄",
+      "record-near-release": "{{version}} 前後",
+      "releases": "重大更新前後",
+      "release-version": "版本",
+      "release-date": "首次記錄",
+      "release-before": "更新前14天",
+      "release-after": "更新後14天",
+      "release-change": "變化",
+      "release-caveat": "每次更新前後14天內單日尖峰的中位數。季節和假期也有影響，因此不能全部歸因於更新本身。"
     }
   }
 }
