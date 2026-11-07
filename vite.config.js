@@ -1,10 +1,11 @@
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import { thirdPartyLicenses } from './vite-plugins/thirdPartyLicenses.js';
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), thirdPartyLicenses()],
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
@@ -26,5 +27,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.js',
+    exclude: [...configDefaults.exclude, '.claude/**'],
   },
 });

@@ -179,6 +179,21 @@
   },
   "credit": {
     "licenses-title": "서드파티 라이선스",
+    "licenses-description": "이 사이트에 포함된 오픈소스 소프트웨어입니다. 패키지를 열면 라이선스와 고지 전문을 볼 수 있습니다.",
+    "repository": "저장소",
+    "author": "저작자: {{author}}",
+    "no-license-file": "이 패키지에는 라이선스 파일이 없습니다. 패키지에 표시된 라이선스는 {{license}}이며, 자세한 조건은 저장소에서 확인해 주세요.",
+    "load-failed": "라이선스 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
+    "loading": "라이선스 목록을 불러오는 중",
+    "site-license": "이 사이트의 소스 코드는 GitHub에서 AGPL-3.0 라이선스로 공개되어 있습니다.",
+    "resources-title": "데이터 및 외부 자료",
+    "resources": {
+      "carto": "서버 지도의 기본 지도 타일입니다.",
+      "openstreetmap": "기본 지도의 바탕 데이터이며, Open Database License로 제공됩니다.",
+      "geolite": "서버 IP 주소로 위치를 추정하는 데 사용합니다.",
+      "country-flag-icons": "국기 이미지입니다.",
+      "pastebin": "서버 상세 페이지의 Pastebin 임베드입니다. 내용은 Pastebin에서 호스팅하며, 권리는 각 작성자에게 있습니다."
+    },
     "search-placeholder": "라이선스 또는 패키지 검색",
     "no-match": "검색 결과가 없습니다.",
     "contributors-title": "사이트 번역 기여자"
