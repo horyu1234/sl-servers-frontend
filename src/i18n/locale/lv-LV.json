@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Serveris",
-      "address": "Adrese"
+      "address": "Adrese",
+      "trend": "7 dienu tendence"
     },
     "view-list": "Saraksta skats",
     "view-grid": "Režģa skats",

@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "服",
-      "address": "址"
+      "address": "址",
+      "trend": "七日之势"
     },
     "view-list": "以列观之",
     "view-grid": "以格观之",

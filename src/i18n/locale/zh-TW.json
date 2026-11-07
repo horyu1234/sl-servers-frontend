@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "伺服器",
-      "address": "位址"
+      "address": "位址",
+      "trend": "7日趨勢"
     },
     "view-list": "列表檢視",
     "view-grid": "網格檢視",

@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Server",
-      "address": "Adresa"
+      "address": "Adresa",
+      "trend": "Trend 7 dní"
     },
     "view-list": "Zobrazení seznamu",
     "view-grid": "Zobrazení mřížky",

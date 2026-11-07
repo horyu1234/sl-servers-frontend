@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Servidor",
-      "address": "Endereço"
+      "address": "Endereço",
+      "trend": "Tendência 7 dias"
     },
     "view-list": "Visualização em lista",
     "view-grid": "Visualização em grade",

@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Server",
-      "address": "Aadress"
+      "address": "Aadress",
+      "trend": "7 päeva trend"
     },
     "view-list": "Loendivaade",
     "view-grid": "Ruudustikuvaade",

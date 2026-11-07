@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Servidor",
-      "address": "Adreça"
+      "address": "Adreça",
+      "trend": "Tendència 7 dies"
     },
     "view-list": "Vista de llista",
     "view-grid": "Vista de quadrícula",

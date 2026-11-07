@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Servilo",
-      "address": "Adreso"
+      "address": "Adreso",
+      "trend": "7-taga tendenco"
     },
     "view-list": "Lista vido",
     "view-grid": "Krada vido",

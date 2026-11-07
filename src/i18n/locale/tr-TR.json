@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Sunucu",
-      "address": "Adres"
+      "address": "Adres",
+      "trend": "7 günlük trend"
     },
     "view-list": "Liste görünümü",
     "view-grid": "Izgara görünümü",

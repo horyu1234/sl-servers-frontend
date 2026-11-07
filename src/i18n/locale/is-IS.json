@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Netþjónn",
-      "address": "Vistfang"
+      "address": "Vistfang",
+      "trend": "7 daga þróun"
     },
     "view-list": "Listayfirlit",
     "view-grid": "Reitayfirlit",

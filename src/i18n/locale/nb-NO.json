@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Server",
-      "address": "Adresse"
+      "address": "Adresse",
+      "trend": "Trend 7 dager"
     },
     "view-list": "Listevisning",
     "view-grid": "Rutenettvisning",

@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "服务器",
-      "address": "地址"
+      "address": "地址",
+      "trend": "7日趋势"
     },
     "view-list": "列表视图",
     "view-grid": "网格视图",

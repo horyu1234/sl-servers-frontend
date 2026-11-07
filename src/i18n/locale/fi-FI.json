@@ -83,7 +83,8 @@
     },
     "columns": {
       "server": "Palvelin",
-      "address": "Osoite"
+      "address": "Osoite",
+      "trend": "7 päivän trendi"
     },
     "view-list": "Luettelonäkymä",
     "view-grid": "Ruudukkonäkymä",
