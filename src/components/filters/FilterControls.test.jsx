@@ -12,6 +12,32 @@ vi.mock('../../lib/api/countries', () => ({
 
 import { FilterControls } from './FilterControls';
 
+describe('FilterControls sort selector', () => {
+  it('marks the current sort as checked', () => {
+    render(
+      <Provider store={store}>
+        <FilterControls value={{ ...DEFAULT_FILTER, sort: 'PLAYERS_ASC' }} onChange={() => {}} />
+      </Provider>
+    );
+    expect(screen.getByRole('radio', { name: 'Fewest players' })).toBeChecked();
+    expect(screen.getByRole('radio', { name: 'Nearest first' })).not.toBeChecked();
+  });
+
+  it('emits a sort patch when an option is chosen', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    render(
+      <Provider store={store}>
+        <FilterControls value={DEFAULT_FILTER} onChange={onChange} />
+      </Provider>
+    );
+
+    await user.click(screen.getByRole('radio', { name: 'Most players' }));
+
+    expect(onChange).toHaveBeenCalledWith({ ...DEFAULT_FILTER, sort: 'PLAYERS_DESC' });
+  });
+});
+
 describe('FilterControls country selector', () => {
   it('renders the country label', async () => {
     render(

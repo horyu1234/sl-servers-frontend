@@ -6,6 +6,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { CountryMultiSelect } from '../stats/CountryMultiSelect';
+import { SORT_OPTIONS } from './filterSchema';
 
 const TRISTATE = [
   { value: 'null',  i18nLeaf: 'none' },
@@ -46,6 +47,29 @@ function TriStateField({ name, title, value, onChange, t }) {
   );
 }
 
+function SortField({ value, onChange, t }) {
+  const baseId = useId();
+  const title = t('filter-option.yes-no-filter.order-type.name');
+  return (
+    <div className="space-y-2">
+      <Label className="text-xs uppercase tracking-wider text-muted-foreground">{title}</Label>
+      <RadioGroup value={value} onValueChange={onChange} aria-label={title} className="gap-1.5">
+        {SORT_OPTIONS.map((opt) => {
+          const id = `${baseId}-${opt.value}`;
+          return (
+            <div key={opt.value} className="flex items-center gap-1.5">
+              <RadioGroupItem value={opt.value} id={id} />
+              <Label htmlFor={id} className="text-sm cursor-pointer leading-none">
+                {t(opt.i18nKey)}
+              </Label>
+            </div>
+          );
+        })}
+      </RadioGroup>
+    </div>
+  );
+}
+
 export function FilterControls({ value, onChange }) {
   const { t } = useTranslation();
   const set = (patch) => onChange({ ...value, ...patch });
@@ -74,6 +98,10 @@ export function FilterControls({ value, onChange }) {
           minPopoverWidth={0}
         />
       </div>
+
+      <Separator />
+
+      <SortField value={value.sort} onChange={(v) => set({ sort: v })} t={t} />
 
       <Separator />
 

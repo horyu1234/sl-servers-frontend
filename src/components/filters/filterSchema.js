@@ -1,4 +1,13 @@
-const VALID_SORTS = new Set(['DISTANCE_ASC', 'DISTANCE_DESC', 'PLAYERS_ASC', 'PLAYERS_DESC']);
+// Values must exist in the API's ServerSortType enum: POST /api/servers answers
+// 400 for any other value, which fails the whole list. Ship new ones API-first.
+export const SORT_OPTIONS = Object.freeze([
+  { value: 'PLAYERS_DESC',  i18nKey: 'filter-option.yes-no-filter.order-type.player-desc' },
+  { value: 'PLAYERS_ASC',   i18nKey: 'filter-option.yes-no-filter.order-type.player-asc' },
+  { value: 'DISTANCE_ASC',  i18nKey: 'filter-option.yes-no-filter.order-type.distance-asc' },
+  { value: 'DISTANCE_DESC', i18nKey: 'filter-option.yes-no-filter.order-type.distance-desc' },
+]);
+
+const VALID_SORTS = new Set(SORT_OPTIONS.map((opt) => opt.value));
 const VALID_TRISTATE = new Set(['null', 'true', 'false']);
 
 export const DEFAULT_FILTER = Object.freeze({

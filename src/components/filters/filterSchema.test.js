@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { DEFAULT_FILTER, parseFromSearchParams, toSearchParams } from './filterSchema';
+import { DEFAULT_FILTER, SORT_OPTIONS, parseFromSearchParams, toSearchParams } from './filterSchema';
 
 describe('filterSchema', () => {
   it('DEFAULT_FILTER matches the legacy serverFilter initialState', () => {
@@ -46,5 +46,16 @@ describe('filterSchema', () => {
   it('treats unknown sort values as DEFAULT_FILTER.sort', () => {
     const params = new URLSearchParams('sort=BANANA');
     expect(parseFromSearchParams(params).sort).toBe(DEFAULT_FILTER.sort);
+  });
+
+  it('offers exactly the four sort types the API supports', () => {
+    expect(SORT_OPTIONS.map((opt) => opt.value)).toEqual([
+      'PLAYERS_DESC', 'PLAYERS_ASC', 'DISTANCE_ASC', 'DISTANCE_DESC',
+    ]);
+  });
+
+  it.each(SORT_OPTIONS.map((opt) => opt.value))('round-trips sort=%s via URLSearchParams', (sort) => {
+    const params = toSearchParams({ ...DEFAULT_FILTER, sort });
+    expect(parseFromSearchParams(params).sort).toBe(sort);
   });
 });

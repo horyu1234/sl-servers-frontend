@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { DEFAULT_FILTER } from './filterSchema';
+import { DEFAULT_FILTER, SORT_OPTIONS } from './filterSchema';
 import getCountryName from '../../i18n/i18n-countries';
 
 function Chip({ children, onClear }) {
@@ -26,6 +26,14 @@ export function FilterChips({ value, onChange }) {
   const chips = [];
   const set = (patch) => onChange({ ...value, ...patch });
 
+  if (value.sort !== DEFAULT_FILTER.sort) {
+    const sortOption = SORT_OPTIONS.find((opt) => opt.value === value.sort);
+    chips.push(
+      <Chip key="sort" onClear={() => set({ sort: DEFAULT_FILTER.sort })}>
+        {t('filter-option.yes-no-filter.order-type.name')}: {t(sortOption.i18nKey)}
+      </Chip>
+    );
+  }
   if (value.search) {
     chips.push(<Chip key="search" onClear={() => set({ search: '' })}>"{value.search}"</Chip>);
   }
