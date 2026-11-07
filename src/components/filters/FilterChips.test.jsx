@@ -11,6 +11,11 @@ describe('FilterChips sort chip', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
+  it('labels the in-game order', () => {
+    render(<FilterChips value={{ ...DEFAULT_FILTER, sort: 'INGAME_ORDER' }} onChange={() => {}} />);
+    expect(screen.getByText('Sort by: In-game order')).toBeInTheDocument();
+  });
+
   it('shows a non-default sort and clears it back to the default', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();

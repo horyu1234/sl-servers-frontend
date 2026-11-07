@@ -48,9 +48,9 @@ describe('filterSchema', () => {
     expect(parseFromSearchParams(params).sort).toBe(DEFAULT_FILTER.sort);
   });
 
-  it('offers exactly the four sort types the API supports', () => {
+  it('offers exactly the sort types the API supports', () => {
     expect(SORT_OPTIONS.map((opt) => opt.value)).toEqual([
-      'PLAYERS_DESC', 'PLAYERS_ASC', 'DISTANCE_ASC', 'DISTANCE_DESC',
+      'PLAYERS_DESC', 'PLAYERS_ASC', 'DISTANCE_ASC', 'DISTANCE_DESC', 'INGAME_ORDER',
     ]);
   });
 
