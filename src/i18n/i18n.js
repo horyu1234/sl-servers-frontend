@@ -28,6 +28,7 @@ import eeEE from './locale/ee-EE.json';
 import isIS from './locale/is-IS.json';
 import lvLV from './locale/lv-LV.json';
 import ptBR from './locale/pt-BR.json';
+import csCZ from './locale/cs-CZ.json';
 
 const resource = {
     "en-US": {
@@ -107,6 +108,9 @@ const resource = {
     },
     "pt-BR": {
         translation: ptBR
+    },
+    "cs-CZ": {
+        translation: csCZ
     },
 }
 

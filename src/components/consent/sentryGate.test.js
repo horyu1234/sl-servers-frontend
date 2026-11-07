@@ -44,6 +44,17 @@ describe('sentryGate', () => {
     vi.useRealTimers();
   });
 
+  it('keeps the v10 data collection scope when it inits', async () => {
+    localStorage.setItem(KEY, 'true');
+    await import('./sentryGate');
+    expect(initSpy).toHaveBeenCalledTimes(1);
+    const { dataCollection, traceLifecycle } = initSpy.mock.calls[0][0];
+    expect(dataCollection).toMatchObject({ userInfo: false, cookies: false, httpBodies: [] });
+    expect(dataCollection.urlQueryParams.deny).toContain('-user');
+    expect(dataCollection.httpHeaders.request.deny).toContain('-ip');
+    expect(traceLifecycle).toBe('static');
+  });
+
   it('does not init Sentry when consent is unknown', async () => {
     await import('./sentryGate');
     expect(initSpy).not.toHaveBeenCalled();

@@ -18,6 +18,8 @@ export function isInitialized() {
   return initialized;
 }
 
+const SENSITIVE_KEY_PARTS = ['forwarded', '-ip', 'remote-', 'via', '-user'];
+
 function initSentry() {
   Sentry.init({
     dsn: 'https://273bce475a7d46cdb126ba29bd99f867@o508489.ingest.sentry.io/4505483920998400',
@@ -29,6 +31,20 @@ function initSentry() {
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
+    // v11 collects everything when dataCollection is unset. Keep the narrower
+    // v10 scope that the consent notice was written for.
+    dataCollection: {
+      userInfo: false,
+      cookies: false,
+      httpHeaders: {
+        request: { deny: SENSITIVE_KEY_PARTS },
+        response: { deny: SENSITIVE_KEY_PARTS },
+      },
+      httpBodies: [],
+      urlQueryParams: { deny: SENSITIVE_KEY_PARTS },
+    },
+    // v11 defaults to span streaming, which has no per-transaction span cap.
+    traceLifecycle: 'static',
   });
   initialized = true;
   running = true;
