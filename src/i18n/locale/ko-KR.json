@@ -94,6 +94,12 @@
     },
     "players": "인원",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "이 서버의 Pastebin 내용",
+      "loading": "Pastebin 내용을 불러오는 중...",
+      "open": "Pastebin에서 열기",
+      "notice": "Pastebin 이용약관상 이 사이트에서 내용을 직접 렌더링할 수 없어 공식 임베드로 표시합니다. 서식 코드가 그대로 보일 수 있으며, 붙여넣기가 만료되었거나 비공개이면 내용이 나타나지 않습니다."
+    },
     "distance": "거리",
     "statistics": "서버 통계",
     "daylight-saving-time": "그래프의 시간은 일광 절약 시간에 영향을 받지 않습니다. (한국은 관련 없음)",
