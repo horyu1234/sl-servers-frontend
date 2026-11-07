@@ -7,10 +7,10 @@ vi.mock('../api/trends', () => ({
 }));
 import { getServersTrendsAPI } from '../api/trends';
 
-const allTrends = (ids) => Object.fromEntries(ids.map((id) => [String(id), new Array(24).fill(id)]));
+const allTrends = (ids) => Object.fromEntries(ids.map((id) => [String(id), new Array(168).fill(id)]));
 
 const makeResponse = (ids) => ({
-  data: { window: '24h', resolution: '1h', bucketCount: 24, endTime: 'x', serverIds: ids.map(String), trends: allTrends(ids) },
+  data: { window: '7d', resolution: '1h', bucketCount: 168, endTime: 'x', serverIds: ids.map(String), trends: allTrends(ids) },
 });
 
 describe('useTrends (single GET, module-level cache)', () => {
