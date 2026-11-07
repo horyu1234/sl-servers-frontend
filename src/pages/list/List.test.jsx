@@ -26,7 +26,7 @@ vi.mock('../../lib/api/countries', () => ({
 
 vi.mock('../../lib/api/trends', () => ({
   getServersTrendsAPI: vi.fn().mockResolvedValue({
-    data: { window: '24h', resolution: '1h', bucketCount: 24, endTime: 'x', serverIds: ['1'], trends: { '1': new Array(24).fill(10) } },
+    data: { window: '7d', resolution: '1h', bucketCount: 168, endTime: 'x', serverIds: ['1'], trends: { '1': new Array(168).fill(10) } },
   }),
 }));
 
@@ -39,6 +39,23 @@ function LocationProbe() {
 }
 
 describe('List page', () => {
+  it('requests the in-game order by default and keeps it out of the URL', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/']}>
+          <List />
+          <LocationProbe />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
+      expect.objectContaining({ sort: 'INGAME_ORDER' })
+    ));
+    expect(screen.getByRole('radio', { name: 'In-game order' })).toBeChecked();
+    expect(screen.getByTestId('location').textContent).toBe('');
+  });
+
   it('requests the chosen sort and stays in the current view', async () => {
     const user = userEvent.setup();
     render(

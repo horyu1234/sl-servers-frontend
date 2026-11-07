@@ -22,6 +22,6 @@ const instance = Axios.create({
  * subset, but it was removed on the backend; useTrends now fetches once
  * and caches the full map.
  */
-export function getServersTrendsAPI({ window = '24h', resolution = '1h' } = {}) {
+export function getServersTrendsAPI({ window = '7d', resolution = '1h' } = {}) {
   return instance.get('/v2/servers/trends', { params: { window, resolution } });
 }

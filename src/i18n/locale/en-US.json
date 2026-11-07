@@ -84,7 +84,7 @@
     "columns": {
       "server": "Server",
       "address": "Address",
-      "trend": "24h trend"
+      "trend": "7d trend"
     },
     "view-list": "List view",
     "view-grid": "Grid view",

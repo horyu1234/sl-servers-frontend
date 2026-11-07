@@ -84,7 +84,7 @@
     "columns": {
       "server": "서버",
       "address": "주소",
-      "trend": "24시간 추이"
+      "trend": "7일 추이"
     },
     "view-list": "목록 보기",
     "view-grid": "카드 보기",
