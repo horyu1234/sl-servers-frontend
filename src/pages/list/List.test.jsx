@@ -39,6 +39,23 @@ function LocationProbe() {
 }
 
 describe('List page', () => {
+  it('requests the in-game order by default and keeps it out of the URL', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/']}>
+          <List />
+          <LocationProbe />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
+      expect.objectContaining({ sort: 'INGAME_ORDER' })
+    ));
+    expect(screen.getByRole('radio', { name: 'In-game order' })).toBeChecked();
+    expect(screen.getByTestId('location').textContent).toBe('');
+  });
+
   it('requests the chosen sort and stays in the current view', async () => {
     const user = userEvent.setup();
     render(
