@@ -5,8 +5,11 @@ import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getServerMap } from '../../modules/serverMap';
 import { MapPopup } from '../../components/map/MapPopup';
+import { cartoTileUrl } from './tileUrl';
 
 import './map.css';
+
+const TILE_URL = cartoTileUrl(import.meta.env.VITE_CARTO_API_KEY);
 
 export default function Map() {
   const { t } = useTranslation();
@@ -37,7 +40,7 @@ export default function Map() {
               maxZoom={18}
             >
               <TileLayer
-                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                url={TILE_URL}
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
               />
               {!fetching && data.map((serverLoc) => (
