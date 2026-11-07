@@ -191,6 +191,21 @@
   },
   "credit": {
     "licenses-title": "Third-party licenses",
+    "licenses-description": "Open source software included in this site. Open a package to read its license and notices.",
+    "repository": "Repository",
+    "author": "Author: {{author}}",
+    "no-license-file": "This package ships without a license file. It declares {{license}}; check its repository for the full terms.",
+    "load-failed": "Could not load the license list. Please try again later.",
+    "loading": "Loading the license list",
+    "site-license": "The source code of this site is available on GitHub under the AGPL-3.0 license.",
+    "resources-title": "Data and external resources",
+    "resources": {
+      "carto": "Base map tiles on the server map.",
+      "openstreetmap": "Map data behind the base map, available under the Open Database License.",
+      "geolite": "Estimates server locations from their IP addresses.",
+      "country-flag-icons": "Country flag images.",
+      "pastebin": "Embedded pastes on server pages. Pastebin hosts them and each paste belongs to its author."
+    },
     "search-placeholder": "Search licenses or packages",
     "no-match": "No packages match this search.",
     "contributors-title": "Translators"
