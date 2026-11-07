@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import serverFilter from '../../modules/serverFilter';
 import { DEFAULT_FILTER, SORT_OPTIONS, parseFromSearchParams, toSearchParams } from './filterSchema';
 
 describe('filterSchema', () => {
@@ -11,8 +12,9 @@ describe('filterSchema', () => {
       friendlyFire: 'null',
       whitelist: 'null',
       modded: 'null',
-      sort: 'DISTANCE_ASC',
+      sort: 'INGAME_ORDER',
     });
+    expect(serverFilter(undefined, { type: '@@INIT' })).toEqual(DEFAULT_FILTER);
   });
 
   it('round-trips an active filter via URLSearchParams', () => {
@@ -50,7 +52,7 @@ describe('filterSchema', () => {
 
   it('offers exactly the sort types the API supports', () => {
     expect(SORT_OPTIONS.map((opt) => opt.value)).toEqual([
-      'PLAYERS_DESC', 'PLAYERS_ASC', 'DISTANCE_ASC', 'DISTANCE_DESC', 'INGAME_ORDER',
+      'INGAME_ORDER', 'PLAYERS_DESC', 'PLAYERS_ASC', 'DISTANCE_ASC', 'DISTANCE_DESC',
     ]);
   });
 

@@ -11,9 +11,9 @@ describe('FilterChips sort chip', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('labels the in-game order', () => {
-    render(<FilterChips value={{ ...DEFAULT_FILTER, sort: 'INGAME_ORDER' }} onChange={() => {}} />);
-    expect(screen.getByText('Sort by: In-game order')).toBeInTheDocument();
+  it('labels the distance sort now that it is no longer the default', () => {
+    render(<FilterChips value={{ ...DEFAULT_FILTER, sort: 'DISTANCE_ASC' }} onChange={() => {}} />);
+    expect(screen.getByText('Sort by: Nearest first')).toBeInTheDocument();
   });
 
   it('shows a non-default sort and clears it back to the default', async () => {

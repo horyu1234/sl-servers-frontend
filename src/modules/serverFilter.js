@@ -25,7 +25,7 @@ const initialState = {
     friendlyFire: 'null',
     whitelist: 'null',
     modded: 'null',
-    sort: 'DISTANCE_ASC'
+    sort: 'INGAME_ORDER'
 }
 
 export default function serverFilter(state = initialState, action) {
