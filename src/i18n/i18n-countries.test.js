@@ -23,7 +23,7 @@ describe('getCountryName', () => {
   });
 
   it('follows the language on screen when the requested one has no locale file', async () => {
-    await i18n.changeLanguage('ko');
+    await i18n.changeLanguage('ja');
 
     expect(i18n.resolvedLanguage).toBe('en-US');
     expect(getCountryName('KR')).toBe('South Korea');
