@@ -19,6 +19,15 @@ export function getCountryTrendAPI(isoCodes, params) {
 }
 
 /**
+ * GET /api/stats/history
+ * Returns: { generatedAt, daily, records, releases, gaps, latest, todayPeakSoFar }.
+ * Dates are UTC days.
+ */
+export function getGlobalHistoryAPI() {
+  return instance.get('/stats/history');
+}
+
+/**
  * GET /api/stats/mod-loader
  * Returns: { [modLoaderName]: { [version]: count } }
  */

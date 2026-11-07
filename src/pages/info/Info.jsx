@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ServerCrash } from 'lucide-react';
 import { ServerDetailHeader } from '../../components/server/ServerDetailHeader';
+import { ServerInsights } from '../../components/server/ServerInsights';
 import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
 import { EmptyState } from '../../components/shared/EmptyState';
@@ -100,6 +101,7 @@ export default function Info() {
     <div className="mx-auto grid w-full min-w-0 max-w-screen-2xl items-start gap-4 px-3 py-4 sm:px-4 sm:py-6 lg:grid-cols-3">
       <div className="min-w-0 space-y-4 lg:col-span-2">
         <ServerDetailHeader server={server} />
+        <ServerInsights serverId={serverId} />
 
         <Card className="min-w-0">
           <CardHeader className="p-4 sm:p-5">

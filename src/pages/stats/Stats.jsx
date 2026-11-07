@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PageHeader } from '../../components/shared/PageHeader';
 import { CountryMultiSelect } from '../../components/stats/CountryMultiSelect';
+import { GlobalHistorySection } from '../../components/stats/GlobalHistorySection';
 import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
 import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
@@ -56,6 +57,7 @@ export default function Stats() {
   return (
     <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
       <PageHeader className="mb-4" title={t('navbar.all-stats')} />
+      <GlobalHistorySection />
       <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.85fr)]">
         <Card className="min-w-0">
           <CardHeader className="p-4 sm:p-5">

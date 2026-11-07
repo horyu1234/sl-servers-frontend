@@ -175,5 +175,61 @@
     "search-placeholder": "Search licenses or packages",
     "no-match": "No packages match this search.",
     "contributors-title": "Site localization contributors"
+  },
+  "insights": {
+    "loading": "Loading long-term stats...",
+    "players": "{{players}} players",
+    "history": {
+      "age": "Running for",
+      "age-years": "{{years}}y {{months}}mo",
+      "age-months": "{{months}} mo",
+      "age-days": "{{days}} days",
+      "age-first-seen": "First seen {{date}}",
+      "age-since-start": "Since before our records began ({{date}})",
+      "peak": "All-time peak",
+      "versions": "Game updates seen",
+      "versions-value": "{{versions}} versions",
+      "seniority": "Age among online servers",
+      "seniority-value": "Oldest {{percent}}%",
+      "seniority-note": "Compared with servers online now"
+    },
+    "heatmap": {
+      "title": "When is it busy?",
+      "description": "Typical peak by hour over the last {{weeks}} weeks, in your time zone ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: usually {{players}} players",
+      "readout-now": "Right now ({{time}}): usually {{players}} players",
+      "readout-empty": "{{time}}: not enough data",
+      "readout-full": "full {{percent}}% of the time",
+      "legend-low": "Quiet",
+      "legend-high": "Busy ({{players}})",
+      "legend-full": "Often full ({{capacity}} slots)",
+      "quiet": "This server has been mostly empty for the last {{weeks}} weeks."
+    },
+    "global": {
+      "title": "SCP:SL timeline",
+      "description": "Highest concurrent players across all listed servers since {{date}}",
+      "latest": "Latest full day peak",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "All-time rank",
+      "rank-value": "#{{rank}}",
+      "rank-note": "Of {{days}} days, busier than {{percent}}%",
+      "year-ago": "Vs same weekday last year",
+      "year-ago-note": "{{date}}: {{players}} players",
+      "today": "Today so far",
+      "today-note": "Still counting",
+      "chart-note": "Each point is the busiest day of its week. Vertical lines mark major updates. Collection was down for {{days}} days in total.",
+      "no-data": "No data",
+      "release-tooltip": "Update {{version}}",
+      "records": "Highest days on record",
+      "record-near-release": "around {{version}}",
+      "releases": "Around major updates",
+      "release-version": "Version",
+      "release-date": "First seen",
+      "release-before": "14 days before",
+      "release-after": "14 days after",
+      "release-change": "Change",
+      "release-caveat": "Median daily peak in the 14 days before and after each update. Season and holidays are mixed in, so this is not the effect of the update alone."
+    }
   }
 }

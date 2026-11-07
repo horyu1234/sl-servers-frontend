@@ -175,5 +175,61 @@
     "search-placeholder": "라이선스 또는 패키지 검색",
     "no-match": "검색 결과가 없습니다.",
     "contributors-title": "사이트 번역 기여자"
+  },
+  "insights": {
+    "loading": "장기 통계를 불러오는 중입니다...",
+    "players": "{{players}}명",
+    "history": {
+      "age": "운영 기간",
+      "age-years": "{{years}}년 {{months}}개월",
+      "age-months": "{{months}}개월",
+      "age-days": "{{days}}일",
+      "age-first-seen": "첫 관측 {{date}}",
+      "age-since-start": "수집 시작({{date}}) 이전부터 운영",
+      "peak": "역대 최고 인원",
+      "versions": "거친 게임 업데이트",
+      "versions-value": "{{versions}}개 버전",
+      "seniority": "온라인 서버 중 운영 기간",
+      "seniority-value": "상위 {{percent}}%",
+      "seniority-note": "현재 온라인 서버 기준"
+    },
+    "heatmap": {
+      "title": "언제 사람이 많을까요?",
+      "description": "최근 {{weeks}}주 시간대별 최고 인원의 중앙값, 내 시간대({{zone}}) 기준",
+      "time": "{{day}} {{hour}}시",
+      "readout": "{{time}}: 평소 {{players}}명",
+      "readout-now": "지금({{time}}): 평소 {{players}}명",
+      "readout-empty": "{{time}}: 데이터 부족",
+      "readout-full": "{{percent}}%는 만석",
+      "legend-low": "한산",
+      "legend-high": "붐빔 ({{players}}명)",
+      "legend-full": "만석이 잦음 ({{capacity}}명 기준)",
+      "quiet": "최근 {{weeks}}주 동안 대부분 비어 있던 서버입니다."
+    },
+    "global": {
+      "title": "SCP:SL 연대기",
+      "description": "{{date}}부터 기록한 전체 서버의 최고 동시 접속자",
+      "latest": "최근 하루 최고 인원",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "역대 순위",
+      "rank-value": "{{rank}}위",
+      "rank-note": "{{days}}일 중, {{percent}}%의 날보다 많음",
+      "year-ago": "작년 같은 요일 대비",
+      "year-ago-note": "{{date}}: {{players}}명",
+      "today": "오늘 현재 최고",
+      "today-note": "집계 중",
+      "chart-note": "각 점은 그 주에서 가장 붐빈 날입니다. 세로선은 주요 업데이트이고, 수집이 중단된 날은 총 {{days}}일입니다.",
+      "no-data": "데이터 없음",
+      "release-tooltip": "{{version}} 업데이트",
+      "records": "역대 최고 기록",
+      "record-near-release": "{{version}} 무렵",
+      "releases": "주요 업데이트 전후",
+      "release-version": "버전",
+      "release-date": "첫 관측",
+      "release-before": "이전 14일",
+      "release-after": "이후 14일",
+      "release-change": "변화",
+      "release-caveat": "업데이트 전후 14일간 일일 최고 인원의 중앙값입니다. 방학과 연휴 같은 계절 요인이 섞여 있어 업데이트만의 효과는 아닙니다."
+    }
   }
 }
