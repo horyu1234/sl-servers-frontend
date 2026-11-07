@@ -5,11 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { PageHeader } from '../../components/shared/PageHeader';
 import { CountryMultiSelect } from '../../components/stats/CountryMultiSelect';
 import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
 import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
 import { getCountryTrendAPI } from '../../lib/api/stats';
+import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
 
 export default function Stats() {
   const { t } = useTranslation();
@@ -18,6 +20,7 @@ export default function Stats() {
   const [flux, setFlux] = useState(null);
   const [error, setError] = useState(false);
   const inflightRef = useRef(0);
+  useDocumentTitle(t('navbar.all-stats'));
 
   function fetchTrend(codes, params) {
     setFlux(null);
@@ -51,15 +54,16 @@ export default function Stats() {
   };
 
   return (
-    <div className="px-3 py-3 sm:px-4 sm:py-4">
+    <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
+      <PageHeader className="mb-4" title={t('navbar.all-stats')} />
       <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.85fr)]">
         <Card className="min-w-0">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-xl sm:text-2xl">{t('all-stats.users.title')}</CardTitle>
+          <CardHeader className="p-4 sm:p-5">
+            <CardTitle>{t('all-stats.users.title')}</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col gap-5">
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-              <div className="flex min-w-0 flex-col gap-3">
+          <CardContent className="flex flex-col gap-5 p-4 pt-0 sm:p-5 sm:pt-0">
+            <div className="flex min-w-0 flex-col gap-4">
+              <div className="flex min-w-0 max-w-md flex-col gap-2">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">
                   {t('all-stats.users.select-compare-country.name')}
                 </Label>
@@ -69,7 +73,6 @@ export default function Stats() {
                     id="stats-show-all"
                     checked={showAll}
                     onCheckedChange={(c) => setShowAll(c === true)}
-                    className="border-muted-foreground/40 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500 data-[state=checked]:text-emerald-950"
                   />
                   <Label htmlFor="stats-show-all" className="cursor-pointer text-sm text-muted-foreground">
                     {t('all-stats.users.show-all.name')}
@@ -86,10 +89,10 @@ export default function Stats() {
         </Card>
 
         <Card className="min-w-0">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-xl sm:text-2xl">{t('all-stats.mod-loader.title')}</CardTitle>
+          <CardHeader className="p-4 sm:p-5">
+            <CardTitle>{t('all-stats.mod-loader.title')}</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-4 pt-0 sm:p-5 sm:pt-0">
             <ModLoaderChart />
           </CardContent>
         </Card>

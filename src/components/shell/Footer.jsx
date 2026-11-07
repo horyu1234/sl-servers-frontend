@@ -12,38 +12,47 @@ function GitHubIcon(props) {
   );
 }
 
+function FooterLink({ to, children }) {
+  return (
+    <li>
+      <Link to={to} className="text-muted-foreground no-underline transition-colors hover:text-foreground">
+        {children}
+      </Link>
+    </li>
+  );
+}
+
 export default function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-card mt-12">
-      <div className="mx-auto px-4 py-10 grid gap-10 md:grid-cols-3 max-w-screen-xl">
+    <footer className="mt-8 border-t border-border bg-card/50">
+      {/* pb-20 below lg keeps the last links clear of the fixed consent icon. */}
+      <div className="mx-auto grid max-w-screen-xl gap-8 px-4 pb-20 pt-8 md:grid-cols-3 lg:pb-8">
         <div>
-          <h5 className="text-sm font-semibold text-foreground mb-2">SCP: SL Servers</h5>
-          <p className="text-sm text-muted-foreground">
-            SCP: SL server list with filtering options, trends and statistics.
-          </p>
-          <p className="text-xs text-muted-foreground mt-4">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">SCP: SL Servers</h2>
+          <p className="text-sm text-muted-foreground">{t('footer.description')}</p>
+          <p className="mt-4 text-xs text-muted-foreground">
             Copyright © 2020-{year}. Hyunoh Ryu (Horyu) All rights reserved.
           </p>
         </div>
         <div>
-          <h5 className="text-sm font-semibold text-foreground mb-2">Links</h5>
+          <h2 className="mb-2 text-sm font-semibold text-foreground">{t('footer.links')}</h2>
           <ul className="space-y-1 text-sm">
-            <li><Link to="/"       className="text-muted-foreground hover:text-foreground">Home</Link></li>
-            <li><Link to="/stats"  className="text-muted-foreground hover:text-foreground">Statistics</Link></li>
-            <li><Link to="/map"    className="text-muted-foreground hover:text-foreground">Server Map</Link></li>
-            <li><Link to="/api"    className="text-muted-foreground hover:text-foreground">API</Link></li>
-            <li><Link to="/credit" className="text-muted-foreground hover:text-foreground">Credit / Third Party Licenses</Link></li>
+            <FooterLink to="/">{t('navbar.server-list')}</FooterLink>
+            <FooterLink to="/stats">{t('navbar.all-stats')}</FooterLink>
+            <FooterLink to="/map">{t('navbar.all-server-map')}</FooterLink>
+            <FooterLink to="/api">API</FooterLink>
+            <FooterLink to="/credit">{t('navbar.credit')}</FooterLink>
           </ul>
         </div>
         <div>
-          <h5 className="text-sm font-semibold text-foreground mb-2">Translation</h5>
-          <p className="text-sm text-muted-foreground mb-3">I&apos;m looking for applicants for site translation.</p>
+          <h2 className="mb-2 text-sm font-semibold text-foreground">{t('footer.translation-title')}</h2>
+          <p className="mb-3 text-sm text-muted-foreground">{t('footer.translation-body')}</p>
           <Button asChild variant="outline" size="sm">
             <a href="https://github.com/horyu1234/sl-servers-frontend" target="_blank" rel="noreferrer" className="gap-2">
-              <GitHubIcon className="h-4 w-4" /> Contribute on GitHub
+              <GitHubIcon className="h-4 w-4" /> {t('footer.contribute')}
             </a>
           </Button>
           <div className="mt-4 text-xs text-muted-foreground">

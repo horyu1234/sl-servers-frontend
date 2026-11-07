@@ -11,5 +11,11 @@ export function parsePlayers(value) {
 
 export function playersPercent({ current, capacity }) {
   if (!capacity) return 0;
-  return Math.round((current / capacity) * 100);
+  return Math.min(100, Math.round((current / capacity) * 100));
+}
+
+export function playersBarClass(percent) {
+  if (percent >= 95) return 'bg-destructive';
+  if (percent >= 80) return 'bg-warning';
+  return 'bg-primary';
 }

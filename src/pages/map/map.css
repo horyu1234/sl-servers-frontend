@@ -39,3 +39,22 @@
   color: hsl(var(--foreground)) !important;
   border-color: hsl(var(--border)) !important;
 }
+
+.leaflet-tooltip {
+  background: hsl(var(--popover));
+  border: 1px solid hsl(var(--border));
+  box-shadow: none;
+  color: hsl(var(--foreground));
+}
+.leaflet-tooltip-top::before {
+  border-top-color: hsl(var(--border));
+}
+.leaflet-tooltip-bottom::before {
+  border-bottom-color: hsl(var(--border));
+}
+.leaflet-tooltip-left::before {
+  border-left-color: hsl(var(--border));
+}
+.leaflet-tooltip-right::before {
+  border-right-color: hsl(var(--border));
+}

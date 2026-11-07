@@ -2,14 +2,17 @@
   "general": {
     "language-change": "Language changed to {{language}}. Some elements may need a refresh.",
     "not-found": "The page you requested could not be found.",
-    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr."
+    "server-error": "Something went wrong while fetching data from the server. This is usually temporary, so please try again in a moment. If the problem persists, please email support@scplist.kr.",
+    "retry": "Try again"
   },
   "api": {
     "host-warning-title": "API host warning",
     "host-warning-before": "All requests must be sent to the",
     "host-warning-middle": "host.",
     "host-warning-after": "is reserved for the official frontend. Direct requests to that host may result in IP or ASN blocking.",
-    "undocumented-warning": "A more complete official API is on the way. Until it lands, please use only the endpoints documented below."
+    "undocumented-warning": "A more complete official API is on the way. Until it lands, please use only the endpoints documented below.",
+    "live-docs-before": "Live OpenAPI documentation served from",
+    "live-docs-after": "— try requests directly from the page."
   },
   "navbar": {
     "server-list": "Server List",
@@ -17,7 +20,8 @@
     "all-server-map": "Map of all servers",
     "credit": "Credits",
     "language": "Language:",
-    "unit": "Unit:"
+    "unit": "Unit:",
+    "settings": "Settings"
   },
   "select": {
     "placeholder": "Please select an item",
@@ -47,7 +51,12 @@
         "distance-asc": "Nearest first",
         "distance-desc": "Farthest first"
       }
-    }
+    },
+    "clear-all": "Clear all",
+    "clear-filter": "Clear filter",
+    "no-results-title": "No servers match your filters",
+    "no-results-description": "Try removing a filter or searching for something else.",
+    "no-servers-title": "No servers are online right now"
   },
   "server-stats": {
     "users-title": "Users",
@@ -62,6 +71,16 @@
       "game-version": "Game Version",
       "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist"
+    },
+    "columns": {
+      "server": "Server",
+      "address": "Address",
+      "trend": "24h trend"
+    },
+    "sparkline": {
+      "peak": "peak",
+      "avg": "avg",
+      "new": "new"
     }
   },
   "server-info": {
@@ -104,10 +123,18 @@
           "1d": "1 Day"
         }
       }
-    }
+    },
+    "copy-address": "Copy address",
+    "address-copied": "Copied",
+    "tech": "Mods and plugins"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™. This site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners."
+    "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™. This site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners.",
+    "description": "SCP: SL server list with filtering options, trends and statistics.",
+    "links": "Links",
+    "translation-title": "Translation",
+    "translation-body": "I'm looking for applicants for site translation.",
+    "contribute": "Contribute on GitHub"
   },
   "all-stats": {
     "users": {
@@ -133,7 +160,8 @@
   },
   "all-server-map": {
     "title": "Map of all servers",
-    "server-info-btn": "Click to view server info"
+    "server-info-btn": "Click to view server info",
+    "location-count": "{{total}} locations"
   },
   "consent": {
     "revoke": {
@@ -141,5 +169,11 @@
       "description": "Analytics scripts already loaded in this tab will keep running until you reload. Reload now to apply your choice immediately.",
       "reload": "Reload"
     }
+  },
+  "credit": {
+    "licenses-title": "Third-party licenses",
+    "search-placeholder": "Search licenses or packages",
+    "no-match": "No packages match this search.",
+    "contributors-title": "Site localization contributors"
   }
 }

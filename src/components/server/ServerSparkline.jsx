@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const VIEW_W = 160;
 const VIEW_H = 28;
 
-const ACCENT = { stroke: '#22c55e', fill: '#22c55e' };
+const ACCENT = 'hsl(var(--primary))';
 
 function pointsFor(data) {
   if (!data || data.length === 0) return [];
@@ -28,6 +29,7 @@ function summarise(data) {
 }
 
 export function ServerSparkline({ data, className = '', compact = false }) {
+  const { t } = useTranslation();
   const computed = useMemo(() => {
     if (data === null) return { state: 'new' };
     if (Array.isArray(data) && data.length === 0) return { state: 'empty' };
@@ -40,7 +42,7 @@ export function ServerSparkline({ data, className = '', compact = false }) {
   }, [data]);
 
   if (computed.state === 'new') {
-    return <span className={`text-[10px] uppercase tracking-wider text-muted-foreground ${className}`}>new</span>;
+    return <span className={`text-[11px] uppercase tracking-wider text-muted-foreground ${className}`}>{t('server-list.sparkline.new', 'new')}</span>;
   }
   if (computed.state === 'empty') {
     return <span className={`text-muted-foreground ${className}`}>—</span>;
@@ -48,7 +50,7 @@ export function ServerSparkline({ data, className = '', compact = false }) {
 
   const { summary, linePath, fillPath } = computed;
   const deltaClass =
-    summary.delta > 5 ? 'text-[#22c55e]' : summary.delta < -5 ? 'text-[#ef4444]' : 'text-muted-foreground';
+    summary.delta > 5 ? 'text-primary' : summary.delta < -5 ? 'text-destructive' : 'text-muted-foreground';
   const arrow = summary.delta > 5 ? '▲' : summary.delta < -5 ? '▼' : '—';
   const sign = summary.delta >= 0 ? '+' : '';
 
@@ -60,15 +62,17 @@ export function ServerSparkline({ data, className = '', compact = false }) {
         aria-hidden="true"
         style={{ width: '100%', height: VIEW_H }}
       >
-        <path d={fillPath} fill={ACCENT.fill} fillOpacity="0.18" />
-        <path d={linePath} fill="none" stroke={ACCENT.stroke} strokeWidth="1.3" />
+        <path d={fillPath} fill={ACCENT} fillOpacity="0.18" />
+        <path d={linePath} fill="none" stroke={ACCENT} strokeWidth="1.3" vectorEffect="non-scaling-stroke" />
       </svg>
       <div
         data-testid="sparkline-summary"
         data-compact={compact ? 'true' : 'false'}
-        className="flex justify-between text-[9px] text-muted-foreground tabular-nums"
+        className="flex justify-between gap-2 text-[11px] leading-4 text-muted-foreground tabular-nums"
       >
-        <span className="truncate">peak {summary.peak} · avg {summary.avg}</span>
+        <span className="truncate">
+          {t('server-list.sparkline.peak', 'peak')} {summary.peak} · {t('server-list.sparkline.avg', 'avg')} {summary.avg}
+        </span>
         <span className={`${deltaClass} whitespace-nowrap`}>{arrow} {sign}{summary.delta}%</span>
       </div>
     </div>

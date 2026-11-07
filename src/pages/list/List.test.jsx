@@ -60,6 +60,31 @@ describe('List page', () => {
     expect(params.get('view')).toBe('grid');
   });
 
+  it('offers to clear the filters when nothing matches', async () => {
+    getServerListAPI.mockResolvedValueOnce({
+      data: {
+        onlineServerCount: 1, onlineUserCount: 22,
+        displayServerCount: 0, displayUserCount: 0, offlineServerCount: 0,
+        servers: [],
+      },
+    });
+    const user = userEvent.setup();
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/?search=nothing']}>
+          <List />
+          <LocationProbe />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    expect(await screen.findByText('No servers match your filters')).toBeInTheDocument();
+
+    await user.click(screen.getAllByRole('button', { name: 'Clear all' }).at(-1));
+
+    await waitFor(() => expect(screen.getByTestId('location').textContent).toBe(''));
+  });
+
   it('fetches and renders the server row', async () => {
     render(
       <Provider store={store}>

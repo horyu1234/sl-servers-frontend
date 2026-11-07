@@ -2,14 +2,17 @@
   "general": {
     "language-change": "언어를 {{language}} (으)로 변경했습니다. 일부는 새로고침이 필요할 수도 있습니다.",
     "not-found": "요청하신 페이지를 찾을 수 없습니다.",
-    "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 support@scplist.kr 로 메일을 보내주십시오."
+    "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 support@scplist.kr 로 메일을 보내주십시오.",
+    "retry": "다시 시도"
   },
   "api": {
     "host-warning-title": "API 호스트 경고",
     "host-warning-before": "모든 요청은 반드시",
     "host-warning-middle": "호스트로 요청해야 합니다.",
     "host-warning-after": "호스트는 공식 프론트 전용 호스트이며, 이 호스트로 직접 요청하는 행위는 IP 또는 ASN 차단으로 이어질 수 있습니다.",
-    "undocumented-warning": "더 풍부한 공식 API를 준비 중입니다. 정식 공개 전까지는 아래에 문서화된 엔드포인트만 사용해 주세요."
+    "undocumented-warning": "더 풍부한 공식 API를 준비 중입니다. 정식 공개 전까지는 아래에 문서화된 엔드포인트만 사용해 주세요.",
+    "live-docs-before": "실시간 OpenAPI 문서는",
+    "live-docs-after": "에서 제공되며, 이 페이지에서 바로 요청해 볼 수 있습니다."
   },
   "navbar": {
     "server-list": "서버 목록",
@@ -17,7 +20,8 @@
     "all-server-map": "전체 서버 지도",
     "credit": "크레딧",
     "language": "언어:",
-    "unit": "단위:"
+    "unit": "단위:",
+    "settings": "설정"
   },
   "select": {
     "placeholder": "항목을 선택해주세요",
@@ -47,7 +51,12 @@
         "distance-asc": "가까운 거리",
         "distance-desc": "먼 거리"
       }
-    }
+    },
+    "clear-all": "모두 지우기",
+    "clear-filter": "필터 지우기",
+    "no-results-title": "필터에 맞는 서버가 없습니다",
+    "no-results-description": "필터를 줄이거나 다른 검색어로 찾아보세요.",
+    "no-servers-title": "지금 온라인인 서버가 없습니다"
   },
   "server-stats": {
     "users-title": "유저",
@@ -62,6 +71,16 @@
       "game-version": "게임 버전",
       "friendly-fire": "아군 공격",
       "whitelist": "화이트리스트"
+    },
+    "columns": {
+      "server": "서버",
+      "address": "주소",
+      "trend": "24시간 추이"
+    },
+    "sparkline": {
+      "peak": "최고",
+      "avg": "평균",
+      "new": "신규"
     }
   },
   "server-info": {
@@ -104,10 +123,18 @@
           "1d": "1일"
         }
       }
-    }
+    },
+    "copy-address": "주소 복사",
+    "address-copied": "복사됨",
+    "tech": "모드 및 플러그인"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory 는 Northwood Studios™ 에서 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다."
+    "notice": "SCP: Secret Laboratory 는 Northwood Studios™ 에서 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다.",
+    "description": "필터, 추이, 통계를 제공하는 SCP: SL 서버 목록입니다.",
+    "links": "바로가기",
+    "translation-title": "번역",
+    "translation-body": "사이트 번역에 참여해 주실 분을 찾고 있습니다.",
+    "contribute": "GitHub에서 기여하기"
   },
   "all-stats": {
     "users": {
@@ -133,7 +160,8 @@
   },
   "all-server-map": {
     "title": "전체 서버 지도",
-    "server-info-btn": "클릭하여 서버 정보 확인"
+    "server-info-btn": "클릭하여 서버 정보 확인",
+    "location-count": "위치 {{total}}곳"
   },
   "consent": {
     "revoke": {
@@ -141,5 +169,11 @@
       "description": "이 탭에서 이미 로드된 분석 스크립트는 새로고침 전까지 계속 실행됩니다. 선택을 즉시 적용하려면 새로고침해주세요.",
       "reload": "새로고침"
     }
+  },
+  "credit": {
+    "licenses-title": "서드파티 라이선스",
+    "search-placeholder": "라이선스 또는 패키지 검색",
+    "no-match": "검색 결과가 없습니다.",
+    "contributors-title": "사이트 번역 기여자"
   }
 }

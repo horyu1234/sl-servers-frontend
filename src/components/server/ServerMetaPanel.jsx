@@ -23,11 +23,11 @@ export function ServerMetaPanel({ server }) {
   const tech = server.techList ?? [];
 
   return (
-    <Card>
-      <CardHeader className="pb-3">
-        <CardTitle className="text-base">{t('server-info.title')}</CardTitle>
+    <Card className="lg:sticky lg:top-[4.5rem]">
+      <CardHeader className="p-4 sm:p-5">
+        <CardTitle>{t('server-info.title')}</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-3">
+      <CardContent className="flex flex-col gap-3 p-4 pt-0 sm:p-5 sm:pt-0">
         <Row label={t('server-list.tech.game-version')} value={server.version} />
         <Row label={t('server-list.tech.friendly-fire')} value={server.friendlyFire ? yes : no} />
         <Row label={t('server-list.tech.whitelist')} value={server.whitelist ? yes : no} />
@@ -42,7 +42,7 @@ export function ServerMetaPanel({ server }) {
           <>
             <Separator />
             <div className="space-y-2">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">tech</div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">{t('server-info.tech')}</div>
               {tech.map((entry, i) => (
                 <Row key={`${entry.name}-${i}`} label={entry.name} value={entry.version} />
               ))}

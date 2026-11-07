@@ -72,7 +72,7 @@ export function PeriodPicker({ onUpdate }) {
           {t('server-info.graph.options.data-range')}
         </Label>
         <Select value={period} onValueChange={setPeriod}>
-          <SelectTrigger className="w-full sm:w-[140px]">
+          <SelectTrigger className="h-9 w-full sm:w-[140px]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -107,7 +107,7 @@ export function PeriodPicker({ onUpdate }) {
           {t('server-info.graph.options.data-resolution')}
         </Label>
         <Select value={resolution} onValueChange={setResolution}>
-          <SelectTrigger className="w-full sm:w-[100px]">
+          <SelectTrigger className="h-9 w-full sm:w-[130px]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -142,13 +142,13 @@ function DateTrigger({ value, onChange }) {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="w-full justify-start gap-2 sm:w-[180px]">
+        <Button variant="outline" className="h-9 w-full justify-start gap-2 sm:w-[180px]">
           <CalendarIcon className="h-4 w-4" />
           <span className="min-w-0 truncate text-sm">{format(value, 'yyyy-MM-dd HH:mm')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0 space-y-2 p-3" align="start">
-        <Calendar mode="single" selected={value} onSelect={handleSelect} />
+        <Calendar mode="single" selected={value} defaultMonth={value} onSelect={handleSelect} />
         <div className="flex items-center gap-2 px-1 pb-1">
           <Label className="text-xs text-muted-foreground">Time</Label>
           <input

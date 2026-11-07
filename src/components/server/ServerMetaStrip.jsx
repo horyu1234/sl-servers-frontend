@@ -11,21 +11,21 @@ export function ServerMetaStrip({ server, compact = false }) {
 
   if (compact) {
     return (
-      <div className="text-[10.5px] text-muted-foreground leading-snug">
+      <div className="truncate text-[11px] leading-4 text-muted-foreground">
         v{server.version} · FF {server.friendlyFire ? yes : no} · WL {server.whitelist ? yes : no}
       </div>
     );
   }
   return (
-    <div className="text-[10.5px] text-muted-foreground leading-snug">
+    <div className="truncate text-[11px] leading-4 text-muted-foreground">
       <span><span className="text-foreground/80">v</span>{server.version}</span>
-      <span className="mx-1.5 text-foreground/20">|</span>
+      <span className="mx-1.5 text-muted-foreground/40">|</span>
       <span><span className="text-foreground/80">FF</span> {server.friendlyFire ? yes : no}</span>
-      <span className="mx-1.5 text-foreground/20">|</span>
+      <span className="mx-1.5 text-muted-foreground/40">|</span>
       <span><span className="text-foreground/80">WL</span> {server.whitelist ? yes : no}</span>
       {exiled && (
         <>
-          <span className="mx-1.5 text-foreground/20">|</span>
+          <span className="mx-1.5 text-muted-foreground/40">|</span>
           <span><span className="text-foreground/80">EXILED</span> {exiled.version}</span>
         </>
       )}

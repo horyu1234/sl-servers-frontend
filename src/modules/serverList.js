@@ -55,11 +55,7 @@ export default function serverList(state = initialState, action) {
             return {
                 ...state,
                 fetching: true,
-                error: null,
-                data: {
-                    ...state.data,
-                    servers: []
-                }
+                error: null
             };
         case SERVER_LIST_SUCCESS:
             return {

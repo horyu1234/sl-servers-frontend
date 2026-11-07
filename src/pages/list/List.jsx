@@ -3,16 +3,23 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
+import { RotateCw, SearchX } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { ServerRow } from '../../components/server/ServerRow';
 import { ServerStatsHeader } from '../../components/server/ServerStatsHeader';
 import { ViewToggle } from '../../components/server/ViewToggle';
 import { ServerCard } from '../../components/server/ServerCard';
+import { ServerListHeader } from '../../components/server/ServerListHeader';
+import { ServerListSkeleton } from '../../components/server/ServerListSkeleton';
+import { EmptyState } from '../../components/shared/EmptyState';
 import { FilterSidebar } from '../../components/filters/FilterSidebar';
 import { FilterDrawer } from '../../components/filters/FilterDrawer';
 import { FilterChips } from '../../components/filters/FilterChips';
-import { parseFromSearchParams, toSearchParams } from '../../components/filters/filterSchema';
+import { DEFAULT_FILTER, isDefault, parseFromSearchParams, toSearchParams } from '../../components/filters/filterSchema';
 import { useTrends } from '../../lib/hooks/useTrends';
 import { useMediaQuery } from '../../lib/hooks/useMediaQuery';
+import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { cn } from '@/lib/cn';
 import * as serverFilterActions from '../../modules/serverFilter';
 import * as serverListActions from '../../modules/serverList';
 
@@ -37,6 +44,7 @@ export default function List() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
+  useDocumentTitle();
   // Memo on the URLSearchParams' STRING form, not the object reference.
   // React Router can return a new URLSearchParams instance on every render
   // even when the URL hasn't changed; using `searchParams` directly as a
@@ -84,6 +92,8 @@ export default function List() {
     const params = toSearchParams(next);
     if (view !== 'list') params.set('view', view);
     setSearchParams(params, { replace: false });
+    // The list stays on screen while refetching, so show the new results from the top.
+    if (window.scrollY > 0) window.scrollTo({ top: 0 });
   };
 
   // Window-scroll virtualizer: the entire page scrolls (body), and the
@@ -111,22 +121,18 @@ export default function List() {
 
   const { trends } = useTrends();
 
+  const firstLoad = fetching && servers.length === 0;
+  const refreshing = fetching && servers.length > 0;
+  const noResults = !fetching && !error && servers.length === 0;
+
   return (
     <div className="flex min-w-0">
       <FilterSidebar value={filter} onChange={updateFilter} />
       <div className="flex-1 min-w-0 flex flex-col">
-        <div className="sticky top-14 z-20 flex min-w-0 flex-wrap items-center gap-2 border-b border-border bg-background/90 px-3 py-3 backdrop-blur sm:gap-3 sm:px-4">
-          <FilterDrawer value={filter} onChange={updateFilter} />
-          <FilterChips value={filter} onChange={updateFilter} />
-          <ViewToggle value={view} onChange={setView} />
-          <div className="ml-auto hidden sm:block text-xs text-muted-foreground tabular-nums">
-            {fetching ? t('filter-option.refreshing') : `${stats.displayServerCount.toLocaleString()} / ${stats.onlineServerCount.toLocaleString()} servers`}
-          </div>
-        </div>
-
-        <div className="px-3 py-3 sm:px-4">
+        <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+          <h1 className="sr-only">{t('navbar.server-list')}</h1>
           <ServerStatsHeader
-            loading={fetching && servers.length === 0}
+            loading={firstLoad}
             online={stats.onlineServerCount}
             displayed={stats.displayServerCount}
             offline={stats.offlineServerCount}
@@ -135,10 +141,33 @@ export default function List() {
           />
         </div>
 
+        <div className="sticky top-14 z-20 mt-3 border-b border-border bg-background/90 backdrop-blur">
+          <div className="flex min-h-12 min-w-0 flex-wrap items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4">
+            <FilterDrawer value={filter} onChange={updateFilter} />
+            <FilterChips value={filter} onChange={updateFilter} />
+            <div className="ml-auto flex items-center gap-3">
+              <div className="hidden text-xs tabular-nums text-muted-foreground sm:block">
+                {fetching
+                  ? t('filter-option.refreshing')
+                  : `${stats.displayServerCount.toLocaleString()} / ${stats.onlineServerCount.toLocaleString()} ${t('server-stats.servers-title')}`}
+              </div>
+              <ViewToggle value={view} onChange={setView} />
+            </div>
+          </div>
+          {effectiveView === 'list' && (
+            <ServerListHeader sort={filter.sort} onSortChange={(sort) => updateFilter({ ...filter, sort })} />
+          )}
+        </div>
+
         {error && (
-          <div className="px-4 py-3 text-sm text-destructive">
-            <div>{t('general.server-error') || 'Failed to load servers.'}</div>
-            <div className="mt-1 text-xs font-mono break-all whitespace-pre-wrap text-muted-foreground select-all">
+          <div className="px-4 py-4 text-sm text-destructive">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>{t('general.server-error')}</div>
+              <Button variant="outline" size="sm" className="gap-2 text-foreground" onClick={() => dispatch(serverListActions.getServerList())}>
+                <RotateCw /> {t('general.retry')}
+              </Button>
+            </div>
+            <div className="mt-2 text-xs font-mono break-all whitespace-pre-wrap text-muted-foreground select-all">
               {[
                 error.status != null
                   ? `HTTP ${error.status}${error.statusText ? ` ${error.statusText}` : ''}`
@@ -156,6 +185,22 @@ export default function List() {
           </div>
         )}
 
+        {firstLoad && <ServerListSkeleton view={effectiveView} />}
+
+        {noResults && (
+          <EmptyState
+            icon={SearchX}
+            title={t(isDefault(filter) ? 'filter-option.no-servers-title' : 'filter-option.no-results-title')}
+            description={isDefault(filter) ? null : t('filter-option.no-results-description')}
+            action={!isDefault(filter) && (
+              <Button variant="outline" size="sm" onClick={() => updateFilter(DEFAULT_FILTER)}>
+                {t('filter-option.clear-all')}
+              </Button>
+            )}
+          />
+        )}
+
+        <div aria-busy={fetching} className={cn('transition-opacity', refreshing && 'opacity-60')}>
         {virtualized ? (
           <div className={isPhone ? 'pt-3 px-3 pb-4 sm:px-4' : ''}>
             <div ref={listParentRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
@@ -198,7 +243,9 @@ export default function List() {
           </div>
         )}
 
-        <div className="px-4 py-2 text-[10px] text-muted-foreground border-t border-border">
+        </div>
+
+        <div className="px-4 py-2 text-[11px] text-muted-foreground border-t border-border">
           This product includes GeoLite2 data created by MaxMind, available from{' '}
           <a href="https://www.maxmind.com" target="_blank" rel="noreferrer" className="underline">maxmind.com</a>.
         </div>
