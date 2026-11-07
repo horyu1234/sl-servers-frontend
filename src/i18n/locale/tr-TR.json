@@ -1,97 +1,135 @@
 {
   "general": {
-    "language-change": "Dil {{language}} olarak değiştirildi. Sayfayı yenilemeniz gerekebilir.",
-    "not-found": "Aradığınız sayfa bulunamadı.",
-    "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse support@scplist.kr adresine e-posta gönderin."
+    "language-change": "Dil {{language}} olarak değiştirildi. Bazı yazılar güncellenmezse sayfayı yenileyin.",
+    "not-found": "Sayfa bulunamadı.",
+    "server-error": "Sunucudan veri alınırken bir hata oluştu. Bu sorun genellikle geçicidir, lütfen kısa bir süre sonra tekrar deneyin. Sorun devam ederse support@scplist.kr adresine e-posta gönderin.",
+    "retry": "Tekrar dene"
   },
   "api": {
     "host-warning-title": "API host uyarısı",
-    "host-warning-before": "Tüm istekler şu hosta gönderilmelidir:",
-    "host-warning-middle": ".",
+    "host-warning-before": "Tüm istekler",
+    "host-warning-middle": "hostuna gönderilmelidir.",
     "host-warning-after": "resmi frontend için ayrılmıştır. Bu hosta doğrudan istek göndermek IP veya ASN engellemesine yol açabilir.",
-    "undocumented-warning": "Daha kapsamlı bir resmi API üzerinde çalışıyoruz. Yayınlanana kadar lütfen yalnızca aşağıda belgelenen uç noktaları kullanın."
+    "undocumented-warning": "Daha kapsamlı bir resmi API üzerinde çalışıyoruz. Yayınlanana kadar lütfen yalnızca aşağıda belgelenen uç noktaları kullanın.",
+    "live-docs-before": "Aşağıdaki dokümanlar",
+    "live-docs-after": "adresinden canlı olarak yüklenir; istekleri bu sayfadan deneyebilirsiniz."
   },
   "navbar": {
-    "server-list": "Sunucu Listesi",
-    "all-stats": "Tüm İstatistikler",
-    "all-server-map": "Sunucuların Dünya Haritası",
-    "credit": "Emeği Geçenler",
+    "server-list": "Sunucu listesi",
+    "all-stats": "İstatistikler",
+    "all-server-map": "Sunucu haritası",
+    "credit": "Emeği geçenler",
     "language": "Dil:",
-    "unit": "Birim:"
+    "unit": "Birim:",
+    "settings": "Ayarlar",
+    "open-menu": "Menüyü aç",
+    "menu": "Menü",
+    "site-navigation": "Site gezintisi",
+    "unit-km": "Kilometre (km)",
+    "unit-mi": "Mil (mi)"
   },
   "select": {
-    "placeholder": "Lütfen bir öğe seçin",
-    "empty": "Hiçbir şey seçilmedi"
+    "placeholder": "Ülke seçin",
+    "empty": "Sonuç yok",
+    "selected-count": "{{total}} seçili",
+    "remove": "{{name}} ülkesini kaldır"
   },
   "filter-option": {
     "server-search": {
-      "name": "Sunucu Ara",
-      "placeholder": "Arama terimi girin"
+      "name": "Sunucu ara",
+      "placeholder": "Sunucu adı veya IP"
     },
     "country": "Ülke",
     "hide-empty": "Boş sunucuları gizle",
     "hide-full": "Dolu sunucuları gizle",
     "refreshing": "Liste yenileniyor...",
-    "filter-options-title": "Filtre Seçenekleri",
+    "filter-options-title": "Filtreler",
+    "drawer-description": "Sunucu listesini filtrele",
     "yes-no-filter": {
-      "none": "Tümünü Dahil Et",
+      "none": "Tümü",
       "yes": "Evet",
       "no": "Hayır",
-      "friendly-fire": "Dost Ateşi",
+      "friendly-fire": "Dost ateşi",
       "whitelist": "Whitelist",
       "modded": "Modlu",
       "order-type": {
         "name": "Sıralama",
-        "player-desc": "Çok oyuncudan az oyuncuya",
-        "player-asc": "Az oyuncudan çok oyuncuya",
-        "distance-asc": "Yakın Mesafe",
-        "distance-desc": "Uzak Mesafe"
+        "player-desc": "En çok oyuncu",
+        "player-asc": "En az oyuncu",
+        "distance-asc": "En yakın",
+        "distance-desc": "En uzak",
+        "ingame": "Oyun içi sıralama"
       }
-    }
+    },
+    "clear-all": "Tümünü temizle",
+    "clear-filter": "Filtreyi temizle",
+    "no-results-title": "Filtrelerinize uyan sunucu yok",
+    "no-results-description": "Bir filtreyi kaldırmayı veya başka bir arama yapmayı deneyin.",
+    "no-servers-title": "Şu anda çevrimiçi sunucu yok"
   },
   "server-stats": {
-    "users-title": "Kullanıcılar",
+    "users-title": "Oyuncular",
     "servers-title": "Sunucular",
     "offline-label": "Çevrimdışı"
   },
   "server-list": {
-    "loading": "Sunucu verileri alınıyor...",
+    "loading": "Sunucular yükleniyor...",
     "tech": {
       "yes": "Evet",
       "no": "Hayır",
-      "game-version": "Oyun Sürümü",
-      "friendly-fire": "Dost Ateşi",
+      "game-version": "Oyun sürümü",
+      "friendly-fire": "Dost ateşi",
       "whitelist": "Whitelist"
+    },
+    "columns": {
+      "server": "Sunucu",
+      "address": "Adres",
+      "trend": "7 günlük trend"
+    },
+    "view-list": "Liste görünümü",
+    "view-grid": "Izgara görünümü",
+    "sparkline": {
+      "peak": "maks",
+      "avg": "ort",
+      "new": "yeni"
     }
   },
   "server-info": {
-    "title": "Sunucu Bilgisi",
-    "not-exist": "Sunucu mevcut değil.",
+    "title": "Sunucu bilgisi",
+    "not-exist": "Sunucu bulunamadı.",
     "loading": "Sunucu bilgileri yükleniyor...",
     "status": {
       "online": "Çevrimiçi",
-      "offline": "Çevrımdışı"
+      "offline": "Çevrimdışı"
     },
     "players": "Oyuncular",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Bu sunucunun Pastebin içeriği",
+      "loading": "Pastebin içeriği yükleniyor...",
+      "open": "Pastebin'de aç",
+      "notice": "Pastebin'in kullanım şartları bu sitenin içeriği doğrudan göstermesine izin vermediği için resmi embed ile gösteriliyor. Biçimlendirme etiketleri düz metin olarak görünebilir, süresi dolmuş veya gizli paste'ler ise görünmez."
+    },
     "distance": "Uzaklık",
-    "statistics": "Sunucu İstatistikleri",
-    "daylight-saving-time": "Yaz saati uygulaması programdaki saati etkilemez.",
+    "statistics": "Sunucu istatistikleri",
+    "daylight-saving-time": "Grafikteki saatler yaz saatine göre ayarlanmaz.",
     "graph": {
-      "loading": "Sunucudan veri alınıyor...",
+      "loading": "Veriler yükleniyor...",
       "options": {
-        "data-range": "Veri Dönemi",
-        "start-time": "Başlangıç Tarihi",
-        "stop-time": "Bitiş Tarihi",
-        "data-resolution": "Veri Aralığı",
-        "graph-update-btn": "Grafiği Yenile",
+        "data-range": "Tarih aralığı",
+        "start-time": "Başlangıç saati",
+        "stop-time": "Bitiş saati",
+        "data-resolution": "Veri aralığı",
+        "graph-update-btn": "Grafiği yenile",
+        "time": "Saat",
+        "invalid-range": "Başlangıç saati bitiş saatinden önce olmalıdır.",
         "period": {
-          "custom": "Özel Tarih",
+          "custom": "Özel",
           "1hour": "1 saat",
           "8hour": "8 saat",
           "1day": "1 gün",
           "2day": "2 gün",
-          "1week": "1 Hafta",
+          "1week": "1 hafta",
           "1month": "1 ay",
           "3month": "3 ay",
           "1year": "1 yıl",
@@ -104,42 +142,113 @@
           "1d": "1 gün"
         }
       }
-    }
+    },
+    "copy-address": "Adresi kopyala",
+    "address-copied": "Kopyalandı",
+    "tech": "Modlar ve eklentiler"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory, Northwood Studios ™ tarafından yayınlanan bir oyundur, bu site Northwood Studios ™ ile bağlantılı değildir. <br/> Tüm ticari markalar ve tescilli markalar, ilgili sahiplerinin mülkiyetindedir."
+    "notice": "SCP: Secret Laboratory, Northwood Studios™ tarafından yayınlanan bir oyundur. Bu site Northwood Studios™ ile bağlantılı değildir.<br/>Tüm ticari markalar ve tescilli markalar, ilgili sahiplerinin mülkiyetindedir.",
+    "description": "SCP: SL sunucularını filtreler, oyuncu eğilimleri ve istatistiklerle bulun.",
+    "links": "Bağlantılar",
+    "translation-title": "Çeviriler",
+    "translation-body": "Bu siteyi kendi dilinize çevirmemize yardım edin.",
+    "contribute": "GitHub'da katkıda bulun"
   },
   "all-stats": {
     "users": {
-      "title": "Toplam Oyuncu Sayısı (Global)",
+      "title": "Tüm sunuculardaki oyuncular",
       "select-compare-country": {
-        "name": "Ülke Seç"
+        "name": "Karşılaştırılacak ülkeyi seçin"
       },
       "show-all": {
-        "name": "Tüm ülke verilerini göster"
+        "name": "Tüm ülkeleri göster"
       },
       "graph": {
-        "all-country": "Tüm Ülkeler",
-        "empty-country": "Sorgulanacak veri yok."
+        "all-country": "Tüm ülkeler",
+        "empty-country": "Veri yok."
       }
     },
     "mod-loader": {
       "title": "Mod loader istatistikleri",
       "back": "Geri",
-      "versions-title": "{{name}} — sürümler",
-      "drill-hint": "Sürüm dağılımını görmek için bir dilime tıklayın",
-      "drill-back-hint": "Yükleyici dağılımına dönmek için Geri'ye tıklayın"
+      "versions-title": "{{name}} sürümleri",
+      "drill-hint": "Sürümlerini görmek için bir dilime tıklayın",
+      "drill-back-hint": "Tüm loader'ları görmek için Geri'ye tıklayın"
     }
   },
   "all-server-map": {
-    "title": "Sunucuların Dünya Haritası",
-    "server-info-btn": "Sunucu bilgilerini kontrol etmek için tıklayın"
+    "title": "Sunucu haritası",
+    "server-info-btn": "Sunucu bilgilerini görüntüle",
+    "location-count": "{{total}} konum"
   },
   "consent": {
     "revoke": {
       "title": "Takip, sonraki sayfa yüklemesinde duracak",
       "description": "Bu sekmede zaten yüklenmiş olan analiz scriptleri, sayfayı yenileyene kadar çalışmaya devam edecek. Tercihinizi hemen uygulamak için şimdi yenileyin.",
       "reload": "Yenile"
+    }
+  },
+  "credit": {
+    "licenses-title": "Üçüncü taraf lisansları",
+    "search-placeholder": "Lisans veya paket ara",
+    "no-match": "Bu aramayla eşleşen paket yok.",
+    "contributors-title": "Çevirmenler"
+  },
+  "insights": {
+    "loading": "Uzun dönem istatistikler yükleniyor...",
+    "players": "{{players}} oyuncu",
+    "history": {
+      "age": "Çalışma süresi",
+      "age-years": "{{years}} yıl {{months}} ay",
+      "age-months": "{{months}} ay",
+      "age-days": "{{days}} gün",
+      "age-first-seen": "İlk görülme: {{date}}",
+      "age-since-start": "Kayıtlarımız başlamadan önce de vardı ({{date}})",
+      "peak": "Tüm zamanların zirvesi",
+      "versions": "Oyun güncellemeleri",
+      "versions-value": "{{versions}} sürüm",
+      "seniority": "Yaş sıralaması",
+      "seniority-value": "En eski %{{percent}}",
+      "seniority-note": "Şu an çevrimiçi sunucular arasında"
+    },
+    "heatmap": {
+      "title": "Ne zaman kalabalık?",
+      "description": "Son {{weeks}} haftada saatlere göre tipik zirve, sizin saat diliminizde ({{zone}})",
+      "time": "{{day}} {{hour}}:00",
+      "readout": "{{time}}: genellikle {{players}} oyuncu",
+      "readout-now": "Şu an ({{time}}): genellikle {{players}} oyuncu",
+      "readout-empty": "{{time}}: yeterli veri yok",
+      "readout-full": "dolu olma oranı %{{percent}}",
+      "legend-low": "Sakin",
+      "legend-high": "Kalabalık ({{players}})",
+      "legend-full": "Sık sık dolu ({{capacity}} slot)",
+      "quiet": "Bu sunucu son {{weeks}} haftadır çoğunlukla boş."
+    },
+    "global": {
+      "title": "SCP:SL zaman çizelgesi",
+      "description": "{{date}} tarihinden beri tüm listelenen sunuculardaki en yüksek eş zamanlı oyuncu sayısı",
+      "latest": "Son günlük zirve",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Genel sıralama",
+      "rank-value": "{{rank}}. sıra",
+      "rank-note": "{{days}} günün %{{percent}} kadarından daha yoğun",
+      "year-ago": "Geçen yıla göre",
+      "year-ago-note": "{{date}}: {{players}} oyuncu",
+      "today": "Bugün şu ana kadar",
+      "today-note": "Sayım sürüyor",
+      "chart-note": "Her nokta, o haftanın en yoğun gününü gösterir. Dikey çizgiler büyük güncellemeleri işaret eder. Veri toplama toplamda {{days}} gün kesintiye uğradı.",
+      "no-data": "Veri yok",
+      "release-tooltip": "{{version}} güncellemesi",
+      "records": "Rekor günler",
+      "record-near-release": "{{version}} civarı",
+      "releases": "Büyük güncellemelerin öncesi ve sonrası",
+      "release-version": "Sürüm",
+      "release-date": "İlk görülme",
+      "release-before": "Önceki 14 gün",
+      "release-after": "Sonraki 14 gün",
+      "release-change": "Değişim",
+      "release-caveat": "Her güncellemeden önceki ve sonraki 14 günde günlük zirvenin medyanı. Mevsimler ve tatiller de etkili olduğundan bu, yalnızca güncellemenin etkisi değildir."
     }
   }
 }

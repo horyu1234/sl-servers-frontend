@@ -25,13 +25,16 @@ export default function Api() {
                         <AlertTitle>{t('api.host-warning-title')}</AlertTitle>
                         <AlertDescription className="leading-relaxed">
                             {t('api.host-warning-before')}
+                            <wbr/>
                             <code className="mx-1 rounded bg-muted px-1 py-0.5 text-xs text-foreground">
                                 api.scplist.kr
                             </code>
                             {t('api.host-warning-middle')}
+                            <wbr/>
                             <code className="mx-1 rounded bg-muted px-1 py-0.5 text-xs text-foreground">
                                 backend.scplist.kr
                             </code>
+                            <wbr/>
                             {t('api.host-warning-after')}
                         </AlertDescription>
                     </Alert>
@@ -45,9 +48,11 @@ export default function Api() {
                         <InfoIcon className="h-4 w-4"/>
                         <AlertDescription>
                             {t('api.live-docs-before')}
+                            <wbr/>
                             <code className="mx-1 px-1 py-0.5 rounded bg-muted text-foreground/90 text-xs">
                                 api.scplist.kr/openapi.json
                             </code>
+                            <wbr/>
                             {t('api.live-docs-after')}
                         </AlertDescription>
                     </Alert>

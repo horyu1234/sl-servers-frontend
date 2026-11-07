@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronRight } from 'lucide-react';
 import { ServerSparkline } from './ServerSparkline';
 import { ServerMetaStrip } from './ServerMetaStrip';
@@ -13,6 +14,8 @@ import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
 
 function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }) {
+  // The country name follows the language, which the memo comparison below does not see.
+  useTranslation();
   const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);

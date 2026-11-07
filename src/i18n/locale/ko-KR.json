@@ -1,55 +1,63 @@
 {
   "general": {
-    "language-change": "언어를 {{language}} (으)로 변경했습니다. 일부는 새로고침이 필요할 수도 있습니다.",
-    "not-found": "요청하신 페이지를 찾을 수 없습니다.",
-    "server-error": "서버에서 데이터를 가져오는 중 오류가 발생했습니다. 이러한 이슈는 보통 일시적이므로 잠시 후 다시 시도해주세요. 이 문제가 계속된다면 support@scplist.kr 로 메일을 보내주십시오.",
+    "language-change": "언어를 {{language}}(으)로 바꿨습니다. 그대로인 문구가 있으면 새로고침해 주세요.",
+    "not-found": "페이지를 찾을 수 없습니다.",
+    "server-error": "서버에서 데이터를 불러오지 못했습니다. 보통 일시적인 문제이니 잠시 후 다시 시도해 주세요. 계속 안 되면 support@scplist.kr로 메일을 보내 주세요.",
     "retry": "다시 시도"
   },
   "api": {
     "host-warning-title": "API 호스트 경고",
     "host-warning-before": "모든 요청은 반드시",
-    "host-warning-middle": "호스트로 요청해야 합니다.",
-    "host-warning-after": "호스트는 공식 프론트 전용 호스트이며, 이 호스트로 직접 요청하는 행위는 IP 또는 ASN 차단으로 이어질 수 있습니다.",
-    "undocumented-warning": "더 풍부한 공식 API를 준비 중입니다. 정식 공개 전까지는 아래에 문서화된 엔드포인트만 사용해 주세요.",
-    "live-docs-before": "실시간 OpenAPI 문서는",
-    "live-docs-after": "에서 제공되며, 이 페이지에서 바로 요청해 볼 수 있습니다."
+    "host-warning-middle": "호스트로 보내야 합니다.",
+    "host-warning-after": "호스트는 공식 프론트엔드 전용입니다. 이 호스트로 직접 요청하면 IP 또는 ASN이 차단될 수 있습니다.",
+    "undocumented-warning": "더 완전한 공식 API를 준비 중입니다. 그때까지는 아래 문서에 있는 엔드포인트만 사용해 주세요.",
+    "live-docs-before": "아래 문서는",
+    "live-docs-after": "에서 실시간으로 불러오며, 이 페이지에서 바로 요청을 보내 볼 수 있습니다."
   },
   "navbar": {
     "server-list": "서버 목록",
     "all-stats": "전체 통계",
-    "all-server-map": "전체 서버 지도",
+    "all-server-map": "서버 지도",
     "credit": "크레딧",
     "language": "언어:",
     "unit": "단위:",
-    "settings": "설정"
+    "settings": "설정",
+    "open-menu": "메뉴 열기",
+    "menu": "메뉴",
+    "site-navigation": "사이트 메뉴",
+    "unit-km": "킬로미터 (km)",
+    "unit-mi": "마일 (mi)"
   },
   "select": {
-    "placeholder": "항목을 선택해주세요",
-    "empty": "항목이 비어있습니다"
+    "placeholder": "국가 선택",
+    "empty": "검색 결과 없음",
+    "selected-count": "{{total}}개 선택됨",
+    "remove": "{{name}} 제거"
   },
   "filter-option": {
     "server-search": {
       "name": "서버 검색",
-      "placeholder": "검색어 입력"
+      "placeholder": "서버 이름 또는 IP"
     },
     "country": "국가",
     "hide-empty": "빈 서버 숨기기",
-    "hide-full": "가득 찬 서버 숨기기",
+    "hide-full": "꽉 찬 서버 숨기기",
     "refreshing": "목록을 다시 불러오는 중...",
-    "filter-options-title": "필터 옵션",
+    "filter-options-title": "필터",
+    "drawer-description": "서버 목록 필터",
     "yes-no-filter": {
-      "none": "모두 포함",
+      "none": "전체",
       "yes": "사용",
-      "no": "사용 안함",
+      "no": "사용 안 함",
       "friendly-fire": "아군 공격",
       "whitelist": "화이트리스트",
       "modded": "모드",
       "order-type": {
         "name": "정렬 기준",
-        "player-desc": "많은 인원 수",
-        "player-asc": "적은 인원 수",
-        "distance-asc": "가까운 거리",
-        "distance-desc": "먼 거리",
+        "player-desc": "인원 많은 순",
+        "player-asc": "인원 적은 순",
+        "distance-asc": "가까운 순",
+        "distance-desc": "먼 순",
         "ingame": "게임 내 순서"
       }
     },
@@ -57,15 +65,15 @@
     "clear-filter": "필터 지우기",
     "no-results-title": "필터에 맞는 서버가 없습니다",
     "no-results-description": "필터를 줄이거나 다른 검색어로 찾아보세요.",
-    "no-servers-title": "지금 온라인인 서버가 없습니다"
+    "no-servers-title": "지금 온라인 상태인 서버가 없습니다"
   },
   "server-stats": {
-    "users-title": "유저",
+    "users-title": "접속자",
     "servers-title": "서버",
     "offline-label": "오프라인"
   },
   "server-list": {
-    "loading": "서버로 부터 데이터를 불러오는 중입니다...",
+    "loading": "서버 목록을 불러오는 중...",
     "tech": {
       "yes": "네",
       "no": "아니요",
@@ -78,6 +86,8 @@
       "address": "주소",
       "trend": "7일 추이"
     },
+    "view-list": "목록 보기",
+    "view-grid": "카드 보기",
     "sparkline": {
       "peak": "최고",
       "avg": "평균",
@@ -86,8 +96,8 @@
   },
   "server-info": {
     "title": "서버 정보",
-    "not-exist": "존재하지 않는 서버입니다.",
-    "loading": "서버 정보를 불러오는 중입니다...",
+    "not-exist": "서버를 찾을 수 없습니다.",
+    "loading": "서버 정보를 불러오는 중...",
     "status": {
       "online": "온라인",
       "offline": "오프라인"
@@ -98,28 +108,30 @@
       "frame-title": "이 서버의 Pastebin 내용",
       "loading": "Pastebin 내용을 불러오는 중...",
       "open": "Pastebin에서 열기",
-      "notice": "Pastebin 이용약관상 이 사이트에서 내용을 직접 렌더링할 수 없어 공식 임베드로 표시합니다. 서식 코드가 그대로 보일 수 있으며, 붙여넣기가 만료되었거나 비공개이면 내용이 나타나지 않습니다."
+      "notice": "Pastebin 약관상 이 사이트에서 내용을 직접 표시할 수 없어 공식 임베드로 보여 줍니다. 서식 태그가 그대로 보일 수 있고, 만료되었거나 비공개인 글은 나오지 않습니다."
     },
     "distance": "거리",
     "statistics": "서버 통계",
-    "daylight-saving-time": "그래프의 시간은 일광 절약 시간에 영향을 받지 않습니다. (한국은 관련 없음)",
+    "daylight-saving-time": "그래프 시간에는 일광 절약 시간제가 적용되지 않습니다.",
     "graph": {
-      "loading": "서버로 부터 데이터를 불러오는 중입니다...",
+      "loading": "데이터를 불러오는 중...",
       "options": {
-        "data-range": "데이터 기간",
-        "start-time": "시작 일자",
-        "stop-time": "종료 일자",
+        "data-range": "기간",
+        "start-time": "시작 시간",
+        "stop-time": "종료 시간",
         "data-resolution": "데이터 간격",
         "graph-update-btn": "그래프 업데이트",
+        "time": "시간",
+        "invalid-range": "시작 시간은 종료 시간보다 빨라야 합니다.",
         "period": {
-          "custom": "직접지정",
+          "custom": "직접 지정",
           "1hour": "1시간",
           "8hour": "8시간",
           "1day": "1일",
           "2day": "2일",
           "1week": "1주",
-          "1month": "1달",
-          "3month": "3달",
+          "1month": "1개월",
+          "3month": "3개월",
           "1year": "1년",
           "4year": "4년"
         },
@@ -136,44 +148,44 @@
     "tech": "모드 및 플러그인"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory 는 Northwood Studios™ 에서 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다.",
-    "description": "필터, 추이, 통계를 제공하는 SCP: SL 서버 목록입니다.",
+    "notice": "SCP: Secret Laboratory는 Northwood Studios™가 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다.",
+    "description": "필터, 인원 추이, 통계로 SCP: SL 서버를 찾아보세요.",
     "links": "바로가기",
     "translation-title": "번역",
-    "translation-body": "사이트 번역에 참여해 주실 분을 찾고 있습니다.",
+    "translation-body": "사이트 번역을 도와주세요.",
     "contribute": "GitHub에서 기여하기"
   },
   "all-stats": {
     "users": {
-      "title": "전체 서버 유저 수",
+      "title": "전체 서버 접속자 수",
       "select-compare-country": {
         "name": "비교할 국가 선택"
       },
       "show-all": {
-        "name": "모든 국가 데이터 표시"
+        "name": "모든 국가 표시"
       },
       "graph": {
         "all-country": "모든 국가",
-        "empty-country": "조회할 데이터가 없습니다."
+        "empty-country": "데이터가 없습니다."
       }
     },
     "mod-loader": {
       "title": "모드 로더 통계",
       "back": "뒤로",
-      "versions-title": "{{name}} — 버전",
-      "drill-hint": "조각을 클릭하면 버전별 분포를 확인할 수 있습니다",
-      "drill-back-hint": "로더별 분포로 돌아가려면 뒤로를 누르세요"
+      "versions-title": "{{name}} 버전",
+      "drill-hint": "조각을 클릭하면 버전별 분포를 볼 수 있습니다",
+      "drill-back-hint": "뒤로를 누르면 전체 로더 분포로 돌아갑니다"
     }
   },
   "all-server-map": {
-    "title": "전체 서버 지도",
-    "server-info-btn": "클릭하여 서버 정보 확인",
+    "title": "서버 지도",
+    "server-info-btn": "서버 정보 보기",
     "location-count": "위치 {{total}}곳"
   },
   "consent": {
     "revoke": {
-      "title": "다음 페이지 로드 후 추적이 중지됩니다",
-      "description": "이 탭에서 이미 로드된 분석 스크립트는 새로고침 전까지 계속 실행됩니다. 선택을 즉시 적용하려면 새로고침해주세요.",
+      "title": "다음에 페이지를 새로고침하면 추적이 중지됩니다",
+      "description": "이 탭에 이미 로드된 분석 스크립트는 새로고침할 때까지 계속 실행됩니다. 지금 새로고침하면 선택이 바로 적용됩니다.",
       "reload": "새로고침"
     }
   },
@@ -196,22 +208,22 @@
     },
     "search-placeholder": "라이선스 또는 패키지 검색",
     "no-match": "검색 결과가 없습니다.",
-    "contributors-title": "사이트 번역 기여자"
+    "contributors-title": "번역 기여자"
   },
   "insights": {
-    "loading": "장기 통계를 불러오는 중입니다...",
+    "loading": "장기 통계를 불러오는 중...",
     "players": "{{players}}명",
     "history": {
       "age": "운영 기간",
       "age-years": "{{years}}년 {{months}}개월",
       "age-months": "{{months}}개월",
       "age-days": "{{days}}일",
-      "age-first-seen": "첫 관측 {{date}}",
-      "age-since-start": "수집 시작({{date}}) 이전부터 운영",
+      "age-first-seen": "{{date}} 처음 확인",
+      "age-since-start": "수집 시작({{date}}) 전부터 운영",
       "peak": "역대 최고 인원",
-      "versions": "거친 게임 업데이트",
+      "versions": "거쳐 온 게임 업데이트",
       "versions-value": "{{versions}}개 버전",
-      "seniority": "온라인 서버 중 운영 기간",
+      "seniority": "운영 기간 순위",
       "seniority-value": "상위 {{percent}}%",
       "seniority-note": "현재 온라인 서버 기준"
     },
@@ -222,23 +234,23 @@
       "readout": "{{time}}: 평소 {{players}}명",
       "readout-now": "지금({{time}}): 평소 {{players}}명",
       "readout-empty": "{{time}}: 데이터 부족",
-      "readout-full": "{{percent}}%는 만석",
+      "readout-full": "{{percent}}%는 꽉 참",
       "legend-low": "한산",
       "legend-high": "붐빔 ({{players}}명)",
-      "legend-full": "만석이 잦음 ({{capacity}}명 기준)",
-      "quiet": "최근 {{weeks}}주 동안 대부분 비어 있던 서버입니다."
+      "legend-full": "자주 꽉 참 ({{capacity}}명 기준)",
+      "quiet": "최근 {{weeks}}주 동안 대체로 비어 있던 서버입니다."
     },
     "global": {
-      "title": "SCP:SL 연대기",
-      "description": "{{date}}부터 기록한 전체 서버의 최고 동시 접속자",
+      "title": "SCP:SL 타임라인",
+      "description": "{{date}}부터 기록한 전체 서버 최고 동시 접속자 수",
       "latest": "최근 하루 최고 인원",
       "utc-date": "{{date}} (UTC)",
       "rank": "역대 순위",
       "rank-value": "{{rank}}위",
-      "rank-note": "{{days}}일 중, {{percent}}%의 날보다 많음",
+      "rank-note": "{{days}}일 중 {{percent}}%의 날보다 많음",
       "year-ago": "작년 같은 요일 대비",
       "year-ago-note": "{{date}}: {{players}}명",
-      "today": "오늘 현재 최고",
+      "today": "오늘 지금까지",
       "today-note": "집계 중",
       "chart-note": "각 점은 그 주에서 가장 붐빈 날입니다. 세로선은 주요 업데이트이고, 수집이 중단된 날은 총 {{days}}일입니다.",
       "no-data": "데이터 없음",
@@ -247,11 +259,11 @@
       "record-near-release": "{{version}} 무렵",
       "releases": "주요 업데이트 전후",
       "release-version": "버전",
-      "release-date": "첫 관측",
+      "release-date": "처음 확인",
       "release-before": "이전 14일",
       "release-after": "이후 14일",
       "release-change": "변화",
-      "release-caveat": "업데이트 전후 14일간 일일 최고 인원의 중앙값입니다. 방학과 연휴 같은 계절 요인이 섞여 있어 업데이트만의 효과는 아닙니다."
+      "release-caveat": "업데이트 전후 14일간 일일 최고 인원의 중앙값입니다. 계절과 연휴의 영향도 섞여 있어 업데이트만의 효과는 아닙니다."
     }
   }
 }

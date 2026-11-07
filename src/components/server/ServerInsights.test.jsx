@@ -80,7 +80,7 @@ describe('ServerInsights', () => {
     render(<ServerInsights serverId="7" />);
 
     await screen.findByText('25 versions');
-    expect(screen.queryByText('Age among online servers')).not.toBeInTheDocument();
+    expect(screen.queryByText('Age rank')).not.toBeInTheDocument();
   });
 
   it('answers the current hour in the viewer time zone', async () => {

@@ -1,72 +1,102 @@
 {
   "general": {
-    "language-change": "Vaihdettiin kieli {{language}}:ksi. Osa saattaa vaatia päivityksen.",
-    "not-found": "Pyytämääsi sivua ei löydetty.",
-    "server-error": "Virhe tapahtui noudettaessa tietoja palvelimelta. Nämä ongelmat ovat yleensä väliaikaisia, joten yritä hetken kuluttua uudelleen. Jos ongelma jatkuu, lähetä sähköpostia osoitteeseen support@scplist.kr."
+    "language-change": "Kieli vaihdettu: {{language}}. Päivitä sivu, jos osa teksteistä ei vaihdu.",
+    "not-found": "Sivua ei löytynyt.",
+    "server-error": "Tietojen lataus palvelimelta epäonnistui. Vika on yleensä tilapäinen, joten yritä hetken päästä uudelleen. Jos ongelma jatkuu, lähetä sähköpostia osoitteeseen support@scplist.kr.",
+    "retry": "Yritä uudelleen"
   },
   "api": {
-    "host-warning-title": "API-isännän varoitus",
-    "host-warning-before": "Kaikki pyynnöt on lähetettävä isäntään",
-    "host-warning-middle": ".",
-    "host-warning-after": "on varattu viralliselle frontendille. Suorat pyynnöt tähän isäntään voivat johtaa IP- tai ASN-estoon.",
-    "undocumented-warning": "Valmistelemme kattavampaa virallista API:a. Siihen asti käytäthän vain alla dokumentoituja päätepisteitä."
+    "host-warning-title": "Varoitus API-palvelimesta",
+    "host-warning-before": "Palvelinta",
+    "host-warning-middle": "on käytettävä kaikissa pyynnöissä.",
+    "host-warning-after": "on varattu viralliselle frontendille. Suorat pyynnöt tälle palvelimelle voivat johtaa IP- tai ASN-estoon.",
+    "undocumented-warning": "Valmistelemme kattavampaa virallista API:a. Siihen asti käytäthän vain alla dokumentoituja päätepisteitä.",
+    "live-docs-before": "Alla oleva dokumentaatio ladataan suoraan osoitteesta",
+    "live-docs-after": "ja voit kokeilla pyyntöjä tällä sivulla."
   },
   "navbar": {
     "server-list": "Palvelinluettelo",
     "all-stats": "Tilastot",
-    "all-server-map": "Kaikkien palvelinten kartta",
+    "all-server-map": "Palvelinkartta",
     "credit": "Tekijät",
     "language": "Kieli:",
-    "unit": "Yksikkö:"
+    "unit": "Yksikkö:",
+    "settings": "Asetukset",
+    "open-menu": "Avaa valikko",
+    "menu": "Valikko",
+    "site-navigation": "Sivuston navigointi",
+    "unit-km": "Kilometrit (km)",
+    "unit-mi": "Mailit (mi)"
   },
   "select": {
-    "placeholder": "Valitse kohta",
-    "empty": "Ei valittua"
+    "placeholder": "Valitse maat",
+    "empty": "Ei hakutuloksia",
+    "selected-count": "Valittu: {{total}}",
+    "remove": "Poista {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Palvelimen haku",
-      "placeholder": "Syötä hakuehdot"
+      "name": "Hae palvelimia",
+      "placeholder": "Palvelimen nimi tai IP"
     },
     "country": "Maa",
     "hide-empty": "Piilota tyhjät palvelimet",
     "hide-full": "Piilota täydet palvelimet",
     "refreshing": "Päivitetään luetteloa...",
-    "filter-options-title": "Suodatusasetukset",
+    "filter-options-title": "Suodattimet",
+    "drawer-description": "Suodata palvelinluetteloa",
     "yes-no-filter": {
-      "none": "Sisällytä kaikki",
+      "none": "Kaikki",
       "yes": "Kyllä",
       "no": "Ei",
-      "friendly-fire": "Ystävällinen tuli",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist",
-      "modded": "Muokattu",
+      "modded": "Modattu",
       "order-type": {
-        "name": "Lajittelutyyppi",
-        "player-desc": "Paljon pelaajia",
-        "player-asc": "Vähän pelaajia",
-        "distance-asc": "Lähellä olevat",
-        "distance-desc": "Kaukana olevat"
+        "name": "Järjestys",
+        "player-desc": "Eniten pelaajia",
+        "player-asc": "Vähiten pelaajia",
+        "distance-asc": "Lähimmät ensin",
+        "distance-desc": "Kaukaisimmat ensin",
+        "ingame": "Pelin järjestys"
       }
-    }
+    },
+    "clear-all": "Tyhjennä kaikki",
+    "clear-filter": "Tyhjennä suodatin",
+    "no-results-title": "Suodattimiin sopivia palvelimia ei löytynyt",
+    "no-results-description": "Poista jokin suodatin tai kokeile toista hakua.",
+    "no-servers-title": "Yhtään palvelinta ei ole nyt verkossa"
   },
   "server-stats": {
-    "users-title": "Käyttäjät",
+    "users-title": "Pelaajat",
     "servers-title": "Palvelimet",
     "offline-label": "Offline"
   },
   "server-list": {
-    "loading": "Ladataan tietoja palvelimelta...",
+    "loading": "Ladataan palvelimia...",
     "tech": {
       "yes": "Kyllä",
       "no": "Ei",
       "game-version": "Pelin versio",
-      "friendly-fire": "Ystävällinen tuli",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Whitelist"
+    },
+    "columns": {
+      "server": "Palvelin",
+      "address": "Osoite",
+      "trend": "7 päivän trendi"
+    },
+    "view-list": "Luettelonäkymä",
+    "view-grid": "Ruudukkonäkymä",
+    "sparkline": {
+      "peak": "max",
+      "avg": "ka",
+      "new": "uusi"
     }
   },
   "server-info": {
     "title": "Palvelimen tiedot",
-    "not-exist": "Palvelinta ei ole olemassa.",
+    "not-exist": "Palvelinta ei löytynyt.",
     "loading": "Ladataan palvelimen tietoja...",
     "status": {
       "online": "Verkossa",
@@ -74,17 +104,25 @@
     },
     "players": "Pelaajat",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Tämän palvelimen Pastebin-sisältö",
+      "loading": "Ladataan Pastebin-sisältöä...",
+      "open": "Avaa Pastebinissa",
+      "notice": "Näytetään Pastebinin virallisella upotuksella, koska sen ehdot eivät salli sisällön näyttämistä suoraan tällä sivustolla. Muotoilutagit voivat näkyä pelkkänä tekstinä, eikä vanhentunut tai yksityinen sisältö näy."
+    },
     "distance": "Etäisyys",
     "statistics": "Palvelimen tilastot",
-    "daylight-saving-time": "Graafin aika ei muutu kesäaikaan.",
+    "daylight-saving-time": "Graafin ajoissa ei huomioida kesäaikaa.",
     "graph": {
-      "loading": "Ladataan tietoja palvelimelta...",
+      "loading": "Ladataan tietoja...",
       "options": {
         "data-range": "Ajanjakso",
         "start-time": "Aloitusaika",
         "stop-time": "Lopetusaika",
-        "data-resolution": "Tietojen tarkkuus",
+        "data-resolution": "Datapisteiden väli",
         "graph-update-btn": "Päivitä graafi",
+        "time": "Aika",
+        "invalid-range": "Aloitusajan on oltava ennen lopetusaikaa.",
         "period": {
           "custom": "Mukautettu",
           "1hour": "1 tunti",
@@ -104,42 +142,113 @@
           "1d": "1 päivä"
         }
       }
-    }
+    },
+    "copy-address": "Kopioi osoite",
+    "address-copied": "Kopioitu",
+    "tech": "Modit ja pluginit"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory on Northwood Studios™:in julkaisema peli, tämä sivusto ei ole yhteydessä Northwood Studios™:iin.<br/>Kaikki tavaramerkit ja rekisteröidyt tavaramerkit ovat omistajiensa omaisuutta."
+    "notice": "SCP: Secret Laboratory on Northwood Studios™:in julkaisema peli. Tämä sivusto ei ole sidoksissa Northwood Studios™:iin.<br/>Kaikki tavaramerkit ja rekisteröidyt tavaramerkit ovat omistajiensa omaisuutta.",
+    "description": "Etsi SCP: SL -palvelimia suodattimien, pelaajatrendien ja tilastojen avulla.",
+    "links": "Linkit",
+    "translation-title": "Käännökset",
+    "translation-body": "Auta kääntämään sivusto omalle kielellesi.",
+    "contribute": "Osallistu GitHubissa"
   },
   "all-stats": {
     "users": {
-      "title": "Palvelimen käyttäjien kokonaismäärä",
+      "title": "Pelaajat kaikilla palvelimilla",
       "select-compare-country": {
-        "name": "Valitse maa"
+        "name": "Valitse vertailtava maa"
       },
       "show-all": {
-        "name": "Näytä kaikki maan tiedot"
+        "name": "Näytä kaikki maat"
       },
       "graph": {
         "all-country": "Kaikki maat",
-        "empty-country": "Ei tiedot haettavissa."
+        "empty-country": "Ei tietoja saatavilla."
       }
     },
     "mod-loader": {
       "title": "Mod loader -tilastot",
       "back": "Takaisin",
-      "versions-title": "{{name}} – versiot",
-      "drill-hint": "Napsauta sektoria nähdäksesi versioiden erittelyn",
-      "drill-back-hint": "Napsauta Takaisin palataksesi mod loader -erittelyyn"
+      "versions-title": "{{name}}-versiot",
+      "drill-hint": "Napsauta sektoria nähdäksesi sen versiot",
+      "drill-back-hint": "Napsauta Takaisin nähdäksesi kaikki mod loaderit"
     }
   },
   "all-server-map": {
-    "title": "Kaikkien palvelinten kartta",
-    "server-info-btn": "Napsauta tarkistaaksesi palvelimen tiedot"
+    "title": "Palvelinkartta",
+    "server-info-btn": "Näytä palvelimen tiedot",
+    "location-count": "Sijainteja: {{total}}"
   },
   "consent": {
     "revoke": {
-      "title": "Tracking will stop on next page load",
-      "description": "Analytics scripts already loaded in this tab will continue to run until you reload. Reload now to fully apply your choice.",
+      "title": "Seuranta päättyy, kun päivität sivun",
+      "description": "Tälle välilehdelle jo ladatut analytiikkaskriptit pysyvät käynnissä, kunnes päivität sivun. Päivitä nyt, niin valintasi tulee heti voimaan.",
       "reload": "Päivitä"
+    }
+  },
+  "credit": {
+    "licenses-title": "Kolmannen osapuolen lisenssit",
+    "search-placeholder": "Hae lisenssejä tai paketteja",
+    "no-match": "Haulla ei löytynyt paketteja.",
+    "contributors-title": "Kääntäjät"
+  },
+  "insights": {
+    "loading": "Ladataan pitkän aikavälin tilastoja...",
+    "players": "{{players}} pelaajaa",
+    "history": {
+      "age": "Toiminnassa",
+      "age-years": "{{years}} v {{months}} kk",
+      "age-months": "{{months}} kk",
+      "age-days": "{{days}} pv",
+      "age-first-seen": "Ensihavainto {{date}}",
+      "age-since-start": "Toiminnassa jo ennen tiedonkeruun alkua ({{date}})",
+      "peak": "Kaikkien aikojen huippu",
+      "versions": "Pelipäivitykset",
+      "versions-value": "{{versions}} kpl",
+      "seniority": "Ikäsijoitus",
+      "seniority-value": "Vanhimmat {{percent}} %",
+      "seniority-note": "Nyt verkossa olevista palvelimista"
+    },
+    "heatmap": {
+      "title": "Milloin on vilkkainta?",
+      "description": "Tyypillinen huippu tunneittain viimeisten {{weeks}} viikon ajalta aikavyöhykkeesi mukaan ({{zone}})",
+      "time": "{{day}} klo {{hour}}.00",
+      "readout": "{{time}}: pelaajia yleensä {{players}}",
+      "readout-now": "Nyt ({{time}}): pelaajia yleensä {{players}}",
+      "readout-empty": "{{time}}: liian vähän tietoja",
+      "readout-full": "täynnä {{percent}} % ajasta",
+      "legend-low": "Hiljaista",
+      "legend-high": "Vilkasta ({{players}})",
+      "legend-full": "Usein täynnä (maks. {{capacity}})",
+      "quiet": "Tämä palvelin on ollut enimmäkseen tyhjä viimeiset {{weeks}} viikkoa."
+    },
+    "global": {
+      "title": "SCP:SL:n aikajana",
+      "description": "Suurin samanaikainen pelaajamäärä kaikilla listatuilla palvelimilla {{date}} alkaen",
+      "latest": "Viimeisin päivähuippu",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Sijoitus kautta aikojen",
+      "rank-value": "Sija {{rank}}",
+      "rank-note": "Vilkkaampi kuin {{percent}} % kaikista {{days}} päivästä",
+      "year-ago": "Vs. viime vuosi",
+      "year-ago-note": "{{date}}: pelaajia {{players}}",
+      "today": "Tänään tähän asti",
+      "today-note": "Lasketaan vielä",
+      "chart-note": "Jokainen piste on viikkonsa vilkkain päivä. Pystyviivat merkitsevät suuria päivityksiä. Tiedonkeruu oli katkolla yhteensä {{days}} pv.",
+      "no-data": "Ei tietoja",
+      "release-tooltip": "Päivitys {{version}}",
+      "records": "Kaikkien aikojen huippupäivät",
+      "record-near-release": "noin {{version}}",
+      "releases": "Suurten päivitysten aikaan",
+      "release-version": "Versio",
+      "release-date": "Ensihavainto",
+      "release-before": "14 pv ennen",
+      "release-after": "14 pv jälkeen",
+      "release-change": "Muutos",
+      "release-caveat": "Päivähuippujen mediaani 14 päivän ajalta ennen jokaista päivitystä ja sen jälkeen. Myös vuodenajat ja pyhät vaikuttavat, joten kyse ei ole pelkästään päivityksen vaikutuksesta."
     }
   }
 }

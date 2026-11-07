@@ -68,7 +68,7 @@ export function ServerSparkline({ data, className = '', compact = false }) {
       <div
         data-testid="sparkline-summary"
         data-compact={compact ? 'true' : 'false'}
-        className="flex justify-between gap-2 text-[11px] leading-4 text-muted-foreground tabular-nums"
+        className="flex justify-between gap-1 text-[11px] leading-4 text-muted-foreground tabular-nums"
       >
         <span className="truncate">
           {t('server-list.sparkline.peak', 'peak')} {summary.peak} · {t('server-list.sparkline.avg', 'avg')} {summary.avg}

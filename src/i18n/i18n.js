@@ -29,6 +29,7 @@ import isIS from './locale/is-IS.json';
 import lvLV from './locale/lv-LV.json';
 import ptBR from './locale/pt-BR.json';
 import csCZ from './locale/cs-CZ.json';
+import {SITE_LANGUAGES, toSiteLanguage} from './siteLanguage';
 
 const resource = {
     "en-US": {
@@ -124,7 +125,10 @@ const languageDetectorOption = {
     lookupLocalStorage: 'user.language',
 
     // cache user language on
-    caches: ['localStorage', 'cookie']
+    caches: ['localStorage', 'cookie'],
+
+    // browsers and older visits hold codes like ko or da, which are not locale file names
+    convertDetectedLanguage: toSiteLanguage
 }
 
 i18n
@@ -132,6 +136,7 @@ i18n
     .use(LanguageDetector)
     .init({
         resources: resource,
+        supportedLngs: SITE_LANGUAGES,
         fallbackLng: 'en-US',
         debug: false,
         interpolation: {

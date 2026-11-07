@@ -1,9 +1,9 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import store from '../../store';
-import '../../i18n/i18n';
+import i18n from '../../i18n/i18n';
 import { DEFAULT_FILTER } from './filterSchema';
 
 vi.mock('../../lib/api/countries', () => ({
@@ -11,6 +11,26 @@ vi.mock('../../lib/api/countries', () => ({
 }));
 
 import { FilterControls } from './FilterControls';
+
+afterEach(() => act(() => i18n.changeLanguage('en-US')));
+
+describe('FilterControls country names', () => {
+  it('renames the country options when the language changes', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={store}>
+        <FilterControls value={DEFAULT_FILTER} onChange={() => {}} />
+      </Provider>
+    );
+
+    await user.click(screen.getByRole('combobox'));
+    await screen.findByText('South Korea');
+
+    await act(() => i18n.changeLanguage('ko-KR'));
+
+    expect(await screen.findByText('대한민국')).toBeInTheDocument();
+  });
+});
 
 describe('FilterControls sort selector', () => {
   it('marks the current sort as checked', () => {

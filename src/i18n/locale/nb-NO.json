@@ -1,72 +1,102 @@
 {
   "general": {
-    "language-change": "Endret språket til {{language}}. Noen sider kan trenge å bli oppdatert.",
-    "not-found": "Siden du ba om kunne ikke bli funnet.",
-    "server-error": "Noe gikk galt under henting av data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om et øyeblikk. Hvis problemet vedvarer, send en e-post til support@scplist.kr."
+    "language-change": "Språket er endret til {{language}}. Oppdater siden hvis noe tekst ikke endres.",
+    "not-found": "Fant ikke siden.",
+    "server-error": "Kunne ikke hente data fra serveren. Dette er vanligvis midlertidig, så prøv igjen om litt. Hvis det fortsetter, send en e-post til support@scplist.kr.",
+    "retry": "Prøv igjen"
   },
   "api": {
-    "host-warning-title": "API-vertsadvarsel",
-    "host-warning-before": "Alle forespørsler må sendes til verten",
-    "host-warning-middle": ".",
+    "host-warning-title": "Advarsel om API-vert",
+    "host-warning-before": "Verten",
+    "host-warning-middle": "må brukes til alle forespørsler.",
     "host-warning-after": "er reservert for den offisielle frontenden. Direkte forespørsler til denne verten kan føre til IP- eller ASN-blokkering.",
-    "undocumented-warning": "Vi jobber med et mer komplett offisielt API. Inntil det er klart, vennligst bruk kun endepunktene som er dokumentert nedenfor."
+    "undocumented-warning": "Vi jobber med et mer komplett offisielt API. Inntil det er klart, bruk bare endepunktene som er dokumentert nedenfor.",
+    "live-docs-before": "Dokumentasjonen nedenfor lastes direkte fra",
+    "live-docs-after": "og du kan teste forespørsler her på siden."
   },
   "navbar": {
     "server-list": "Serverliste",
-    "all-stats": "Full statistikk",
-    "all-server-map": "Kart over alle servere",
-    "credit": "Kreditering",
+    "all-stats": "Statistikk",
+    "all-server-map": "Serverkart",
+    "credit": "Medvirkende",
     "language": "Språk:",
-    "unit": "Enhet:"
+    "unit": "Enhet:",
+    "settings": "Innstillinger",
+    "open-menu": "Åpne menyen",
+    "menu": "Meny",
+    "site-navigation": "Nettstedsnavigasjon",
+    "unit-km": "Kilometer (km)",
+    "unit-mi": "Engelske mil (mi)"
   },
   "select": {
-    "placeholder": "Vennligst velg et element",
-    "empty": "Ingenting valgt"
+    "placeholder": "Velg land",
+    "empty": "Ingen treff",
+    "selected-count": "Valgt: {{total}}",
+    "remove": "Fjern {{name}}"
   },
   "filter-option": {
     "server-search": {
-      "name": "Server Søk",
-      "placeholder": "Skriv inn søkeord"
+      "name": "Søk etter servere",
+      "placeholder": "Servernavn eller IP"
     },
     "country": "Land",
     "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulle servere",
-    "refreshing": "Laster inn liste...",
-    "filter-options-title": "Filteralternativer",
+    "refreshing": "Laster listen på nytt...",
+    "filter-options-title": "Filtre",
+    "drawer-description": "Filtrer serverlisten",
     "yes-no-filter": {
-      "none": "Inkluder alle",
+      "none": "Alle",
       "yes": "Ja",
       "no": "Nei",
-      "friendly-fire": "Vennligsinnede skudd",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Hviteliste",
-      "modded": "Modifisert",
+      "modded": "Moddet",
       "order-type": {
-        "name": "Sorteringsrekkefølge",
-        "player-desc": "Et stort antall mennesker",
-        "player-asc": "Et lite antall mennesker",
-        "distance-asc": "Kort avstand",
-        "distance-desc": "Lang avstand"
+        "name": "Sorter etter",
+        "player-desc": "Flest spillere",
+        "player-asc": "Færrest spillere",
+        "distance-asc": "Nærmest først",
+        "distance-desc": "Lengst unna først",
+        "ingame": "Spillets rekkefølge"
       }
-    }
+    },
+    "clear-all": "Fjern alle",
+    "clear-filter": "Fjern filter",
+    "no-results-title": "Ingen servere passer til filtrene dine",
+    "no-results-description": "Prøv å fjerne et filter eller søk etter noe annet.",
+    "no-servers-title": "Ingen servere er online akkurat nå"
   },
   "server-stats": {
-    "users-title": "Brukere",
+    "users-title": "Spillere",
     "servers-title": "Servere",
     "offline-label": "Offline"
   },
   "server-list": {
-    "loading": "Laster data fra server...",
+    "loading": "Laster servere...",
     "tech": {
       "yes": "Ja",
       "no": "Nei",
       "game-version": "Spillversjon",
-      "friendly-fire": "Vennligsinnede skudd",
+      "friendly-fire": "Friendly Fire",
       "whitelist": "Hviteliste"
+    },
+    "columns": {
+      "server": "Server",
+      "address": "Adresse",
+      "trend": "Trend 7 dager"
+    },
+    "view-list": "Listevisning",
+    "view-grid": "Rutenettvisning",
+    "sparkline": {
+      "peak": "max",
+      "avg": "snitt",
+      "new": "ny"
     }
   },
   "server-info": {
     "title": "Serverinformasjon",
-    "not-exist": "Serveren eksisterer ikke.",
+    "not-exist": "Fant ikke serveren.",
     "loading": "Laster serverinformasjon...",
     "status": {
       "online": "Online",
@@ -74,17 +104,25 @@
     },
     "players": "Spillere",
     "pastebin": "Pastebin",
+    "pastebin-embed": {
+      "frame-title": "Pastebin-innhold for denne serveren",
+      "loading": "Laster Pastebin-innhold...",
+      "open": "Åpne på Pastebin",
+      "notice": "Vises med Pastebins offisielle innbygging fordi vilkårene ikke lar denne siden vise innholdet direkte. Formateringstagger kan vises som ren tekst, og utløpte eller private pastes vises ikke."
+    },
     "distance": "Avstand",
     "statistics": "Serverstatistikk",
-    "daylight-saving-time": "Tiden på grafen påvirkes ikke av sommertid.",
+    "daylight-saving-time": "Tidene i grafen justeres ikke for sommertid.",
     "graph": {
-      "loading": "Laster data fra server...",
+      "loading": "Laster data...",
       "options": {
-        "data-range": "Dataperiode",
+        "data-range": "Tidsperiode",
         "start-time": "Starttid",
-        "stop-time": "Stoptid",
-        "data-resolution": "Dataoppløsning",
-        "graph-update-btn": "Oppdater Graf",
+        "stop-time": "Sluttid",
+        "data-resolution": "Dataintervall",
+        "graph-update-btn": "Oppdater graf",
+        "time": "Tid",
+        "invalid-range": "Starttiden må være før sluttiden.",
         "period": {
           "custom": "Tilpasset",
           "1hour": "1 time",
@@ -104,42 +142,113 @@
           "1d": "1 dag"
         }
       }
-    }
+    },
+    "copy-address": "Kopier adresse",
+    "address-copied": "Kopiert",
+    "tech": "Mods og plugins"
   },
   "footer": {
-    "notice": "SCP: Secret Laboratory er et spill utgitt av Northwood Studios™. Denne nettsiden er ikke tilknyttet Northwood Studios™.<br/>Alle varemerker og registrerte varemerker tilhører sine respektive eiere."
+    "notice": "SCP: Secret Laboratory er et spill utgitt av Northwood Studios™. Denne nettsiden er ikke tilknyttet Northwood Studios™.<br/>Alle varemerker og registrerte varemerker tilhører sine respektive eiere.",
+    "description": "Finn SCP: SL-servere med filtre, spillertrender og statistikk.",
+    "links": "Lenker",
+    "translation-title": "Oversettelser",
+    "translation-body": "Hjelp til med å oversette siden til språket ditt.",
+    "contribute": "Bidra på GitHub"
   },
   "all-stats": {
     "users": {
-      "title": "Totalt antall brukere på serveren",
+      "title": "Spillere på alle servere",
       "select-compare-country": {
-        "name": "Velg land"
+        "name": "Velg et land å sammenligne"
       },
       "show-all": {
-        "name": "Vis all landsdata"
+        "name": "Vis alle land"
       },
       "graph": {
         "all-country": "Alle land",
-        "empty-country": "Det er ingen data å hente."
+        "empty-country": "Ingen data tilgjengelig."
       }
     },
     "mod-loader": {
-      "title": "Statistikk for mod-laster",
+      "title": "Mod loader-statistikk",
       "back": "Tilbake",
-      "versions-title": "{{name}} — versjoner",
-      "drill-hint": "Klikk på en sektor for å se versjonsfordelingen",
-      "drill-back-hint": "Klikk Tilbake for å gå tilbake til lasterfordelingen"
+      "versions-title": "{{name}}-versjoner",
+      "drill-hint": "Klikk på en sektor for å se versjonene",
+      "drill-back-hint": "Klikk på Tilbake for å se alle mod loadere"
     }
   },
   "all-server-map": {
-    "title": "Kart over alle servere",
-    "server-info-btn": "Klikk for å sjekke serverinformasjon"
+    "title": "Serverkart",
+    "server-info-btn": "Vis serverinformasjon",
+    "location-count": "Steder: {{total}}"
   },
   "consent": {
     "revoke": {
       "title": "Sporing stopper etter neste sideoppdatering",
       "description": "Analyseskript som allerede er lastet i denne fanen, fortsetter å kjøre til du oppdaterer siden. Oppdater nå for å bruke valget ditt umiddelbart.",
       "reload": "Oppdater"
+    }
+  },
+  "credit": {
+    "licenses-title": "Tredjepartslisenser",
+    "search-placeholder": "Søk etter lisenser eller pakker",
+    "no-match": "Ingen pakker passer til søket.",
+    "contributors-title": "Oversettere"
+  },
+  "insights": {
+    "loading": "Laster langtidsstatistikk...",
+    "players": "{{players}} spillere",
+    "history": {
+      "age": "Aktiv i",
+      "age-years": "{{years}} år {{months}} mnd.",
+      "age-months": "{{months}} mnd.",
+      "age-days": "{{days}} døgn",
+      "age-first-seen": "Først sett {{date}}",
+      "age-since-start": "Fantes allerede da vi begynte å samle data ({{date}})",
+      "peak": "Høyeste noensinne",
+      "versions": "Spilloppdateringer",
+      "versions-value": "{{versions}} stk.",
+      "seniority": "Aldersrangering",
+      "seniority-value": "Eldste {{percent}} %",
+      "seniority-note": "Blant servere online nå"
+    },
+    "heatmap": {
+      "title": "Når er det mest folk?",
+      "description": "Typisk topp per time de siste {{weeks}} ukene, i din tidssone ({{zone}})",
+      "time": "{{day}} kl. {{hour}}:00",
+      "readout": "{{time}}: vanligvis {{players}} online",
+      "readout-now": "Akkurat nå ({{time}}): vanligvis {{players}} online",
+      "readout-empty": "{{time}}: for lite data",
+      "readout-full": "full {{percent}} % av tiden",
+      "legend-low": "Rolig",
+      "legend-high": "Mye folk ({{players}})",
+      "legend-full": "Ofte full (maks {{capacity}})",
+      "quiet": "Denne serveren har stort sett vært tom de siste {{weeks}} ukene."
+    },
+    "global": {
+      "title": "Tidslinje for SCP:SL",
+      "description": "Høyeste antall samtidige spillere på alle listede servere siden {{date}}",
+      "latest": "Siste dagstopp",
+      "utc-date": "{{date}} (UTC)",
+      "rank": "Plass gjennom tidene",
+      "rank-value": "Nr. {{rank}}",
+      "rank-note": "Flere spillere enn {{percent}} % av {{days}} dager",
+      "year-ago": "Samme ukedag i fjor",
+      "year-ago-note": "{{date}}: {{players}} online",
+      "today": "Hittil i dag",
+      "today-note": "Telles fortsatt",
+      "chart-note": "Hvert punkt er ukens travleste dag. Loddrette linjer markerer store oppdateringer. Dager uten datainnsamling: {{days}}.",
+      "no-data": "Ingen data",
+      "release-tooltip": "Oppdatering {{version}}",
+      "records": "Rekorddager",
+      "record-near-release": "rundt {{version}}",
+      "releases": "Rundt store oppdateringer",
+      "release-version": "Versjon",
+      "release-date": "Først sett",
+      "release-before": "14 dager før",
+      "release-after": "14 dager etter",
+      "release-change": "Endring",
+      "release-caveat": "Median av daglig topp i de 14 dagene før og etter hver oppdatering. Årstider og helligdager spiller også inn, så dette er ikke bare effekten av oppdateringen."
     }
   }
 }

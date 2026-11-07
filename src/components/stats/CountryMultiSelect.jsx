@@ -12,7 +12,7 @@ import * as countryListActions from '../../modules/countryList';
 import { cn } from '@/lib/cn';
 
 export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const isoCodes = useSelector((s) => s.countryList.data);
   const fetching = useSelector((s) => s.countryList.fetching);
@@ -29,7 +29,7 @@ export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
 
   const options = useMemo(
     () => (isoCodes ?? []).map((code) => ({ code, name: getCountryName(code) || code })),
-    [isoCodes]
+    [isoCodes, i18n.language]
   );
 
   const toggle = (code) => {
@@ -43,7 +43,7 @@ export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
         <PopoverTrigger asChild>
           <Button variant="outline" role="combobox" aria-expanded={open} className="w-full justify-between">
             <span className="text-muted-foreground text-sm">
-              {value.length === 0 ? t('select.placeholder') : `${value.length} selected`}
+              {value.length === 0 ? t('select.placeholder') : t('select.selected-count', { total: value.length })}
             </span>
             <ChevronsUpDown className="h-4 w-4 opacity-50" />
           </Button>
@@ -85,7 +85,7 @@ export function CountryMultiSelect({ value, onChange, minPopoverWidth = 320 }) {
               <button
                 type="button"
                 onClick={() => remove(code)}
-                aria-label={`Remove ${code}`}
+                aria-label={t('select.remove', { name: getCountryName(code) || code })}
                 className="rounded-full hover:bg-muted-foreground/20 p-0.5"
               >
                 <X className="h-3 w-3" />

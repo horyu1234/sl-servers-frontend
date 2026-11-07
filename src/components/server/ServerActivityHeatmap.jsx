@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn';
 import {
   localGrid, localPosition, moveCell, peakOf, stepOf, viewerOffsetHours, zoneLabel,
 } from '../../lib/insights/heatmap';
+import { intlLocale } from '../../i18n/intlLocale';
 
 // One hue, brighter for busier hours: on the dark surface, luminance reads as magnitude.
 const STEP_ALPHAS = [0.16, 0.32, 0.52, 0.76, 1];
@@ -52,7 +53,8 @@ export function ServerActivityHeatmap({ heatmap }) {
   const offsetHours = viewerOffsetHours(now);
   const grid = useMemo(() => localGrid(heatmap, offsetHours), [heatmap, offsetHours]);
   const peak = useMemo(() => peakOf(heatmap.medians), [heatmap]);
-  const days = useMemo(() => weekdayNames(i18n.language), [i18n.language]);
+  const language = i18n.resolvedLanguage ?? i18n.language;
+  const days = useMemo(() => weekdayNames(intlLocale(language)), [language]);
 
   const current = localPosition(now, offsetHours);
   const active = selected ?? current;
@@ -96,10 +98,10 @@ export function ServerActivityHeatmap({ heatmap }) {
           onBlur={() => setSelected(null)}
           className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card"
         >
-          <div aria-hidden="true" className="grid grid-cols-[1.75rem_repeat(24,minmax(0,1fr))] gap-[2px] sm:grid-cols-[2.25rem_repeat(24,minmax(0,1fr))]">
+          <div aria-hidden="true" className="grid grid-cols-[auto_repeat(24,minmax(0,1fr))] gap-[2px]">
             {grid.map((cells, day) => (
               <React.Fragment key={day}>
-                <div className="flex items-center text-[11px] text-muted-foreground">{days[day]}</div>
+                <div className="flex min-w-7 items-center whitespace-nowrap pr-1 text-[11px] text-muted-foreground sm:min-w-9">{days[day]}</div>
                 {cells.map((cell) => (
                   <HeatCell
                     key={cell.hour}

@@ -1,5 +1,6 @@
 {
-  "name": "App",
+  "name": "SCP: Secret Laboratory Server List",
+  "short_name": "SCP: SL Servers",
   "icons": [
     {
       "src": "\/android-icon-36x36.png",
