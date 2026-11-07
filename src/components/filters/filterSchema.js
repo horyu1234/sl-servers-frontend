@@ -5,6 +5,7 @@ export const SORT_OPTIONS = Object.freeze([
   { value: 'PLAYERS_ASC',   i18nKey: 'filter-option.yes-no-filter.order-type.player-asc' },
   { value: 'DISTANCE_ASC',  i18nKey: 'filter-option.yes-no-filter.order-type.distance-asc' },
   { value: 'DISTANCE_DESC', i18nKey: 'filter-option.yes-no-filter.order-type.distance-desc' },
+  { value: 'INGAME_ORDER',  i18nKey: 'filter-option.yes-no-filter.order-type.ingame' },
 ]);
 
 const VALID_SORTS = new Set(SORT_OPTIONS.map((opt) => opt.value));

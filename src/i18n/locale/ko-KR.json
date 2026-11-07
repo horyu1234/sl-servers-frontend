@@ -49,7 +49,8 @@
         "player-desc": "많은 인원 수",
         "player-asc": "적은 인원 수",
         "distance-asc": "가까운 거리",
-        "distance-desc": "먼 거리"
+        "distance-desc": "먼 거리",
+        "ingame": "게임 내 순서"
       }
     },
     "clear-all": "모두 지우기",
