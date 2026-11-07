@@ -26,7 +26,7 @@ vi.mock('../../lib/api/countries', () => ({
 
 vi.mock('../../lib/api/trends', () => ({
   getServersTrendsAPI: vi.fn().mockResolvedValue({
-    data: { window: '24h', resolution: '1h', bucketCount: 24, endTime: 'x', serverIds: ['1'], trends: { '1': new Array(24).fill(10) } },
+    data: { window: '7d', resolution: '1h', bucketCount: 168, endTime: 'x', serverIds: ['1'], trends: { '1': new Array(168).fill(10) } },
   }),
 }));
 

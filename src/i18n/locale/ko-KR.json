@@ -76,7 +76,7 @@
     "columns": {
       "server": "서버",
       "address": "주소",
-      "trend": "24시간 추이"
+      "trend": "7일 추이"
     },
     "sparkline": {
       "peak": "최고",
