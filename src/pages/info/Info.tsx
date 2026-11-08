@@ -12,7 +12,7 @@ import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerPastebin } from '../../components/server/ServerPastebin';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
 import { EmptyState } from '../../components/shared/EmptyState';
-import { PeriodPicker } from '../../components/shared/PeriodPicker';
+import { LONG_TERM_GRAPH, PeriodPicker, RECENT_GRAPH, presetParams } from '../../components/shared/PeriodPicker';
 import { getServerGraphAPI } from '../../lib/api/servers';
 import { plainServerName } from '../../lib/format/serverName';
 import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
@@ -42,6 +42,9 @@ export default function Info() {
   useDocumentTitle(plainServerName(server?.info));
 
   useEffect(() => {
+    // The previous server's graph would show until the new one loads.
+    setFlux(null);
+    setGraphError(false);
     if (!isNumericId(serverId)) return;
     setRequested(true);
     dispatch(serverInfoActions.getServerInfo(serverId));
@@ -57,11 +60,19 @@ export default function Info() {
       .catch(() => { if (reqId === inflightRef.current) setGraphError(true); });
   }
 
+  // The first graph waits for the server info, because an offline server starts on its long-term history.
+  // Only an answer to this page's own request counts: Redux keeps the last server across pages, and
+  // reading it would load one graph for the old answer and another for the new one.
+  const answered = requested && !fetching && serverInfoActions.isServerLoaded(server) && String(server.serverId) === serverId;
+  const online = answered ? server.online : null;
+  const graphPreset = online === false ? LONG_TERM_GRAPH : RECENT_GRAPH;
+
   useEffect(() => {
-    fetchGraph({ aggregateEvery: '5m', startTime: '-1w' });
+    if (online === null) return;
+    fetchGraph(presetParams(graphPreset));
     return () => { inflightRef.current++; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [serverId]);
+  }, [serverId, online]);
 
   if (!isNumericId(serverId) || (requested && !fetching && !error && !serverInfoActions.isServerLoaded(server))) {
     return (
@@ -110,7 +121,7 @@ export default function Info() {
             <CardTitle>{t('server-info.statistics')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 p-4 pt-0 sm:p-5 sm:pt-0">
-            <PeriodPicker onUpdate={fetchGraph} />
+            <PeriodPicker key={serverId} initial={graphPreset} onUpdate={fetchGraph} />
 
             {graphError && <Alert variant="destructive"><AlertDescription>{t('general.server-error')}</AlertDescription></Alert>}
             {!graphError && !flux && <div className="text-sm text-muted-foreground">{t('server-info.graph.loading')}</div>}
