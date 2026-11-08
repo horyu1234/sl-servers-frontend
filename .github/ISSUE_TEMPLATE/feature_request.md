@@ -1,19 +1,19 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest something new for the site
 title: '[FEATURE] '
 labels: enhancement
 assignees: ''
 ---
 
-## Feature Description
-<!-- A clear and concise description of what you want to happen -->
+## Feature
+<!-- What would you like to see? -->
 
-## Problem this Feature Solves
-<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
+## Problem it solves
+<!-- What is hard or missing today? -->
 
-## Alternatives You've Considered
-<!-- A clear and concise description of any alternative solutions or features you've considered -->
+## Alternatives
+<!-- Other solutions or workarounds you've considered. -->
 
-## Additional Context
-<!-- Add any other context, mockups, or screenshots about the feature request here -->
+## Additional context
+<!-- Mockups, screenshots or links. -->
