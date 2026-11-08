@@ -33,7 +33,7 @@ pnpm start
 1. Update the README.md if needed with details of changes
 2. Reference any relevant issues in your PR description
 3. Make sure your code follows the existing style and conventions
-4. Ensure all tests pass before submitting
+4. Ensure `pnpm typecheck` and all tests pass before submitting
 
 ## Translation Contributions
 
@@ -51,13 +51,13 @@ When contributing translations:
 
 ## Coding Conventions
 
-- React components use JSX syntax with `.jsx` file extension
+- Code is TypeScript with `strict` on: components use `.tsx`, everything else uses `.ts`
 - Functional components with hooks are preferred over class components
 - Redux for state management with async actions using thunks
 - Import order: React, third-party libraries, local components, styles
 - Use destructuring for props and state variables
-- Component file names use PascalCase (e.g., `ServerList.jsx`)
-- Utility files use camelCase (e.g., `apiClient.js`)
+- Component file names use PascalCase (e.g., `ServerList.tsx`)
+- Utility files use camelCase (e.g., `apiClient.ts`)
 - CSS modules with specific files for component styles
 - Error handling should use try/catch with appropriate error dispatch
 - i18n/localization uses i18next with separate locale files
