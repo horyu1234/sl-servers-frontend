@@ -31,13 +31,14 @@ The dev server runs at http://localhost:3185 and uses the production API, so the
 
 ### Scripts
 
-| Command         | What it does                    |
-| --------------- | ------------------------------- |
-| `pnpm start`    | Runs the Vite dev server        |
-| `pnpm build`    | Builds the site into `build/`   |
-| `pnpm preview`  | Serves `build/` on port 4173    |
-| `pnpm test`     | Runs Vitest in watch mode       |
-| `pnpm test run` | Runs all tests once, as CI does |
+| Command          | What it does                             |
+| ---------------- | ---------------------------------------- |
+| `pnpm start`     | Runs the Vite dev server                 |
+| `pnpm build`     | Builds the site into `build/`            |
+| `pnpm preview`   | Serves `build/` on port 4173             |
+| `pnpm typecheck` | Type checks the app and the build config |
+| `pnpm test`      | Runs Vitest in watch mode                |
+| `pnpm test run`  | Runs all tests once, as CI does          |
 
 Add a path to run part of the suite:
 
@@ -62,7 +63,7 @@ scplist.kr is built and hosted on Cloudflare Pages. `public/_headers` is copied 
 
 ## Tech stack
 
-- React 19, Vite 8, React Router 7
+- TypeScript 7, React 19, Vite 8, React Router 7
 - Redux Toolkit with thunks
 - Tailwind CSS 4, shadcn/ui (Radix), lucide-react
 - recharts for charts, Leaflet for the map, @tanstack/react-virtual for the server list

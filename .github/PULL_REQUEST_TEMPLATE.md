@@ -21,11 +21,11 @@
 <!-- How did you check this? -->
 
 ## Checklist
-- [ ] `pnpm test run` passes
+- [ ] `pnpm typecheck` and `pnpm test run` pass
 - [ ] `pnpm build` works
 - [ ] The code follows CONTRIBUTING.md
 - [ ] The docs are up to date
-- [ ] New language only: it is registered in `src/i18n/i18n.js` and `src/data/language.json`
+- [ ] New language only: it is registered in `src/i18n/i18n.ts` and `src/data/language.json`
 
 ## Screenshots
 <!-- For UI changes. -->

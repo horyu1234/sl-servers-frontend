@@ -15,9 +15,10 @@ Thanks for helping out. Please follow the [Code of Conduct](./CODE_OF_CONDUCT.md
 
 2. Create a branch for your change.
 3. Make the change, and add tests next to the code you touch.
-4. Run the tests and the build. CI runs only the tests.
+4. Run the type check, the tests and the build. CI runs the type check and the tests.
 
    ```bash
+   pnpm typecheck
    pnpm test run
    pnpm build
    ```
@@ -33,6 +34,7 @@ Thanks for helping out. Please follow the [Code of Conduct](./CODE_OF_CONDUCT.md
 | `src/components/`        | Components, with shadcn/ui in `ui/`             |
 | `src/modules/`           | Redux reducers and thunks                       |
 | `src/lib/`               | API clients, formatters, hooks                  |
+| `src/types/`             | Shared types, including API responses           |
 | `src/i18n/`              | i18next setup and locale files                  |
 | `src/data/language.json` | Language list                                   |
 | `public/`                | Static files, including `_headers` and Silktide |
@@ -47,19 +49,21 @@ To fix or finish a translation, edit that language's file. Translators are credi
 To add a language:
 
 1. Copy `en-US.json` to a new file named like the existing ones, such as `pt-BR.json`.
-2. Import it in `src/i18n/i18n.js` and add it to `resource`.
+2. Import it in `src/i18n/i18n.ts` and add it to `resource`.
 3. Add its `code`, `name` and `contributors` to `src/data/language.json`. The language selector, browser language matching and the credits page all read this list.
-4. Add a mapping if the name doesn't work as is: `src/i18n/intlLocale.js` when `Intl` can't read the file name, and `src/i18n/siteLanguage.js` when a browser's language code doesn't lead to the file.
+4. Add a mapping if the name doesn't work as is: `src/i18n/intlLocale.ts` when `Intl` can't read the file name, and `src/i18n/siteLanguage.ts` when a browser's language code doesn't lead to the file.
 5. Run `pnpm test run src/i18n`, then `pnpm start` and pick the language from the language menu.
 
 ## Code style
 
 The code uses WebStorm's default formatting and there is no linter, so match the code around your change.
 
+- Write TypeScript with `strict` on: `.tsx` for components and `.ts` for everything else.
+- Don't use `any` or `@ts-ignore`. If you need a cast or `!`, say why in a comment.
 - Write function components with hooks.
-- Name component files in PascalCase (`ServerRow.jsx`) and other files in camelCase (`tileUrl.js`).
-- Keep shared state in Redux under `src/modules/`, with thunks for async actions. In thunks, catch failed requests and dispatch a failure action.
-- Put API calls in `src/lib/api/`.
+- Name component files in PascalCase (`ServerRow.tsx`) and other files in camelCase (`tileUrl.ts`).
+- Keep shared state in Redux under `src/modules/`, with thunks for async actions. Use `useAppSelector` and `useAppDispatch` from `src/modules/hooks.ts`. In thunks, catch failed requests and dispatch a failure action.
+- Put API calls in `src/lib/api/` and response types in `src/types/api.ts`. Keep the types in line with what the API returns.
 - Style with Tailwind classes. Separate CSS files are only for restyling third-party widgets, as in `map.css`.
 - Order imports: React, third-party libraries, local components, styles.
 - Destructure props and state.
@@ -69,9 +73,9 @@ The code uses WebStorm's default formatting and there is no linter, so match the
 
 `pnpm build` generates the license list on the credits page from the modules in the bundle, so a new package needs no manual entry. A few things need updating by hand, because the build can't see them:
 
-- Code copied into the repository: put its license file next to the code and add it to `VENDORED` in `vite-plugins/thirdPartyLicenses.js`.
+- Code copied into the repository: put its license file next to the code and add it to `VENDORED` in `vite-plugins/thirdPartyLicenses.ts`.
 - Tools whose output skips the module graph, such as Tailwind: add them to `COMPILED_IN` in the same file.
-- Data and services used at runtime or through the backend: add them to `RESOURCES` in `src/pages/credit/ExternalResources.jsx`.
+- Data and services used at runtime or through the backend: add them to `RESOURCES` in `src/pages/credit/ExternalResources.tsx`.
 
 ## Questions
 
