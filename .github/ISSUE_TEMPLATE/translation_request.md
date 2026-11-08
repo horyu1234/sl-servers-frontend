@@ -1,29 +1,27 @@
 ---
 name: Translation request or correction
-about: Suggest a new translation or correct an existing one
+about: Ask for a new language or report a wrong translation
 title: '[TRANSLATION] '
 labels: translation
 assignees: ''
 ---
 
 ## Language
-<!-- Which language does this request concern? -->
+<!-- Which language is this about? -->
 
 ## Type
-- [ ] New translation
-- [ ] Translation correction
-- [ ] Translation addition (missing strings)
+- [ ] New language
+- [ ] Correction
+- [ ] Missing strings
 
 ## Details
-<!-- Please provide details about the translation request -->
+<!-- What needs to change, and where on the site does it appear? -->
 
-## Proposed Changes
-<!-- If you're suggesting specific translation changes, please list them here -->
-
-<!-- For corrections, please use this format:
+## Proposed changes
+<!-- For corrections, use this format:
 Current: "Current translation text"
 Suggested: "Suggested translation text"
 -->
 
-## Additional Context
-<!-- Add any other context about the translation request here -->
+## Additional context
+<!-- Anything else that might help. -->

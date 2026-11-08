@@ -1,32 +1,33 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Something on the site doesn't work
 title: '[BUG] '
 labels: bug
 assignees: ''
 ---
 
-## Bug Description
-<!-- A clear and concise description of what the bug is -->
+<!-- Security problems go to support@scplist.kr, not here. See SECURITY.md. -->
 
-## Steps To Reproduce
-<!-- Steps to reproduce the behavior -->
+## What happened
+<!-- What went wrong? -->
+
+## Steps to reproduce
 1. 
 2. 
 3. 
-4. 
 
-## Expected Behavior
-<!-- A clear and concise description of what you expected to happen -->
+## Expected behavior
+<!-- What should have happened? -->
 
 ## Screenshots
-<!-- If applicable, add screenshots to help explain your problem -->
+<!-- If you have any. -->
 
 ## Environment
+- Page URL: 
+- Site language: 
 - Browser and version: 
 - OS: 
 - Device: 
-- Application version: 
 
-## Additional Context
-<!-- Add any other context about the problem here -->
+## Additional context
+<!-- Anything else that might help. -->
