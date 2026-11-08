@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Informations du serveur",
     "not-exist": "Serveur introuvable.",
+    "offline-notice": {
+      "last-online": "Dernière connexion {{ago}}",
+      "unknown": "Hors ligne, sans trace de sa dernière connexion",
+      "ip-hidden": "L'adresse IP est masquée, car le serveur est hors ligne depuis plus de 30 jours."
+    },
     "loading": "Chargement des informations du serveur...",
     "status": {
       "online": "En ligne",

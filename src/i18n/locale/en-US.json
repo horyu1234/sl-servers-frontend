@@ -97,6 +97,19 @@
   "server-info": {
     "title": "Server info",
     "not-exist": "Server not found.",
+    "offline-notice": {
+      "last-online": "Last online {{ago}}",
+      "unknown": "Offline, with no record of when it was last online",
+      "ip-hidden": "The IP address is hidden because this server has been offline for more than 30 days.",
+      "ago": {
+        "day_one": "{{count}} day ago",
+        "day_other": "{{count}} days ago",
+        "hour_one": "{{count}} hour ago",
+        "hour_other": "{{count}} hours ago",
+        "minute_one": "{{count}} minute ago",
+        "minute_other": "{{count}} minutes ago"
+      }
+    },
     "loading": "Loading server info...",
     "status": {
       "online": "Online",

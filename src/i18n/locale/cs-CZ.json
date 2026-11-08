@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Informace o serveru",
     "not-exist": "Server nebyl nalezen.",
+    "offline-notice": {
+      "last-online": "Naposledy online {{ago}}",
+      "unknown": "Offline, bez záznamu o tom, kdy byl naposledy online",
+      "ip-hidden": "IP adresa je skrytá, protože server je offline déle než 30 dní."
+    },
     "loading": "Načítání informací o serveru...",
     "status": {
       "online": "Online",

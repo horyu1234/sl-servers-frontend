@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Serverinformation",
     "not-exist": "Servern hittades inte.",
+    "offline-notice": {
+      "last-online": "Senast online {{ago}}",
+      "unknown": "Offline, och det finns ingen uppgift om när den senast var online",
+      "ip-hidden": "IP-adressen döljs eftersom servern har varit offline i mer än 30 dagar."
+    },
     "loading": "Hämtar serverinformation...",
     "status": {
       "online": "Online",

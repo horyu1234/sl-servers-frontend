@@ -97,6 +97,19 @@
   "server-info": {
     "title": "Informoj pri servilo",
     "not-exist": "Servilo ne trovita.",
+    "offline-notice": {
+      "last-online": "Laste enreta {{ago}}",
+      "unknown": "Senkonekta, kaj ne estas registro pri kiam ĝi laste estis enreta",
+      "ip-hidden": "La IP-adreso estas kaŝita, ĉar la servilo estas senkonekta jam pli ol 30 tagojn.",
+      "ago": {
+        "day_one": "antaŭ {{count}} tago",
+        "day_other": "antaŭ {{count}} tagoj",
+        "hour_one": "antaŭ {{count}} horo",
+        "hour_other": "antaŭ {{count}} horoj",
+        "minute_one": "antaŭ {{count}} minuto",
+        "minute_other": "antaŭ {{count}} minutoj"
+      }
+    },
     "loading": "Ŝargante servilan informon...",
     "status": {
       "online": "Konektita",

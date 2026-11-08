@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Servera informācija",
     "not-exist": "Serveris nav atrasts.",
+    "offline-notice": {
+      "last-online": "Pēdējo reizi tiešsaistē {{ago}}",
+      "unknown": "Bezsaistē, un nav ziņu, kad serveris pēdējo reizi bija tiešsaistē",
+      "ip-hidden": "IP adrese ir paslēpta, jo serveris ir bezsaistē ilgāk par 30 dienām."
+    },
     "loading": "Ielādē servera informāciju...",
     "status": {
       "online": "Tiešsaistē",

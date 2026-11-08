@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Sunucu bilgisi",
     "not-exist": "Sunucu bulunamadı.",
+    "offline-notice": {
+      "last-online": "En son {{ago}} çevrimiçiydi",
+      "unknown": "Çevrimdışı; en son ne zaman çevrimiçi olduğuna dair kayıt yok",
+      "ip-hidden": "Sunucu 30 günden uzun süredir çevrimdışı olduğu için IP adresi gizlendi."
+    },
     "loading": "Sunucu bilgileri yükleniyor...",
     "status": {
       "online": "Çevrimiçi",

@@ -66,6 +66,11 @@
   "server-info": {
     "title": "Informaçióni do Sèrver",
     "not-exist": "O sèrver no exìste",
+    "offline-notice": {
+      "last-online": "Conésso l'ùltima vòtta {{ago}}",
+      "unknown": "Desconésso, no se sa quande o l'é stæto conésso l'ùltima vòtta",
+      "ip-hidden": "L'adrèsso IP o l'é ascoso perché o sèrver o l'é desconésso da ciù de 30 giórni."
+    },
     "loading": "Caregamento informaçioin do server...",
     "status": {
       "online": "Conésso",

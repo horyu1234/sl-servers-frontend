@@ -97,6 +97,11 @@
   "server-info": {
     "title": "服之信息",
     "not-exist": "未寻得此服。",
+    "offline-notice": {
+      "last-online": "末见于{{ago}}",
+      "unknown": "已离线，不知其末见之时",
+      "ip-hidden": "此服离线逾三十日，故隐其 IP。"
+    },
     "loading": "方载服务器信息...",
     "status": {
       "online": "在线",

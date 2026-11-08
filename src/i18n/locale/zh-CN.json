@@ -97,6 +97,11 @@
   "server-info": {
     "title": "服务器信息",
     "not-exist": "找不到该服务器。",
+    "offline-notice": {
+      "last-online": "最后在线：{{ago}}",
+      "unknown": "离线，没有最后在线的记录",
+      "ip-hidden": "该服务器已离线超过30天，因此不显示 IP 地址。"
+    },
     "loading": "正在加载服务器信息...",
     "status": {
       "online": "在线",

@@ -97,6 +97,11 @@
   "server-info": {
     "title": "伺服器資訊",
     "not-exist": "找不到此伺服器。",
+    "offline-notice": {
+      "last-online": "最後上線：{{ago}}",
+      "unknown": "離線，沒有最後上線的紀錄",
+      "ip-hidden": "此伺服器已離線超過30天，因此不顯示 IP 位址。"
+    },
     "loading": "正在載入伺服器資訊...",
     "status": {
       "online": "線上",
