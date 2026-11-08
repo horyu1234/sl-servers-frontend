@@ -45,7 +45,7 @@ pnpm start
 To run a single test file:
 
 ```bash
-pnpm test src/path/to/file.test.jsx
+pnpm test src/path/to/file.test.tsx
 ```
 
 ## Contributing
