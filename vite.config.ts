@@ -2,7 +2,7 @@ import { configDefaults, defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
-import { thirdPartyLicenses } from './vite-plugins/thirdPartyLicenses';
+import { thirdPartyLicenses } from './vite-plugins/thirdPartyLicenses.ts';
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), thirdPartyLicenses()],

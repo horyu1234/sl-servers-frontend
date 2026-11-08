@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Plugin, ResolvedConfig, ViteDevServer } from 'vite';
-import type { LicenseManifest, PackageEntry, PackageNotice } from '../src/types/licenses';
+import type { LicenseManifest, PackageEntry, PackageNotice } from '../src/types/licenses.ts';
 
 interface LegacyLicense {
   type?: string;
