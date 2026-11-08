@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Informazioni sul server",
     "not-exist": "Server non trovato.",
+    "offline-notice": {
+      "last-online": "Ultima volta online {{ago}}",
+      "unknown": "Offline, senza traccia dell'ultima volta che è stato online",
+      "ip-hidden": "L'indirizzo IP è nascosto perché il server è offline da più di 30 giorni."
+    },
     "loading": "Caricamento informazioni del server...",
     "status": {
       "online": "Online",

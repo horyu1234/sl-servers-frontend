@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Informació del servidor",
     "not-exist": "No s'ha trobat el servidor.",
+    "offline-notice": {
+      "last-online": "Connectat per última vegada {{ago}}",
+      "unknown": "Desconnectat, sense cap registre de l'última connexió",
+      "ip-hidden": "L'adreça IP no es mostra perquè fa més de 30 dies que el servidor està desconnectat."
+    },
     "loading": "Carregant informació del servidor...",
     "status": {
       "online": "En línia",

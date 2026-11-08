@@ -8,6 +8,7 @@ import { CountryFlag } from './CountryFlag';
 import { PlayerBar } from './PlayerBar';
 import SafeHtml from '../shell/SafeHtml';
 import { CopyButton } from '../shared/CopyButton';
+import { ServerOfflineNotice } from './ServerOfflineNotice';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
 import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
@@ -37,7 +38,8 @@ export function ServerDetailHeader({ server }: { server: ServerSummary }) {
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
   const country = getCountryName(server.isoCode) || server.isoCode || '—';
-  const address = `${server.ip}:${server.port}`;
+  // The API leaves out the IP of a server that has been offline for more than 30 days.
+  const address = server.ip === null ? null : `${server.ip}:${server.port}`;
 
   return (
     <div className="space-y-3">
@@ -46,7 +48,7 @@ export function ServerDetailHeader({ server }: { server: ServerSummary }) {
         <CardContent className="space-y-4 p-4 sm:p-5">
           <div className="flex items-start justify-between gap-3">
             <h1 className="min-w-0 break-words text-lg font-semibold leading-snug sm:text-xl">
-              {server.info ? <SafeHtml html={server.info} /> : address}
+              {server.info ? <SafeHtml html={server.info} /> : (address ?? `#${server.serverId}`)}
             </h1>
             <Badge
               variant="secondary"
@@ -61,9 +63,15 @@ export function ServerDetailHeader({ server }: { server: ServerSummary }) {
             </Badge>
           </div>
 
+          <ServerOfflineNotice server={server} />
+
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-            <span className="break-all font-mono text-muted-foreground">{address}</span>
-            <CopyButton value={address} label={t('server-info.copy-address')} copiedLabel={t('server-info.address-copied')} />
+            {address !== null && (
+              <>
+                <span className="break-all font-mono text-muted-foreground">{address}</span>
+                <CopyButton value={address} label={t('server-info.copy-address')} copiedLabel={t('server-info.address-copied')} />
+              </>
+            )}
             <span className="flex items-center gap-1.5 text-muted-foreground">
               <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
               {country}

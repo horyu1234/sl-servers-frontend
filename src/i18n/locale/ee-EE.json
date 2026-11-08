@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Serveri teave",
     "not-exist": "Serverit ei leitud.",
+    "offline-notice": {
+      "last-online": "Viimati võrgus {{ago}}",
+      "unknown": "Vallas, viimase võrgusoleku kohta andmed puuduvad",
+      "ip-hidden": "IP-aadress on peidetud, sest server on olnud vallas üle 30 päeva."
+    },
     "loading": "Serveri teabe laadimine...",
     "status": {
       "online": "Võrgus",

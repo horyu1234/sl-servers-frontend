@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Upplýsingar um netþjón",
     "not-exist": "Netþjónninn fannst ekki.",
+    "offline-notice": {
+      "last-online": "Síðast tengdur {{ago}}",
+      "unknown": "Ótengdur og engar upplýsingar um hvenær hann var síðast tengdur",
+      "ip-hidden": "IP-talan er falin því netþjónninn hefur verið ótengdur í meira en 30 daga."
+    },
     "loading": "Hleð upplýsingum um netþjón...",
     "status": {
       "online": "Í gangi",

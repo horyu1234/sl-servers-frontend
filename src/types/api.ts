@@ -21,7 +21,8 @@ export interface ServerTech {
 export interface ServerSummary {
   accountId: number;
   serverId: number;
-  ip: string;
+  /** null when the server has been offline for more than 30 days. */
+  ip: string | null;
   port: number;
   online: boolean;
   version: string;
@@ -35,6 +36,11 @@ export interface ServerSummary {
   pastebin: string;
   official: number;
   distance: number | null;
+  /**
+   * When an offline server was last online. null for an online server or when there is no
+   * record. Optional only because API builds before this field leave it out.
+   */
+  lastSeen?: IsoInstant | null;
 }
 
 /** ServerSummaryResponse */

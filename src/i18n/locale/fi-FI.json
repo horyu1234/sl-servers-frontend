@@ -97,6 +97,11 @@
   "server-info": {
     "title": "Palvelimen tiedot",
     "not-exist": "Palvelinta ei löytynyt.",
+    "offline-notice": {
+      "last-online": "Viimeksi verkossa {{ago}}",
+      "unknown": "Offline-tilassa, eikä tiedossa ole, milloin palvelin oli viimeksi verkossa",
+      "ip-hidden": "IP-osoite on piilotettu, koska palvelin on ollut offline-tilassa yli 30 päivää."
+    },
     "loading": "Ladataan palvelimen tietoja...",
     "status": {
       "online": "Verkossa",
