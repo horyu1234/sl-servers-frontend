@@ -40,12 +40,33 @@ function durationOf(periodId: string, start: Date, stop: Date) {
   return PERIODS.find((p) => p.id === periodId)?.seconds ?? 0;
 }
 
-export function PeriodPicker({ onUpdate }: { onUpdate: (params: FluxTrendParams) => void }) {
+/** A period and data interval the picker can start on. */
+export interface GraphPreset {
+  period: string;
+  resolution: string;
+}
+
+export const RECENT_GRAPH: GraphPreset = { period: '1week', resolution: '5m' };
+// An offline server has nothing to show for the last week, so it starts on its whole history.
+export const LONG_TERM_GRAPH: GraphPreset = { period: '4year', resolution: '1d' };
+
+/** The request the picker sends for a preset, so a page can load it before anyone clicks. */
+export function presetParams({ period, resolution }: GraphPreset): FluxTrendParams {
+  const seconds = PERIODS.find((p) => p.id === period)?.seconds ?? SECONDS_1_WEEK;
+  return { aggregateEvery: resolution, startTime: `-${seconds}s` };
+}
+
+interface PeriodPickerProps {
+  onUpdate: (params: FluxTrendParams) => void;
+  initial?: GraphPreset;
+}
+
+export function PeriodPicker({ onUpdate, initial = RECENT_GRAPH }: PeriodPickerProps) {
   const { t } = useTranslation();
-  const [period, setPeriod] = useState('1week');
-  const [start, setStart] = useState(new Date(Date.now() - SECONDS_1_WEEK * 1000));
+  const [period, setPeriod] = useState(initial.period);
+  const [start, setStart] = useState(() => new Date(Date.now() - (PERIODS.find((p) => p.id === initial.period)?.seconds ?? SECONDS_1_WEEK) * 1000));
   const [stop, setStop] = useState(new Date());
-  const [resolution, setResolution] = useState('5m');
+  const [resolution, setResolution] = useState(initial.resolution);
 
   const seconds = useMemo(() => durationOf(period, start, stop), [period, start, stop]);
   const resolutions = useMemo(() => resolutionsFor(seconds), [seconds]);
