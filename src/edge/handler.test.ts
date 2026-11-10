@@ -82,6 +82,32 @@ describe('edge function', () => {
     expect(new Headers(init?.headers).get('X-Scplist-Edge-Key')).toBe('secret');
   });
 
+  it.each([
+    ['both answers of a server page', '/servers/7', { '/api/servers/7': server, '/api/v2/servers/7/insights': { serverId: 7, generatedAt: '', history: null, heatmap: null } }, 'key=set; data=2/2'],
+    ['one answer of two', '/servers/7', { '/api/servers/7': server }, 'key=set; data=1/2'],
+    ['no answer', '/rankings', {}, 'key=set; data=0/1'],
+    ['a page that reads nothing', '/about', {}, 'key=set; data=0/0'],
+    ['the reads of a sitemap', '/sitemaps/pages.xml', {}, 'key=set; data=0/3'],
+  ])('reports %s in a header', async (_name, path, answers, report) => {
+    stubApi(answers);
+
+    const response = await handleRequest(contextFor(`https://scplist.kr${path}`).context);
+
+    expect(response.headers.get('X-Edge')).toBe(report);
+  });
+
+  it('says when the edge key is not configured, without ever showing it', async () => {
+    stubApi({});
+    const { context } = contextFor('https://scplist.kr/rankings');
+    context.env.EDGE_API_KEY = undefined;
+
+    const unset = await handleRequest(context);
+    const set = await handleRequest(contextFor('https://scplist.kr/rankings').context);
+
+    expect(unset.headers.get('X-Edge')).toBe('key=unset; data=0/1');
+    expect(set.headers.get('X-Edge')).not.toContain('secret');
+  });
+
   it('treats a version number as a page, not as a file name', async () => {
     stubApi({});
     const { context, next } = contextFor('https://scplist.kr/versions/14.2.9');

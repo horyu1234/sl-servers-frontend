@@ -12,7 +12,7 @@ import { buildHead } from '../site/head';
 import { DEFAULT_LANGUAGE, hreflangOf } from '../site/locales';
 import { canonicalPath, parsePath } from '../site/routes';
 import { createApi, openEdgeCache } from './api';
-import type { Api } from './api';
+import type { Api, CachePolicy, Loaded } from './api';
 import { translatorFor } from './i18n';
 import { buildPage } from './pages';
 import { renderDocument } from './render';
@@ -27,14 +27,24 @@ const PAGE_BUDGET_MS = 1000;
 const SITEMAP_BUDGET_MS = 10_000;
 const FILE_NAME = /\/[^/]+\.[a-z0-9]{2,5}$/i;
 
-function xml(body: string) {
-  return new Response(body, {
-    headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' },
-  });
+// Says from outside what the function had to work with, such as "key=set; data=2/2": whether
+// the edge key is configured, and how many of the API reads a response wanted were answered.
+// A page without its numbers, or a response without this header, can then be explained with curl.
+export const EDGE_HEADER = 'X-Edge';
+
+function xml(body: string, report?: string) {
+  const headers = new Headers({ 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
+  if (report) headers.set(EDGE_HEADER, report);
+  return new Response(body, { headers });
 }
 
-async function apiFor(context: EdgeContext, budgetMs: number): Promise<Api> {
-  return createApi({
+interface Reads {
+  api: Api;
+  report(): string;
+}
+
+async function apiFor(context: EdgeContext, budgetMs: number): Promise<Reads> {
+  const api = createApi({
     apiOrigin: context.env.API_ORIGIN,
     edgeKey: context.env.EDGE_API_KEY,
     cache: await openEdgeCache(),
@@ -43,6 +53,20 @@ async function apiFor(context: EdgeContext, budgetMs: number): Promise<Api> {
     waitUntil: (promise) => context.waitUntil(promise),
     budgetMs,
   });
+  let asked = 0;
+  let answered = 0;
+
+  return {
+    api: {
+      async get<T>(path: string, policy: CachePolicy): Promise<Loaded<T>> {
+        asked += 1;
+        const loaded = await api.get<T>(path, policy);
+        if (loaded) answered += 1;
+        return loaded;
+      },
+    },
+    report: () => `key=${context.env.EDGE_API_KEY ? 'set' : 'unset'}; data=${answered}/${asked}`,
+  };
 }
 
 /**
@@ -74,7 +98,8 @@ async function page(context: EdgeContext, url: URL): Promise<Response> {
 
   const language = parsed.language ?? visitorLanguage(context.request);
   const ctx = createSiteContext(language, translatorFor(language), parsed.language);
-  const { status, model } = await buildPage(ctx, parsed.route, await apiFor(context, PAGE_BUDGET_MS));
+  const reads = await apiFor(context, PAGE_BUDGET_MS);
+  const { status, model } = await buildPage(ctx, parsed.route, reads.api);
   const head = buildHead({
     title: model.title,
     description: model.description,
@@ -92,6 +117,7 @@ async function page(context: EdgeContext, url: URL): Promise<Response> {
   headers.delete('ETag');
   headers.set('Content-Type', 'text/html; charset=utf-8');
   if (!parsed.language) headers.append('Vary', 'Accept-Language, Cookie');
+  headers.set(EDGE_HEADER, reads.report());
   return new Response(renderDocument(await shell.text(), ctx, head, model), { status, headers });
 }
 
@@ -102,8 +128,11 @@ export async function handleRequest(context: EdgeContext): Promise<Response> {
   try {
     const url = new URL(request.url);
     if (url.pathname === SITEMAP_INDEX_PATH) return xml(sitemapIndex());
-    if (url.pathname === SITEMAP_PATHS.pages) return xml(await pagesSitemap(await apiFor(context, SITEMAP_BUDGET_MS)));
-    if (url.pathname === SITEMAP_PATHS.servers) return xml(await serversSitemap(await apiFor(context, SITEMAP_BUDGET_MS)));
+    if (url.pathname === SITEMAP_PATHS.pages || url.pathname === SITEMAP_PATHS.servers) {
+      const reads = await apiFor(context, SITEMAP_BUDGET_MS);
+      const body = url.pathname === SITEMAP_PATHS.pages ? await pagesSitemap(reads.api) : await serversSitemap(reads.api);
+      return xml(body, reads.report());
+    }
     return await page(context, url);
   } catch (error) {
     console.error('edge page failed', error);
