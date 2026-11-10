@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { changeCell, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
+import { changeCell, dayWords, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
 import type { Cell, PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import { countryCell, serverCell } from './countries';
@@ -52,7 +52,7 @@ export function reportsModel(ctx: SiteContext, data: ReportsResponse): PageModel
       ? t('pages.reports.description', { latest: periodLabel(ctx, latest.period) })
       : t('pages.reports.description-empty'),
     heading: t('pages.reports.heading'),
-    intro: [t('pages.reports.intro')],
+    intro: [t('pages.reports.intro', dayWords(ctx))],
     sections,
     breadcrumbs: [homeCrumb(ctx), { text: t('navbar.reports') }],
   };

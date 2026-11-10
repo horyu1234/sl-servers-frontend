@@ -238,7 +238,6 @@
       "title": "SCP:SL 时间线",
       "description": "自 {{date}} 起所有收录服务器的最高同时在线人数",
       "latest": "最新单日峰值",
-      "utc-date": "{{date}}（UTC）",
       "rank": "历史排名",
       "rank-value": "第{{rank}}名",
       "rank-note": "在{{days}}天中高于{{percent}}%的日子",

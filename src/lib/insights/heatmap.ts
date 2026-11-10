@@ -1,3 +1,4 @@
+import { clockOffsetMinutes, offsetHours, zoneLabel as labelOfOffset } from '../../site/timeZone';
 import type { ServerActivityHeatmap } from '../../types/api';
 
 const DAYS = 7;
@@ -17,7 +18,7 @@ export interface HeatmapCell extends HeatmapPosition {
 
 /** Whole-hour offset of the viewer's zone. Half-hour zones round to the nearest column. */
 export function viewerOffsetHours(date = new Date()) {
-  return Math.round(-date.getTimezoneOffset() / 60);
+  return offsetHours(clockOffsetMinutes(date));
 }
 
 /** Viewer-local position of a moment. `day` is 0 for Monday, matching the API's slot order. */
@@ -76,9 +77,5 @@ export function moveCell({ day, hour }: HeatmapPosition, key: string): HeatmapPo
 
 /** Label such as "UTC+9" or "UTC-3:30" for the viewer's zone. */
 export function zoneLabel(date = new Date()) {
-  const offsetMinutes = -date.getTimezoneOffset();
-  const sign = offsetMinutes < 0 ? '-' : '+';
-  const hours = Math.floor(Math.abs(offsetMinutes) / 60);
-  const minutes = Math.abs(offsetMinutes) % 60;
-  return `UTC${sign}${hours}${minutes ? `:${String(minutes).padStart(2, '0')}` : ''}`;
+  return labelOfOffset(clockOffsetMinutes(date));
 }

@@ -6,10 +6,10 @@ import { API_GUIDE } from '../docs/apiGuide';
 import { CONTACT } from '../docs/contact';
 import { METHODOLOGY } from '../docs/methodology';
 import { PRIVACY } from '../docs/privacy';
-import type { Doc, DocSet } from '../docs/types';
+import type { Doc, DocBlock, DocSet } from '../docs/types';
 import { withSiteName } from '../head';
 import { DEFAULT_LANGUAGE } from '../locales';
-import { homeCrumb } from '../pageModel';
+import { dayWords, homeCrumb } from '../pageModel';
 import type { Cell, PageModel } from '../pageModel';
 import { pathOf } from '../routes';
 import type { PageName } from '../routes';
@@ -35,6 +35,17 @@ export function docFor(ctx: SiteContext, page: PageName): Doc | null {
   return docs[ctx.language] ?? docs[DEFAULT_LANGUAGE];
 }
 
+/** Fills {{dayStart}} and {{zone}} in a written page. Anything else in braces is left alone. */
+function fill(text: string, words: Record<string, string>) {
+  return text.replace(/\{\{(\w+)\}\}/g, (whole, name: string) => words[name] ?? whole);
+}
+
+function fillBlock(block: DocBlock, words: Record<string, string>): DocBlock {
+  if (block.type === 'p') return { ...block, text: fill(block.text, words) };
+  if (block.type === 'ul') return { ...block, items: block.items.map((item) => fill(item, words)) };
+  return block;
+}
+
 export function docModel(ctx: SiteContext, page: PageName): PageModel | null {
   const docs = DOCS[page];
   const doc = docFor(ctx, page);
@@ -49,7 +60,7 @@ export function docModel(ctx: SiteContext, page: PageName): PageModel | null {
     description: doc.description,
     heading: doc.heading,
     intro: doc.intro,
-    blocks: doc.blocks,
+    blocks: doc.blocks.map((block) => fillBlock(block, dayWords(ctx))),
     sections: [],
     breadcrumbs: crumbs,
     languages: docLanguages(page),

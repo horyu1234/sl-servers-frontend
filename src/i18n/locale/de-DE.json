@@ -238,7 +238,6 @@
       "title": "SCP:SL-Zeitleiste",
       "description": "Höchste gleichzeitige Spielerzahl auf allen gelisteten Servern seit {{date}}",
       "latest": "Letztes Tageshoch",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Rang insgesamt",
       "rank-value": "Platz {{rank}}",
       "rank-note": "Mehr als an {{percent}} % von {{days}} Tagen",

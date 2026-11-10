@@ -10,7 +10,11 @@ import type {
 } from '../../types/api';
 
 /** A context that translates like the site does, without the browser's language detection. */
-export function testContext(language = DEFAULT_LANGUAGE, urlLanguage: string | null = null): SiteContext {
+export function testContext(
+  language = DEFAULT_LANGUAGE,
+  urlLanguage: string | null = null,
+  utcOffsetMinutes = 0,
+): SiteContext {
   const instance = i18next.createInstance();
   instance.init({
     lng: language,
@@ -19,7 +23,7 @@ export function testContext(language = DEFAULT_LANGUAGE, urlLanguage: string | n
     interpolation: { escapeValue: false },
     initAsync: false,
   });
-  return createSiteContext(language, (key, values) => instance.t(key, values ?? {}), urlLanguage);
+  return createSiteContext(language, (key, values) => instance.t(key, values ?? {}), urlLanguage, utcOffsetMinutes);
 }
 
 export const server: ServerSummary = {

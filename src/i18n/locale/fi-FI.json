@@ -238,7 +238,6 @@
       "title": "SCP:SL:n aikajana",
       "description": "Suurin samanaikainen pelaajamäärä kaikilla listatuilla palvelimilla {{date}} alkaen",
       "latest": "Viimeisin päivähuippu",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Sijoitus kautta aikojen",
       "rank-value": "Sija {{rank}}",
       "rank-note": "Vilkkaampi kuin {{percent}} % kaikista {{days}} päivästä",

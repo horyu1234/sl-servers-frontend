@@ -171,6 +171,22 @@ describe('edge function', () => {
     expect(response.headers.get('Vary')).toContain('Accept-Language');
   });
 
+  it('writes times on the clock of where the request came from', async () => {
+    const { context } = contextFor('https://scplist.kr/about/data', { headers: { 'Accept-Language': 'en-US' } });
+    context.request.cf = { timezone: 'Asia/Seoul' };
+
+    expect(await (await handleRequest(context)).text()).toContain('which is 09:00 in your time zone (UTC+9)');
+  });
+
+  it('writes times in UTC for a crawler and for a request Cloudflare did not place', async () => {
+    const crawler = contextFor('https://scplist.kr/about/data').context;
+    crawler.request.cf = { timezone: 'Asia/Seoul' };
+    const unplaced = contextFor('https://scplist.kr/about/data', { headers: { 'Accept-Language': 'en-US' } }).context;
+
+    expect(await (await handleRequest(crawler)).text()).toContain('which is 00:00 in your time zone (UTC)');
+    expect(await (await handleRequest(unplaced)).text()).toContain('which is 00:00 in your time zone (UTC)');
+  });
+
   it('does not let the visitor change the language of a prefixed address', async () => {
     stubApi({});
 

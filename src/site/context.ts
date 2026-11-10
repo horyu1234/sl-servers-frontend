@@ -17,6 +17,11 @@ export interface SiteContext {
   month(period: string): string;
   /** Monday is 0. */
   weekday(index: number): string;
+  /**
+   * Minutes the reader's clock is ahead of UTC. Times in the text are written for this clock.
+   * 0 where the reader is not known, as for a crawler.
+   */
+  utcOffsetMinutes: number;
   country(isoCode: string): string;
   /** An address without a language prefix, as a link that stays in the visitor's language. */
   href(path: string): string;
@@ -37,13 +42,20 @@ function cached<T extends Intl.NumberFormat | Intl.DateTimeFormat>(key: string, 
 /**
  * @param urlLanguage the language of the address prefix, or null on an address without one.
  *                    Links keep the prefix the visitor is under.
+ * @param utcOffsetMinutes the reader's time zone, as minutes ahead of UTC.
  */
-export function createSiteContext(language: string, t: Translate, urlLanguage: string | null): SiteContext {
+export function createSiteContext(
+  language: string,
+  t: Translate,
+  urlLanguage: string | null,
+  utcOffsetMinutes = 0,
+): SiteContext {
   const locale = intlLocale(language);
 
   return {
     language,
     t,
+    utcOffsetMinutes,
     number(value, fractionDigits = 0) {
       return cached(`n|${locale}|${fractionDigits}`, () => new Intl.NumberFormat(locale, {
         minimumFractionDigits: fractionDigits,

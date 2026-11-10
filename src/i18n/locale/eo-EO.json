@@ -246,7 +246,6 @@
       "title": "Historio de SCP:SL",
       "description": "Plej multaj samtempaj ludantoj en ĉiuj listigitaj serviloj ekde {{date}}",
       "latest": "Lasta taga pinto",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Ĉiama rango",
       "rank-value": "#{{rank}}",
       "rank-note": "El {{days}} tagoj, pli vigla ol {{percent}}%",

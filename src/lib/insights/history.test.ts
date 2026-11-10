@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import type { CollectionGap, ReleaseImpact } from '../../types/api';
 import {
-  chartRows, dayToTime, majorReleases, signedPercent, spanBetween, totalGapDays, weekStart, weeklyRows, yearTicks,
+  chartRows, dayOnViewerClock, dayToTime, majorReleases, signedPercent, spanBetween, totalGapDays, weekStart, weeklyRows,
+  yearTicks,
 } from './history';
 
 describe('spanBetween', () => {
@@ -132,5 +133,22 @@ describe('signedPercent', () => {
 
   it('shows a dash when there is nothing to compare', () => {
     expect(signedPercent(null)).toBe('—');
+  });
+});
+
+describe('dayOnViewerClock', () => {
+  // Intl picks the spaces and the dash, and they differ between versions.
+  it('shows a day of the data as the span it covers on the viewer\'s clock', () => {
+    expect(dayOnViewerClock('2026-11-06', 'en-US', 'Asia/Seoul')).toMatch(/^Nov 6, 9\sAM\s.\sNov 7, 9\sAM$/u);
+    expect(dayOnViewerClock('2026-11-06', 'en-US', 'America/Los_Angeles')).toMatch(/^Nov 5, 4\sPM\s.\sNov 6, 4\sPM$/u);
+    expect(dayOnViewerClock('2026-11-06', 'en-US', 'UTC')).toMatch(/^Nov 6, 12\sAM\s.\sNov 7, 12\sAM$/u);
+  });
+
+  it('keeps the minutes of a half-hour zone', () => {
+    expect(dayOnViewerClock('2026-11-06', 'en-US', 'Asia/Kolkata')).toMatch(/^Nov 6, 5:30\sAM\s.\sNov 7, 5:30\sAM$/u);
+  });
+
+  it('is written in the language on screen', () => {
+    expect(dayOnViewerClock('2026-11-06', 'ko-KR', 'Asia/Seoul')).toMatch(/11월 6일 오전 9시.+11월 7일 오전 9시/u);
   });
 });

@@ -238,7 +238,6 @@
       "title": "Oś czasu SCP:SL",
       "description": "Najwięcej graczy naraz na wszystkich serwerach z listy, od {{date}}",
       "latest": "Ostatni dzienny szczyt",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Pozycja w historii",
       "rank-value": "#{{rank}}",
       "rank-note": "Więcej graczy niż w {{percent}}% z {{days}} dni",

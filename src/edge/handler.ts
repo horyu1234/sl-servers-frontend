@@ -11,13 +11,14 @@ import { createSiteContext } from '../site/context';
 import { buildHead } from '../site/head';
 import { DEFAULT_LANGUAGE, hreflangOf } from '../site/locales';
 import { canonicalPath, parsePath } from '../site/routes';
+import { offsetOfTimeZone } from '../site/timeZone';
 import { createApi, openEdgeCache } from './api';
 import type { Api, CachePolicy, Loaded } from './api';
 import { translatorFor } from './i18n';
 import { buildPage } from './pages';
 import { renderDocument } from './render';
 import { SITEMAP_INDEX_PATH, SITEMAP_PATHS, pagesSitemap, serversSitemap, sitemapIndex } from './sitemap';
-import type { EdgeContext } from './types';
+import type { EdgeContext, EdgeRequest } from './types';
 
 // A page waits this long for data that is not cached yet. After that it goes out without its
 // numbers and the browser loads them, as it did before this function existed. The API is in
@@ -84,6 +85,15 @@ function visitorLanguage(request: Request) {
   return DEFAULT_LANGUAGE;
 }
 
+/**
+ * The visitor's time zone, taken from where Cloudflare places the request, so the page is written
+ * with the times the app will show in the browser. Crawlers, which send no Accept-Language, get UTC.
+ */
+function visitorOffsetMinutes(request: EdgeRequest) {
+  if (!request.headers.has('Accept-Language')) return 0;
+  return offsetOfTimeZone(request.cf?.timezone);
+}
+
 async function page(context: EdgeContext, url: URL): Promise<Response> {
   const parsed = parsePath(url.pathname);
   // Something like /logo.png that is not a page: the static files answer for it.
@@ -97,7 +107,7 @@ async function page(context: EdgeContext, url: URL): Promise<Response> {
   if (!shell.ok || !(shell.headers.get('Content-Type') ?? '').includes('text/html')) return context.next();
 
   const language = parsed.language ?? visitorLanguage(context.request);
-  const ctx = createSiteContext(language, translatorFor(language), parsed.language);
+  const ctx = createSiteContext(language, translatorFor(language), parsed.language, visitorOffsetMinutes(context.request));
   const reads = await apiFor(context, PAGE_BUDGET_MS);
   const { status, model } = await buildPage(ctx, parsed.route, reads.api);
   const head = buildHead({

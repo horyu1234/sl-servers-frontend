@@ -238,7 +238,6 @@
       "title": "Tidslinje for SCP:SL",
       "description": "Højeste antal samtidige spillere på alle listede servere siden {{date}}",
       "latest": "Seneste dagstop",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Samlet placering",
       "rank-value": "Nr. {{rank}}",
       "rank-note": "Flere spillere end {{percent}} % af {{days}} dage",

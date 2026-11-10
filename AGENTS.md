@@ -43,6 +43,10 @@ This file provides guidance to AI coding agents when working with code in this r
   - its component in `src/components/pages.tsx`
   - its page model in `src/site/pages/`, which `src/edge/pages.ts` builds from the API
 - The text of a page comes from its page model, so the app and the edge function show the same words. Draw a model with `ModelPage`, and add only what needs a browser, such as charts, as its children.
+- Times are shown on the reader's clock, never as bare UTC. The data is cut into UTC hours and UTC days:
+  - An hour goes through `hourWords` and the start of a day through `dayWords` (`src/site/pageModel.ts`), which also give the zone label, such as `UTC+9`. Do not write "UTC" into a locale string.
+  - The app passes the browser's zone to the page models. The edge function passes the zone Cloudflare gives for the request, so both usually write the same words, and crawlers get UTC.
+  - A daily number cannot be cut again in the browser, so its date stays the UTC day and the text says when that day starts.
 - Code in `src/site/`, `src/edge/` and `functions/` runs without a DOM and is bundled by Cloudflare, not by Vite. Do not import React, browser globals or the `@/` alias there.
 - Link to pages of the site with `LocaleLink`, `LocaleNavLink` or `useLocalePath`, and build addresses with `pathOf`. A plain `Link` drops the visitor's language prefix.
 - Languages:
