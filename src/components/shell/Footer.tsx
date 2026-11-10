@@ -1,9 +1,12 @@
 import React from 'react';
-import type { ReactNode, SVGProps } from 'react';
-import { Link } from 'react-router-dom';
+import type { SVGProps } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import SafeHtml from './SafeHtml';
+import { LocaleLink } from './LocaleLink';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import type { Cell } from '../../site/pageModel';
+import { siteLinks } from '../../site/pages/links';
 
 function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -13,24 +16,32 @@ function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function FooterLink({ to, children }: { to: string; children: ReactNode }) {
+function FooterLinks({ title, links }: { title: string; links: Cell[] }) {
   return (
-    <li>
-      <Link to={to} className="text-muted-foreground no-underline transition-colors hover:text-foreground">
-        {children}
-      </Link>
-    </li>
+    <nav aria-label={title}>
+      <h2 className="mb-2 text-sm font-semibold text-foreground">{title}</h2>
+      <ul className="space-y-1 text-sm">
+        {links.map((link) => (
+          <li key={link.href}>
+            <LocaleLink to={link.href ?? '/'} className="text-muted-foreground no-underline transition-colors hover:text-foreground">
+              {link.text}
+            </LocaleLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
 export default function Footer() {
   const { t } = useTranslation();
+  const links = siteLinks(useSiteContext());
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-8 border-t border-border bg-card/50">
       {/* pb-20 below lg keeps the last links clear of the fixed consent icon. */}
-      <div className="mx-auto grid max-w-screen-xl gap-8 px-4 pb-20 pt-8 md:grid-cols-3 lg:pb-8">
+      <div className="mx-auto grid max-w-screen-xl gap-8 px-4 pb-20 pt-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.4fr] lg:pb-8">
         <div>
           <h2 className="mb-2 text-sm font-semibold text-foreground">SCP: SL Servers</h2>
           <p className="text-sm text-muted-foreground">{t('footer.description')}</p>
@@ -38,16 +49,9 @@ export default function Footer() {
             Copyright © 2020-{year}. Hyunoh Ryu (Horyu) All rights reserved.
           </p>
         </div>
-        <div>
-          <h2 className="mb-2 text-sm font-semibold text-foreground">{t('footer.links')}</h2>
-          <ul className="space-y-1 text-sm">
-            <FooterLink to="/">{t('navbar.server-list')}</FooterLink>
-            <FooterLink to="/stats">{t('navbar.all-stats')}</FooterLink>
-            <FooterLink to="/map">{t('navbar.all-server-map')}</FooterLink>
-            <FooterLink to="/api">API</FooterLink>
-            <FooterLink to="/credit">{t('navbar.credit')}</FooterLink>
-          </ul>
-        </div>
+        <FooterLinks title={t('footer.browse')} links={links.browse} />
+        <FooterLinks title={t('footer.statistics')} links={links.statistics} />
+        <FooterLinks title={t('footer.site')} links={links.site} />
         <div>
           <h2 className="mb-2 text-sm font-semibold text-foreground">{t('footer.translation-title')}</h2>
           <p className="mb-3 text-sm text-muted-foreground">{t('footer.translation-body')}</p>

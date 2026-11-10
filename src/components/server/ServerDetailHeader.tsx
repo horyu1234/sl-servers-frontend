@@ -5,6 +5,8 @@ import { ArrowLeft } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CountryFlag } from './CountryFlag';
+import { LocaleLink, useLocalePath } from '../shell/LocaleLink';
+import { pathOf } from '../../site/routes';
 import { PlayerBar } from './PlayerBar';
 import SafeHtml from '../shell/SafeHtml';
 import { CopyButton } from '../shared/CopyButton';
@@ -18,8 +20,9 @@ function BackToList() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  const localePath = useLocalePath();
   // Going back keeps the list's filters and sort. A direct visit has nothing to go back to.
-  const goBack = () => (location.key === 'default' ? navigate('/') : navigate(-1));
+  const goBack = () => (location.key === 'default' ? navigate(localePath('/')) : navigate(-1));
 
   return (
     <button
@@ -72,10 +75,13 @@ export function ServerDetailHeader({ server }: { server: ServerSummary }) {
                 <CopyButton value={address} label={t('server-info.copy-address')} copiedLabel={t('server-info.address-copied')} />
               </>
             )}
-            <span className="flex items-center gap-1.5 text-muted-foreground">
+            <LocaleLink
+              to={pathOf('country', { isoCode: server.isoCode.toLowerCase() })}
+              className="flex items-center gap-1.5 text-muted-foreground no-underline hover:text-foreground"
+            >
               <CountryFlag isoCode={server.isoCode} className="rounded-[1px] shadow-sm" />
               {country}
-            </span>
+            </LocaleLink>
           </div>
 
           <div className="flex items-center gap-3 text-sm">

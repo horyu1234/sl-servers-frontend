@@ -3,16 +3,20 @@
 <head>
     <!-- Basic Page Needs
     ================================================== -->
-    <title>SCP: Secret Laboratory Server List</title>
-
     <meta charset='UTF-8'/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
+    <!-- The edge function (functions/_middleware.ts) replaces everything between these two
+         markers with the tags of the page being served. What is here is the fallback. -->
+    <!--head:start-->
+    <title>SCP: Secret Laboratory Server List</title>
+    <meta name="description" content="Find SCP: Secret Laboratory servers with filters, player trends and statistics.">
+    <meta property="og:title" content="SCP: Secret Laboratory Server List">
+    <meta property="og:description" content="Find SCP: Secret Laboratory servers with filters, player trends and statistics.">
+    <meta property="og:url" content="https://scplist.kr/">
+    <!--head:end-->
+
     <link rel="icon" href="/favicon.ico"/>
-    <meta content="SCP: Secret Laboratory Server List" property="og:title">
-    <meta content="https://scplist.kr/" property="og:url">
-    <meta content="Find SCP: Secret Laboratory servers with filters, player trends and statistics."
-          property="og:description">
     <meta content="website" property="og:type">
     <meta content="https://scplist.kr/icon-1024x1024.png" property="og:image">
     <meta content="1024" property="og:image:width">
@@ -20,8 +24,6 @@
     <meta content="horyu1234" name="author">
     <meta content="scp, scpsl, game, scp재단, scpsl, serverlist, server, list, browser, secret, laboratory, sl servers, scpsl server list"
           name="keywords">
-    <meta content="Find SCP: Secret Laboratory servers with filters, player trends and statistics."
-          name="description">
 
     <!-- Favicons
     ================================================== -->
@@ -88,7 +90,7 @@
         ],
         text: {
           banner: {
-            description: "<p>We use cookies to keep your filters and language. With your consent, we also use them for the support chat (MineTalk), to measure how the site is used and to detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not run ads or sell your data.</p>",
+            description: "<p>We use cookies to keep your filters and language. With your consent, we also use them for the support chat (MineTalk), to measure how the site is used and to detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not sell your data. The <a href=\"/privacy\">privacy policy</a> has the details.</p>",
             acceptAllButtonText: "Accept all",
             acceptAllButtonAccessibleLabel: "Accept all cookies",
             rejectNonEssentialButtonText: "Reject non-essential",

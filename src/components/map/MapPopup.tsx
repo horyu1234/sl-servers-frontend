@@ -3,10 +3,13 @@ import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import type { Popup } from 'leaflet';
 import SafeHtml from '../shell/SafeHtml';
+import { useLocalePath } from '../shell/LocaleLink';
+import { pathOf } from '../../site/routes';
 import type { ServerLoc } from '../../types/api';
 
 export function MapPopup({ popup, server }: { popup: Popup; server: ServerLoc }) {
   const { t } = useTranslation();
+  const localePath = useLocalePath();
 
   // Leaflet measured the popup before this content existed, and a language
   // change resizes it, so it has to lay out again after every render.
@@ -20,7 +23,7 @@ export function MapPopup({ popup, server }: { popup: Popup; server: ServerLoc })
       <a
         target="_blank"
         rel="noreferrer"
-        href={`/servers/${server.serverId}`}
+        href={localePath(pathOf('server', { serverId: server.serverId }))}
         className="block text-xs text-primary hover:underline"
       >
         {t('all-server-map.server-info-btn')}

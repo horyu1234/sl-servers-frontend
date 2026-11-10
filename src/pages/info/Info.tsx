@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -12,10 +12,13 @@ import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerPastebin } from '../../components/server/ServerPastebin';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
 import { EmptyState } from '../../components/shared/EmptyState';
+import { LocaleLink } from '../../components/shell/LocaleLink';
 import { LONG_TERM_GRAPH, PeriodPicker, RECENT_GRAPH, presetParams } from '../../components/shared/PeriodPicker';
 import { getServerGraphAPI } from '../../lib/api/servers';
-import { plainServerName } from '../../lib/format/serverName';
-import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { usePageHead } from '../../lib/hooks/usePageHead';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import { notFoundModel } from '../../site/pages/basic';
+import { serverModel } from '../../site/pages/server';
 import { useAppDispatch, useAppSelector } from '../../modules/hooks';
 import * as serverInfoActions from '../../modules/serverInfo';
 import type { FluxTrendParams } from '../../types/api';
@@ -39,7 +42,7 @@ export default function Info() {
   // (Redux serverInfo starts with {fetching:false, data:{}}).
   const [requested, setRequested] = useState(false);
   const inflightRef = useRef(0);
-  useDocumentTitle(plainServerName(server?.info));
+  const ctx = useSiteContext();
 
   useEffect(() => {
     // The previous server's graph would show until the new one loads.
@@ -66,6 +69,12 @@ export default function Info() {
   const answered = requested && !fetching && serverInfoActions.isServerLoaded(server) && String(server.serverId) === serverId;
   const online = answered ? server.online : null;
   const graphPreset = online === false ? LONG_TERM_GRAPH : RECENT_GRAPH;
+  const isMissing = !isNumericId(serverId) || (requested && !fetching && !error && !serverInfoActions.isServerLoaded(server));
+  // The head needs no insights: its title and description come from the server alone.
+  usePageHead(
+    isMissing ? notFoundModel(ctx) : answered ? serverModel(ctx, server, null) : null,
+    t('server-info.title'),
+  );
 
   useEffect(() => {
     if (online === null) return;
@@ -74,7 +83,7 @@ export default function Info() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serverId, online]);
 
-  if (!isNumericId(serverId) || (requested && !fetching && !error && !serverInfoActions.isServerLoaded(server))) {
+  if (isMissing) {
     return (
       <div className="flex flex-1 items-center justify-center">
         <EmptyState
@@ -82,7 +91,7 @@ export default function Info() {
           title={t('server-info.not-exist')}
           action={(
             <Button asChild variant="outline">
-              <Link to="/">{t('navbar.server-list')}</Link>
+              <LocaleLink to="/">{t('navbar.server-list')}</LocaleLink>
             </Button>
           )}
         />
@@ -114,7 +123,7 @@ export default function Info() {
     <div className="mx-auto grid w-full min-w-0 max-w-screen-2xl items-start gap-4 px-3 py-4 sm:px-4 sm:py-6 lg:grid-cols-3">
       <div className="min-w-0 space-y-4 lg:col-span-2">
         <ServerDetailHeader server={server} />
-        <ServerInsights serverId={serverId} />
+        <ServerInsights serverId={serverId} server={server} />
 
         <Card className="min-w-0">
           <CardHeader className="p-4 sm:p-5">

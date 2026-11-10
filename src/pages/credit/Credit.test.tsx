@@ -1,6 +1,7 @@
 import React from 'react';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from '../../i18n/locale/en-US.json';
@@ -72,7 +73,7 @@ describe('Credit', () => {
   it('loads the list the build emits', async () => {
     respondWith(manifest);
 
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     expect(await screen.findByRole('button', { name: /Hippocratic-2\.1/ })).toBeInTheDocument();
     expect(vi.mocked(fetch).mock.calls[0][0]).toBe('/third-party-licenses.json');
@@ -80,7 +81,7 @@ describe('Credit', () => {
 
   it('shows the full license text of an opened package', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await openLicenseGroup('Hippocratic-2\\.1');
     fireEvent.click(await screen.findByText('react-leaflet'));
@@ -94,7 +95,7 @@ describe('Credit', () => {
 
   it('shows NOTICE files alongside the license', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await openLicenseGroup('Apache-2\\.0');
     fireEvent.click(await screen.findByText('swagger-ui-react'));
@@ -105,7 +106,7 @@ describe('Credit', () => {
 
   it('says so when a package has no license file', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await openLicenseGroup('MIT');
     fireEvent.click(await screen.findByText('toggle-selection'));
@@ -116,7 +117,7 @@ describe('Credit', () => {
 
   it('filters packages by name', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await screen.findByRole('button', { name: /Hippocratic-2\.1/ });
     fireEvent.change(screen.getByPlaceholderText(en.credit['search-placeholder']), {
@@ -129,7 +130,7 @@ describe('Credit', () => {
 
   it('explains a search with no results', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await screen.findByRole('button', { name: /Hippocratic-2\.1/ });
     fireEvent.change(screen.getByPlaceholderText(en.credit['search-placeholder']), {
@@ -142,7 +143,7 @@ describe('Credit', () => {
   it('reports a failed load instead of an empty list', async () => {
     respondWith({}, false);
 
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     expect(await screen.findByText(en.credit['load-failed'])).toBeInTheDocument();
     expect(screen.queryByText(en.credit['no-match'])).not.toBeInTheDocument();
@@ -154,14 +155,14 @@ describe('Credit', () => {
       json: () => Promise.reject(new SyntaxError('Unexpected token <')),
     })));
 
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     expect(await screen.findByText(en.credit['load-failed'])).toBeInTheDocument();
   });
 
   it('credits data and services the build cannot see, with a description for each', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     await waitFor(() => expect(fetch).toHaveBeenCalled());
     for (const name of ['CARTO', 'OpenStreetMap', 'MaxMind GeoLite2', 'country-flag-icons', 'Pastebin']) {
@@ -176,7 +177,7 @@ describe('Credit', () => {
 
   it('links to the source code of the site', async () => {
     respondWith(manifest);
-    render(<Credit />);
+    render(<Credit />, { wrapper: MemoryRouter });
 
     expect(screen.getByRole('link', { name: en.credit['site-license'] })).toHaveAttribute(
       'href',

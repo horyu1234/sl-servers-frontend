@@ -5,6 +5,7 @@ import './components/consent/gtmGate';
 import './components/consent/clarityGate';
 import './components/consent/mineTalkGate';
 import App from './components/App';
+import {preloadPage} from './components/pages';
 import {Provider} from "react-redux";
 import store from "./store";
 import reportWebVitals from './reportWebVitals';
@@ -20,17 +21,21 @@ import './styles/globals.css';
 // index.html always has #root.
 const root = createRoot(document.getElementById('root')!);
 
-root.render(
-    <React.StrictMode>
-        <NoticeProvider>
-            <NoticeBanner/>
-            <AnalyticsRevokeNotice/>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </NoticeProvider>
-        <Toaster richColors closeButton position="top-right" theme="dark"/>
-    </React.StrictMode>
-);
+// #root may hold the page as the edge function wrote it. It stays on screen until the code of
+// this page has loaded, and React replaces it on the first render.
+preloadPage(window.location.pathname).then(() => {
+    root.render(
+        <React.StrictMode>
+            <NoticeProvider>
+                <NoticeBanner/>
+                <AnalyticsRevokeNotice/>
+                <Provider store={store}>
+                    <App/>
+                </Provider>
+            </NoticeProvider>
+            <Toaster richColors closeButton position="top-right" theme="dark"/>
+        </React.StrictMode>
+    );
+});
 
 reportWebVitals();

@@ -7,7 +7,15 @@ import { StatTile } from '../shared/StatTile';
 import { getGlobalHistoryAPI } from '../../lib/api/stats';
 import { useApiResource } from '../../lib/hooks/useApiResource';
 import { majorReleases, signedPercent, totalGapDays } from '../../lib/insights/history';
+import { TONE_CLASS, toneOf } from '../../site/pageModel';
 import type { DayStanding, HistoricPeak, ReleaseImpact } from '../../types/api';
+import { cn } from '@/lib/cn';
+
+/** The color of a change: green for a rise, red for a fall. The sign is in the text as well. */
+function changeClass(value: number | null) {
+  const tone = toneOf(value);
+  return tone ? TONE_CLASS[tone] : 'text-foreground';
+}
 
 function StandingTiles({ latest, todayPeakSoFar }: { latest: DayStanding; todayPeakSoFar: number | null }) {
   const { t } = useTranslation();
@@ -30,7 +38,7 @@ function StandingTiles({ latest, todayPeakSoFar }: { latest: DayStanding; todayP
       {latest.yearAgoChangePercent !== null && (
         <StatTile
           label={t('insights.global.year-ago')}
-          value={signedPercent(latest.yearAgoChangePercent)}
+          value={<span className={changeClass(latest.yearAgoChangePercent)}>{signedPercent(latest.yearAgoChangePercent)}</span>}
           note={t('insights.global.year-ago-note', {
             date: latest.yearAgoDate,
             players: latest.yearAgoPeak?.toLocaleString(),
@@ -96,7 +104,7 @@ function ReleaseTable({ releases }: { releases: ReleaseImpact[] }) {
               <td className="py-2 pr-3 text-muted-foreground">{release.date}</td>
               <td className="hidden py-2 pr-3 text-right text-muted-foreground sm:table-cell">{release.peakBefore?.toLocaleString() ?? '—'}</td>
               <td className="hidden py-2 pr-3 text-right text-muted-foreground sm:table-cell">{release.peakAfter?.toLocaleString() ?? '—'}</td>
-              <td className="py-2 text-right text-foreground">{signedPercent(release.changePercent)}</td>
+              <td className={cn('py-2 text-right', changeClass(release.changePercent))}>{signedPercent(release.changePercent)}</td>
             </tr>
           ))}
         </tbody>

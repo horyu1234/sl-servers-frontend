@@ -19,7 +19,9 @@ import { DEFAULT_FILTER, isDefault, parseFromSearchParams, sameFilter, toSearchP
 import type { ServerFilter } from '../../lib/filters/filterSchema';
 import { useTrends } from '../../lib/hooks/useTrends';
 import { useMediaQuery } from '../../lib/hooks/useMediaQuery';
-import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { usePageHead } from '../../lib/hooks/usePageHead';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import { listModel } from '../../site/pages/basic';
 import { cn } from '@/lib/cn';
 import { useAppDispatch, useAppSelector } from '../../modules/hooks';
 import * as serverFilterActions from '../../modules/serverFilter';
@@ -32,7 +34,7 @@ export default function List() {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  useDocumentTitle();
+  usePageHead(listModel(useSiteContext()));
   // Memo on the URLSearchParams' STRING form, not the object reference.
   // React Router can return a new URLSearchParams instance on every render
   // even when the URL hasn't changed; using `searchParams` directly as a

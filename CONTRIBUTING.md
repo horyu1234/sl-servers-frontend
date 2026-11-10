@@ -34,11 +34,14 @@ Thanks for helping out. Please follow the [Code of Conduct](./CODE_OF_CONDUCT.md
 | `src/components/`        | Components, with shadcn/ui in `ui/`             |
 | `src/modules/`           | Redux reducers and thunks                       |
 | `src/lib/`               | API clients, formatters, hooks                  |
+| `src/site/`              | Addresses, page texts and the written pages     |
 | `src/types/`             | Shared types, including API responses           |
 | `src/i18n/`              | i18next setup and locale files                  |
 | `src/data/language.json` | Language list                                   |
 | `public/`                | Static files, including `_headers` and Silktide |
 | `vite-plugins/`          | The plugin that generates the license list      |
+| `src/edge/`              | The code of the function that serves each page  |
+| `functions/`             | The entry of that Cloudflare Pages Function     |
 
 ## Translations
 
@@ -49,10 +52,13 @@ To fix or finish a translation, edit that language's file. Translators are credi
 To add a language:
 
 1. Copy `en-US.json` to a new file named like the existing ones, such as `pt-BR.json`.
-2. Import it in `src/i18n/i18n.ts` and add it to `resource`.
+2. Import it in `src/i18n/resources.ts` and add it to `TRANSLATIONS`.
 3. Add its `code`, `name` and `contributors` to `src/data/language.json`. The language selector, browser language matching and the credits page all read this list.
 4. Add a mapping if the name doesn't work as is: `src/i18n/intlLocale.ts` when `Intl` can't read the file name, and `src/i18n/siteLanguage.ts` when a browser's language code doesn't lead to the file.
-5. Run `pnpm test run src/i18n`, then `pnpm start` and pick the language from the language menu.
+5. Add its address segment to `URL_CODES` in `src/site/locales.ts`.
+6. Run `pnpm test run src/i18n src/site`, then `pnpm start` and pick the language from the language menu.
+
+A language gets its own addresses, such as `/ko/stats`, and is offered to search engines once its file has every key of `en-US.json`. Until then it still works from the language menu. The "days ago" phrases under `server-info.offline-notice.ago` are the one exception: leave them out when `Intl` already knows the language.
 
 ## Code style
 

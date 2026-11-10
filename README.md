@@ -52,6 +52,7 @@ pnpm test run src/i18n
 | -------------------- | --------------- | ----------------------------------------------------------- |
 | `VITE_API_URL`       | API base URL    | `.env.development`, `.env.production`                       |
 | `VITE_CARTO_API_KEY` | CARTO map tiles | `.env.local` in development, Cloudflare Pages in production |
+| `EDGE_API_KEY`       | Lets the edge function read the API | A secret in Cloudflare Pages, for Production and Preview |
 
 Without a CARTO key, map tiles show an "API KEY REQUIRED" image. Everything else works.
 
@@ -60,6 +61,8 @@ The `/api` page does not embed Swagger on localhost, because the OpenAPI host bl
 ## Deployment
 
 scplist.kr is built and hosted on Cloudflare Pages. `public/_headers` is copied into the build and sets the site-wide Content Security Policy, so any new iframe source has to be added to `frame-src` there.
+
+The Pages Function in `functions/`, with its code in `src/edge/`, answers every page address. It writes each page's title, description and text into the HTML, answers 404 for addresses that do not exist and serves `/sitemap.xml`. It reads the API with `EDGE_API_KEY`, which must match `SCPLIST_EDGE_KEY` on the API server. Without the key the site still works, and pages go out without their numbers.
 
 ## Tech stack
 
