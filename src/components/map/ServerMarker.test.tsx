@@ -1,6 +1,7 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { act, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { CircleMarker, SVG, map as createMap } from 'leaflet';
 import type { Map as LeafletMap } from 'leaflet';
 import '../../i18n/i18n';
@@ -38,7 +39,7 @@ describe('ServerMarker', () => {
   }
 
   it('adds a styled marker at the server location', () => {
-    render(<ServerMarker map={map} server={server} />);
+    render(<ServerMarker map={map} server={server} />, { wrapper: MemoryRouter });
 
     const [marker] = markers();
     expect(marker.getLatLng()).toMatchObject({ lat: 37.5, lng: 127 });
@@ -47,7 +48,7 @@ describe('ServerMarker', () => {
   });
 
   it('shows the first line of the server name as a tooltip', () => {
-    render(<ServerMarker map={map} server={server} />);
+    render(<ServerMarker map={map} server={server} />, { wrapper: MemoryRouter });
 
     markers()[0].openTooltip();
 
@@ -56,7 +57,7 @@ describe('ServerMarker', () => {
 
   it('keeps a name that decodes to markup as plain text', () => {
     const info = '&lt;img src=x onerror=alert(1)&gt;';
-    render(<ServerMarker map={map} server={{ ...server, info }} />);
+    render(<ServerMarker map={map} server={{ ...server, info }} />, { wrapper: MemoryRouter });
 
     markers()[0].openTooltip();
 
@@ -66,7 +67,7 @@ describe('ServerMarker', () => {
   });
 
   it('renders the server info and detail link into the popup', () => {
-    render(<ServerMarker map={map} server={server} />);
+    render(<ServerMarker map={map} server={server} />, { wrapper: MemoryRouter });
 
     act(() => {
       markers()[0].openPopup();
@@ -78,7 +79,7 @@ describe('ServerMarker', () => {
   });
 
   it('removes the marker and its open popup on unmount', () => {
-    const { unmount } = render(<ServerMarker map={map} server={server} />);
+    const { unmount } = render(<ServerMarker map={map} server={server} />, { wrapper: MemoryRouter });
     const [marker] = markers();
     act(() => {
       marker.openPopup();

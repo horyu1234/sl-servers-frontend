@@ -1,0 +1,96 @@
+import type { DocSet } from './types';
+
+export const METHODOLOGY: DocSet = {
+  'en-US': {
+    title: 'How the data works',
+    description: 'How SCP List collects SCP: Secret Laboratory server data once a minute, how peaks, rankings and country statistics are worked out, and why the numbers differ from Steam.',
+    heading: 'How the data works',
+    intro: [
+      'Every number on this site comes from one source that is read once a minute. This page explains what is collected, how the statistics are worked out and where they fall short.',
+    ],
+    blocks: [
+      { type: 'h2', text: 'What is collected' },
+      { type: 'p', text: 'Once a minute we read the official SCP: Secret Laboratory server list, the same list the game shows in its server browser. For each server it gives the name, the address, the current and maximum number of players, the game version, the friendly fire, whitelist and modded flags, the Pastebin ID of the server\'s info page and the country where the server is hosted.' },
+      { type: 'p', text: 'We store the player count of every server for that minute, and the total of each country. Nothing is collected about players: the list holds no player names, accounts or IP addresses.' },
+      { type: 'h2', text: 'What counts as a server' },
+      {
+        type: 'ul',
+        items: [
+          'Only verified servers in the public list are tracked. Private, unlisted and local servers never appear.',
+          'A server keeps its number, the ID in the address of its page, when it changes its name, IP address or port.',
+          'A server that leaves the list is shown as offline and keeps its history. After 30 days offline its IP address is hidden.',
+        ],
+      },
+      { type: 'h2', text: 'Player counts and peaks' },
+      { type: 'p', text: 'A player count is the number of players connected to a server at the moment of a reading. The **daily peak** is the highest reading of a UTC day. For a country or for the whole game it is the highest total of a single minute, not the sum of each server\'s own peak.' },
+      { type: 'p', text: 'Most statistics build on daily peaks: the 30-day averages in the [rankings](/rankings) and on [country pages](/countries), the [records](/records) and the [reports](/reports). In a server\'s average, a day when it was offline counts as zero, so a server that is busy every day ranks above one with a single spike.' },
+      { type: 'h2', text: 'Why the numbers differ from Steam' },
+      { type: 'p', text: 'Steam counts everyone who has the game running, including players in menus and on private servers. We count players connected to public servers. Our totals are therefore lower than Steam\'s, and they follow how many people are actually in a round together.' },
+      { type: 'h2', text: 'Countries' },
+      { type: 'p', text: 'A server belongs to the country where it is hosted, as the server list reports it. That is often not where its players live, because a community may rent a server abroad. Country pages describe hosting, not nationality.' },
+      { type: 'p', text: 'The distance in the server list is estimated from your IP address and the server\'s location with GeoLite2 data by MaxMind. Your address is used for that estimate only.' },
+      { type: 'h2', text: 'Game versions' },
+      { type: 'p', text: 'The date of a version is the day servers first ran it. The very first server is skipped, because it is often a test host, so the date can be a day off the official release. The before-and-after comparison is the median daily peak of the 14 days on each side. Seasons, holidays and weekends move it as well, so it is not the effect of the update alone.' },
+      { type: 'h2', text: 'Busy hours' },
+      { type: 'p', text: 'The weekly heatmap on server and country pages shows the typical peak (the median) of each hour of the week over the last 8 weeks, in your own time zone.' },
+      { type: 'h2', text: 'Gaps and known errors' },
+      {
+        type: 'ul',
+        items: [
+          'Collection began on 17 September 2020 for servers and on 30 September 2020 for countries. A server that was already running then looks younger than it is.',
+          'Minutes when our collector or the server list was down are missing. The [statistics page](/stats) says how many days were lost in total.',
+          'Three minutes on 1 January 2024 hold faulty readings. They are flagged and left out of every statistic.',
+          'Server names are shown as the server sent them. We remove unsafe markup and nothing else.',
+        ],
+      },
+      { type: 'h2', text: 'Using the data' },
+      { type: 'p', text: 'The current server list is available through the [public API](/api). If you quote statistics from this site, a link back is appreciated. Send corrections to [support@scplist.kr](mailto:support@scplist.kr).' },
+    ],
+  },
+  'ko-KR': {
+    title: '데이터 안내',
+    description: 'SCP List가 SCP: Secret Laboratory 서버 데이터를 1분마다 수집하는 방법, 최고 인원·랭킹·국가 통계를 계산하는 방법, Steam 수치와 다른 이유를 설명합니다.',
+    heading: '데이터 안내',
+    intro: [
+      '이 사이트의 모든 수치는 1분마다 읽는 하나의 출처에서 나옵니다. 무엇을 수집하는지, 통계를 어떻게 계산하는지, 어떤 한계가 있는지 설명합니다.',
+    ],
+    blocks: [
+      { type: 'h2', text: '수집하는 정보' },
+      { type: 'p', text: '1분마다 SCP: Secret Laboratory 공식 서버 목록을 읽습니다. 게임의 서버 브라우저에 나오는 목록과 같습니다. 서버마다 이름, 주소, 현재 접속자 수와 정원, 게임 버전, 아군 공격·화이트리스트·모드 여부, 서버 안내 페이지의 Pastebin ID, 서버가 호스팅된 국가가 들어 있습니다.' },
+      { type: 'p', text: '그 시점의 서버별 접속자 수와 국가별 합계를 저장합니다. 플레이어에 관한 정보는 수집하지 않습니다. 목록에는 플레이어 이름, 계정, IP 주소가 없습니다.' },
+      { type: 'h2', text: '서버의 기준' },
+      {
+        type: 'ul',
+        items: [
+          '공개 목록에 있는 인증된 서버만 추적합니다. 비공개 서버, 목록에 없는 서버, 로컬 서버는 나타나지 않습니다.',
+          '서버 번호(서버 페이지 주소의 ID)는 서버 이름, IP 주소, 포트가 바뀌어도 그대로입니다.',
+          '목록에서 빠진 서버는 오프라인으로 표시되고 기록은 남습니다. 30일 넘게 오프라인이면 IP 주소를 숨깁니다.',
+        ],
+      },
+      { type: 'h2', text: '접속자 수와 최고 인원' },
+      { type: 'p', text: '접속자 수는 값을 읽은 순간 서버에 접속해 있던 플레이어 수입니다. **일일 최고 인원**은 UTC 기준 하루 동안 읽은 값 중 가장 높은 값입니다. 국가나 게임 전체의 일일 최고 인원은 어느 한 분의 합계 중 가장 높은 값이며, 서버별 최고값을 더한 수가 아닙니다.' },
+      { type: 'p', text: '대부분의 통계는 일일 최고 인원으로 만듭니다. [랭킹](/rankings)과 [국가 페이지](/countries)의 30일 평균, [역대 기록](/records), [리포트](/reports)가 그렇습니다. 서버 평균에서는 오프라인이었던 날을 0으로 계산합니다. 그래서 매일 붐비는 서버가 하루만 반짝한 서버보다 높은 순위에 오릅니다.' },
+      { type: 'h2', text: 'Steam 수치와 다른 이유' },
+      { type: 'p', text: 'Steam은 게임을 켜 둔 모든 사람을 셉니다. 메뉴에 있는 사람과 비공개 서버에 있는 사람도 포함됩니다. 이 사이트는 공개 서버에 접속한 플레이어만 셉니다. 그래서 합계가 Steam보다 낮고, 실제로 함께 플레이하는 인원에 가깝습니다.' },
+      { type: 'h2', text: '국가' },
+      { type: 'p', text: '서버의 국가는 서버 목록이 알려 주는 호스팅 위치입니다. 플레이어가 사는 곳과 다른 경우가 많습니다. 커뮤니티가 해외 서버를 빌려 쓰기도 하기 때문입니다. 국가 페이지는 국적이 아니라 호스팅 위치 기준입니다.' },
+      { type: 'p', text: '서버 목록의 거리는 방문자의 IP 주소와 서버 위치로 추정하며, MaxMind의 GeoLite2 데이터를 사용합니다. IP 주소는 이 추정에만 씁니다.' },
+      { type: 'h2', text: '게임 버전' },
+      { type: 'p', text: '버전의 날짜는 서버들이 그 버전을 처음 실행한 날입니다. 맨 처음 나타난 서버는 테스트용인 경우가 많아 제외하므로, 공식 출시일과 하루쯤 다를 수 있습니다. 전후 비교는 앞뒤 14일의 일일 최고 인원 중앙값입니다. 계절, 연휴, 주말의 영향도 받으므로 업데이트만의 효과는 아닙니다.' },
+      { type: 'h2', text: '붐비는 시간대' },
+      { type: 'p', text: '서버 페이지와 국가 페이지의 주간 히트맵은 최근 8주 동안 요일·시간별 최고 인원의 중앙값을 방문자의 시간대로 보여 줍니다.' },
+      { type: 'h2', text: '누락과 알려진 오류' },
+      {
+        type: 'ul',
+        items: [
+          '수집은 서버가 2020년 9월 17일, 국가가 2020년 9월 30일에 시작됐습니다. 그때 이미 운영 중이던 서버는 실제보다 최근에 생긴 것으로 보입니다.',
+          '수집기나 서버 목록이 멈췄던 시간의 값은 없습니다. 모두 며칠인지는 [통계 페이지](/stats)에 나옵니다.',
+          '2024년 1월 1일의 3분 동안은 잘못된 값이 기록되어 있습니다. 표시해 두었고 모든 통계에서 뺍니다.',
+          '서버 이름은 서버가 보낸 그대로 보여 줍니다. 위험한 마크업만 제거합니다.',
+        ],
+      },
+      { type: 'h2', text: '데이터 이용' },
+      { type: 'p', text: '현재 서버 목록은 [공개 API](/api)로 받을 수 있습니다. 이 사이트의 통계를 인용할 때 링크를 걸어 주시면 감사하겠습니다. 정정 요청은 [support@scplist.kr](mailto:support@scplist.kr)로 보내 주세요.' },
+    ],
+  },
+};

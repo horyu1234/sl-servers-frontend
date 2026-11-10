@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight } from 'lucide-react';
 import { ServerSparkline } from './ServerSparkline';
@@ -9,6 +8,8 @@ import { PlayerBar } from './PlayerBar';
 import { SERVER_ROW_GRID } from './serverRowGrid';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
+import { LocaleLink } from '../shell/LocaleLink';
+import { pathOf } from '../../site/routes';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
 import { formatDistance } from '../../lib/format/distance';
 import getCountryName from '../../i18n/i18n-countries';
@@ -26,18 +27,17 @@ interface ServerRowProps {
 function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }: ServerRowProps) {
   // The country name follows the language, which the memo comparison below does not see.
   useTranslation();
-  const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
-  const handleClick = onClick ?? (() => navigate(`/servers/${server.serverId}`));
   const countryName = getCountryName(server.isoCode) || server.isoCode;
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
+    <LocaleLink
+      to={pathOf('server', { serverId: server.serverId })}
+      // A caller that handles the click itself keeps the visitor on the page.
+      onClick={onClick && ((event) => { event.preventDefault(); onClick(); })}
       className={cn(
-        'group grid min-h-[76px] w-full items-center gap-3 border-b border-border/70 px-4 py-2.5 text-left transition-colors',
+        'group grid min-h-[76px] w-full items-center gap-3 border-b border-border/70 px-4 py-2.5 text-left no-underline transition-colors',
         'hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring',
         SERVER_ROW_GRID
       )}
@@ -68,7 +68,7 @@ function ServerRowImpl({ server, trend, density = 'cozy', unit = 'km', onClick }
         {formatDistance(server.distance, unit)}
       </div>
       <ChevronRight className="h-4 w-4 text-muted-foreground/60 transition-colors group-hover:text-foreground" aria-hidden="true" />
-    </button>
+    </LocaleLink>
   );
 }
 

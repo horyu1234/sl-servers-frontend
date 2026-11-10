@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/silktide/*",
+    "/favicon.ico",
+    "/favicon-*",
+    "/apple-icon*",
+    "/android-icon*",
+    "/ms-icon*",
+    "/icon-*",
+    "/manifest.json",
+    "/browserconfig.xml",
+    "/robots.txt",
+    "/ads.txt",
+    "/third-party-licenses.json",
+    "/naver*"
+  ]
+}

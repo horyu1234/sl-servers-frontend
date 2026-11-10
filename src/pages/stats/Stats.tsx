@@ -12,7 +12,10 @@ import { PeriodPicker } from '../../components/shared/PeriodPicker';
 import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
 import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
 import { getCountryTrendAPI } from '../../lib/api/stats';
-import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { StatsNav } from '../../components/stats/StatsNav';
+import { usePageHead } from '../../lib/hooks/usePageHead';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import { statsModel } from '../../site/pages/basic';
 import type { FluxTrendParams } from '../../types/api';
 
 export default function Stats() {
@@ -22,7 +25,8 @@ export default function Stats() {
   const [flux, setFlux] = useState<string | null>(null);
   const [error, setError] = useState(false);
   const inflightRef = useRef(0);
-  useDocumentTitle(t('navbar.all-stats'));
+  const model = statsModel(useSiteContext());
+  usePageHead(model);
 
   function fetchTrend(codes: string[], params: FluxTrendParams) {
     setFlux(null);
@@ -57,7 +61,8 @@ export default function Stats() {
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
-      <PageHeader className="mb-4" title={t('navbar.all-stats')} />
+      <PageHeader title={t('navbar.all-stats')} description={model.intro[0]} />
+      <div className="my-4"><StatsNav /></div>
       <GlobalHistorySection />
       <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.85fr)]">
         <Card className="min-w-0">

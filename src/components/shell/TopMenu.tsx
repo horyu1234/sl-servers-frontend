@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import { List, BarChart3, Map as MapIcon, Settings2, Code2, Menu } from 'lucide-react';
+import { List, BarChart3, Map as MapIcon, Settings2, Trophy, Globe2, Menu } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
@@ -10,6 +9,8 @@ import { Separator } from '@/components/ui/separator';
 import LanguageSelect from '../topmenu/LanguageSelect';
 import SiSelect from '../topmenu/SiSelect';
 import SettingsMenu from '../topmenu/SettingsMenu';
+import { LocaleNavLink } from './LocaleLink';
+import { pathOf } from '../../site/routes';
 import { cn } from '@/lib/cn';
 
 interface NavItemProps {
@@ -23,17 +24,18 @@ interface NavItemProps {
 
 function buildNavItems(t: TFunction): NavItemProps[] {
   return [
-    { to: '/',       end: true,  icon: List,      label: t('navbar.server-list') },
-    { to: '/stats',  end: false, icon: BarChart3, label: t('navbar.all-stats') },
-    { to: '/map',    end: false, icon: MapIcon,   label: t('navbar.all-server-map') },
-    { to: '/api',    end: false, icon: Settings2, label: 'API' },
-    { to: '/credit', end: false, icon: Code2,     label: t('navbar.credit') || 'Credit' },
+    { to: pathOf('list'),      end: true,  icon: List,      label: t('navbar.server-list') },
+    { to: pathOf('rankings'),  end: false, icon: Trophy,    label: t('navbar.rankings') },
+    { to: pathOf('countries'), end: false, icon: Globe2,    label: t('navbar.countries') },
+    { to: pathOf('stats'),     end: false, icon: BarChart3, label: t('navbar.all-stats') },
+    { to: pathOf('map'),       end: false, icon: MapIcon,   label: t('navbar.all-server-map') },
+    { to: pathOf('api'),       end: false, icon: Settings2, label: 'API' },
   ];
 }
 
 function NavItem({ to, end, icon: Icon, label, onClick, compact = false }: NavItemProps) {
   return (
-    <NavLink
+    <LocaleNavLink
       to={to}
       end={end}
       onClick={onClick}
@@ -47,7 +49,7 @@ function NavItem({ to, end, icon: Icon, label, onClick, compact = false }: NavIt
     >
       <Icon className={cn('h-4 w-4', compact && 'hidden xl:block')} />
       <span>{label}</span>
-    </NavLink>
+    </LocaleNavLink>
   );
 }
 
@@ -59,13 +61,13 @@ export default function TopMenu() {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-14 items-center px-4 gap-3">
-        <NavLink to="/" className="flex min-w-0 items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
+        <LocaleNavLink to="/" className="flex min-w-0 items-center gap-2 font-semibold text-foreground no-underline hover:no-underline">
           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted">
             <img src="/favicon-32x32.png" alt="" width="20" height="20" />
           </span>
           <span className="truncate text-sm sm:hidden">SL Servers</span>
           <span className="hidden truncate sm:inline">SCP: SL Servers</span>
-        </NavLink>
+        </LocaleNavLink>
 
         <nav className="hidden lg:flex items-center gap-1 ml-2 xl:ml-4">
           {items.map((item) => <NavItem key={item.to} {...item} compact />)}

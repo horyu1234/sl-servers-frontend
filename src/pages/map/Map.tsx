@@ -6,7 +6,9 @@ import { PageHeader } from '../../components/shared/PageHeader';
 import { useAppDispatch, useAppSelector } from '../../modules/hooks';
 import { getServerMap } from '../../modules/serverMap';
 import { ServerMarker } from '../../components/map/ServerMarker';
-import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { usePageHead } from '../../lib/hooks/usePageHead';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import { mapModel } from '../../site/pages/basic';
 import { cartoTileUrl } from './tileUrl';
 
 import 'leaflet/dist/leaflet.css';
@@ -25,7 +27,7 @@ export default function Map() {
   const data = useAppSelector((s) => s.serverMap.data);
   const containerRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<LeafletMap | null>(null);
-  useDocumentTitle(t('all-server-map.title'));
+  usePageHead(mapModel(useSiteContext()));
 
   useEffect(() => {
     dispatch(getServerMap());

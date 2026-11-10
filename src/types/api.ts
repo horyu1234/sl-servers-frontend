@@ -142,12 +142,41 @@ export interface ServerActivityHeatmap {
   capacity: number | null;
 }
 
+/** ServerBrief. A server as rankings and lists of related servers show it. */
+export interface ServerBrief {
+  serverId: number;
+  /** null when the server row is gone. */
+  info: string | null;
+  isoCode: string | null;
+  online: boolean;
+  /** "12/30", or null when the server row is gone. */
+  players: string | null;
+}
+
+/** ServerStanding. The windows are the last 30 complete UTC days and the 30 before them. */
+export interface ServerStanding {
+  avgDailyPeak30d: number;
+  peak30d: number;
+  uptimePercent30d: number;
+  worldRank: number;
+  worldTotal: number;
+  isoCode: string;
+  countryRank: number;
+  countryTotal: number;
+  similar: ServerBrief[];
+}
+
 /** ServerInsightsResponse */
 export interface ServerInsightsResponse {
   serverId: number;
   generatedAt: IsoInstant;
   history: ServerHistory | null;
   heatmap: ServerActivityHeatmap | null;
+  /**
+   * null for an offline server or one without a sample in the last 30 days.
+   * Optional only because API builds before this field leave it out.
+   */
+  standing?: ServerStanding | null;
 }
 
 /** DailyPlayerPeak */
@@ -205,3 +234,171 @@ export interface GlobalHistoryResponse {
 
 /** StatsAPI.modLoaderGraph: Map<String, Map<String, Int>>, loader name to version to count. */
 export type ModLoaderCounts = Record<string, Record<string, number>>;
+
+/** RankedServer */
+export interface RankedServer extends ServerBrief {
+  avgDailyPeak30d: number;
+  avgDailyPeakPrev30d: number;
+  peak30d: number;
+  changePercent30d: number | null;
+  firstSeenDate: IsoDate | null;
+  trackedSinceCollectionStart: boolean;
+}
+
+/** CountryStanding. A server belongs to the country it is hosted in. */
+export interface CountryStanding {
+  isoCode: string;
+  rank: number;
+  onlineServers: number;
+  onlinePlayers: number;
+  avgDailyPeak30d: number;
+  peak30d: number;
+  changePercent30d: number | null;
+  sharePercent30d: number;
+  allTimePeak: number;
+  allTimePeakDate: IsoDate;
+  firstSeenDate: IsoDate;
+}
+
+/** CountriesResponse */
+export interface CountriesResponse {
+  generatedAt: IsoInstant;
+  from: IsoDate;
+  to: IsoDate;
+  countries: CountryStanding[];
+}
+
+/** CountryYear */
+export interface CountryYear {
+  year: number;
+  peak: number;
+  peakDate: IsoDate;
+  avgDailyPeak: number;
+  days: number;
+}
+
+/** CountryDetailResponse */
+export interface CountryDetailResponse {
+  generatedAt: IsoInstant;
+  standing: CountryStanding;
+  totalCountries: number;
+  years: CountryYear[];
+  heatmap: ServerActivityHeatmap | null;
+  topServers: RankedServer[];
+}
+
+/** RankingsResponse. Only servers that are online are ranked. */
+export interface RankingsResponse {
+  generatedAt: IsoInstant;
+  from: IsoDate;
+  to: IsoDate;
+  totalRanked: number;
+  popular: RankedServer[];
+  rising: RankedServer[];
+  newcomers: RankedServer[];
+  veterans: RankedServer[];
+}
+
+/** VersionSummary */
+export interface VersionSummary {
+  version: string;
+  date: IsoDate;
+  major: boolean;
+  peakBefore: number | null;
+  peakAfter: number | null;
+  changePercent: number | null;
+  peakServers: number;
+  peakServersDate: IsoDate;
+  peakSharePercent: number;
+  daysToHalf: number | null;
+  lastSeenDate: IsoDate;
+  onlineServers: number;
+}
+
+/** VersionsResponse */
+export interface VersionsResponse {
+  generatedAt: IsoInstant;
+  latest: string | null;
+  versions: VersionSummary[];
+}
+
+/** VersionAdoptionDay */
+export interface VersionAdoptionDay {
+  date: IsoDate;
+  servers: number;
+  totalServers: number;
+  sharePercent: number;
+}
+
+/** VersionDetailResponse */
+export interface VersionDetailResponse {
+  generatedAt: IsoInstant;
+  summary: VersionSummary;
+  previous: string | null;
+  next: string | null;
+  adoption: VersionAdoptionDay[];
+}
+
+/** ReportPeriodSummary. `period` is a month such as 2026-10 or a year such as 2025. */
+export interface ReportPeriodSummary {
+  period: string;
+  kind: 'month' | 'year';
+  from: IsoDate;
+  to: IsoDate;
+  days: number;
+  peak: number;
+  peakDate: IsoDate;
+  avgDailyPeak: number;
+}
+
+/** ReportsResponse */
+export interface ReportsResponse {
+  generatedAt: IsoInstant;
+  months: ReportPeriodSummary[];
+  years: ReportPeriodSummary[];
+}
+
+/** ReportComparison */
+export interface ReportComparison {
+  period: string;
+  avgDailyPeak: number;
+  changePercent: number | null;
+}
+
+/** ReportCountry */
+export interface ReportCountry {
+  isoCode: string;
+  avgDailyPeak: number;
+  sharePercent: number;
+  changePercent: number | null;
+}
+
+/** ReportServer */
+export interface ReportServer extends ServerBrief {
+  avgDailyPeak: number;
+  peak: number;
+}
+
+/** ReportSeriesPoint. A month report has one per day, a year report one per month. */
+export interface ReportSeriesPoint {
+  date: IsoDate;
+  peak: number;
+  avgDailyPeak: number | null;
+}
+
+/** ReportResponse */
+export interface ReportResponse {
+  generatedAt: IsoInstant;
+  summary: ReportPeriodSummary;
+  lowest: DailyPlayerPeak;
+  previous: ReportComparison | null;
+  yearAgo: ReportComparison | null;
+  previousPeriod: string | null;
+  nextPeriod: string | null;
+  activeServers: number;
+  newServers: number;
+  countries: ReportCountry[];
+  servers: ReportServer[];
+  releases: ReleaseImpact[];
+  series: ReportSeriesPoint[];
+}

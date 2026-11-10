@@ -52,10 +52,14 @@ describe('ServerRow', () => {
     renderRow();
     expect(screen.getByText(/22.*\/.*30/)).toBeInTheDocument();
   });
+  it('links to the server page', () => {
+    renderRow();
+    expect(screen.getByRole('link', { name: /Site-19 Mirror/i })).toHaveAttribute('href', '/servers/42');
+  });
   it('invokes onClick when the row is clicked', () => {
     const onClick = vi.fn();
     renderRow({ onClick });
-    fireEvent.click(screen.getByRole('button', { name: /Site-19 Mirror/i }));
+    fireEvent.click(screen.getByRole('link', { name: /Site-19 Mirror/i }));
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

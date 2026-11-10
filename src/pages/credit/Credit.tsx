@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import languages from '../../data/language.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageHeader } from '../../components/shared/PageHeader';
-import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
+import { usePageHead } from '../../lib/hooks/usePageHead';
+import { useSiteContext } from '../../lib/hooks/useSiteContext';
+import { creditModel } from '../../site/pages/basic';
 import { ExternalResources } from './ExternalResources';
 import { ThirdPartyLicenses } from './ThirdPartyLicenses';
 
@@ -11,7 +13,7 @@ const SOURCE_URL = 'https://github.com/horyu1234/sl-servers-frontend';
 
 export default function Credit() {
   const { t } = useTranslation();
-  useDocumentTitle(t('navbar.credit'));
+  usePageHead(creditModel(useSiteContext()));
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">

@@ -11,6 +11,8 @@ const PALETTE = [
   '#ec4899', '#10b981', '#8b5cf6', '#f97316', '#14b8a6', '#eab308',
 ];
 
+const LONG_SPAN_MS = 100 * 86_400_000;
+
 // Alone, the total uses the accent color. Next to countries it turns neutral so
 // it reads as the reference line and doesn't compete with them.
 function colorFor(key: string, idx: number, seriesCount: number) {
@@ -34,6 +36,10 @@ export function CountryTrendChart({ fluxResponse }: { fluxResponse: string }) {
 
   if (data.length === 0) return null;
 
+  // Past a few months the hour means nothing and the year is what tells the points apart.
+  const spanMs = new Date(data[data.length - 1].time).getTime() - new Date(data[0].time).getTime();
+  const tickFormat = spanMs > LONG_SPAN_MS ? 'yyyy-MM-dd' : 'MM-dd HH:mm';
+
   return (
     <div className="h-[320px] min-w-0 w-full sm:h-[360px]">
       <ResponsiveContainer>
@@ -41,7 +47,7 @@ export function CountryTrendChart({ fluxResponse }: { fluxResponse: string }) {
           <CartesianGrid {...CHART_GRID_PROPS} />
           <XAxis
             dataKey="time"
-            tickFormatter={(v) => format(new Date(v), 'MM-dd HH:mm')}
+            tickFormatter={(v) => format(new Date(v), tickFormat)}
             {...CHART_AXIS_PROPS}
             minTickGap={48}
           />

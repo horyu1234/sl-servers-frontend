@@ -5,20 +5,24 @@ import {Button} from '@/components/ui/button';
 import {Info as InfoIcon, AlertTriangle, ExternalLink} from 'lucide-react';
 import SwaggerUI from 'swagger-ui-react';
 import {PageHeader} from '../../components/shared/PageHeader';
-import {useDocumentTitle} from '../../lib/hooks/useDocumentTitle';
+import {DocBlocks} from '../../components/site/DocBlocks';
+import {usePageHead} from '../../lib/hooks/usePageHead';
+import {useSiteContext} from '../../lib/hooks/useSiteContext';
+import {docModel} from '../../site/pages/docs';
 
 import 'swagger-ui-react/swagger-ui.css';
 import './api.css';
 
 export default function Api() {
     const {t} = useTranslation();
-    useDocumentTitle('API');
+    const guide = docModel(useSiteContext(), 'api');
+    usePageHead(guide);
     const hostname = window.location.hostname;
     const isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
 
     return (
         <div className="mx-auto w-full max-w-screen-2xl px-3 py-4 sm:px-4 sm:py-6">
-            <PageHeader className="mb-4" title="API"/>
+            <PageHeader className="mb-4" title="API" description={guide?.intro[0]}/>
             <div className="min-w-0 space-y-3">
                     <Alert className="border-destructive/40 bg-destructive/10 [&>svg]:text-destructive">
                         <AlertTriangle className="h-4 w-4"/>
@@ -56,6 +60,11 @@ export default function Api() {
                             {t('api.live-docs-after')}
                         </AlertDescription>
                     </Alert>
+                    {guide?.blocks && (
+                        <div className="max-w-4xl pb-2">
+                            <DocBlocks blocks={guide.blocks}/>
+                        </div>
+                    )}
                     {isLocalHost ? (
                         <div className="rounded-lg border border-border bg-background/45 p-6 text-center sm:p-8">
                             <div className="mx-auto max-w-xl space-y-4">

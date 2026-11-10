@@ -1,6 +1,4 @@
 import React from 'react';
-import type { KeyboardEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ServerSparkline } from './ServerSparkline';
@@ -9,6 +7,8 @@ import { ServerMetaStrip } from './ServerMetaStrip';
 import { PlayerBar } from './PlayerBar';
 import SafeHtml from '../shell/SafeHtml';
 import { CountryFlag } from './CountryFlag';
+import { LocaleLink } from '../shell/LocaleLink';
+import { pathOf } from '../../site/routes';
 import { parsePlayers, playersPercent } from '../../lib/format/players';
 import getCountryName from '../../i18n/i18n-countries';
 import { cn } from '@/lib/cn';
@@ -21,26 +21,16 @@ interface ServerCardProps {
 }
 
 export function ServerCard({ server, trend, compact = false }: ServerCardProps) {
-  const navigate = useNavigate();
   const players = parsePlayers(server.players);
   const pct = playersPercent(players);
   const countryName = getCountryName(server.isoCode) || server.isoCode;
-  const openServer = () => navigate(`/servers/${server.serverId}`);
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openServer();
-    }
-  };
 
   return (
-    <Card
-      role="button"
-      tabIndex={0}
-      className="group min-w-0 cursor-pointer transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      onClick={openServer}
-      onKeyDown={handleKeyDown}
+    <LocaleLink
+      to={pathOf('server', { serverId: server.serverId })}
+      className="group block min-w-0 rounded-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
+    <Card className="h-full min-w-0 transition-colors group-hover:border-primary/40">
       <CardContent className={cn('flex h-full flex-col', compact ? 'gap-2 p-3' : 'gap-2.5 p-3.5')}>
         <div className="flex min-w-0 items-start justify-between gap-2">
           {/* Names can hold many <br/> lines, so clamp them to keep cards even. */}
@@ -70,6 +60,7 @@ export function ServerCard({ server, trend, compact = false }: ServerCardProps) 
         </div>
       </CardContent>
     </Card>
+    </LocaleLink>
   );
 }
 
