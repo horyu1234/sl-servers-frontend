@@ -40,7 +40,10 @@
       "placeholder": "Servera nosaukums vai IP"
     },
     "country": "Valsts",
-    "hide-empty": "Paslēpt tukšos serverus",
+    "players": "Spēlētāji",
+    "slots": "Servera vietas",
+    "range-min": "Min.",
+    "range-max": "Maks.",
     "hide-full": "Paslēpt pilnos serverus",
     "refreshing": "Saraksta atsvaidzināšana...",
     "filter-options-title": "Filtri",
@@ -65,7 +68,8 @@
     "clear-filter": "Notīrīt filtru",
     "no-results-title": "Neviens serveris neatbilst filtriem",
     "no-results-description": "Mēģiniet noņemt filtru vai meklēt kaut ko citu.",
-    "no-servers-title": "Pašlaik neviens serveris nav tiešsaistē"
+    "no-servers-title": "Pašlaik neviens serveris nav tiešsaistē",
+    "show-results": "Rādīt rezultātus"
   },
   "server-stats": {
     "users-title": "Spēlētāji",

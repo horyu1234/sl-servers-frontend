@@ -40,7 +40,10 @@
       "placeholder": "Heiti netþjóns eða IP"
     },
     "country": "Land",
-    "hide-empty": "Fela tóma netþjóna",
+    "players": "Leikmenn",
+    "slots": "Pláss á netþjóni",
+    "range-min": "Lágm.",
+    "range-max": "Hám.",
     "hide-full": "Fela fulla netþjóna",
     "refreshing": "Endurhleð lista...",
     "filter-options-title": "Síur",
@@ -65,7 +68,8 @@
     "clear-filter": "Hreinsa síu",
     "no-results-title": "Engir netþjónar passa við síurnar",
     "no-results-description": "Prófaðu að fjarlægja síu eða leita að einhverju öðru.",
-    "no-servers-title": "Engir netþjónar eru á netinu núna"
+    "no-servers-title": "Engir netþjónar eru á netinu núna",
+    "show-results": "Sýna niðurstöður"
   },
   "server-stats": {
     "users-title": "Leikmenn",

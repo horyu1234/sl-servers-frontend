@@ -15,8 +15,8 @@ import { EmptyState } from '../../components/shared/EmptyState';
 import { FilterSidebar } from '../../components/filters/FilterSidebar';
 import { FilterDrawer } from '../../components/filters/FilterDrawer';
 import { FilterChips } from '../../components/filters/FilterChips';
-import { DEFAULT_FILTER, isDefault, parseFromSearchParams, toSearchParams } from '../../components/filters/filterSchema';
-import type { ServerFilter } from '../../components/filters/filterSchema';
+import { DEFAULT_FILTER, isDefault, parseFromSearchParams, sameFilter, toSearchParams } from '../../lib/filters/filterSchema';
+import type { ServerFilter } from '../../lib/filters/filterSchema';
 import { useTrends } from '../../lib/hooks/useTrends';
 import { useMediaQuery } from '../../lib/hooks/useMediaQuery';
 import { useDocumentTitle } from '../../lib/hooks/useDocumentTitle';
@@ -24,20 +24,6 @@ import { cn } from '@/lib/cn';
 import { useAppDispatch, useAppSelector } from '../../modules/hooks';
 import * as serverFilterActions from '../../modules/serverFilter';
 import * as serverListActions from '../../modules/serverList';
-
-function shallowEqualFilter(a: ServerFilter, b: ServerFilter) {
-  return (
-    a.search === b.search &&
-    a.hideEmptyServer === b.hideEmptyServer &&
-    a.hideFullServer === b.hideFullServer &&
-    a.friendlyFire === b.friendlyFire &&
-    a.whitelist === b.whitelist &&
-    a.modded === b.modded &&
-    a.sort === b.sort &&
-    a.countryFilter.length === b.countryFilter.length &&
-    a.countryFilter.every((c, i) => c === b.countryFilter[i])
-  );
-}
 
 const ROW_HEIGHT = 80;
 const PHONE_CARD_HEIGHT = 169; // compact ServerCard (~157) + 12px inter-row gap
@@ -72,14 +58,7 @@ export default function List() {
 
   // Sync URL filter -> Redux serverFilter, then refetch.
   useEffect(() => {
-    dispatch(serverFilterActions.changeSearch(filter.search));
-    dispatch(serverFilterActions.changeCountry(filter.countryFilter));
-    dispatch(serverFilterActions.changeHideEmpty(filter.hideEmptyServer));
-    dispatch(serverFilterActions.changeHideFull(filter.hideFullServer));
-    dispatch(serverFilterActions.changeFriendlyFire(filter.friendlyFire));
-    dispatch(serverFilterActions.changeWhitelist(filter.whitelist));
-    dispatch(serverFilterActions.changeModded(filter.modded));
-    dispatch(serverFilterActions.changeSortType(filter.sort));
+    dispatch(serverFilterActions.replaceFilter(filter));
     dispatch(serverListActions.getServerList());
   }, [dispatch, filter]);
 
@@ -90,7 +69,7 @@ export default function List() {
   const unit = useAppSelector((s) => s.setting.si);
 
   const updateFilter = (next: ServerFilter) => {
-    if (shallowEqualFilter(filter, next)) return;
+    if (sameFilter(filter, next)) return;
     const params = toSearchParams(next);
     if (view !== 'list') params.set('view', view);
     setSearchParams(params, { replace: false });

@@ -40,7 +40,10 @@
       "placeholder": "服之名或 IP"
     },
     "country": "国",
-    "hide-empty": "隐匿空服",
+    "players": "游者",
+    "slots": "服之所容",
+    "range-min": "至少",
+    "range-max": "至多",
     "hide-full": "隐匿满服",
     "refreshing": "正在重载名录...",
     "filter-options-title": "筛选之法",
@@ -65,7 +68,8 @@
     "clear-filter": "除筛选",
     "no-results-title": "未有合君所筛之服",
     "no-results-description": "或减筛选，或易他词以索之。",
-    "no-servers-title": "今无在线之服"
+    "no-servers-title": "今无在线之服",
+    "show-results": "观其果"
   },
   "server-stats": {
     "users-title": "诸游者",

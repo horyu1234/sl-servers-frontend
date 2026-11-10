@@ -1,4 +1,5 @@
 import type {AxiosError} from "axios";
+import {toRequestBody} from "../lib/filters/filterSchema";
 import {getServerListAPI} from "../lib/api/servers";
 import type {ServerSummaryResponse} from "../types/api";
 import type {AppThunk} from "./index";
@@ -28,7 +29,7 @@ export const getServerList = (): AppThunk<Promise<void>> => (dispatch, getState)
     dispatch({type: SERVER_LIST_FETCHING});
 
     const state = getState();
-    return getServerListAPI(state.serverFilter).then(
+    return getServerListAPI(toRequestBody(state.serverFilter)).then(
         (response) => {
             dispatch({
                 type: SERVER_LIST_SUCCESS,

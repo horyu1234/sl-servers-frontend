@@ -40,7 +40,10 @@
       "placeholder": "Назва сервера або IP"
     },
     "country": "Країна",
-    "hide-empty": "Приховати порожні сервери",
+    "players": "Гравці",
+    "slots": "Слоти сервера",
+    "range-min": "Мін.",
+    "range-max": "Макс.",
     "hide-full": "Приховати заповнені сервери",
     "refreshing": "Оновлення списку...",
     "filter-options-title": "Фільтри",
@@ -65,7 +68,8 @@
     "clear-filter": "Скинути фільтр",
     "no-results-title": "За вашими фільтрами серверів немає",
     "no-results-description": "Спробуйте прибрати фільтр або змінити запит.",
-    "no-servers-title": "Зараз немає серверів онлайн"
+    "no-servers-title": "Зараз немає серверів онлайн",
+    "show-results": "Показати результати"
   },
   "server-stats": {
     "users-title": "Гравці",

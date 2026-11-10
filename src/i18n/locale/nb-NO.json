@@ -40,7 +40,10 @@
       "placeholder": "Servernavn eller IP"
     },
     "country": "Land",
-    "hide-empty": "Skjul tomme servere",
+    "players": "Spillere",
+    "slots": "Serverplasser",
+    "range-min": "Min.",
+    "range-max": "Maks.",
     "hide-full": "Skjul fulle servere",
     "refreshing": "Laster listen på nytt...",
     "filter-options-title": "Filtre",
@@ -65,7 +68,8 @@
     "clear-filter": "Fjern filter",
     "no-results-title": "Ingen servere passer til filtrene dine",
     "no-results-description": "Prøv å fjerne et filter eller søk etter noe annet.",
-    "no-servers-title": "Ingen servere er online akkurat nå"
+    "no-servers-title": "Ingen servere er online akkurat nå",
+    "show-results": "Vis resultater"
   },
   "server-stats": {
     "users-title": "Spillere",

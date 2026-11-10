@@ -4,20 +4,13 @@ import { SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { FilterControls } from './FilterControls';
-import { DEFAULT_FILTER } from './filterSchema';
-import type { FilterProps } from './filterSchema';
+import { DEFAULT_FILTER, activeFilterCount } from '../../lib/filters/filterSchema';
+import type { FilterProps } from '../../lib/filters/filterSchema';
 
 export function FilterDrawer({ value, onChange }: FilterProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const activeCount = value.countryFilter.length
-    + (value.sort !== DEFAULT_FILTER.sort ? 1 : 0)
-    + (value.search ? 1 : 0)
-    + (value.hideEmptyServer ? 1 : 0)
-    + (value.hideFullServer ? 1 : 0)
-    + (value.friendlyFire !== 'null' ? 1 : 0)
-    + (value.whitelist !== 'null' ? 1 : 0)
-    + (value.modded !== 'null' ? 1 : 0);
+  const activeCount = activeFilterCount(value);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -32,11 +25,28 @@ export function FilterDrawer({ value, onChange }: FilterProps) {
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="!w-[calc(100vw-24px)] max-w-[320px]">
-        <SheetTitle>{t('filter-option.filter-options-title')}</SheetTitle>
-        <SheetDescription className="sr-only">{t('filter-option.drawer-description')}</SheetDescription>
-        <div className="mt-4">
+      <SheetContent side="left" className="flex !w-[calc(100vw-24px)] max-w-[320px] flex-col gap-0 p-0">
+        <div className="px-6 pb-2 pt-6">
+          <SheetTitle>{t('filter-option.filter-options-title')}</SheetTitle>
+          <SheetDescription className="sr-only">{t('filter-option.drawer-description')}</SheetDescription>
+        </div>
+        {/* The filters outgrow a short phone, so they scroll between the title and the buttons. */}
+        <div className="min-h-0 flex-1 overflow-y-auto px-6 py-4">
           <FilterControls value={value} onChange={onChange} />
+        </div>
+        <div className="flex gap-2 border-t border-border px-6 py-4">
+          <Button
+            type="button"
+            variant="outline"
+            className="flex-1"
+            disabled={activeCount === 0}
+            onClick={() => onChange(DEFAULT_FILTER)}
+          >
+            {t('filter-option.clear-all')}
+          </Button>
+          <Button type="button" className="flex-1" onClick={() => setOpen(false)}>
+            {t('filter-option.show-results')}
+          </Button>
         </div>
       </SheetContent>
     </Sheet>
