@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {BrowserRouter, Route, Routes, useLocation} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import Container from "./shell/Container";
+import ScrollToTop from "./shell/ScrollToTop";
 import {NotFound, PAGES} from './pages';
 import {ROUTE_PATTERNS, parsePath} from '../site/routes';
 
@@ -31,6 +32,7 @@ const Page = () => {
 
 const App = () => (
     <BrowserRouter>
+        <ScrollToTop/>
         <React.Suspense fallback={<Loading />}>
             <Routes>
                 {ROUTE_PATTERNS.map(({page, pattern}) => (
