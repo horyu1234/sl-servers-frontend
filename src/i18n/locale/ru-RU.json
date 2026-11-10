@@ -238,7 +238,6 @@
       "title": "История SCP:SL",
       "description": "Пиковый онлайн на всех серверах из списка с {{date}}",
       "latest": "Последний пик",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Место за всё время",
       "rank-value": "№{{rank}}",
       "rank-note": "Выше, чем в {{percent}}% из {{days}} дн.",

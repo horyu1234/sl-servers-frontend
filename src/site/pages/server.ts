@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { busiestSlot, homeCrumb } from '../pageModel';
+import { busiestSlot, homeCrumb, hourWords } from '../pageModel';
 import type { PageModel, Section, Tile } from '../pageModel';
 import { plainServerName, truncate } from '../plainText';
 import { pathOf } from '../routes';
@@ -80,11 +80,7 @@ export function serverSentences(ctx: SiteContext, server: ServerSummary, insight
 
   const busiest = busiestSlot(insights?.heatmap?.medians);
   if (busiest) {
-    sentences.push(t('pages.server.busiest', {
-      weekday: ctx.weekday(busiest.weekday),
-      hour: String(busiest.hour).padStart(2, '0'),
-      players: ctx.number(busiest.players),
-    }));
+    sentences.push(t('pages.server.busiest', { ...hourWords(ctx, busiest), players: ctx.number(busiest.players) }));
   }
 
   if (!server.online) {

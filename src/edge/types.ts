@@ -10,8 +10,16 @@ export interface Env {
   API_ORIGIN?: string;
 }
 
+/** A request as Cloudflare hands it over. `cf` is missing outside Cloudflare, as in the tests. */
+export type EdgeRequest = Request & {
+  cf?: {
+    /** The time zone the request came from, such as Asia/Seoul. */
+    timezone?: string;
+  };
+};
+
 export interface EdgeContext {
-  request: Request;
+  request: EdgeRequest;
   env: Env;
   /** Hands the request on to the static files. */
   next(): Promise<Response>;

@@ -1,3 +1,5 @@
+import { intlLocale } from '../../i18n/intlLocale';
+import { offsetOfTimeZone } from '../../site/timeZone';
 import type { CollectionGap, DailyPlayerPeak, IsoDate, ReleaseImpact } from '../../types/api';
 
 const DAY_MS = 86_400_000;
@@ -10,6 +12,27 @@ export interface HistoryRow {
 
 export function dayToTime(date: IsoDate) {
   return Date.parse(`${date}T00:00:00Z`);
+}
+
+/**
+ * A day of the data on the viewer's clock, such as "Nov 6, 9 AM – Nov 7, 9 AM". Days are cut at
+ * midnight UTC, so anywhere else a day runs across two dates.
+ * @param timeZone the viewer's zone. The browser's own when left out.
+ */
+export function dayOnViewerClock(
+  date: IsoDate,
+  language: string,
+  timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
+) {
+  const start = dayToTime(date);
+  const onTheHour = offsetOfTimeZone(timeZone, start) % 60 === 0;
+  return new Intl.DateTimeFormat(intlLocale(language), {
+    timeZone,
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    ...(onTheHour ? {} : { minute: '2-digit' }),
+  }).formatRange(start, start + DAY_MS);
 }
 
 function timeToDay(time: number) {

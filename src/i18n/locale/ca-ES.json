@@ -238,7 +238,6 @@
       "title": "Cronologia de SCP:SL",
       "description": "Màxim de jugadors simultanis a tots els servidors llistats des del {{date}}",
       "latest": "Últim pic diari",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Posició històrica",
       "rank-value": "#{{rank}}",
       "rank-note": "De {{days}} dies, per sobre del {{percent}}%",

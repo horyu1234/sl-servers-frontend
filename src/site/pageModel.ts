@@ -2,6 +2,7 @@
 // edge function writes the same text into the HTML that crawlers and slow connections get first.
 import type { SiteContext } from './context';
 import type { DocBlock } from './docs/types';
+import { dayStart, readerHour, zoneLabel } from './timeZone';
 
 /** Which way a number moved. It only picks a color: the sign is always in the text too. */
 export type Tone = 'up' | 'down';
@@ -108,7 +109,10 @@ export function homeCrumb(ctx: SiteContext): Cell {
   return { text: ctx.t('navbar.server-list'), href: '/' };
 }
 
-/** The hour-of-week slot with the highest typical peak, or null when every slot is empty or unknown. */
+/**
+ * The hour-of-week slot with the highest typical peak, or null when every slot is empty or
+ * unknown. The slot is in UTC; hourWords puts it on the reader's clock.
+ */
 export function busiestSlot(medians: (number | null)[] | null | undefined) {
   let best: { weekday: number; hour: number; players: number } | null = null;
   (medians ?? []).forEach((players, slot) => {
@@ -116,4 +120,22 @@ export function busiestSlot(medians: (number | null)[] | null | undefined) {
     if (!best || players > best.players) best = { weekday: Math.floor(slot / 24), hour: slot % 24, players };
   });
   return best as { weekday: number; hour: number; players: number } | null;
+}
+
+/** An hour of the UTC week in words on the reader's clock: "Saturday", "21" and "UTC+9". */
+export function hourWords(ctx: SiteContext, slot: { weekday: number; hour: number }) {
+  const local = readerHour(slot.weekday, slot.hour, ctx.utcOffsetMinutes);
+  return {
+    weekday: ctx.weekday(local.weekday),
+    hour: String(local.hour).padStart(2, '0'),
+    zone: zoneLabel(ctx.utcOffsetMinutes),
+  };
+}
+
+/**
+ * Where a day of the data starts on the reader's clock: "09:00" and "UTC+9". Daily numbers are
+ * cut at midnight UTC and cannot be cut again in the browser, so the text says when that is.
+ */
+export function dayWords(ctx: SiteContext) {
+  return { dayStart: dayStart(ctx.utcOffsetMinutes), zone: zoneLabel(ctx.utcOffsetMinutes) };
 }

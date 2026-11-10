@@ -1,6 +1,8 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { busiestSlot, changeCell, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
+import {
+  busiestSlot, changeCell, dayWords, homeCrumb, hourWords, percentOf, signedPercent, toneOf, trend,
+} from '../pageModel';
 import type { Cell, PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import { serverLabel } from './server';
@@ -97,7 +99,7 @@ function topServersSection(ctx: SiteContext, servers: RankedServer[]): Section |
       ]),
       numeric: [0, 2, 3, 4],
     },
-    note: t('pages.common.average-peak-note'),
+    note: t('pages.common.average-peak-note', dayWords(ctx)),
   };
 }
 
@@ -118,10 +120,7 @@ export function countryModel(ctx: SiteContext, data: CountryDetailResponse): Pag
     }),
   ];
   if (busiest) {
-    intro.push(t('pages.country.busiest', {
-      weekday: ctx.weekday(busiest.weekday),
-      hour: String(busiest.hour).padStart(2, '0'),
-    }));
+    intro.push(t('pages.country.busiest', hourWords(ctx, busiest)));
   }
   intro.push(t('pages.country.hosting-note'));
 

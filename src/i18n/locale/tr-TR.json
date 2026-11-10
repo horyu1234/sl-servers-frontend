@@ -238,7 +238,6 @@
       "title": "SCP:SL zaman çizelgesi",
       "description": "{{date}} tarihinden beri tüm listelenen sunuculardaki en yüksek eş zamanlı oyuncu sayısı",
       "latest": "Son günlük zirve",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Genel sıralama",
       "rank-value": "{{rank}}. sıra",
       "rank-note": "{{days}} günün %{{percent}} kadarından daha yoğun",

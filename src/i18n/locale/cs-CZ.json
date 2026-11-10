@@ -238,7 +238,6 @@
       "title": "Časová osa SCP:SL",
       "description": "Nejvyšší počet hráčů současně na všech serverech v seznamu od {{date}}",
       "latest": "Poslední denní špička",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Pořadí v historii",
       "rank-value": "#{{rank}}",
       "rank-note": "Víc hráčů než v {{percent}} % z {{days}} dnů",

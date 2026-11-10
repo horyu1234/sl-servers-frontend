@@ -6,6 +6,7 @@ import { initReactI18next } from 'react-i18next';
 import en from '../../i18n/locale/en-US.json';
 import { GlobalHistorySection } from './GlobalHistorySection';
 import { getGlobalHistoryAPI } from '../../lib/api/stats';
+import { dayOnViewerClock } from '../../lib/insights/history';
 import { apiResponse } from '../../testUtils';
 
 vi.mock('../../lib/api/stats', () => ({ getGlobalHistoryAPI: vi.fn() }));
@@ -58,7 +59,9 @@ describe('GlobalHistorySection', () => {
     render(<GlobalHistorySection />);
 
     expect(await screen.findByText('SCP:SL timeline')).toBeInTheDocument();
-    expect(screen.getByText('2026-11-06 (UTC)')).toBeInTheDocument();
+    // The latest day on this machine's clock, whatever its zone is. Intl writes narrow spaces,
+    // which the query reads as plain ones.
+    expect(screen.getByText(dayOnViewerClock('2026-11-06', 'en-US').replace(/\s+/gu, ' '))).toBeInTheDocument();
     expect(screen.getByText('#1,268')).toBeInTheDocument();
     expect(screen.getByText('Of 2,191 days, busier than 42%')).toBeInTheDocument();
     expect(screen.getByText('-14.4%')).toBeInTheDocument();

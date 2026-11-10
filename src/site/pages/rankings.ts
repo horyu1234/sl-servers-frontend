@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { changeCell, homeCrumb } from '../pageModel';
+import { changeCell, dayWords, homeCrumb } from '../pageModel';
 import type { CellValue, PageModel, Section } from '../pageModel';
 import { countryCell, serverCell } from './countries';
 import { serverLabel } from './server';
@@ -35,6 +35,7 @@ export function rankingsModel(ctx: SiteContext, data: RankingsResponse): PageMod
     total: ctx.number(data.totalRanked),
     from: ctx.date(data.from),
     to: ctx.date(data.to),
+    ...dayWords(ctx),
   })];
   if (leader) {
     intro.push(t('pages.rankings.leader', { name: serverLabel(leader), average: ctx.number(leader.avgDailyPeak30d, 1) }));

@@ -107,6 +107,6 @@ describe('zoneLabel', () => {
     vi.spyOn(Date.prototype, 'getTimezoneOffset').mockReturnValue(210);
     expect(zoneLabel()).toBe('UTC-3:30');
     vi.spyOn(Date.prototype, 'getTimezoneOffset').mockReturnValue(0);
-    expect(zoneLabel()).toBe('UTC+0');
+    expect(zoneLabel()).toBe('UTC');
   });
 });

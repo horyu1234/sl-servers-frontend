@@ -238,7 +238,6 @@
       "title": "Linha do tempo do SCP:SL",
       "description": "Pico de jogadores simultâneos em todos os servidores listados desde {{date}}",
       "latest": "Último pico diário",
-      "utc-date": "{{date}} (UTC)",
       "rank": "Posição histórica",
       "rank-value": "{{rank}}º",
       "rank-note": "Mais movimentado que {{percent}}% dos {{days}} dias",

@@ -6,7 +6,7 @@ import { GlobalHistoryChart } from './GlobalHistoryChart';
 import { StatTile } from '../shared/StatTile';
 import { getGlobalHistoryAPI } from '../../lib/api/stats';
 import { useApiResource } from '../../lib/hooks/useApiResource';
-import { majorReleases, signedPercent, totalGapDays } from '../../lib/insights/history';
+import { dayOnViewerClock, majorReleases, signedPercent, totalGapDays } from '../../lib/insights/history';
 import { TONE_CLASS, toneOf } from '../../site/pageModel';
 import type { DayStanding, HistoricPeak, ReleaseImpact } from '../../types/api';
 import { cn } from '@/lib/cn';
@@ -18,14 +18,14 @@ function changeClass(value: number | null) {
 }
 
 function StandingTiles({ latest, todayPeakSoFar }: { latest: DayStanding; todayPeakSoFar: number | null }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
       <StatTile
         label={t('insights.global.latest')}
         value={t('insights.players', { players: latest.peak.toLocaleString() })}
-        note={t('insights.global.utc-date', { date: latest.date })}
+        note={dayOnViewerClock(latest.date, i18n.resolvedLanguage ?? i18n.language)}
       />
       <StatTile
         label={t('insights.global.rank')}

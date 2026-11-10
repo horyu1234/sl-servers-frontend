@@ -101,7 +101,7 @@ describe('server page', () => {
       '[KR] Site-19 & Friends is a modded SCP: Secret Laboratory server hosted in South Korea that runs game version 14.2.9. Friendly fire is on.',
       'It first appeared in the server list on October 24, 2023. Its record is 107 players at once, set on May 15, 2024.',
       'Over the last 30 days its daily peak averaged 24.5 players. That ranks #12 of the 1,100 servers online worldwide and #2 of 22 in South Korea. It was online 99% of that time.',
-      'It is usually busiest on Saturday around 12:00 UTC, with about 28 players.',
+      'It is usually busiest on Saturday around 12:00 (UTC), with about 28 players.',
     ]);
   });
 
@@ -180,7 +180,7 @@ describe('country pages', () => {
   it('names the busiest hour and lists the top servers', () => {
     const model = countryModel(en, country);
 
-    expect(model.intro).toContain('Servers here are usually busiest on Sunday around 11:00 UTC.');
+    expect(model.intro).toContain('Servers here are usually busiest on Sunday around 11:00 (UTC).');
     expect(model.sections[0].table?.rows.map((row) => cellText(row[1]))).toEqual(['[KR] Site-19', 'Neighbour']);
   });
 
@@ -374,6 +374,45 @@ describe('home page and hubs', () => {
 
     expect(new Set(hrefs).size).toBe(hrefs.length);
     for (const href of hrefs) expect(parsePath(href ?? '').route).not.toBeNull();
+  });
+});
+
+describe('the reader\'s clock', () => {
+  const seoul = testContext('en-US', null, 540);
+  const koreanInSeoul = testContext('ko-KR', 'ko-KR', 540);
+
+  it('moves the busiest hour onto it', () => {
+    // Saturday 12:00 UTC for the server, Sunday 11:00 UTC for the country.
+    expect(serverSentences(seoul, server, insights).at(-1))
+      .toBe('It is usually busiest on Saturday around 21:00 (UTC+9), with about 28 players.');
+    expect(countryModel(seoul, country).intro).toContain('Servers here are usually busiest on Sunday around 20:00 (UTC+9).');
+    expect(serverSentences(koreanInSeoul, server, insights).at(-1)).toContain('토요일 21시(UTC+9) 무렵');
+  });
+
+  it('says when a day of the data starts on it', () => {
+    expect(rankingsModel(seoul, rankings).intro[0]).toContain('Days start at 09:00 (UTC+9).');
+    expect(reportsModel(seoul, reports).intro[0]).toContain('Days start at 09:00 (UTC+9).');
+    expect(reportsModel(en, reports).intro[0]).toContain('Days start at 00:00 (UTC).');
+    expect(reportsModel(koreanInSeoul, reports).intro[0]).toContain('하루는 09:00(UTC+9)에 시작합니다.');
+    expect(countryModel(seoul, country).sections[0].note).toContain('Days start at 09:00 (UTC+9).');
+  });
+
+  it('is filled into the written pages', () => {
+    expect(JSON.stringify(docModel(seoul, 'methodology')?.blocks)).toContain('which is 09:00 in your time zone (UTC+9)');
+    expect(JSON.stringify(docModel(koreanInSeoul, 'methodology')?.blocks)).toContain('시간대(UTC+9)로는 09:00입니다');
+    for (const page of ['about', 'methodology', 'privacy', 'contact', 'api'] as const) {
+      expect(JSON.stringify(docModel(seoul, page)?.blocks)).not.toMatch(/\{\{(dayStart|zone)\}\}/);
+    }
+  });
+
+  it('never leaves a placeholder or the word UTC alone in a page', () => {
+    for (const ctx of [seoul, koreanInSeoul]) {
+      for (const [name, model] of Object.entries(allModels(ctx))) {
+        const text = JSON.stringify([model.intro, model.sections, model.tiles]);
+        expect(text, name).not.toMatch(/\{\{/);
+        expect(text.replace(/UTC[+-][\d:]+/g, ''), name).not.toContain('UTC');
+      }
+    }
   });
 });
 
