@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
@@ -8,8 +8,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
+import { Slider } from '@/components/ui/slider';
 import { CountryMultiSelect } from '../stats/CountryMultiSelect';
-import { MAX_COUNT, SORT_OPTIONS, formatRange, normalizeRange } from '../../lib/filters/filterSchema';
+import { MAX_COUNT, SORT_OPTIONS, describeRange, formatRange, isOpenRange, normalizeRange } from '../../lib/filters/filterSchema';
 import type { CountRange, FilterProps, ServerFilter } from '../../lib/filters/filterSchema';
 import { useDraft } from '../../lib/hooks/useDraft';
 import type { ServerSortType, TriState } from '../../types/api';
@@ -17,6 +18,8 @@ import type { ServerSortType, TriState } from '../../types/api';
 const SEARCH_DELAY_MS = 300;
 const RANGE_DELAY_MS = 500;
 const PLAYER_PRESETS = [1, 5, 10, 20];
+// The gauge's right end. Dragging the upper thumb there leaves the maximum open.
+const PLAYER_GAUGE_MAX = 50;
 const COUNT_DIGITS = String(MAX_COUNT).length;
 
 const TRISTATE: { value: TriState; i18nLeaf: string }[] = [
@@ -159,11 +162,10 @@ interface RangeFieldProps {
   title: string;
   value: CountRange;
   onChange: (value: CountRange) => void;
-  presets?: number[];
   t: TFunction;
 }
 
-function RangeField({ title, value, onChange, presets = [], t }: RangeFieldProps) {
+function RangeField({ title, value, onChange, t }: RangeFieldProps) {
   const id = useId();
   const { draft, update, flush } = useDraft(
     toDraft(value),
@@ -197,26 +199,100 @@ function RangeField({ title, value, onChange, presets = [], t }: RangeFieldProps
         <span aria-hidden="true" className="text-muted-foreground">–</span>
         {input('max', maxLabel)}
       </div>
-      {presets.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {presets.map((n) => {
-            const active = value.min === n && value.max === null;
-            return (
-              <Button
-                key={n}
-                type="button"
-                size="sm"
-                variant={active ? 'default' : 'outline'}
-                aria-pressed={active}
-                className="h-7 px-2.5 text-xs tabular-nums"
-                onClick={() => onChange(active ? { min: null, max: null } : { min: n, max: null })}
-              >
-                {n}+
-              </Button>
-            );
-          })}
-        </div>
-      )}
+    </div>
+  );
+}
+
+interface PresetButtonsProps {
+  value: CountRange;
+  onChange: (value: CountRange) => void;
+  presets: number[];
+}
+
+/** Shortcuts for a minimum. Pressing the one that is on clears the range. */
+function PresetButtons({ value, onChange, presets }: PresetButtonsProps) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {presets.map((n) => {
+        const active = value.min === n && value.max === null;
+        return (
+          <Button
+            key={n}
+            type="button"
+            size="sm"
+            variant={active ? 'default' : 'outline'}
+            aria-pressed={active}
+            className="h-7 px-2.5 text-xs tabular-nums"
+            onClick={() => onChange(active ? { min: null, max: null } : { min: n, max: null })}
+          >
+            {n}+
+          </Button>
+        );
+      })}
+    </div>
+  );
+}
+
+type Thumbs = [number, number];
+
+function toThumbs({ min, max }: CountRange): Thumbs {
+  return [Math.min(min ?? 0, PLAYER_GAUGE_MAX), Math.min(max ?? PLAYER_GAUGE_MAX, PLAYER_GAUGE_MAX)];
+}
+
+function fromThumbs([low, high]: number[]): CountRange {
+  return normalizeRange({ min: low, max: high >= PLAYER_GAUGE_MAX ? null : high });
+}
+
+interface GaugeFieldProps {
+  title: string;
+  value: CountRange;
+  onChange: (value: CountRange) => void;
+  presets: number[];
+  t: TFunction;
+}
+
+/**
+ * A two-thumb gauge for a range. The label follows the thumbs while they move, and the range is
+ * applied when they are let go, so dragging doesn't reload the list on every step.
+ */
+function GaugeField({ title, value, onChange, presets, t }: GaugeFieldProps) {
+  const id = useId();
+  const sourceKey = formatRange(value) ?? '';
+  const [thumbs, setThumbs] = useState<Thumbs>(() => toThumbs(value));
+
+  useEffect(() => {
+    setThumbs(toThumbs(value));
+    // Only a new committed range moves the thumbs, not a new object for the same range.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sourceKey]);
+
+  const settled = toThumbs(value);
+  // While the thumbs sit where the range puts them, show the range itself. It can lie past the
+  // gauge's end, such as 70+ from a link.
+  const shown = thumbs[0] === settled[0] && thumbs[1] === settled[1] ? value : fromThumbs(thumbs);
+
+  return (
+    <div role="group" aria-labelledby={id} className="space-y-2">
+      <div className="flex items-baseline justify-between gap-2">
+        <div id={id} className={FIELD_TITLE}>{title}</div>
+        <output aria-live="polite" className="text-sm font-medium tabular-nums">
+          {isOpenRange(shown) ? t('filter-option.yes-no-filter.none') : describeRange(shown)}
+        </output>
+      </div>
+      <Slider
+        min={0}
+        max={PLAYER_GAUGE_MAX}
+        step={1}
+        value={thumbs}
+        onValueChange={(next) => setThumbs([next[0], next[1]])}
+        onValueCommit={(next) => onChange(fromThumbs(next))}
+        thumbLabels={[`${title}: ${t('filter-option.range-min')}`, `${title}: ${t('filter-option.range-max')}`]}
+      />
+      <div aria-hidden="true" className="flex justify-between text-[11px] tabular-nums text-muted-foreground">
+        <span>0</span>
+        <span>{PLAYER_GAUGE_MAX}+</span>
+      </div>
+      <PresetButtons value={value} onChange={onChange} presets={presets} />
     </div>
   );
 }
@@ -246,7 +322,7 @@ export function FilterControls({ value, onChange }: FilterProps) {
 
       <Separator />
 
-      <RangeField
+      <GaugeField
         title={t('filter-option.players')}
         value={value.players}
         onChange={(players) => set({ players })}

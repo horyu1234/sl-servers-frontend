@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import store from '../../store';
@@ -125,15 +125,94 @@ describe('FilterControls search', () => {
   });
 });
 
-describe('FilterControls player and slot ranges', () => {
+describe('FilterControls player gauge', () => {
+  const gauge = () => screen.getByRole('group', { name: 'Players' });
+
+  it('reads All until a range is set', () => {
+    renderControls();
+
+    expect(within(gauge()).getByText('All')).toBeInTheDocument();
+    expect(screen.getByRole('slider', { name: 'Players: Min' })).toHaveAttribute('aria-valuenow', '0');
+    expect(screen.getByRole('slider', { name: 'Players: Max' })).toHaveAttribute('aria-valuenow', '50');
+  });
+
+  it('sets a minimum from the lower thumb', async () => {
+    const user = userEvent.setup();
+    const onChange = renderControls();
+
+    act(() => screen.getByRole('slider', { name: 'Players: Min' }).focus());
+    await user.keyboard('{ArrowRight}{ArrowRight}{ArrowRight}');
+
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, players: { min: 3, max: null } });
+    expect(within(gauge()).getByText('3+')).toBeInTheDocument();
+  });
+
+  it('sets a maximum from the upper thumb and leaves it open at the end', async () => {
+    const user = userEvent.setup();
+    const onChange = renderControls();
+    const max = screen.getByRole('slider', { name: 'Players: Max' });
+
+    act(() => max.focus());
+    await user.keyboard('{ArrowLeft}');
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, players: { min: null, max: 49 } });
+    expect(within(gauge()).getByText('≤49')).toBeInTheDocument();
+
+    await user.keyboard('{End}');
+    expect(onChange).toHaveBeenLastCalledWith(DEFAULT_FILTER);
+  });
+
+  it('shows a range past the end of the gauge as it is', () => {
+    renderControls({ ...DEFAULT_FILTER, players: { min: 70, max: null } });
+
+    expect(within(gauge()).getByText('70+')).toBeInTheDocument();
+    expect(screen.getByRole('slider', { name: 'Players: Min' })).toHaveAttribute('aria-valuenow', '50');
+  });
+
+  it('sets a minimum from a preset and clears it when pressed again', async () => {
+    const user = userEvent.setup();
+    const onChange = renderControls({ ...DEFAULT_FILTER, players: { min: 10, max: null } });
+
+    expect(screen.getByRole('button', { name: '10+' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('slider', { name: 'Players: Min' })).toHaveAttribute('aria-valuenow', '10');
+
+    await user.click(screen.getByRole('button', { name: '5+' }));
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, players: { min: 5, max: null } });
+
+    await user.click(screen.getByRole('button', { name: '10+' }));
+    expect(onChange).toHaveBeenLastCalledWith(DEFAULT_FILTER);
+  });
+
+  it('moves the thumbs when the range is cleared from outside', () => {
+    const onChange = vi.fn();
+    const { rerender } = render(
+      <Provider store={store}>
+        <FilterControls value={{ ...DEFAULT_FILTER, players: { min: 5, max: 20 } }} onChange={onChange} />
+      </Provider>
+    );
+    expect(within(gauge()).getByText('5–20')).toBeInTheDocument();
+
+    rerender(
+      <Provider store={store}>
+        <FilterControls value={DEFAULT_FILTER} onChange={onChange} />
+      </Provider>
+    );
+
+    expect(screen.getByRole('slider', { name: 'Players: Min' })).toHaveAttribute('aria-valuenow', '0');
+    expect(screen.getByRole('slider', { name: 'Players: Max' })).toHaveAttribute('aria-valuenow', '50');
+    expect(within(gauge()).getByText('All')).toBeInTheDocument();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+});
+
+describe('FilterControls slot range', () => {
   it('commits a minimum when the field loses focus', async () => {
     const user = userEvent.setup();
     const onChange = renderControls();
 
-    await user.type(screen.getByRole('textbox', { name: 'Players: Min' }), '5');
+    await user.type(screen.getByRole('textbox', { name: 'Server slots: Min' }), '20');
     await user.tab();
 
-    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, players: { min: 5, max: null } });
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, slots: { min: 20, max: null } });
   });
 
   it('keeps only digits', async () => {
@@ -162,7 +241,7 @@ describe('FilterControls player and slot ranges', () => {
   it('shows the number it applied', async () => {
     const user = userEvent.setup();
     const onChange = renderControls();
-    const min = screen.getByRole('textbox', { name: 'Players: Min' });
+    const min = screen.getByRole('textbox', { name: 'Server slots: Min' });
 
     await user.type(min, '05');
     await user.tab();
@@ -175,28 +254,14 @@ describe('FilterControls player and slot ranges', () => {
     expect(onChange).toHaveBeenLastCalledWith(DEFAULT_FILTER);
   });
 
-  it('sets a minimum from a preset and clears it when pressed again', async () => {
-    const user = userEvent.setup();
-    const onChange = renderControls({ ...DEFAULT_FILTER, players: { min: 10, max: null } });
-
-    expect(screen.getByRole('button', { name: '10+' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('textbox', { name: 'Players: Min' })).toHaveValue('10');
-
-    await user.click(screen.getByRole('button', { name: '5+' }));
-    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, players: { min: 5, max: null } });
-
-    await user.click(screen.getByRole('button', { name: '10+' }));
-    expect(onChange).toHaveBeenLastCalledWith(DEFAULT_FILTER);
-  });
-
   it('follows a range cleared from outside', () => {
     const onChange = vi.fn();
     const { rerender } = render(
       <Provider store={store}>
-        <FilterControls value={{ ...DEFAULT_FILTER, players: { min: 5, max: 20 } }} onChange={onChange} />
+        <FilterControls value={{ ...DEFAULT_FILTER, slots: { min: 20, max: 40 } }} onChange={onChange} />
       </Provider>
     );
-    expect(screen.getByRole('textbox', { name: 'Players: Max' })).toHaveValue('20');
+    expect(screen.getByRole('textbox', { name: 'Server slots: Max' })).toHaveValue('40');
 
     rerender(
       <Provider store={store}>
@@ -204,8 +269,8 @@ describe('FilterControls player and slot ranges', () => {
       </Provider>
     );
 
-    expect(screen.getByRole('textbox', { name: 'Players: Min' })).toHaveValue('');
-    expect(screen.getByRole('textbox', { name: 'Players: Max' })).toHaveValue('');
+    expect(screen.getByRole('textbox', { name: 'Server slots: Min' })).toHaveValue('');
+    expect(screen.getByRole('textbox', { name: 'Server slots: Max' })).toHaveValue('');
     expect(onChange).not.toHaveBeenCalled();
   });
 
