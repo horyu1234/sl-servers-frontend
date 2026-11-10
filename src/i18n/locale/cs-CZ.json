@@ -40,7 +40,10 @@
       "placeholder": "Název serveru nebo IP"
     },
     "country": "Země",
-    "hide-empty": "Skrýt prázdné servery",
+    "players": "Hráči",
+    "slots": "Sloty serveru",
+    "range-min": "Min.",
+    "range-max": "Max.",
     "hide-full": "Skrýt plné servery",
     "refreshing": "Obnovuji seznam...",
     "filter-options-title": "Filtry",
@@ -65,7 +68,8 @@
     "clear-filter": "Vymazat filtr",
     "no-results-title": "Filtrům neodpovídá žádný server",
     "no-results-description": "Zkuste některý filtr odebrat nebo hledat něco jiného.",
-    "no-servers-title": "Žádný server teď není online"
+    "no-servers-title": "Žádný server teď není online",
+    "show-results": "Zobrazit výsledky"
   },
   "server-stats": {
     "users-title": "Hráči",

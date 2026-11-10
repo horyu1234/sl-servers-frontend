@@ -40,7 +40,10 @@
       "placeholder": "Palvelimen nimi tai IP"
     },
     "country": "Maa",
-    "hide-empty": "Piilota tyhjät palvelimet",
+    "players": "Pelaajat",
+    "slots": "Palvelimen paikat",
+    "range-min": "Min.",
+    "range-max": "Maks.",
     "hide-full": "Piilota täydet palvelimet",
     "refreshing": "Päivitetään luetteloa...",
     "filter-options-title": "Suodattimet",
@@ -65,7 +68,8 @@
     "clear-filter": "Tyhjennä suodatin",
     "no-results-title": "Suodattimiin sopivia palvelimia ei löytynyt",
     "no-results-description": "Poista jokin suodatin tai kokeile toista hakua.",
-    "no-servers-title": "Yhtään palvelinta ei ole nyt verkossa"
+    "no-servers-title": "Yhtään palvelinta ei ole nyt verkossa",
+    "show-results": "Näytä tulokset"
   },
   "server-stats": {
     "users-title": "Pelaajat",

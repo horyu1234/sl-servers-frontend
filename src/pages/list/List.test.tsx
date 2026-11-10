@@ -101,6 +101,56 @@ describe('List page', () => {
     await waitFor(() => expect(screen.getByTestId('location').textContent).toBe(''));
   });
 
+  it('sends the player and slot ranges from the URL', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/?players=5-20&slots=-40']}>
+          <List />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
+      expect.objectContaining({ minPlayers: 5, maxPlayers: 20, minSlots: null, maxSlots: 40, hideEmptyServer: false })
+    ));
+    expect(screen.getByText('Players: 5–20')).toBeInTheDocument();
+    expect(screen.getByText('Server slots: ≤40')).toBeInTheDocument();
+  });
+
+  it('reads an old link that hid empty servers as a minimum of one player', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/?hideEmpty=1']}>
+          <List />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
+      expect.objectContaining({ minPlayers: 1, maxPlayers: null, hideEmptyServer: false })
+    ));
+  });
+
+  it('reloads the list once when typing in the search pauses', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/']}>
+          <List />
+          <LocationProbe />
+        </MemoryRouter>
+      </Provider>
+    );
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(expect.objectContaining({ search: '' })));
+    const before = vi.mocked(getServerListAPI).mock.calls.length;
+
+    await user.type(screen.getByRole('searchbox'), 'mirror');
+
+    await waitFor(() => expect(screen.getByTestId('location').textContent).toBe('?search=mirror'));
+    await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(expect.objectContaining({ search: 'mirror' })));
+    expect(vi.mocked(getServerListAPI).mock.calls.length).toBe(before + 1);
+  });
+
   it('fetches and renders the server row', async () => {
     render(
       <Provider store={store}>

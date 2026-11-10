@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { SORT_OPTIONS } from '../filters/filterSchema';
+import { SORT_OPTIONS } from '../../lib/filters/filterSchema';
 import { SERVER_ROW_GRID } from './serverRowGrid';
 import { cn } from '@/lib/cn';
 import type { ServerSortType } from '../../types/api';

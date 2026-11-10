@@ -40,7 +40,10 @@
       "placeholder": "Servernamn eller IP"
     },
     "country": "Land",
-    "hide-empty": "Dölj tomma servrar",
+    "players": "Spelare",
+    "slots": "Serverplatser",
+    "range-min": "Min",
+    "range-max": "Max",
     "hide-full": "Dölj fulla servrar",
     "refreshing": "Laddar om listan...",
     "filter-options-title": "Filter",
@@ -65,7 +68,8 @@
     "clear-filter": "Rensa filter",
     "no-results-title": "Inga servrar matchar dina filter",
     "no-results-description": "Ta bort ett filter eller sök på något annat.",
-    "no-servers-title": "Inga servrar är online just nu"
+    "no-servers-title": "Inga servrar är online just nu",
+    "show-results": "Visa resultat"
   },
   "server-stats": {
     "users-title": "Spelare",

@@ -40,7 +40,10 @@
       "placeholder": "Nomo aŭ IP de servilo"
     },
     "country": "Lando",
-    "hide-empty": "Kaŝi malplenajn servilojn",
+    "players": "Ludantoj",
+    "slots": "Lokoj de la servilo",
+    "range-min": "Min.",
+    "range-max": "Maks.",
     "hide-full": "Kaŝi plenajn servilojn",
     "refreshing": "Reŝargante la liston...",
     "filter-options-title": "Filtriloj",
@@ -65,7 +68,8 @@
     "clear-filter": "Forigi filtrilon",
     "no-results-title": "Neniu servilo kongruas kun viaj filtriloj",
     "no-results-description": "Provu forigi filtrilon aŭ serĉi ion alian.",
-    "no-servers-title": "Neniu servilo estas nun konektita"
+    "no-servers-title": "Neniu servilo estas nun konektita",
+    "show-results": "Montri rezultojn"
   },
   "server-stats": {
     "users-title": "Ludantoj",

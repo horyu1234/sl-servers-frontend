@@ -40,7 +40,10 @@
       "placeholder": "Server name or IP"
     },
     "country": "Country",
-    "hide-empty": "Hide empty servers",
+    "players": "Players",
+    "slots": "Server slots",
+    "range-min": "Min",
+    "range-max": "Max",
     "hide-full": "Hide full servers",
     "refreshing": "Reloading list...",
     "filter-options-title": "Filters",
@@ -65,7 +68,8 @@
     "clear-filter": "Clear filter",
     "no-results-title": "No servers match your filters",
     "no-results-description": "Try removing a filter or searching for something else.",
-    "no-servers-title": "No servers are online right now"
+    "no-servers-title": "No servers are online right now",
+    "show-results": "Show results"
   },
   "server-stats": {
     "users-title": "Players",

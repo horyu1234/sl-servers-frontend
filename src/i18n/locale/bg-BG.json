@@ -40,7 +40,10 @@
       "placeholder": "Име на сървър или IP"
     },
     "country": "Държава",
-    "hide-empty": "Скрийте празните сървъри",
+    "players": "Играчи",
+    "slots": "Места на сървъра",
+    "range-min": "Мин.",
+    "range-max": "Макс.",
     "hide-full": "Скрийте пълните сървъри",
     "refreshing": "Презареждане на списъка...",
     "filter-options-title": "Филтри",
@@ -65,7 +68,8 @@
     "clear-filter": "Изчистете филтъра",
     "no-results-title": "Няма сървъри, отговарящи на филтрите",
     "no-results-description": "Премахнете някой филтър или потърсете нещо друго.",
-    "no-servers-title": "В момента няма онлайн сървъри"
+    "no-servers-title": "В момента няма онлайн сървъри",
+    "show-results": "Покажи резултатите"
   },
   "server-stats": {
     "users-title": "Играчи",

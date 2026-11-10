@@ -40,7 +40,10 @@
       "placeholder": "Nombre del servidor o IP"
     },
     "country": "País",
-    "hide-empty": "Ocultar servidores vacíos",
+    "players": "Jugadores",
+    "slots": "Plazas del servidor",
+    "range-min": "Mín.",
+    "range-max": "Máx.",
     "hide-full": "Ocultar servidores llenos",
     "refreshing": "Recargando lista...",
     "filter-options-title": "Filtros",
@@ -65,7 +68,8 @@
     "clear-filter": "Borrar filtro",
     "no-results-title": "Ningún servidor coincide con tus filtros",
     "no-results-description": "Quita algún filtro o busca otra cosa.",
-    "no-servers-title": "No hay servidores en línea ahora mismo"
+    "no-servers-title": "No hay servidores en línea ahora mismo",
+    "show-results": "Ver resultados"
   },
   "server-stats": {
     "users-title": "Jugadores",

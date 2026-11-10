@@ -40,7 +40,10 @@
       "placeholder": "服务器名称或 IP"
     },
     "country": "国家/地区",
-    "hide-empty": "隐藏无人服务器",
+    "players": "当前人数",
+    "slots": "服务器容量",
+    "range-min": "最少",
+    "range-max": "最多",
     "hide-full": "隐藏满人服务器",
     "refreshing": "正在重新加载列表...",
     "filter-options-title": "筛选",
@@ -65,7 +68,8 @@
     "clear-filter": "清除筛选",
     "no-results-title": "没有符合筛选条件的服务器",
     "no-results-description": "试试移除部分筛选条件，或换个关键词搜索。",
-    "no-servers-title": "当前没有在线的服务器"
+    "no-servers-title": "当前没有在线的服务器",
+    "show-results": "查看结果"
   },
   "server-stats": {
     "users-title": "玩家",

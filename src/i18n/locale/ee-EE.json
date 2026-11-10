@@ -40,7 +40,10 @@
       "placeholder": "Serveri nimi või IP"
     },
     "country": "Riik",
-    "hide-empty": "Peida tühjad serverid",
+    "players": "Mängijad",
+    "slots": "Serveri kohad",
+    "range-min": "Min",
+    "range-max": "Maks",
     "hide-full": "Peida täis serverid",
     "refreshing": "Nimekirja värskendamine...",
     "filter-options-title": "Filtrid",
@@ -65,7 +68,8 @@
     "clear-filter": "Eemalda filter",
     "no-results-title": "Sinu filtritele ei vasta ükski server",
     "no-results-description": "Eemalda mõni filter või otsi midagi muud.",
-    "no-servers-title": "Praegu pole ükski server võrgus"
+    "no-servers-title": "Praegu pole ükski server võrgus",
+    "show-results": "Näita tulemusi"
   },
   "server-stats": {
     "users-title": "Mängijad",

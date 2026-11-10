@@ -40,7 +40,10 @@
       "placeholder": "서버 이름 또는 IP"
     },
     "country": "국가",
-    "hide-empty": "빈 서버 숨기기",
+    "players": "현재 인원",
+    "slots": "최대 인원",
+    "range-min": "최소",
+    "range-max": "최대",
     "hide-full": "꽉 찬 서버 숨기기",
     "refreshing": "목록을 다시 불러오는 중...",
     "filter-options-title": "필터",
@@ -65,7 +68,8 @@
     "clear-filter": "필터 지우기",
     "no-results-title": "필터에 맞는 서버가 없습니다",
     "no-results-description": "필터를 줄이거나 다른 검색어로 찾아보세요.",
-    "no-servers-title": "지금 온라인 상태인 서버가 없습니다"
+    "no-servers-title": "지금 온라인 상태인 서버가 없습니다",
+    "show-results": "결과 보기"
   },
   "server-stats": {
     "users-title": "접속자",

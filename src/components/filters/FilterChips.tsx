@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { DEFAULT_FILTER, SORT_OPTIONS } from './filterSchema';
-import type { FilterProps, ServerFilter } from './filterSchema';
+import { DEFAULT_FILTER, SORT_OPTIONS, describeRange, isOpenRange, normalizeRange } from '../../lib/filters/filterSchema';
+import type { FilterProps, ServerFilter } from '../../lib/filters/filterSchema';
 import type { TriState } from '../../types/api';
 import getCountryName from '../../i18n/i18n-countries';
 
@@ -52,8 +52,23 @@ export function FilterChips({ value, onChange }: FilterProps) {
       </Chip>
     );
   }
-  if (value.hideEmptyServer) chips.push(<Chip key="he" onClear={() => set({ hideEmptyServer: false })}>{t('filter-option.hide-empty')}</Chip>);
-  if (value.hideFullServer)  chips.push(<Chip key="hf" onClear={() => set({ hideFullServer: false })}>{t('filter-option.hide-full')}</Chip>);
+  const players = normalizeRange(value.players);
+  if (!isOpenRange(players)) {
+    chips.push(
+      <Chip key="players" onClear={() => set({ players: DEFAULT_FILTER.players })}>
+        {t('filter-option.players')}: {describeRange(players)}
+      </Chip>
+    );
+  }
+  const slots = normalizeRange(value.slots);
+  if (!isOpenRange(slots)) {
+    chips.push(
+      <Chip key="slots" onClear={() => set({ slots: DEFAULT_FILTER.slots })}>
+        {t('filter-option.slots')}: {describeRange(slots)}
+      </Chip>
+    );
+  }
+  if (value.hideFullServer) chips.push(<Chip key="hf" onClear={() => set({ hideFullServer: false })}>{t('filter-option.hide-full')}</Chip>);
   if (value.friendlyFire !== 'null') chips.push(<Chip key="ff" onClear={() => set({ friendlyFire: 'null' })}>{triStateLabel('friendly-fire', value.friendlyFire)}</Chip>);
   if (value.whitelist !== 'null') chips.push(<Chip key="wl" onClear={() => set({ whitelist: 'null' })}>{triStateLabel('whitelist', value.whitelist)}</Chip>);
   if (value.modded !== 'null') chips.push(<Chip key="md" onClear={() => set({ modded: 'null' })}>{triStateLabel('modded', value.modded)}</Chip>);

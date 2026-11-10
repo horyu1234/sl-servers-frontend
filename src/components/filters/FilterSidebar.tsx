@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterControls } from './FilterControls';
-import type { FilterProps } from './filterSchema';
+import type { FilterProps } from '../../lib/filters/filterSchema';
 
 export function FilterSidebar({ value, onChange }: FilterProps) {
   return (

@@ -40,7 +40,10 @@
       "placeholder": "ชื่อเซิร์ฟเวอร์หรือ IP"
     },
     "country": "ประเทศ",
-    "hide-empty": "ซ่อนเซิร์ฟเวอร์ไม่มีคน",
+    "players": "ผู้เล่น",
+    "slots": "จำนวนช่องของเซิร์ฟเวอร์",
+    "range-min": "ต่ำสุด",
+    "range-max": "สูงสุด",
     "hide-full": "ซ่อนเซิร์ฟเวอร์คนเต็ม",
     "refreshing": "กำลังโหลดรายชื่อใหม่...",
     "filter-options-title": "ตัวกรอง",
@@ -65,7 +68,8 @@
     "clear-filter": "ล้างตัวกรอง",
     "no-results-title": "ไม่พบเซิร์ฟเวอร์ที่ตรงกับตัวกรอง",
     "no-results-description": "ลองเอาตัวกรองออกบางส่วน หรือค้นหาคำอื่น",
-    "no-servers-title": "ตอนนี้ไม่มีเซิร์ฟเวอร์ออนไลน์"
+    "no-servers-title": "ตอนนี้ไม่มีเซิร์ฟเวอร์ออนไลน์",
+    "show-results": "ดูผลลัพธ์"
   },
   "server-stats": {
     "users-title": "ผู้เล่น",

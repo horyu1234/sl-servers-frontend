@@ -40,7 +40,10 @@
       "placeholder": "Название сервера или IP"
     },
     "country": "Страна",
-    "hide-empty": "Скрыть пустые серверы",
+    "players": "Игроки",
+    "slots": "Слоты сервера",
+    "range-min": "Мин.",
+    "range-max": "Макс.",
     "hide-full": "Скрыть заполненные серверы",
     "refreshing": "Обновление...",
     "filter-options-title": "Фильтры",
@@ -65,7 +68,8 @@
     "clear-filter": "Сбросить фильтр",
     "no-results-title": "По вашим фильтрам серверов нет",
     "no-results-description": "Попробуйте убрать фильтр или изменить запрос.",
-    "no-servers-title": "Сейчас нет серверов онлайн"
+    "no-servers-title": "Сейчас нет серверов онлайн",
+    "show-results": "Показать результаты"
   },
   "server-stats": {
     "users-title": "Игроки",

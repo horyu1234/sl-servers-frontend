@@ -40,7 +40,10 @@
       "placeholder": "Nome del server o IP"
     },
     "country": "Paese",
-    "hide-empty": "Nascondi i server vuoti",
+    "players": "Giocatori",
+    "slots": "Posti del server",
+    "range-min": "Min.",
+    "range-max": "Max.",
     "hide-full": "Nascondi i server pieni",
     "refreshing": "Caricamento lista in corso...",
     "filter-options-title": "Filtri",
@@ -65,7 +68,8 @@
     "clear-filter": "Cancella filtro",
     "no-results-title": "Nessun server corrisponde ai filtri",
     "no-results-description": "Prova a togliere un filtro o a cercare qualcos'altro.",
-    "no-servers-title": "Nessun server online al momento"
+    "no-servers-title": "Nessun server online al momento",
+    "show-results": "Mostra i risultati"
   },
   "server-stats": {
     "users-title": "Giocatori",

@@ -77,6 +77,14 @@ export interface ServerSortOption {
   whitelist: TriState;
   modded: TriState;
   sort: ServerSortType;
+  /**
+   * Inclusive bounds on the current player count and on the slot count (maximum players).
+   * null or absent leaves that end open. A negative bound or a minimum above its maximum answers 400.
+   */
+  minPlayers?: number | null;
+  maxPlayers?: number | null;
+  minSlots?: number | null;
+  maxSlots?: number | null;
 }
 
 /** FluxTrendParams, the query of the /graph endpoints. */

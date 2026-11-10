@@ -40,7 +40,10 @@
       "placeholder": "Sunucu adı veya IP"
     },
     "country": "Ülke",
-    "hide-empty": "Boş sunucuları gizle",
+    "players": "Oyuncular",
+    "slots": "Sunucu kapasitesi",
+    "range-min": "En az",
+    "range-max": "En çok",
     "hide-full": "Dolu sunucuları gizle",
     "refreshing": "Liste yenileniyor...",
     "filter-options-title": "Filtreler",
@@ -65,7 +68,8 @@
     "clear-filter": "Filtreyi temizle",
     "no-results-title": "Filtrelerinize uyan sunucu yok",
     "no-results-description": "Bir filtreyi kaldırmayı veya başka bir arama yapmayı deneyin.",
-    "no-servers-title": "Şu anda çevrimiçi sunucu yok"
+    "no-servers-title": "Şu anda çevrimiçi sunucu yok",
+    "show-results": "Sonuçları göster"
   },
   "server-stats": {
     "users-title": "Oyuncular",

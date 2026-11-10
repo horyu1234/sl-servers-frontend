@@ -40,7 +40,10 @@
       "placeholder": "伺服器名稱或 IP"
     },
     "country": "國家/地區",
-    "hide-empty": "隱藏無人伺服器",
+    "players": "目前人數",
+    "slots": "伺服器容量",
+    "range-min": "最少",
+    "range-max": "最多",
     "hide-full": "隱藏滿人伺服器",
     "refreshing": "正在重新載入列表...",
     "filter-options-title": "篩選",
@@ -65,7 +68,8 @@
     "clear-filter": "清除篩選",
     "no-results-title": "沒有符合篩選條件的伺服器",
     "no-results-description": "試著移除部分篩選條件，或換個關鍵字搜尋。",
-    "no-servers-title": "目前沒有線上的伺服器"
+    "no-servers-title": "目前沒有線上的伺服器",
+    "show-results": "查看結果"
   },
   "server-stats": {
     "users-title": "玩家",

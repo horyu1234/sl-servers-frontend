@@ -40,7 +40,10 @@
       "placeholder": "Nom del servidor o IP"
     },
     "country": "País",
-    "hide-empty": "Amaga els servidors buits",
+    "players": "Jugadors",
+    "slots": "Places del servidor",
+    "range-min": "Mín.",
+    "range-max": "Màx.",
     "hide-full": "Amaga els servidors plens",
     "refreshing": "Recarregant la llista...",
     "filter-options-title": "Filtres",
@@ -65,7 +68,8 @@
     "clear-filter": "Esborra el filtre",
     "no-results-title": "Cap servidor coincideix amb els teus filtres",
     "no-results-description": "Treu algun filtre o cerca una altra cosa.",
-    "no-servers-title": "Ara mateix no hi ha cap servidor en línia"
+    "no-servers-title": "Ara mateix no hi ha cap servidor en línia",
+    "show-results": "Mostra els resultats"
   },
   "server-stats": {
     "users-title": "Jugadors",
