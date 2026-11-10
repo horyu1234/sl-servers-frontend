@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,7 +10,7 @@ import { PageHeader } from '../shared/PageHeader';
 import { StatTile } from '../shared/StatTile';
 import { DocBlocks } from './DocBlocks';
 import { usePageHead } from '../../lib/hooks/usePageHead';
-import { cellText } from '../../site/pageModel';
+import { TONE_CLASS, cellText } from '../../site/pageModel';
 import type { Cell, CellValue, PageModel, Section, Table, Tile } from '../../site/pageModel';
 import { cn } from '@/lib/cn';
 
@@ -18,7 +19,7 @@ function CellContent({ cell }: { cell: CellValue }) {
   const label = (
     <span className="inline-flex min-w-0 max-w-full items-center gap-1.5 align-bottom">
       {cell.flag && <CountryFlag isoCode={cell.flag} className="shrink-0 rounded-[1px] shadow-sm" />}
-      <span className="truncate">{cell.text}</span>
+      <span className={cn('truncate', cell.tone && TONE_CLASS[cell.tone])}>{cell.text}</span>
     </span>
   );
   if (!cell.href) return label;
@@ -107,11 +108,81 @@ export function SectionCard({ section }: { section: Section }) {
   );
 }
 
+// Height of the site's sticky menu, which the section menu sticks under.
+const SITE_MENU_HEIGHT = 56;
+
+/**
+ * Sections shown one at a time behind a menu. The fragment of the address picks the section, so
+ * a section can be linked, and the menu stays in reach while a long table scrolls. The other
+ * sections stay in the document, hidden, so the page holds the same text as the HTML from the edge.
+ */
+export function SectionTabs({ sections }: { sections: Section[] }) {
+  const { t } = useTranslation();
+  const { hash } = useLocation();
+  const topRef = useRef<HTMLDivElement>(null);
+  const active = sections.find((section) => `#${section.id}` === hash) ?? sections[0];
+
+  // Brings the menu to the top of the window. `always` is for a page opened on a section:
+  // the browser scrolled for the HTML it first got, which was longer than this page.
+  const showTop = (always: boolean) => {
+    if (!topRef.current) return;
+    const top = Math.max(0, topRef.current.getBoundingClientRect().top + window.scrollY - SITE_MENU_HEIGHT);
+    if (always || window.scrollY > top) window.scrollTo({ top });
+  };
+
+  useEffect(() => {
+    if (sections.some((section) => `#${section.id}` === hash)) showTop(true);
+    // Only for the address the page was opened with.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <>
+      <div ref={topRef} />
+      <nav
+        aria-label={t('pages.common.sections')}
+        className="sticky top-14 z-20 -mx-3 border-b border-border bg-background/90 px-3 py-2 backdrop-blur sm:-mx-4 sm:px-4"
+      >
+        <ul className="flex gap-1.5 overflow-x-auto">
+          {sections.map((section) => (
+            <li key={section.id} className="shrink-0">
+              <Link
+                to={{ hash: `#${section.id}` }}
+                replace
+                // Coming from far down a long table, the next section opens at its top.
+                onClick={() => showTop(false)}
+                aria-current={section === active ? 'true' : undefined}
+                className={cn(
+                  'flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm no-underline transition-colors',
+                  section === active ? 'bg-muted text-foreground' : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                )}
+              >
+                {section.heading}
+                {section.table && <span className="text-xs tabular-nums opacity-60">{section.table.rows.length}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {sections.map((section) => (
+        <div key={section.id} hidden={section !== active}>
+          <SectionCard section={section} />
+        </div>
+      ))}
+    </>
+  );
+}
+
 export function TileGrid({ tiles }: { tiles: Tile[] }) {
   return (
     <div className={cn('grid grid-cols-2 gap-3 lg:grid-cols-4', tiles.length > 4 && 'xl:grid-cols-5')}>
       {tiles.map((tile) => (
-        <StatTile key={tile.label} label={tile.label} value={tile.value} note={tile.note} />
+        <StatTile
+          key={tile.label}
+          label={tile.label}
+          value={tile.valueTone ? <span className={TONE_CLASS[tile.valueTone]}>{tile.value}</span> : tile.value}
+          note={tile.noteTone ? <span className={TONE_CLASS[tile.noteTone]}>{tile.note}</span> : tile.note}
+        />
       ))}
     </div>
   );
@@ -161,7 +232,9 @@ export function ModelPage({ model, top, children }: ModelPageProps) {
       <div className="mt-4 space-y-4">
         {model.tiles && model.tiles.length > 0 && <TileGrid tiles={model.tiles} />}
         {children}
-        {model.sections.map((section, index) => <SectionCard key={section.heading ?? index} section={section} />)}
+        {model.sectionTabs && model.sections.length > 1
+          ? <SectionTabs sections={model.sections} />
+          : model.sections.map((section, index) => <SectionCard key={section.heading ?? index} section={section} />)}
         {model.blocks && <DocBlocks blocks={model.blocks} />}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { homeCrumb, percentOf, signedPercent, trend } from '../pageModel';
+import { changeCell, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
 import type { Cell, PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import type { VersionAdoptionDay, VersionDetailResponse, VersionSummary, VersionsResponse } from '../../types/api';
@@ -56,7 +56,7 @@ export function versionsModel(ctx: SiteContext, data: VersionsResponse): PageMod
           t('pages.versions.kind', { context: version.major ? 'major' : 'minor' }),
           version.peakBefore === null ? '—' : ctx.number(version.peakBefore),
           version.peakAfter === null ? '—' : ctx.number(version.peakAfter),
-          signedPercent(ctx, version.changePercent),
+          changeCell(ctx, version.changePercent),
           daysToHalf(ctx, version.daysToHalf),
           ctx.number(version.onlineServers),
         ]),
@@ -154,6 +154,7 @@ export function versionModel(ctx: SiteContext, data: VersionDetailResponse): Pag
       {
         label: t('pages.version.tile-change'),
         value: signedPercent(ctx, summary.changePercent),
+        valueTone: toneOf(summary.changePercent),
         note: hasImpact
           ? t('pages.version.tile-change-note', { before: ctx.number(summary.peakBefore ?? 0), after: ctx.number(summary.peakAfter ?? 0) })
           : undefined,

@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { homeCrumb, signedPercent } from '../pageModel';
+import { changeCell, homeCrumb } from '../pageModel';
 import type { PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import { countryCell } from './countries';
@@ -126,7 +126,7 @@ export function recordsModel(ctx: SiteContext, history: GlobalHistoryResponse, c
           ctx.date(release.date),
           release.peakBefore === null ? '—' : ctx.number(release.peakBefore),
           release.peakAfter === null ? '—' : ctx.number(release.peakAfter),
-          signedPercent(ctx, release.changePercent),
+          changeCell(ctx, release.changePercent),
         ]),
         numeric: [2, 3, 4],
       },

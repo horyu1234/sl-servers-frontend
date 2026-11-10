@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { homeCrumb, percentOf, signedPercent, trend } from '../pageModel';
+import { changeCell, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
 import type { Cell, PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import { countryCell, serverCell } from './countries';
@@ -124,7 +124,7 @@ export function reportModel(ctx: SiteContext, data: ReportResponse): PageModel {
           countryCell(ctx, country.isoCode),
           ctx.number(country.avgDailyPeak, 1),
           `${ctx.number(country.sharePercent, 1)}%`,
-          signedPercent(ctx, country.changePercent),
+          changeCell(ctx, country.changePercent),
         ]),
         numeric: [0, 2, 3, 4],
       },
@@ -164,7 +164,7 @@ export function reportModel(ctx: SiteContext, data: ReportResponse): PageModel {
           ctx.date(release.date),
           release.peakBefore === null ? '—' : ctx.number(release.peakBefore),
           release.peakAfter === null ? '—' : ctx.number(release.peakAfter),
-          signedPercent(ctx, release.changePercent),
+          changeCell(ctx, release.changePercent),
         ]),
         numeric: [2, 3, 4],
       },
@@ -214,6 +214,7 @@ export function reportModel(ctx: SiteContext, data: ReportResponse): PageModel {
         note: data.previous
           ? t('pages.report.tile-versus', { change: signedPercent(ctx, data.previous.changePercent), previous: periodLabel(ctx, data.previous.period) })
           : undefined,
+        noteTone: toneOf(data.previous?.changePercent),
       },
       {
         label: t('pages.report.tile-servers'),

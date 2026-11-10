@@ -5,8 +5,9 @@ import { buildHead } from '../site/head';
 import { listModel } from '../site/pages/basic';
 import { docModel } from '../site/pages/docs';
 import { rankingsModel } from '../site/pages/rankings';
+import { reportModel } from '../site/pages/reports';
 import { serverModel } from '../site/pages/server';
-import { insights, rankings, server, testContext } from '../site/pages/testData';
+import { insights, rankings, report, server, testContext } from '../site/pages/testData';
 import { EMPTY_ROOT, HEAD_END, HEAD_START, renderBody, renderDocument, renderHead } from './render';
 
 const en = testContext();
@@ -153,8 +154,20 @@ describe('renderBody', () => {
 
     expect(body.querySelectorAll('section')).toHaveLength(4);
     expect(body.querySelector('section h2')?.textContent).toBe('Most popular');
+    // Every board is on the page, and the menu above them jumps to each.
+    const menu = Array.from(body.querySelectorAll('nav[aria-label="On this page"] a')).map((a) => a.getAttribute('href'));
+    expect(menu).toEqual(['#popular', '#rising', '#newcomers', '#veterans']);
+    for (const href of menu) expect(body.querySelector(`section${href}`)).not.toBeNull();
     expect(body.querySelector('section table a[href="/servers/99728"]')?.textContent).toBe('Dream <Mirror> #1');
     expect(body.querySelector('section table a[href="/countries/cn"]')?.textContent).toBe('China');
+  });
+
+  it('colors changes like the app does', () => {
+    const body = documentOf(renderBody(en, reportModel(en, report)));
+    const colored = (className: string) => Array.from(body.querySelectorAll(`main .${className}`)).map((node) => node.textContent);
+
+    expect(colored('text-primary')).toEqual(expect.arrayContaining(['+4.2%', '+4.2% vs September 2026']));
+    expect(colored('text-destructive')).toContain('−3.1%');
   });
 
   it('draws a written page with its links, code and tables', () => {

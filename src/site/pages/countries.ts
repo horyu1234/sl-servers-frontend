@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { busiestSlot, homeCrumb, percentOf, signedPercent, trend } from '../pageModel';
+import { busiestSlot, changeCell, homeCrumb, percentOf, signedPercent, toneOf, trend } from '../pageModel';
 import type { Cell, PageModel, Section } from '../pageModel';
 import { pathOf } from '../routes';
 import { serverLabel } from './server';
@@ -59,7 +59,7 @@ export function countriesModel(ctx: SiteContext, data: CountriesResponse): PageM
           ctx.number(country.onlineServers),
           ctx.number(country.onlinePlayers),
           ctx.number(country.avgDailyPeak30d, 1),
-          signedPercent(ctx, country.changePercent30d),
+          changeCell(ctx, country.changePercent30d),
           `${ctx.number(country.sharePercent30d, 1)}%`,
           ctx.number(country.allTimePeak),
         ]),
@@ -159,6 +159,7 @@ export function countryModel(ctx: SiteContext, data: CountryDetailResponse): Pag
         label: t('pages.common.average-peak-30d'),
         value: ctx.number(standing.avgDailyPeak30d, 1),
         note: t('pages.common.versus-previous', { change: signedPercent(ctx, standing.changePercent30d) }),
+        noteTone: toneOf(standing.changePercent30d),
       },
       {
         label: t('pages.common.share'),

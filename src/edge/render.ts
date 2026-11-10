@@ -9,6 +9,7 @@ import type { DocBlock } from '../site/docs/types';
 import { SITE_NAME } from '../site/head';
 import type { PageHead } from '../site/head';
 import type { Cell, CellValue, PageModel, Section, Table, Tile } from '../site/pageModel';
+import { TONE_CLASS } from '../site/pageModel';
 import { siteLinks } from '../site/pages/links';
 import { escapeHtml } from '../site/plainText';
 import { SITE_ORIGIN, absoluteUrl } from '../site/routes';
@@ -36,7 +37,8 @@ function inline(ctx: SiteContext, text: string) {
 
 function cell(ctx: SiteContext, value: CellValue) {
   if (typeof value === 'string') return escapeHtml(value);
-  return value.href ? link(ctx, value.href, value.text, 'text-foreground underline-offset-2 hover:underline') : escapeHtml(value.text);
+  if (value.href) return link(ctx, value.href, value.text, 'text-foreground underline-offset-2 hover:underline');
+  return value.tone ? `<span class="${TONE_CLASS[value.tone]}">${escapeHtml(value.text)}</span>` : escapeHtml(value.text);
 }
 
 function table(ctx: SiteContext, { head, rows, numeric }: Table) {
@@ -57,8 +59,8 @@ function linkList(ctx: SiteContext, links: Cell[]) {
   }</ul>`;
 }
 
-function section(ctx: SiteContext, { heading, paragraphs, table: data, links, note }: Section) {
-  return `<section class="space-y-3 rounded-lg border border-border bg-card p-4 sm:p-5">${[
+function section(ctx: SiteContext, { id, heading, paragraphs, table: data, links, note }: Section) {
+  return `<section${id ? ` id="${escapeHtml(id)}"` : ''} class="space-y-3 rounded-lg border border-border bg-card p-4 sm:p-5">${[
     heading ? `<h2 class="font-semibold leading-none tracking-tight text-foreground">${escapeHtml(heading)}</h2>` : '',
     ...(paragraphs ?? []).map((paragraph) => `<p class="text-xs text-muted-foreground">${escapeHtml(paragraph)}</p>`),
     data ? table(ctx, data) : '',
@@ -67,12 +69,27 @@ function section(ctx: SiteContext, { heading, paragraphs, table: data, links, no
   ].join('')}</section>`;
 }
 
+/**
+ * The menu the app shows over sections that are views of one thing. Here every section is on
+ * the page, so the menu jumps to them, and it shows from the start that the others exist.
+ */
+function sectionMenu(ctx: SiteContext, sections: Section[]) {
+  const pill = 'flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm no-underline';
+  return `<nav aria-label="${escapeHtml(ctx.t('pages.common.sections'))}" class="border-b border-border py-2">`
+    + `<ul class="flex gap-1.5 overflow-x-auto">${sections.map((item, index) => (
+      `<li class="shrink-0"><a href="#${escapeHtml(item.id ?? '')}" class="${pill} ${index === 0 ? 'bg-muted text-foreground' : 'text-muted-foreground'}">`
+      + escapeHtml(item.heading ?? '')
+      + (item.table ? `<span class="text-xs tabular-nums opacity-60">${item.table.rows.length}</span>` : '')
+      + '</a></li>'
+    )).join('')}</ul></nav>`;
+}
+
 function tiles(items: Tile[]) {
   return `<dl class="grid grid-cols-2 gap-3 lg:grid-cols-4${items.length > 4 ? ' xl:grid-cols-5' : ''}">${items.map((tile) => (
     `<div class="rounded-lg border border-border bg-card p-3 sm:px-4">`
     + `<dt class="truncate text-xs text-muted-foreground">${escapeHtml(tile.label)}</dt>`
-    + `<dd class="mt-1 text-lg font-semibold tabular-nums leading-tight text-foreground sm:text-xl">${escapeHtml(tile.value)}</dd>`
-    + (tile.note ? `<dd class="mt-0.5 text-xs text-muted-foreground">${escapeHtml(tile.note)}</dd>` : '')
+    + `<dd class="mt-1 text-lg font-semibold tabular-nums leading-tight sm:text-xl ${tile.valueTone ? TONE_CLASS[tile.valueTone] : 'text-foreground'}">${escapeHtml(tile.value)}</dd>`
+    + (tile.note ? `<dd class="mt-0.5 text-xs ${tile.noteTone ? TONE_CLASS[tile.noteTone] : 'text-muted-foreground'}">${escapeHtml(tile.note)}</dd>` : '')
     + '</div>'
   )).join('')}</dl>`;
 }
@@ -129,6 +146,7 @@ export function renderBody(ctx: SiteContext, model: PageModel) {
     }</div>`
     + '<div class="mt-4 space-y-4">'
     + (model.tiles && model.tiles.length > 0 ? tiles(model.tiles) : '')
+    + (model.sectionTabs && model.sections.length > 1 ? sectionMenu(ctx, model.sections) : '')
     + model.sections.map((item) => section(ctx, item)).join('')
     + (model.blocks
       ? `<div class="space-y-3 text-sm leading-6 text-muted-foreground">${model.blocks.map((item) => block(ctx, item)).join('')}</div>`

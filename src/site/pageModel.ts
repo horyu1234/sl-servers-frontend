@@ -3,12 +3,22 @@
 import type { SiteContext } from './context';
 import type { DocBlock } from './docs/types';
 
+/** Which way a number moved. It only picks a color: the sign is always in the text too. */
+export type Tone = 'up' | 'down';
+
+/** The color of each tone. The app and the edge function both use these classes. */
+export const TONE_CLASS: Record<Tone, string> = {
+  up: 'text-primary',
+  down: 'text-destructive',
+};
+
 export interface Cell {
   text: string;
   /** Address without a language prefix. */
   href?: string;
   /** ISO country code whose flag goes before the text. */
   flag?: string;
+  tone?: Tone;
 }
 
 export type CellValue = string | Cell;
@@ -21,6 +31,8 @@ export interface Table {
 }
 
 export interface Section {
+  /** Names the section in the address, as in /rankings#rising. A page with section tabs needs it. */
+  id?: string;
   heading?: string;
   paragraphs?: string[];
   links?: Cell[];
@@ -33,6 +45,9 @@ export interface Tile {
   label: string;
   value: string;
   note?: string;
+  /** Set when the value or the note is a change. */
+  valueTone?: Tone;
+  noteTone?: Tone;
 }
 
 export interface PageModel {
@@ -43,6 +58,11 @@ export interface PageModel {
   intro: string[];
   tiles?: Tile[];
   sections: Section[];
+  /**
+   * The sections are views of one thing, such as the boards of the rankings. The app then shows
+   * one at a time behind a menu, so a long first section does not bury the others.
+   */
+  sectionTabs?: boolean;
   /** Long-form text of the written pages. */
   blocks?: DocBlock[];
   /** From the home page down to this page, which comes last and has no link. */
@@ -60,6 +80,16 @@ export function cellText(cell: CellValue) {
 export function signedPercent(ctx: SiteContext, value: number | null | undefined) {
   if (value === null || value === undefined) return '—';
   return `${value > 0 ? '+' : value < 0 ? '−' : ''}${ctx.number(Math.abs(value), 1)}%`;
+}
+
+export function toneOf(value: number | null | undefined): Tone | undefined {
+  if (value === null || value === undefined || value === 0) return undefined;
+  return value > 0 ? 'up' : 'down';
+}
+
+/** A change as a table cell: "+8.4%" in the color of a rise, "−16.9%" in the color of a fall. */
+export function changeCell(ctx: SiteContext, value: number | null | undefined): Cell {
+  return { text: signedPercent(ctx, value), tone: toneOf(value) };
 }
 
 /** The i18next context that picks the wording of a sentence about a change. */

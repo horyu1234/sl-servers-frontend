@@ -316,7 +316,8 @@
       "loading": "Loading...",
       "unavailable-title": "This page can't be shown right now",
       "unavailable-description": "Its data didn't load. Try again in a moment.",
-      "breadcrumb": "Breadcrumb"
+      "breadcrumb": "Breadcrumb",
+      "sections": "On this page"
     },
     "home": {
       "title": "SCP: Secret Laboratory Server List: Live Servers and Player Stats",

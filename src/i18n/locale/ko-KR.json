@@ -308,7 +308,8 @@
       "loading": "불러오는 중...",
       "unavailable-title": "지금은 이 페이지를 표시할 수 없습니다",
       "unavailable-description": "데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
-      "breadcrumb": "현재 위치"
+      "breadcrumb": "현재 위치",
+      "sections": "이 페이지의 항목"
     },
     "home": {
       "title": "SCP: Secret Laboratory 서버 목록: 실시간 서버와 인원 통계",

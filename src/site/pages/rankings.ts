@@ -1,6 +1,6 @@
 import type { SiteContext } from '../context';
 import { withSiteName } from '../head';
-import { homeCrumb, signedPercent } from '../pageModel';
+import { changeCell, homeCrumb } from '../pageModel';
 import type { CellValue, PageModel, Section } from '../pageModel';
 import { countryCell, serverCell } from './countries';
 import { serverLabel } from './server';
@@ -17,6 +17,7 @@ function firstSeen(ctx: SiteContext, server: RankedServer) {
 
 function board(ctx: SiteContext, key: string, servers: RankedServer[], head: string[], columns: (server: RankedServer) => CellValue[], numeric: number[]): Section {
   return {
+    id: key,
     heading: ctx.t(`pages.rankings.${key}`),
     paragraphs: [ctx.t(`pages.rankings.${key}-note`)],
     table: {
@@ -49,7 +50,7 @@ export function rankingsModel(ctx: SiteContext, data: RankingsResponse): PageMod
       (server) => [
         ctx.number(server.avgDailyPeak30d, 1),
         ctx.number(server.avgDailyPeakPrev30d, 1),
-        signedPercent(ctx, server.changePercent30d),
+        changeCell(ctx, server.changePercent30d),
       ],
       [3, 4, 5]),
     board(ctx, 'newcomers', data.newcomers,
@@ -68,6 +69,7 @@ export function rankingsModel(ctx: SiteContext, data: RankingsResponse): PageMod
     heading: t('pages.rankings.heading'),
     intro,
     sections,
+    sectionTabs: true,
     breadcrumbs: [homeCrumb(ctx), { text: t('navbar.rankings') }],
   };
 }

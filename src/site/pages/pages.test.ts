@@ -191,11 +191,35 @@ describe('country pages', () => {
   });
 });
 
+describe('changes', () => {
+  it('color a rise and a fall, and leave no change and no comparison plain', () => {
+    const rows = countriesModel(en, countries).sections[0].table?.rows ?? [];
+
+    expect(rows.map((row) => row[5])).toEqual([
+      { text: '+4.2%', tone: 'up' },
+      { text: '−3.1%', tone: 'down' },
+      { text: '0.0%', tone: undefined },
+      { text: '—', tone: undefined },
+    ]);
+  });
+
+  it('color the tile that states one', () => {
+    const version = versionModel(en, versionDetail).tiles?.find((tile) => tile.value === '−16.9%');
+    const month = reportModel(en, report).tiles?.find((tile) => tile.note === '+4.2% vs September 2026');
+
+    expect(version?.valueTone).toBe('down');
+    expect(month?.noteTone).toBe('up');
+    expect(countryModel(en, country).tiles?.every((tile) => tile.noteTone === undefined)).toBe(true);
+  });
+});
+
 describe('rankings page', () => {
   it('has a board for each ranking that has servers', () => {
     const model = rankingsModel(en, { ...rankings, rising: [] });
 
     expect(model.sections.map((section) => section.heading)).toEqual(['Most popular', 'Newcomers', 'Longest running']);
+    expect(model.sections.map((section) => section.id)).toEqual(['popular', 'newcomers', 'veterans']);
+    expect(model.sectionTabs).toBe(true);
     expect(model.intro[1]).toBe('Dream <Mirror> #1 leads with an average daily peak of 58.3 players.');
   });
 
