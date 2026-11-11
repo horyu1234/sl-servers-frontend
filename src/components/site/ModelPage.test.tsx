@@ -79,6 +79,17 @@ describe('ModelPage', () => {
     expect(screen.getByText(/curl "https:\/\/api\.scplist\.kr/)).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: 'support@scplist.kr' })[0]).toHaveAttribute('href', 'mailto:support@scplist.kr');
   });
+
+  it('carries one ad on a data page and none on a written page', () => {
+    const data = renderAt('/reports/2026-10', <ModelPage model={reportModel(en, report)} />);
+    expect(screen.getAllByText('Advertisement')).toHaveLength(1);
+    data.unmount();
+
+    // The page about the ads is a written page of the site, so docModel has it.
+    renderAt('/about/funding', <ModelPage model={docModel(en, 'funding')!} />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Why this site has ads' })).toBeInTheDocument();
+    expect(screen.queryByText('Advertisement')).not.toBeInTheDocument();
+  });
 });
 
 describe('section tabs', () => {
@@ -176,5 +187,6 @@ describe('DataPage', () => {
     expect(await screen.findByText("This page can't be shown right now")).toBeInTheDocument();
     await waitFor(() => expect(document.head.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('noindex'));
     expect(screen.getByRole('link', { name: 'Server list' })).toHaveAttribute('href', '/');
+    expect(screen.queryByText('Advertisement')).not.toBeInTheDocument();
   });
 });

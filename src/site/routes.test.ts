@@ -12,6 +12,7 @@ describe('parsePath', () => {
     ['/reports/2026-10', 'report', { period: '2026-10' }],
     ['/reports/2025', 'report', { period: '2025' }],
     ['/about/data', 'methodology', {}],
+    ['/about/funding', 'funding', {}],
     ['/privacy', 'privacy', {}],
   ])('reads %s as the %s page', (pathname, page, params) => {
     expect(parsePath(pathname)).toEqual({ language: null, path: pathname, route: { page, params } });

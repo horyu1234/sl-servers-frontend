@@ -47,6 +47,7 @@ export const PAGES: Record<PageName, LazyPage> = {
     report: lazyPage(() => import('../pages/reports/Report')),
     about: DocPage,
     methodology: DocPage,
+    funding: DocPage,
     privacy: DocPage,
     contact: DocPage,
 };

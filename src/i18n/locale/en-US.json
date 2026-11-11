@@ -35,7 +35,8 @@
     "about": "About",
     "methodology": "How the data works",
     "privacy": "Privacy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "funding": "About the ads"
   },
   "select": {
     "placeholder": "Select countries",
@@ -172,6 +173,10 @@
     "copy-address": "Copy address",
     "address-copied": "Copied",
     "tech": "Mods and plugins"
+  },
+  "funding": {
+    "label": "Advertisement",
+    "why": "Why this site has ads"
   },
   "footer": {
     "notice": "SCP: Secret Laboratory is a game released by Northwood Studios™. This site is not affiliated with Northwood Studios™.<br/>All trademarks and registered trademarks are the property of their respective owners.",

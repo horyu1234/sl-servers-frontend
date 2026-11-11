@@ -95,6 +95,9 @@ describe('List page', () => {
     );
 
     expect(await screen.findByText('No servers match your filters')).toBeInTheDocument();
+    // An empty result is a page without content, so the ad gives its room up. A hidden slot
+    // stays in the document, which is why this asks for the link by its role.
+    expect(screen.queryByRole('link', { name: 'Why this site has ads' })).not.toBeInTheDocument();
 
     await user.click(screen.getAllByRole('button', { name: 'Clear all' }).at(-1)!);
 
@@ -160,5 +163,6 @@ describe('List page', () => {
       </Provider>
     );
     await waitFor(() => expect(screen.getByText(/Site-19 Mirror/)).toBeInTheDocument());
+    expect(screen.getAllByText('Advertisement')).toHaveLength(1);
   });
 });

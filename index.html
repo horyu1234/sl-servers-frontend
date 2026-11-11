@@ -67,7 +67,7 @@
           {
             id: "necessary",
             name: "Necessary",
-            description: "<p>These cookies are required for the site to work. They store your language, your cookie choices and basic session state, so they cannot be turned off.</p>",
+            description: "<p>These cookies are required for the site to work. They store your language, your cookie choices and basic session state, so they cannot be turned off. The ads that pay for our servers are also always shown: Google AdSense uses cookies to serve and measure them, to limit how often you see the same ad and to prevent fraud.</p>",
             required: true,
             onAccept: __stcmNotify
           },
@@ -86,11 +86,19 @@
             required: false,
             onAccept: __stcmNotify,
             onReject: __stcmNotify
+          },
+          {
+            id: "advertising",
+            name: "Personalised ads",
+            description: "<p>Ads are shown either way. With this on, Google may use cookies to choose ads based on your earlier visits to this site and to other websites. With it off, ads are based only on the page you are viewing and your approximate location.</p>",
+            required: false,
+            onAccept: __stcmNotify,
+            onReject: __stcmNotify
           }
         ],
         text: {
           banner: {
-            description: "<p>We use cookies to keep your filters and language. With your consent, we also use them for the support chat (MineTalk), to measure how the site is used and to detect crashes (Sentry, Google Analytics, Microsoft Clarity). We do not sell your data. The <a href=\"/privacy\">privacy policy</a> has the details.</p>",
+            description: "<p>We use cookies to keep your filters and language, and Google AdSense uses them for the ads that pay for our servers. With your consent, we also use them for the support chat (MineTalk), to measure how the site is used and to detect crashes (Sentry, Google Analytics, Microsoft Clarity), and to personalise ads. We do not sell your data. The <a href=\"/privacy\">privacy policy</a> has the details.</p>",
             acceptAllButtonText: "Accept all",
             acceptAllButtonAccessibleLabel: "Accept all cookies",
             rejectNonEssentialButtonText: "Reject non-essential",

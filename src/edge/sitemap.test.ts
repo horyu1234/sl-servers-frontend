@@ -27,6 +27,8 @@ describe('sitemaps', () => {
       'https://scplist.kr/privacy',
       'https://scplist.kr/ko/privacy',
       'https://scplist.kr/about/data',
+      'https://scplist.kr/about/funding',
+      'https://scplist.kr/ko/about/funding',
     ]));
     expect(urls.some((url) => url.includes(':'.concat('serverId')))).toBe(false);
     expect(new Set(urls).size).toBe(urls.length);

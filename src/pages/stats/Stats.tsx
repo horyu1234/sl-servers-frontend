@@ -13,6 +13,7 @@ import { CountryTrendChart } from '../../components/stats/CountryTrendChart';
 import { ModLoaderChart } from '../../components/stats/ModLoaderChart';
 import { getCountryTrendAPI } from '../../lib/api/stats';
 import { StatsNav } from '../../components/stats/StatsNav';
+import { AdSlot } from '../../components/funding/Slot';
 import { usePageHead } from '../../lib/hooks/usePageHead';
 import { useSiteContext } from '../../lib/hooks/useSiteContext';
 import { statsModel } from '../../site/pages/basic';
@@ -64,6 +65,7 @@ export default function Stats() {
       <PageHeader title={t('navbar.all-stats')} description={model.intro[0]} />
       <div className="my-4"><StatsNav /></div>
       <GlobalHistorySection />
+      <AdSlot placement="page" className="mb-4" />
       <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.85fr)]">
         <Card className="min-w-0">
           <CardHeader className="p-4 sm:p-5">

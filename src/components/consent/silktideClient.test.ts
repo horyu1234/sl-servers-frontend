@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { readConsent, subscribe, CATEGORIES } from './silktideClient';
+import { readConsent, subscribe, hasInitialChoice, CATEGORIES } from './silktideClient';
 
 const KEY = (id: string) => `silktideCookieChoice_${id}`;
 const CHANGE_EVENT = 'silktide:consentchange';
@@ -23,8 +23,14 @@ describe('silktideClient.readConsent', () => {
     expect(readConsent('analytics')).toEqual({ granted: false, status: 'denied' });
   });
 
-  it('exposes the three configured categories', () => {
-    expect(CATEGORIES).toEqual(['necessary', 'functional', 'analytics']);
+  it('exposes the four configured categories', () => {
+    expect(CATEGORIES).toEqual(['necessary', 'functional', 'analytics', 'advertising']);
+  });
+
+  it('knows whether the banner has been answered', () => {
+    expect(hasInitialChoice()).toBe(false);
+    localStorage.setItem('silktideCookieBanner_InitialChoice', '1');
+    expect(hasInitialChoice()).toBe(true);
   });
 
   it('returns the same object reference on repeated calls with no storage change (cache contract for useSyncExternalStore)', () => {

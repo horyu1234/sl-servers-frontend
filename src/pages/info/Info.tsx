@@ -12,6 +12,7 @@ import { ServerMetaPanel } from '../../components/server/ServerMetaPanel';
 import { ServerPastebin } from '../../components/server/ServerPastebin';
 import { ServerTrendChart } from '../../components/server/ServerTrendChart';
 import { EmptyState } from '../../components/shared/EmptyState';
+import { AdSlot } from '../../components/funding/Slot';
 import { LocaleLink } from '../../components/shell/LocaleLink';
 import { LONG_TERM_GRAPH, PeriodPicker, RECENT_GRAPH, presetParams } from '../../components/shared/PeriodPicker';
 import { getServerGraphAPI } from '../../lib/api/servers';
@@ -124,6 +125,8 @@ export default function Info() {
       <div className="min-w-0 space-y-4 lg:col-span-2">
         <ServerDetailHeader server={server} />
         <ServerInsights serverId={serverId} server={server} />
+        {/* Not in the side column: the panel there follows the scroll and would slide over it. */}
+        <AdSlot placement="server" />
 
         <Card className="min-w-0">
           <CardHeader className="p-4 sm:p-5">

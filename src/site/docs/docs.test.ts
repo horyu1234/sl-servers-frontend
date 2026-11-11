@@ -2,13 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { ABOUT } from './about';
 import { API_GUIDE } from './apiGuide';
 import { CONTACT } from './contact';
+import { FUNDING } from './funding';
 import { METHODOLOGY } from './methodology';
 import { PRIVACY } from './privacy';
 import { parseInline, plainInline } from './types';
 import type { Doc, DocBlock } from './types';
 import { parsePath } from '../routes';
 
-const DOCS = { ABOUT, API_GUIDE, CONTACT, METHODOLOGY, PRIVACY };
+const DOCS = { ABOUT, API_GUIDE, CONTACT, FUNDING, METHODOLOGY, PRIVACY };
 
 function inlineTexts(block: DocBlock): string[] {
   switch (block.type) {

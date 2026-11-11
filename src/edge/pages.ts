@@ -151,6 +151,7 @@ export async function buildPage(ctx: SiteContext, route: Route | null, api: Api)
     case 'api':
     case 'about':
     case 'methodology':
+    case 'funding':
     case 'privacy':
     case 'contact': {
       const model = docModel(ctx, page);

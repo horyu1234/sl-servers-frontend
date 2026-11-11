@@ -9,6 +9,7 @@ import { LocaleLink } from '../shell/LocaleLink';
 import { PageHeader } from '../shared/PageHeader';
 import { StatTile } from '../shared/StatTile';
 import { DocBlocks } from './DocBlocks';
+import { AdSlot } from '../funding/Slot';
 import { usePageHead } from '../../lib/hooks/usePageHead';
 import { TONE_CLASS, cellText } from '../../site/pageModel';
 import type { Cell, CellValue, PageModel, Section, Table, Tile } from '../../site/pageModel';
@@ -232,6 +233,8 @@ export function ModelPage({ model, top, children }: ModelPageProps) {
       <div className="mt-4 space-y-4">
         {model.tiles && model.tiles.length > 0 && <TileGrid tiles={model.tiles} />}
         {children}
+        {/* The written pages and pages kept out of search results carry no ad. */}
+        {!isDocument && !model.noindex && <AdSlot placement="page" />}
         {model.sectionTabs && model.sections.length > 1
           ? <SectionTabs sections={model.sections} />
           : model.sections.map((section, index) => <SectionCard key={section.heading ?? index} section={section} />)}

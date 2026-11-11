@@ -6,7 +6,7 @@ import { docModel } from '../../site/pages/docs';
 import { parsePath } from '../../site/routes';
 import NotFound from '../NotFound';
 
-/** The written pages: about, how the data works, privacy and contact. */
+/** The written pages: about, how the data works, why the site has ads, privacy and contact. */
 export default function DocPage() {
   const ctx = useSiteContext();
   const { route } = parsePath(useLocation().pathname);

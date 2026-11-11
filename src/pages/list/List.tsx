@@ -15,6 +15,7 @@ import { EmptyState } from '../../components/shared/EmptyState';
 import { FilterSidebar } from '../../components/filters/FilterSidebar';
 import { FilterDrawer } from '../../components/filters/FilterDrawer';
 import { FilterChips } from '../../components/filters/FilterChips';
+import { AdSlot } from '../../components/funding/Slot';
 import { DEFAULT_FILTER, isDefault, parseFromSearchParams, sameFilter, toSearchParams } from '../../lib/filters/filterSchema';
 import type { ServerFilter } from '../../lib/filters/filterSchema';
 import { useTrends } from '../../lib/hooks/useTrends';
@@ -121,6 +122,13 @@ export default function List() {
             offline={stats.offlineServerCount}
             users={stats.onlineUserCount}
             displayedUsers={stats.displayUserCount}
+          />
+          {/* Above the toolbar, never between the rows: a row that scrolls out of the window is
+              taken off the page, and an ad there would be asked for again each time it came back. */}
+          <AdSlot
+            placement="list"
+            content={servers.length > 0 ? 'shown' : firstLoad ? 'pending' : 'missing'}
+            className="mt-3"
           />
         </div>
 
