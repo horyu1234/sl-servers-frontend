@@ -97,6 +97,7 @@ describe('buildPage', () => {
     ['/api', {}],
     ['/about', {}],
     ['/about/data', {}],
+    ['/about/funding', {}],
     ['/privacy', {}],
     ['/contact', {}],
     ['/rankings', {}],

@@ -4,9 +4,11 @@
 // onAccept/onReject callbacks to fire `silktide:consentchange`, which
 // useSyncExternalStore subscribes to here.
 const KEY_PREFIX = 'silktideCookieChoice_';
+// Written once the visitor has answered the banner, whatever the answer was.
+const INITIAL_CHOICE_KEY = 'silktideCookieBanner_InitialChoice';
 const CHANGE_EVENT = 'silktide:consentchange';
 
-export const CATEGORIES = ['necessary', 'functional', 'analytics'] as const;
+export const CATEGORIES = ['necessary', 'functional', 'analytics', 'advertising'] as const;
 
 export type ConsentCategory = (typeof CATEGORIES)[number];
 
@@ -37,6 +39,18 @@ export function readConsent(category: ConsentCategory): Consent {
   }
   consentCache.set(category, next);
   return next;
+}
+
+/**
+ * Whether the visitor has answered the banner. A category added to the banner later has no
+ * stored answer for them, because the banner is not shown again.
+ */
+export function hasInitialChoice() {
+  try {
+    return localStorage.getItem(INITIAL_CHOICE_KEY) !== null;
+  } catch {
+    return false;
+  }
 }
 
 const listeners = new Set<() => void>();

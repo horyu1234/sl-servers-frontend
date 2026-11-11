@@ -35,7 +35,8 @@
     "about": "소개",
     "methodology": "데이터 안내",
     "privacy": "개인정보처리방침",
-    "contact": "문의"
+    "contact": "문의",
+    "funding": "광고 안내"
   },
   "select": {
     "placeholder": "국가 선택",
@@ -164,6 +165,10 @@
     "copy-address": "주소 복사",
     "address-copied": "복사됨",
     "tech": "모드 및 플러그인"
+  },
+  "funding": {
+    "label": "광고",
+    "why": "광고를 넣게 된 이유"
   },
   "footer": {
     "notice": "SCP: Secret Laboratory는 Northwood Studios™가 출시한 게임이며, 이 사이트는 Northwood Studios™와 관련이 없습니다.<br/>모든 상표 및 등록 상표는 해당 소유자의 자산입니다.",

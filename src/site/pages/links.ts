@@ -25,6 +25,7 @@ export function siteLinks(ctx: SiteContext): { browse: Cell[]; statistics: Cell[
       { text: t('navbar.credit'), href: pathOf('credit') },
       { text: t('navbar.privacy'), href: pathOf('privacy') },
       { text: t('navbar.contact'), href: pathOf('contact') },
+      { text: t('navbar.funding'), href: pathOf('funding') },
     ],
   };
 }

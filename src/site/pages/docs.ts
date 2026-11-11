@@ -4,6 +4,7 @@ import type { SiteContext } from '../context';
 import { ABOUT } from '../docs/about';
 import { API_GUIDE } from '../docs/apiGuide';
 import { CONTACT } from '../docs/contact';
+import { FUNDING } from '../docs/funding';
 import { METHODOLOGY } from '../docs/methodology';
 import { PRIVACY } from '../docs/privacy';
 import type { Doc, DocBlock, DocSet } from '../docs/types';
@@ -17,6 +18,7 @@ import type { PageName } from '../routes';
 const DOCS: Partial<Record<PageName, DocSet>> = {
   about: ABOUT,
   methodology: METHODOLOGY,
+  funding: FUNDING,
   privacy: PRIVACY,
   contact: CONTACT,
   api: API_GUIDE,
@@ -52,7 +54,7 @@ export function docModel(ctx: SiteContext, page: PageName): PageModel | null {
   if (!docs || !doc) return null;
 
   const crumbs: Cell[] = [homeCrumb(ctx)];
-  if (page === 'methodology') crumbs.push({ text: ctx.t('navbar.about'), href: pathOf('about') });
+  if (page === 'methodology' || page === 'funding') crumbs.push({ text: ctx.t('navbar.about'), href: pathOf('about') });
   crumbs.push({ text: doc.heading });
 
   return {

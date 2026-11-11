@@ -52,9 +52,26 @@ This file provides guidance to AI coding agents when working with code in this r
 - Languages:
   - English is at the root. A language gets its own addresses, such as `/ko/`, once its locale file has every key of `en-US.json` (`PREFIXED_LANGUAGES` in `src/site/locales.ts`).
   - Add every new key to `en-US.json` and `ko-KR.json` together. A missing Korean key takes `/ko/` offline, and `src/site/locales.test.ts` fails.
-- The written pages (about, data, privacy, contact, API guide) are in `src/site/docs/`, in English and Korean with the same structure.
+- The written pages (about, data, ads, privacy, contact, API guide) are in `src/site/docs/`, in English and Korean with the same structure.
   - When the site starts or stops collecting something, loading a third-party service or showing ads, update `src/site/docs/privacy.ts` and the cookie banner texts in `index.html` in the same change.
 - The edge function must never be the reason a page fails. It reads the API with a deadline, falls back to a page without numbers, and on any error serves the plain app.
+
+## Ads
+- The site shows Google AdSense ads to pay for its servers. `AdSlot` (`src/components/funding/Slot.tsx`) draws one ad with its label and the link to `/about/funding`, the page that says why the site has ads. `src/components/funding/loader.ts` loads the script.
+- `/about/funding` (`src/site/docs/funding.ts`) tells visitors how ads are placed. Keep to it, or change the page in the same pull request:
+  - A page shows one ad at most.
+  - An ad sits between two parts of a page. It never sticks to the window, never covers content and never goes between the rows of the server list.
+  - The written pages have no ad.
+- AdSense rules that are easy to break:
+  - No ad where there is no content: a 404, a loading screen, an error or an empty result.
+  - The label says only "Advertisement" (`funding.label`). No text may ask visitors to look at or click on ads.
+  - One request for each ad element. A new address gets a new ad; a filter or a tab does not.
+  - Auto ads stay off in the AdSense account, because they add ads that cover the page.
+- Do not name a file, a folder or an address after ads. The build names scripts after their files and ad blockers refuse such names, which breaks the page for their users.
+- Ads are requested only on `scplist.kr`. On localhost and on previews a slot draws a box of the ad's size.
+- The "Personalised ads" choice in the cookie banner decides only whether ads are personalised. Ads show either way.
+  - Visitors in the EEA, the UK and Switzerland also get Google's own consent message, which is set up in the AdSense account.
+- Google moves the frames of an ad between hosts. `frame-src` in `public/_headers` allows them by domain, and `loader.ts` reports a blocked one to Sentry.
 
 ## Third-Party Licenses
 - `pnpm build` updates the license list on the credit page: `vite-plugins/thirdPartyLicenses.ts` reads the modules in the bundle and emits `third-party-licenses.json`. Do not maintain that list by hand.

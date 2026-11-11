@@ -8,7 +8,7 @@ export type PageName =
   | 'list' | 'server' | 'stats' | 'map' | 'credit' | 'api'
   | 'countries' | 'country' | 'versions' | 'version'
   | 'rankings' | 'records' | 'reports' | 'report'
-  | 'about' | 'methodology' | 'privacy' | 'contact';
+  | 'about' | 'methodology' | 'funding' | 'privacy' | 'contact';
 
 interface RoutePattern {
   page: PageName;
@@ -35,6 +35,8 @@ export const ROUTE_PATTERNS: RoutePattern[] = [
   { page: 'report', pattern: 'reports/:period', params: { period: /^\d{4}(-(0[1-9]|1[0-2]))?$/ } },
   { page: 'about', pattern: 'about' },
   { page: 'methodology', pattern: 'about/data' },
+  // Not "ads": ad blockers hide links and refuse addresses that look like an ad.
+  { page: 'funding', pattern: 'about/funding' },
   { page: 'privacy', pattern: 'privacy' },
   { page: 'contact', pattern: 'contact' },
 ];

@@ -4,6 +4,13 @@
 #   pastebin.com             server detail embed; the path keeps it on the embed
 #   app.mine.talk            support widget; moves between its own paths
 #   www.googletagmanager.com Google tag service worker frame, enabled remotely
+#   Google AdSense           the ad and the hidden frames around it, which check for fraud.
+#                            On 2026-11-11 they came from googleads.g.doubleclick.net,
+#                            ep2.adtrafficquality.google and www.google.com. Google moves them
+#                            between hosts and paths and supports no list of them, so its ad
+#                            domains are allowed whole, with the host of its consent message.
+#                            A host missing here leaves the ad blank and nothing else shows it:
+#                            src/components/funding/loader.ts reports a blocked frame to Sentry.
 # Cloudflare Turnstile would need https://challenges.cloudflare.com added here.
 /*
-  Content-Security-Policy: frame-src 'self' https://pastebin.com/embed_iframe/ https://app.mine.talk https://www.googletagmanager.com/static/service_worker/
+  Content-Security-Policy: frame-src 'self' https://pastebin.com/embed_iframe/ https://app.mine.talk https://www.googletagmanager.com/static/service_worker/ https://*.doubleclick.net https://*.googlesyndication.com https://*.adtrafficquality.google https://www.google.com https://fundingchoicesmessages.google.com

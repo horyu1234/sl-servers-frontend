@@ -340,7 +340,7 @@ describe('report pages', () => {
 });
 
 describe('written pages', () => {
-  it.each(['about', 'methodology', 'privacy', 'contact', 'api'] as const)('%s exists in English and Korean with the same structure', (page) => {
+  it.each(['about', 'methodology', 'funding', 'privacy', 'contact', 'api'] as const)('%s exists in English and Korean with the same structure', (page) => {
     const english = docModel(en, page);
     const korean = docModel(ko, page);
 
@@ -400,7 +400,7 @@ describe('the reader\'s clock', () => {
   it('is filled into the written pages', () => {
     expect(JSON.stringify(docModel(seoul, 'methodology')?.blocks)).toContain('which is 09:00 in your time zone (UTC+9)');
     expect(JSON.stringify(docModel(koreanInSeoul, 'methodology')?.blocks)).toContain('시간대(UTC+9)로는 09:00입니다');
-    for (const page of ['about', 'methodology', 'privacy', 'contact', 'api'] as const) {
+    for (const page of ['about', 'methodology', 'funding', 'privacy', 'contact', 'api'] as const) {
       expect(JSON.stringify(docModel(seoul, page)?.blocks)).not.toMatch(/\{\{(dayStart|zone)\}\}/);
     }
   });

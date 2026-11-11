@@ -1,4 +1,4 @@
-// The written pages (about, data, privacy, contact, API guide) are plain data, so the React
+// The written pages (about, data, ads, privacy, contact, API guide) are plain data, so the React
 // app and the edge function can both draw them.
 //
 // Text may hold three inline marks: [label](address), `code` and **bold**. An address that
