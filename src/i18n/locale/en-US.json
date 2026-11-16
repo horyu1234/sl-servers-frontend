@@ -54,6 +54,7 @@
     "slots": "Server slots",
     "range-min": "Min",
     "range-max": "Max",
+    "hide-empty": "Hide empty servers",
     "hide-full": "Hide full servers",
     "refreshing": "Reloading list...",
     "filter-options-title": "Filters",

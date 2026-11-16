@@ -44,6 +44,7 @@
     "slots": "伺服器容量",
     "range-min": "最少",
     "range-max": "最多",
+    "hide-empty": "隱藏無人伺服器",
     "hide-full": "隱藏滿人伺服器",
     "refreshing": "正在重新載入列表...",
     "filter-options-title": "篩選",

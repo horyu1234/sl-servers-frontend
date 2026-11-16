@@ -18,6 +18,7 @@ const ACTIVE: ServerFilter = {
   countryFilter: ['KR', 'US'],
   players: { min: 5, max: 20 },
   slots: { min: null, max: 40 },
+  hideEmptyServer: true,
   hideFullServer: true,
   friendlyFire: 'true',
   whitelist: 'false',
@@ -32,6 +33,7 @@ describe('filterSchema', () => {
       countryFilter: [],
       players: { min: null, max: null },
       slots: { min: null, max: null },
+      hideEmptyServer: false,
       hideFullServer: false,
       friendlyFire: 'null',
       whitelist: 'null',
@@ -46,6 +48,8 @@ describe('filterSchema', () => {
     const params = toSearchParams(ACTIVE);
     expect(params.get('players')).toBe('5-20');
     expect(params.get('slots')).toBe('-40');
+    expect(params.get('hideEmpty')).toBe('1');
+    expect(params.get('hideFull')).toBe('1');
     expect(parseFromSearchParams(params)).toEqual(ACTIVE);
   });
 
@@ -104,10 +108,23 @@ describe('player and slot ranges', () => {
     expect(normalizeRange({ min: Number.NaN, max: 2.7 })).toEqual({ min: null, max: 2 });
   });
 
-  it('turns links that hid empty servers into a minimum of one player', () => {
-    expect(parseFromSearchParams(new URLSearchParams('hideEmpty=1')).players).toEqual({ min: 1, max: null });
-    expect(parseFromSearchParams(new URLSearchParams('hideEmpty=1&players=10-')).players).toEqual({ min: 10, max: null });
-    expect(toSearchParams(parseFromSearchParams(new URLSearchParams('hideEmpty=1'))).toString()).toBe('players=1-');
+  it('keeps hiding empty servers apart from the player range', () => {
+    const hidden = parseFromSearchParams(new URLSearchParams('hideEmpty=1'));
+    expect(hidden).toEqual({ ...DEFAULT_FILTER, hideEmptyServer: true });
+    expect(toSearchParams(hidden).toString()).toBe('hideEmpty=1');
+
+    const both = parseFromSearchParams(new URLSearchParams('hideEmpty=1&players=10-'));
+    expect(both).toEqual({ ...DEFAULT_FILTER, hideEmptyServer: true, players: { min: 10, max: null } });
+
+    // Links made while the box was gone asked for one player or more, and they still do.
+    const range = parseFromSearchParams(new URLSearchParams('players=1-'));
+    expect(range).toEqual({ ...DEFAULT_FILTER, players: { min: 1, max: null } });
+    expect(toSearchParams(range).toString()).toBe('players=1-');
+  });
+
+  it.each(['0', 'true', ''])('does not hide empty or full servers for =%s', (value) => {
+    const params = new URLSearchParams({ hideEmpty: value, hideFull: value });
+    expect(parseFromSearchParams(params)).toEqual(DEFAULT_FILTER);
   });
 
   it.each([
@@ -122,15 +139,16 @@ describe('player and slot ranges', () => {
 
   it('counts each range once among the active filters', () => {
     expect(activeFilterCount(DEFAULT_FILTER)).toBe(0);
-    // search, two countries, players, slots, hide full, friendly fire, whitelist, sort
-    expect(activeFilterCount(ACTIVE)).toBe(9);
+    // search, two countries, players, slots, hide empty, hide full, friendly fire, whitelist, sort
+    expect(activeFilterCount(ACTIVE)).toBe(10);
+    expect(activeFilterCount({ ...DEFAULT_FILTER, hideEmptyServer: true })).toBe(1);
   });
 
-  it('sends the ranges to the API and no longer hides empty servers separately', () => {
+  it('sends the ranges and both hide options to the API', () => {
     expect(toRequestBody(ACTIVE)).toEqual({
       search: 'ko',
       countryFilter: ['KR', 'US'],
-      hideEmptyServer: false,
+      hideEmptyServer: true,
       hideFullServer: true,
       friendlyFire: 'true',
       whitelist: 'false',
@@ -142,6 +160,7 @@ describe('player and slot ranges', () => {
       maxSlots: 40,
     });
     expect(toRequestBody(DEFAULT_FILTER)).toMatchObject({
+      hideEmptyServer: false, hideFullServer: false,
       minPlayers: null, maxPlayers: null, minSlots: null, maxSlots: null,
     });
   });

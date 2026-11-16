@@ -44,6 +44,7 @@
     "slots": "Places du serveur",
     "range-min": "Min.",
     "range-max": "Max.",
+    "hide-empty": "Masquer les serveurs vides",
     "hide-full": "Masquer les serveurs complets",
     "refreshing": "Rechargement de la liste...",
     "filter-options-title": "Filtres",

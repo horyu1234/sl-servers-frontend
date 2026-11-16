@@ -44,6 +44,7 @@
     "slots": "服之所容",
     "range-min": "至少",
     "range-max": "至多",
+    "hide-empty": "隐匿空服",
     "hide-full": "隐匿满服",
     "refreshing": "正在重载名录...",
     "filter-options-title": "筛选之法",

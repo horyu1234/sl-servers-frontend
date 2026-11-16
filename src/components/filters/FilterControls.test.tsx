@@ -182,6 +182,16 @@ describe('FilterControls player gauge', () => {
     expect(onChange).toHaveBeenLastCalledWith(DEFAULT_FILTER);
   });
 
+  it('leaves one player or more to the box that hides empty servers', () => {
+    renderControls({ ...DEFAULT_FILTER, players: { min: 1, max: null } });
+
+    expect(screen.queryByRole('button', { name: '1+' })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /^\d+\+$/ }).map((b) => b.textContent)).toEqual(['5+', '10+', '20+']);
+    // A link from when 1+ was a shortcut still shows its range on the gauge.
+    expect(within(gauge()).getByText('1+')).toBeInTheDocument();
+    expect(screen.getByRole('checkbox', { name: 'Hide empty servers' })).not.toBeChecked();
+  });
+
   it('moves the thumbs when the range is cleared from outside', () => {
     const onChange = vi.fn();
     const { rerender } = render(
@@ -274,10 +284,35 @@ describe('FilterControls slot range', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  it('no longer has a separate box for hiding empty servers', () => {
-    renderControls();
+});
 
-    expect(screen.queryByRole('checkbox', { name: /empty/i })).not.toBeInTheDocument();
-    expect(screen.getByRole('checkbox', { name: 'Hide full servers' })).toBeInTheDocument();
+describe('FilterControls hide options', () => {
+  it('has a box for empty servers and a box for full servers', async () => {
+    const user = userEvent.setup();
+    const onChange = renderControls();
+    const empty = screen.getByRole('checkbox', { name: 'Hide empty servers' });
+    const full = screen.getByRole('checkbox', { name: 'Hide full servers' });
+
+    expect(empty).not.toBeChecked();
+    expect(full).not.toBeChecked();
+
+    await user.click(empty);
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, hideEmptyServer: true });
+
+    await user.click(full);
+    expect(onChange).toHaveBeenLastCalledWith({ ...DEFAULT_FILTER, hideFullServer: true });
+  });
+
+  it('shows what is on and turns it off without touching the player range', async () => {
+    const user = userEvent.setup();
+    const value = { ...DEFAULT_FILTER, hideEmptyServer: true, players: { min: 5, max: null } };
+    const onChange = renderControls(value);
+    const empty = screen.getByRole('checkbox', { name: 'Hide empty servers' });
+
+    expect(empty).toBeChecked();
+    expect(screen.getByRole('checkbox', { name: 'Hide full servers' })).not.toBeChecked();
+
+    await user.click(empty);
+    expect(onChange).toHaveBeenLastCalledWith({ ...value, hideEmptyServer: false });
   });
 });

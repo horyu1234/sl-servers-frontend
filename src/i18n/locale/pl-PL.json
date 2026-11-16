@@ -44,6 +44,7 @@
     "slots": "Sloty serwera",
     "range-min": "Min.",
     "range-max": "Maks.",
+    "hide-empty": "Ukryj puste serwery",
     "hide-full": "Ukryj pełne serwery",
     "refreshing": "Przeładowywanie listy...",
     "filter-options-title": "Filtry",

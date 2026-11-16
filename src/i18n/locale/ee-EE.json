@@ -44,6 +44,7 @@
     "slots": "Serveri kohad",
     "range-min": "Min",
     "range-max": "Maks",
+    "hide-empty": "Peida tühjad serverid",
     "hide-full": "Peida täis serverid",
     "refreshing": "Nimekirja värskendamine...",
     "filter-options-title": "Filtrid",

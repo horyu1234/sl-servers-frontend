@@ -120,7 +120,7 @@ describe('List page', () => {
     expect(screen.getByText('Server slots: ≤40')).toBeInTheDocument();
   });
 
-  it('reads an old link that hid empty servers as a minimum of one player', async () => {
+  it('hides empty servers from the URL without setting a player range', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={['/?hideEmpty=1']}>
@@ -130,8 +130,9 @@ describe('List page', () => {
     );
 
     await waitFor(() => expect(getServerListAPI).toHaveBeenLastCalledWith(
-      expect.objectContaining({ minPlayers: 1, maxPlayers: null, hideEmptyServer: false })
+      expect.objectContaining({ minPlayers: null, maxPlayers: null, hideEmptyServer: true })
     ));
+    expect(screen.getAllByRole('checkbox', { name: 'Hide empty servers' })[0]).toBeChecked();
   });
 
   it('reloads the list once when typing in the search pauses', async () => {

@@ -44,6 +44,7 @@
     "slots": "Serverpladser",
     "range-min": "Min.",
     "range-max": "Maks.",
+    "hide-empty": "Skjul tomme servere",
     "hide-full": "Skjul fulde servere",
     "refreshing": "Genindlæser liste...",
     "filter-options-title": "Filtre",

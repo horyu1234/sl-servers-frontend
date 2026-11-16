@@ -44,6 +44,7 @@
     "slots": "Pláss á netþjóni",
     "range-min": "Lágm.",
     "range-max": "Hám.",
+    "hide-empty": "Fela tóma netþjóna",
     "hide-full": "Fela fulla netþjóna",
     "refreshing": "Endurhleð lista...",
     "filter-options-title": "Síur",

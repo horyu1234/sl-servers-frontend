@@ -44,6 +44,7 @@
     "slots": "Слоты сервера",
     "range-min": "Мин.",
     "range-max": "Макс.",
+    "hide-empty": "Скрыть пустые серверы",
     "hide-full": "Скрыть заполненные серверы",
     "refreshing": "Обновление...",
     "filter-options-title": "Фильтры",

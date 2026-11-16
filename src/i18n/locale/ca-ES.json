@@ -44,6 +44,7 @@
     "slots": "Places del servidor",
     "range-min": "Mín.",
     "range-max": "Màx.",
+    "hide-empty": "Amaga els servidors buits",
     "hide-full": "Amaga els servidors plens",
     "refreshing": "Recarregant la llista...",
     "filter-options-title": "Filtres",
