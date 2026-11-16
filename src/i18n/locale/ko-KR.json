@@ -54,6 +54,7 @@
     "slots": "최대 인원",
     "range-min": "최소",
     "range-max": "최대",
+    "hide-empty": "빈 서버 숨기기",
     "hide-full": "꽉 찬 서버 숨기기",
     "refreshing": "목록을 다시 불러오는 중...",
     "filter-options-title": "필터",

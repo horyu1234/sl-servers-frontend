@@ -14,6 +14,7 @@ export interface ServerFilter {
   players: CountRange;
   /** Maximum players, the server's slot count. */
   slots: CountRange;
+  hideEmptyServer: boolean;
   hideFullServer: boolean;
   friendlyFire: TriState;
   whitelist: TriState;
@@ -62,6 +63,7 @@ export const DEFAULT_FILTER: Readonly<ServerFilter> = Object.freeze({
   countryFilter: [],
   players: OPEN_RANGE,
   slots: OPEN_RANGE,
+  hideEmptyServer: false,
   hideFullServer: false,
   friendlyFire: 'null',
   whitelist: 'null',
@@ -124,15 +126,12 @@ export function parseFromSearchParams(params: URLSearchParams): ServerFilter {
     return isTriState(v) ? v : 'null';
   };
 
-  let players = parseRange(params.get('players'));
-  // Links from before the player range used hideEmpty=1, which is a minimum of one player.
-  if (!params.has('players') && params.get('hideEmpty') === '1') players = { min: 1, max: null };
-
   return {
     search,
     countryFilter,
-    players,
+    players: parseRange(params.get('players')),
     slots: parseRange(params.get('slots')),
+    hideEmptyServer: params.get('hideEmpty') === '1',
     hideFullServer: params.get('hideFull') === '1',
     friendlyFire: tri('ff'),
     whitelist: tri('wl'),
@@ -151,6 +150,7 @@ export function toSearchParams(filter: ServerFilter) {
   if (players) params.set('players', players);
   const slots = formatRange(normalizeRange(filter.slots));
   if (slots) params.set('slots', slots);
+  if (filter.hideEmptyServer) params.set('hideEmpty', '1');
   if (filter.hideFullServer) params.set('hideFull', '1');
   if (filter.friendlyFire !== 'null') params.set('ff', filter.friendlyFire);
   if (filter.whitelist !== 'null') params.set('wl', filter.whitelist);
@@ -174,20 +174,21 @@ export function activeFilterCount(filter: ServerFilter) {
     + (filter.search ? 1 : 0)
     + (isOpenRange(normalizeRange(filter.players)) ? 0 : 1)
     + (isOpenRange(normalizeRange(filter.slots)) ? 0 : 1)
+    + (filter.hideEmptyServer ? 1 : 0)
     + (filter.hideFullServer ? 1 : 0)
     + (filter.friendlyFire !== 'null' ? 1 : 0)
     + (filter.whitelist !== 'null' ? 1 : 0)
     + (filter.modded !== 'null' ? 1 : 0);
 }
 
-/** The body of POST /api/servers. Hiding empty servers is now a minimum of one player. */
+/** The body of POST /api/servers. */
 export function toRequestBody(filter: ServerFilter): ServerSortOption {
   const players = normalizeRange(filter.players);
   const slots = normalizeRange(filter.slots);
   return {
     search: filter.search,
     countryFilter: filter.countryFilter,
-    hideEmptyServer: false,
+    hideEmptyServer: filter.hideEmptyServer,
     hideFullServer: filter.hideFullServer,
     friendlyFire: filter.friendlyFire,
     whitelist: filter.whitelist,

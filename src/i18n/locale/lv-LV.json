@@ -44,6 +44,7 @@
     "slots": "Servera vietas",
     "range-min": "Min.",
     "range-max": "Maks.",
+    "hide-empty": "Paslēpt tukšos serverus",
     "hide-full": "Paslēpt pilnos serverus",
     "refreshing": "Saraksta atsvaidzināšana...",
     "filter-options-title": "Filtri",

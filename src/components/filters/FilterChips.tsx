@@ -68,6 +68,7 @@ export function FilterChips({ value, onChange }: FilterProps) {
       </Chip>
     );
   }
+  if (value.hideEmptyServer) chips.push(<Chip key="he" onClear={() => set({ hideEmptyServer: false })}>{t('filter-option.hide-empty')}</Chip>);
   if (value.hideFullServer) chips.push(<Chip key="hf" onClear={() => set({ hideFullServer: false })}>{t('filter-option.hide-full')}</Chip>);
   if (value.friendlyFire !== 'null') chips.push(<Chip key="ff" onClear={() => set({ friendlyFire: 'null' })}>{triStateLabel('friendly-fire', value.friendlyFire)}</Chip>);
   if (value.whitelist !== 'null') chips.push(<Chip key="wl" onClear={() => set({ whitelist: 'null' })}>{triStateLabel('whitelist', value.whitelist)}</Chip>);

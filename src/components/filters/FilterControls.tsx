@@ -17,7 +17,8 @@ import type { ServerSortType, TriState } from '../../types/api';
 
 const SEARCH_DELAY_MS = 300;
 const RANGE_DELAY_MS = 500;
-const PLAYER_PRESETS = [1, 5, 10, 20];
+// No 1+: "Hide empty servers" is the box for that.
+const PLAYER_PRESETS = [5, 10, 20];
 // The gauge's right end. Dragging the upper thumb there leaves the maximum open.
 const PLAYER_GAUGE_MAX = 50;
 const COUNT_DIGITS = String(MAX_COUNT).length;
@@ -335,13 +336,22 @@ export function FilterControls({ value, onChange }: FilterProps) {
         onChange={(slots) => set({ slots })}
         t={t}
       />
-      <CheckboxField
-        id="filter-hide-full"
-        checked={value.hideFullServer}
-        onCheckedChange={(c) => set({ hideFullServer: c === true })}
-      >
-        {t('filter-option.hide-full')}
-      </CheckboxField>
+      <div className="space-y-2.5">
+        <CheckboxField
+          id="filter-hide-empty"
+          checked={value.hideEmptyServer}
+          onCheckedChange={(c) => set({ hideEmptyServer: c === true })}
+        >
+          {t('filter-option.hide-empty')}
+        </CheckboxField>
+        <CheckboxField
+          id="filter-hide-full"
+          checked={value.hideFullServer}
+          onCheckedChange={(c) => set({ hideFullServer: c === true })}
+        >
+          {t('filter-option.hide-full')}
+        </CheckboxField>
+      </div>
 
       <Separator />
 

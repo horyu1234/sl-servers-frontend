@@ -29,6 +29,24 @@ describe('FilterChips sort chip', () => {
   });
 });
 
+describe('FilterChips hide options', () => {
+  it('shows a chip for each and clears them one at a time', async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    const value = { ...DEFAULT_FILTER, hideEmptyServer: true, hideFullServer: true };
+    render(<FilterChips value={value} onChange={onChange} />);
+
+    const emptyChip = screen.getByText('Hide empty servers').closest('div')!;
+    const fullChip = screen.getByText('Hide full servers').closest('div')!;
+
+    await user.click(within(emptyChip).getByRole('button', { name: 'Clear filter' }));
+    expect(onChange).toHaveBeenLastCalledWith({ ...value, hideEmptyServer: false });
+
+    await user.click(within(fullChip).getByRole('button', { name: 'Clear filter' }));
+    expect(onChange).toHaveBeenLastCalledWith({ ...value, hideFullServer: false });
+  });
+});
+
 describe('FilterChips ranges', () => {
   it('shows each range as one chip and clears it on its own', async () => {
     const user = userEvent.setup();

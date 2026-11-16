@@ -44,6 +44,7 @@
     "slots": "Lokoj de la servilo",
     "range-min": "Min.",
     "range-max": "Maks.",
+    "hide-empty": "Kaŝi malplenajn servilojn",
     "hide-full": "Kaŝi plenajn servilojn",
     "refreshing": "Reŝargante la liston...",
     "filter-options-title": "Filtriloj",
